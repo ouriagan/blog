@@ -371,15 +371,15 @@ table1delta <- c(deltaN, deltaE, deltaO, deltaA, deltaC, deltaN1, deltaN2, delta
 table1a <- data.frame(Variables = table1variables, Mean=table1mean, SD=table1sd, t=table1ttest, p=table1pbis, Delta=table1delta)
 table1 <- printnum(table1a)
 
-# Table 4
-table4variables <- c("Paranoid", "Schizoid", "Schizotypal", "Antisocial", "Borderline", "Histrionic", "Narcissist", "Avoidant", "Dependent", "Dependent-Revised", "Obsessive-compulsive", "Psychopathy")
-table4mean <- c(mean(paranoiaque), mean(schizoide), mean(schizotypique), mean(antisociale), mean(borderline), mean(histrionique), mean(narcissique), mean(evitante), mean(dependante), mean(dependante_revision), mean(obsessionnelle_compulsive), mean(psychopathie))
-table4sd <- c(sd(paranoiaque), sd(schizoide), sd(schizotypique), sd(antisociale), sd(borderline), sd(histrionique), sd(narcissique), sd(evitante), sd(dependante), sd(dependante_revision), sd(obsessionnelle_compulsive), sd(psychopathie))
-table4ttest <- c(ttestparanoiaquestatistic,ttestschizoidestatistic,ttestschizotypiquestatistic,ttestantisocialestatistic,ttestborderlinestatistic, ttesthistrioniquestatistic, ttestnarcissiquestatistic, ttestevitantestatistic, ttestdependantestatistic, ttestdependante_revisionstatistic, ttestobsessionnelle_compulsivestatistic, ttestpsychopathiestatistic)
-table4p <- c(ttestparanoiaquepvalue,ttestschizoidepvalue,ttestschizotypiquepvalue,ttestantisocialepvalue,ttestborderlinepvalue, ttesthistrioniquepvalue, ttestnarcissiquepvalue, ttestevitantepvalue, ttestdependantepvalue, ttestdependante_revisionpvalue, ttestobsessionnelle_compulsivepvalue, ttestpsychopathiepvalue)
-table4pbis <- printp(table4p)
-table4delta <- c(deltaparanoiaque, deltaschizoide, deltaschizotypique, deltaantisociale, deltaborderline, deltahistrionique, deltanarcissique, deltaevitante, deltadependante, deltadependante_revision, deltaobsessionnelle_compulsive, deltapsychopathie)
-table4 <- data.frame(Variables = table4variables, Mean=table4mean, SD=table4sd, t=table4ttest, p=table4pbis, Delta=table4delta)
+# Table 2
+table2variables <- c("Paranoid", "Schizoid", "Schizotypal", "Antisocial", "Borderline", "Histrionic", "Narcissist", "Avoidant", "Dependent", "Dependent-Revised", "Obsessive-compulsive", "Psychopathy")
+table2mean <- c(mean(paranoiaque), mean(schizoide), mean(schizotypique), mean(antisociale), mean(borderline), mean(histrionique), mean(narcissique), mean(evitante), mean(dependante), mean(dependante_revision), mean(obsessionnelle_compulsive), mean(psychopathie))
+table2sd <- c(sd(paranoiaque), sd(schizoide), sd(schizotypique), sd(antisociale), sd(borderline), sd(histrionique), sd(narcissique), sd(evitante), sd(dependante), sd(dependante_revision), sd(obsessionnelle_compulsive), sd(psychopathie))
+table2ttest <- c(ttestparanoiaquestatistic,ttestschizoidestatistic,ttestschizotypiquestatistic,ttestantisocialestatistic,ttestborderlinestatistic, ttesthistrioniquestatistic, ttestnarcissiquestatistic, ttestevitantestatistic, ttestdependantestatistic, ttestdependante_revisionstatistic, ttestobsessionnelle_compulsivestatistic, ttestpsychopathiestatistic)
+table2p <- c(ttestparanoiaquepvalue,ttestschizoidepvalue,ttestschizotypiquepvalue,ttestantisocialepvalue,ttestborderlinepvalue, ttesthistrioniquepvalue, ttestnarcissiquepvalue, ttestevitantepvalue, ttestdependantepvalue, ttestdependante_revisionpvalue, ttestobsessionnelle_compulsivepvalue, ttestpsychopathiepvalue)
+table2pbis <- printp(table2p)
+table2delta <- c(deltaparanoiaque, deltaschizoide, deltaschizotypique, deltaantisociale, deltaborderline, deltahistrionique, deltanarcissique, deltaevitante, deltadependante, deltadependante_revision, deltaobsessionnelle_compulsive, deltapsychopathie)
+table2 <- data.frame(Variables = table2variables, Mean=table2mean, SD=table2sd, t=table2ttest, p=table2pbis, Delta=table2delta)
 
 # sexe
 
@@ -387,12 +387,14 @@ neoinmatesmales <- filter(neototal, sexe == 'M')
 detach(neoinmates)
 attach(neoinmatesmales)
 table3meanmales <- c(mean(N), mean(E), mean(O), mean(A), mean(C), mean(N1), mean(N2), mean(N3), mean(N4), mean(N5), mean(N6), mean(E1), mean(E2), mean(E3), mean(E4), mean(E5), mean(E6), mean(O1), mean(O2), mean(O3), mean(O4), mean(O5), mean(O6), mean(A1), mean(A2), mean(A3), mean(A4), mean(A5), mean(A6), mean(C1), mean(C2), mean(C3), mean(C4), mean(C5), mean(C6))
+table4meanmales <- c(mean(paranoiaque, na.rm = TRUE), mean(schizoide, na.rm = TRUE), mean(schizotypique, na.rm = TRUE), mean(antisociale, na.rm = TRUE), mean(borderline, na.rm = TRUE), mean(histrionique, na.rm = TRUE), mean(narcissique, na.rm = TRUE), mean(evitante, na.rm = TRUE), mean(dependante, na.rm = TRUE), mean(dependante_revision, na.rm = TRUE), mean(obsessionnelle_compulsive, na.rm = TRUE), mean(psychopathie, na.rm = TRUE))
 detach(neoinmatesmales)
 attach(neoinmates)
 neoinmatesfemales <- filter(neototal, sexe == 'F')
 detach(neoinmates)
 attach(neoinmatesfemales)
 table3meanfemales <- c(mean(N), mean(E), mean(O), mean(A), mean(C), mean(N1), mean(N2), mean(N3), mean(N4), mean(N5), mean(N6), mean(E1), mean(E2), mean(E3), mean(E4), mean(E5), mean(E6), mean(O1), mean(O2), mean(O3), mean(O4), mean(O5), mean(O6), mean(A1), mean(A2), mean(A3), mean(A4), mean(A5), mean(A6), mean(C1), mean(C2), mean(C3), mean(C4), mean(C5), mean(C6))
+table4meanfemales <- c(mean(paranoiaque, na.rm = TRUE), mean(schizoide, na.rm = TRUE), mean(schizotypique, na.rm = TRUE), mean(antisociale, na.rm = TRUE), mean(borderline, na.rm = TRUE), mean(histrionique, na.rm = TRUE), mean(narcissique, na.rm = TRUE), mean(evitante, na.rm = TRUE), mean(dependante, na.rm = TRUE), mean(dependante_revision, na.rm = TRUE), mean(obsessionnelle_compulsive, na.rm = TRUE), mean(psychopathie, na.rm = TRUE))
 detach(neoinmatesfemales)
 attach(neoinmates)
 
@@ -502,11 +504,53 @@ C5sexep <- printp(C5sexetestt$p.value)
 C6sexetestt <- t.test(C6 ~ sexe)
 C6sexet <- printnum(C6sexetestt$statistic)
 C6sexep <- printp(C6sexetestt$p.value)
+paranoiaquesexetestt <- t.test(paranoiaque ~ sexe)
+paranoiaquesexet <- printnum(paranoiaquesexetestt$statistic)
+paranoiaquesexep <- printp(paranoiaquesexetestt$p.value)
+schizoidesexetestt <- t.test(schizoide ~ sexe)
+schizoidesexet <- printnum(schizoidesexetestt$statistic)
+schizoidesexep <- printp(schizoidesexetestt$p.value)
+schizotypiquesexetestt <- t.test(schizotypique ~ sexe)
+schizotypiquesexet <- printnum(schizotypiquesexetestt$statistic)
+schizotypiquesexep <- printp(schizotypiquesexetestt$p.value)
+antisocialesexetestt <- t.test(antisociale ~ sexe)
+antisocialesexet <- printnum(antisocialesexetestt$statistic)
+antisocialesexep <- printp(antisocialesexetestt$p.value)
+borderlinesexetestt <- t.test(borderline ~ sexe)
+borderlinesexet <- printnum(borderlinesexetestt$statistic)
+borderlinesexep <- printp(borderlinesexetestt$p.value)
+histrioniquesexetestt <- t.test(histrionique ~ sexe)
+histrioniquesexet <- printnum(histrioniquesexetestt$statistic)
+histrioniquesexep <- printp(histrioniquesexetestt$p.value)
+narcissiquesexetestt <- t.test(narcissique ~ sexe)
+narcissiquesexet <- printnum(narcissiquesexetestt$statistic)
+narcissiquesexep <- printp(narcissiquesexetestt$p.value)
+evitantesexetestt <- t.test(evitante ~ sexe)
+evitantesexet <- printnum(evitantesexetestt$statistic)
+evitantesexep <- printp(evitantesexetestt$p.value)
+dependantesexetestt <- t.test(dependante ~ sexe)
+dependantesexet <- printnum(dependantesexetestt$statistic)
+dependantesexep <- printp(dependantesexetestt$p.value)
+dependante_revisionsexetestt <- t.test(dependante_revision ~ sexe)
+dependante_revisionsexet <- printnum(dependante_revisionsexetestt$statistic)
+dependante_revisionsexep <- printp(dependante_revisionsexetestt$p.value)
+obsessionnelle_compulsivesexetestt <- t.test(obsessionnelle_compulsive ~ sexe)
+obsessionnelle_compulsivesexet <- printnum(obsessionnelle_compulsivesexetestt$statistic)
+obsessionnelle_compulsivesexep <- printp(obsessionnelle_compulsivesexetestt$p.value)
+psychopathiesexetestt <- t.test(psychopathie ~ sexe)
+psychopathiesexet <- printnum(psychopathiesexetestt$statistic)
+psychopathiesexep <- printp(psychopathiesexetestt$p.value)
 
+
+# Table 3
 table3ttests <- c(Nsexet,Esexet,Osexet,Asexet,Csexet,N1sexet,N2sexet,N3sexet,N4sexet,N5sexet,N6sexet,E1sexet,E2sexet,E3sexet,E4sexet,E5sexet,E6sexet,O1sexet,O2sexet,O3sexet,O4sexet,O5sexet,O6sexet,A1sexet,A2sexet,A3sexet,A4sexet,A5sexet,A6sexet,C1sexet,C2sexet,C3sexet,C4sexet,C5sexet,C6sexet)
 table3p <- c(Nsexep,Esexep,Osexep,Asexep,Csexep,N1sexep,N2sexep,N3sexep,N4sexep,N5sexep,N6sexep,E1sexep,E2sexep,E3sexep,E4sexep,E5sexep,E6sexep,O1sexep,O2sexep,O3sexep,O4sexep,O5sexep,O6sexep,A1sexep,A2sexep,A3sexep,A4sexep,A5sexep,A6sexep,C1sexep,C2sexep,C3sexep,C4sexep,C5sexep,C6sexep)
 table3 <- data.frame(Variables = table1variables, Males=table3meanmales, Females = table3meanfemales, t=table3ttests, p=table3p)
 
+#Table 4
+table4ttests <- c(paranoiaquesexet,schizoidesexet,schizotypiquesexet,antisocialesexet,borderlinesexet,histrioniquesexet,narcissiquesexet,evitantesexet,dependantesexet,dependante_revisionsexet,obsessionnelle_compulsivesexet,psychopathiesexet)
+table4p <- c(paranoiaquesexep,schizoidesexep,schizotypiquesexep,antisocialesexep,borderlinesexep,histrioniquesexep,narcissiquesexep,evitantesexep,dependantesexep,dependante_revisionsexep,obsessionnelle_compulsivesexep,psychopathiesexep)
+table4 <- data.frame(Variables = table2variables, Males=table4meanmales, Females = table4meanfemales, t=table4ttests, p=table4p)
 
 ```
 
@@ -576,8 +620,16 @@ apa_table(
 
 Table \@ref(tab:table1) shows descriptive statistics for each NEO PI-R variable, the effect size in comparison with the French normative sample, and the degree of significance. Significant scores are highlighted in bold text. Concerning the five domains, three are significantly different from the normative sample: the Openness is lower, Agreeableness and Conscientiousness are higher. This profile suggests that the French-speaking Belgian inmates are as stable, as extraverted, more frank, more agreeable and more conscientious than the normative population. 
 The study of the NEO PI-R facets gives more detailed results. Indeed, in descending effect sizes order, French-speaking Belgian inmates tend to be more prosaic, more conservative, colder, more altruistic, more disciplined, more ambitious, more frank, more orderly, more tolerant to frustration, less assertive, more discouraged, most submitted, more cynical, less aesthetic, less curious, less happy and less anxious than the normative population. Note that only one difference can be seen as large (Cohen’s  d for O1 = -. 85) and others are lower. The mean of the absolute values of the 35 Cohen’s  d is equal to .26. Differences, while statistically significant, remain low.
+
+```{r table2, results = "asis"}
+apa_table(
+  table2
+  , caption = "Descriptive Statistics of the 12 NEO PI-R Personality Disorders variables for French-speaking Belgian inmates"
+)
+
+```
  
-Table 2 shows descriptive statistics for each NEO PI-R personality disorders variable. Two personality disorders have medium effect sizes: high obsessive compulsive personality disorder and low histrionic personality. Small effect sizes exist for antisocial personality (low score), psychopathy (low score), narcissistic personality (low score), schizoid personality (high score) and borderline personality (low score). The mean of the absolute values of the 12 Cohen’s d is also equal to. 26. Only 4 % of the participants have an antisocial personality score above 1.5 SD (the lowest cut-off chosen by Miller et al., 2001) and only 3% have a psychopathic score above 1.5 SD.
+Table \@ref(tab:table2) shows descriptive statistics for each NEO PI-R personality disorders variable. Two personality disorders have medium effect sizes: high obsessive compulsive personality disorder and low histrionic personality. Small effect sizes exist for antisocial personality (low score), psychopathy (low score), narcissistic personality (low score), schizoid personality (high score) and borderline personality (low score). The mean of the absolute values of the 12 Cohen’s d is also equal to. 26. Only 4 % of the participants have an antisocial personality score above 1.5 SD (the lowest cut-off chosen by Miller et al., 2001) and only 3% have a psychopathic score above 1.5 SD.
 
 ```{r table3, results = "asis"}
 apa_table(
