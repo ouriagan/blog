@@ -398,6 +398,23 @@ table4meanfemales <- c(mean(paranoiaque, na.rm = TRUE), mean(schizoide, na.rm = 
 detach(neoinmatesfemales)
 attach(neoinmates)
 
+# Groupes
+neoinmatesforensic <- filter(neototal, groupe == "interné")
+detach(neoinmates)
+attach(neoinmatesforensic)
+table5meanforensic <- c(mean(N), mean(E), mean(O), mean(A), mean(C), mean(N1), mean(N2), mean(N3), mean(N4), mean(N5), mean(N6), mean(E1), mean(E2), mean(E3), mean(E4), mean(E5), mean(E6), mean(O1), mean(O2), mean(O3), mean(O4), mean(O5), mean(O6), mean(A1), mean(A2), mean(A3), mean(A4), mean(A5), mean(A6), mean(C1), mean(C2), mean(C3), mean(C4), mean(C5), mean(C6))
+table6meanforensic <- c(mean(paranoiaque, na.rm = TRUE), mean(schizoide, na.rm = TRUE), mean(schizotypique, na.rm = TRUE), mean(antisociale, na.rm = TRUE), mean(borderline, na.rm = TRUE), mean(histrionique, na.rm = TRUE), mean(narcissique, na.rm = TRUE), mean(evitante, na.rm = TRUE), mean(dependante, na.rm = TRUE), mean(dependante_revision, na.rm = TRUE), mean(obsessionnelle_compulsive, na.rm = TRUE), mean(psychopathie, na.rm = TRUE))
+detach(neoinmatesforensic)
+attach(neoinmates)
+neoinmatessentenced <- filter(neototal, groupe == "condamné")
+detach(neoinmates)
+attach(neoinmatessentenced)
+table5meansentenced <- c(mean(N), mean(E), mean(O), mean(A), mean(C), mean(N1), mean(N2), mean(N3), mean(N4), mean(N5), mean(N6), mean(E1), mean(E2), mean(E3), mean(E4), mean(E5), mean(E6), mean(O1), mean(O2), mean(O3), mean(O4), mean(O5), mean(O6), mean(A1), mean(A2), mean(A3), mean(A4), mean(A5), mean(A6), mean(C1), mean(C2), mean(C3), mean(C4), mean(C5), mean(C6))
+table6meansentenced <- c(mean(paranoiaque, na.rm = TRUE), mean(schizoide, na.rm = TRUE), mean(schizotypique, na.rm = TRUE), mean(antisociale, na.rm = TRUE), mean(borderline, na.rm = TRUE), mean(histrionique, na.rm = TRUE), mean(narcissique, na.rm = TRUE), mean(evitante, na.rm = TRUE), mean(dependante, na.rm = TRUE), mean(dependante_revision, na.rm = TRUE), mean(obsessionnelle_compulsive, na.rm = TRUE), mean(psychopathie, na.rm = TRUE))
+detach(neoinmatessentenced)
+attach(neoinmates)
+
+
 # t tests par sexe
 Nsexetestt <- t.test(N ~ sexe)
 Nsexet <- printnum(Nsexetestt$statistic)
@@ -541,6 +558,148 @@ psychopathiesexetestt <- t.test(psychopathie ~ sexe)
 psychopathiesexet <- printnum(psychopathiesexetestt$statistic)
 psychopathiesexep <- printp(psychopathiesexetestt$p.value)
 
+# t tests par groupes
+Ngroupetestt <- t.test(N ~ groupe)
+Ngroupet <- printnum(Ngroupetestt$statistic)
+Ngroupep <- printp(Ngroupetestt$p.value)
+N1groupetestt <- t.test(N1 ~ groupe)
+N1groupet <- printnum(N1groupetestt$statistic)
+N1groupep <- printp(N1groupetestt$p.value)
+N2groupetestt <- t.test(N2 ~ groupe)
+N2groupet <- printnum(N2groupetestt$statistic)
+N2groupep <- printp(N2groupetestt$p.value)
+N3groupetestt <- t.test(N3 ~ groupe)
+N3groupet <- printnum(N3groupetestt$statistic)
+N3groupep <- printp(N3groupetestt$p.value)
+N4groupetestt <- t.test(N4 ~ groupe)
+N4groupet <- printnum(N4groupetestt$statistic)
+N4groupep <- printp(N4groupetestt$p.value)
+N5groupetestt <- t.test(N5 ~ groupe)
+N5groupet <- printnum(N5groupetestt$statistic)
+N5groupep <- printp(N5groupetestt$p.value)
+N6groupetestt <- t.test(N6 ~ groupe)
+N6groupet <- printnum(N6groupetestt$statistic)
+N6groupep <- printp(N6groupetestt$p.value)
+Egroupetestt <- t.test(E ~ groupe)
+Egroupet <- printnum(Egroupetestt$statistic)
+Egroupep <- printp(Egroupetestt$p.value)
+E1groupetestt <- t.test(E1 ~ groupe)
+E1groupet <- printnum(E1groupetestt$statistic)
+E1groupep <- printp(E1groupetestt$p.value)
+E2groupetestt <- t.test(E2 ~ groupe)
+E2groupet <- printnum(E2groupetestt$statistic)
+E2groupep <- printp(E2groupetestt$p.value)
+E3groupetestt <- t.test(E3 ~ groupe)
+E3groupet <- printnum(E3groupetestt$statistic)
+E3groupep <- printp(E3groupetestt$p.value)
+E4groupetestt <- t.test(E4 ~ groupe)
+E4groupet <- printnum(E4groupetestt$statistic)
+E4groupep <- printp(E4groupetestt$p.value)
+E5groupetestt <- t.test(E5 ~ groupe)
+E5groupet <- printnum(E5groupetestt$statistic)
+E5groupep <- printp(E5groupetestt$p.value)
+E6groupetestt <- t.test(E6 ~ groupe)
+E6groupet <- printnum(E6groupetestt$statistic)
+E6groupep <- printp(E6groupetestt$p.value)
+Ogroupetestt <- t.test(O ~ groupe)
+Ogroupet <- printnum(Ogroupetestt$statistic)
+Ogroupep <- printp(Ogroupetestt$p.value)
+O1groupetestt <- t.test(O1 ~ groupe)
+O1groupet <- printnum(O1groupetestt$statistic)
+O1groupep <- printp(O1groupetestt$p.value)
+O2groupetestt <- t.test(O2 ~ groupe)
+O2groupet <- printnum(O2groupetestt$statistic)
+O2groupep <- printp(O2groupetestt$p.value)
+O3groupetestt <- t.test(O3 ~ groupe)
+O3groupet <- printnum(O3groupetestt$statistic)
+O3groupep <- printp(O3groupetestt$p.value)
+O4groupetestt <- t.test(O4 ~ groupe)
+O4groupet <- printnum(O4groupetestt$statistic)
+O4groupep <- printp(O4groupetestt$p.value)
+O5groupetestt <- t.test(O5 ~ groupe)
+O5groupet <- printnum(O5groupetestt$statistic)
+O5groupep <- printp(O5groupetestt$p.value)
+O6groupetestt <- t.test(O6 ~ groupe)
+O6groupet <- printnum(O6groupetestt$statistic)
+O6groupep <- printp(O6groupetestt$p.value)
+Agroupetestt <- t.test(A ~ groupe)
+Agroupet <- printnum(Agroupetestt$statistic)
+Agroupep <- printp(Agroupetestt$p.value)
+A1groupetestt <- t.test(A1 ~ groupe)
+A1groupet <- printnum(A1groupetestt$statistic)
+A1groupep <- printp(A1groupetestt$p.value)
+A2groupetestt <- t.test(A2 ~ groupe)
+A2groupet <- printnum(A2groupetestt$statistic)
+A2groupep <- printp(A2groupetestt$p.value)
+A3groupetestt <- t.test(A3 ~ groupe)
+A3groupet <- printnum(A3groupetestt$statistic)
+A3groupep <- printp(A3groupetestt$p.value)
+A4groupetestt <- t.test(A4 ~ groupe)
+A4groupet <- printnum(A4groupetestt$statistic)
+A4groupep <- printp(A4groupetestt$p.value)
+A5groupetestt <- t.test(A5 ~ groupe)
+A5groupet <- printnum(A5groupetestt$statistic)
+A5groupep <- printp(A5groupetestt$p.value)
+A6groupetestt <- t.test(A6 ~ groupe)
+A6groupet <- printnum(A6groupetestt$statistic)
+A6groupep <- printp(A6groupetestt$p.value)
+Cgroupetestt <- t.test(C ~ groupe)
+Cgroupet <- printnum(Cgroupetestt$statistic)
+Cgroupep <- printp(Cgroupetestt$p.value)
+C1groupetestt <- t.test(C1 ~ groupe)
+C1groupet <- printnum(C1groupetestt$statistic)
+C1groupep <- printp(C1groupetestt$p.value)
+C2groupetestt <- t.test(C2 ~ groupe)
+C2groupet <- printnum(C2groupetestt$statistic)
+C2groupep <- printp(C2groupetestt$p.value)
+C3groupetestt <- t.test(C3 ~ groupe)
+C3groupet <- printnum(C3groupetestt$statistic)
+C3groupep <- printp(C3groupetestt$p.value)
+C4groupetestt <- t.test(C4 ~ groupe)
+C4groupet <- printnum(C4groupetestt$statistic)
+C4groupep <- printp(C4groupetestt$p.value)
+C5groupetestt <- t.test(C5 ~ groupe)
+C5groupet <- printnum(C5groupetestt$statistic)
+C5groupep <- printp(C5groupetestt$p.value)
+C6groupetestt <- t.test(C6 ~ groupe)
+C6groupet <- printnum(C6groupetestt$statistic)
+C6groupep <- printp(C6groupetestt$p.value)
+paranoiaquegroupetestt <- t.test(paranoiaque ~ groupe)
+paranoiaquegroupet <- printnum(paranoiaquegroupetestt$statistic)
+paranoiaquegroupep <- printp(paranoiaquegroupetestt$p.value)
+schizoidegroupetestt <- t.test(schizoide ~ groupe)
+schizoidegroupet <- printnum(schizoidegroupetestt$statistic)
+schizoidegroupep <- printp(schizoidegroupetestt$p.value)
+schizotypiquegroupetestt <- t.test(schizotypique ~ groupe)
+schizotypiquegroupet <- printnum(schizotypiquegroupetestt$statistic)
+schizotypiquegroupep <- printp(schizotypiquegroupetestt$p.value)
+antisocialegroupetestt <- t.test(antisociale ~ groupe)
+antisocialegroupet <- printnum(antisocialegroupetestt$statistic)
+antisocialegroupep <- printp(antisocialegroupetestt$p.value)
+borderlinegroupetestt <- t.test(borderline ~ groupe)
+borderlinegroupet <- printnum(borderlinegroupetestt$statistic)
+borderlinegroupep <- printp(borderlinegroupetestt$p.value)
+histrioniquegroupetestt <- t.test(histrionique ~ groupe)
+histrioniquegroupet <- printnum(histrioniquegroupetestt$statistic)
+histrioniquegroupep <- printp(histrioniquegroupetestt$p.value)
+narcissiquegroupetestt <- t.test(narcissique ~ groupe)
+narcissiquegroupet <- printnum(narcissiquegroupetestt$statistic)
+narcissiquegroupep <- printp(narcissiquegroupetestt$p.value)
+evitantegroupetestt <- t.test(evitante ~ groupe)
+evitantegroupet <- printnum(evitantegroupetestt$statistic)
+evitantegroupep <- printp(evitantegroupetestt$p.value)
+dependantegroupetestt <- t.test(dependante ~ groupe)
+dependantegroupet <- printnum(dependantegroupetestt$statistic)
+dependantegroupep <- printp(dependantegroupetestt$p.value)
+dependante_revisiongroupetestt <- t.test(dependante_revision ~ groupe)
+dependante_revisiongroupet <- printnum(dependante_revisiongroupetestt$statistic)
+dependante_revisiongroupep <- printp(dependante_revisiongroupetestt$p.value)
+obsessionnelle_compulsivegroupetestt <- t.test(obsessionnelle_compulsive ~ groupe)
+obsessionnelle_compulsivegroupet <- printnum(obsessionnelle_compulsivegroupetestt$statistic)
+obsessionnelle_compulsivegroupep <- printp(obsessionnelle_compulsivegroupetestt$p.value)
+psychopathiegroupetestt <- t.test(psychopathie ~ groupe)
+psychopathiegroupet <- printnum(psychopathiegroupetestt$statistic)
+psychopathiegroupep <- printp(psychopathiegroupetestt$p.value)
 
 # Table 3
 table3ttests <- c(Nsexet,Esexet,Osexet,Asexet,Csexet,N1sexet,N2sexet,N3sexet,N4sexet,N5sexet,N6sexet,E1sexet,E2sexet,E3sexet,E4sexet,E5sexet,E6sexet,O1sexet,O2sexet,O3sexet,O4sexet,O5sexet,O6sexet,A1sexet,A2sexet,A3sexet,A4sexet,A5sexet,A6sexet,C1sexet,C2sexet,C3sexet,C4sexet,C5sexet,C6sexet)
@@ -551,6 +710,37 @@ table3 <- data.frame(Variables = table1variables, Males=table3meanmales, Females
 table4ttests <- c(paranoiaquesexet,schizoidesexet,schizotypiquesexet,antisocialesexet,borderlinesexet,histrioniquesexet,narcissiquesexet,evitantesexet,dependantesexet,dependante_revisionsexet,obsessionnelle_compulsivesexet,psychopathiesexet)
 table4p <- c(paranoiaquesexep,schizoidesexep,schizotypiquesexep,antisocialesexep,borderlinesexep,histrioniquesexep,narcissiquesexep,evitantesexep,dependantesexep,dependante_revisionsexep,obsessionnelle_compulsivesexep,psychopathiesexep)
 table4 <- data.frame(Variables = table2variables, Males=table4meanmales, Females = table4meanfemales, t=table4ttests, p=table4p)
+
+# Table 5
+table5ttests <- c(Ngroupet,Egroupet,Ogroupet,Agroupet,Cgroupet,N1groupet,N2groupet,N3groupet,N4groupet,N5groupet,N6groupet,E1groupet,E2groupet,E3groupet,E4groupet,E5groupet,E6groupet,O1groupet,O2groupet,O3groupet,O4groupet,O5groupet,O6groupet,A1groupet,A2groupet,A3groupet,A4groupet,A5groupet,A6groupet,C1groupet,C2groupet,C3groupet,C4groupet,C5groupet,C6groupet)
+table5p <- c(Ngroupep,Egroupep,Ogroupep,Agroupep,Cgroupep,N1groupep,N2groupep,N3groupep,N4groupep,N5groupep,N6groupep,E1groupep,E2groupep,E3groupep,E4groupep,E5groupep,E6groupep,O1groupep,O2groupep,O3groupep,O4groupep,O5groupep,O6groupep,A1groupep,A2groupep,A3groupep,A4groupep,A5groupep,A6groupep,C1groupep,C2groupep,C3groupep,C4groupep,C5groupep,C6groupep)
+table5 <- data.frame(Variables = table1variables, Sentenced =table5meansentenced, Forensic = table5meanforensic, t=table5ttests, p=table5p)
+
+# Table 6
+table6ttests <- c(paranoiaquegroupet,schizoidegroupet,schizotypiquegroupet,antisocialegroupet,borderlinegroupet,histrioniquegroupet,narcissiquegroupet,evitantegroupet,dependantegroupet,dependante_revisiongroupet,obsessionnelle_compulsivegroupet,psychopathiegroupet)
+table6p <- c(paranoiaquegroupep,schizoidegroupep,schizotypiquegroupep,antisocialegroupep,borderlinegroupep,histrioniquegroupep,narcissiquegroupep,evitantegroupep,dependantegroupep,dependante_revisiongroupep,obsessionnelle_compulsivegroupep,psychopathiegroupep)
+table6 <- data.frame(Variables = table2variables, Sentenced=table6meansentenced, Forensic = table6meanforensic, t=table6ttests, p=table6p)
+
+# Corrélations
+
+corageparanoiaque <- cor.test(age, paranoiaque, method = "pearson", use = "pairwise")
+corageschizoide <- cor.test(age, schizoide, method = "pearson", use = "pairwise")
+corageschizotypique <- cor.test(age, schizotypique, method = "pearson", use = "pairwise")
+corageantisociale <- cor.test(age, antisociale, method = "pearson", use = "pairwise")
+corageborderline <- cor.test(age, borderline, method = "pearson", use = "pairwise")
+coragehistrionique <- cor.test(age, histrionique, method = "pearson", use = "pairwise")
+coragenarcissique <- cor.test(age, narcissique, method = "pearson", use = "pairwise")
+corageevitante <- cor.test(age, evitante, method = "pearson", use = "pairwise")
+coragedependante <- cor.test(age, dependante, method = "pearson", use = "pairwise")
+coragedependante_revision <- cor.test(age, dependante_revision, method = "pearson", use = "pairwise")
+corageobsessionnelle_compulsive <- cor.test(age, obsessionnelle_compulsive, method = "pearson", use = "pairwise")
+coragepsychopathie <- cor.test(age, psychopathie, method = "pearson", use = "pairwise")
+
+corpdage.df <- data.frame(
+   Variables = table2variables, 
+   r = c(printnum(corageparanoiaque$estimate),printnum(corageschizoide$estimate),printnum(corageschizotypique$estimate),printnum(corageantisociale$estimate),printnum(corageborderline$estimate),printnum(coragehistrionique$estimate), printnum(coragenarcissique$estimate),printnum(corageevitante$estimate),printnum(coragedependante$estimate),printnum(coragedependante_revision$estimate),printnum(corageobsessionnelle_compulsive$estimate),printnum(coragepsychopathie$estimate)),
+  p = c(printp(corageparanoiaque$p.value),printp(corageschizoide$p.value),printp(corageschizotypique$p.value),printp(corageantisociale$p.value),printp(corageborderline$p.value),printp(coragehistrionique$p.value), printp(coragenarcissique$p.value),printp(corageevitante$p.value),printp(coragedependante$p.value),printp(coragedependante_revision$p.value),printp(corageobsessionnelle_compulsive$p.value),printp(coragepsychopathie$p.value))
+)
 
 ```
 
@@ -651,16 +841,34 @@ apa_table(
 Table \@ref(tab:table4) also shows that three personality disorders are different for women than to men: they have more features of dependent, avoidant personality and less features of psychopathy.
 
 
-On the legal status, five psychological variables distinguish the sentenced inmates from the forensic patients. Forensic patients score higher in Neuroticism, t(260) = 2.62, p = .009, d = .62, self-consciousness, t(260) = 2.71, p = .007, d = .66, vulnerability, t(260) = 2.36, p =. 019, d =.32 and lower scores in Conscience, t(260) = - 2.41 p = .017, d = -.58, self-discipline, t(260) = - 3.14, p = .002, d = -.70. Four personality disorders are also different in the two groups. Forensic patients have higher scores in schizotypal personality, t(260) = -2.85, p =. 005, d = .74, borderline personality, t(260) = 2.16, p = .032, d = .55, revised dependent personality, t(260) = 2.89, p = .004, d = .73 and a lower score in obsessive compulsive personality disorder, t(260) = - 2.41, p = .017, d = -.54.
- 
-The age of inmates influenced the scores on eight of  the twelve personality disorders: paranoid personality (r = -.14, p = .02), antisocial personality (r = -.21, p = .001), psychopathy (r = -.19, p = .002), borderline personality (r = -.22, p = .001), histrionic personality (r = -.19, p = .002), narcissistic personality (r = -.21, p =. 001), the revised dependent personality (r = -.19, p = .002) and obsessive compulsive personality disorder (r = .23, p < .001). 
- 
-Table 5 shows that the twelve variables of the NEO PI-R personality disorders can be resolved to just three factors that explain respectively 41 %, 33 % and 17 % (in total 92 %) of the variance. Loadings > .5 are highlighted in the table. The first factor clearly shows that the variables of cluster B (dramatic, emotional, or erratic disorders) to which we added psychopathy and C (anxious and fearful disorders) are opposite. High scores on this first factor refer to the tendency to externalize conflicts, to be self-confident and assertive; on the other hand, low scores refer to the tendency to internalize conflicts, to be dependent on others and to be cautious. The second factor consists of variables in the cluster A (eccentric disorders) plus borderline, avoidant personality and the revised dependent personality. The two assessment methods of the dependent personality proposed by Miller et al. (2008) raise a problem because they do not appear to refer to the same psychological factor. Therefore, these two variables create a third factor in the analysis that could be seen as a bias in the assessment of the dependant personality.
-Therefore, we would be tempted to retain only the first two factors.
-The first factor of externalizing is correlated with age (r = -. 15, p = .02) and gender (R = .17, p = .0045 of the inmates. Men have higher scores than women for externalizing.
- 
-Table 6 proposes a factor structure with varimax variation without the revised dependent personality variable. Three other factors emerge and also account for 92 % of the variance. The first factor refers to a psychopathic antisociality, tainted by suspicion. The second factor refers to alienation and feelings of strangeness. The third factor refers to an unstable, more emotional, more disorganized antisociality.
+```{r table5, results = "asis"}
+apa_table(
+  table5
+  , caption = "Comparison of the 35 NEO PI-R variables for sentenced and forensic Belgian inmates"
+)
+```
 
+
+```{r table6, results = "asis"}
+apa_table(
+  table6
+  , caption = "Comparison of the 12 NEO PI-R Personality Disorders variables for sentenced and forensic Belgian inmates"
+)
+```
+
+Table \@ref(tab:table5) and Table \@ref(tab:table6) compare the scores of forensic with sentenced inmates
+Thirteen psychological variables distinguish the sentenced inmates from the forensic patients. Three personality disorders are also different in the two groups. 
+
+```{r table7, results = "asis"}
+apa_table(
+  corpdage.df
+  , caption = "Pearson correlations between personality disorders and age for Belgian inmates"
+)
+```
+
+Table \@ref(tab:table7) show the correlations between age the the twelve personality disorders.
+
+ 
 
 # Discussion
 
