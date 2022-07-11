@@ -2082,7 +2082,7 @@ function init_posts_list() {
     var src = $(img).attr('data-src');
     if (src) {
       $(img).attr('src', src);
-      $(img).load(function() {
+      $(img).on("load", function() {
         img.removeAttribute('data-src');
       });
     }
@@ -2128,6 +2128,7 @@ function init_posts_list() {
 
       // mark posts that match the category visible
       var page_category = window.location.hash.replace(/^#category:/, "");
+      page_category = decodeURIComponent(page_category)
       var posts = $('.post-metadata').map(function(idx, script) {
         var metadata = $.parseJSON($(script).html());
         var post = null;
@@ -2143,7 +2144,7 @@ function init_posts_list() {
       set_posts_visible(posts, true);
 
       // mark the hash active
-      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
+      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
 
       // update the list_caption
       var list_caption = $('.posts-list-caption');
@@ -2249,11 +2250,13 @@ reading what we have to say!</p>
 <div class="dt-author">Benjamin Thiry</div>
 </div>
 </div>
-<div class="thumbnail"></div>
+<div class="thumbnail">
+<img src="posts/2021-08-03-personality-inmates/personality-inmates_files/figure-html5/domains-1.png"/>
+</div>
 <div class="description">
 <h2>An Assessment of Personality Disorders with the Five-Factor Model among Belgian Inmates</h2>
 <div class="dt-tags"></div>
-<p>Many international studies report a high prevalence of personality disorders among inmates on the basis of (semi) - structured diagnostic interviews. The present study proposes a self-reported evaluation of personality disorders using the NEO PI-R. The sample consists of 244 male and 18 female inmates (N = 262) who were psychologically assessed. The analysis of the five psychological domains shows that the French-speaking Belgian inmates are as stable, as extroverted, more closed, more agreeable and more conscientious than the normative sample. The NEO PI-R facets are also analysed. The mean Cohen’s d (. 26) is small. Two personality disorders have medium effect sizes: obsessive compulsive personality disorder (high) and histrionic personality (low). Small effect sizes exist for antisocial personality (low), psychopathy (low), narcissistic personality (low), schizoid personality (high) and borderline personality (low). In our view, the context of the assessment can partially explain these results but not entirely. The results do not confirm previous studies and question the high rates of psychiatric prevalence in prison.</p>
+<p>Many international studies report a high prevalence of personality disorders among inmates on the basis of (semi) - structured diagnostic interviews. The present study proposes a self-reported evaluation of personality disorders using the NEO PI-R. The sample consists of 297 male and 26 female inmates (N = 323) who were psychologically assessed. The analysis of the five psychological domains shows that the French-speaking Belgian inmates are as stable, as extroverted, more closed, more agreeable and more conscientious than the normative sample. The NEO PI-R facets are also analysed. The mean Cohen’s d (.26) is small. Two personality disorders have medium effect sizes: obsessive compulsive personality disorder (high) and histrionic personality (low). Small effect sizes exist for antisocial personality (low), psychopathy (low), narcissistic personality (low), schizoid personality (high) and borderline personality (low). In our view, the context of the assessment can partially explain these results but not entirely. The results do not confirm previous studies and question the high rates of psychiatric prevalence in prison.</p>
 </div>
 </a>
 </div>
@@ -2261,7 +2264,7 @@ reading what we have to say!</p>
 <a href="#">More articles &raquo;</a>
 </div>
 </div>
-<!--/radix_placeholder_article_listing-->
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
 <h1>Blog de Benjamin Thiry</h1>
@@ -2289,6 +2292,4 @@ reading what we have to say!</p>
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->
 
-</body>
-
-</html>
+</

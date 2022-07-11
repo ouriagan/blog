@@ -7,3 +7,6 @@ description: |
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+Né en 1975 à Bruxelles, je réside en Belgique.
+Psychologue de formation, je m’intéresse à la personnalité sous plusieurs facettes. J’aime m’intéresser à l’histoire de ma discipline et en dégager les héritages idéologiques. Elle dispose de plusieurs paradigmes (parfois contradictoires), ce qui lui confère une dimension hybride et donc passionnante.
