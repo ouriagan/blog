@@ -1,7 +1,7 @@
-name: "blog"
-title: "Blog de Benjamin Thiry"
+name: "Psychologie et délinquence"
+title: "Psychologie et délinquance"
 description: |
-  Blog de Benjamin Thiry
+  Ce blog consacré au lien entre la psychologie et la délinquance. Il est tenu par Benjamin Thiry
 output_dir: "_site"
 navbar:
   right:

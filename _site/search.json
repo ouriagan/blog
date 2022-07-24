@@ -2,18 +2,18 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this blog",
-      "description": "Some additional details about the blog",
+      "title": "Qui écrit ce blog ?",
+      "description": "Quelques informations à mon propos",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-15T18:08:32+02:00"
+      "contents": "\r\n\r\n\r\nNé en 1975 à Bruxelles, je réside en Belgique. Psychologue de\r\nformation, je m’intéresse à la personnalité sous plusieurs facettes.\r\nJ’aime m’intéresser à l’histoire de ma discipline et en dégager les\r\nhéritages idéologiques.\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-07-24T17:03:32+02:00"
     },
     {
       "path": "index.html",
-      "title": "Blog de Benjamin Thiry",
+      "title": "Psychologie et délinquance",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-15T18:08:33+02:00"
+      "last_modified": "2022-07-24T17:03:33+02:00"
     }
   ],
   "collections": ["posts/posts.json"]

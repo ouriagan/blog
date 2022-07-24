@@ -1,14 +1,12 @@
 ---
-title: "Welcome to Blog de Benjamin Thiry"
+title: "Psychologie et délinquance"
 description: |
-  Welcome to our new blog, Blog de Benjamin Thiry. We hope you enjoy 
-  reading what we have to say!
+  Bienvenue sur ce blog consacré au lien entre la psychologie et la délinquance. Il est tenu par Benjamin Thiry.
 author:
   - name: Benjamin Thiry 
     url: https://benjaminthiry.netlify.app/
     affiliation: Mons University
-    affiliation_url: https://example.com/spacelysprokets
-date: 08-03-2021
+    date: 08-03-2021
 output:
   distill::distill_article:
     self_contained: false
