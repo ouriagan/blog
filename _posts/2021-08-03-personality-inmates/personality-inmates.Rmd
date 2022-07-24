@@ -16,984 +16,610 @@ output:
     toc: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-library(readxl)
-library(dplyr)
-library(papaja)
-library(psych)
-library(rmarkdown)
-neototal <- read_excel("C:/Users/Ouriagan/OneDrive/NEOPIR/neototal.xlsx")
-attach(neototal)
-neoinmates <- filter(neototal, groupe == 'condamné'| groupe == 'interné')
-detach(neototal)
-attach(neoinmates)
-
-# PD scores
-
-paranoiaque = N2+(32-E1)+ (32-E2) + (32-O4) + (32-O6) + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A6)
-schizoide = (32-E1) + (32-E2) + (32-E3) + (32-E4) + (32-E5) + (32-E6) + (32-O3) + (32-O4)
-schizotypique = N1 + N4 + (32-E1) + (32-E2) + (32-E6) + E5 + (32-C2)
-antisociale = (32-N1) + N2 + (32-N4) + N5 + E3 + E4 + E5 + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6) + (32-A3) + (32-C5) + (32-C6)
-borderline = N1 + N2 + N3 + N5 + N6 + O3 + O4 + (32-A4) + (32-O6)
-histrionique = (32-N4) + N5 + E2 + E4 + E5 + E6 + O1 + O4 + A1 + (32-C5) + (32-C6)
-narcissique = N2 + (32-N4) + (32-E1) + E3 + E5 + O3 + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6)
-evitante = N1 + N4 + (32-N5) + N6 + (32-E2) + (32-E5) + (32-E6) + (32-O4) + A5
-dependante = N1 + N4 + N6 + (32-E3) + A1 + A4 + A5
-dependante_revision = N1 + N3 + N4 + N6 + (32-C1) + (32-C5) 
-obsessionnelle_compulsive = N1 + (32-N5) + (32-O3) + (32-O4) + (32-O5) + (32-O6) + C1 + C2 + C3 + C4 + C5 + C6
-psychopathie = (32-N1) + (32-N3) + (32-N4) + N5 + (32-N6) + (32-E1) + E3 + E5 + (32-O3) + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6) + C1 + (32-C3) + (32-C5) + (32-C6)
-
-#N
-ntotal <- length(N)
-
-#age
-meanage <- round(mean(age, na.rm = TRUE), digit = 2)
-sdage <- round(sd(age, na.rm = TRUE), digit = 2)
-minage <- round(min(age, na.rm = TRUE), digit = 2)
-maxage <- round(max(age, na.rm = TRUE), digit = 2)
-
-#sexe
-nofmen <-length(which(sexe == "M")) 
-nofmenpercentage <- round(100*(length(which(sexe == "M"))/length(sexe)), digit = 0)
-
-nofwomen <- length(which(sexe == "F")) 
-nofwomenpercentage <- round(100*(length(which(sexe == "F"))/length(sexe)), digit = 0)
-
-#group
-nofcondamnes <-length(which(groupe == "condamné")) 
-nofcondamnespercentage <- round(100*(length(which(groupe == "condamné"))/length(sexe)), digit = 0)
-nofinternes <-length(which(groupe == "interné")) 
-nofinternespercentage <- round(100*(length(which(groupe == "interné"))/length(sexe)), digit = 0)
-
-# alpha
-Nitems.df = data.frame(N1, N2, N3, N4, N5, N6)
-Eitems.df = data.frame(E1, E2, E3, E4, E5, E6)
-Oitems.df = data.frame(O1, O2, O3, O4, O5, O6)
-Aitems.df = data.frame(A1, A2, A3, A4, A5, A6)
-Citems.df = data.frame(C1, C2, C3, C4, C5, C6)
-
-# validity
-meannpm <- round(mean(npm, na.rm = TRUE), digit = 2)
-sdnpm <- round(sd(npm, na.rm = TRUE), digit = 2)
-ttestnpm <- t.test(npm,mu=8.93)
-ttestnpmpvalue <- round(ttestnpm$p.value,  digit = 3) 
-deltanpm <- round(((meannpm-8.93)/4.18), digit = 2)   
-meanppm <- round(mean(ppm, na.rm = TRUE), digit = 2)
-sdppm <- round(sd(ppm, na.rm = TRUE), digit = 2)
-ttestppm <- t.test(ppm,mu=20.72)
-ttestppmpvalue <- round(ttestppm$p.value,  digit = 3) 
-deltappm <- round(((meanppm-20.72)/4.01), digit = 2)   
-meaninc <- round(mean(inc, na.rm = TRUE), digit = 2)
-sdinc <- round(sd(inc, na.rm = TRUE), digit = 2)
-ttestinc <- t.test(inc,mu=6.35)
-ttestincpvalue <- round(ttestinc$p.value,  digit = 3) 
-deltainc <- round(((meaninc-6.35)/2.89), digit = 2)   
-
-# notes t des domaines
-
-Neuro <- 10*((N-96.28)/22.05)+50
-Extra <- 10*((E-101.01)/19.40)+50
-Open <- 10*((O-107.46)/17.50)+50
-Agree <- 10*((A-114.48)/16.70)+50
-Consc <- 10*((C-119.13)/19.17)+50
-domaines_t.df <- data.frame(Neuro, Extra, Open, Agree, Consc)
-
-# domaines_t2.df <- data.frame(Domain = c("N", "E", "O", "A", "C"), tscore = c(N_t, E_t, O_t, A_t, C_t))
-
-
-
-# t tests N
-ttestN <- t.test(N,mu=96.28)
-ttestNpvalue <- round(ttestN$p.value,  digit = 3) 
-ttestNparameter <- round(ttestN$parameter,  digit = 3)  
-ttestNstatistic <- round(ttestN$statis,  digit = 3) 
-deltaN <- (mean(N)-96.28)/22.05    
-# t tests E
-ttestE <- t.test(E,mu=101.01)
-ttestEpvalue <- round(ttestE$p.value,  digit = 3) 
-ttestEparameter <- round(ttestE$parameter,  digit = 3)  
-ttestEstatistic <- round(ttestE$statis,  digit = 3) 
-deltaE <- (mean(E)-101.01)/19.40
-# t test O
-ttestO <- t.test(O,mu=107.46)
-ttestOpvalue <- round(ttestO$p.value,  digit = 3) 
-ttestOparameter <- round(ttestO$parameter,  digit = 3)  
-ttestOstatistic <- round(ttestO$statis,  digit = 3) 
-deltaO <- (mean(O)-107.46)/17.50
-# t test A
-ttestA <- t.test(A,mu=114.48)
-ttestApvalue <- round(ttestA$p.value,  digit = 3) 
-ttestAparameter <- round(ttestA$parameter,  digit = 3)  
-ttestAstatistic <- round(ttestA$statis,  digit = 3) 
-deltaA <- (mean(A)-114.48)/16.70
-# t test C
-ttestC <- t.test(C,mu=119.13)
-ttestCpvalue <- round(ttestC$p.value,  digit = 3) 
-ttestCparameter <- round(ttestC$parameter,  digit = 3)  
-ttestCstatistic <- round(ttestC$statis,  digit = 3) 
-deltaC <- (mean(C)-119.13)/19.17
-# t test N1
-ttestN1 <- t.test(N1,mu=18.48)
-ttestN1pvalue <- round(ttestN1$p.value,  digit = 3) 
-ttestN1parameter <- round(ttestN1$parameter,  digit = 3)  
-ttestN1statistic <- round(ttestN1$statis,  digit = 3) 
-deltaN1 <- (mean(N1)-18.48)/5.87
-# t test N2
-ttestN2 <- t.test(N2,mu=15.74)
-ttestN2pvalue <- round(ttestN2$p.value,  digit = 3) 
-ttestN2parameter <- round(ttestN2$parameter,  digit = 3)  
-ttestN2statistic <- round(ttestN2$statis,  digit = 3) 
-deltaN2 <- (mean(N2)-15.74)/4.64
-# t test N3
-ttestN3 <- t.test(N3,mu=16.3)
-ttestN3pvalue <- round(ttestN3$p.value,  digit = 3) 
-ttestN3parameter <- round(ttestN3$parameter,  digit = 3)  
-ttestN3statistic <- round(ttestN3$statis,  digit = 3) 
-deltaN3 <- (mean(N3)-16.3)/5.34
-# t test N4
-ttestN4 <- t.test(N4,mu=15.77)
-ttestN4pvalue <- round(ttestN4$p.value,  digit = 3) 
-ttestN4parameter <- round(ttestN4$parameter,  digit = 3)  
-ttestN4statistic <- round(ttestN4$statis,  digit = 3) 
-deltaN4 <- (mean(N4)-15.77)/5.09
-# t test N5
-ttestN5 <- t.test(N5,mu=17.24)
-ttestN5pvalue <- round(ttestN5$p.value,  digit = 3) 
-ttestN5parameter <- round(ttestN5$parameter,  digit = 3)  
-ttestN5statistic <- round(ttestN5$statis,  digit = 3) 
-deltaN5 <- (mean(N5)-17.24)/4.46
-# t test N6
-ttestN6 <- t.test(N6,mu=12.76)
-ttestN6pvalue <- round(ttestN6$p.value,  digit = 3) 
-ttestN6parameter <- round(ttestN6$parameter,  digit = 3)  
-ttestN6statistic <- round(ttestN6$statis,  digit = 3) 
-deltaN6 <- (mean(N6)-12.76)/4.36
-# t test E1
-ttestE1 <- t.test(E1,mu=21.29)
-ttestE1pvalue <- round(ttestE1$p.value,  digit = 3) 
-ttestE1parameter <- round(ttestE1$parameter,  digit = 3)  
-ttestE1statistic <- round(ttestE1$statis,  digit = 3) 
-deltaE1 <- (mean(E1)-21.29)/4.83
-# t test E2
-ttestE2 <- t.test(E2,mu=13.94)
-ttestE2pvalue <- round(ttestE2$p.value,  digit = 3) 
-ttestE2parameter <- round(ttestE2$parameter,  digit = 3)  
-ttestE2statistic <- round(ttestE2$statis,  digit = 3) 
-deltaE2 <- (mean(E2)-13.94)/4.99
-# t test E3
-ttestE3 <- t.test(E3,mu=15.72)
-ttestE3pvalue <- round(ttestE3$p.value,  digit = 3) 
-ttestE3parameter <- round(ttestE3$parameter,  digit = 3)  
-ttestE3statistic <- round(ttestE3$statis,  digit = 3) 
-deltaE3 <- (mean(E3)-15.72)/4.74
-# t test E4
-ttestE4 <- t.test(E4,mu=17.13)
-ttestE4pvalue <- round(ttestE4$p.value,  digit = 3) 
-ttestE4parameter <- round(ttestE4$parameter,  digit = 3)  
-ttestE4statistic <- round(ttestE4$statis,  digit = 3) 
-deltaE4 <- (mean(E4)-17.13)/4.67
-# t test E5
-ttestE5 <- t.test(E5,mu=14.64)
-ttestE5pvalue <- round(ttestE5$p.value,  digit = 3) 
-ttestE5parameter <- round(ttestE5$parameter,  digit = 3)  
-ttestE5statistic <- round(ttestE5$statis,  digit = 3) 
-deltaE5 <- (mean(E5)-14.64)/5.75
-# t test E6
-ttestE6 <- t.test(E6,mu=18.29)
-ttestE6pvalue <- round(ttestE6$p.value,  digit = 3) 
-ttestE6parameter <- round(ttestE6$parameter,  digit = 3)  
-ttestE6statistic <- round(ttestE6$statis,  digit = 3) 
-deltaE6 <- (mean(E6)-18.29)/4.82
-# t test O1
-ttestO1 <- t.test(O1,mu=16.9)
-ttestO1pvalue <- round(ttestO1$p.value,  digit = 3) 
-ttestO1parameter <- round(ttestO1$parameter,  digit = 3)  
-ttestO1statistic <- round(ttestO1$statis,  digit = 3) 
-deltaO1 <- (mean(O1)-16.9)/4.42
-# t test O2
-ttestO2 <- t.test(O2,mu=17.41)
-ttestO2pvalue <- round(ttestO2$p.value,  digit = 3) 
-ttestO2parameter <- round(ttestO2$parameter,  digit = 3)  
-ttestO2statistic <- round(ttestO2$statis,  digit = 3) 
-deltaO2 <- (mean(O2)-17.41)/5.36
-# t test O3
-ttestO3 <- t.test(O3,mu=20.32)
-ttestO3pvalue <- round(ttestO3$p.value,  digit = 3) 
-ttestO3parameter <- round(ttestO3$parameter,  digit = 3)  
-ttestO3statistic <- round(ttestO3$statis,  digit = 3) 
-deltaO3 <- (mean(O3)-20.32)/3.88
-# t test O4
-ttestO4 <- t.test(O4,mu=16.10)
-ttestO4pvalue <- round(ttestO4$p.value,  digit = 3) 
-ttestO4parameter <- round(ttestO4$parameter,  digit = 3)  
-ttestO4statistic <- round(ttestO4$statis,  digit = 3) 
-deltaO4 <- (mean(O4)-16.10)/3.89
-# t test O5
-ttestO5 <- t.test(O5,mu=18.51)
-ttestO5pvalue <- round(ttestO5$p.value,  digit = 3) 
-ttestO5parameter <- round(ttestO5$parameter,  digit = 3)  
-ttestO5statistic <- round(ttestO5$statis,  digit = 3) 
-deltaO5 <- (mean(O5)-18.51)/5.08
-# t test O6
-ttestO6 <- t.test(O6,mu=18.22)
-ttestO6pvalue <- round(ttestO6$p.value,  digit = 3) 
-ttestO6parameter <- round(ttestO6$parameter,  digit = 3)  
-ttestO6statistic <- round(ttestO6$statis,  digit = 3) 
-deltaO6 <- (mean(O6)-18.22)/3.44
-# t test A1
-ttestA1 <- t.test(A1,mu=14.58)
-ttestA1pvalue <- round(ttestA1$p.value,  digit = 3) 
-ttestA1parameter <- round(ttestA1$parameter,  digit = 3)  
-ttestA1statistic <- round(ttestA1$statis,  digit = 3) 
-deltaA1 <- (mean(A1)-14.58)/4.72
-# t test A2
-ttestA2 <- t.test(A2,mu=21.51)
-ttestA2pvalue <- round(ttestA2$p.value,  digit = 3) 
-ttestA2parameter <- round(ttestA2$parameter,  digit = 3)  
-ttestA2statistic <- round(ttestA2$statis,  digit = 3) 
-deltaA2 <- (mean(A2)-21.51)/5.12
-# t test A3
-ttestA3 <- t.test(A3,mu=22.20)
-ttestA3pvalue <- round(ttestA3$p.value,  digit = 3) 
-ttestA3parameter <- round(ttestA3$parameter,  digit = 3)  
-ttestA3statistic <- round(ttestA3$statis,  digit = 3) 
-deltaA3 <- (mean(A3)-22.20)/4.19
-# t test A4
-ttestA4 <- t.test(A4,mu=14.32)
-ttestA4pvalue <- round(ttestA4$p.value,  digit = 3) 
-ttestA4parameter <- round(ttestA4$parameter,  digit = 3)  
-ttestA4statistic <- round(ttestA4$statis,  digit = 3) 
-deltaA4 <- (mean(A4)-14.32)/4.27
-# t test A5
-ttestA5 <- t.test(A5,mu=19.77)
-ttestA5pvalue <- round(ttestA5$p.value,  digit = 3) 
-ttestA5parameter <- round(ttestA5$parameter,  digit = 3)  
-ttestA5statistic <- round(ttestA5$statis,  digit = 3) 
-deltaA5 <- (mean(A5)-19.77)/4.26
-# t test A6
-ttestA6 <- t.test(A6,mu=22.11)
-ttestA6pvalue <- round(ttestA6$p.value,  digit = 3) 
-ttestA6parameter <- round(ttestA6$parameter,  digit = 3)  
-ttestA6statistic <- round(ttestA6$statis,  digit = 3) 
-deltaA6 <- (mean(A6)-22.11)/4.43
-# t test C1
-ttestC1 <- t.test(C1,mu=19.64)
-ttestC1pvalue <- round(ttestC1$p.value,  digit = 3) 
-ttestC1parameter <- round(ttestC1$parameter,  digit = 3)  
-ttestC1statistic <- round(ttestC1$statis,  digit = 3) 
-deltaC1 <- (mean(C1)-19.64)/3.48
-# t test C2
-ttestC2 <- t.test(C2,mu=19.38)
-ttestC2pvalue <- round(ttestC2$p.value,  digit = 3) 
-ttestC2parameter <- round(ttestC2$parameter,  digit = 3)  
-ttestC2statistic <- round(ttestC2$statis,  digit = 3) 
-deltaC2 <- (mean(C2)-19.38)/5.58
-# t test C3
-ttestC3 <- t.test(C3,mu=22.25)
-ttestC3pvalue <- round(ttestC3$p.value,  digit = 3) 
-ttestC3parameter <- round(ttestC3$parameter,  digit = 3)  
-ttestC3statistic <- round(ttestC3$statis,  digit = 3) 
-deltaC3 <- (mean(C3)-22.25)/3.27
-# t test C4
-ttestC4 <- t.test(C4,mu=19.18)
-ttestC4pvalue <- round(ttestC4$p.value,  digit = 3) 
-ttestC4parameter <- round(ttestC4$parameter,  digit = 3)  
-ttestC4statistic <- round(ttestC4$statis,  digit = 3) 
-deltaC4 <- (mean(C4)-19.18)/4.54
-# t test C5
-ttestC5 <- t.test(C5,mu=20.09)
-ttestC5pvalue <- round(ttestC5$p.value,  digit = 3) 
-ttestC5parameter <- round(ttestC5$parameter,  digit = 3)  
-ttestC5statistic <- round(ttestC5$statis,  digit = 3) 
-deltaC5 <- (mean(C5)-20.09)/4.31
-# t test C6
-ttestC6 <- t.test(C6,mu=18.59)
-ttestC6pvalue <- round(ttestC6$p.value,  digit = 3) 
-ttestC6parameter <- round(ttestC6$parameter,  digit = 3)  
-ttestC6statistic <- round(ttestC6$statis,  digit = 3) 
-deltaC6 <- (mean(C6)-18.59)/4.43
-
-deltamean <- (abs(deltaN1)+abs(deltaN2)+abs(deltaN3)+abs(deltaN4)+abs(deltaN5)+abs(deltaN6)+abs(deltaE1)+abs(deltaE2)+abs(deltaE3)+abs(deltaE4)+abs(deltaE5)+abs(deltaE6)+abs(deltaO1)+abs(deltaO2)+abs(deltaO3)+abs(deltaO4)+abs(deltaO5)+abs(deltaO6)+abs(deltaA1)+abs(deltaA2)+abs(deltaA3)+abs(deltaA4)+abs(deltaA5)+abs(deltaA6)+abs(deltaC1)+abs(deltaC2)+abs(deltaC3)+abs(deltaC4)+abs(deltaC5)+abs(deltaC6))/30
-
-# t test paranoiaque
-ttestparanoiaque <- t.test(paranoiaque,mu=123.6)
-ttestparanoiaquepvalue <- round(ttestparanoiaque$p.value,  digit = 3) 
-ttestparanoiaqueparameter <- round(ttestparanoiaque$parameter,  digit = 3)  
-ttestparanoiaquestatistic <- round(ttestparanoiaque$statis,  digit = 3) 
-deltaparanoiaque <- (mean(paranoiaque)-123.6)/25.25
-# t test schizoide
-ttestschizoide <- t.test(schizoide,mu=107.6)
-ttestschizoidepvalue <- round(ttestschizoide$p.value,  digit = 3) 
-ttestschizoideparameter <- round(ttestschizoide$parameter,  digit = 3)  
-ttestschizoidestatistic <- round(ttestschizoide$statis,  digit = 3) 
-deltaschizoide <- (mean(schizoide)-107.6)/22.24
-# t test schizotypique
-ttestschizotypique <- t.test(schizotypique,mu=103)
-ttestschizotypiquepvalue <- round(ttestschizotypique$p.value,  digit = 3) 
-ttestschizotypiqueparameter <- round(ttestschizotypique$parameter,  digit = 3)  
-ttestschizotypiquestatistic <- round(ttestschizotypique$statis,  digit = 3) 
-deltaschizotypique <- (mean(schizotypique)-103)/17.41
-# t test antisociale
-ttestantisociale <- t.test(antisociale,mu=236.6)
-ttestantisocialepvalue <- round(ttestantisociale$p.value,  digit = 3) 
-ttestantisocialeparameter <- round(ttestantisociale$parameter,  digit = 3)  
-ttestantisocialestatistic <- round(ttestantisociale$statis,  digit = 3) 
-deltaantisociale <- (mean(antisociale)-236.6)/31.32
-# t test psychopathie
-ttestpsychopathie <- t.test(psychopathie,mu=279.7)
-ttestpsychopathiepvalue <- round(ttestpsychopathie$p.value,  digit = 3) 
-ttestpsychopathieparameter <- round(ttestpsychopathie$parameter,  digit = 3)  
-ttestpsychopathiestatistic <- round(ttestpsychopathie$statis,  digit = 3) 
-deltapsychopathie <- (mean(psychopathie)-279.7)/31.33
-
-# t test borderline
-ttestborderline <- t.test(borderline,mu=144.1)
-ttestborderlinepvalue <- round(ttestborderline$p.value,  digit = 3) 
-ttestborderlineparameter <- round(ttestborderline$parameter,  digit = 3)  
-ttestborderlinestatistic <- round(ttestborderline$statis,  digit = 3) 
-deltaborderline <- (mean(borderline)-144.1)/24.92
-# t test histrionique
-ttesthistrionique <- t.test(histrionique,mu=208.6)
-ttesthistrioniquepvalue <- round(ttesthistrionique$p.value,  digit = 3) 
-ttesthistrioniqueparameter <- round(ttesthistrionique$parameter,  digit = 3)  
-ttesthistrioniquestatistic <- round(ttesthistrionique$statis,  digit = 3) 
-deltahistrionique <- (mean(histrionique)-208.6)/26.18
-# t test narcissique
-ttestnarcissique <- t.test(narcissique,mu=170.1)
-ttestnarcissiquepvalue <- round(ttestnarcissique$p.value,  digit = 3) 
-ttestnarcissiqueparameter <- round(ttestnarcissique$parameter,  digit = 3)  
-ttestnarcissiquestatistic <- round(ttestnarcissique$statis,  digit = 3) 
-deltanarcissique <- (mean(narcissique)-170.1)/24.83
-# t test evitante
-ttestevitante <- t.test(evitante,mu=155.6)
-ttestevitantepvalue <- round(ttestevitante$p.value,  digit = 3) 
-ttestevitanteparameter <- round(ttestevitante$parameter,  digit = 3)  
-ttestevitantestatistic <- round(ttestevitante$statis,  digit = 3) 
-deltaevitante <- (mean(evitante)-155.6)/25.17
-# t test dependante
-ttestdependante <- t.test(dependante,mu=119.2)
-ttestdependantepvalue <- round(ttestdependante$p.value,  digit = 3) 
-ttestdependanteparameter <- round(ttestdependante$parameter,  digit = 3)  
-ttestdependantestatistic <- round(ttestdependante$statis,  digit = 3) 
-deltadependante <- (mean(dependante)-119.2)/18.61
-# t test dependante_revision
-ttestdependante_revision <- t.test(dependante_revision,mu=88.5)
-ttestdependante_revisionpvalue <- round(ttestdependante_revision$p.value,  digit = 3) 
-ttestdependante_revisionparameter <- round(ttestdependante_revision$parameter,  digit = 3)  
-ttestdependante_revisionstatistic <- round(ttestdependante_revision$statis,  digit = 3) 
-deltadependante_revision <- (mean(dependante_revision)-88.5)/20.94
-# t test obsessionnelle_compulsive
-ttestobsessionnelle_compulsive <- t.test(obsessionnelle_compulsive,mu=213.2)
-ttestobsessionnelle_compulsivepvalue <- round(ttestobsessionnelle_compulsive$p.value,  digit = 3) 
-ttestobsessionnelle_compulsiveparameter <- round(ttestobsessionnelle_compulsive$parameter,  digit = 3)  
-ttestobsessionnelle_compulsivestatistic <- round(ttestobsessionnelle_compulsive$statis,  digit = 3) 
-deltaobsessionnelle_compulsive <- (mean(obsessionnelle_compulsive)-213.2)/28.8
-
-# Table 1
-
-table1variables <- c("N - Neuroticism","E - Extraversion","O - Openness","A - Agreeability","C - Conscientiousness", "N1 - Anxiety", "N2- Angry Hostility", "N3 - Depression", "N4 - Self-Consciousness", "N5 - Impulsiveness", "N6 - Vulnerability","E1 - Warmth", "E2 - Gregariousness", "E3 - Assertiveness", "E4 - Activity", "E5 - Excitement-Seeking", "E6 - Positive Emotions", "O1 - Fantasy", "O2 - Aesthetics", "O3 - Feelings", "O4 - Actions", "O5 - Ideas", "O6 - Values", "A1 - Trust", "A2 - Straightforwardness", "A3 - Altruism", "A4 - Compliance", "A5 - Modesty", "A6 - Tender-Mindedness", "C1 - Competence", "C2 - Order", "C3 - Dutifulness", "C4 - Achievement Striving", "C5 - Self-discipline", "C6 - Deliberation")
-table1mean <- c(mean(N), mean(E), mean(O), mean(A), mean(C), mean(N1), mean(N2), mean(N3), mean(N4), mean(N5), mean(N6), mean(E1), mean(E2), mean(E3), mean(E4), mean(E5), mean(E6), mean(O1), mean(O2), mean(O3), mean(O4), mean(O5), mean(O6), mean(A1), mean(A2), mean(A3), mean(A4), mean(A5), mean(A6), mean(C1), mean(C2), mean(C3), mean(C4), mean(C5), mean(C6))
-table1sd <- c(sd(N), sd(E), sd(O), sd(A), sd(C), sd(N1), sd(N2), sd(N3), sd(N4), sd(N5), sd(N6), sd(E1), sd(E2), sd(E3), sd(E4), sd(E5), sd(E6), sd(O1), sd(O2), sd(O3), sd(O4), sd(O5), sd(O6), sd(A1), sd(A2), sd(A3), sd(A4), sd(A5), sd(A6), sd(C1), sd(C2), sd(C3), sd(C4), sd(C5), sd(C6))
-table1ttest <- c(ttestNstatistic,ttestEstatistic,ttestOstatistic,ttestAstatistic,ttestCstatistic, ttestN1statistic, ttestN2statistic, ttestN3statistic, ttestN4statistic, ttestN5statistic, ttestN6statistic, ttestE1statistic, ttestE2statistic, ttestE3statistic, ttestE4statistic, ttestE5statistic, ttestE6statistic, ttestO1statistic, ttestO2statistic, ttestO3statistic, ttestO4statistic, ttestO5statistic, ttestO6statistic, ttestA1statistic, ttestA2statistic, ttestA3statistic, ttestA4statistic, ttestA5statistic, ttestA6statistic, ttestC1statistic, ttestC2statistic, ttestC3statistic, ttestC4statistic, ttestC5statistic, ttestC6statistic)
-table1p <- c(ttestNpvalue,ttestEpvalue,ttestOpvalue,ttestApvalue,ttestCpvalue, ttestN1pvalue, ttestN2pvalue, ttestN3pvalue, ttestN4pvalue, ttestN5pvalue, ttestN6pvalue, ttestE1pvalue, ttestE2pvalue, ttestE3pvalue, ttestE4pvalue, ttestE5pvalue, ttestE6pvalue, ttestO1pvalue, ttestO2pvalue, ttestO3pvalue, ttestO4pvalue, ttestO5pvalue, ttestO6pvalue, ttestA1pvalue, ttestA2pvalue, ttestA3pvalue, ttestA4pvalue, ttestA5pvalue, ttestA6pvalue, ttestC1pvalue, ttestC2pvalue, ttestC3pvalue, ttestC4pvalue, ttestC5pvalue, ttestC6pvalue)
-table1pbis <- printp(table1p)
-table1delta <- c(deltaN, deltaE, deltaO, deltaA, deltaC, deltaN1, deltaN2, deltaN3, deltaN4, deltaN5, deltaN6, deltaE1, deltaE2, deltaE3, deltaE4, deltaE5, deltaE6, deltaO1, deltaO2, deltaO3, deltaO4, deltaO5, deltaO6, deltaA1, deltaA2, deltaA3, deltaA4, deltaA5, deltaA6, deltaC1, deltaC2, deltaC3, deltaC4, deltaC5, deltaC6)
-table1a <- data.frame(Variables = table1variables, Mean=table1mean, SD=table1sd, t=table1ttest, p=table1pbis, Delta=table1delta)
-table1 <- printnum(table1a)
-
-# Table 2
-table2variables <- c("Paranoid", "Schizoid", "Schizotypal", "Antisocial", "Borderline", "Histrionic", "Narcissist", "Avoidant", "Dependent", "Dependent-Revised", "Obsessive-compulsive", "Psychopathy")
-table2mean <- c(mean(paranoiaque), mean(schizoide), mean(schizotypique), mean(antisociale), mean(borderline), mean(histrionique), mean(narcissique), mean(evitante), mean(dependante), mean(dependante_revision), mean(obsessionnelle_compulsive), mean(psychopathie))
-table2sd <- c(sd(paranoiaque), sd(schizoide), sd(schizotypique), sd(antisociale), sd(borderline), sd(histrionique), sd(narcissique), sd(evitante), sd(dependante), sd(dependante_revision), sd(obsessionnelle_compulsive), sd(psychopathie))
-table2ttest <- c(ttestparanoiaquestatistic,ttestschizoidestatistic,ttestschizotypiquestatistic,ttestantisocialestatistic,ttestborderlinestatistic, ttesthistrioniquestatistic, ttestnarcissiquestatistic, ttestevitantestatistic, ttestdependantestatistic, ttestdependante_revisionstatistic, ttestobsessionnelle_compulsivestatistic, ttestpsychopathiestatistic)
-table2p <- c(ttestparanoiaquepvalue,ttestschizoidepvalue,ttestschizotypiquepvalue,ttestantisocialepvalue,ttestborderlinepvalue, ttesthistrioniquepvalue, ttestnarcissiquepvalue, ttestevitantepvalue, ttestdependantepvalue, ttestdependante_revisionpvalue, ttestobsessionnelle_compulsivepvalue, ttestpsychopathiepvalue)
-table2pbis <- printp(table2p)
-table2delta <- c(deltaparanoiaque, deltaschizoide, deltaschizotypique, deltaantisociale, deltaborderline, deltahistrionique, deltanarcissique, deltaevitante, deltadependante, deltadependante_revision, deltaobsessionnelle_compulsive, deltapsychopathie)
-table2 <- data.frame(Variables = table2variables, Mean=table2mean, SD=table2sd, t=table2ttest, p=table2pbis, Delta=table2delta)
-
-# sexe
-
-neoinmatesmales <- filter(neototal, sexe == 'M')
-detach(neoinmates)
-attach(neoinmatesmales)
-paranoiaque_m = N2+(32-E1)+ (32-E2) + (32-O4) + (32-O6) + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A6)
-schizoide_m = (32-E1) + (32-E2) + (32-E3) + (32-E4) + (32-E5) + (32-E6) + (32-O3) + (32-O4)
-schizotypique_m = N1 + N4 + (32-E1) + (32-E2) + (32-E6) + E5 + (32-C2)
-antisociale_m = (32-N1) + N2 + (32-N4) + N5 + E3 + E4 + E5 + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6) + (32-A3) + (32-C5) + (32-C6)
-borderline_m = N1 + N2 + N3 + N5 + N6 + O3 + O4 + (32-A4) + (32-O6)
-histrionique_m = (32-N4) + N5 + E2 + E4 + E5 + E6 + O1 + O4 + A1 + (32-C5) + (32-C6)
-narcissique_m = N2 + (32-N4) + (32-E1) + E3 + E5 + O3 + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6)
-evitante_m = N1 + N4 + (32-N5) + N6 + (32-E2) + (32-E5) + (32-E6) + (32-O4) + A5
-dependante_m = N1 + N4 + N6 + (32-E3) + A1 + A4 + A5
-dependante_revision_m = N1 + N3 + N4 + N6 + (32-C1) + (32-C5) 
-obsessionnelle_compulsive_m = N1 + (32-N5) + (32-O3) + (32-O4) + (32-O5) + (32-O6) + C1 + C2 + C3 + C4 + C5 + C6
-psychopathie_m = (32-N1) + (32-N3) + (32-N4) + N5 + (32-N6) + (32-E1) + E3 + E5 + (32-O3) + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6) + C1 + (32-C3) + (32-C5) + (32-C6)
-table3meanmales <- c(mean(N), mean(E), mean(O), mean(A), mean(C), mean(N1), mean(N2), mean(N3), mean(N4), mean(N5), mean(N6), mean(E1), mean(E2), mean(E3), mean(E4), mean(E5), mean(E6), mean(O1), mean(O2), mean(O3), mean(O4), mean(O5), mean(O6), mean(A1), mean(A2), mean(A3), mean(A4), mean(A5), mean(A6), mean(C1), mean(C2), mean(C3), mean(C4), mean(C5), mean(C6))
-table4meanmales <- c(mean(paranoiaque_m, na.rm = TRUE), mean(schizoide_m, na.rm = TRUE), mean(schizotypique_m, na.rm = TRUE), mean(antisociale_m, na.rm = TRUE), mean(borderline_m, na.rm = TRUE), mean(histrionique_m, na.rm = TRUE), mean(narcissique_m, na.rm = TRUE), mean(evitante_m, na.rm = TRUE), mean(dependante_m, na.rm = TRUE), mean(dependante_revision_m, na.rm = TRUE), mean(obsessionnelle_compulsive_m, na.rm = TRUE), mean(psychopathie_m, na.rm = TRUE))
-detach(neoinmatesmales)
-attach(neoinmates)
-neoinmatesfemales <- filter(neototal, sexe == 'F')
-detach(neoinmates)
-attach(neoinmatesfemales)
-paranoiaque_f = N2+(32-E1)+ (32-E2) + (32-O4) + (32-O6) + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A6)
-schizoide_f = (32-E1) + (32-E2) + (32-E3) + (32-E4) + (32-E5) + (32-E6) + (32-O3) + (32-O4)
-schizotypique_f = N1 + N4 + (32-E1) + (32-E2) + (32-E6) + E5 + (32-C2)
-antisociale_f = (32-N1) + N2 + (32-N4) + N5 + E3 + E4 + E5 + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6) + (32-A3) + (32-C5) + (32-C6)
-borderline_f = N1 + N2 + N3 + N5 + N6 + O3 + O4 + (32-A4) + (32-O6)
-histrionique_f = (32-N4) + N5 + E2 + E4 + E5 + E6 + O1 + O4 + A1 + (32-C5) + (32-C6)
-narcissique_f = N2 + (32-N4) + (32-E1) + E3 + E5 + O3 + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6)
-evitante_f = N1 + N4 + (32-N5) + N6 + (32-E2) + (32-E5) + (32-E6) + (32-O4) + A5
-dependante_f = N1 + N4 + N6 + (32-E3) + A1 + A4 + A5
-dependante_revision_f = N1 + N3 + N4 + N6 + (32-C1) + (32-C5) 
-obsessionnelle_compulsive_f = N1 + (32-N5) + (32-O3) + (32-O4) + (32-O5) + (32-O6) + C1 + C2 + C3 + C4 + C5 + C6
-psychopathie_f = (32-N1) + (32-N3) + (32-N4) + N5 + (32-N6) + (32-E1) + E3 + E5 + (32-O3) + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6) + C1 + (32-C3) + (32-C5) + (32-C6)
-table3meanfemales <- c(mean(N), mean(E), mean(O), mean(A), mean(C), mean(N1), mean(N2), mean(N3), mean(N4), mean(N5), mean(N6), mean(E1), mean(E2), mean(E3), mean(E4), mean(E5), mean(E6), mean(O1), mean(O2), mean(O3), mean(O4), mean(O5), mean(O6), mean(A1), mean(A2), mean(A3), mean(A4), mean(A5), mean(A6), mean(C1), mean(C2), mean(C3), mean(C4), mean(C5), mean(C6))
-table4meanfemales <- c(mean(paranoiaque_f, na.rm = TRUE), mean(schizoide_f, na.rm = TRUE), mean(schizotypique_f, na.rm = TRUE), mean(antisociale_f, na.rm = TRUE), mean(borderline_f, na.rm = TRUE), mean(histrionique_f, na.rm = TRUE), mean(narcissique_f, na.rm = TRUE), mean(evitante_f, na.rm = TRUE), mean(dependante_f, na.rm = TRUE), mean(dependante_revision_f, na.rm = TRUE), mean(obsessionnelle_compulsive_f, na.rm = TRUE), mean(psychopathie_f, na.rm = TRUE))
-detach(neoinmatesfemales)
-attach(neoinmates)
-
-# Groupes
-neoinmatesforensic <- filter(neototal, groupe == "interné")
-detach(neoinmates)
-attach(neoinmatesforensic)
-paranoiaque_for = N2+(32-E1)+ (32-E2) + (32-O4) + (32-O6) + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A6)
-schizoide_for = (32-E1) + (32-E2) + (32-E3) + (32-E4) + (32-E5) + (32-E6) + (32-O3) + (32-O4)
-schizotypique_for = N1 + N4 + (32-E1) + (32-E2) + (32-E6) + E5 + (32-C2)
-antisociale_for = (32-N1) + N2 + (32-N4) + N5 + E3 + E4 + E5 + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6) + (32-A3) + (32-C5) + (32-C6)
-borderline_for = N1 + N2 + N3 + N5 + N6 + O3 + O4 + (32-A4) + (32-O6)
-histrionique_for = (32-N4) + N5 + E2 + E4 + E5 + E6 + O1 + O4 + A1 + (32-C5) + (32-C6)
-narcissique_for = N2 + (32-N4) + (32-E1) + E3 + E5 + O3 + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6)
-evitante_for = N1 + N4 + (32-N5) + N6 + (32-E2) + (32-E5) + (32-E6) + (32-O4) + A5
-dependante_for = N1 + N4 + N6 + (32-E3) + A1 + A4 + A5
-dependante_revision_for = N1 + N3 + N4 + N6 + (32-C1) + (32-C5) 
-obsessionnelle_compulsive_for = N1 + (32-N5) + (32-O3) + (32-O4) + (32-O5) + (32-O6) + C1 + C2 + C3 + C4 + C5 + C6
-psychopathie_for = (32-N1) + (32-N3) + (32-N4) + N5 + (32-N6) + (32-E1) + E3 + E5 + (32-O3) + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6) + C1 + (32-C3) + (32-C5) + (32-C6)
-table5meanforensic <- c(mean(N), mean(E), mean(O), mean(A), mean(C), mean(N1), mean(N2), mean(N3), mean(N4), mean(N5), mean(N6), mean(E1), mean(E2), mean(E3), mean(E4), mean(E5), mean(E6), mean(O1), mean(O2), mean(O3), mean(O4), mean(O5), mean(O6), mean(A1), mean(A2), mean(A3), mean(A4), mean(A5), mean(A6), mean(C1), mean(C2), mean(C3), mean(C4), mean(C5), mean(C6))
-table6meanforensic <- c(mean(paranoiaque_for, na.rm = TRUE), mean(schizoide_for, na.rm = TRUE), mean(schizotypique_for, na.rm = TRUE), mean(antisociale_for, na.rm = TRUE), mean(borderline_for, na.rm = TRUE), mean(histrionique_for, na.rm = TRUE), mean(narcissique_for, na.rm = TRUE), mean(evitante_for, na.rm = TRUE), mean(dependante_for, na.rm = TRUE), mean(dependante_revision_for, na.rm = TRUE), mean(obsessionnelle_compulsive_for, na.rm = TRUE), mean(psychopathie_for, na.rm = TRUE))
-detach(neoinmatesforensic)
-attach(neoinmates)
-neoinmatessentenced <- filter(neototal, groupe == "condamné")
-detach(neoinmates)
-attach(neoinmatessentenced)
-paranoiaque_sen = N2+(32-E1)+ (32-E2) + (32-O4) + (32-O6) + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A6)
-schizoide_sen = (32-E1) + (32-E2) + (32-E3) + (32-E4) + (32-E5) + (32-E6) + (32-O3) + (32-O4)
-schizotypique_sen = N1 + N4 + (32-E1) + (32-E2) + (32-E6) + E5 + (32-C2)
-antisociale_sen = (32-N1) + N2 + (32-N4) + N5 + E3 + E4 + E5 + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6) + (32-A3) + (32-C5) + (32-C6)
-borderline_sen = N1 + N2 + N3 + N5 + N6 + O3 + O4 + (32-A4) + (32-O6)
-histrionique_sen = (32-N4) + N5 + E2 + E4 + E5 + E6 + O1 + O4 + A1 + (32-C5) + (32-C6)
-narcissique_sen = N2 + (32-N4) + (32-E1) + E3 + E5 + O3 + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6)
-evitante_sen = N1 + N4 + (32-N5) + N6 + (32-E2) + (32-E5) + (32-E6) + (32-O4) + A5
-dependante_sen = N1 + N4 + N6 + (32-E3) + A1 + A4 + A5
-dependante_revision_sen = N1 + N3 + N4 + N6 + (32-C1) + (32-C5) 
-obsessionnelle_compulsive_sen = N1 + (32-N5) + (32-O3) + (32-O4) + (32-O5) + (32-O6) + C1 + C2 + C3 + C4 + C5 + C6
-psychopathie_sen = (32-N1) + (32-N3) + (32-N4) + N5 + (32-N6) + (32-E1) + E3 + E5 + (32-O3) + O4 + (32-A1) + (32-A2) + (32-A3) + (32-A4) + (32-A5) + (32-A6) + C1 + (32-C3) + (32-C5) + (32-C6)
-table5meansentenced <- c(mean(N), mean(E), mean(O), mean(A), mean(C), mean(N1), mean(N2), mean(N3), mean(N4), mean(N5), mean(N6), mean(E1), mean(E2), mean(E3), mean(E4), mean(E5), mean(E6), mean(O1), mean(O2), mean(O3), mean(O4), mean(O5), mean(O6), mean(A1), mean(A2), mean(A3), mean(A4), mean(A5), mean(A6), mean(C1), mean(C2), mean(C3), mean(C4), mean(C5), mean(C6))
-table6meansentenced <- c(mean(paranoiaque_sen, na.rm = TRUE), mean(schizoide_sen, na.rm = TRUE), mean(schizotypique_sen, na.rm = TRUE), mean(antisociale_sen, na.rm = TRUE), mean(borderline_sen, na.rm = TRUE), mean(histrionique_sen, na.rm = TRUE), mean(narcissique_sen, na.rm = TRUE), mean(evitante_sen, na.rm = TRUE), mean(dependante_sen, na.rm = TRUE), mean(dependante_revision_sen, na.rm = TRUE), mean(obsessionnelle_compulsive_sen, na.rm = TRUE), mean(psychopathie_sen, na.rm = TRUE))
-detach(neoinmatessentenced)
-attach(neoinmates)
-
-
-# t tests par sexe
-Nsexetestt <- t.test(N ~ sexe)
-Nsexet <- printnum(Nsexetestt$statistic)
-Nsexep <- printp(Nsexetestt$p.value)
-N1sexetestt <- t.test(N1 ~ sexe)
-N1sexet <- printnum(N1sexetestt$statistic)
-N1sexep <- printp(N1sexetestt$p.value)
-N2sexetestt <- t.test(N2 ~ sexe)
-N2sexet <- printnum(N2sexetestt$statistic)
-N2sexep <- printp(N2sexetestt$p.value)
-N3sexetestt <- t.test(N3 ~ sexe)
-N3sexet <- printnum(N3sexetestt$statistic)
-N3sexep <- printp(N3sexetestt$p.value)
-N4sexetestt <- t.test(N4 ~ sexe)
-N4sexet <- printnum(N4sexetestt$statistic)
-N4sexep <- printp(N4sexetestt$p.value)
-N5sexetestt <- t.test(N5 ~ sexe)
-N5sexet <- printnum(N5sexetestt$statistic)
-N5sexep <- printp(N5sexetestt$p.value)
-N6sexetestt <- t.test(N6 ~ sexe)
-N6sexet <- printnum(N6sexetestt$statistic)
-N6sexep <- printp(N6sexetestt$p.value)
-Esexetestt <- t.test(E ~ sexe)
-Esexet <- printnum(Esexetestt$statistic)
-Esexep <- printp(Esexetestt$p.value)
-E1sexetestt <- t.test(E1 ~ sexe)
-E1sexet <- printnum(E1sexetestt$statistic)
-E1sexep <- printp(E1sexetestt$p.value)
-E2sexetestt <- t.test(E2 ~ sexe)
-E2sexet <- printnum(E2sexetestt$statistic)
-E2sexep <- printp(E2sexetestt$p.value)
-E3sexetestt <- t.test(E3 ~ sexe)
-E3sexet <- printnum(E3sexetestt$statistic)
-E3sexep <- printp(E3sexetestt$p.value)
-E4sexetestt <- t.test(E4 ~ sexe)
-E4sexet <- printnum(E4sexetestt$statistic)
-E4sexep <- printp(E4sexetestt$p.value)
-E5sexetestt <- t.test(E5 ~ sexe)
-E5sexet <- printnum(E5sexetestt$statistic)
-E5sexep <- printp(E5sexetestt$p.value)
-E6sexetestt <- t.test(E6 ~ sexe)
-E6sexet <- printnum(E6sexetestt$statistic)
-E6sexep <- printp(E6sexetestt$p.value)
-Osexetestt <- t.test(O ~ sexe)
-Osexet <- printnum(Osexetestt$statistic)
-Osexep <- printp(Osexetestt$p.value)
-O1sexetestt <- t.test(O1 ~ sexe)
-O1sexet <- printnum(O1sexetestt$statistic)
-O1sexep <- printp(O1sexetestt$p.value)
-O2sexetestt <- t.test(O2 ~ sexe)
-O2sexet <- printnum(O2sexetestt$statistic)
-O2sexep <- printp(O2sexetestt$p.value)
-O3sexetestt <- t.test(O3 ~ sexe)
-O3sexet <- printnum(O3sexetestt$statistic)
-O3sexep <- printp(O3sexetestt$p.value)
-O4sexetestt <- t.test(O4 ~ sexe)
-O4sexet <- printnum(O4sexetestt$statistic)
-O4sexep <- printp(O4sexetestt$p.value)
-O5sexetestt <- t.test(O5 ~ sexe)
-O5sexet <- printnum(O5sexetestt$statistic)
-O5sexep <- printp(O5sexetestt$p.value)
-O6sexetestt <- t.test(O6 ~ sexe)
-O6sexet <- printnum(O6sexetestt$statistic)
-O6sexep <- printp(O6sexetestt$p.value)
-Asexetestt <- t.test(A ~ sexe)
-Asexet <- printnum(Asexetestt$statistic)
-Asexep <- printp(Asexetestt$p.value)
-A1sexetestt <- t.test(A1 ~ sexe)
-A1sexet <- printnum(A1sexetestt$statistic)
-A1sexep <- printp(A1sexetestt$p.value)
-A2sexetestt <- t.test(A2 ~ sexe)
-A2sexet <- printnum(A2sexetestt$statistic)
-A2sexep <- printp(A2sexetestt$p.value)
-A3sexetestt <- t.test(A3 ~ sexe)
-A3sexet <- printnum(A3sexetestt$statistic)
-A3sexep <- printp(A3sexetestt$p.value)
-A4sexetestt <- t.test(A4 ~ sexe)
-A4sexet <- printnum(A4sexetestt$statistic)
-A4sexep <- printp(A4sexetestt$p.value)
-A5sexetestt <- t.test(A5 ~ sexe)
-A5sexet <- printnum(A5sexetestt$statistic)
-A5sexep <- printp(A5sexetestt$p.value)
-A6sexetestt <- t.test(A6 ~ sexe)
-A6sexet <- printnum(A6sexetestt$statistic)
-A6sexep <- printp(A6sexetestt$p.value)
-Csexetestt <- t.test(C ~ sexe)
-Csexet <- printnum(Csexetestt$statistic)
-Csexep <- printp(Csexetestt$p.value)
-C1sexetestt <- t.test(C1 ~ sexe)
-C1sexet <- printnum(C1sexetestt$statistic)
-C1sexep <- printp(C1sexetestt$p.value)
-C2sexetestt <- t.test(C2 ~ sexe)
-C2sexet <- printnum(C2sexetestt$statistic)
-C2sexep <- printp(C2sexetestt$p.value)
-C3sexetestt <- t.test(C3 ~ sexe)
-C3sexet <- printnum(C3sexetestt$statistic)
-C3sexep <- printp(C3sexetestt$p.value)
-C4sexetestt <- t.test(C4 ~ sexe)
-C4sexet <- printnum(C4sexetestt$statistic)
-C4sexep <- printp(C4sexetestt$p.value)
-C5sexetestt <- t.test(C5 ~ sexe)
-C5sexet <- printnum(C5sexetestt$statistic)
-C5sexep <- printp(C5sexetestt$p.value)
-C6sexetestt <- t.test(C6 ~ sexe)
-C6sexet <- printnum(C6sexetestt$statistic)
-C6sexep <- printp(C6sexetestt$p.value)
-paranoiaquesexetestt <- t.test(paranoiaque ~ sexe)
-paranoiaquesexet <- printnum(paranoiaquesexetestt$statistic)
-paranoiaquesexep <- printp(paranoiaquesexetestt$p.value)
-schizoidesexetestt <- t.test(schizoide ~ sexe)
-schizoidesexet <- printnum(schizoidesexetestt$statistic)
-schizoidesexep <- printp(schizoidesexetestt$p.value)
-schizotypiquesexetestt <- t.test(schizotypique ~ sexe)
-schizotypiquesexet <- printnum(schizotypiquesexetestt$statistic)
-schizotypiquesexep <- printp(schizotypiquesexetestt$p.value)
-antisocialesexetestt <- t.test(antisociale ~ sexe)
-antisocialesexet <- printnum(antisocialesexetestt$statistic)
-antisocialesexep <- printp(antisocialesexetestt$p.value)
-borderlinesexetestt <- t.test(borderline ~ sexe)
-borderlinesexet <- printnum(borderlinesexetestt$statistic)
-borderlinesexep <- printp(borderlinesexetestt$p.value)
-histrioniquesexetestt <- t.test(histrionique ~ sexe)
-histrioniquesexet <- printnum(histrioniquesexetestt$statistic)
-histrioniquesexep <- printp(histrioniquesexetestt$p.value)
-narcissiquesexetestt <- t.test(narcissique ~ sexe)
-narcissiquesexet <- printnum(narcissiquesexetestt$statistic)
-narcissiquesexep <- printp(narcissiquesexetestt$p.value)
-evitantesexetestt <- t.test(evitante ~ sexe)
-evitantesexet <- printnum(evitantesexetestt$statistic)
-evitantesexep <- printp(evitantesexetestt$p.value)
-dependantesexetestt <- t.test(dependante ~ sexe)
-dependantesexet <- printnum(dependantesexetestt$statistic)
-dependantesexep <- printp(dependantesexetestt$p.value)
-dependante_revisionsexetestt <- t.test(dependante_revision ~ sexe)
-dependante_revisionsexet <- printnum(dependante_revisionsexetestt$statistic)
-dependante_revisionsexep <- printp(dependante_revisionsexetestt$p.value)
-obsessionnelle_compulsivesexetestt <- t.test(obsessionnelle_compulsive ~ sexe)
-obsessionnelle_compulsivesexet <- printnum(obsessionnelle_compulsivesexetestt$statistic)
-obsessionnelle_compulsivesexep <- printp(obsessionnelle_compulsivesexetestt$p.value)
-psychopathiesexetestt <- t.test(psychopathie ~ sexe)
-psychopathiesexet <- printnum(psychopathiesexetestt$statistic)
-psychopathiesexep <- printp(psychopathiesexetestt$p.value)
-
-# t tests par groupes
-Ngroupetestt <- t.test(N ~ groupe)
-Ngroupet <- printnum(Ngroupetestt$statistic)
-Ngroupep <- printp(Ngroupetestt$p.value)
-N1groupetestt <- t.test(N1 ~ groupe)
-N1groupet <- printnum(N1groupetestt$statistic)
-N1groupep <- printp(N1groupetestt$p.value)
-N2groupetestt <- t.test(N2 ~ groupe)
-N2groupet <- printnum(N2groupetestt$statistic)
-N2groupep <- printp(N2groupetestt$p.value)
-N3groupetestt <- t.test(N3 ~ groupe)
-N3groupet <- printnum(N3groupetestt$statistic)
-N3groupep <- printp(N3groupetestt$p.value)
-N4groupetestt <- t.test(N4 ~ groupe)
-N4groupet <- printnum(N4groupetestt$statistic)
-N4groupep <- printp(N4groupetestt$p.value)
-N5groupetestt <- t.test(N5 ~ groupe)
-N5groupet <- printnum(N5groupetestt$statistic)
-N5groupep <- printp(N5groupetestt$p.value)
-N6groupetestt <- t.test(N6 ~ groupe)
-N6groupet <- printnum(N6groupetestt$statistic)
-N6groupep <- printp(N6groupetestt$p.value)
-Egroupetestt <- t.test(E ~ groupe)
-Egroupet <- printnum(Egroupetestt$statistic)
-Egroupep <- printp(Egroupetestt$p.value)
-E1groupetestt <- t.test(E1 ~ groupe)
-E1groupet <- printnum(E1groupetestt$statistic)
-E1groupep <- printp(E1groupetestt$p.value)
-E2groupetestt <- t.test(E2 ~ groupe)
-E2groupet <- printnum(E2groupetestt$statistic)
-E2groupep <- printp(E2groupetestt$p.value)
-E3groupetestt <- t.test(E3 ~ groupe)
-E3groupet <- printnum(E3groupetestt$statistic)
-E3groupep <- printp(E3groupetestt$p.value)
-E4groupetestt <- t.test(E4 ~ groupe)
-E4groupet <- printnum(E4groupetestt$statistic)
-E4groupep <- printp(E4groupetestt$p.value)
-E5groupetestt <- t.test(E5 ~ groupe)
-E5groupet <- printnum(E5groupetestt$statistic)
-E5groupep <- printp(E5groupetestt$p.value)
-E6groupetestt <- t.test(E6 ~ groupe)
-E6groupet <- printnum(E6groupetestt$statistic)
-E6groupep <- printp(E6groupetestt$p.value)
-Ogroupetestt <- t.test(O ~ groupe)
-Ogroupet <- printnum(Ogroupetestt$statistic)
-Ogroupep <- printp(Ogroupetestt$p.value)
-O1groupetestt <- t.test(O1 ~ groupe)
-O1groupet <- printnum(O1groupetestt$statistic)
-O1groupep <- printp(O1groupetestt$p.value)
-O2groupetestt <- t.test(O2 ~ groupe)
-O2groupet <- printnum(O2groupetestt$statistic)
-O2groupep <- printp(O2groupetestt$p.value)
-O3groupetestt <- t.test(O3 ~ groupe)
-O3groupet <- printnum(O3groupetestt$statistic)
-O3groupep <- printp(O3groupetestt$p.value)
-O4groupetestt <- t.test(O4 ~ groupe)
-O4groupet <- printnum(O4groupetestt$statistic)
-O4groupep <- printp(O4groupetestt$p.value)
-O5groupetestt <- t.test(O5 ~ groupe)
-O5groupet <- printnum(O5groupetestt$statistic)
-O5groupep <- printp(O5groupetestt$p.value)
-O6groupetestt <- t.test(O6 ~ groupe)
-O6groupet <- printnum(O6groupetestt$statistic)
-O6groupep <- printp(O6groupetestt$p.value)
-Agroupetestt <- t.test(A ~ groupe)
-Agroupet <- printnum(Agroupetestt$statistic)
-Agroupep <- printp(Agroupetestt$p.value)
-A1groupetestt <- t.test(A1 ~ groupe)
-A1groupet <- printnum(A1groupetestt$statistic)
-A1groupep <- printp(A1groupetestt$p.value)
-A2groupetestt <- t.test(A2 ~ groupe)
-A2groupet <- printnum(A2groupetestt$statistic)
-A2groupep <- printp(A2groupetestt$p.value)
-A3groupetestt <- t.test(A3 ~ groupe)
-A3groupet <- printnum(A3groupetestt$statistic)
-A3groupep <- printp(A3groupetestt$p.value)
-A4groupetestt <- t.test(A4 ~ groupe)
-A4groupet <- printnum(A4groupetestt$statistic)
-A4groupep <- printp(A4groupetestt$p.value)
-A5groupetestt <- t.test(A5 ~ groupe)
-A5groupet <- printnum(A5groupetestt$statistic)
-A5groupep <- printp(A5groupetestt$p.value)
-A6groupetestt <- t.test(A6 ~ groupe)
-A6groupet <- printnum(A6groupetestt$statistic)
-A6groupep <- printp(A6groupetestt$p.value)
-Cgroupetestt <- t.test(C ~ groupe)
-Cgroupet <- printnum(Cgroupetestt$statistic)
-Cgroupep <- printp(Cgroupetestt$p.value)
-C1groupetestt <- t.test(C1 ~ groupe)
-C1groupet <- printnum(C1groupetestt$statistic)
-C1groupep <- printp(C1groupetestt$p.value)
-C2groupetestt <- t.test(C2 ~ groupe)
-C2groupet <- printnum(C2groupetestt$statistic)
-C2groupep <- printp(C2groupetestt$p.value)
-C3groupetestt <- t.test(C3 ~ groupe)
-C3groupet <- printnum(C3groupetestt$statistic)
-C3groupep <- printp(C3groupetestt$p.value)
-C4groupetestt <- t.test(C4 ~ groupe)
-C4groupet <- printnum(C4groupetestt$statistic)
-C4groupep <- printp(C4groupetestt$p.value)
-C5groupetestt <- t.test(C5 ~ groupe)
-C5groupet <- printnum(C5groupetestt$statistic)
-C5groupep <- printp(C5groupetestt$p.value)
-C6groupetestt <- t.test(C6 ~ groupe)
-C6groupet <- printnum(C6groupetestt$statistic)
-C6groupep <- printp(C6groupetestt$p.value)
-paranoiaquegroupetestt <- t.test(paranoiaque ~ groupe)
-paranoiaquegroupet <- printnum(paranoiaquegroupetestt$statistic)
-paranoiaquegroupep <- printp(paranoiaquegroupetestt$p.value)
-schizoidegroupetestt <- t.test(schizoide ~ groupe)
-schizoidegroupet <- printnum(schizoidegroupetestt$statistic)
-schizoidegroupep <- printp(schizoidegroupetestt$p.value)
-schizotypiquegroupetestt <- t.test(schizotypique ~ groupe)
-schizotypiquegroupet <- printnum(schizotypiquegroupetestt$statistic)
-schizotypiquegroupep <- printp(schizotypiquegroupetestt$p.value)
-antisocialegroupetestt <- t.test(antisociale ~ groupe)
-antisocialegroupet <- printnum(antisocialegroupetestt$statistic)
-antisocialegroupep <- printp(antisocialegroupetestt$p.value)
-borderlinegroupetestt <- t.test(borderline ~ groupe)
-borderlinegroupet <- printnum(borderlinegroupetestt$statistic)
-borderlinegroupep <- printp(borderlinegroupetestt$p.value)
-histrioniquegroupetestt <- t.test(histrionique ~ groupe)
-histrioniquegroupet <- printnum(histrioniquegroupetestt$statistic)
-histrioniquegroupep <- printp(histrioniquegroupetestt$p.value)
-narcissiquegroupetestt <- t.test(narcissique ~ groupe)
-narcissiquegroupet <- printnum(narcissiquegroupetestt$statistic)
-narcissiquegroupep <- printp(narcissiquegroupetestt$p.value)
-evitantegroupetestt <- t.test(evitante ~ groupe)
-evitantegroupet <- printnum(evitantegroupetestt$statistic)
-evitantegroupep <- printp(evitantegroupetestt$p.value)
-dependantegroupetestt <- t.test(dependante ~ groupe)
-dependantegroupet <- printnum(dependantegroupetestt$statistic)
-dependantegroupep <- printp(dependantegroupetestt$p.value)
-dependante_revisiongroupetestt <- t.test(dependante_revision ~ groupe)
-dependante_revisiongroupet <- printnum(dependante_revisiongroupetestt$statistic)
-dependante_revisiongroupep <- printp(dependante_revisiongroupetestt$p.value)
-obsessionnelle_compulsivegroupetestt <- t.test(obsessionnelle_compulsive ~ groupe)
-obsessionnelle_compulsivegroupet <- printnum(obsessionnelle_compulsivegroupetestt$statistic)
-obsessionnelle_compulsivegroupep <- printp(obsessionnelle_compulsivegroupetestt$p.value)
-psychopathiegroupetestt <- t.test(psychopathie ~ groupe)
-psychopathiegroupet <- printnum(psychopathiegroupetestt$statistic)
-psychopathiegroupep <- printp(psychopathiegroupetestt$p.value)
-
-# Table 3
-table3ttests <- c(Nsexet,Esexet,Osexet,Asexet,Csexet,N1sexet,N2sexet,N3sexet,N4sexet,N5sexet,N6sexet,E1sexet,E2sexet,E3sexet,E4sexet,E5sexet,E6sexet,O1sexet,O2sexet,O3sexet,O4sexet,O5sexet,O6sexet,A1sexet,A2sexet,A3sexet,A4sexet,A5sexet,A6sexet,C1sexet,C2sexet,C3sexet,C4sexet,C5sexet,C6sexet)
-table3p <- c(Nsexep,Esexep,Osexep,Asexep,Csexep,N1sexep,N2sexep,N3sexep,N4sexep,N5sexep,N6sexep,E1sexep,E2sexep,E3sexep,E4sexep,E5sexep,E6sexep,O1sexep,O2sexep,O3sexep,O4sexep,O5sexep,O6sexep,A1sexep,A2sexep,A3sexep,A4sexep,A5sexep,A6sexep,C1sexep,C2sexep,C3sexep,C4sexep,C5sexep,C6sexep)
-table3 <- data.frame(Variables = table1variables, Males=table3meanmales, Females = table3meanfemales, t=table3ttests, p=table3p)
-
-#Table 4
-table4ttests <- c(paranoiaquesexet,schizoidesexet,schizotypiquesexet,antisocialesexet,borderlinesexet,histrioniquesexet,narcissiquesexet,evitantesexet,dependantesexet,dependante_revisionsexet,obsessionnelle_compulsivesexet,psychopathiesexet)
-table4p <- c(paranoiaquesexep,schizoidesexep,schizotypiquesexep,antisocialesexep,borderlinesexep,histrioniquesexep,narcissiquesexep,evitantesexep,dependantesexep,dependante_revisionsexep,obsessionnelle_compulsivesexep,psychopathiesexep)
-table4 <- data.frame(Variables = table2variables, Males=table4meanmales, Females = table4meanfemales, t=table4ttests, p=table4p)
-
-# Table 5
-table5ttests <- c(Ngroupet,Egroupet,Ogroupet,Agroupet,Cgroupet,N1groupet,N2groupet,N3groupet,N4groupet,N5groupet,N6groupet,E1groupet,E2groupet,E3groupet,E4groupet,E5groupet,E6groupet,O1groupet,O2groupet,O3groupet,O4groupet,O5groupet,O6groupet,A1groupet,A2groupet,A3groupet,A4groupet,A5groupet,A6groupet,C1groupet,C2groupet,C3groupet,C4groupet,C5groupet,C6groupet)
-table5p <- c(Ngroupep,Egroupep,Ogroupep,Agroupep,Cgroupep,N1groupep,N2groupep,N3groupep,N4groupep,N5groupep,N6groupep,E1groupep,E2groupep,E3groupep,E4groupep,E5groupep,E6groupep,O1groupep,O2groupep,O3groupep,O4groupep,O5groupep,O6groupep,A1groupep,A2groupep,A3groupep,A4groupep,A5groupep,A6groupep,C1groupep,C2groupep,C3groupep,C4groupep,C5groupep,C6groupep)
-table5 <- data.frame(Variables = table1variables, Sentenced =table5meansentenced, Forensic = table5meanforensic, t=table5ttests, p=table5p)
-
-# Table 6
-table6ttests <- c(paranoiaquegroupet,schizoidegroupet,schizotypiquegroupet,antisocialegroupet,borderlinegroupet,histrioniquegroupet,narcissiquegroupet,evitantegroupet,dependantegroupet,dependante_revisiongroupet,obsessionnelle_compulsivegroupet,psychopathiegroupet)
-table6p <- c(paranoiaquegroupep,schizoidegroupep,schizotypiquegroupep,antisocialegroupep,borderlinegroupep,histrioniquegroupep,narcissiquegroupep,evitantegroupep,dependantegroupep,dependante_revisiongroupep,obsessionnelle_compulsivegroupep,psychopathiegroupep)
-table6 <- data.frame(Variables = table2variables, Sentenced=table6meansentenced, Forensic = table6meanforensic, t=table6ttests, p=table6p)
-
-# Corrélations
-
-corageparanoiaque <- cor.test(age, paranoiaque, method = "pearson", use = "pairwise")
-corageschizoide <- cor.test(age, schizoide, method = "pearson", use = "pairwise")
-corageschizotypique <- cor.test(age, schizotypique, method = "pearson", use = "pairwise")
-corageantisociale <- cor.test(age, antisociale, method = "pearson", use = "pairwise")
-corageborderline <- cor.test(age, borderline, method = "pearson", use = "pairwise")
-coragehistrionique <- cor.test(age, histrionique, method = "pearson", use = "pairwise")
-coragenarcissique <- cor.test(age, narcissique, method = "pearson", use = "pairwise")
-corageevitante <- cor.test(age, evitante, method = "pearson", use = "pairwise")
-coragedependante <- cor.test(age, dependante, method = "pearson", use = "pairwise")
-coragedependante_revision <- cor.test(age, dependante_revision, method = "pearson", use = "pairwise")
-corageobsessionnelle_compulsive <- cor.test(age, obsessionnelle_compulsive, method = "pearson", use = "pairwise")
-coragepsychopathie <- cor.test(age, psychopathie, method = "pearson", use = "pairwise")
-
-corpdage.df <- data.frame(
-   Variables = table2variables, 
-   r = c(printnum(corageparanoiaque$estimate),printnum(corageschizoide$estimate),printnum(corageschizotypique$estimate),printnum(corageantisociale$estimate),printnum(corageborderline$estimate),printnum(coragehistrionique$estimate), printnum(coragenarcissique$estimate),printnum(corageevitante$estimate),printnum(coragedependante$estimate),printnum(coragedependante_revision$estimate),printnum(corageobsessionnelle_compulsive$estimate),printnum(coragepsychopathie$estimate)),
-  p = c(printp(corageparanoiaque$p.value),printp(corageschizoide$p.value),printp(corageschizotypique$p.value),printp(corageantisociale$p.value),printp(corageborderline$p.value),printp(coragehistrionique$p.value), printp(coragenarcissique$p.value),printp(corageevitante$p.value),printp(coragedependante$p.value),printp(coragedependante_revision$p.value),printp(corageobsessionnelle_compulsive$p.value),printp(coragepsychopathie$p.value))
-)
-
-```
-
 # Introduction
 
-Formally established in the 18th century as a mode of punishment, the prison sentence is the most serious penal sanction in democratic states that do not apply the death penalty. In some way, inmates still belong to the general population even if they are kept in security buildings. According to Walmsley (cited by Fazel & Danesh, 2002), nine million people are imprisoned worldwide. Much research has been conducted in order to assess the frequency of psychiatric disorders in prisons. Motiuk and Porporino (1991) conducted a study on 2812 inmates in Canada and proposed a psychiatric diagnosis based on DSM-III [@american1980dsm] by using a structured interview. Prevalence rates were found to be: 74.9 % with antisocial personality disorder; 69.8 % alcohol abuse; 55.6 % with anxiety disorders; 52.9 % with disorders related to substances abuse; 29.5% with psychosexual disorders; 25.8 % with depressive disorders; 10.4 % with psychotic disorders and 4.3 % with organic disorders. Lafortune (2010) correlated correctional and medical records in order to assess 671 inmates entering prison. The ten most frequent psychiatric categories were anxiety disorders (40.2 %); drug dependence (25.2 %); depressive disorder (21.4%); adjustment reactions (19.7 %); personality disorders (18 %), non-dependent abuse of drugs (14.5%), alcohol dependence syndrome (11.6 %), drug psychoses (10.6 %) and general symptoms such as sleep problems or hallucinations (9.9 %). In total, 61 % of Quebec inmates had received at least one psychiatric diagnosis.
+Formally established in the 18th century as a mode of punishment, the prison sentence is the most serious penal sanction in democratic states that do not apply the death penalty. In some way, inmates still belong to the general population even if they are kept in security buildings. According to Walmsley (cited by Fazel & Danesh, 2002), nine million people are imprisoned worldwide. Much research has been conducted in order to assess the frequency of psychiatric disorders in prisons. Motiuk and Porporino (1991) conducted a study on 2812 inmates in Canada and proposed a psychiatric diagnosis based on DSM-III (American Psychiatric Association, 1980) by using a structured interview. Prevalence rates were found to be: 74.9 % with antisocial personality disorder; 69.8 % alcohol abuse; 55.6 % with anxiety disorders; 52.9 % with disorders related to substances abuse; 29.5% with psychosexual disorders; 25.8 % with depressive disorders; 10.4 % with psychotic disorders and 4.3 % with organic disorders. Lafortune (2010) correlated correctional and medical records in order to assess 671 inmates entering prison. The ten most frequent psychiatric categories were anxiety disorders (40.2 %); drug dependence (25.2 %); depressive disorder (21.4 %); adjustment reactions (19.7 %); personality disorders (18 %), non-dependent abuse of drugs (14.5 %), alcohol dependence syndrome (11.6 %), drug psychoses (10.6 %) and general symptoms such as sleep problems or hallucinations (9.9 %). In total, 61 % of Quebec inmates had received at least one psychiatric diagnosis.
+
 Fazel and Danesh (2002) performed a meta-analysis of 62 studies involving 22 790 inmates. The most frequent diagnoses are personality disorders (65 % for men, 42 % for women), major depression (10 % for men, 12 % for women) and psychotic diseases (3.7 % for men, 4 % for women). They reported that inmates suffer from two to four times more psychosis or depression, and ten times more from antisocial personality disorder than the general population. They doubt that all these patients receive appropriate care to their pathology.
-Other researchers have emphasized the co-morbidity of psychiatric disorders with drug use and its disruptive effects (Piselli, Elisei, Murgia, Quartesan & Abram, 2009). They underlined these impacts on employment, substance abuse, family and social functioning, and also the psychiatric symptomatology of inmates. Co-morbidity is much more important when considering forensic hospitals receiving offenders for whom a mental pathology was observed. According to Edens and Ruiz (2008), more than half of the inmates from forensic hospital receive more than one diagnosis. According to Pham and Saloppé (2010), 67.9 % of the patients of a Belgian forensic hospital have a co-morbidity, with on average 2.8 diagnoses by patient.
- 
-Most of the psychiatric studies in prison use (semi-) structured interviews to detect the presence or absence of mental pathology. However, this categorical approach has been criticised (Westen & Arkiwotz-Westen, 1998 and Widiger & Samuel, 2005) and has led to a dimensional conception of personality disorders (Costa & Widiger, 2002). Lynam and Widiger (2001) defined prototypical profiles of each personality disorder based on the opinion of specialists. Therefore, the scores obtained by an individual to the NEO PI-R (Costa & McCrae, 1998) allow the comparison with the typical profile of a personality disorder according to its description in the DSM-IV TR (American Psychiatric Association, 2000). The meta-analysis of Samuel and Widiger (2008) supports the hypothesis of a strong link between the variables of the Five-Factor Model (FFM) and personality disorders. This approach assesses personality disorders according to a dimensional logic, which is a more sensitive method. It is likely that the assessment of personality disorders in the DSM-V (planned for publication in 2013) will rely on the Five-Factor Model approach following a dimensional logic.
- 
-In Belgium, prisons have a Psychosocial Service with psychologists, social workers and psychiatrists. The prison permits adequate circumstances for psychological testing; e.g. each psychologist for example has of his own office. The main task of the Psychosocial Service consists of psychosocial assessment of the inmates concerning their request for conditional release. With the exception of inmates with sentences less then three years, all the inmates undergo a psychosocial assessment. The result of the assessment, which can take a few years, is given to the prison director and the judges of the court responsible for granting the conditional release. 
-The psychologists meet the inmates several times and administer a battery of tests to help determine the diagnosis and the therapeutic indications. 
 
+Other researchers have emphasized the co-morbidity of psychiatric disorders with drug use and its disruptive effects (Piselli, Elisei,Murgia, Quartesan & Abram, 2009). They underlined these impacts on
+employment, substance abuse, family and social functioning, and also the psychiatric symptomatology of inmates. Co-morbidity is much more important when considering forensic hospitals receiving offenders for
+whom a mental pathology was observed. According to Edens and Ruiz (2008), more than half of the inmates from forensic hospital receive more than one diagnosis. According to Pham and Saloppé (2010), 67.9 % of
+the patients of a Belgian forensic hospital have a co-morbidity, with on average 2.8 diagnoses by patient.
 
-One of the frequently used tests is the NEO PI-R because it assesses many personality variables.  The Psychosocial Service disposes thus of a substantial number of protocols that can be used for a statistical analysis. Does the NEO PI-R reveal particular variables configurations? Does it highlight personality disorders in the prison population? What is the prevalence of co-morbid personality disorders? Are antisocial personality disorder and psychopathic disorder (Miller, Lynam, Widiger & Leukefeld, 2001) prevalent in this population? Do forensic patients or female inmates show different profiles than regular inmates?
+Most of the psychiatric studies in prison use (semi-) structured interviews to detect the presence or absence of mental pathology. However, this categorical approach has been criticised (Westen & Arkiwotz-Westen, 1998 and Widiger & Samuel, 2005) and has led to a dimensional conception of personality disorders (Costa & Widiger, 2002).
+Lynam and Widiger (2001) defined prototypical profiles of each personality disorder based on the opinion of specialists. Therefore, the scores obtained by an individual to the NEO PI-R (Costa & McCrae, 1998) allow the comparison with the typical profile of a personality disorder according to its description in the DSM-IV TR (American Psychiatric Association, 2000). The meta-analysis of Samuel and Widiger (2008) supports the hypothesis of a strong link between the variables of the Five-Factor Model (FFM) and personality disorders. This approach assesses personality disorders according to a dimensional logic, which is a more sensitive method. It is likely that the assessment of personality disorders in the DSM-V (planned for publication in 2013) will rely on the Five-Factor Model approach following a dimensional logic.
+
+In Belgium, prisons have a *Psychosocial Service* with psychologists, social workers and psychiatrists. The prison permits adequate circumstances for psychological testing; e.g. each psychologist for example has of his own office. The main task of the Psychosocial Service consists of psychosocial assessment of the inmates concerning their request for conditional release. With the exception of inmates with sentences less then three years, all the inmates undergo a psychosocial assessment. The result of the assessment, which can take a few years, is given to the prison director and the judges of the court responsible for granting the conditional release. The psychologists meet the inmates several times and administer a battery of tests to help determine the diagnosis and the therapeutic indications.
+
+One of the frequently used tests is the NEO PI-R because it assesses many personality variables. The Psychosocial Service disposes thus of a substantial number of protocols that can be used for a statistical
+analysis. Does the NEO PI-R reveal particular variables configurations? Does it highlight personality disorders in the prison population? What is the prevalence of co-morbid personality disorders? Are antisocial personality disorder and psychopathic disorder (Miller, Lynam, Widiger & Leukefeld, 2001) prevalent in this population? Do forensic patients or female inmates show different profiles than regular inmates?
+
 We would also like to know if a self-reported inventory like the NEO PI-R provides relevant information to the psychological profile of inmates.
+
 This is the only study that deals with Personality Disorders using the NEO PI-R on a large prison sample.
 
 # Method
 
 ## Participants
 
-Our sample consists of `r ntotal` French-speaking inmates in Belgian prisons eligible for early release. Of these, `r nofmen` (`r nofmenpercentage`%) are men and `r nofwomen` (`r nofwomenpercentage`%) are women. 
-Concerning legal status, `r nofcondamnes` (`r printnum(nofcondamnespercentage)`%) are sentenced and `r nofinternes` (`r printnum(nofinternespercentage)`%) are mentally ill offenders.
-The inmates are jailed in individual cells and are under the daily supervision of correctional officers. The forensic patients were recognized mentally irresponsible at the time of the offence and are jailed in special units of the prison, which provide psychiatric care. 
-It was chosen to keep women and forensic patient in our sample as they are part of the prison population as well as the sentenced males. We wished our study to be representative of the actual prison population. This is a convenience sample obtained retrospectively.
-The average age is `r meanage` years with a standard deviation equal to `r sdage` and varies from `r minage` to `r maxage` years.
+Our sample consists of 262 French-speaking inmates in Belgian prisons eligible for early release. Of these, 244 (93.1 %) are men and 18 (6.9 %) are women. Concerning the legal status, 248 (94.7 %) are sentenced
+and 14 (5.3 %) are forensic patients. 
+The inmates are jailed in individual cells and are under the daily supervision of correctional officers. The forensic patients were recognized mentally irresponsible at the time of the offence and are jailed in special units of the prison, which provide psychiatric care.
 
+It was chosen to keep women and forensic patient in our sample as they are part of the prison population as well as the sentenced males. We wished our study to be representative of the actual prison population.
+This is a convenience sample obtained retrospectively.
+
+The average age is 35.5 years with a standard deviation equal to 11.1 and varies from 18 to 76 years.
 
 ## Procedure
 
-The NEO PI - R was obtained during a comprehensive psychological assessment. The psychologist in charge of the psychological assessment met the inmate in a quiet and private office. 
-Preliminary psychological interviews assessed the cooperation of the inmate and his understanding of the French language, as self-reported personality questionnaires are not proposed to inmates who do not understand French, present a significant intellectual limitation or refuse psychological tests. In this study, we asked the French-speaking psychologists of the psychosocial service to provide NEO PI-R protocols they had previously administered. The protocols were gathered and anonymized by a membre of the Psychosocial Service and sent for data analysis. 
-Some psychologists use this test very often while others never do because practicing psychologists prefer tests they know best in the task of psycho-diagnosis. This study aimed to receive as many completed tests as possible. This sample therefore has a weakness: the criterion for administration of the NEO PI-R was not strictly controlled. It is conceivable that psychologists have administered the NEO PI-R to the more conciliatory inmates. Some inmates also refuse to pass any psychological test. However, we find that the NEO PI-R is often well accepted by most inmates.
-Personality assessment only takes place after a court decision (prison or internment) and so, inmates who are in custody are not tested by the Psychosocial Service. Therefore, participants in our sample have been held in detention for months or even years. This is important because it implies that our sample is not representative of inmates who face the shock due to recent incarceration. Indeed, the arrival in prison is a difficult time for most inmates, who discover a new, isolated and often violent world. Participants in our study know the prison rituals and probably exceeded the shock they experienced when they were arrested. Eligible for early release, they begin a project to leave the prison. Some inmates refuse psychosocial interviews or are considered as too dangerous to allow interviews. Therefore, these inmates have not been tested. These situations are rare and often transient. It may take several months before these meetings are possible.
-This study addressed this following prison population: French-speaking inmates who were currently undergoing the procedure for conditional release and who have completed the NEO PI-R.
+The NEO PI - R was obtained during a comprehensive psychological assessment. The psychologist in charge of the psychological assessment met the inmate in a quiet and private office.
 
+Preliminary psychological interviews assessed the cooperation of the inmate and his understanding of the French language, as self-reported personality questionnaires are not proposed to inmates who do not understand French, present a significant intellectual limitation or refuse psychological tests. In this study, we asked the French-speaking psychologists of the psychosocial service to provide NEO PI-R protocols
+they had previously administered. The protocols were gathered and anonymized by a membre of the Psychosocial Service and sent for data analysis.
+
+Some psychologists use this test very often while others never do because practicing psychologists prefer tests they know best in the task of psycho-diagnosis. This study aimed to receive as many completed tests
+as possible. This sample therefore has a weakness: the criterion for administration of the NEO PI-R was not strictly controlled. It is conceivable that psychologists have administered the NEO PI-R to the
+more conciliatory inmates. Some inmates also refuse to pass any psychological test. However, we find that the NEO PI-R is often well accepted by most inmates.
+
+Personality assessment only takes place after a court decision (prison or internment) and so, inmates who are in custody are not tested by the Psychosocial Service. Therefore, participants in our sample have been
+held in detention for months or even years. This is important because it implies that our sample is not representative of inmates who face the shock due to recent incarceration. Indeed, the arrival in prison is a
+difficult time for most inmates, who discover a new, isolated and often violent world. Participants in our study know the prison rituals and probably exceeded the shock they experienced when they were arrested.
+Eligible for early release, they begin a project to leave the prison. Some inmates refuse psychosocial interviews or are considered as too dangerous to allow interviews. Therefore, these inmates have not been
+tested. These situations are rare and often transient. It may take several months before these meetings are possible.
+
+This study addressed this following prison population: French-speaking inmates who were currently undergoing the procedure for conditional release and who have completed the NEO PI-R.
 
 ## Statistics
 
-The 35 raw NEO PI-R scores were used and twelve personality disorders scores were collected from them  (Miller, Lynam, Pham-Scottez, De Clercq, Rolland & Fruyt, 2008 and Miller et al., 2001): paranoid, schizoid, schizotypal, antisocial, borderline, histrionic, narcissistic, avoidant, dependent, dependent revised, obsessive compulsive and psychopathy. These scores were compared with the French norms of the NEO PI-R (Costa & McCrae, 1998) and those of the personality disorders (Miller, Lynam, Rolland, de Fruyt, Reynolds, Pham-Scottez, Baker, Bagby, 2008; Miller et al., 2001).
-Internal reliability of the NEO PI-R variable was assessed with the Cronbach’s alpha.
+The 35 raw NEO PI-R scores were used and twelve personality disorders scores were collected from them (Miller, Lynam, Pham-Scottez, De Clercq, Rolland & Fruyt, 2008 and Miller et al., 2001): paranoid, schizoid,
+schizotypal, antisocial, borderline, histrionic, narcissistic, avoidant, dependent, dependent revised, obsessive compulsive and psychopathy. These scores were compared with the French norms of the NEO PI-R (Costa & McCrae, 1998) and those of the personality disorders (Miller, Lynam, Rolland, de Fruyt, Reynolds, Pham-Scottez, Baker, Bagby, 2008; Miller et al., 2001).
+Internal reliability of the NEO PI-R variable was assessed with the Cronbach's alpha.
 The scores of male inmates were compared to those of female inmates.
 Sentenced inmates were also compared to the forensic patients.
-To make these comparisons, the t test for independent samples was used. The value of t for each comparison and the associated p to assess the significance of the difference between the two means are described here. Beyond this significance, an assessment of the effect size of differences between means is also provided. Indeed, it is not only to affirm or not a difference between two means, but also to have some idea of the difference between them. Therefore, we also provide an index assessing the effect size, Cohen's d (1992).
+
+To make these comparisons, the *t* test for independent samples was used. The value of *t* for each comparison and the associated *p* to assess the significance of the difference between the two means are
+described here. Beyond this significance, an assessment of the effect size of differences between means is also provided. Indeed, it is not only to affirm or not a difference between two means, but also to have
+some idea of the difference between them. Therefore, we also provide an index assessing the effect size, Cohen's *d* (1992).
 The factor structure of personality variables is also provided. Indeed, this factor approach was chosen to evaluate the concept of comorbidity in a dimensional way. This allows the evaluation of the complex links between each personality disorder with all the others. It also helps to highlight the common factors that unite the personality disorders and thus understand their theoretical foundations better.
+
 Given the context of obtaining data (through early releases), we used three validity scales developed by Schinka and Kremer (1997): Positive Presentation Management (PPM), Negative Presentation Management (NPM) and inconsistency (INC), which evaluate trends to present a positive self-image, a negative self-image, or incoherent responses to the questionnaire, respectively.
 
-## Results
 
-First, we calculated internal reliability indices of the five domains of the NEO PI-R using the six facets composing them. For N (Neuroticism), E (Extraversion), O (Openness), A (Agreeableness) and C (Conscientiousness), Cronbach’s alpha was respectively equal to `r round(psych::alpha(Nitems.df)$total$std.alpha, 2)`, `r round(psych::alpha(Eitems.df)$total$std.alpha, 2)`, `r round(psych::alpha(Oitems.df)$total$std.alpha, 2)`, `r round(psych::alpha(Aitems.df)$total$std.alpha, 2)` and `r round(psych::alpha(Citems.df)$total$std.alpha, 2)`. These values are close to .70 and can be considered satisfactory.
 
-Concerning the three validity scales of the NEO PI-R, the mean Negative Presentation Management (NPM) was equal to `r meannpm` (SD = `r sdnpm`), the mean Positive Presentation Management (PPM) was equal to `r meanppm` (SD = `r sdppm`) and the mean response inconsistency variable (INC) was equal to `r meaninc` (SD = `r sdinc`). Compared to Schinka and Kremer’s standards (1997), NPM is clearly higher (Cohen's d = `r deltanpm`  .26, p `r printp(ttestnpmpvalue)` , PPM is in the standard (Cohen's d = `r deltappm`, p = `r printp(ttestppmpvalue)`) and INC moderately higher (Cohen's d = `r deltainc`, p `r printp(ttestincpvalue)`). These results suggest that inmates have not changed their answers in order to give positive impression. However, they would have answered the questions with more incoherence than the normative sample.
+# Results
 
-<!-- # ```{r table1, tab.cap="Descriptive Statistics of the 35 NEO PI-R variables for Belgian French speaking inmates", layout="l-body-outset"} -->
-<!-- # paged_table(table1) -->
-<!-- # ``` -->
+First, we calculated internal reliability indices of the five domains of the NEO PI-R using the six facets composing them. For N (Neuroticism), E (Extraversion), O (Openness), A (Agreeableness) and C (Conscientiousness), Cronbach's alpha was respectively equal to .81, .70, .64, .69 and .81. These values are close to .70 and can be considered satisfactory.
 
-```{r table1, results = "asis"}
-apa_table(
-  table1
-  , caption = "Descriptive Statistics of the 35 NEO PI-R variables for Belgian French speaking inmates"
-)
+Concerning the three validity scales of the NEO PI-R, the mean Negative Presentation Management (NPM) was equal to 9.99 (*SD* = 3.99), the mean Positive Presentation Management (PPM) was equal to 20.18 (*SD* = 4.08) and the mean response inconsistency variable (INC) was equal to 8.35 (*SD* = 3.22). Compared to Schinka and Kremer's standards (1997), NPM is slightly higher (Cohen's *d* = .26, *p* \<.001), PPM is in the standard (Cohen\'s *d* = - .13, *p* = .06) and INC moderately higher (Cohen's *d* = .63, *p* \<.001). These results suggest that inmates have not changed their answers in order to give positive impression. However,
+they would have answered the questions with more incoherence than the normative sample.
 
-```
+Table 1 shows descriptive statistics for each NEO PI-R variable, the effect size in comparison with the French normative sample, and the degree of significance. 
 
-Table \@ref(tab:table1) shows descriptive statistics for each NEO PI-R variable, the effect size in comparison with the French normative sample, and the degree of significance. Concerning the five domains, three are significantly different from the normative sample: the Openness is lower, Agreeableness and Conscientiousness are higher. This profile suggests that the French-speaking Belgian inmates are as stable, as extraverted, less open, more agreeable and more conscientious than the normative population. 
+  -----------------------------------------------------------------------
+  Table 1
+  -----------------------------------------------------------------------
+  Descriptive Statistics of the 35 NEO PI-R variables for 262 Belgian
+  French speaking inmates
 
-```{r domains, echo = FALSE}
-boxplot(domaines_t.df,
-main="T scores for each personality domain for Belgian inmates",
-xlab="Domains",
-ylab="t scores",
-border="black",
-col="grey",
-ylim=c(20,80))
-```
+  -----------------------------------------------------------------------
 
-The study of the NEO PI-R facets gives more detailed results. Indeed, in descending effect sizes order, French-speaking Belgian inmates tend to be more compliant, more altruistic, more gregarious, less assertive, more active, more tebder-minded, less deliberate, more modest, more happy, more prosaic, more straightforward, less hostile, more frank, more ambitious, warmer, more self-disciplined, more depressed, more open to aesthetics, more self-conscious, more open to values, more dutiful, less impulsive, more open to actions and more ordered than the normative population. Note that only two differences can be seen as large (Cohen’s *d* for A4 = `r printnum(deltaA4)` and for A3 = `r printnum(deltaA3)`) and others are lower. The mean of the absolute values of the 30 Cohen’s *d* is equal to `r printnum(deltamean)`. Differences, while statistically significant, remain low.
+  --------------------------------------------------------------------------
+  Variable                Mean      *SD*       *t*       *p*       Cohen's
+                                                                   *d*
+  ----------------------- --------- ---------- --------- --------- ---------
+  N Neuroticism           91.32     19.98      -.76      .45       -0.04
 
-```{r table2, results = "asis"}
-apa_table(
-  table2
-  , caption = "Descriptive Statistics of the 12 NEO PI Personality Disorders variables for French-speaking Belgian inmates"
-)
+  E Extraversion          107.94    17.81      -1.90     .06       -0.12
 
-```
+  **O Openness**          105.85    14.41      -11.99    < .001    -0.64
+
+  **A Agreeability**      127.00    15.93      5.89      < .001     0.36
+
+  **C Conscientiousness** 122.42    17.84      5.93      < .001     0.34
+
+  N1 Anxiety              17.15     4.62       -2.28     .02       -0.13
+
+  N2 Angry Hostility      13.97     4.50       -1.38     .17       -0.08
+
+  **N3 Depression**       16.58     5.18       3.80      < .001     0.23
  
-Table \@ref(tab:table2) shows descriptive statistics for each NEO PI-R personality disorders variable. One personality disorder has a medium effect size: low histrionic personality. Small effect sizes exist for antisocial personality (low score), psychopathy (low score), schizoid personality (high score) and borderline personality (low score). 
+  N4 Self-Consciousness   16.26     4.24       1.20      .23        0.07
 
+  **N5 Impulsiveness**    15.69     4.36       -4.45     < .001    -0.27
 
-```{r table3, results = "asis"}
-apa_table(
-  table3
-  , caption = "Comparison of the 35 NEO PI variables for male and  female Belgian inmates"
-)
+  N6 Vulnerability        11.67     5.01       -.74      .46       -0.03
 
-```
+  E1 Warmth               22.23     4.77       -.67      .50       -0.04
+
+  E2 Gregariousness       17.44     5.21       .18       .86        0.01
+
+  **E3 Assertiveness**    13.40     3.77       -4.17     < .001    -0.25
+
+  E4 Activity             19.27     4.31       .85       .40        0.05
+
+  E5 Excitement-Seeking   16.13     5.09       -1.50     .14       -0.10
+
+  E6 Positive Emotions    19.46     4.62       -2.27     .02       -0.14
+
+  **O1 Fantasy**          14.82     4.23       -15.29    < .001    -0.85
+
+  **O2 Aesthetics**       17.87     4.75       -3.03     .003      -0.17
+
+  **O3 Feelings**         19.02     3.75       -8.81     < .001    -0.53
+
+  **O4 Actions**          16.55     3.39       -3.88     < .001    -0.22
+
+  **O5 Ideas**            18.70     4.33       -2.83     .005      -0.16
+
+  **O6 Values**           18.89     3.39       -10.39    < .001    -0.61
+
+  **A1 Trust**            16.63     4.86       -3.28     .001      -0.19
+
+  **A2                    22.52     4.57       7.92      < .001     0.46
+  Straightforwardness**                                            
  
-Table \@ref(tab:table3) compares the scores of men with women. Five psychological variables are significantly different at the .05 level: women seem more anxious, more vulnerable to stress, have more negative affects, are more depressed and are more open than men. 
+  **A3 Altruism**         24.87     3.77       7.83      < .001     0.49
 
-```{r table4, results = "asis"}
-apa_table(
-  table4
-  , caption = "Comparison of the 12 NEO PI Personality Disorders variables for male and female Belgian inmates"
-)
-```
+  **A4 Compliance**       18.69     4.73       3.39      .001       0.21
 
-Table \@ref(tab:table4) also shows that three personality disorders are different for women than to men: they have more features of dependent, avoidant personality and less features of psychopathy.
+  A5 Modesty              20.53     3.85       -.80      .43       -0.05
 
+  **A6                    23.76     3.53       8.80      < .001     0.53
+  Tender-Mindedness**                                              
 
-```{r table5, results = "asis"}
-apa_table(
-  table5
-  , caption = "Comparison of the 35 NEO PI variables for sentenced and forensic Belgian inmates"
-)
-```
+  C1 Competence           19.24     3.72       -.20      .84       -0.01
 
+  **C2 Order**            20.44     4.39       7.90      < .001     0.46
 
-```{r table6, results = "asis"}
-apa_table(
-  table6
-  , caption = "Comparison of the 12 NEO PI Personality Disorders variables for sentenced and forensic Belgian inmates"
-)
-```
+  C3 Dutifulness          23.12     3.86       .93       .35        0.06
 
-Table \@ref(tab:table5) and Table \@ref(tab:table6) compare the scores of forensic with sentenced inmates
-Thirteen psychological variables distinguish the sentenced inmates from the forensic patients. Three personality disorders are also different in the two groups. 
-
-```{r table7, results = "asis"}
-apa_table(
-  corpdage.df
-  , caption = "Pearson correlations between personality disorders and age for Belgian inmates"
-)
-```
-
-Table \@ref(tab:table7) shows the correlations between age the the twelve personality disorders.
-
+  **C4 Achievement        21.19     4.05       8.36      < .001     0.49
+  Striving**                                                       
  
+  **C5 Self-discipline**  21.79     4.09       9.53      < .001     0.53
+
+  C6 Deliberation         16.63     4.76       -.97      .33       -0.05
+  --------------------------------------------------------------------------
+
+
+Significant scores are highlighted in bold text.
+Concerning the five domains, three are significantly different from the normative sample: the Openness is lower, Agreeableness and Conscientiousness are higher. This profile suggests that the French-speaking Belgian inmates are as stable, as extraverted, more frank, more agreeable and more conscientious than the normative population.
+
+The study of the NEO PI-R facets gives more detailed results. Indeed, in descending effect sizes order, French-speaking Belgian inmates tend to be more prosaic, more conservative, colder, more altruistic, more
+disciplined, more ambitious, more frank, more orderly, more tolerant to frustration, less assertive, more discouraged, most submitted, more cynical, less aesthetic, less curious, less happy and less anxious than
+the normative population. Note that only one difference can be seen as large (Cohen's *d* for O1 = -. 85) and others are lower. The mean of the absolute values of the 35 Cohen's *d* is equal to .26. Differences,
+while statistically significant, remain low.
+
+Table 2 shows descriptive statistics for each NEO PI-R personality disorders variable. 
+
+
+  -----------------------------------------------------------------------
+  Table 2
+  -----------------------------------------------------------------------
+  Descriptive Statistics of the 12 NEO PI-R Personality Disorders
+  variables for 262 French-speaking Belgian inmates
+
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------------
+  Variable                   Mean      SD         *t*       *p*       Cohen's
+                                                                      *d*
+  -------------------------- --------- ---------- --------- --------- ---------
+  Paranoid                   120.39    23.87      -2.18     .03       -0.13
+
+  **Schizoid**               112.50    20.37      3.89      < .001     0.23
+
+  Schizotypal                100.54    16.63      -2.39     .02       -0.14
+
+  **Antisocial**             225.05    32.01      -5.84     < .001    -0.36
+
+  **Borderline**             139.29    23.21      -3.35     .001      -0.20
+
+  **Histrionic**             196.32    21.88      -9.08     < .001    -0.51
+
+  **Narcissist**             163.53    25.30      -4.20     < .001    -0.26
+
+  Avoidant                   158.94    21.93      2.47      .01        0.14
+
+  Dependent                  119.53    15.67      .34       .74        0.02
+
+  **Dependent-Revised**      84.63     19.62      -3.19     .002      -0.19
+
+  **Obsessive-compulsive**   226.59    23.24      9.32      < .001     0.52
+
+  **Psychopathy**            269.56    29.99      -5.47     < .001    -0.33
+  -----------------------------------------------------------------------------
+
+
+Two personality disorders have medium effect sizes: high obsessive compulsive personality disorder and low histrionic
+personality. Small effect sizes exist for antisocial personality (low score), psychopathy (low score), narcissistic personality (low score), schizoid personality (high score) and borderline personality (low
+score). The mean of the absolute values of the 12 Cohen's *d* is also equal to. 26. Only 4 % of the participants have an antisocial personality score above 1.5 SD (the lowest cut-off chosen by Miller et
+al., 2001) and only 3% have a psychopathic score above 1.5 SD.
+
+Table 3 compares the scores of men with women. 
+
+
+  -----------------------------------------------------------------------
+  Table 3
+  -----------------------------------------------------------------------
+  Comparison of the 35 NEO PI-R variables for 244 male and 18 female
+  Belgian inmates
+
+  -----------------------------------------------------------------------
+
+  --------------------------------------------------------------------------------
+                        Mean                                            
+  --------------------- ------------ ---------- ------------ ---------- ----------
+  Variable              Men          Women      *t*          *p*        Cohen's
+                                                                        *d*
+
+  N Neuroticism         90.60        101.06     -2.158*      .032        0.45
+
+  E Extraversion        108.09       105.89     .505         .614       -0.12
+
+  O Openness            105.37       112.39     -2.004*      .046        0.37
+
+  A Agreeability        126.58       132.61     -1.553       .122        0.36
+
+  C Conscientiousness   122.29       124.17     -.430        .668        0.09
+ 
+  N1 Anxiety            16.86        21.06      -3.811**     .000        0.77
+
+  N2 Angry Hostility    14.06        12.72      1.215        .225       -0.26
+
+  N3 Depression         16.39        19.06      -2.120*      .035        0.48
+
+  N4 Self-Consciousness 16.15        17.67      -1.457       .146        0.32
+
+  N5 Impulsiveness      15.68        15.83      -.143        .886        0.03
+
+  N6 Vulnerability      11.45        14.72      -2.709**     .007        0.33
+
+  E1 Warmth             22.27        21.67      .521         .603       -0.14
+
+  E2 Gregariousness     17.52        16.33      .934         .351       -0.22
+
+  E3 Assertiveness      13.45        12.72      .739         .460       -0.16
+
+  E4 Activity           19.14        20.94      -1.716       .087        0.41
+
+  E5 Excitement-Seeking 16.20        15.11      .879         .380       -0.23
+
+  E6 Positive Emotions  19.49        19.11      .333         .739       -0.08
+
+  O1 Fantasy            14.75        15.83      -1.049       .295        0.21
+
+  O2 Aesthetics         17.72        19.89      -1.876       .062        0.38
+
+  O3 Feelings           18.88        20.94      -2.276       .024        0.52
+
+  O4 Actions            16.55        16.56      -.013        .990        0.00
+
+  O5 Ideas              18.62        19.83      -1.150       .251        0.23
+
+  O6 Values             18.86        19.33      -.570        .569        0.13
+
+  A1 Trust              16.56        17.50      -.791        .430        0.18
+
+  A2                    22.48        23.00      -.466        .642        0.10
+  Straightforwardness                                                   
+
+  A3 Altruism           24.78        26.11      -1.445       .150        0.37
+
+  A4 Compliance         18.64        19.39      -.648        .517        0.16
+
+  A5 Modesty            20.45        21.61      -1.236       .217        0.27
+
+  A6 Tender-Mindedness  23.67        25.00      -1.548       .123        0.36
+
+  C1 Competence         19.28        18.72      .616         .538       -0.15
+
+  C2 Order              20.36        21.50      -1.064       .288        0.23
+
+  C3 Dutifulness        23.04        24.28      -1.320       .188        0.31
+
+  C4 Achievement        21.22        20.83      .391         .696       -0.09
+  Striving                                                              
+
+  C5 Self-discipline    21.69        23.11      -1.427       .155        0.28
+
+  C6 Deliberation       16.70        15.72      .841         .401       -0.13
+  --------------------------------------------------------------------------------
+
+\* *p* < .05
+
+** *p* < .01
+
+
+
+Five psychological variables are significantly different at the .05 level: women seem more anxious, more vulnerable to stress, have more negative affects, are more
+depressed and are more open than men. Table 4 also shows that three personality disorders are different for women than to men: they have more features of dependent, avoidant personality and less features of
+psychopathy.
+
+
+  -----------------------------------------------------------------------
+  Table 4
+  -----------------------------------------------------------------------
+  Comparison of the 12 NEO PI-R Personality Disorders variables for 244
+  male and 18 female Belgian inmates
+
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------------
+                         Mean                                        
+  ---------------------- -------- ---------- ------------ ---------- ----------
+  Variable               Men      Women      *t*          *p*        Cohen's
+                                                                     *d*
+
+  Paranoid               120.73   115.83     .839         .40        -0.19
+
+  Schizoid               112.49   112.61     -.024        .98        0.01
+
+  Schizotypal            100.00   107.94     -1.968       .05        0.46
+
+  Antisocial             226.06   211.44     1.878        .06        -0.47
+
+  Borderline             138.52   149.78     -1.997       .05        0.45
+
+  Histrionic             196.22   197.67     -.270        .79        0.06
+
+  Narcissist             164.37   152.22     1.976        .05        -0.49
+
+  Avoidant               158.02   171.39     -2.521\*     .01        0.53
+
+  Dependent              118.66   131.22     -3.345\*\*   .001       0.67
+
+  Dependent-Revised      83.89    94.67      -2.267\*     .02        0.51
+
+  Obsessive-compulsive   226.36   229.61     -.571        .57        0.12
+
+  Psychopathy            271.15   248.11     3.200\*\*    .002       -0.74
+  -----------------------------------------------------------------------------
+
+\* *p* \< .05
+
+\*\* *p* \< .01
+
+
+
+On the legal status, five psychological variables distinguish the sentenced inmates from the forensic patients. Forensic patients score higher in Neuroticism, *t*(260) = 2.62, *p* = .009, *d* = .62,
+self-consciousness, *t*(260) = 2.71, *p* = .007, *d* = .66, vulnerability, *t*(260) = 2.36, *p* =. 019, *d* =.32 and lower scores in Conscience, *t*(260) = - 2.41 *p* = .017, *d* = -.58, self-discipline, *t*(260) = - 3.14, *p* = .002, *d* = -.70. Four personality disorders are also different in the two groups. Forensic patients have higher scores in schizotypal personality, *t*(260) = -2.85, *p* =. 005, *d* = .74, borderline personality, *t*(260) = 2.16, *p* = .032, *d* = .55, revised dependent personality, *t*(260) = 2.89, *p* = .004, *d* = .73 and a lower score in obsessive compulsive personality disorder, *t*(260) = - 2.41, *p* = .017, *d* = -.54.
+
+The age of inmates influenced the scores on eight of the twelve personality disorders: paranoid personality (*r* = -.14, *p* = .02), antisocial personality (*r* = -.21, *p* = .001), psychopathy (*r* = -.19, *p* = .002), borderline personality (*r* = -.22, *p* = .001), histrionic personality (*r* = -.19, *p* = .002), narcissistic personality (*r* = -.21, *p* =. 001), the revised dependent personality (*r* = -.19, *p* = .002) and obsessive compulsive personality disorder (*r* = .23, *p* \< .001).
+
+Table 5 shows that the twelve variables of the NEO PI-R personality disorders can be resolved to just three factors that explain respectively 41 %, 33 % and 17 % (in total 92 %) of the variance. 
+
+
+  -----------------------------------------------------------------------
+  Table 5
+  -----------------------------------------------------------------------
+  Exploratory factor analysis of the 12 NEO PI-R Personality Disorder
+  variables for 262 Belgian inmates
+
+  -----------------------------------------------------------------------
+
+  ------------------------------------------------------------------------
+                                  Factors                     
+                                  (explained                  
+                                  variance)                   
+  ------------------------------- ------------ -------------- ------------
+  Variable                        1 (41%)      2 (33%)        3 (17%)
+
+  Paranoid                        .434         **.743**       .447
+
+  Schizoid                        -.477        **.668**       .463
+
+  Schizotypal                     -.152        **.906**       .068
+
+  Antisocial                      **.951**     .271           .045
+
+  Psychopathy                     **.898**     .086           .367
+
+  Borderline                      .428         **.689**       -.476
+
+  Histrionic                      **.684**     -.312          **-.619**
+
+  Narcissist                      **.832**     .378           .341
+
+  Avoidant                        **-.682**    **.700**       .063
+
+  Dependent                       **-.685**    .407           **-.538**
+
+  Dependent-Revised               -.029        **.815**       **-.522**
+
+  Obsessive-compulsive            **-.673**    -.282          .490
+  ------------------------------------------------------------------------
+
+
+
+Loadings > .5 are highlighted in the table. The first factor clearly shows that the variables of cluster B (dramatic, emotional, or erratic disorders) to which we added psychopathy and C (anxious and fearful disorders) are opposite. High scores on this first factor refer to the tendency to externalize conflicts, to be self-confident and assertive; on the other hand, low scores refer to the tendency to internalize conflicts, to be dependent on others and to be cautious. The second factor consists of variables in the cluster A (eccentric disorders) plus borderline, avoidant personality and the revised dependent personality.
+The two assessment methods of the dependent personality proposed by Miller et al. (2008) raise a problem because they do not appear to refer to the same psychological factor. Therefore, these two variables create
+a third factor in the analysis that could be seen as a bias in the assessment of the dependant personality.
+Therefore, we would be tempted to retain only the first two factors.
+
+The first factor of externalizing is correlated with age (*r* = -. 15, *p* = .02) and gender (*R* = .17, *p* = .0045 of the inmates. Men have higher scores than women for externalizing.
+
+Table 6 proposes a factor structure with varimax variation without the revised dependent personality variable. 
+
+
+  -----------------------------------------------------------------------
+  Table 6
+  -----------------------------------------------------------------------
+  Factor analysis with varimax rotation of 11 NEO PI-R Personality
+  Disorder variables for 262 Belgian inmates
+
+  -----------------------------------------------------------------------
+
+  ------------------------------------------------------------------------
+                                  Factors                     
+                                  (explained                  
+                                  variance)                   
+  ------------------------------- ------------ -------------- ------------
+  Variable                        1 (41%)      2 (31%)        3 (17%)
+
+  Paranoid                        **.717**     **.604**       .244
+
+  Schizoid                        -.005        **.917**       -.220
+
+  Schizotypal                     .044         **.862**       .347
+
+  Antisocial                      **.816**     -.140          **.543**
+
+  Psychopathy                     **.937**     -.168          .199
+
+  Borderline                      .154         .257           **.885**
+
+  Histrionic                      .120         **-.744**      **.620**
+
+  Narcissist                      **.918**     .087           .320
+
+  Avoidant                        -.401        **.896**       -.009
+
+  Dependent                       **-.803**    .448           .277
+
+  Obsessive-compulsive            -.269        .190           **-.826**
+  ------------------------------------------------------------------------
+
+
+Three other factors emerge and also account for 92 % of the variance. The first factor refers to a
+psychopathic antisociality, tainted by suspicion. The second factor refers to alienation and feelings of strangeness. The third factor refers to an unstable, more emotional, more disorganized antisociality.
 
 # Discussion
 
-The results of this study show that some personality traits of inmates differ significantly from the normative sample. Concerning the five major domains of personality, the inmates are as emotionally stable and as extraverted as others. However, they seem less open, more agreeable and more conscientious. The study of the NEO PI-R facets refines these findings. Inmates are much more practical and conservative. They have strong values that they advocate, and do not wish to change them. They perceive themselves as altruistic and wish to help people in need. However, they give less importance to feelings, preferring to put them aside. They bring important ambitions that they want to realize in a disciplined and orderly manner. Some personality disorders are also significantly different: antisocial, psychopathic, histrionic, narcissistic score lower and obsessive, schizoid score higher than the normative population. It should be noted that the mean of these effect sizes is small (Cohen, 1992). 
-The weakness of these effect sizes had already been noticed by Samuels, Bienvenu, Cullen, Costa, Eaten and Nestadt (2004) whose results differ from ours. Indeed, by comparing the variables of the NEO PI-R of 79 persons who had been arrested earlier with 532 people who had never been arrested, they note that the first group had higher scores in Neuroticism, angry hostility, impulsiveness and excitement-seeking and lower scores in Agreeableness, trust, straightforwardness, compliance, modesty, dutifulness and deliberation. These results may even look opposite to ours. It is possible that our sample of Belgian inmates does not share the same psychological characteristics as the sample of people arrested at least once in their lives in the American city of Baltimore (Samuels et al., 2004).
+The results of this study show that some personality traits of inmates differ significantly from the normative sample. Concerning the five major domains of personality, the inmates are as emotionally stable and as extraverted as others. However, they seem less open, more agreeable and more conscientious. The study of the NEO PI-R facets refines these findings. Inmates are much more practical and conservative. They have
+strong values that they advocate, and do not wish to change them. They perceive themselves as altruistic and wish to help people in need. However, they give less importance to feelings, preferring to put them aside. They bring important ambitions that they want to realize in a disciplined and orderly manner. Some personality disorders are also significantly different: antisocial, psychopathic, histrionic, narcissistic score lower and obsessive, schizoid score higher than the normative population. It should be noted that the mean of these effect sizes is small (Cohen, 1992).
+
+The weakness of these effect sizes had already been noticed by Samuels, Bienvenu, Cullen, Costa, Eaten and Nestadt (2004) whose results differ from ours. Indeed, by comparing the variables of the NEO PI-R of 79
+persons who had been arrested earlier with 532 people who had never been arrested, they note that the first group had higher scores in Neuroticism, angry hostility, impulsiveness and excitement-seeking and lower scores in Agreeableness, trust, straightforwardness, compliance, modesty, dutifulness and deliberation. These results may even look opposite to ours. It is possible that our sample of Belgian inmates does not share the same psychological characteristics as the sample of people arrested at least once in their lives in the American city of Baltimore (Samuels et al., 2004).
 
 The comparison between male and female inmates shows some differences: women seem more anxious and dependent. This result is interesting but clearly deserves confirmation with a more specific study. As the sample of women in this study is small (18) and raises issues of generalization, these findings should therefore be taken with caution.
-The same remark applies to the 14 forensic patients. Although significant differences were found with sentenced inmates, they should be confirmed by another more specific study. 
- 
-The factor analysis that was conducted highlights two major factors. The first refers to the concepts of externalization and internalization that appear in several factor approaches of psychopathology (Sheets & Craighead, 2007; Røysamb, Kendler, Tambs, Ørstavik, Neale & Aggen, 2011; Kendler, Aggen, Knudsen, Røysamb, Neal, Reichborn-Kjennerud, 2011). That is, two opposite trends appear in the analysis: a) the self-confidence and the externalization of conflicts into the environment and b) scruples, dependence on others, and inner fears. 
-The age tends to exacerbate the trend towards internalization. 
+The same remark applies to the 14 forensic patients. Although significant differences were found with sentenced inmates, they should be confirmed by another more specific study.
+
+The factor analysis that was conducted highlights two major factors. The first refers to the concepts of externalization and internalization that appear in several factor approaches of psychopathology (Sheets & Craighead, 2007; Røysamb, Kendler, Tambs, Ørstavik, Neale & Aggen, 2011; Kendler, Aggen, Knudsen, Røysamb, Neal, Reichborn-Kjennerud, 2011). That is, two opposite trends appear in the analysis: a) the self-confidence and the externalization of conflicts into the environment and b) scruples, dependence on others, and inner fears.
+
+The age tends to exacerbate the trend towards internalization.
+
 The second factor describing our data refers to certain thoughts and some strange, incoherent or unstable behaviour.
-The second factor analysis with varimax variation is interesting from the criminological point of view because it reveals three distinct psychological types: (a) a resolute psychopathic tendency, (b) a tendency towards alienation and to strange experiences, and (c) a disorganized emotional antisocial tendency. Each of the three disorders of the cluster C (avoidant, dependent and obsessive-compulsive) seems to define a distinct psychological type. Indeed each one loads strongly each factor.
- 
+
+The second factor analysis with varimax variation is interesting from the criminological point of view because it reveals three distinct psychological types: (a) a resolute psychopathic tendency, (b) a
+tendency towards alienation and to strange experiences, and (c) a disorganized emotional antisocial tendency. Each of the three disorders of the cluster C (avoidant, dependent and obsessive-compulsive) seems to define a distinct psychological type. Indeed each one loads strongly each factor.
+
 The prevalence of obsessive-compulsive features within this population can be surprising. Indeed, it has not appeared in previous studies evaluating personality disorders using hetero-reported and categorical assessment. For example, among the 80 inmates from a Parisian prison assessed by the Structured Clinical Interview for DSM Disorders (SCID-II) and the Mini-International Neuropsychiatric Interview (M.I.N.I.), 10 % meet the criteria of the obsessive-compulsive personality compared to 53.8 % for antisocial personality (Nioche, Pham, Ducro, Beaurepaire, Chudzik, Courtois & Réveillère, 2010). The meta-analysis of Fazel and Danesh (2002) do not evoke the obsessive-compulsive personality disorder.
-Beyond this specific disorder, the high rates of prison personality disorders do not appear in our study. On the contrary, it shows much less pathological and therefore less worrisome results in strictly psychiatric terms that some studies have reported (Vandervelde, Soyez, Vander Beken, De Smet, Boer & Broekart, 2011). 
 
-How can we explain the results if the present study? 
-First assumption: the Five-Factor Model variables do not assess the same realities that axis II of the DSM-IV TR personality disorders. However, the meta-analysis of Samuel and Widiger (2008) supports the idea that the Five-Factor Model actually does evaluate these personality disorders in a satisfactory manner. In addition, Bulten, Nijman and van der Staak (2009) argue that the NEO PI-R variables do predict the diagnosis of antisocial personality disorder. 
-Second assumption: inmates minimize dysfunctional personality characteristics in a self-reported context. In fact, Sung-Cheol (2007) has highlighted that the stake of the assessment (a professional recruitment) influences the scores to the NEO PI-R: Neuroticism (d = -1.2), Openness (d = -.49) Extraversion (d = .79), Agreeability (d = .63), Consciousness (d = 1.36) and lowered all personality disorders (mean of d = - .8), and increased obsessive-compulsive personality (d = .96). It is likely that the context of the assessment has had an impact on these scores. However, the differences to the norms we have found are well below those in a recruitment position. We also did not find differences for neuroticism and extraversion. Furthermore, this risk of bias made us include three validity scales proposed by Schinka and Kremer (1997). These scales did not reveal an effect of social desirability in the responses of inmates. However they showed a tendency to respond more inconsistently, which could be explained by the lesser degree of education of inmates. Indeed, being less familiar with the ability to read and writing, it is likely that some inmates have lesser understanding of the more complex items of the test. The context therefore does not fully explain our results. 
-Third assumption: our population suffers from a systematic bias, which would affect self representation (Petot & Djuric Jocic, 2005). This assumption questions the validity of self-reported psychological assessments. Some argue that social desirability influences personality questionnaires so that the results would be invalid. Rolland and de Fruyt (2009) argue that social desirability is not so simple and does not invalidate the obtained psychological profile. Indeed, the trend to change some answers in a psychological test is itself related to the personality of the respondent. It is difficult (if not impossible) to distinguish conscious intentions of those that are not.  Some may claim a psychological facet (e.g. altruism) based on a personal value that they endorse: “it is important to me to care for others”. This value could be seen as a stable and coherent cognitive pattern. One single act (e.g. an offense) does not imply a repetitive behaviour. Others organize drug dealing without paying attention to long-term negative consequences of their actions. Some are part of a criminal organization that gives them orders they follow by conformism or for social valorisation.
-According to us, someone claiming a personality facet based on a personal conviction may be considered as expressing it.  
-The establishment of a trust relationship between the clinician and the participant allows the reduction of the social desirability effect. Let us recall that the protocols of NEO PI-R were obtained in a global clinical assessment for inmates incarcerated for several months and eligible for early release. This issue of social desirability (or manipulation) is often discussed during clinical interviews in one way or another. Therefore, the prison psychologist attempts as possible to ensure a minimum trust with the inmate before psychological testing. Concerning the present study, the average personality profile obtained contradicts a prototypical image of the inmate that could be characterised by impulsivity, egocentrism, violence, disrespect towards others, etc. These features could be seen as a caricature of the offender assumed dangerous. The psychological profile resulting from the present study is consistent with clinical interviews in prison. Most of the inmates report a major loyalty to their relatives (mainly their immediate family) and their values (e.g. religious values). They insist on the sacrifices they would be willing to do for the people they love. Often, an altruistic intent is hiding behind the criminal acts (for example, robbing a bank to ensure financial support to his family). The obsessive-compulsive dimension is not so surprising to the prison clinician: inmates must obey a series of specific rules in the prison and follow procedures to obtain a conditional release. They express their ambitions (e.g. to find a satisfactory job) and their intention to succeed. Finally, even if we believe that the Belgian inmates had manipulated their responses to the NEO PI-R, we should note that they would have done this whilst taking into account socially valued ideals, which means that they take them into consideration.  
+Beyond this specific disorder, the high rates of prison personality disorders do not appear in our study. On the contrary, it shows much less pathological and therefore less worrisome results in strictly psychiatric terms that some studies have reported (Vandervelde, Soyez, Vander Beken, De Smet, Boer & Broekart, 2011).
 
-The common point of this study’s subjects is that they committed at least one offence and have therefore broken the law and morality. Is morality a personality trait? The Five-Factor Model seems to respond negatively to this question because morality does not appear explicitly in factor analyses. This study indirectly questions the relationship between crime and personality and therefore, between antisocial behaviour and personality. Although there are antisocial behaviours and ways of life, is there an antisocial personality? Studies using hetero-reported evaluations seem to confirm the prevalence of antisocial personality diagnosis in prisons. However, is this diagnosis not influenced by the situation of assessment? Don’t the psychiatrists or psychologists pay more attention to those diagnostic criteria, influenced by a halo effect? 
-The tautological definition of antisocial personality must be underlined: an antisocial person behaves in an antisocial manner. This definition is problematic because it is likely to induce non-conscious cognitive biases among the assessor and lead them to assign to personality what is in fact situational behaviour. Called the fundamental attribution error (Ross, 1977) this error is very common and insidious. We are not saying that this cognitive bias completely covers the antisocial personality diagnosis but assessors should be mindful of the role it plays.
-Keeping the antisocial disorder in the different versions of the Diagnostic and Statistical Manual of Mental Disorders (DSM) induces the idea that this is a psychiatric problem (and hence a medical issue). Six of the seven diagnostic criteria for antisocial personality disorder in the DSM-IV TR directly refer to legal, safety and moral concepts. Deriving personality traits from "irresponsible" or immoral behaviours is not so obvious. 
-From a historical point of view, such a diagnosis evokes the homicidal monomania (by Georget in 1825) or the born criminal (by Lombroso in 1876), which showed little regard for sociological variables involved in understanding delinquency. Much sociological work has been made to highlight the weight of social factors influencing delinquency. For example, Becker (1963) insisted on the labeling effect, which sometimes leads people to commit crimes because there are seen as offenders by the others. Labels applied to individuals influence their behaviour. Psychiatric research about criminal behaviours often omits to consider social variables, reducing it to a medical issue. 
+How can we explain the results if the present study?
+First assumption: the Five-Factor Model variables do not assess the same realities that axis II of the DSM-IV TR personality disorders. However, the meta-analysis of Samuel and Widiger (2008) supports the idea that the Five-Factor Model actually does evaluate these personality disorders in a satisfactory manner. In addition, Bulten, Nijman and van der Staak (2009) argue that the NEO PI-R variables do predict the diagnosis of antisocial personality disorder.
+
+Second assumption: inmates minimize dysfunctional personality characteristics in a self-reported context. In fact, Sung-Cheol (2007) has highlighted that the stake of the assessment (a professional recruitment) influences the scores to the NEO PI-R: Neuroticism (*d* = -1.2), Openness (*d* = -.49) Extraversion (*d* = .79), Agreeability (*d* = .63), Consciousness (*d* = 1.36) and lowered all personality disorders (mean of *d* = - .8), and increased obsessive-compulsive personality (*d* = .96). It is likely that the context of the assessment has had an impact on these scores. However, the differences to the norms we have found are well below those in a recruitment position. We also did not find differences for neuroticism and extraversion. Furthermore, this risk of bias made us include three validity scales proposed by Schinka and Kremer (1997). These scales did not reveal an effect of social desirability in the responses of inmates. However they showed a tendency to respond more inconsistently, which could be explained by the lesser degree of education of inmates. Indeed, being less familiar with the ability to read and writing, it is likely that some inmates have lesser understanding of the more complex items of the test. The context therefore does not fully explain our results.
+
+Third assumption: our population suffers from a systematic bias, which would affect self representation (Petot & Djuric Jocic, 2005). This assumption questions the validity of self-reported psychological assessments. Some argue that social desirability influences personality questionnaires so that the results would be invalid. Rolland and de Fruyt (2009) argue that social desirability is not so simple and does
+not invalidate the obtained psychological profile. Indeed, the trend to change some answers in a psychological test is itself related to the personality of the respondent. It is difficult (if not impossible) to distinguish conscious intentions of those that are not. Some may claim a psychological facet (e.g. altruism) based on a personal value that they endorse: "it is important to me to care for others". This value could be seen as a stable and coherent cognitive pattern. One single act (e.g. an offense) does not imply a repetitive behaviour. Others organize drug dealing without paying attention to long-term negative consequences of their actions. Some are part of a criminal organization that gives them orders they follow by conformism or for social valorisation.
+
+According to us, someone claiming a personality facet based on a personal conviction may be considered as expressing it.
+
+The establishment of a trust relationship between the clinician and the participant allows the reduction of the social desirability effect. Let us recall that the protocols of NEO PI-R were obtained in a global
+clinical assessment for inmates incarcerated for several months and eligible for early release. This issue of social desirability (or manipulation) is often discussed during clinical interviews in one way or another. Therefore, the prison psychologist attempts as possible to ensure a minimum trust with the inmate before psychological testing.
+Concerning the present study, the average personality profile obtained contradicts a prototypical image of the inmate that could be characterised by impulsivity, egocentrism, violence, disrespect towards others, etc. These features could be seen as a caricature of the offender assumed dangerous. The psychological profile resulting from the present study is consistent with clinical interviews in prison. Most of the inmates report a major loyalty to their relatives (mainly their immediate family) and their values (e.g. religious values). They insist on the sacrifices they would be willing to do for the people they love.
+Often, an altruistic intent is hiding behind the criminal acts (for example, robbing a bank to ensure financial support to his family). The obsessive-compulsive dimension is not so surprising to the prison
+clinician: inmates must obey a series of specific rules in the prison and follow procedures to obtain a conditional release. They express their ambitions (e.g. to find a satisfactory job) and their intention to
+succeed. Finally, even if we believe that the Belgian inmates had manipulated their responses to the NEO PI-R, we should note that they would have done this whilst taking into account socially valued ideals,
+which means that they take them into consideration.
+
+The common point of this study's subjects is that they committed at least one offence and have therefore broken the law and morality. Is morality a personality trait? The Five-Factor Model seems to respond
+negatively to this question because morality does not appear explicitly in factor analyses. This study indirectly questions the relationship between crime and personality and therefore, between antisocial
+behaviour and personality. Although there are antisocial behaviours and ways of life, is there an antisocial personality? Studies using hetero-reported evaluations seem to confirm the prevalence of antisocial personality diagnosis in prisons. However, is this diagnosis not influenced by the situation of assessment? Don't the psychiatrists or psychologists pay more attention to those diagnostic criteria, influenced by a halo effect?
+
+The tautological definition of antisocial personality must be underlined: an antisocial person behaves in an antisocial manner. This definition is problematic because it is likely to induce non-conscious cognitive biases among the assessor and lead them to assign to personality what is in fact situational behaviour. Called the *fundamental attribution error* (Ross, 1977) this error is very common and insidious. We are not saying that this cognitive bias completely covers the antisocial personality diagnosis but assessors should be mindful of the role it plays.
+
+Keeping the antisocial disorder in the different versions of the Diagnostic and Statistical Manual of Mental Disorders (DSM) induces the idea that this is a psychiatric problem (and hence a medical issue). Six
+of the seven diagnostic criteria for antisocial personality disorder in the DSM-IV TR directly refer to legal, safety and moral concepts.
+Deriving personality traits from *irresponsible* or immoral behaviours is not so obvious.
+
+From a historical point of view, such a diagnosis evokes the homicidal monomania (by Georget in 1825) or the born criminal (by Lombroso in 1876), which showed little regard for sociological variables involved in
+understanding delinquency. Much sociological work has been made to highlight the weight of social factors influencing delinquency. For example, Becker (1963) insisted on the *labeling effect*, which sometimes leads people to commit crimes because there are seen as offenders by the others. Labels applied to individuals influence their behaviour. Psychiatric research about criminal behaviours often omits to consider social variables, reducing it to a medical issue.
+
 According to us, the link between personality, self-representation and close social environment still deserves further research. Criminal behaviour is a particular relevant field for this matter.
 
-The results of this study suggest that the personality of inmates is not fundamentally different from the rest of the population. This observation seems important because it reminds us that understanding delinquency involves other disciplines such as sociology and moral philosophy. Criminology is a complex discipline that requires a multidisciplinary approach. The reason why behaviour is considered legal or illegal is based on the law. Legal systems do not rely on the scientific paradigm. Some laws are also created in a specific emotional context (e.g. following a media event of for purely political reasons).
-Delinquency implies, therefore, social elements over which individuals have no control. However, there are complex links between sociological variables and the personality of individuals who live in society. These links are studied by social psychology. We believe that the tests used for individual personality (such as personality inventories) do not lose their relevance; on the contrary, links between hetero- and self-reported assessments must still be clarified because the diagnostic process has an impact on the treatment and strategic interventions in the prison. Crime is a social problem that we would be tempted to medicalize. Though some inmates do have acute psychiatric problems, they are not representative of the prison population. Most of inmates committed offences in a complex situation influenced by personality, context and social variables. The results of the present study are not going in the direction of pathology. Although prisons have to deal with people showing mental disorders requiring care, this is not the case for the majority of the inmates.
+The results of this study suggest that the personality of inmates is not fundamentally different from the rest of the population. This observation seems important because it reminds us that understanding
+delinquency involves other disciplines such as sociology and moral philosophy. Criminology is a complex discipline that requires a multidisciplinary approach. The reason why behaviour is considered legal
+or illegal is based on the law. Legal systems do not rely on the scientific paradigm. Some laws are also created in a specific emotional context (e.g. following a media event of for purely political reasons).
 
-t_test <- t.test(N ~ sexe)
-out <- apa_print(t_test)
-Plant yield indeed differed between groups, r out$full_result.
+Delinquency implies, therefore, social elements over which individuals have no control. However, there are complex links between sociological variables and the personality of individuals who live in society. These
+links are studied by social psychology. We believe that the tests used for individual personality (such as personality inventories) do not lose their relevance; on the contrary, links between hetero- and self-reported assessments must still be clarified because the diagnostic process has an impact on the treatment and strategic interventions in the prison. Crime is a social problem that we would be tempted to
+medicalize. Though some inmates do have acute psychiatric problems, they are not representative of the prison population. Most of inmates committed offences in a complex situation influenced by personality,
+context and social variables. The results of the present study are not going in the direction of pathology. Although prisons have to deal with people showing mental disorders requiring care, this is not the case for
+the majority of the inmates.
+
+# References
+
+American Psychiatric Association (1980). *DSM-III: Diagnostic and statistical manual of mental disorders.* New York. Masson.
+
+American Psychiatric Association (1994). *DSM-IV: Diagnostic and statistical manual of mental disorders.* New York. Masson.
+
+Becker H.S. (1963). *Outsiders: Studies in the Sociology of Deviance*. New York: The Free Press.
+
+Bulten E., Nijman H. & van der Staak C. (2007). Measuring criminal thinking styles: the construct validity and utility of the PICTS in aDutch prison sample. *Legal and Criminological Psychology, 14*, 35-49. 
+
+Cohen J. (1992). A Power Primer. *Psychological Bulletin, 112 (1)*, 155-159.
+
+Costa P. & McCrae R. (1998). *NEO PI-R, Inventaire de Personnalité-Révisé*, french adaptation by J-P Rolland. Editions du Centre de Psychologie Appliquée. Paris.
+
+Costa P.T. & Widiger T.A. (2002). *Personality disorders and the five-factor model of personality.* Washington DC: APA.
+
+Edens J.F. & Ruiz M.A. (2008). Identification of mental disorders in an in-patient prison psychiatric unit: examining the criterion-related validity of the Personality Assessment Inventory. *Psychological Services, 5(2),* 108-1117.
+
+Fazel S. & Danesh J. (2002). Serious mental disorder in 23 000 prisoners: a systematic review of 62 surveys. *The Lancet, 359*, February, 16, 2002.
+
+Georget E. (1825). Examen médical des procès criminels des nommés Léger, Feldtmann, Lecouffe, Jean-Pierre et Papavoine, dans lesquels l'aliénation mentale a été alléguée comme moyen de défense, suivi de quelques considérations médico-légales sur la liberté morale. [Medical examination of criminal trials of Léger, Feldtmann, Lecouffe, Jean-Pierre and Papavoine, in which insanity was alleged as a defence, followed by some considerations on forensic moral freedom]. Retrieved March 19, 2012, from http://gallica.bnf.fr/ark:/12148/bpt6k770154/f1
+
+Kendler K.S, Aggen S.H., Knudsen G.P., Røysamb E., Neal M.C., Reichborn-Kjennerud T. (2011). The structure of genetic and environmental risk factors for syndromal and subsyndromal common DSM-IV axis I and all axis II disorders. *American Journal of Psychiatry, 168*, 29-39.
+
+Lafortune D. (2010). Prevalence and screening of mental disorders in short-term correctional facilities. *International Journal of Law and Psychiatry, 33*, 94-100.
+
+Lombroso C. (1876). *L\'uomo delinquente.* Milan: Hoepli. 
+
+Lynam D.R. & Widiger T.A. (2001). Using the five-factor model to represent the DSM-IV personality disorders: an expert consensus approach. *Journal of Abnormal Psychology, 110*, 401-412.
+
+Miller J.D, Lynam D.R., Pham-Scottez A., De Clercq B., Roland J.P., De Fruyt F. (2008). Utilisation du modèle de personnalité à cinq facteurs (FFM) dans l'évaluation des troubles de la personnalité du DSM-IV.
+[Using the Five Factor Model in the assessment of DSM-IV personality disorders]. *Annales Médico-Psychologiques, 166 (6)*, 418-426.
+
+Miller J.D., Lynam D.R., Rolland J.P., De Fruyt F., Reynolds S.K., Pham-Scottez A., Baker S. R., Bagby R.M. (2008). Scoring the DSM-IV Personality Disorders using the Five-Factor Model: Development and Validation of Normative Scores for North American, French and Dutch-Flemish Samples. *Journal of Personality Disorders, 22(5),* 433-450.
+
+Miller J.D., Lynam D.R., Widiger T.A. & Leukefeld C. (2001). Personality disorders as extreme variants of common personality dimensions: Can the five-factor model adequately represent psychopathy ? *Journal of
+Personality, 69 (2)*, 253-276.
+
+Motiuk L.L. & Porporino F.J. (1991). La prévalence, la nature et la gravité des problèmes de santé mentale chez les détenus de sexe masculin sous responsabilité fédérale dans les pénitenciers au Canada. [Prevalence, nature and severity of mental health problems among male inmates in federal penitentiaries in Canada].Retrieved February 15, 2012, from
+<http://www.csc-scc.gc.ca/text/rsrch/reports/r24/r24e_f.pdf>
+
+Nioche A., Pham T., Ducro C., de Beaurepaire C., Chudzik, Courtois R. & Réveillère C. (2010). Psychopathie et troubles de la personnalité associés : recherche d'un effet particulier au trouble borderline [Psychopathy and associated personality disorders: Searching for a particular effect of the borderline personality disorder]. *L'Encéphale, 36*, 253-259.
+
+Petot J.M. & Djuric Jocic D. (2005). Discrepancies between the Rorschach inkblot method and self-report measures of personality: methodological and theorical reflections. *Rorschachiana, 27*, 101-116.
+
+Piselli M., Elisei S., Murgia N., Quartesan R. & Abram K.M. (2009). Co-occuring psychiatric and substance use disorders among male detainees in Italy. *International Journal of Law and Psychiatry, 32*, 101-107.
+
+Pham T. & Saloppé T. (2010). PCL-R psychopathy and its relation to DSM axes I and II disorders in a sample of male forensic patients in a Belgian security hospital. *International Journal of Forensic Mental Health*.
+
+Rolland J.P & de Fruyt F. (2009). PfPI, inventaire de personnalité au travail. Manuel. [PfPI, personality inventory at work. Handbook]. ECPA. Éditions du Centre de psychologie appliquée.
+
+Ross L. (1977). The intuitive psychologist and his shortcomings: Distortions in the attribution process. In L. Berkowitz (dir.), *Advances in experimental social psychology* (vol. 10, 173--220), Academic Press, New York.
+
+Røysamb E., Kendler K.S., Tambs K., Ørstavik R.E., Neale M.C. & Aggen S.H. (2011). The joint structure of DSM-IV axis I and axis II disorders. *Journal of Abnormal Psychology, 120 (1)*, 198-209.
+
+Samuels J., Bienvenu O., Cullen B., Costa P., Eaten W. & Nestadt G. (2004). Personality dimensions and criminal arrest. *Comprehensive Psychiatry, 45 (4)*, 275-280.
+
+Samuel D.B. & Widiger T.A. (2008). A meta-analytic review of the relationships between the five-factor model and DSM-IV-TR personality disorders: a facet level analysis. *Clinical Psychology Review, 28,* 1326-1342.
+
+Schinka J. & Kremer T. (1997). Research validity scales for the NEO PI--R: Development and initial validation. *Journal of Personality Assessment, 68*, 127--138.
+
+Sheets E. & Craighead W.E. (2007). Towards an empirically based classification of personality pathology. *Clinical Psychology: Science and Practice, 14(2),* 77-93.
+
+Sung-Cheol J. (2007). *La personnalité dans le processus d'évaluation : stabilité structurale de l'inventaire NEO-PI-R et prédiction des comportements au travail.* [Personality and assessment process: structural stability of the NEO PI-R and predicting behaviours at work]. Doctoral thesis. Université de Paris X Nanterre.
+
+Vandervelde S., Soyez V., Vander Beken T., De Smet S., Boers A. & Broekart E. (2011). Mentally ill offenders in prison: the Belgian case. *International Journal of Law and Psychiatry, 34*, 71-78.
+
+Westen D. & Arkowitz-Westen L. (1998). Limitations of axis II in diagnosing personality pathology in clinical practice. *American Journal of Psychiatry, 155*, 1767-71.
+
+Widiger T.A. & Samuel D.B. (2005). Diagnostic categories or dimensions ? A question for the Diagnostic and Statistical Manuel of Mental Disorders -- 5th Edition. *Journal of Abnormal Psychology, 114*, 494-504.
