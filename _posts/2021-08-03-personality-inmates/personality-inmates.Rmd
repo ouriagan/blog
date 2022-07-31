@@ -4,12 +4,11 @@ description: |
   Many international studies report a high prevalence of personality disorders among inmates on the basis of (semi) - structured diagnostic interviews. The present study proposes a self-reported evaluation of personality disorders using the NEO PI-R. The sample consists of 297 male and 26 female inmates (N = 323) who were psychologically assessed. The analysis of the five psychological domains shows that the French-speaking Belgian inmates are as stable, as extroverted, more closed, more agreeable and more conscientious than the normative sample. The NEO PI-R facets are also analysed. The mean Cohen’s d (.26) is small. Two personality disorders have medium effect sizes: obsessive compulsive personality disorder (high) and histrionic personality (low). Small effect sizes exist for antisocial personality (low), psychopathy (low), narcissistic personality (low), schizoid personality (high) and borderline personality (low). In our view, the context of the assessment can partially explain these results but not entirely. The results do not confirm previous studies and question the high rates of psychiatric prevalence in prison. 
 author:
   - name: Benjamin Thiry
-    url: https://benjaminthiry.netlify.app/personality-inmates
+    url: https://benjaminthiry.netlify.app/posts/2021-08-03-personality-inmates/
 date: 08-03-2021
-citation_url: https://benjaminthiry.netlify.app/personality-inmates
+citation_url: https://benjaminthiry.netlify.app/posts/2021-08-03-personality-inmates/
 journal: "International Journal of Law and Psychiatry"
 doi: "https://doi.org/10.1016/j.ijlp.2012.04.010"
-bibliography: blog.bib
 output:
   distill::distill_article:
     self_contained: false
@@ -19,9 +18,7 @@ output:
 # Introduction
 
 Formally established in the 18th century as a mode of punishment, the prison sentence is the most serious penal sanction in democratic states that do not apply the death penalty. In some way, inmates still belong to the general population even if they are kept in security buildings. According to Walmsley (cited by Fazel & Danesh, 2002), nine million people are imprisoned worldwide. Much research has been conducted in order to assess the frequency of psychiatric disorders in prisons. Motiuk and Porporino (1991) conducted a study on 2812 inmates in Canada and proposed a psychiatric diagnosis based on DSM-III (American Psychiatric Association, 1980) by using a structured interview. Prevalence rates were found to be: 74.9 % with antisocial personality disorder; 69.8 % alcohol abuse; 55.6 % with anxiety disorders; 52.9 % with disorders related to substances abuse; 29.5% with psychosexual disorders; 25.8 % with depressive disorders; 10.4 % with psychotic disorders and 4.3 % with organic disorders. Lafortune (2010) correlated correctional and medical records in order to assess 671 inmates entering prison. The ten most frequent psychiatric categories were anxiety disorders (40.2 %); drug dependence (25.2 %); depressive disorder (21.4 %); adjustment reactions (19.7 %); personality disorders (18 %), non-dependent abuse of drugs (14.5 %), alcohol dependence syndrome (11.6 %), drug psychoses (10.6 %) and general symptoms such as sleep problems or hallucinations (9.9 %). In total, 61 % of Quebec inmates had received at least one psychiatric diagnosis.
-
 Fazel and Danesh (2002) performed a meta-analysis of 62 studies involving 22 790 inmates. The most frequent diagnoses are personality disorders (65 % for men, 42 % for women), major depression (10 % for men, 12 % for women) and psychotic diseases (3.7 % for men, 4 % for women). They reported that inmates suffer from two to four times more psychosis or depression, and ten times more from antisocial personality disorder than the general population. They doubt that all these patients receive appropriate care to their pathology.
-
 Other researchers have emphasized the co-morbidity of psychiatric disorders with drug use and its disruptive effects (Piselli, Elisei,Murgia, Quartesan & Abram, 2009). They underlined these impacts on
 employment, substance abuse, family and social functioning, and also the psychiatric symptomatology of inmates. Co-morbidity is much more important when considering forensic hospitals receiving offenders for
 whom a mental pathology was observed. According to Edens and Ruiz (2008), more than half of the inmates from forensic hospital receive more than one diagnosis. According to Pham and Saloppé (2010), 67.9 % of
@@ -34,9 +31,7 @@ In Belgium, prisons have a *Psychosocial Service* with psychologists, social wor
 
 One of the frequently used tests is the NEO PI-R because it assesses many personality variables. The Psychosocial Service disposes thus of a substantial number of protocols that can be used for a statistical
 analysis. Does the NEO PI-R reveal particular variables configurations? Does it highlight personality disorders in the prison population? What is the prevalence of co-morbid personality disorders? Are antisocial personality disorder and psychopathic disorder (Miller, Lynam, Widiger & Leukefeld, 2001) prevalent in this population? Do forensic patients or female inmates show different profiles than regular inmates?
-
 We would also like to know if a self-reported inventory like the NEO PI-R provides relevant information to the psychological profile of inmates.
-
 This is the only study that deals with Personality Disorders using the NEO PI-R on a large prison sample.
 
 # Method
@@ -46,19 +41,15 @@ This is the only study that deals with Personality Disorders using the NEO PI-R 
 Our sample consists of 262 French-speaking inmates in Belgian prisons eligible for early release. Of these, 244 (93.1 %) are men and 18 (6.9 %) are women. Concerning the legal status, 248 (94.7 %) are sentenced
 and 14 (5.3 %) are forensic patients. 
 The inmates are jailed in individual cells and are under the daily supervision of correctional officers. The forensic patients were recognized mentally irresponsible at the time of the offence and are jailed in special units of the prison, which provide psychiatric care.
-
 It was chosen to keep women and forensic patient in our sample as they are part of the prison population as well as the sentenced males. We wished our study to be representative of the actual prison population.
 This is a convenience sample obtained retrospectively.
-
 The average age is 35.5 years with a standard deviation equal to 11.1 and varies from 18 to 76 years.
 
 ## Procedure
 
 The NEO PI - R was obtained during a comprehensive psychological assessment. The psychologist in charge of the psychological assessment met the inmate in a quiet and private office.
-
 Preliminary psychological interviews assessed the cooperation of the inmate and his understanding of the French language, as self-reported personality questionnaires are not proposed to inmates who do not understand French, present a significant intellectual limitation or refuse psychological tests. In this study, we asked the French-speaking psychologists of the psychosocial service to provide NEO PI-R protocols
 they had previously administered. The protocols were gathered and anonymized by a membre of the Psychosocial Service and sent for data analysis.
-
 Some psychologists use this test very often while others never do because practicing psychologists prefer tests they know best in the task of psycho-diagnosis. This study aimed to receive as many completed tests
 as possible. This sample therefore has a weakness: the criterion for administration of the NEO PI-R was not strictly controlled. It is conceivable that psychologists have administered the NEO PI-R to the
 more conciliatory inmates. Some inmates also refuse to pass any psychological test. However, we find that the NEO PI-R is often well accepted by most inmates.
@@ -68,7 +59,6 @@ held in detention for months or even years. This is important because it implies
 difficult time for most inmates, who discover a new, isolated and often violent world. Participants in our study know the prison rituals and probably exceeded the shock they experienced when they were arrested.
 Eligible for early release, they begin a project to leave the prison. Some inmates refuse psychosocial interviews or are considered as too dangerous to allow interviews. Therefore, these inmates have not been
 tested. These situations are rare and often transient. It may take several months before these meetings are possible.
-
 This study addressed this following prison population: French-speaking inmates who were currently undergoing the procedure for conditional release and who have completed the NEO PI-R.
 
 ## Statistics
@@ -85,7 +75,6 @@ some idea of the difference between them. Therefore, we also provide an index as
 The factor structure of personality variables is also provided. Indeed, this factor approach was chosen to evaluate the concept of comorbidity in a dimensional way. This allows the evaluation of the complex links between each personality disorder with all the others. It also helps to highlight the common factors that unite the personality disorders and thus understand their theoretical foundations better.
 
 Given the context of obtaining data (through early releases), we used three validity scales developed by Schinka and Kremer (1997): Positive Presentation Management (PPM), Negative Presentation Management (NPM) and inconsistency (INC), which evaluate trends to present a positive self-image, a negative self-image, or incoherent responses to the questionnaire, respectively.
-
 
 
 # Results
@@ -191,7 +180,6 @@ The study of the NEO PI-R facets gives more detailed results. Indeed, in descend
 disciplined, more ambitious, more frank, more orderly, more tolerant to frustration, less assertive, more discouraged, most submitted, more cynical, less aesthetic, less curious, less happy and less anxious than
 the normative population. Note that only one difference can be seen as large (Cohen's *d* for O1 = -. 85) and others are lower. The mean of the absolute values of the 35 Cohen's *d* is equal to .26. Differences,
 while statistically significant, remain low.
-
 Table 2 shows descriptive statistics for each NEO PI-R personality disorders variable. 
 
 
@@ -237,7 +225,6 @@ Two personality disorders have medium effect sizes: high obsessive compulsive pe
 personality. Small effect sizes exist for antisocial personality (low score), psychopathy (low score), narcissistic personality (low score), schizoid personality (high score) and borderline personality (low
 score). The mean of the absolute values of the 12 Cohen's *d* is also equal to. 26. Only 4 % of the participants have an antisocial personality score above 1.5 SD (the lowest cut-off chosen by Miller et
 al., 2001) and only 3% have a psychopathic score above 1.5 SD.
-
 Table 3 compares the scores of men with women. 
 
 
@@ -331,7 +318,6 @@ Table 3 compares the scores of men with women.
 \* *p* < .05
 
 ** *p* < .01
-
 
 
 Five psychological variables are significantly different at the .05 level: women seem more anxious, more vulnerable to stress, have more negative affects, are more
@@ -438,9 +424,7 @@ Loadings > .5 are highlighted in the table. The first factor clearly shows that 
 The two assessment methods of the dependent personality proposed by Miller et al. (2008) raise a problem because they do not appear to refer to the same psychological factor. Therefore, these two variables create
 a third factor in the analysis that could be seen as a bias in the assessment of the dependant personality.
 Therefore, we would be tempted to retain only the first two factors.
-
 The first factor of externalizing is correlated with age (*r* = -. 15, *p* = .02) and gender (*R* = .17, *p* = .0045 of the inmates. Men have higher scores than women for externalizing.
-
 Table 6 proposes a factor structure with varimax variation without the revised dependent personality variable. 
 
 
@@ -507,9 +491,7 @@ The second factor analysis with varimax variation is interesting from the crimin
 tendency towards alienation and to strange experiences, and (c) a disorganized emotional antisocial tendency. Each of the three disorders of the cluster C (avoidant, dependent and obsessive-compulsive) seems to define a distinct psychological type. Indeed each one loads strongly each factor.
 
 The prevalence of obsessive-compulsive features within this population can be surprising. Indeed, it has not appeared in previous studies evaluating personality disorders using hetero-reported and categorical assessment. For example, among the 80 inmates from a Parisian prison assessed by the Structured Clinical Interview for DSM Disorders (SCID-II) and the Mini-International Neuropsychiatric Interview (M.I.N.I.), 10 % meet the criteria of the obsessive-compulsive personality compared to 53.8 % for antisocial personality (Nioche, Pham, Ducro, Beaurepaire, Chudzik, Courtois & Réveillère, 2010). The meta-analysis of Fazel and Danesh (2002) do not evoke the obsessive-compulsive personality disorder.
-
 Beyond this specific disorder, the high rates of prison personality disorders do not appear in our study. On the contrary, it shows much less pathological and therefore less worrisome results in strictly psychiatric terms that some studies have reported (Vandervelde, Soyez, Vander Beken, De Smet, Boer & Broekart, 2011).
-
 How can we explain the results if the present study?
 First assumption: the Five-Factor Model variables do not assess the same realities that axis II of the DSM-IV TR personality disorders. However, the meta-analysis of Samuel and Widiger (2008) supports the idea that the Five-Factor Model actually does evaluate these personality disorders in a satisfactory manner. In addition, Bulten, Nijman and van der Staak (2009) argue that the NEO PI-R variables do predict the diagnosis of antisocial personality disorder.
 
