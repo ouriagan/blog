@@ -890,7 +890,7 @@ apa_table(
 
 Table \@ref(tab:table1) shows descriptive statistics for each NEO PI-R variable, the effect size in comparison with the French normative sample, and the degree of significance. Concerning the five domains, three are significantly different from the normative sample: the Openness is lower, Agreeableness and Conscientiousness are higher. This profile suggests that the French-speaking Belgian inmates are as stable, as extraverted, less open, more agreeable and more conscientious than the normative population. 
 
-```{r domains, echo = FALSE}
+```{r domains, fig.cap="t scores", echo = FALSE}
 boxplot(domaines_t.df,
 main="T scores for each personality domain for Belgian inmates",
 xlab="Domains",
