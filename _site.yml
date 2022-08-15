@@ -1,8 +1,9 @@
-name: "Psychologie et délinquence"
+name: "Psychologie et délinquance"
 title: "Psychologie et délinquance"
 description: |
   Ce blog consacré au lien entre la psychologie et la délinquance. Il est tenu par Benjamin Thiry
 output_dir: "_site"
+base_url: https://benjaminthiry.netlify.app/
 navbar:
   right:
     - text: "Accueil"
@@ -10,3 +11,7 @@ navbar:
     - text: "Qui écrit ce blog ?"
       href: about.html
 output: distill::distill_article
+collections:
+    posts:
+      disqus: psychologie-et-delinquance
+      share: [twitter, linkedin, facebook]

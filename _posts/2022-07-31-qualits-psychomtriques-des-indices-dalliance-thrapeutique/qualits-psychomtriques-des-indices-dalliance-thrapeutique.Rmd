@@ -3,14 +3,19 @@ title: "Qualités psychométriques des indices d'alliance thérapeutique du NEO 
 description: |
   A l’occasion d’une étude précédente (Thiry, 2020), nous avons proposé trois indices susceptibles de prévoir une bonne ou une mauvaise alliance thérapeutique sur base des variables du modèle de personnalité en cinq facteurs. Nous proposons ici les caractéristiques psychométriques de ces trois indices pour un échantillon de 720 personnes (tout venant, détenus, adolescents, étudiants et patients). Les trois indices présentent une forte redondance. Nous proposons de ne retenir que celui qui repose sur trois domaines de personnalité (O+A+C). Seuls l’âge et le sexe semblent exercer une influence sur cet indice. Selon nous, cet indice dépasse le cadre thérapeutique car il décrit un rapport au monde extérieur, aux autres et aux actions bien plus global. Nous posons l’hypothèse que ce rapport répond consciemment ou non aux idéaux professionnels des cliniciens.
 author:
-  - name: Benjamin Thiry
-    url: https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/
+  - first_name: "Benjamin"
+    last_name: "Thiry"
+    url: https://benjaminthiry.netlify.app/
+    orcid_id: 0000-0001-5864-8369
 date: 2022-07-31
 bibliography: ../../blog.bib
+biblio-style: apalike
+link-citations: yes
 output:
   distill::distill_article:
     self_contained: false
     toc: true
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}

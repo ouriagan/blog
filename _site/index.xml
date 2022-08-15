@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Psychologie et délinquance</title>
+    <link>https://benjaminthiry.netlify.app/</link>
+    <atom:link href="https://benjaminthiry.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Ce blog consacré au lien entre la psychologie et la délinquance. Il est tenu par Benjamin Thiry
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Sun, 31 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Qualités psychométriques des indices d'alliance thérapeutique du NEO PI</title>
+      <dc:creator>Benjamin Thiry</dc:creator>
+      <link>https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique</link>
+      <description>A l’occasion d’une étude précédente (Thiry, 2020), nous avons proposé trois indices susceptibles de prévoir une bonne ou une mauvaise alliance thérapeutique sur base des variables du modèle de personnalité en cinq facteurs. Nous proposons ici les caractéristiques psychométriques de ces trois indices pour un échantillon de 720 personnes (tout venant, détenus, adolescents, étudiants et patients). Les trois indices présentent une forte redondance. Nous proposons de ne retenir que celui qui repose sur trois domaines de personnalité (O+A+C). Seuls l’âge et le sexe semblent exercer une influence sur cet indice. Selon nous, cet indice dépasse le cadre thérapeutique car il décrit un rapport au monde extérieur, aux autres et aux actions bien plus global. Nous posons l’hypothèse que ce rapport répond consciemment ou non aux idéaux professionnels des cliniciens.</description>
+      <guid>https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique</guid>
+      <pubDate>Sun, 31 Jul 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/qualits-psychomtriques-des-indices-dalliance-thrapeutique_files/figure-html5/age-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Début d'émeute à la prison de Forest</title>
+      <dc:creator>Benjamin Thiry</dc:creator>
+      <link>https://benjaminthiry.netlify.app/posts/2022-07-26-dbut-dmeute-la-prison-de-forest</link>
+      <description>Le 26 juillet 2022, les détenus de la prison de Forest (Bruxelles) se sont barricadés dans l'aile B afin de protester. Quel était l'objet de leur mécontentement ? Comment mieux comprendre la situation ?</description>
+      <guid>https://benjaminthiry.netlify.app/posts/2022-07-26-dbut-dmeute-la-prison-de-forest</guid>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Psychologie et délinquance</title>
+      <dc:creator>Benjamin Thiry</dc:creator>
+      <link>https://benjaminthiry.netlify.app/posts/welcome</link>
+      <description>Bienvenue sur ce blog consacré au lien entre la psychologie et la délinquance. Il est tenu par Benjamin Thiry.</description>
+      <guid>https://benjaminthiry.netlify.app/posts/welcome</guid>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>An Assessment of Personality Disorders with the Five-Factor Model among Belgian Inmates</title>
+      <dc:creator>Benjamin Thiry</dc:creator>
+      <link>https://benjaminthiry.netlify.app/posts/2021-08-03-personality-inmates</link>
+      <description>Many international studies report a high prevalence of personality disorders among inmates on the basis of (semi) - structured diagnostic interviews. The present study proposes a self-reported evaluation of personality disorders using the NEO PI-R. The sample consists of 297 male and 26 female inmates (N = 323) who were psychologically assessed. The analysis of the five psychological domains shows that the French-speaking Belgian inmates are as stable, as extroverted, more closed, more agreeable and more conscientious than the normative sample. The NEO PI-R facets are also analysed. The mean Cohen’s d (.26) is small. Two personality disorders have medium effect sizes: obsessive compulsive personality disorder (high) and histrionic personality (low). Small effect sizes exist for antisocial personality (low), psychopathy (low), narcissistic personality (low), schizoid personality (high) and borderline personality (low). In our view, the context of the assessment can partially explain these results but not entirely. The results do not confirm previous studies and question the high rates of psychiatric prevalence in prison.</description>
+      <guid>https://benjaminthiry.netlify.app/posts/2021-08-03-personality-inmates</guid>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Assessing the Therapeutic Alliance with the Five-Factor Model and the NEO PI: an Expert-Based Approach</title>
+      <dc:creator>Benjamin Thiry</dc:creator>
+      <link>https://benjaminthiry.netlify.app/posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model</link>
+      <description>In psychotherapy, therapeutic alliance is an integrative factor influencing the effectiveness of treatment. This alliance depends on the bond between therapist and patient. Objectives: this study investigates patient's psychological variables likely to facilitate or hamper a psychotherapeutic process. Methods: we asked 38 clinicians to assess the importance of each variable of the Five-Factor Model supposed to facilitate or hamper therapeutic alliance. Results: results indicate that high Openness, Agreeableness and Conscientiousness are perceived as favourable to therapeutic alliance. Beyond these results, we preferably focus on facets of the NEO PI to assess their relevance for the facilitation or hindrance of therapeutic alliance. According clinicians, four facets are supposed to affect positively therapeutic alliance: A2 (Straightforwardness), O3 (Feelings), C5 (Self-Discipline) and O5 (Ideas). Three facets were supposed to have a negative effect on therapeutic alliance: low scores for A5 (Modesty), A2 (Straightforwardness) and A1 (Trust). Conclusion: on this basis, we propose three experimental scores investigating the proneness to access therapy for the NEO PI.</description>
+      <guid>https://benjaminthiry.netlify.app/posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model</guid>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
