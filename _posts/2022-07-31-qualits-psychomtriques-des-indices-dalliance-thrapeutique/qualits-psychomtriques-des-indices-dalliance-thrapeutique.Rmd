@@ -7,7 +7,7 @@ author:
     last_name: "Thiry"
     url: https://benjaminthiry.netlify.app/
     orcid_id: 0000-0001-5864-8369
-date: 2022-07-31
+date: 2022-09-22
 bibliography: ../../blog.bib
 biblio-style: apalike
 link-citations: yes
@@ -45,10 +45,13 @@ maxage <- round(max(age, na.rm = TRUE), digit = 2)
 
 #sexe
 nofmen <-length(which(sexe == "M")) 
-nofmenpercentage <- round(100*(length(which(sexe == "M"))/length(N)), digit = 2)
+nofwomen <- length(which(sexe == "F")) 
+sumsexe <- nofmen+nofwomen
+
+nofmenpercentage <- round(100*(length(which(sexe == "M"))/sumsexe), digit = 2)
 
 nofwomen <- length(which(sexe == "F")) 
-nofwomenpercentage <- round(100*(length(which(sexe == "F"))/length(N)), digit = 2)
+nofwomenpercentage <- round(100*(length(which(sexe == "F"))/sumsexe), digit = 2)
 
 #group
 nofC <-length(which(groupe == "C")) 
@@ -93,14 +96,14 @@ table1 <- printnum(table1a)
 # Introduction
 
 A l'occasion d'une étude précédente [@thiry2020assessing] ([disponible ici](../../posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model/)), nous avons demandé à 38 cliniciens du domaine de la santé mentale d'identifier les **traits de personnalité** de leurs patients susceptibles de **faciliter** ou de **freiner** l'**alliance thérapeutique**. 
-Sur base de leurs réponses, nous avons identifié trois indices qui se basent sur les variables du modèle de personnalité en cinq facteurs (tels que le NEO PI [@mccrae2016inventaires] ou l'IPIP NEO [@goldberg2006international]) :
+Sur base de leurs réponses, nous avons identifié trois indices qui se basent sur les variables du modèle de personnalité en cinq facteurs tels que le NEO PI [@mccrae2016inventaires] ou l'IPIP NEO [@goldberg2006international] :
 
 1. alliance1 (facilite) = O + A + C
 2. alliance2 (facilite) = A2 + O3 + C5 + O5
 3. alliance3 (freine) = (32-A5) + (32-A2) + (32-A1)
 
 Nous n'avions toutefois fourni aucune donnée psychométrique relative à ces trois indices expérimentaux. Dans cet article, nous proposons des normes permettant de situer un protocole donné de NEO PI R (ou 3) par rapport à un échantillon normatif. 
-En outre, nous souhaitons nous intéresser aux effets éventuels de l'âge et du sexe des patients sur ces indices. Nous nous interrogerons également sur la pertinence de ces trois indices : faut-il les garder tous les trois afin d'évaluer la qualité de l'alliance thérapeutique ? Le but est de mieux opérationnaliser ces indices afin de préparer toutes études sur leur validité externe.
+En outre, nous souhaitons nous intéresser aux effets éventuels de l'*âge* et du *sexe* des patients sur ces indices. Nous nous interrogerons également sur la pertinence de ces trois indices : faut-il les garder tous les trois afin d'évaluer la qualité de l'alliance thérapeutique ? Le but est de mieux opérationnaliser ces indices afin de préparer toutes études sur leur validité externe.
 
 # Méthode
 
@@ -111,44 +114,37 @@ L'âge moyen est égal à `r meanage` ans avec un écart-type égal à `r sdage`
 
 L'échantillon global se compose de six sous-échantillons :
 
-1. Des personnes **tout-venant** qui avaient répondu à une annonce dans le cadre d'une recherche précédente [@thiry2009ecriture] : `r nofC` (`r printnum(nofCpercentage)`%) ;
-2. Des personnes **condamnées** et emprisonnées : `r nofcondamnes` (`r printnum(nofcondamnespercentage)`%) ;
-3. Des personnées emprisonnées mais reconnues **irresponsables pour cause de trouble mental** : `r nofinternes` (`r printnum(nofinternespercentage)`%) ;
-4. Des **adolescents** qui ont passé le NEO PI-R en milieu scolaire : `r nofado` (`r printnum(nofadopercentage)`%) ; 
-5. Des **étudiants** en Master de psychologie légale à l'Université de Mons : `r nofetudiant` (`r printnum(nofetudiantpercentage)`%) ;
-6. Des **patients** en thérapie : `r nofpatient` (`r printnum(nofpatientpercentage)`%).
+1. Des personnes **tout-venant** qui avaient répondu à une annonce dans le cadre d'une recherche précédente [@thiry2009ecriture] : *n* = `r nofC` (`r printnum(nofCpercentage)`%) ;
+2. Des personnes **condamnées** et emprisonnées : *n* = `r nofcondamnes` (`r printnum(nofcondamnespercentage)`%) ;
+3. Des personnées emprisonnées mais reconnues **irresponsables pour cause de trouble mental** : *n* = `r nofinternes` (`r printnum(nofinternespercentage)`%) ;
+4. Des **adolescents** qui ont passé le NEO PI-R en milieu scolaire : *n* = `r nofado` (`r printnum(nofadopercentage)`%) ; 
+5. Des **étudiants** en Master de psychologie légale à l'Université de Mons : *n* = `r nofetudiant` (`r printnum(nofetudiantpercentage)`%) ;
+6. Des **patients** en thérapie : *n* = `r nofpatient` (`r printnum(nofpatientpercentage)`%).
 
 # Résultats
 
-La Figure \@ref(fig:age) représente la distribution des âges (connus) pour notre échantillon total. Notons qu'il est assez jeune (*M* = `r printnum(meanage)`, *ET* = `r printnum(sdage)`).
-
-```{r age, fig.cap="Ages de l'échantillon total", echo = FALSE}
-hist(age, nclass=15, col="cornflowerblue", border="white", xlim=c(00,90), main="", xlab="Âge (années)", ylab="Fréquence")
-text(60, 100, paste("N =", sum(complete.cases(age))), cex=1.2)
-```
-
-
-La Figure \@ref(fig:alliance1) représente la distribution de l'indice que nous avons appelé *alliance1*. 
+La Figure \@ref(fig:alliance1) représente la distribution de l'indice que nous avons appelé *alliance1* (domaines qui facilitent l'alliance thérapeutique). 
 
 ```{r alliance1, fig.cap="Distribution d'alliance1", echo = FALSE}
 hist(alliance1, nclass=15, col="cornflowerblue", border="white", xlim=c(230,480), main="", xlab="Alliance 1", ylab="Fréquence")
 text(450, 100, paste("N =", sum(complete.cases(alliance1))), cex=1.2)
 ```
 
-La Figure \@ref(fig:alliance2) représente la distribution de l'indice que nous avons appelé *alliance2*. 
+La Figure \@ref(fig:alliance2) représente la distribution de l'indice que nous avons appelé *alliance2* (facettes qui facilitent l'alliance thérapeutique). 
 
 ```{r alliance2, fig.cap="Distribution d'alliance2", echo = FALSE}
 hist(alliance2, nclass=15, col="cornflowerblue", border="white", xlim=c(35,130), main="", xlab="Alliance 2", ylab="Fréquence")
 text(450, 100, paste("N =", sum(complete.cases(alliance2))), cex=1.2)
 ```
 
-La Figure \@ref(fig:alliance3) représente la distribution de l'indice que nous avons appelé *alliance3*. 
+La Figure \@ref(fig:alliance3) représente la distribution de l'indice que nous avons appelé *alliance3* (facettes qui feinent l'alliance thérapeutique). 
 
 ```{r alliance3, fig.cap="Distribution d'alliance3", echo = FALSE}
 hist(alliance3, nclass=15, col="cornflowerblue", border="white", xlim=c(0,80), main="", xlab="Alliance 3", ylab="Fréquence")
 text(450, 100, paste("N =", sum(complete.cases(alliance3))), cex=1.2)
 ```
 
+Les trois distributions sont d'allure normale et semblent permettre de discriminer les participants les uns des autres. 
 
 ```{r table1, echo = FALSE}
 apa_table(
@@ -168,7 +164,7 @@ La Figure \@ref(fig:alliance1groupe) présente les moyennes et les intervalles d
 plotmeans(alliance1 ~ groupe)
 ```
 
-Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons une régression linéraire avec notre groupe *contrôle* comme modalité de référence.
+Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons une régression linéaire avec notre groupe *contrôle* comme modalité de référence.
 
 ```{r, echo = FALSE}
 f.groupe <- factor(groupe)
@@ -197,7 +193,7 @@ La Figure \@ref(fig:alliance2groupe) présente les moyennes et les intervalles d
 plotmeans(alliance2 ~ groupe)
 ```
 
-Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons une régression linéraire avec notre groupe *contrôle* comme modalité de référence.
+Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons à nouveau une régression linéaire avec notre groupe *contrôle* comme modalité de référence.
 
 ```{r, echo = FALSE}
 lm2_out <- lm(formula = alliance2 ~ f.groupe, data = neototal)
@@ -224,7 +220,7 @@ La Figure \@ref(fig:alliance3groupe) présente les moyennes et les intervalles d
 plotmeans(alliance3 ~ groupe)
 ```
 
-Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons une régression linéraire avec notre groupe *contrôle* comme modalité de référence.
+Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons une régression linéaire avec notre groupe *contrôle* comme modalité de référence.
 
 ```{r, echo = FALSE}
 lm3_out <- lm(formula = alliance3 ~ f.groupe, data = neototal)
@@ -244,12 +240,12 @@ Nous constatons dans le Tableau \@ref(tab:lm3) que la moyenne pour le groupe *ad
 
 ## Les variables d'alliance thérapeutique diffèrent-elles d'un groupe à l'autre
 
-D'une manière générale, nous **ne** pouvons **pas** affirmer que nos groupes ont un effet sur les scores aux trois indices d'alliance thérapeutique, à part le groupe *adolescent*. Par conséquent, les normes proposées au Tableau \@ref(tab:table1) peuvent dès lors s'appliquer à tous les participants. Notons toutefois que l'**âge** des participants est toutefois susceptible d'être lié à ces scores. Nous devrons dès lors nous intéresser à cette variable afin d'en apprendre davantage.
+D'une manière générale, nous **ne** pouvons **pas** affirmer que nos groupes ont un effet sur les scores aux trois indices d'alliance thérapeutique, à part le groupe *adolescent*. Par conséquent, les normes proposées au Tableau \@ref(tab:table1) peuvent dès lors s'appliquer à tous les participants. Notons toutefois que l'**âge** des participants est susceptible d'être lié à ces scores. Nous devrons dès lors nous intéresser à cette variable afin d'en apprendre davantage.
 
 
 ## Liens entre les trois indices
 
-A priori, les deux premiers indices évaluent une même tendance avec des variables différentes (**domaines** versus **facettes** du modèle de personnalité en cinq facteurs). Le troisième indices est censé évaluer une tendance inverse. Qu'en est-il des corrélations entre ces trois indices ?
+A priori, les deux premiers indices évaluent une même tendance avec des variables différentes (**domaines** versus **facettes** du modèle de personnalité en cinq facteurs). Le troisième indice est censé évaluer une tendance inverse. Qu'en est-il des corrélations entre ces trois indices ?
 La Figure \@ref(fig:correlations) représente les corrélations entre les trois indices.
 
 ```{r correlations, fig.cap="Corrélations entre les trois indices", echo = FALSE}
@@ -277,7 +273,7 @@ pairs(alliance.df, lower.panel=panel.smooth, upper.panel=panel.cor_simple)
 ```
 
 Nous constatons effectivement que les indices *alliance1* et *alliance2* sont fortement corrélés positivement, et négativement avec *alliance3*.
-Ces résultats nous invitent à remettre en question la pertinence d'utiliser trois indices pour évaluer une même tendance. Il semble que l'indice *alliance1* apporte une information substancielle pour l'évaluer. Notons qu'elle repose sur les scores de trois domaines (A, O et C) et non sur des facettes sous-jacentes (ce qui est un résultat non attendu a priori). Dans un souci d'économie, il est dès lors envisageable d'utiliser **un seul indice** : *alliance1* (A+O+C).
+Ces résultats nous invitent à remettre en question la pertinence d'utiliser trois indices pour évaluer une même tendance. Il semble que l'indice *alliance1* apporte une information substantielle pour l'évaluer. Notons qu'elle repose sur les scores de trois domaines (A, O et C) et non sur des facettes sous-jacentes (ce qui est un résultat non attendu a priori). Dans un souci d'économie, il est dès lors envisageable d'utiliser **un seul indice** : *alliance1* (A+O+C).
 
 ## Effet de l'âge et du sexe sur la variable d'alliance thérapeutique
 
@@ -309,7 +305,7 @@ apa_table(
 )
 ```
 
-Les deux variables semblent avoir un effet signfificatif sur la variable *alliance1* : `r apa_lm4$full_result$modelfit$r2`
+Les deux variables semblent avoir un effet significatif sur la variable *alliance1* : `r apa_lm4$full_result$modelfit$r2`
 
 # Discussion
 
