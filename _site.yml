@@ -14,7 +14,7 @@ navbar:
       href: index.html
     - text: "Qui écrit ce blog ?"
       href: about.html
-    - icon: fa fa-mastodon
+    - text: "Mastodon"
       href: https://mastodon.zaclys.com/@ouriagan
     - icon: fa fa-github
       href: https://github.com/ouriagan/blog
