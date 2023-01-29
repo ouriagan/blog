@@ -9,6 +9,7 @@ date: 2022-07-26
 output:
   distill::distill_article:
     self_contained: false
+lang: fr
 ---
 
 ![Prison de Forest](prison_forest.png)
