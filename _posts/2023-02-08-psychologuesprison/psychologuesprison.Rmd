@@ -244,7 +244,7 @@ Comme attendu, le l'analyse factorielle semble mettre en évidence deux vécus d
 ```{r fainstit, echo=FALSE, warning=FALSE}
 res <- fa(contexte.df, 2)
 
-fa_table <- function(x, varlabels = NULL, title = "Résultats de l’analyse factorielle sur les items du questionnaire sur le rapport à l’institution carcérale", diffuse = .10, small = .30, cross = .20, sort = TRUE) {
+fa_table <- function(x, varlabels = NULL, title = "Tableau 3. Résultats de l’analyse factorielle sur les items du questionnaire sur le rapport à l’institution carcérale", diffuse = .10, small = .30, cross = .20, sort = TRUE) {
   #get sorted loadings
   require(dplyr)
   require(purrr)
