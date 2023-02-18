@@ -162,7 +162,7 @@ Ensuite, les traductions des items 28 et 148 ont également été estimés ambig
 
 ## Traduction française européenne
 
-Dans le tableau \@ref(tab:traductions), voici les nouvelles traductions retenues, avec la proportion de participants ayant fourni cette traduction (ce tableau n'inclut pas les items inchangés).
+Dans le tableau \@ref(tab:traductions), se trouvent les nouvelles traductions retenues, avec la proportion de participants ayant fourni cette traduction (ce tableau n'inclut pas les items inchangés).
 
 ```{r traductions, echo=FALSE}
 kbl(traductions.df, caption="Traductions des items retenues dans le questionnaire", booktabs = T)  
