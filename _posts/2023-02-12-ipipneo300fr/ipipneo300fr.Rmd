@@ -87,7 +87,7 @@ L'objectif de notre travail est de tenter de proposer une adaptation adéquate d
 
 # Adaptation française de l'IPIP NEO 300
 
-Avant d'aller plus loin, il est important d'apporter la précision suivante : @gravel_french_nodate n'a a priori pas réalisé le travail de traduction des domaines et des facettes du questionnaire. Ainsi, nous proposons les traductions suivantes dans le tableau \@ref(tab:labels)).
+Avant d'aller plus loin, il est important d'apporter la précision suivante : @gravel_french_nodate n'a a priori pas réalisé le travail de traduction des domaines et des facettes du questionnaire. Ainsi, nous proposons les traductions suivantes dans le tableau \@ref(tab:labels).
 
 ```{r labels,  echo=FALSE}
 kbl(ipineo_labels.df, caption = "Proposition de traduction française des domaines et facettes de l'IPIP NEO 300 items", booktabs = T) 

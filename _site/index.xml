@@ -7,7 +7,17 @@
     <description>Ce blog consacré au lien entre la psychologie et la délinquance. Il est tenu par Benjamin Thiry
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 12 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Comparaison de variables de délinquance auto-révélée avec des variables de personnalité selon le modèle en cinq facteurs auprès d’adolescents</title>
+      <dc:creator>Benjamin Thiry</dc:creator>
+      <dc:creator>Stéphanie Ponchaux</dc:creator>
+      <link>https://benjaminthiry.netlify.app/posts/2023-02-26-delinquancefivefactormodel</link>
+      <description>Notre étude propose d’approfondir le lien entre certains comportements problématiques ou délinquants et la personnalité de leur auteur. 112 adolescents de 15 ou 16 ans ont répondu au NEO PI-R, qui est un questionnaire de personnalité, ainsi qu’à un questionnaire de délinquance auto-révélé. Les comportements problématiques présentent des corrélations significatives avec les variables A, A2, A4, C, C2, C6, antisocialité et psychopathie du NEO PI-R. Les comportements délinquants présentent des corrélations significatives avec les variables E2, A, A2, A3, A4, A5, C, C1, C2, C3, C5, C6, antisocialité et psychopathie du NEO PI-R. Un modèle économique propose de prédire les comportements délinquants à partir de l’équation de régression suivante : E3 – C3 – A2 – E3xA2 (R = .43, p &lt; .001). Ces résultats permettent de soutenir l’idée qu’il existe donc au moins trois sphères psychologiques en lien avec la tendance antisociale (morale, relationnelle et comportementale) et qu’il s’agit d’un concept complexe. Nous discutons ces résultats en regard de certaines théories criminologiques classiques.</description>
+      <guid>https://benjaminthiry.netlify.app/posts/2023-02-26-delinquancefivefactormodel</guid>
+      <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://benjaminthiry.netlify.app/posts/2023-02-26-delinquancefivefactormodel/schooldarksky.png" medium="image" type="image/png" width="896" height="896"/>
+    </item>
     <item>
       <title>IPIP NEO 300, adapation française européenne</title>
       <dc:creator>Benjamin Thiry</dc:creator>
