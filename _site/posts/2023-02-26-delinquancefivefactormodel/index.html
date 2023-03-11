@@ -191,7 +191,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["delinq.xlsx","delinq_neo.bib","delinquancefivefactormodel_files/anchor-4.2.2/anchor.min.js","delinquancefivefactormodel_files/bowser-1.9.3/bowser.min.js","delinquancefivefactormodel_files/distill-2.2.21/template.v2.js","delinquancefivefactormodel_files/figure-html5/crimino-1.png","delinquancefivefactormodel_files/figure-html5/scatterplot1-1.png","delinquancefivefactormodel_files/figure-html5/scatterplot2-1.png","delinquancefivefactormodel_files/header-attrs-2.20/header-attrs.js","delinquancefivefactormodel_files/jquery-3.6.0/jquery-3.6.0.js","delinquancefivefactormodel_files/jquery-3.6.0/jquery-3.6.0.min.js","delinquancefivefactormodel_files/jquery-3.6.0/jquery-3.6.0.min.map","delinquancefivefactormodel_files/kePrint-0.0.1/kePrint.js","delinquancefivefactormodel_files/lightable-0.0.1/lightable.css","delinquancefivefactormodel_files/popper-2.6.0/popper.min.js","delinquancefivefactormodel_files/tippy-6.2.7/tippy-bundle.umd.min.js","delinquancefivefactormodel_files/tippy-6.2.7/tippy-light-border.css","delinquancefivefactormodel_files/tippy-6.2.7/tippy.css","delinquancefivefactormodel_files/tippy-6.2.7/tippy.umd.min.js","delinquancefivefactormodel_files/webcomponents-2.0.0/webcomponents.js","neo_delinq.xlsx","problemes.xlsx","regression.xlsx","schooldarksky.png","stat_desc.xlsx","victimo.xlsx"]}
+  {"type":"character","attributes":{},"value":["delinq.xlsx","delinq_neo.bib","delinq_old.xlsx","delinquancefivefactormodel_files/anchor-4.2.2/anchor.min.js","delinquancefivefactormodel_files/bowser-1.9.3/bowser.min.js","delinquancefivefactormodel_files/distill-2.2.21/template.v2.js","delinquancefivefactormodel_files/figure-html5/crimino-1.png","delinquancefivefactormodel_files/figure-html5/scatterplot1-1.png","delinquancefivefactormodel_files/figure-html5/scatterplot2-1.png","delinquancefivefactormodel_files/header-attrs-2.20/header-attrs.js","delinquancefivefactormodel_files/jquery-3.6.0/jquery-3.6.0.js","delinquancefivefactormodel_files/jquery-3.6.0/jquery-3.6.0.min.js","delinquancefivefactormodel_files/jquery-3.6.0/jquery-3.6.0.min.map","delinquancefivefactormodel_files/kePrint-0.0.1/kePrint.js","delinquancefivefactormodel_files/lightable-0.0.1/lightable.css","delinquancefivefactormodel_files/popper-2.6.0/popper.min.js","delinquancefivefactormodel_files/tippy-6.2.7/tippy-bundle.umd.min.js","delinquancefivefactormodel_files/tippy-6.2.7/tippy-light-border.css","delinquancefivefactormodel_files/tippy-6.2.7/tippy.css","delinquancefivefactormodel_files/tippy-6.2.7/tippy.umd.min.js","delinquancefivefactormodel_files/webcomponents-2.0.0/webcomponents.js","neo_delinq.xlsx","problemes.xlsx","regression.xlsx","schooldarksky.png","stat_desc.xlsx","victimo.xlsx"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2235,7 +2235,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><a href="#méthode" id="toc-méthode">Méthode</a>
 <ul>
 <li><a href="#participants" id="toc-participants">Participants</a></li>
-<li><a href="#procédure" id="toc-procédure">Procédure</a></li>
+<li><a href="#procédure" id="toc-procédure">Procédure</a>
+<ul>
+<li><a href="#questionnaire-de-délinquance-auto-révélée" id="toc-questionnaire-de-délinquance-auto-révélée">Questionnaire de délinquance auto-révélée</a></li>
+</ul></li>
 <li><a href="#traitement-statistique" id="toc-traitement-statistique">Traitement statistique</a></li>
 </ul></li>
 <li><a href="#résultats" id="toc-résultats">Résultats</a>
@@ -2250,7 +2253,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <p><img src="schooldarksky.png" /></p>
 <h1 id="introduction">Introduction</h1>
-<p>L’intérêt pour le lien entre la <em>personnalité</em> d’un individu et sa propension à commettre des <em>actes transgressifs</em> est ancien et a donné naissance à une discipline nouvelle au 19<sup>ème</sup> siècle : la <em>criminologie</em>. En effet, c’est avec <span class="citation" data-cites="lombroso1876homme">Lombroso (<a href="#ref-lombroso1876homme" role="doc-biblioref">1876</a>)</span>, <span class="citation" data-cites="garofalo1888criminologie">Garofalo (<a href="#ref-garofalo1888criminologie" role="doc-biblioref">1888</a>)</span> et <span class="citation" data-cites="ferri1893sociologie">Ferri (<a href="#ref-ferri1893sociologie" role="doc-biblioref">1893</a>)</span> qu’une première théorie supposait l’existence d’une <em>personnalité criminelle</em> à l’origine des passages à l’acte délictueux. Ces thèses furent vivement critiquées par la suite notamment par des criminologues se référant au paradigme sociologique. Pour ceux-ci, la tendance à la délinquance est majoritairement déterminée par des variables sociales et situationnelles indépendantes de la personnalité du délinquant. En psychiatrie et en psychologie clinique, la personnalité dite criminelle a toutefois survécu en changeant plusieurs fois de formes et de noms. Aujourd’hui, le DSM-5 <span class="citation" data-cites="american2013dsm">(<a href="#ref-american2013dsm" role="doc-biblioref">APA 2013</a>)</span> évoque la <em>personnalité antisociale</em> parmi les troubles de la personnalité. En parallèle, la <em>psychopathie</em> est un domaine de recherche très fécond et vivant. C’est bien souvent au travers d’entretiens cliniques (structurés ou non) et d’études du parcours de vie (notamment pénal) que ces diagnostics sont posés selon une logique catégorielle : ce patient correspond-il aux critères de l’antisocialité / de la psychopathie ou pas ? Cette approche catégorielle des troubles de la personnalité a toutefois fait l’objet de critiques <span class="citation" data-cites="westen1998limitations widiger2005diagnostic">(<a href="#ref-westen1998limitations" role="doc-biblioref">Westen et Arkowitz-Westen 1998</a>; <a href="#ref-widiger2005diagnostic" role="doc-biblioref">Widiger et Samuel 2005</a>)</span> qui ont mené à une conception <em>dimensionnelle</em> de ces troubles <span class="citation" data-cites="widiger2002personality">(<a href="#ref-widiger2002personality" role="doc-biblioref">Costa et Widiger 2002</a>)</span>. <span class="citation" data-cites="lynam2001using">Lynam et Widiger (<a href="#ref-lynam2001using" role="doc-biblioref">2001</a>)</span> établirent ainsi des profils prototypiques pour chaque trouble de la personnalité sur base de l’avis de spécialistes de ces troubles. Les scores obtenus par un individu à un questionnaire de personnalité auto-rapporté tel que le NEO PI-R (Costa &amp; McCrae, 1998) permettent dès lors d’évaluer leur ressemblance avec le profil typique de tel ou tel trouble de la personnalité selon sa description dans le DSM-IV <span class="citation" data-cites="american1994dsm">(<a href="#ref-american1994dsm" role="doc-biblioref">APA 1994</a>)</span>. La méta-analyse de <span class="citation" data-cites="samuel2008meta">Samuel et Widiger (<a href="#ref-samuel2008meta" role="doc-biblioref">2008</a>)</span> et la revue de la littérature de <span class="citation" data-cites="miller2012five">Miller (<a href="#ref-miller2012five" role="doc-biblioref">2012</a>)</span> permettent de soutenir l’hypothèse d’un lien robuste entre les variables du modèle en cinq facteurs et les troubles de la personnalité. Cette approche permet d’aborder les troubles de la personnalité selon une logique dimensionnelle, donc continue, et plus nuancée que l’approche catégorielle. <span class="citation" data-cites="miller2012five">Miller (<a href="#ref-miller2012five" role="doc-biblioref">2012</a>)</span> encourage l’exploitation de ce modèle dans les futures taxonomies psychiatriques.
+<p>L’intérêt pour le lien entre la <em>personnalité</em> d’un individu et sa propension à commettre des <em>actes transgressifs</em> est ancien et a donné naissance à une discipline nouvelle au 19<sup>ème</sup> siècle : la <em>criminologie</em>. En effet, c’est avec <span class="citation" data-cites="lombroso1876homme">Lombroso (<a href="#ref-lombroso1876homme" role="doc-biblioref">1876</a>)</span>, <span class="citation" data-cites="garofalo1888criminologie">Garofalo (<a href="#ref-garofalo1888criminologie" role="doc-biblioref">1888</a>)</span> et <span class="citation" data-cites="ferri1893sociologie">Ferri (<a href="#ref-ferri1893sociologie" role="doc-biblioref">1893</a>)</span> qu’une première théorie supposait l’existence d’une <em>personnalité criminelle</em> à l’origine des passages à l’acte délictueux. Ces thèses furent vivement critiquées par la suite notamment par des criminologues se référant au paradigme sociologique. Pour ceux-ci, la tendance à la délinquance est majoritairement déterminée par des variables sociales et situationnelles indépendantes de la personnalité du délinquant. En psychiatrie et en psychologie clinique, la personnalité dite criminelle a toutefois survécu en changeant plusieurs fois de formes et de noms. Aujourd’hui, le DSM-5 <span class="citation" data-cites="american2013dsm">(<a href="#ref-american2013dsm" role="doc-biblioref">APA 2013</a>)</span> évoque la <em>personnalité antisociale</em> parmi les troubles de la personnalité. En parallèle, la <em>psychopathie</em> est un domaine de recherche très fécond et vivant. C’est bien souvent au travers d’entretiens cliniques (structurés ou non) et d’études du parcours de vie (notamment pénal) que ces diagnostics sont posés selon une logique catégorielle : ce patient correspond-il aux critères de l’antisocialité / de la psychopathie ou pas ? Cette approche catégorielle des troubles de la personnalité a toutefois fait l’objet de critiques <span class="citation" data-cites="westen1998limitations widiger2005diagnostic">(<a href="#ref-westen1998limitations" role="doc-biblioref">Westen et Arkowitz-Westen 1998</a>; <a href="#ref-widiger2005diagnostic" role="doc-biblioref">Widiger et Samuel 2005</a>)</span> qui ont mené à une conception <em>dimensionnelle</em> de ces troubles <span class="citation" data-cites="widiger2002personality">(<a href="#ref-widiger2002personality" role="doc-biblioref">Costa et Widiger 2002</a>)</span>. <span class="citation" data-cites="lynam2001using">Lynam et Widiger (<a href="#ref-lynam2001using" role="doc-biblioref">2001</a>)</span> établirent ainsi des profils prototypiques pour chaque trouble de la personnalité sur base de l’avis de spécialistes de ces troubles. Les scores obtenus par un individu à un questionnaire de personnalité auto-rapporté tel que le NEO PI-R <span class="citation" data-cites="costa1998neo">(<a href="#ref-costa1998neo" role="doc-biblioref">Costa, McCrae, et Rolland 1998</a>)</span> permettent dès lors d’évaluer leur ressemblance avec le profil typique de tel ou tel trouble de la personnalité selon sa description dans le DSM-IV <span class="citation" data-cites="american1994dsm">(<a href="#ref-american1994dsm" role="doc-biblioref">APA 1994</a>)</span>. La méta-analyse de <span class="citation" data-cites="samuel2008meta">Samuel et Widiger (<a href="#ref-samuel2008meta" role="doc-biblioref">2008</a>)</span> et la revue de la littérature de <span class="citation" data-cites="miller2012five">Miller (<a href="#ref-miller2012five" role="doc-biblioref">2012</a>)</span> permettent de soutenir l’hypothèse d’un lien robuste entre les variables du modèle en cinq facteurs et les troubles de la personnalité. Cette approche permet d’aborder les troubles de la personnalité selon une logique dimensionnelle, donc continue, et plus nuancée que l’approche catégorielle. <span class="citation" data-cites="miller2012five">Miller (<a href="#ref-miller2012five" role="doc-biblioref">2012</a>)</span> encourage l’exploitation de ce modèle dans les futures taxonomies psychiatriques.
 Concernant la personnalité antisociale, <span class="citation" data-cites="gudonis2008conceptualizing">Gudonis et al. (<a href="#ref-gudonis2008conceptualizing" role="doc-biblioref">2008</a>)</span> ont comparé les scores d’antisocialité générés sur base du prototype du modèle en cinq facteurs et les résultats d’un entretien diagnostic semi-structuré en relation avec des variables telles que l’agression, la délinquance, l’usage de drogues, la psychopathie, le comportement sexuel à risque, le niveau d’étude, la carrière professionnelle et le quotient intellectuel. Ils trouvèrent que les deux types de scores présentaient des corrélations très similaires (ICC = .85). <span class="citation" data-cites="jones2011personality">Jones, Miller, et Lynam (<a href="#ref-jones2011personality" role="doc-biblioref">2011</a>)</span> se sont intéressés aux facettes qui sous-tendent les cinq grands domaines du NEO PI-R et constatent que celles qui présentent les tailles d’effet les plus élevés avec le comportement antisocial sont la droiture (A2), la compliance (A4), la délibération (C6), le sens du devoir (C3) et l’altruisme (A3).
 Selon <span class="citation" data-cites="miller2012five">Miller (<a href="#ref-miller2012five" role="doc-biblioref">2012</a>)</span>, le score d’antisocialité calculé sur base du NEO PI-R présente une validité convergence dont la taille d’effet pondérée est égale à .40 (sur base de 13 études, <em>N</em> = 3087). Ces scores méritent toutefois d’autres travaux de validation.</p>
 <p>La présente étude poursuit plusieurs objectifs. Le premier est d’évaluer le lien entre les scores d’antisocialité et de psychopathie extraits du NEO PI-R et des variables criminologiques extraites d’un questionnaire de délinquance auto-révélée (qui évalue également des variables de victimisation). Le deuxième est de s’intéresser au lien entre les domaines mais aussi les facettes du NEO PI-R et ces variables criminologiques. Le troisième est de réfléchir aux liens complexes susceptibles d’exister entre des variables de personnalité et des comportements délinquants.</p>
@@ -2260,8 +2263,64 @@ Selon <span class="citation" data-cites="miller2012five">Miller (<a href="#ref-m
 <p>Notre échantillon initialement composé de 133 sujets est constitué d’étudiants âgés de quinze à seize ans effectuant leurs études dans une école secondaire belge. Cette tranche d’âges est considérée d’un point de vue criminologique comme étant l’âge d’entrée le plus fréquent dans les parcours délictueux <span class="citation" data-cites="born2017psychologie">(<a href="#ref-born2017psychologie" role="doc-biblioref">Born et Glowacz 2017</a>)</span>. En Belgique, dès seize ans, certains étudiants sont susceptibles de suivre une formation pratique et fréquentent dès lors plus rarement l’établissement scolaire. Nous pensons que nos étudiants sont représentatifs des établissements scolaires qu’ils fréquentent.<br />
 Lors du dépouillement des protocoles et de leur analyse, il est ressorti que 21 des protocoles sur les 133 distribués à notre échantillon étaient invalides et ceci pour diverses raisons telles que : non remplis par choix, remplis de façon volontairement biaisée, non achevés soit par manque de temps, soit par lassitude, etc. L’échantillon final constituant cette étude est composé de 112 participants ayant complètement rempli le protocole qui leur a été remis. Parmi ces 112, la variable de <em>problème de délinquance</em> présentait une valeur potentiellement problématique car un des participant a rapporté beaucoup plus de problèmes de délinquance que les autres (66). Par prudence, nous avons exclu cette valeur des traitement statistiques.</p>
 <h2 id="procédure">Procédure</h2>
-<p>Deux échelles d’évaluations ont été soumises à notre population d’adolescents dans le local de cours. Suite aux exigences des établissements, la passation des protocoles a été effectuée en 1h30. Avant de démarrer la passation du protocole anonymisé par l’attribution d’un numéro, une brève présentation de l’étude fut exposée aux participants. Le protocole de passation établi se composait d’une échelle d’évaluation de la personnalité élaborée sur base du modèle en cinq facteurs qu’est le NEO PI-R ainsi que d’une échelle d’évaluation auto-révélée de la délinquance élaborée pour ce travail et inspirée de <span class="citation" data-cites="born2007isrd">Born et Glowacz (<a href="#ref-born2007isrd" role="doc-biblioref">2007</a>)</span> qui ont participé au projet de l’International Study on Self-Related Delinquency (ISRD) en collaboration avec <span class="citation" data-cites="junger2012introduction">Junger-Tas et Marshall (<a href="#ref-junger2012introduction" role="doc-biblioref">2012</a>)</span>.
+<p>Deux échelles d’évaluations ont été soumises à notre population d’adolescents dans le local de cours. Suite aux exigences des établissements, la passation des protocoles a été effectuée en 1h30. Avant de démarrer la passation du protocole anonymisé par l’attribution d’un numéro, une brève présentation de l’étude fut exposée aux participants. Le protocole de passation établi se composait d’une échelle d’évaluation de la personnalité élaborée sur base du modèle en cinq facteurs qu’est le NEO PI-R <span class="citation" data-cites="costa1998neo">(<a href="#ref-costa1998neo" role="doc-biblioref">Costa, McCrae, et Rolland 1998</a>)</span> ainsi que d’une échelle d’évaluation auto-révélée de la délinquance élaborée pour ce travail et inspirée de <span class="citation" data-cites="born2007isrd">Born et Glowacz (<a href="#ref-born2007isrd" role="doc-biblioref">2007</a>)</span> qui ont participé au projet de l’International Study on Self-Related Delinquency (ISRD) en collaboration avec <span class="citation" data-cites="junger2012introduction">Junger-Tas et Marshall (<a href="#ref-junger2012introduction" role="doc-biblioref">2012</a>)</span>.
 Des dictionnaires furent mis à la disposition des participants pour les aider à répondre aux questionnaires.</p>
+<h3 id="questionnaire-de-délinquance-auto-révélée">Questionnaire de délinquance auto-révélée</h3>
+<p>Le questionnaire auto-révélée de la délinquance se composait notamment de trois questions principales :</p>
+<ol type="1">
+<li>Avez-vous déjà eu l’un des problèmes suivants ?</li>
+</ol>
+<ul>
+<li>Brouille ou dispute</li>
+<li>Bagarre</li>
+<li>Accident ou blessure</li>
+<li>Perte d’argent ou d’autres objets de valeur</li>
+<li>Objets ou vêtements abîmés</li>
+<li>Problèmes avec vos parents</li>
+<li>Problèmes avec vos amis</li>
+<li>Problèmes avec vos professeurs</li>
+<li>Mauvais résultats à l’école ou au travail</li>
+<li>Victime d’un vol</li>
+<li>Problèmes avec la police</li>
+<li>Hospitalisé ou admis aux urgences</li>
+<li>Rapport sexuel que vous regrettez le lendemain
+Rapport sexuel non protégé</li>
+</ul>
+<ol start="2" type="1">
+<li>Au cours des 12 derniers mois, selon quelle fréquence avez-vous…</li>
+</ol>
+<ul>
+<li>Frappé un de vos professeurs</li>
+<li>Été impliqué(e) à une bagarre à l’école ou au travail</li>
+<li>Pris part à une bagarre où un groupe de vos amis était confronté à un autre groupe</li>
+<li>Blessé quelqu’un suffisamment pour qu’il ait besoin de bandages ou d’un docteur</li>
+<li>Utilisé une arme de quelque sorte pour obtenir quelque chose de quelqu’un</li>
+<li>Pris quelque chose dans une boutique sans le payer</li>
+<li>Mis exprès le feu aux affaires de quelqu’un d’autre</li>
+<li>Abîmé exprès du matériel de l’école</li>
+<li>Eu des problèmes avec la police à cause de quelque chose que vous aviez fait</li>
+<li>Fait partie d’un groupe persécutant un individu</li>
+<li>Fait partie d’un groupe blessant physiquement un individu</li>
+<li>Fait partie d’un groupe commençant une bagarre avec un autre groupe</li>
+<li>Provoqué une bagarre avec un autre individu</li>
+<li>Volé quelque chose d’une valeur de 15€ ou plus</li>
+<li>Entré par effraction quelque part pour voler</li>
+<li>Abîmé exprès des biens publics ou privés</li>
+<li>Vendu des objets volés</li>
+</ul>
+<ol start="3" type="1">
+<li>Au cours des 12 derniers mois, selon quelle fréquence avez-vous…</li>
+</ol>
+<ul>
+<li>Été personnellement persécuté(e) par tout un groupe</li>
+<li>Été blessé(e) physiquement par tout un groupe</li>
+<li>Fait partie d’un groupe qui a été attaqué par un autre groupe</li>
+<li>Été impliqué(e) dans une bagarre par quelqu’un</li>
+<li>Été victime de vol pour une valeur de 15€ ou plus</li>
+<li>Quelqu’un est entré par effraction chez vous pour voler quelque chose</li>
+<li>Quelque chose vous appartenant a été abîmé exprès</li>
+<li>Acheté des objets volés</li>
+</ul>
 <p>Au terme de la passation, un feed-back fut proposé aux élèves qui le souhaitaient. Nous leur laissions pour ce faire nos coordonnées électroniques et téléphoniques tout en leur précisant de garder précieusement leur numéro de protocole, celui-ci permettant de faire le lien avec les résultats pour un éventuel feed-back.</p>
 <h2 id="traitement-statistique">Traitement statistique</h2>
 <p>Les domaines et les facettes du NEO PI-R ont été calculés conformément au manuel français du test <span class="citation" data-cites="costa1998neo">(<a href="#ref-costa1998neo" role="doc-biblioref">Costa, McCrae, et Rolland 1998</a>)</span>.
@@ -3644,7 +3703,7 @@ Problèmes avec la police
 <div class="layout-chunk" data-layout="l-body">
 <table>
 <caption>
-<span id="tab:delinq">Table 3: </span>Fréquences des faits de délinquance auto-révélés (au moins 1 fois) par les 112 adolescents
+<span id="tab:delinq">Table 3: </span>Fréquences des faits de délinquance auto-révélés (au moins 1 fois) par les 111 adolescents
 </caption>
 <thead>
 <tr>
@@ -3662,7 +3721,7 @@ fait de délinquance
 Pris quelque chose dans une boutique sans le payer
 </td>
 <td style="text-align:right;">
-47
+27
 </td>
 </tr>
 <tr>
@@ -3670,7 +3729,7 @@ Pris quelque chose dans une boutique sans le payer
 Abîmé exprès du matériel de l’école
 </td>
 <td style="text-align:right;">
-34
+14
 </td>
 </tr>
 <tr>
@@ -3678,7 +3737,7 @@ Abîmé exprès du matériel de l’école
 Abîmé exprès des biens publics ou privés
 </td>
 <td style="text-align:right;">
-21
+14
 </td>
 </tr>
 <tr>
@@ -3686,7 +3745,7 @@ Abîmé exprès des biens publics ou privés
 Pris part à une bagarre où un groupe de vos amis était confronté à un autre groupe
 </td>
 <td style="text-align:right;">
-20
+11
 </td>
 </tr>
 <tr>
@@ -3694,7 +3753,7 @@ Pris part à une bagarre où un groupe de vos amis était confronté à un autre
 Été impliqué(e) à une bagarre à l’école ou au travail
 </td>
 <td style="text-align:right;">
-21
+10
 </td>
 </tr>
 <tr>
@@ -3702,7 +3761,7 @@ Pris part à une bagarre où un groupe de vos amis était confronté à un autre
 Blessé quelqu’un suffisamment pour qu’il ait besoin de bandages ou d’un docteur
 </td>
 <td style="text-align:right;">
-16
+9
 </td>
 </tr>
 <tr>
@@ -3710,7 +3769,7 @@ Blessé quelqu’un suffisamment pour qu’il ait besoin de bandages ou d’un d
 Fait partie d’un groupe persécutant un individu
 </td>
 <td style="text-align:right;">
-14
+7
 </td>
 </tr>
 <tr>
@@ -3718,15 +3777,15 @@ Fait partie d’un groupe persécutant un individu
 Provoqué une bagarre avec un autre individu
 </td>
 <td style="text-align:right;">
-9
+5
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Bagarre individuel
+Fait partie d’un groupe commençant une bagarre avec un autre groupe
 </td>
 <td style="text-align:right;">
-8
+5
 </td>
 </tr>
 <tr>
@@ -3734,52 +3793,12 @@ Bagarre individuel
 Mis exprès le feu aux affaires de quelqu’un d’autre
 </td>
 <td style="text-align:right;">
-11
+4
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Blessure en groupe
-</td>
-<td style="text-align:right;">
-7
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Volé quelque chose d’une valeur de 15€ ou plus
-</td>
-<td style="text-align:right;">
-6
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Vendu des objets volés
-</td>
-<td style="text-align:right;">
-8
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Eu des problèmes avec la police à cause de quelque chose que vous aviez fait
-</td>
-<td style="text-align:right;">
-7
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Frappé un de vos professeurs
-</td>
-<td style="text-align:right;">
-6
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Entré par effraction quelque part pour voler
+Fait partie d’un groupe blessant physiquement un individu
 </td>
 <td style="text-align:right;">
 4
@@ -3787,16 +3806,56 @@ Entré par effraction quelque part pour voler
 </tr>
 <tr>
 <td style="text-align:left;">
-Utilisé une arme de quelque sorte pour obtenir quelque chose de quelqu’un
+Volé quelque chose d’une valeur de 15€ ou plus
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vendu des objets volés
 </td>
 <td style="text-align:right;">
 2
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+Eu des problèmes avec la police à cause de quelque chose que vous aviez fait
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Frappé un de vos professeurs
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Entré par effraction quelque part pour voler
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Utilisé une arme de quelque sorte pour obtenir quelque chose de quelqu’un
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
 </tbody>
 </table>
 </div>
-<p>Le tableau <a href="#tab:delinq">3</a> reprend les fréquences des faits de délinquance prétendument commis par les adolescents de notre échantillon. Les trois faits de délinquance les plus fréquents sont : le vol (47%), le vandalisme scolaire (34%) et le vandalisme public (21%).</p>
+<p>Le tableau <a href="#tab:delinq">3</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> reprend les fréquences des faits de délinquance prétendument commis par les adolescents de notre échantillon. Les trois faits de délinquance les plus fréquents sont : le vol (27%), le vandalisme scolaire (14%) et le vandalisme public (14%).</p>
 <div class="layout-chunk" data-layout="l-body">
 <table>
 <caption>
@@ -4169,6 +4228,7 @@ Widiger, Thomas A, et Douglas B Samuel. 2005. <span>« Diagnostic categories or
 <ol>
 <li id="fn1"><p>r signifie que la variable a été renversée (32 - x)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>r signifie que la variable a été renversée (32 - x)<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>nous avons exclu le participant 20 car il avait indiqué les fréquences maximales pour toutes les questions relatives à la délinquance, ce que nous avons considéré suspect<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--radix_placeholder_article_footer-->
