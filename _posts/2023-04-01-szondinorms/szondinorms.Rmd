@@ -80,19 +80,10 @@ calculated each variable and give the statistical properties of it.
 
 ## Participants
 
-Participants of this study are 433 inmates detained in Belgian prisons.
-The Szondi test was obtained during a comprehensive psychological
-assessment prior any conditional release. The psychologist in charge of
-the psychological assessment met the inmate in a quiet and private
-office. Preliminary psychological interviews assessed cooperation of the
-inmate. In this study, we asked psychologists of the psychosocial
-service to provide Szondi protocols (with ten profiles) they had
-previously administered. Anonymized protocols were gathered by a member
-of the Psychosocial Service and prepared for data analysis. This study
-aimed to receive as many completed tests as possible. This sample
-therefore has a weakness: criterion for administration of the Szondi
-test was not strictly controlled. It is conceivable that psychologists
-have administered the Szondi test to the most collaborative inmates.
+Participants of this study are 433 inmates detained in Belgian prisons. The Szondi test was obtained during a comprehensive psychological
+assessment prior any conditional release. The psychologist in charge of the psychological assessment met the inmate in a quiet and private
+office. Preliminary psychological interviews assessed cooperation of the inmate. In this study, we asked psychologists of the psychosocial
+service^[This study was possible thanks to the precious collaboration of these persons: Anne Claude, Cécile Collard, Jan Cootjans, Laurent Duvivier, Cindy Haine, Pascal Lambot, Caroline Leclercq, Fabienne Letecheur, Caroline Meyers, Laurence Stas, Gregory Vastrat, Cécile Verhulst, Amandine Wielemans and the support of Benoît Marghem, Valérie Julien, Isabelle Storme and Werner Vanhout] to provide Szondi protocols (with ten profiles) they had previously administered. Anonymized protocols were gathered by a member of the Psychosocial Service and prepared for data analysis. This study aimed to receive as many completed tests as possible. This sample therefore has a weakness: criterion for administration of the Szondi test was not strictly controlled. It is conceivable that psychologists have administered the Szondi test to the most collaborative inmates.
 Some inmates may be reluctant to pass any psychological test. However,
 we find that the Szondi test is often well accepted by most inmates.
 Personality assessment only takes place after a court decision
