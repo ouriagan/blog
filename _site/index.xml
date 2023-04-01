@@ -102,5 +102,14 @@
       <guid>https://benjaminthiry.netlify.app/posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model</guid>
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
     </item>
+    <item>
+      <title>Norms for the Szondi Test on a prison sample</title>
+      <dc:creator>Benjamin Thiry</dc:creator>
+      <link>https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms</link>
+      <description>Though the Szondi test has been used by psychologists and psychiatrists for nearly seventy years, it still lacks scientific evidence relating to its reliability and validity. Its professional use is thus questionable. For this study, we collected Szondi test protocols for 433 inmates detained in Belgian prisons. We propose an accurate scoring system coherent with classical approach allowing thorough statistical analysis. We present descriptive statistics for each Szondi variables, study the links between the more important ones and the effect of age, sex and legal status on them. This study opens the gate for validity studies compatible with actual psychometrical methods.</description>
+      <guid>https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms</guid>
+      <pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/szondischema.png" medium="image" type="image/png" width="1002" height="204"/>
+    </item>
   </channel>
 </rss>
