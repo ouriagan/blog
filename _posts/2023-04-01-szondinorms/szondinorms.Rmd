@@ -47,16 +47,14 @@ This assumption led to a *need-system* [@guertin1950consideration] in which tens
 In the szondian theory, there are four drive vectors, each containing two factors. Table
 [1](#table:tablevectorsfactors){reference-type="ref" reference="table:tablevectorsfactors"} presents the four vectors and the eight factors. There are four valences for each of the eight factors: (a) positive choice, (b) negative choice, (c) discharge and (d) ambivalence.
 
-
-::: center
 ::: {#table:tablevectorsfactors}
-   Sexual (S)       Paroxysmal (P)        Ego (Sch)       Contact (C)         
-  ------------ --- ---------------- ---- ----------- --- ------------- ---
-       h        s         e          hy       k       p        d        m     
+| Sexual (S) | Paroxysmal (P) | Ego (Sch) | Contact (C) |
+|:----------:|:--------------:|:---------:|:-----------:|
+|   h    s   |     e   hy     |   k    p  |    d    m   |
 
   : Table 1 : vectors and factor in the Szondi theory
 :::
-:::
+
 
 For instance, m+ (in the Contact vector) means that the m drive is
 tensed while m0 means that the tension in the m drive is not present.
