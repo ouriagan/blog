@@ -7,7 +7,16 @@
     <description>Ce blog consacré au lien entre la psychologie et la délinquance. Il est tenu par Benjamin Thiry
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 23 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Fréquences des codes pour le test de Szondi sur un échantillon carcéral belge</title>
+      <dc:creator>Benjamin Thiry</dc:creator>
+      <link>https://benjaminthiry.netlify.app/posts/2023-04-08-szondicodes</link>
+      <description>Le test de Szondi est un test projectif qui vise à révéler le fonctionnement pulsionnel d'une personne. Nous proposons ici des normes sous forme de fréquences de codes pour chaque facteur à chaque passation du test de Szondi sur un échantillon de 449 détenus belges ainsi que sur l'ensemble des dix passations (N = 4490). Les codes les plus fréquents sont les suivants : h+, s-, e0, hy-, k-, p-, d0, m+. Nous ne proposons aucune interprétation psychologique de ce profil dans l'attente d'études évaluant son éventuelle validité externe.</description>
+      <guid>https://benjaminthiry.netlify.app/posts/2023-04-08-szondicodes</guid>
+      <pubDate>Sat, 08 Apr 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://benjaminthiry.netlify.app/posts/2023-04-08-szondicodes/szondicodes_files/figure-html5/onehcodes-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Comparaison de variables de délinquance auto-révélée avec des variables de personnalité selon le modèle en cinq facteurs auprès d’adolescents</title>
       <dc:creator>Benjamin Thiry</dc:creator>
