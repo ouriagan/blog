@@ -1,7 +1,7 @@
 ---
 title: "Fréquences des codes pour le test de Szondi sur un échantillon carcéral belge"
 description: |
-  Le test de Szondi est un test projectif qui vise à révéler le fonctionnement pulsionnel d'une personne. Nous proposons ici des normes sous forme de fréquences de codes pour chaque facteur à chaque passation du test de Szondi sur un échantillon de 449 détenus belges ainsi que sur l'ensemble des dix passations (N = 4490). Les codes les plus fréquents sont les suivants : h+, s-, e0, hy-, k-, p-, d0, m+. Nous ne proposons aucune interprétation psychologique de ce profil dans l'attente d'études évaluant son éventuelle validité externe.
+  Le test de Szondi est un test projectif qui vise à révéler le fonctionnement pulsionnel d'une personne. Nous proposons ici des normes sous forme de fréquences de codes pour chaque facteur à chaque passation du test de Szondi sur un échantillon de 450 détenus belges ainsi que sur l'ensemble des dix passations (N = 4500). Les codes les plus fréquents sont les suivants : h+, s-, e0, hy-, k-, p-, d0, m+. Nous ne proposons aucune interprétation psychologique de ce profil dans l'attente d'études évaluant son éventuelle validité externe.
 author:
   - first_name: "Benjamin"
     last_name: "Thiry"
@@ -21,9 +21,9 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(dplyr)
-library(readxl) 
 library(kableExtra)
 library(ggplot2)
+library(readxl)
 szondisynthese <- read_excel("C:/Users/Ouriagan/OneDrive/szondi/szondisynthese.xlsx") 
 attach(szondisynthese)
 #N 
@@ -43,17 +43,55 @@ nofwomenpercentage <- round(100*(length(which(sex == 1))/length(sex)), digit = 0
 
 # Introduction
 
-Le test de Szondi est un test projectif qui vise à révéler le fonctionnement pulsionnel d'une personne. Un [article précédent](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/) [@thiry2020norms] visait à proposer des normes pour les principales variables du test de Szondi. A cette occasion, nous avions souhaité rendre compte des phénomènes de tension et de décharge sans nous référer aux codes classiquement utilisés par les utilisateurs du test tels que +, -, 0, ±, etc. En effet, nous estimions que ces codes amenaient à une perte d'information car certains renvoient à plusieurs choix faits par les personnes évaluées. Les [tableaux 4](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/#table:tablevgpdesc), [6](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/#table:tablevectodesc) et [7](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/#table:tabledrivedesc) de notre article proposaient déjà les normes pour tous les facteurs des dix passations du test de Szondi. Ces résultats chiffrés ont toutefois comme désavantage d'être potentiellement déconcertants pour les utilisateurs du test. Par conséquent, nous avons convertis les choix des participants en codes afin d'en calculer les fréquences pour chaque passation du test^[Nous nous sommes intéressés aux choix de l'avant-plan (VGP) afin de ne pas alourdir la présentation des résultats. Une étude similaire peut être envisagée pour l'arrière-plan dans un autre temps. L'étude des liens entre les deux plans nécessiterait une étude distincte]. Cet article propose dès lors des nomes sous forme de fréquences de codes.
+Le test de Szondi est un test projectif qui vise à révéler le fonctionnement pulsionnel d'une personne en référence à la *psychologie du choix* de @szondi1967psychologie. Un [article précédent](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/) [@thiry2020norms] visait à proposer des normes pour les principales variables du test de Szondi. A cette occasion, nous avions souhaité rendre compte des phénomènes de tension et de décharge sans nous référer aux codes classiquement utilisés par les utilisateurs du test tels que +, -, 0, ±, etc. En effet, nous estimions que ces codes amenaient à une perte d'information car certains renvoient à plusieurs choix faits par les personnes évaluées. Les [tableaux 4](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/#table:tablevgpdesc), [6](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/#table:tablevectodesc) et [7](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/#table:tabledrivedesc) de notre article proposaient déjà les normes pour tous les facteurs des dix passations du test de Szondi. Ces résultats chiffrés ont toutefois comme désavantage d'être potentiellement déconcertants pour les utilisateurs du test. Par conséquent, nous avons convertis les choix des participants en codes afin d'en calculer les fréquences pour chaque passation du test. Nous nous sommes intéressés aux choix de l'avant-plan (VGP) ^[de l'allemand *vordergrundprofil* opposé au profil appelé complémentaire, expérimental ou *experimentelles komplementäres hintergrundprofil* (EKP)] afin de ne pas alourdir la présentation des résultats. Une étude similaire peut être envisagée pour l'arrière-plan dans un autre temps. L'étude des liens entre les deux plans nécessiterait une étude distincte. Cet article propose dès lors des nomes sous forme de fréquences de codes.
 
 # Méthodologie
 
-La récolte des données est similaire à celle de l'[article précédent](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/) [@thiry2020norms]. Seul le nombre de participants a augmenté entre-temps.
+La récolte des données est similaire à celle de l'[article précédent](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/) [@thiry2020norms]. Le nombre de participants a augmenté entre-temps.
 
 ## Participants
 
-Les participants sont `r ntotal` détenus belges admissibles à une libération anticipée en cours d'évaluation psychosociale. Le / la psychologue en charge de l'évaluation a administré le test de Szondi à dix reprises.
+Les participants sont `r ntotal` détenu(e)s belges admissibles à une libération anticipée en cours d'évaluation psychosociale. Le / la psychologue en charge de l'évaluation a administré le test de Szondi à dix reprises.
 L'échantillon se compose de `r nofmen` (`r nofmenpercentage`%) hommes et de `r nofwomen` (`r nofwomenpercentage`%) femmes.
 L'âge moyen est égal à `r meanage` (ET = `r sdage`, min = `r minage`, max = `r maxage`) ans.
+
+## Traitement des données
+
+Pour chaque passation du test de Szondi, nous avons retenu le *nombre de photographies* choisies comme *sympathiques* ou *antipathiques* à la première présentation (c'est-à-dire à l'avant-plan, VGP). Il existe six photographies pour chaque facteurs. Un participant pourrait considérer les six photographies comme sympathiques ou sympathiques mais pourrait également en considérer certaines comme sympathiques et d'autres comme antipathiques. Il existe donc plusieurs configurations de choix. Les codes découlent de ces configurations. La grille de cotation est reprise dans le tableau 1 :
+
+| Sympathiques | Antipathiques | Code |
+|--------------|---------------|------|
+| 0            | 0             | 0    |
+| 0            | 1             | 0    |
+| 1            | 0             | 0    |
+| 1            | 1             | 0    |
+| 2            | 2             | ±    |
+| 3            | 2             | ±    |
+| 3            | 2             | ±    |
+| 2            | 0             | +    |
+| 2            | 1             | +    |
+| 3            | 0             | +    |
+| 3            | 1             | +    |
+| 0            | 2             | -    |
+| 1            | 2             | -    |
+| 0            | 3             | -    |
+| 1            | 3             | -    |
+| 4            | 0             | +!   |
+| 4            | 1             | +!   |
+| 0            | 4             | -!   |
+| 1            | 4             | -!   |
+| 5            | 0             | +!!  |
+| 5            | 1             | +!!  |
+| 0            | 5             | -!!  |
+| 1            | 5             | -!!  |
+| 6            | 0             | +!!! |
+| 0            | 6             | -!!! |
+| 3            | 3             | ±!   |
+| 4            | 2             | ±!   |
+| 2            | 4             | ±!   |
+Table:  Tableau1 : codes szondi en fonction du nombre de photographies considées comme sympathiques ou antipathiques
+
+Par exemple, si un participant a choisi 3 photographies h comme sympathiques et 1 photographie h comme antipathique, le code correspondant est **h+**. Si un participant a choisi 2 photographies h comme sympathiques et 4 photographie h comme antipathiques, le code correspondant est **h±!**.
 
 # Résultats
 
@@ -83,7 +121,7 @@ codeoneh.df <- codeoneh.df %>% mutate(onehcode = case_when(onehp+onehm <= 1 ~ '0
 		      onehp == 5 & onehm == 0 ~ '+!!',
 			    onehp == 5 & onehm == 1 ~ '+!!',
 			    onehp == 0 & onehm == 5 ~ '-!!',
-			    onehp == 5 & onehm == 1 ~ '-!!',
+			    onehp == 1 & onehm == 5 ~ '-!!',
 			    onehp == 6 & onehm == 0 ~ '+!!!',
 			    onehp == 6 & onehm == 1 ~ '+!!!',
 			    onehp == 0 & onehm == 6 ~ '-!!!',
@@ -137,7 +175,7 @@ codetwoh.df <- codetwoh.df %>% mutate(twohcode = case_when(twohp+twohm <= 1 ~ '0
 		      twohp == 5 & twohm == 0 ~ '+!!',
 			    twohp == 5 & twohm == 1 ~ '+!!',
 			    twohp == 0 & twohm == 5 ~ '-!!',
-			    twohp == 5 & twohm == 1 ~ '-!!',
+			    twohp == 5 & twohm == 5 ~ '-!!',
 			    twohp == 6 & twohm == 0 ~ '+!!!',
 			    twohp == 6 & twohm == 1 ~ '+!!!',
 			    twohp == 0 & twohm == 6 ~ '-!!!',
@@ -190,7 +228,7 @@ codethreeh.df <- codethreeh.df %>% mutate(threehcode = case_when(threehp+threehm
 		      threehp == 5 & threehm == 0 ~ '+!!',
 			    threehp == 5 & threehm == 1 ~ '+!!',
 			    threehp == 0 & threehm == 5 ~ '-!!',
-			    threehp == 5 & threehm == 1 ~ '-!!',
+			    threehp == 1 & threehm == 5 ~ '-!!',
 			    threehp == 6 & threehm == 0 ~ '+!!!',
 			    threehp == 6 & threehm == 1 ~ '+!!!',
 			    threehp == 0 & threehm == 6 ~ '-!!!',
@@ -243,7 +281,7 @@ codefourh.df <- codefourh.df %>% mutate(fourhcode = case_when(fourhp+fourhm <= 1
 		      fourhp == 5 & fourhm == 0 ~ '+!!',
 			    fourhp == 5 & fourhm == 1 ~ '+!!',
 			    fourhp == 0 & fourhm == 5 ~ '-!!',
-			    fourhp == 5 & fourhm == 1 ~ '-!!',
+			    fourhp == 1 & fourhm == 5 ~ '-!!',
 			    fourhp == 6 & fourhm == 0 ~ '+!!!',
 			    fourhp == 6 & fourhm == 1 ~ '+!!!',
 			    fourhp == 0 & fourhm == 6 ~ '-!!!',
@@ -296,7 +334,7 @@ codefiveh.df <- codefiveh.df %>% mutate(fivehcode = case_when(fivehp+fivehm <= 1
 		      fivehp == 5 & fivehm == 0 ~ '+!!',
 			    fivehp == 5 & fivehm == 1 ~ '+!!',
 			    fivehp == 0 & fivehm == 5 ~ '-!!',
-			    fivehp == 5 & fivehm == 1 ~ '-!!',
+			    fivehp == 1 & fivehm == 5 ~ '-!!',
 			    fivehp == 6 & fivehm == 0 ~ '+!!!',
 			    fivehp == 6 & fivehm == 1 ~ '+!!!',
 			    fivehp == 0 & fivehm == 6 ~ '-!!!',
@@ -348,7 +386,7 @@ codesixh.df <- codesixh.df %>% mutate(sixhcode = case_when(sixhp+sixhm <= 1 ~ '0
 		      sixhp == 5 & sixhm == 0 ~ '+!!',
 			    sixhp == 5 & sixhm == 1 ~ '+!!',
 			    sixhp == 0 & sixhm == 5 ~ '-!!',
-			    sixhp == 5 & sixhm == 1 ~ '-!!',
+			    sixhp == 1 & sixhm == 5 ~ '-!!',
 			    sixhp == 6 & sixhm == 0 ~ '+!!!',
 			    sixhp == 6 & sixhm == 1 ~ '+!!!',
 			    sixhp == 0 & sixhm == 6 ~ '-!!!',
@@ -401,7 +439,7 @@ codesevenh.df <- codesevenh.df %>% mutate(sevenhcode = case_when(sevenhp+sevenhm
 		      sevenhp == 5 & sevenhm == 0 ~ '+!!',
 			    sevenhp == 5 & sevenhm == 1 ~ '+!!',
 			    sevenhp == 0 & sevenhm == 5 ~ '-!!',
-			    sevenhp == 5 & sevenhm == 1 ~ '-!!',
+			    sevenhp == 1 & sevenhm == 5 ~ '-!!',
 			    sevenhp == 6 & sevenhm == 0 ~ '+!!!',
 			    sevenhp == 6 & sevenhm == 1 ~ '+!!!',
 			    sevenhp == 0 & sevenhm == 6 ~ '-!!!',
@@ -454,7 +492,7 @@ codeeighth.df <- codeeighth.df %>% mutate(eighthcode = case_when(eighthp+eighthm
 		      eighthp == 5 & eighthm == 0 ~ '+!!',
 			    eighthp == 5 & eighthm == 1 ~ '+!!',
 			    eighthp == 0 & eighthm == 5 ~ '-!!',
-			    eighthp == 5 & eighthm == 1 ~ '-!!',
+			    eighthp == 1 & eighthm == 5 ~ '-!!',
 			    eighthp == 6 & eighthm == 0 ~ '+!!!',
 			    eighthp == 6 & eighthm == 1 ~ '+!!!',
 			    eighthp == 0 & eighthm == 6 ~ '-!!!',
@@ -507,7 +545,7 @@ codenineh.df <- codenineh.df %>% mutate(ninehcode = case_when(ninehp+ninehm <= 1
 		      ninehp == 5 & ninehm == 0 ~ '+!!',
 			    ninehp == 5 & ninehm == 1 ~ '+!!',
 			    ninehp == 0 & ninehm == 5 ~ '-!!',
-			    ninehp == 5 & ninehm == 1 ~ '-!!',
+			    ninehp == 1 & ninehm == 5 ~ '-!!',
 			    ninehp == 6 & ninehm == 0 ~ '+!!!',
 			    ninehp == 6 & ninehm == 1 ~ '+!!!',
 			    ninehp == 0 & ninehm == 6 ~ '-!!!',
@@ -560,7 +598,7 @@ codetenh.df <- codetenh.df %>% mutate(tenhcode = case_when(tenhp+tenhm <= 1 ~ '0
 		      tenhp == 5 & tenhm == 0 ~ '+!!',
 			    tenhp == 5 & tenhm == 1 ~ '+!!',
 			    tenhp == 0 & tenhm == 5 ~ '-!!',
-			    tenhp == 5 & tenhm == 1 ~ '-!!',
+			    tenhp == 1 & tenhm == 5 ~ '-!!',
 			    tenhp == 6 & tenhm == 0 ~ '+!!!',
 			    tenhp == 6 & tenhm == 1 ~ '+!!!',
 			    tenhp == 0 & tenhm == 6 ~ '-!!!',
@@ -650,7 +688,7 @@ codeones.df <- codeones.df %>% mutate(onescode = case_when(onesp+onesm <= 1 ~ '0
 		      onesp == 5 & onesm == 0 ~ '+!!',
 			    onesp == 5 & onesm == 1 ~ '+!!',
 			    onesp == 0 & onesm == 5 ~ '-!!',
-			    onesp == 5 & onesm == 1 ~ '-!!',
+			    onesp == 1 & onesm == 5 ~ '-!!',
 			    onesp == 6 & onesm == 0 ~ '+!!!',
 			    onesp == 6 & onesm == 1 ~ '+!!!',
 			    onesp == 0 & onesm == 6 ~ '-!!!',
@@ -704,7 +742,7 @@ codetwos.df <- codetwos.df %>% mutate(twoscode = case_when(twosp+twosm <= 1 ~ '0
 		      twosp == 5 & twosm == 0 ~ '+!!',
 			    twosp == 5 & twosm == 1 ~ '+!!',
 			    twosp == 0 & twosm == 5 ~ '-!!',
-			    twosp == 5 & twosm == 1 ~ '-!!',
+			    twosp == 1 & twosm == 5 ~ '-!!',
 			    twosp == 6 & twosm == 0 ~ '+!!!',
 			    twosp == 6 & twosm == 1 ~ '+!!!',
 			    twosp == 0 & twosm == 6 ~ '-!!!',
@@ -757,7 +795,7 @@ codethrees.df <- codethrees.df %>% mutate(threescode = case_when(threesp+threesm
 		      threesp == 5 & threesm == 0 ~ '+!!',
 			    threesp == 5 & threesm == 1 ~ '+!!',
 			    threesp == 0 & threesm == 5 ~ '-!!',
-			    threesp == 5 & threesm == 1 ~ '-!!',
+			    threesp == 1 & threesm == 5 ~ '-!!',
 			    threesp == 6 & threesm == 0 ~ '+!!!',
 			    threesp == 6 & threesm == 1 ~ '+!!!',
 			    threesp == 0 & threesm == 6 ~ '-!!!',
@@ -810,7 +848,7 @@ codefours.df <- codefours.df %>% mutate(fourscode = case_when(foursp+foursm <= 1
 		      foursp == 5 & foursm == 0 ~ '+!!',
 			    foursp == 5 & foursm == 1 ~ '+!!',
 			    foursp == 0 & foursm == 5 ~ '-!!',
-			    foursp == 5 & foursm == 1 ~ '-!!',
+			    foursp == 1 & foursm == 5 ~ '-!!',
 			    foursp == 6 & foursm == 0 ~ '+!!!',
 			    foursp == 6 & foursm == 1 ~ '+!!!',
 			    foursp == 0 & foursm == 6 ~ '-!!!',
@@ -863,7 +901,7 @@ codefives.df <- codefives.df %>% mutate(fivescode = case_when(fivesp+fivesm <= 1
 		      fivesp == 5 & fivesm == 0 ~ '+!!',
 			    fivesp == 5 & fivesm == 1 ~ '+!!',
 			    fivesp == 0 & fivesm == 5 ~ '-!!',
-			    fivesp == 5 & fivesm == 1 ~ '-!!',
+			    fivesp == 1 & fivesm == 5 ~ '-!!',
 			    fivesp == 6 & fivesm == 0 ~ '+!!!',
 			    fivesp == 6 & fivesm == 1 ~ '+!!!',
 			    fivesp == 0 & fivesm == 6 ~ '-!!!',
@@ -915,7 +953,7 @@ codesixs.df <- codesixs.df %>% mutate(sixscode = case_when(sixsp+sixsm <= 1 ~ '0
 		      sixsp == 5 & sixsm == 0 ~ '+!!',
 			    sixsp == 5 & sixsm == 1 ~ '+!!',
 			    sixsp == 0 & sixsm == 5 ~ '-!!',
-			    sixsp == 5 & sixsm == 1 ~ '-!!',
+			    sixsp == 1 & sixsm == 5 ~ '-!!',
 			    sixsp == 6 & sixsm == 0 ~ '+!!!',
 			    sixsp == 6 & sixsm == 1 ~ '+!!!',
 			    sixsp == 0 & sixsm == 6 ~ '-!!!',
@@ -968,7 +1006,7 @@ codesevens.df <- codesevens.df %>% mutate(sevenscode = case_when(sevensp+sevensm
 		      sevensp == 5 & sevensm == 0 ~ '+!!',
 			    sevensp == 5 & sevensm == 1 ~ '+!!',
 			    sevensp == 0 & sevensm == 5 ~ '-!!',
-			    sevensp == 5 & sevensm == 1 ~ '-!!',
+			    sevensp == 1 & sevensm == 5 ~ '-!!',
 			    sevensp == 6 & sevensm == 0 ~ '+!!!',
 			    sevensp == 6 & sevensm == 1 ~ '+!!!',
 			    sevensp == 0 & sevensm == 6 ~ '-!!!',
@@ -1021,7 +1059,7 @@ codeeights.df <- codeeights.df %>% mutate(eightscode = case_when(eightsp+eightsm
 		      eightsp == 5 & eightsm == 0 ~ '+!!',
 			    eightsp == 5 & eightsm == 1 ~ '+!!',
 			    eightsp == 0 & eightsm == 5 ~ '-!!',
-			    eightsp == 5 & eightsm == 1 ~ '-!!',
+			    eightsp == 1 & eightsm == 5 ~ '-!!',
 			    eightsp == 6 & eightsm == 0 ~ '+!!!',
 			    eightsp == 6 & eightsm == 1 ~ '+!!!',
 			    eightsp == 0 & eightsm == 6 ~ '-!!!',
@@ -1074,7 +1112,7 @@ codenines.df <- codenines.df %>% mutate(ninescode = case_when(ninesp+ninesm <= 1
 		      ninesp == 5 & ninesm == 0 ~ '+!!',
 			    ninesp == 5 & ninesm == 1 ~ '+!!',
 			    ninesp == 0 & ninesm == 5 ~ '-!!',
-			    ninesp == 5 & ninesm == 1 ~ '-!!',
+			    ninesp == 1 & ninesm == 5 ~ '-!!',
 			    ninesp == 6 & ninesm == 0 ~ '+!!!',
 			    ninesp == 6 & ninesm == 1 ~ '+!!!',
 			    ninesp == 0 & ninesm == 6 ~ '-!!!',
@@ -1128,7 +1166,7 @@ codetens.df <- codetens.df %>% mutate(tenscode = case_when(tensp+tensm <= 1 ~ '0
 		      tensp == 5 & tensm == 0 ~ '+!!',
 			    tensp == 5 & tensm == 1 ~ '+!!',
 			    tensp == 0 & tensm == 5 ~ '-!!',
-			    tensp == 5 & tensm == 1 ~ '-!!',
+			    tensp == 1 & tensm == 5 ~ '-!!',
 			    tensp == 6 & tensm == 0 ~ '+!!!',
 			    tensp == 6 & tensm == 1 ~ '+!!!',
 			    tensp == 0 & tensm == 6 ~ '-!!!',
@@ -1218,7 +1256,7 @@ codeonee.df <- codeonee.df %>% mutate(oneecode = case_when(oneep+oneem <= 1 ~ '0
 		      oneep == 5 & oneem == 0 ~ '+!!',
 			    oneep == 5 & oneem == 1 ~ '+!!',
 			    oneep == 0 & oneem == 5 ~ '-!!',
-			    oneep == 5 & oneem == 1 ~ '-!!',
+			    oneep == 1 & oneem == 5 ~ '-!!',
 			    oneep == 6 & oneem == 0 ~ '+!!!',
 			    oneep == 6 & oneem == 1 ~ '+!!!',
 			    oneep == 0 & oneem == 6 ~ '-!!!',
@@ -1272,7 +1310,7 @@ codetwoe.df <- codetwoe.df %>% mutate(twoecode = case_when(twoep+twoem <= 1 ~ '0
 		      twoep == 5 & twoem == 0 ~ '+!!',
 			    twoep == 5 & twoem == 1 ~ '+!!',
 			    twoep == 0 & twoem == 5 ~ '-!!',
-			    twoep == 5 & twoem == 1 ~ '-!!',
+			    twoep == 1 & twoem == 5 ~ '-!!',
 			    twoep == 6 & twoem == 0 ~ '+!!!',
 			    twoep == 6 & twoem == 1 ~ '+!!!',
 			    twoep == 0 & twoem == 6 ~ '-!!!',
@@ -1325,7 +1363,7 @@ codethreee.df <- codethreee.df %>% mutate(threeecode = case_when(threeep+threeem
 		      threeep == 5 & threeem == 0 ~ '+!!',
 			    threeep == 5 & threeem == 1 ~ '+!!',
 			    threeep == 0 & threeem == 5 ~ '-!!',
-			    threeep == 5 & threeem == 1 ~ '-!!',
+			    threeep == 1 & threeem == 5 ~ '-!!',
 			    threeep == 6 & threeem == 0 ~ '+!!!',
 			    threeep == 6 & threeem == 1 ~ '+!!!',
 			    threeep == 0 & threeem == 6 ~ '-!!!',
@@ -1378,7 +1416,7 @@ codefoure.df <- codefoure.df %>% mutate(fourecode = case_when(fourep+fourem <= 1
 		      fourep == 5 & fourem == 0 ~ '+!!',
 			    fourep == 5 & fourem == 1 ~ '+!!',
 			    fourep == 0 & fourem == 5 ~ '-!!',
-			    fourep == 5 & fourem == 1 ~ '-!!',
+			    fourep == 1 & fourem == 5 ~ '-!!',
 			    fourep == 6 & fourem == 0 ~ '+!!!',
 			    fourep == 6 & fourem == 1 ~ '+!!!',
 			    fourep == 0 & fourem == 6 ~ '-!!!',
@@ -1431,7 +1469,7 @@ codefivee.df <- codefivee.df %>% mutate(fiveecode = case_when(fiveep+fiveem <= 1
 		      fiveep == 5 & fiveem == 0 ~ '+!!',
 			    fiveep == 5 & fiveem == 1 ~ '+!!',
 			    fiveep == 0 & fiveem == 5 ~ '-!!',
-			    fiveep == 5 & fiveem == 1 ~ '-!!',
+			    fiveep == 1 & fiveem == 5 ~ '-!!',
 			    fiveep == 6 & fiveem == 0 ~ '+!!!',
 			    fiveep == 6 & fiveem == 1 ~ '+!!!',
 			    fiveep == 0 & fiveem == 6 ~ '-!!!',
@@ -1483,7 +1521,7 @@ codesixe.df <- codesixe.df %>% mutate(sixecode = case_when(sixep+sixem <= 1 ~ '0
 		      sixep == 5 & sixem == 0 ~ '+!!',
 			    sixep == 5 & sixem == 1 ~ '+!!',
 			    sixep == 0 & sixem == 5 ~ '-!!',
-			    sixep == 5 & sixem == 1 ~ '-!!',
+			    sixep == 1 & sixem == 5 ~ '-!!',
 			    sixep == 6 & sixem == 0 ~ '+!!!',
 			    sixep == 6 & sixem == 1 ~ '+!!!',
 			    sixep == 0 & sixem == 6 ~ '-!!!',
@@ -1536,7 +1574,7 @@ codesevene.df <- codesevene.df %>% mutate(sevenecode = case_when(sevenep+sevenem
 		      sevenep == 5 & sevenem == 0 ~ '+!!',
 			    sevenep == 5 & sevenem == 1 ~ '+!!',
 			    sevenep == 0 & sevenem == 5 ~ '-!!',
-			    sevenep == 5 & sevenem == 1 ~ '-!!',
+			    sevenep == 1 & sevenem == 5 ~ '-!!',
 			    sevenep == 6 & sevenem == 0 ~ '+!!!',
 			    sevenep == 6 & sevenem == 1 ~ '+!!!',
 			    sevenep == 0 & sevenem == 6 ~ '-!!!',
@@ -1589,7 +1627,7 @@ codeeighte.df <- codeeighte.df %>% mutate(eightecode = case_when(eightep+eightem
 		      eightep == 5 & eightem == 0 ~ '+!!',
 			    eightep == 5 & eightem == 1 ~ '+!!',
 			    eightep == 0 & eightem == 5 ~ '-!!',
-			    eightep == 5 & eightem == 1 ~ '-!!',
+			    eightep == 1 & eightem == 5 ~ '-!!',
 			    eightep == 6 & eightem == 0 ~ '+!!!',
 			    eightep == 6 & eightem == 1 ~ '+!!!',
 			    eightep == 0 & eightem == 6 ~ '-!!!',
@@ -1642,7 +1680,7 @@ codeninee.df <- codeninee.df %>% mutate(nineecode = case_when(nineep+nineem <= 1
 		      nineep == 5 & nineem == 0 ~ '+!!',
 			    nineep == 5 & nineem == 1 ~ '+!!',
 			    nineep == 0 & nineem == 5 ~ '-!!',
-			    nineep == 5 & nineem == 1 ~ '-!!',
+			    nineep == 1 & nineem == 5 ~ '-!!',
 			    nineep == 6 & nineem == 0 ~ '+!!!',
 			    nineep == 6 & nineem == 1 ~ '+!!!',
 			    nineep == 0 & nineem == 6 ~ '-!!!',
@@ -1695,7 +1733,7 @@ codetene.df <- codetene.df %>% mutate(tenecode = case_when(tenep+tenem <= 1 ~ '0
 		      tenep == 5 & tenem == 0 ~ '+!!',
 			    tenep == 5 & tenem == 1 ~ '+!!',
 			    tenep == 0 & tenem == 5 ~ '-!!',
-			    tenep == 5 & tenem == 1 ~ '-!!',
+			    tenep == 1 & tenem == 5 ~ '-!!',
 			    tenep == 6 & tenem == 0 ~ '+!!!',
 			    tenep == 6 & tenem == 1 ~ '+!!!',
 			    tenep == 0 & tenem == 6 ~ '-!!!',
@@ -1785,7 +1823,7 @@ codeonehy.df <- codeonehy.df %>% mutate(onehycode = case_when(onehyp+onehym <= 1
 		      onehyp == 5 & onehym == 0 ~ '+!!',
 			    onehyp == 5 & onehym == 1 ~ '+!!',
 			    onehyp == 0 & onehym == 5 ~ '-!!',
-			    onehyp == 5 & onehym == 1 ~ '-!!',
+			    onehyp == 1 & onehym == 5 ~ '-!!',
 			    onehyp == 6 & onehym == 0 ~ '+!!!',
 			    onehyp == 6 & onehym == 1 ~ '+!!!',
 			    onehyp == 0 & onehym == 6 ~ '-!!!',
@@ -1839,7 +1877,7 @@ codetwohy.df <- codetwohy.df %>% mutate(twohycode = case_when(twohyp+twohym <= 1
 		      twohyp == 5 & twohym == 0 ~ '+!!',
 			    twohyp == 5 & twohym == 1 ~ '+!!',
 			    twohyp == 0 & twohym == 5 ~ '-!!',
-			    twohyp == 5 & twohym == 1 ~ '-!!',
+			    twohyp == 1 & twohym == 5 ~ '-!!',
 			    twohyp == 6 & twohym == 0 ~ '+!!!',
 			    twohyp == 6 & twohym == 1 ~ '+!!!',
 			    twohyp == 0 & twohym == 6 ~ '-!!!',
@@ -1892,7 +1930,7 @@ codethreehy.df <- codethreehy.df %>% mutate(threehycode = case_when(threehyp+thr
 		      threehyp == 5 & threehym == 0 ~ '+!!',
 			    threehyp == 5 & threehym == 1 ~ '+!!',
 			    threehyp == 0 & threehym == 5 ~ '-!!',
-			    threehyp == 5 & threehym == 1 ~ '-!!',
+			    threehyp == 1 & threehym == 5 ~ '-!!',
 			    threehyp == 6 & threehym == 0 ~ '+!!!',
 			    threehyp == 6 & threehym == 1 ~ '+!!!',
 			    threehyp == 0 & threehym == 6 ~ '-!!!',
@@ -1945,7 +1983,7 @@ codefourhy.df <- codefourhy.df %>% mutate(fourhycode = case_when(fourhyp+fourhym
 		      fourhyp == 5 & fourhym == 0 ~ '+!!',
 			    fourhyp == 5 & fourhym == 1 ~ '+!!',
 			    fourhyp == 0 & fourhym == 5 ~ '-!!',
-			    fourhyp == 5 & fourhym == 1 ~ '-!!',
+			    fourhyp == 1 & fourhym == 5 ~ '-!!',
 			    fourhyp == 6 & fourhym == 0 ~ '+!!!',
 			    fourhyp == 6 & fourhym == 1 ~ '+!!!',
 			    fourhyp == 0 & fourhym == 6 ~ '-!!!',
@@ -1998,7 +2036,7 @@ codefivehy.df <- codefivehy.df %>% mutate(fivehycode = case_when(fivehyp+fivehym
 		      fivehyp == 5 & fivehym == 0 ~ '+!!',
 			    fivehyp == 5 & fivehym == 1 ~ '+!!',
 			    fivehyp == 0 & fivehym == 5 ~ '-!!',
-			    fivehyp == 5 & fivehym == 1 ~ '-!!',
+			    fivehyp == 1 & fivehym == 5 ~ '-!!',
 			    fivehyp == 6 & fivehym == 0 ~ '+!!!',
 			    fivehyp == 6 & fivehym == 1 ~ '+!!!',
 			    fivehyp == 0 & fivehym == 6 ~ '-!!!',
@@ -2050,7 +2088,7 @@ codesixhy.df <- codesixhy.df %>% mutate(sixhycode = case_when(sixhyp+sixhym <= 1
 		      sixhyp == 5 & sixhym == 0 ~ '+!!',
 			    sixhyp == 5 & sixhym == 1 ~ '+!!',
 			    sixhyp == 0 & sixhym == 5 ~ '-!!',
-			    sixhyp == 5 & sixhym == 1 ~ '-!!',
+			    sixhyp == 1 & sixhym == 5 ~ '-!!',
 			    sixhyp == 6 & sixhym == 0 ~ '+!!!',
 			    sixhyp == 6 & sixhym == 1 ~ '+!!!',
 			    sixhyp == 0 & sixhym == 6 ~ '-!!!',
@@ -2103,7 +2141,7 @@ codesevenhy.df <- codesevenhy.df %>% mutate(sevenhycode = case_when(sevenhyp+sev
 		      sevenhyp == 5 & sevenhym == 0 ~ '+!!',
 			    sevenhyp == 5 & sevenhym == 1 ~ '+!!',
 			    sevenhyp == 0 & sevenhym == 5 ~ '-!!',
-			    sevenhyp == 5 & sevenhym == 1 ~ '-!!',
+			    sevenhyp == 1 & sevenhym == 5 ~ '-!!',
 			    sevenhyp == 6 & sevenhym == 0 ~ '+!!!',
 			    sevenhyp == 6 & sevenhym == 1 ~ '+!!!',
 			    sevenhyp == 0 & sevenhym == 6 ~ '-!!!',
@@ -2156,7 +2194,7 @@ codeeighthy.df <- codeeighthy.df %>% mutate(eighthycode = case_when(eighthyp+eig
 		      eighthyp == 5 & eighthym == 0 ~ '+!!',
 			    eighthyp == 5 & eighthym == 1 ~ '+!!',
 			    eighthyp == 0 & eighthym == 5 ~ '-!!',
-			    eighthyp == 5 & eighthym == 1 ~ '-!!',
+			    eighthyp == 1 & eighthym == 5 ~ '-!!',
 			    eighthyp == 6 & eighthym == 0 ~ '+!!!',
 			    eighthyp == 6 & eighthym == 1 ~ '+!!!',
 			    eighthyp == 0 & eighthym == 6 ~ '-!!!',
@@ -2209,7 +2247,7 @@ codeninehy.df <- codeninehy.df %>% mutate(ninehycode = case_when(ninehyp+ninehym
 		      ninehyp == 5 & ninehym == 0 ~ '+!!',
 			    ninehyp == 5 & ninehym == 1 ~ '+!!',
 			    ninehyp == 0 & ninehym == 5 ~ '-!!',
-			    ninehyp == 5 & ninehym == 1 ~ '-!!',
+			    ninehyp == 1 & ninehym == 5 ~ '-!!',
 			    ninehyp == 6 & ninehym == 0 ~ '+!!!',
 			    ninehyp == 6 & ninehym == 1 ~ '+!!!',
 			    ninehyp == 0 & ninehym == 6 ~ '-!!!',
@@ -2262,7 +2300,7 @@ codetenhy.df <- codetenhy.df %>% mutate(tenhycode = case_when(tenhyp+tenhym <= 1
 		      tenhyp == 5 & tenhym == 0 ~ '+!!',
 			    tenhyp == 5 & tenhym == 1 ~ '+!!',
 			    tenhyp == 0 & tenhym == 5 ~ '-!!',
-			    tenhyp == 5 & tenhym == 1 ~ '-!!',
+			    tenhyp == 1 & tenhym == 5 ~ '-!!',
 			    tenhyp == 6 & tenhym == 0 ~ '+!!!',
 			    tenhyp == 6 & tenhym == 1 ~ '+!!!',
 			    tenhyp == 0 & tenhym == 6 ~ '-!!!',
@@ -2353,7 +2391,7 @@ codeonek.df <- codeonek.df %>% mutate(onekcode = case_when(onekp+onekm <= 1 ~ '0
 		      onekp == 5 & onekm == 0 ~ '+!!',
 			    onekp == 5 & onekm == 1 ~ '+!!',
 			    onekp == 0 & onekm == 5 ~ '-!!',
-			    onekp == 5 & onekm == 1 ~ '-!!',
+			    onekp == 1 & onekm == 5 ~ '-!!',
 			    onekp == 6 & onekm == 0 ~ '+!!!',
 			    onekp == 6 & onekm == 1 ~ '+!!!',
 			    onekp == 0 & onekm == 6 ~ '-!!!',
@@ -2408,7 +2446,7 @@ codetwok.df <- codetwok.df %>% mutate(twokcode = case_when(twokp+twokm <= 1 ~ '0
 		      twokp == 5 & twokm == 0 ~ '+!!',
 			    twokp == 5 & twokm == 1 ~ '+!!',
 			    twokp == 0 & twokm == 5 ~ '-!!',
-			    twokp == 5 & twokm == 1 ~ '-!!',
+			    twokp == 1 & twokm == 5 ~ '-!!',
 			    twokp == 6 & twokm == 0 ~ '+!!!',
 			    twokp == 6 & twokm == 1 ~ '+!!!',
 			    twokp == 0 & twokm == 6 ~ '-!!!',
@@ -2461,7 +2499,7 @@ codethreek.df <- codethreek.df %>% mutate(threekcode = case_when(threekp+threekm
 		      threekp == 5 & threekm == 0 ~ '+!!',
 			    threekp == 5 & threekm == 1 ~ '+!!',
 			    threekp == 0 & threekm == 5 ~ '-!!',
-			    threekp == 5 & threekm == 1 ~ '-!!',
+			    threekp == 1 & threekm == 5 ~ '-!!',
 			    threekp == 6 & threekm == 0 ~ '+!!!',
 			    threekp == 6 & threekm == 1 ~ '+!!!',
 			    threekp == 0 & threekm == 6 ~ '-!!!',
@@ -2514,7 +2552,7 @@ codefourk.df <- codefourk.df %>% mutate(fourkcode = case_when(fourkp+fourkm <= 1
 		      fourkp == 5 & fourkm == 0 ~ '+!!',
 			    fourkp == 5 & fourkm == 1 ~ '+!!',
 			    fourkp == 0 & fourkm == 5 ~ '-!!',
-			    fourkp == 5 & fourkm == 1 ~ '-!!',
+			    fourkp == 1 & fourkm == 5 ~ '-!!',
 			    fourkp == 6 & fourkm == 0 ~ '+!!!',
 			    fourkp == 6 & fourkm == 1 ~ '+!!!',
 			    fourkp == 0 & fourkm == 6 ~ '-!!!',
@@ -2567,7 +2605,7 @@ codefivek.df <- codefivek.df %>% mutate(fivekcode = case_when(fivekp+fivekm <= 1
 		      fivekp == 5 & fivekm == 0 ~ '+!!',
 			    fivekp == 5 & fivekm == 1 ~ '+!!',
 			    fivekp == 0 & fivekm == 5 ~ '-!!',
-			    fivekp == 5 & fivekm == 1 ~ '-!!',
+			    fivekp == 1 & fivekm == 5 ~ '-!!',
 			    fivekp == 6 & fivekm == 0 ~ '+!!!',
 			    fivekp == 6 & fivekm == 1 ~ '+!!!',
 			    fivekp == 0 & fivekm == 6 ~ '-!!!',
@@ -2619,7 +2657,7 @@ codesixk.df <- codesixk.df %>% mutate(sixkcode = case_when(sixkp+sixkm <= 1 ~ '0
 		      sixkp == 5 & sixkm == 0 ~ '+!!',
 			    sixkp == 5 & sixkm == 1 ~ '+!!',
 			    sixkp == 0 & sixkm == 5 ~ '-!!',
-			    sixkp == 5 & sixkm == 1 ~ '-!!',
+			    sixkp == 1 & sixkm == 5 ~ '-!!',
 			    sixkp == 6 & sixkm == 0 ~ '+!!!',
 			    sixkp == 6 & sixkm == 1 ~ '+!!!',
 			    sixkp == 0 & sixkm == 6 ~ '-!!!',
@@ -2672,7 +2710,7 @@ codesevenk.df <- codesevenk.df %>% mutate(sevenkcode = case_when(sevenkp+sevenkm
 		      sevenkp == 5 & sevenkm == 0 ~ '+!!',
 			    sevenkp == 5 & sevenkm == 1 ~ '+!!',
 			    sevenkp == 0 & sevenkm == 5 ~ '-!!',
-			    sevenkp == 5 & sevenkm == 1 ~ '-!!',
+			    sevenkp == 1 & sevenkm == 5 ~ '-!!',
 			    sevenkp == 6 & sevenkm == 0 ~ '+!!!',
 			    sevenkp == 6 & sevenkm == 1 ~ '+!!!',
 			    sevenkp == 0 & sevenkm == 6 ~ '-!!!',
@@ -2725,7 +2763,7 @@ codeeightk.df <- codeeightk.df %>% mutate(eightkcode = case_when(eightkp+eightkm
 		      eightkp == 5 & eightkm == 0 ~ '+!!',
 			    eightkp == 5 & eightkm == 1 ~ '+!!',
 			    eightkp == 0 & eightkm == 5 ~ '-!!',
-			    eightkp == 5 & eightkm == 1 ~ '-!!',
+			    eightkp == 1 & eightkm == 5 ~ '-!!',
 			    eightkp == 6 & eightkm == 0 ~ '+!!!',
 			    eightkp == 6 & eightkm == 1 ~ '+!!!',
 			    eightkp == 0 & eightkm == 6 ~ '-!!!',
@@ -2778,7 +2816,7 @@ codeninek.df <- codeninek.df %>% mutate(ninekcode = case_when(ninekp+ninekm <= 1
 		      ninekp == 5 & ninekm == 0 ~ '+!!',
 			    ninekp == 5 & ninekm == 1 ~ '+!!',
 			    ninekp == 0 & ninekm == 5 ~ '-!!',
-			    ninekp == 5 & ninekm == 1 ~ '-!!',
+			    ninekp == 1 & ninekm == 5 ~ '-!!',
 			    ninekp == 6 & ninekm == 0 ~ '+!!!',
 			    ninekp == 6 & ninekm == 1 ~ '+!!!',
 			    ninekp == 0 & ninekm == 6 ~ '-!!!',
@@ -2831,7 +2869,7 @@ codetenk.df <- codetenk.df %>% mutate(tenkcode = case_when(tenkp+tenkm <= 1 ~ '0
 		      tenkp == 5 & tenkm == 0 ~ '+!!',
 			    tenkp == 5 & tenkm == 1 ~ '+!!',
 			    tenkp == 0 & tenkm == 5 ~ '-!!',
-			    tenkp == 5 & tenkm == 1 ~ '-!!',
+			    tenkp == 1 & tenkm == 5 ~ '-!!',
 			    tenkp == 6 & tenkm == 0 ~ '+!!!',
 			    tenkp == 6 & tenkm == 1 ~ '+!!!',
 			    tenkp == 0 & tenkm == 6 ~ '-!!!',
@@ -2920,7 +2958,7 @@ codeonep.df <- codeonep.df %>% mutate(onepcode = case_when(onepp+onepm <= 1 ~ '0
 		      onepp == 5 & onepm == 0 ~ '+!!',
 			    onepp == 5 & onepm == 1 ~ '+!!',
 			    onepp == 0 & onepm == 5 ~ '-!!',
-			    onepp == 5 & onepm == 1 ~ '-!!',
+			    onepp == 1 & onepm == 5 ~ '-!!',
 			    onepp == 6 & onepm == 0 ~ '+!!!',
 			    onepp == 6 & onepm == 1 ~ '+!!!',
 			    onepp == 0 & onepm == 6 ~ '-!!!',
@@ -2974,7 +3012,7 @@ codetwop.df <- codetwop.df %>% mutate(twopcode = case_when(twopp+twopm <= 1 ~ '0
 		      twopp == 5 & twopm == 0 ~ '+!!',
 			    twopp == 5 & twopm == 1 ~ '+!!',
 			    twopp == 0 & twopm == 5 ~ '-!!',
-			    twopp == 5 & twopm == 1 ~ '-!!',
+			    twopp == 1 & twopm == 5 ~ '-!!',
 			    twopp == 6 & twopm == 0 ~ '+!!!',
 			    twopp == 6 & twopm == 1 ~ '+!!!',
 			    twopp == 0 & twopm == 6 ~ '-!!!',
@@ -3027,7 +3065,7 @@ codethreep.df <- codethreep.df %>% mutate(threepcode = case_when(threepp+threepm
 		      threepp == 5 & threepm == 0 ~ '+!!',
 			    threepp == 5 & threepm == 1 ~ '+!!',
 			    threepp == 0 & threepm == 5 ~ '-!!',
-			    threepp == 5 & threepm == 1 ~ '-!!',
+			    threepp == 1 & threepm == 5 ~ '-!!',
 			    threepp == 6 & threepm == 0 ~ '+!!!',
 			    threepp == 6 & threepm == 1 ~ '+!!!',
 			    threepp == 0 & threepm == 6 ~ '-!!!',
@@ -3080,7 +3118,7 @@ codefourp.df <- codefourp.df %>% mutate(fourpcode = case_when(fourpp+fourpm <= 1
 		      fourpp == 5 & fourpm == 0 ~ '+!!',
 			    fourpp == 5 & fourpm == 1 ~ '+!!',
 			    fourpp == 0 & fourpm == 5 ~ '-!!',
-			    fourpp == 5 & fourpm == 1 ~ '-!!',
+			    fourpp == 1 & fourpm == 5 ~ '-!!',
 			    fourpp == 6 & fourpm == 0 ~ '+!!!',
 			    fourpp == 6 & fourpm == 1 ~ '+!!!',
 			    fourpp == 0 & fourpm == 6 ~ '-!!!',
@@ -3133,7 +3171,7 @@ codefivep.df <- codefivep.df %>% mutate(fivepcode = case_when(fivepp+fivepm <= 1
 		      fivepp == 5 & fivepm == 0 ~ '+!!',
 			    fivepp == 5 & fivepm == 1 ~ '+!!',
 			    fivepp == 0 & fivepm == 5 ~ '-!!',
-			    fivepp == 5 & fivepm == 1 ~ '-!!',
+			    fivepp == 1 & fivepm == 5 ~ '-!!',
 			    fivepp == 6 & fivepm == 0 ~ '+!!!',
 			    fivepp == 6 & fivepm == 1 ~ '+!!!',
 			    fivepp == 0 & fivepm == 6 ~ '-!!!',
@@ -3185,7 +3223,7 @@ codesixp.df <- codesixp.df %>% mutate(sixpcode = case_when(sixpp+sixpm <= 1 ~ '0
 		      sixpp == 5 & sixpm == 0 ~ '+!!',
 			    sixpp == 5 & sixpm == 1 ~ '+!!',
 			    sixpp == 0 & sixpm == 5 ~ '-!!',
-			    sixpp == 5 & sixpm == 1 ~ '-!!',
+			    sixpp == 1 & sixpm == 5 ~ '-!!',
 			    sixpp == 6 & sixpm == 0 ~ '+!!!',
 			    sixpp == 6 & sixpm == 1 ~ '+!!!',
 			    sixpp == 0 & sixpm == 6 ~ '-!!!',
@@ -3238,7 +3276,7 @@ codesevenp.df <- codesevenp.df %>% mutate(sevenpcode = case_when(sevenpp+sevenpm
 		      sevenpp == 5 & sevenpm == 0 ~ '+!!',
 			    sevenpp == 5 & sevenpm == 1 ~ '+!!',
 			    sevenpp == 0 & sevenpm == 5 ~ '-!!',
-			    sevenpp == 5 & sevenpm == 1 ~ '-!!',
+			    sevenpp == 1 & sevenpm == 5 ~ '-!!',
 			    sevenpp == 6 & sevenpm == 0 ~ '+!!!',
 			    sevenpp == 6 & sevenpm == 1 ~ '+!!!',
 			    sevenpp == 0 & sevenpm == 6 ~ '-!!!',
@@ -3291,7 +3329,7 @@ codeeightp.df <- codeeightp.df %>% mutate(eightpcode = case_when(eightpp+eightpm
 		      eightpp == 5 & eightpm == 0 ~ '+!!',
 			    eightpp == 5 & eightpm == 1 ~ '+!!',
 			    eightpp == 0 & eightpm == 5 ~ '-!!',
-			    eightpp == 5 & eightpm == 1 ~ '-!!',
+			    eightpp == 1 & eightpm == 5 ~ '-!!',
 			    eightpp == 6 & eightpm == 0 ~ '+!!!',
 			    eightpp == 6 & eightpm == 1 ~ '+!!!',
 			    eightpp == 0 & eightpm == 6 ~ '-!!!',
@@ -3344,7 +3382,7 @@ codeninep.df <- codeninep.df %>% mutate(ninepcode = case_when(ninepp+ninepm <= 1
 		      ninepp == 5 & ninepm == 0 ~ '+!!',
 			    ninepp == 5 & ninepm == 1 ~ '+!!',
 			    ninepp == 0 & ninepm == 5 ~ '-!!',
-			    ninepp == 5 & ninepm == 1 ~ '-!!',
+			    ninepp == 1 & ninepm == 5 ~ '-!!',
 			    ninepp == 6 & ninepm == 0 ~ '+!!!',
 			    ninepp == 6 & ninepm == 1 ~ '+!!!',
 			    ninepp == 0 & ninepm == 6 ~ '-!!!',
@@ -3397,7 +3435,7 @@ codetenp.df <- codetenp.df %>% mutate(tenpcode = case_when(tenpp+tenpm <= 1 ~ '0
 		      tenpp == 5 & tenpm == 0 ~ '+!!',
 			    tenpp == 5 & tenpm == 1 ~ '+!!',
 			    tenpp == 0 & tenpm == 5 ~ '-!!',
-			    tenpp == 5 & tenpm == 1 ~ '-!!',
+			    tenpp == 1 & tenpm == 5 ~ '-!!',
 			    tenpp == 6 & tenpm == 0 ~ '+!!!',
 			    tenpp == 6 & tenpm == 1 ~ '+!!!',
 			    tenpp == 0 & tenpm == 6 ~ '-!!!',
@@ -3486,7 +3524,7 @@ codeoned.df <- codeoned.df %>% mutate(onedcode = case_when(onedp+onedm <= 1 ~ '0
 		      onedp == 5 & onedm == 0 ~ '+!!',
 			    onedp == 5 & onedm == 1 ~ '+!!',
 			    onedp == 0 & onedm == 5 ~ '-!!',
-			    onedp == 5 & onedm == 1 ~ '-!!',
+			    onedp == 1 & onedm == 5 ~ '-!!',
 			    onedp == 6 & onedm == 0 ~ '+!!!',
 			    onedp == 6 & onedm == 1 ~ '+!!!',
 			    onedp == 0 & onedm == 6 ~ '-!!!',
@@ -3540,7 +3578,7 @@ codetwod.df <- codetwod.df %>% mutate(twodcode = case_when(twodp+twodm <= 1 ~ '0
 		      twodp == 5 & twodm == 0 ~ '+!!',
 			    twodp == 5 & twodm == 1 ~ '+!!',
 			    twodp == 0 & twodm == 5 ~ '-!!',
-			    twodp == 5 & twodm == 1 ~ '-!!',
+			    twodp == 1 & twodm == 5 ~ '-!!',
 			    twodp == 6 & twodm == 0 ~ '+!!!',
 			    twodp == 6 & twodm == 1 ~ '+!!!',
 			    twodp == 0 & twodm == 6 ~ '-!!!',
@@ -3593,7 +3631,7 @@ codethreed.df <- codethreed.df %>% mutate(threedcode = case_when(threedp+threedm
 		      threedp == 5 & threedm == 0 ~ '+!!',
 			    threedp == 5 & threedm == 1 ~ '+!!',
 			    threedp == 0 & threedm == 5 ~ '-!!',
-			    threedp == 5 & threedm == 1 ~ '-!!',
+			    threedp == 1 & threedm == 5 ~ '-!!',
 			    threedp == 6 & threedm == 0 ~ '+!!!',
 			    threedp == 6 & threedm == 1 ~ '+!!!',
 			    threedp == 0 & threedm == 6 ~ '-!!!',
@@ -3646,7 +3684,7 @@ codefourd.df <- codefourd.df %>% mutate(fourdcode = case_when(fourdp+fourdm <= 1
 		      fourdp == 5 & fourdm == 0 ~ '+!!',
 			    fourdp == 5 & fourdm == 1 ~ '+!!',
 			    fourdp == 0 & fourdm == 5 ~ '-!!',
-			    fourdp == 5 & fourdm == 1 ~ '-!!',
+			    fourdp == 1 & fourdm == 5 ~ '-!!',
 			    fourdp == 6 & fourdm == 0 ~ '+!!!',
 			    fourdp == 6 & fourdm == 1 ~ '+!!!',
 			    fourdp == 0 & fourdm == 6 ~ '-!!!',
@@ -3699,7 +3737,7 @@ codefived.df <- codefived.df %>% mutate(fivedcode = case_when(fivedp+fivedm <= 1
 		      fivedp == 5 & fivedm == 0 ~ '+!!',
 			    fivedp == 5 & fivedm == 1 ~ '+!!',
 			    fivedp == 0 & fivedm == 5 ~ '-!!',
-			    fivedp == 5 & fivedm == 1 ~ '-!!',
+			    fivedp == 1 & fivedm == 5 ~ '-!!',
 			    fivedp == 6 & fivedm == 0 ~ '+!!!',
 			    fivedp == 6 & fivedm == 1 ~ '+!!!',
 			    fivedp == 0 & fivedm == 6 ~ '-!!!',
@@ -3751,7 +3789,7 @@ codesixd.df <- codesixd.df %>% mutate(sixdcode = case_when(sixdp+sixdm <= 1 ~ '0
 		      sixdp == 5 & sixdm == 0 ~ '+!!',
 			    sixdp == 5 & sixdm == 1 ~ '+!!',
 			    sixdp == 0 & sixdm == 5 ~ '-!!',
-			    sixdp == 5 & sixdm == 1 ~ '-!!',
+			    sixdp == 1 & sixdm == 5 ~ '-!!',
 			    sixdp == 6 & sixdm == 0 ~ '+!!!',
 			    sixdp == 6 & sixdm == 1 ~ '+!!!',
 			    sixdp == 0 & sixdm == 6 ~ '-!!!',
@@ -3804,7 +3842,7 @@ codesevend.df <- codesevend.df %>% mutate(sevendcode = case_when(sevendp+sevendm
 		      sevendp == 5 & sevendm == 0 ~ '+!!',
 			    sevendp == 5 & sevendm == 1 ~ '+!!',
 			    sevendp == 0 & sevendm == 5 ~ '-!!',
-			    sevendp == 5 & sevendm == 1 ~ '-!!',
+			    sevendp == 1 & sevendm == 5 ~ '-!!',
 			    sevendp == 6 & sevendm == 0 ~ '+!!!',
 			    sevendp == 6 & sevendm == 1 ~ '+!!!',
 			    sevendp == 0 & sevendm == 6 ~ '-!!!',
@@ -3857,7 +3895,7 @@ codeeightd.df <- codeeightd.df %>% mutate(eightdcode = case_when(eightdp+eightdm
 		      eightdp == 5 & eightdm == 0 ~ '+!!',
 			    eightdp == 5 & eightdm == 1 ~ '+!!',
 			    eightdp == 0 & eightdm == 5 ~ '-!!',
-			    eightdp == 5 & eightdm == 1 ~ '-!!',
+			    eightdp == 1 & eightdm == 5 ~ '-!!',
 			    eightdp == 6 & eightdm == 0 ~ '+!!!',
 			    eightdp == 6 & eightdm == 1 ~ '+!!!',
 			    eightdp == 0 & eightdm == 6 ~ '-!!!',
@@ -3910,7 +3948,7 @@ codenined.df <- codenined.df %>% mutate(ninedcode = case_when(ninedp+ninedm <= 1
 		      ninedp == 5 & ninedm == 0 ~ '+!!',
 			    ninedp == 5 & ninedm == 1 ~ '+!!',
 			    ninedp == 0 & ninedm == 5 ~ '-!!',
-			    ninedp == 5 & ninedm == 1 ~ '-!!',
+			    ninedp == 1 & ninedm == 5 ~ '-!!',
 			    ninedp == 6 & ninedm == 0 ~ '+!!!',
 			    ninedp == 6 & ninedm == 1 ~ '+!!!',
 			    ninedp == 0 & ninedm == 6 ~ '-!!!',
@@ -3963,7 +4001,7 @@ codetend.df <- codetend.df %>% mutate(tendcode = case_when(tendp+tendm <= 1 ~ '0
 		      tendp == 5 & tendm == 0 ~ '+!!',
 			    tendp == 5 & tendm == 1 ~ '+!!',
 			    tendp == 0 & tendm == 5 ~ '-!!',
-			    tendp == 5 & tendm == 1 ~ '-!!',
+			    tendp == 1 & tendm == 5 ~ '-!!',
 			    tendp == 6 & tendm == 0 ~ '+!!!',
 			    tendp == 6 & tendm == 1 ~ '+!!!',
 			    tendp == 0 & tendm == 6 ~ '-!!!',
@@ -4052,7 +4090,7 @@ codeonem.df <- codeonem.df %>% mutate(onemcode = case_when(onemp+onemm <= 1 ~ '0
 		      onemp == 5 & onemm == 0 ~ '+!!',
 			    onemp == 5 & onemm == 1 ~ '+!!',
 			    onemp == 0 & onemm == 5 ~ '-!!',
-			    onemp == 5 & onemm == 1 ~ '-!!',
+			    onemp == 1 & onemm == 5 ~ '-!!',
 			    onemp == 6 & onemm == 0 ~ '+!!!',
 			    onemp == 6 & onemm == 1 ~ '+!!!',
 			    onemp == 0 & onemm == 6 ~ '-!!!',
@@ -4106,7 +4144,7 @@ codetwom.df <- codetwom.df %>% mutate(twomcode = case_when(twomp+twomm <= 1 ~ '0
 		      twomp == 5 & twomm == 0 ~ '+!!',
 			    twomp == 5 & twomm == 1 ~ '+!!',
 			    twomp == 0 & twomm == 5 ~ '-!!',
-			    twomp == 5 & twomm == 1 ~ '-!!',
+			    twomp == 1 & twomm == 5 ~ '-!!',
 			    twomp == 6 & twomm == 0 ~ '+!!!',
 			    twomp == 6 & twomm == 1 ~ '+!!!',
 			    twomp == 0 & twomm == 6 ~ '-!!!',
@@ -4159,7 +4197,7 @@ codethreem.df <- codethreem.df %>% mutate(threemcode = case_when(threemp+threemm
 		      threemp == 5 & threemm == 0 ~ '+!!',
 			    threemp == 5 & threemm == 1 ~ '+!!',
 			    threemp == 0 & threemm == 5 ~ '-!!',
-			    threemp == 5 & threemm == 1 ~ '-!!',
+			    threemp == 1 & threemm == 5 ~ '-!!',
 			    threemp == 6 & threemm == 0 ~ '+!!!',
 			    threemp == 6 & threemm == 1 ~ '+!!!',
 			    threemp == 0 & threemm == 6 ~ '-!!!',
@@ -4212,7 +4250,7 @@ codefourm.df <- codefourm.df %>% mutate(fourmcode = case_when(fourmp+fourmm <= 1
 		      fourmp == 5 & fourmm == 0 ~ '+!!',
 			    fourmp == 5 & fourmm == 1 ~ '+!!',
 			    fourmp == 0 & fourmm == 5 ~ '-!!',
-			    fourmp == 5 & fourmm == 1 ~ '-!!',
+			    fourmp == 1 & fourmm == 5 ~ '-!!',
 			    fourmp == 6 & fourmm == 0 ~ '+!!!',
 			    fourmp == 6 & fourmm == 1 ~ '+!!!',
 			    fourmp == 0 & fourmm == 6 ~ '-!!!',
@@ -4265,7 +4303,7 @@ codefivem.df <- codefivem.df %>% mutate(fivemcode = case_when(fivemp+fivemm <= 1
 		      fivemp == 5 & fivemm == 0 ~ '+!!',
 			    fivemp == 5 & fivemm == 1 ~ '+!!',
 			    fivemp == 0 & fivemm == 5 ~ '-!!',
-			    fivemp == 5 & fivemm == 1 ~ '-!!',
+			    fivemp == 1 & fivemm == 5 ~ '-!!',
 			    fivemp == 6 & fivemm == 0 ~ '+!!!',
 			    fivemp == 6 & fivemm == 1 ~ '+!!!',
 			    fivemp == 0 & fivemm == 6 ~ '-!!!',
@@ -4317,7 +4355,7 @@ codesixm.df <- codesixm.df %>% mutate(sixmcode = case_when(sixmp+sixmm <= 1 ~ '0
 		      sixmp == 5 & sixmm == 0 ~ '+!!',
 			    sixmp == 5 & sixmm == 1 ~ '+!!',
 			    sixmp == 0 & sixmm == 5 ~ '-!!',
-			    sixmp == 5 & sixmm == 1 ~ '-!!',
+			    sixmp == 1 & sixmm == 5 ~ '-!!',
 			    sixmp == 6 & sixmm == 0 ~ '+!!!',
 			    sixmp == 6 & sixmm == 1 ~ '+!!!',
 			    sixmp == 0 & sixmm == 6 ~ '-!!!',
@@ -4370,7 +4408,7 @@ codesevenm.df <- codesevenm.df %>% mutate(sevenmcode = case_when(sevenmp+sevenmm
 		      sevenmp == 5 & sevenmm == 0 ~ '+!!',
 			    sevenmp == 5 & sevenmm == 1 ~ '+!!',
 			    sevenmp == 0 & sevenmm == 5 ~ '-!!',
-			    sevenmp == 5 & sevenmm == 1 ~ '-!!',
+			    sevenmp == 1 & sevenmm == 5 ~ '-!!',
 			    sevenmp == 6 & sevenmm == 0 ~ '+!!!',
 			    sevenmp == 6 & sevenmm == 1 ~ '+!!!',
 			    sevenmp == 0 & sevenmm == 6 ~ '-!!!',
@@ -4423,7 +4461,7 @@ codeeightm.df <- codeeightm.df %>% mutate(eightmcode = case_when(eightmp+eightmm
 		      eightmp == 5 & eightmm == 0 ~ '+!!',
 			    eightmp == 5 & eightmm == 1 ~ '+!!',
 			    eightmp == 0 & eightmm == 5 ~ '-!!',
-			    eightmp == 5 & eightmm == 1 ~ '-!!',
+			    eightmp == 1 & eightmm == 5 ~ '-!!',
 			    eightmp == 6 & eightmm == 0 ~ '+!!!',
 			    eightmp == 6 & eightmm == 1 ~ '+!!!',
 			    eightmp == 0 & eightmm == 6 ~ '-!!!',
@@ -4476,7 +4514,7 @@ codeninem.df <- codeninem.df %>% mutate(ninemcode = case_when(ninemp+ninemm <= 1
 		      ninemp == 5 & ninemm == 0 ~ '+!!',
 			    ninemp == 5 & ninemm == 1 ~ '+!!',
 			    ninemp == 0 & ninemm == 5 ~ '-!!',
-			    ninemp == 5 & ninemm == 1 ~ '-!!',
+			    ninemp == 1 & ninemm == 5 ~ '-!!',
 			    ninemp == 6 & ninemm == 0 ~ '+!!!',
 			    ninemp == 6 & ninemm == 1 ~ '+!!!',
 			    ninemp == 0 & ninemm == 6 ~ '-!!!',
@@ -4529,7 +4567,7 @@ codetenm.df <- codetenm.df %>% mutate(tenmcode = case_when(tenmp+tenmm <= 1 ~ '0
 		      tenmp == 5 & tenmm == 0 ~ '+!!',
 			    tenmp == 5 & tenmm == 1 ~ '+!!',
 			    tenmp == 0 & tenmm == 5 ~ '-!!',
-			    tenmp == 5 & tenmm == 1 ~ '-!!',
+			    tenmp == 1 & tenmm == 5 ~ '-!!',
 			    tenmp == 6 & tenmm == 0 ~ '+!!!',
 			    tenmp == 6 & tenmm == 1 ~ '+!!!',
 			    tenmp == 0 & tenmm == 6 ~ '-!!!',
@@ -4596,7 +4634,7 @@ ggplot(mtotalcodepercent.df) +
 
 # Discussion
 
-Les résultats se veulent principalement descriptifs. Les codes les plus fréquents sont les suivants : h+, s-, e0, hy-, k-, p-, d0, m+. Notons que ce profil basé sur les codes les plus fréquents est quelque peu différent de celui dégagé dans l'étude précédente^[dont le profil standard était celui-ci : h+ s± e0 hy- k- p± d0 m+]. 
+Les résultats se veulent principalement descriptifs. Les codes les plus fréquents sont les suivants : h+, s-, e0, hy-, k-, p-, d0, m+. Notons que ce profil basé sur les codes les plus fréquents est quelque peu différent de celui dégagé dans l'étude précédente [@thiry2020norms]^[dont le profil standard était celui-ci : h+ s± e0 hy- k- p± d0 m+]. 
 A titre d'autres comparaisons, @goncalves2010 ont administré le test de Szondi à 126 Hongrois et à 176 Portugais et ont montré que les positions pulsionnelles les plus fréquentes étaient celles-ci :
 
 |     Nationalité     |      h     |      s     |      e     |     hy     |      k     |      p     |      d     |      m     |
