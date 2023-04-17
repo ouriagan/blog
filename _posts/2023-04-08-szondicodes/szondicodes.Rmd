@@ -662,7 +662,7 @@ ggplot(htotalcodepercent.df) +
   theme_minimal() +
   ylim(0, 100) + 
   geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
-  geom_text(x=11, y=95, label=lengthhtotal)+
+  geom_text(x=11, y=95, label=lengthhtotaln)+
   xlab('Code')
 ```
 
@@ -1230,7 +1230,7 @@ ggplot(stotalcodepercent.df) +
   theme_minimal() +
   ylim(0, 100) + 
   geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
-  geom_text(x=11, y=95, label=lengthstotal)+
+  geom_text(x=11, y=95, label=lengthstotaln)+
   xlab('Code')
 ```
 
@@ -1797,7 +1797,7 @@ ggplot(etotalcodepercent.df) +
   theme_minimal() +
   ylim(0, 100) + 
   geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
-  geom_text(x=8, y=95, label=lengthstotal)+
+  geom_text(x=8, y=95, label=lengthstotaln)+
   xlab('Code')
 ```
 
@@ -2365,7 +2365,7 @@ ggplot(hytotalcodepercent.df) +
   theme_minimal() +
   ylim(0, 100) + 
   geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
-  geom_text(x=8, y=95, label=lengthstotal)+
+  geom_text(x=8, y=95, label=lengthstotaln)+
   xlab('Code')
 ```
 
@@ -3499,7 +3499,7 @@ ggplot(ptotalcodepercent.df) +
   theme_minimal() +
   ylim(0, 100) + 
   geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
-  geom_text(x=10, y=95, label=lengthstotal)+
+  geom_text(x=10, y=95, label=lengthstotaln)+
   xlab('Code')
 ```
 
@@ -4065,7 +4065,7 @@ ggplot(dtotalcodepercent.df) +
   theme_minimal() +
   ylim(0, 100) + 
   geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
-  geom_text(x=10, y=95, label=lengthstotal)+
+  geom_text(x=10, y=95, label=lengthstotaln)+
   xlab('Code')
 ```
 
@@ -4631,7 +4631,7 @@ ggplot(mtotalcodepercent.df) +
   theme_minimal() +
   ylim(0, 100) + 
   geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
-  geom_text(x=10, y=95, label=lengthstotal)+
+  geom_text(x=10, y=95, label=lengthstotaln)+
   xlab('Code')
 ```
 
