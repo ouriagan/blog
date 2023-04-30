@@ -230,7 +230,7 @@ Pour ce plan, ce sont les photographies **h** qui sont estimées les plus sympat
 
 La figure \@ref(fig:vgpekpcor) montre les corrélations (Rho de Spearman) entre toutes les tensions à l'avant-plan et celles obtenues à l'arrière-plan.
 
-```{r vgpekpcor, fig.cap="Corrélations entre les tensions au VGP et à l'EKP au test de Szondi", echo = FALSE}
+```{r vgpekpcor, fig.cap="Corrélations entre les tensions au VGP et à l'EKP au test de Szondi", echo = FALSE, preview=TRUE}
 tension_vgp_ekp_cor <- cor(tension_vgp.df, tension_ekp.df, method = "spearman", use = "complete.obs")
 corrplot(tension_vgp_ekp_cor, tl.col = "black", tl.srt = 45, method="number") 
 ```

@@ -8,8 +8,11 @@ author:
     last_name: "Thiry"
     url: https://benjaminthiry.netlify.app/
     orcid_id: 0000-0001-5864-8369
-date: 2019-08-03
-journal: "Szondiana"
+date: 2020-08-01
+journal: 
+  title: "Szondiana"
+volume: 39
+issue: 1
 bibliography: szondireferences.bib
 biblio-style: apalike
 link-citations: yes
