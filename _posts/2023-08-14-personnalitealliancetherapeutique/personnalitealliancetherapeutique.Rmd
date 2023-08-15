@@ -69,10 +69,6 @@ nofwomen <- length(which(sexe == "F"))
 nofwomenpercentage <- round(100*(length(which(sexe == "F"))/length(sexe)), digit = 0)
 ```
 
-# Abstract
-L'alliance thérapeutique peut se définir comme la collaboration mutuelle entre le patient et le professionnel dans le but d’accomplir des objectifs fixés. Elle est considérée comme un facteur commun à toutes les prises en charges thérapeutiques. Une étude précédente proposait d'estimer la qualité de l'alliance thérapeutique sur base des scores d'Ouverture, d'Agréabilité et de consciene du modèle de personnalité en cinq facteurs. Nous comparons ici ce score avec l'évaluation de l'alliance thérapeutique et d'une indication de psychothérapie pour 88 personnes, principalement incarcérées. Les résultats montrent que le score n'est pas corrélé significativement avec les deux variables cliniques. Par contre, la variable N6 (Vulnérabilité au stress) semble corrélée significativement à la qualité de l'alliance thérapeutique et la variable N3 (Dépression) à l'indication d'une prise en charge psychothérapeutique. Les cliniciens sont susceptibles de construire un idéal intellectuel de l'alliance thérapeutique mais ce sont des variables plus émotionnelles qui semblent liées à sa qualité dans l'exercice clinique.
-
-
 # Introduction
 
 Lors d'un entretien clinique, le lien entre le patient et le professionnel repose notamment sur l'*alliance thérapeutique*. Selon @bioy2010alliance, "l'alliance thérapeutique peut se définir comme la collaboration mutuelle, le partenariat, entre le patient et le thérapeute dans le but d’accomplir les objectifs fixés". Elle est considérée comme un facteur commun à toutes les prises en charge thérapeutiques. Notons que dans ce texte, nous prenons une définie élargie de l'alliance thérapeutique, c'est-à-dire qu'elle concerne toute relation professionnelle entre un patient et un clinicien sans que le cadre soit strictement thérapeutique. Ainsi, certains auteurs, tels que @greenson1971real, ont plutôt utilisé les termes d'*alliance de travail* car "chacun, sujet et professionnel, devient, pour un temps, partenaire, coacteur de cette rencontre de travail" [@cognet2022working].
