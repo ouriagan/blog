@@ -1,7 +1,7 @@
 ---
 title: "Fréquences des codes pour le test de Szondi sur un échantillon carcéral belge"
 description: |
-  Le test de Szondi est un test projectif qui vise à révéler le fonctionnement pulsionnel d'une personne. Nous proposons ici des normes sous forme de fréquences de codes pour chaque facteur à chaque passation du test de Szondi sur un échantillon de 450 détenus belges ainsi que sur l'ensemble des dix passations (N = 4500). Les codes les plus fréquents sont les suivants : h+, s-, e0, hy-, k-, p-, d0, m+. Nous ne proposons aucune interprétation psychologique de ce profil dans l'attente d'études évaluant son éventuelle validité externe.
+  Le test de Szondi est un test projectif qui vise à révéler le fonctionnement pulsionnel d'une personne. Nous proposons ici des normes sous forme de fréquences de codes pour chaque facteur à chaque passation du test de Szondi sur un échantillon de 455 détenus belges ainsi que sur l'ensemble des dix passations (N = 4550). Les codes les plus fréquents sont les suivants : h+, s-, e0, hy-, k-, p-, d0, m+. Nous ne proposons aucune interprétation psychologique de ce profil dans l'attente d'études évaluant son éventuelle validité externe.
 author:
   - first_name: "Benjamin"
     last_name: "Thiry"
@@ -9,6 +9,7 @@ author:
     orcid_id: 0000-0001-5864-8369
 date: 2023-04-08
 biblio-style: apalike
+csl: ../../apa7.csl
 bibliography: szondicodes.bib
 link-citations: yes
 output:

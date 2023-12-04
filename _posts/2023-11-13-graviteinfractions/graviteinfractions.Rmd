@@ -13,6 +13,7 @@ author:
 date: 2023-11-23
 bibliography: gravite.bib
 biblio-style: apalike
+csl: ../../apa7.csl
 link-citations: yes
 output:
   distill::distill_article:

@@ -14,6 +14,7 @@ author:
 date: 2023-02-08
 bibliography: psychoprison.bib
 biblio-style: apalike
+csl: ../../apa7.csl
 link-citations: yes
 output:
   distill::distill_article:
