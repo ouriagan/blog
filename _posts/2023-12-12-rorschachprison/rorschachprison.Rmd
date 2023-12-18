@@ -10,7 +10,7 @@ author:
     last_name: "Thiry"
     url: https://benjaminthiry.netlify.app/
     orcid_id: 0000-0001-5864-8369
-date: 2023-12-23
+date: 2023-12-18
 bibliography: rorschachprison.bib
 biblio-style: apalike
 csl: ../../apa7.csl
@@ -152,7 +152,7 @@ Il est vrai que l’apprentissage du Rorschach selon la méthode intégrée d’
 Dans le Système-Intégré, le sujet est confronté aux dix planches originales d’Hermann Rorschach. Lors de la présentation des planches, la question *« Qu’est-ce que cela pourrait-être ? »* lui est alors posée. Le sujet fournit alors des réponses qui, dans un deuxième temps, seront explorées par l’examinateur en vue de comprendre précisément la perception du sujet. Ensuite, chacune des réponses est ensuite cotée selon diverses caractéristiques :
 
 -	La **localisation** et la qualité formelle : le sujet utilise-t-il une partie de la tache, l’entièreté ou une addition de diverses zones ?  La perception est-elle adéquate vis-à-vis de la forme de la tache ? 
--	Les déterminants : quels sont les éléments permettant au sujet de percevoir sa réponse ? Ex : La forme, la couleur, les estompages, le reflet, etc.
+-	Les **déterminants** : quels sont les éléments permettant au sujet de percevoir sa réponse ? Ex : La forme, la couleur, les estompages, le reflet, etc.
 -	Le **contenu** : quel contenu est perçu par le sujet ? Sa réponse est-elle particulièrement courante ? 
 -	L’**organisation du percept** : comment les divers éléments d’une réponse sont organisés par le sujet ? Est-ce jugé efficace ?
 -	Les **cotations spéciales** : le sujet verbalise-t-il des éléments inhabituels (commentaires à côtés ou absurdes, fuites d’idées, etc.) ? Les réponses contiennent des contenus particuliers (abstraits, morbides, agressifs, etc.). 
@@ -222,8 +222,6 @@ kbl(rorstyles_table, caption = "Statistiques descriptives des variables relative
 ```
 
 ## Nombre total de réponses (R)
-
-La figure \@ref(fig:histor) représente la fréquence du nombre de réponses.
 
 ```{r histor, fig.cap="Nombre de réponses", echo = FALSE}
 hist(R,
