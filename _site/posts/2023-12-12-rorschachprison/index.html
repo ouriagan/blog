@@ -1,0 +1,2716 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+<title>Psychologie et délinquance: Comparaison de variables du test de Rorschach de détenus belges francophones avec les normes internationales en Système Intégré</title>
+
+<meta property="description" itemprop="description" content="Le test de Rorschach est un test de personnalité projectif parfois utilisé pour évaluer le fonctionnement psychologique de personnes ayant commis des infractions pénales. Nous avons récolté 48 protocoles de Rorschach de détenus belges francophones admissibles à une libération conditionnelle. Les protocoles ont été cotés selon le Système Intégré. Nous nous sommes intéressés à quatre variables : R, L, EA et T. Nos résultats indiquent un nombre de réponses inférieur (R bas), un Lambda plus élevé (L &gt; 1), des ressources inférieures (EA bas) et un nombre de réponses textures plus faible (T bas) par rapport aux normes internationales."/>
+
+<link rel="canonical" href="https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/"/>
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2023-12-23"/>
+<meta property="article:created" itemprop="dateCreated" content="2023-12-23"/>
+<meta name="article:author" content="Paul Florin"/>
+<meta name="article:author" content="Benjamin Thiry"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Psychologie et délinquance: Comparaison de variables du test de Rorschach de détenus belges francophones avec les normes internationales en Système Intégré"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="Le test de Rorschach est un test de personnalité projectif parfois utilisé pour évaluer le fonctionnement psychologique de personnes ayant commis des infractions pénales. Nous avons récolté 48 protocoles de Rorschach de détenus belges francophones admissibles à une libération conditionnelle. Les protocoles ont été cotés selon le Système Intégré. Nous nous sommes intéressés à quatre variables : R, L, EA et T. Nos résultats indiquent un nombre de réponses inférieur (R bas), un Lambda plus élevé (L &gt; 1), des ressources inférieures (EA bas) et un nombre de réponses textures plus faible (T bas) par rapport aux normes internationales."/>
+<meta property="og:url" content="https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/"/>
+<meta property="og:image" content="https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/rorschachpersons.png"/>
+<meta property="og:image:width" content="1024"/>
+<meta property="og:image:height" content="1024"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Psychologie et délinquance"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:title" content="Psychologie et délinquance: Comparaison de variables du test de Rorschach de détenus belges francophones avec les normes internationales en Système Intégré"/>
+<meta property="twitter:description" content="Le test de Rorschach est un test de personnalité projectif parfois utilisé pour évaluer le fonctionnement psychologique de personnes ayant commis des infractions pénales. Nous avons récolté 48 protocoles de Rorschach de détenus belges francophones admissibles à une libération conditionnelle. Les protocoles ont été cotés selon le Système Intégré. Nous nous sommes intéressés à quatre variables : R, L, EA et T. Nos résultats indiquent un nombre de réponses inférieur (R bas), un Lambda plus élevé (L &gt; 1), des ressources inférieures (EA bas) et un nombre de réponses textures plus faible (T bas) par rapport aux normes internationales."/>
+<meta property="twitter:url" content="https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/"/>
+<meta property="twitter:image" content="https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/rorschachpersons.png"/>
+<meta property="twitter:image:width" content="1024"/>
+<meta property="twitter:image:height" content="1024"/>
+
+<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+<meta name="citation_title" content="Psychologie et délinquance: Comparaison de variables du test de Rorschach de détenus belges francophones avec les normes internationales en Système Intégré"/>
+<meta name="citation_fulltext_html_url" content="https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/"/>
+<meta name="citation_fulltext_world_readable" content=""/>
+<meta name="citation_online_date" content="2023/12/23"/>
+<meta name="citation_publication_date" content="2023/12/23"/>
+<meta name="citation_author" content="Paul Florin"/>
+<meta name="citation_author" content="Benjamin Thiry"/>
+<!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Depression, alexithymia, and pain prone disorder: A rorschach study;citation_volume=51;citation_doi=10.1207/s15327752jpa5103_13;citation_author=M. W. Acklin;citation_author=E. Bernat"/>
+  <meta name="citation_reference" content="citation_title=Suppression of aggressive rorschach responses among violent offenders and nonoffenders;citation_volume=28;citation_doi=10.1177/0886260513488688;citation_author=S. T. V. Benjestorf;citation_author=D. J. Viglione;citation_author=J. D. Lamb;citation_author=L. Giromini"/>
+  <meta name="citation_reference" content="citation_title=Manuel d’interprétation du rorschach en système intégré;citation_publisher=Editions Frison-Roche;citation_author=J. E. Exner"/>
+  <meta name="citation_reference" content="citation_title=The mangled butterfly: Rorschach results from 45 violent psychopaths;citation_volume=27;citation_doi=10.1002/bsl.866;citation_author=K. W. Franks;citation_author=S. Sreenivasan;citation_author=B. J. Spray;citation_author=P. Kirkish"/>
+  <meta name="citation_reference" content="citation_title=Alexithymie, dépression et incarcération prolongée;citation_volume=166;citation_doi=10.1016/j.amp.2008.07.006;citation_author=J. Maisondieu;citation_author=C. Tarrieu;citation_author=J. Razafimamonjy;citation_author=M. Arnault"/>
+  <meta name="citation_reference" content="citation_title=The validity of individual rorschach variables: Systematic reviews and meta-analyses of the comprehensive system;citation_volume=139;citation_doi=10.1037/a0029406;citation_author=J. L. Mihura;citation_author=G. J. Meyer;citation_author=N. Dumitrascu;citation_author=G. Bombel"/>
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","preview","author","date","bibliography","biblio-style","csl","link-citations","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY"]},{"type":"character","attributes":{},"value":["Comparaison de variables du test de Rorschach de détenus belges francophones avec les normes internationales en Système Intégré"]},{"type":"character","attributes":{},"value":["Le test de Rorschach est un test de personnalité projectif parfois utilisé pour évaluer le fonctionnement psychologique de personnes ayant commis des infractions pénales. Nous avons récolté 48 protocoles de Rorschach de détenus belges francophones admissibles à une libération conditionnelle. Les protocoles ont été cotés selon le Système Intégré. Nous nous sommes intéressés à quatre variables : R, L, EA et T. Nos résultats indiquent un nombre de réponses inférieur (R bas), un Lambda plus élevé (L > 1), des ressources inférieures (EA bas) et un nombre de réponses textures plus faible (T bas) par rapport aux normes internationales."]},{"type":"character","attributes":{},"value":["rorschachpersons.png"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["first_name","last_name"]}},"value":[{"type":"character","attributes":{},"value":["Paul"]},{"type":"character","attributes":{},"value":["Florin"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["first_name","last_name","url","orcid_id"]}},"value":[{"type":"character","attributes":{},"value":["Benjamin"]},{"type":"character","attributes":{},"value":["Thiry"]},{"type":"character","attributes":{},"value":["https://benjaminthiry.netlify.app/"]},{"type":"character","attributes":{},"value":["0000-0001-5864-8369"]}]}]},{"type":"character","attributes":{},"value":["2023-12-23"]},{"type":"character","attributes":{},"value":["rorschachprison.bib"]},{"type":"character","attributes":{},"value":["apalike"]},{"type":"character","attributes":{},"value":["../../apa7.csl"]},{"type":"logical","attributes":{},"value":[true]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/"]},{"type":"character","attributes":{},"value":["https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["rorschachpersons.png","rorschachprison.bib","rorschachprison_files/anchor-4.2.2/anchor.min.js","rorschachprison_files/bowser-1.9.3/bowser.min.js","rorschachprison_files/bsTable-3.3.7/bootstrapTable.js","rorschachprison_files/bsTable-3.3.7/bootstrapTable.min.css","rorschachprison_files/distill-2.2.21/template.v2.js","rorschachprison_files/figure-html5/fig$ref(ea)-1.png","rorschachprison_files/figure-html5/fig$ref(lambda)-1.png","rorschachprison_files/figure-html5/fig$ref(responses)-1.png","rorschachprison_files/figure-html5/fig$ref(sumt)-1.png","rorschachprison_files/figure-html5/histoea-1.png","rorschachprison_files/figure-html5/histol-1.png","rorschachprison_files/figure-html5/histor-1.png","rorschachprison_files/figure-html5/histot-1.png","rorschachprison_files/header-attrs-2.24/header-attrs.js","rorschachprison_files/jquery-3.6.0/jquery-3.6.0.js","rorschachprison_files/jquery-3.6.0/jquery-3.6.0.min.js","rorschachprison_files/jquery-3.6.0/jquery-3.6.0.min.map","rorschachprison_files/kePrint-0.0.1/kePrint.js","rorschachprison_files/lightable-0.0.1/lightable.css","rorschachprison_files/popper-2.6.0/popper.min.js","rorschachprison_files/tippy-6.2.7/tippy-bundle.umd.min.js","rorschachprison_files/tippy-6.2.7/tippy-light-border.css","rorschachprison_files/tippy-6.2.7/tippy.css","rorschachprison_files/tippy-6.2.7/tippy.umd.min.js","rorschachprison_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+  font-size: 100%;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+hr.section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0px;
+}
+
+
+d-byline {
+  border-top: none;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+  border-top: none;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+/* tweak for Pandoc numbered line within distill */
+d-article pre.numberSource code > span {
+    left: -2em;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // separator
+  var separator = '<hr class="section-separator" style="clear: both"/>';
+  // prepend separator above appendix
+  $('.d-byline').before(separator);
+  $('.d-article').before(separator);
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme, except when numbering line
+  // in code chunk
+  $('pre:not(.numberLines) code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      var author_name = front_matter.authors[i].author
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      const citeChild = $(this).children()[0]
+      // Do not process if @xyz has been used without escaping and without bibliography activated
+      // https://github.com/rstudio/distill/issues/466
+      if (citeChild === undefined) return true
+
+      if (citeChild.nodeName == "D-FOOTNOTE") {
+        var fn = citeChild
+        $(this).html(fn.shadowRoot.querySelector("sup"))
+        $(this).id = fn.id
+        fn.remove()
+      }
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        // Could use CSS.escape too here, we insure backward compatibility in navigator
+        return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
+      }).join("\n");
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // fix footnotes in tables (#411)
+    // replacing broken distill.pub feature
+    $('table d-footnote').each(function() {
+      // we replace internal showAtNode methode which is triggered when hovering a footnote
+      this.hoverBox.showAtNode = function(node) {
+        // ported from https://github.com/distillpub/template/pull/105/files
+        calcOffset = function(elem) {
+            let x = elem.offsetLeft;
+            let y = elem.offsetTop;
+            // Traverse upwards until an `absolute` element is found or `elem`
+            // becomes null.
+            while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                x += elem.offsetLeft;
+                y += elem.offsetTop;
+            }
+
+            return { left: x, top: y };
+        }
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+        const bbox = node.getBoundingClientRect();
+        const offset = calcOffset(node);
+        this.show([offset.left + bbox.width, offset.top + bbox.height]);
+      }
+    })
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    // ignore leaflet img layers (#106)
+    figures = figures.filter(':not(img[class*="leaflet"])')
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.24/header-attrs.js"></script>
+  <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+  <link href="../../site_libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+  <script src="../../site_libs/bsTable-3.3.7/bootstrapTable.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Comparaison de variables du test de Rorschach de détenus belges francophones avec les normes internationales en Système Intégré","description":"Le test de Rorschach est un test de personnalité projectif parfois utilisé pour évaluer le fonctionnement psychologique de personnes ayant commis des infractions pénales. Nous avons récolté 48 protocoles de Rorschach de détenus belges francophones admissibles à une libération conditionnelle. Les protocoles ont été cotés selon le Système Intégré. Nous nous sommes intéressés à quatre variables : R, L, EA et T. Nos résultats indiquent un nombre de réponses inférieur (R bas), un Lambda plus élevé (L > 1), des ressources inférieures (EA bas) et un nombre de réponses textures plus faible (T bas) par rapport aux normes internationales.","authors":[{"author":"Paul Florin","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""},{"author":"Benjamin Thiry","authorURL":"https://benjaminthiry.netlify.app/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":"0000-0001-5864-8369"}],"publishedDate":"2023-12-23T00:00:00.000+01:00","citationText":"Florin & Thiry, 2023"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a class="logo">
+<img src="../../benjaminthiry.png" alt="Logo"/>
+</a>
+<a href="../../index.html" class="title">Psychologie et délinquance</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Accueil</a>
+<a href="../../about.html">Qui écrit ce blog ?</a>
+<a href="https://mastodon.zaclys.com/@ouriagan">Mastodon</a>
+<a href="https://github.com/ouriagan/blog">
+<i class="fa fa-github" aria-hidden="true"></i>
+</a>
+<a href="https://www.youtube.com/channel/UCocMYv4DiqSyTBPUsh6cKsQ">
+<i class="fa fa-youtube-square" aria-hidden="true"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Comparaison de variables du test de Rorschach de détenus belges francophones avec les normes internationales en Système Intégré</h1>
+
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Le test de Rorschach est un test de personnalité projectif parfois utilisé pour évaluer le fonctionnement psychologique de personnes ayant commis des infractions pénales. Nous avons récolté 48 protocoles de Rorschach de détenus belges francophones admissibles à une libération conditionnelle. Les protocoles ont été cotés selon le Système Intégré. Nous nous sommes intéressés à quatre variables : R, L, EA et T. Nos résultats indiquent un nombre de réponses inférieur (R bas), un Lambda plus élevé (L &gt; 1), des ressources inférieures (EA bas) et un nombre de réponses textures plus faible (T bas) par rapport aux normes internationales.</p></p>
+</div>
+
+<div class="d-byline">
+  
+  true
+  
+,   
+  true
+  
+<br/>2023-12-23
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#introduction-au-test-de-rorschach-en-système-intégré" id="toc-introduction-au-test-de-rorschach-en-système-intégré">Introduction au test de Rorschach en Système Intégré</a>
+<ul>
+<li><a href="#indices-significations-et-validités" id="toc-indices-significations-et-validités">Indices, significations et validités</a>
+<ul>
+<li><a href="#nombre-total-de-réponses-r" id="toc-nombre-total-de-réponses-r">Nombre total de réponses (R)</a></li>
+<li><a href="#lambda-l" id="toc-lambda-l">Lambda (L)</a></li>
+<li><a href="#experience-actual-ea" id="toc-experience-actual-ea">Experience Actual (EA)</a></li>
+<li><a href="#réponses-texture-t" id="toc-réponses-texture-t">Réponses Texture (T)</a></li>
+</ul></li>
+<li><a href="#les-normes" id="toc-les-normes">Les normes</a></li>
+<li><a href="#linfluence-du-contexte-dexpertise" id="toc-linfluence-du-contexte-dexpertise">L’influence du contexte d’expertise</a></li>
+</ul></li>
+<li><a href="#méthode" id="toc-méthode">Méthode</a></li>
+<li><a href="#résultats" id="toc-résultats">Résultats</a>
+<ul>
+<li><a href="#nombre-total-de-réponses-r-1" id="toc-nombre-total-de-réponses-r-1">Nombre total de réponses (R)</a></li>
+<li><a href="#lambda-l-1" id="toc-lambda-l-1">Lambda (L)</a></li>
+<li><a href="#experience-actual-ea-1" id="toc-experience-actual-ea-1">Experience Actual (EA)</a></li>
+<li><a href="#réponses-texture-t-1" id="toc-réponses-texture-t-1">Réponses Texture (T)</a></li>
+</ul></li>
+<li><a href="#discussions" id="toc-discussions">Discussions</a></li>
+<li><a href="#conclusion" id="toc-conclusion">Conclusion</a></li>
+</ul>
+</nav>
+</div>
+<p><img src="rorschachpersons.png" /></p>
+<h1 id="introduction-au-test-de-rorschach-en-système-intégré">Introduction au test de Rorschach en Système Intégré</h1>
+<p>Depuis sa création il y a une centaine d’années, le Rorschach a évolué au fil des mouvements de pensées, des intuitions de chacun·e et, finalement, des travaux le concernant. De multiples méthodes ont ainsi pu émerger à partir des planches originelles d’Hermann Rorschach et, in fine, trois méthodes sont devenues centrales. La méthode « Symboliques Française », le « Système Intégré » et puis, en dernier lieu, le « R-PAS ». Le Rorschach n’a jamais cessé d’être au centre d’expériences, de controverses et de débats. Son utilisation est encore fréquente au sein de multiples institutions, notamment dans celles liées à l’évaluation psychologique. Cette étude se concentre sur la méthode en Système-Intégré (S.I).</p>
+<p>Le test de Rorschach selon le S.I est, selon ses praticiens, un outil apportant une multitude d’éléments venant alimenter la réflexion clinique sur le sujet, permettant d’envisager le sujet de manière complexe et profonde. Cette épreuve hérite également de plusieurs dizaines d’années d’expérience venant renforcer son bagage empirique. L’attrait d’un test projectif de la sorte résulte aussi de son aspect qualitatif. Comme l’écrit <span class="citation" data-cites="exner2003a">Exner (<a href="#ref-exner2003a" role="doc-biblioref">2003a</a>)</span> :</p>
+<blockquote>
+<p>Bien peu, sinon aucune procédure d’évaluation, ne peut capturer l’originalité d’une personne comme peut le faire le Rorschach s’il est utilisé de manière appropriée (p.8).</p>
+</blockquote>
+<p>Il est vrai que l’apprentissage du Rorschach selon la méthode intégrée d’Exner est complexe et nécessite une rigueur, de l’exercice ainsi que de l’expérience. Ainsi, une bonne formation couplée à de l’expérience seront les préalables nécessaires à une interprétation adéquate.</p>
+<p>Dans le Système-Intégré, le sujet est confronté aux dix planches originales d’Hermann Rorschach. Lors de la présentation des planches, la question <em>« Qu’est-ce que cela pourrait-être ? »</em> lui est alors posée. Le sujet fournit alors des réponses qui, dans un deuxième temps, seront explorées par l’examinateur en vue de comprendre précisément la perception du sujet. Ensuite, chacune des réponses est ensuite cotée selon diverses caractéristiques :</p>
+<ul>
+<li>La <strong>localisation</strong> et la qualité formelle : le sujet utilise-t-il une partie de la tache, l’entièreté ou une addition de diverses zones ? La perception est-elle adéquate vis-à-vis de la forme de la tache ?</li>
+<li>Les déterminants : quels sont les éléments permettant au sujet de percevoir sa réponse ? Ex : La forme, la couleur, les estompages, le reflet, etc.</li>
+<li>Le <strong>contenu</strong> : quel contenu est perçu par le sujet ? Sa réponse est-elle particulièrement courante ?</li>
+<li>L’<strong>organisation du percept</strong> : comment les divers éléments d’une réponse sont organisés par le sujet ? Est-ce jugé efficace ?</li>
+<li>Les <strong>cotations spéciales</strong> : le sujet verbalise-t-il des éléments inhabituels (commentaires à côtés ou absurdes, fuites d’idées, etc.) ? Les réponses contiennent des contenus particuliers (abstraits, morbides, agressifs, etc.).</li>
+</ul>
+<p>Une fois toutes les réponses cotées, une multitude d’indices sont calculés, formant ultimement le <em>résumé formel</em>, synthèse récapitulative et pièce maîtresse de l’interprétation.</p>
+<h2 id="indices-significations-et-validités">Indices, significations et validités</h2>
+<p>Lors de cette étude, bien que chacune des variables du résumé formel pourrait être étudiée et comparée, nous allons nous pencher sur une sélection de variables potentiellement liées aux singularités du contexte d’expertise intra carcéral. A savoir : Le <strong>nombre total de réponses</strong> (<strong>R</strong>), la propension à donner des <strong>réponses strictement formelles</strong> (<strong>Lambda</strong>), l’indice de <strong>ressources disponibles</strong> (<strong>EA</strong>), et les réponses <strong>Textures</strong> (<strong>T</strong>).</p>
+<h3 id="nombre-total-de-réponses-r">Nombre total de réponses (R)</h3>
+<p>Le nombre total de réponses (R) correspond simplement à la somme des réponses produites lors de la passation au test. Selon le S.I, un protocole n’est jugé valide que si celui-ci comprend plus de quatorze réponses, un nombre qui peut parfois se révéler laborieux à atteindre lors d’une première passation dans un contexte d’expertise. Lorsque trop peu de réponses sont produites, il est possible pour le clinicien de réaliser une étape supplémentaire afin d’augmenter celui-ci. A l’inverse, dans certaines (rares) situations d’un sujet particulièrement loquace, des consignes sont prévues afin d’éviter de surcharger le protocole. Face à la question <em>« Qu’est-ce que cela pourrait être ? »</em> et aux dix planches proposées, une collaboration « minimale » est attendue du sujet participant à notre test afin d’atteindre le seuil. Généralement et quand elles ne sont pas expliquées autrement, les tentatives de refus de planche (aucune réponse proposée à l’un ou plusieurs de celles-ci) sont considérées comme signe d’un faible investissement.
+Le nombre de réponses est positivement associé à la capacité / tendance à répondre avec diverses idées. Il est négativement associé à la maladie d’Alzheimer, aux traumas crâniens et à l’échec à l’achèvement d’autres tests <span class="citation" data-cites="mihura2013validity">(<a href="#ref-mihura2013validity" role="doc-biblioref">Mihura et al., 2013</a>)</span>. Cette variable aurait un support de validité jugé bon ( <em>r</em> ⩾ .21).</p>
+<h3 id="lambda-l">Lambda (L)</h3>
+<p>Le Lambda (L) correspond au rapport entre le nombre de réponses purement formelles avec les autres réponses. Il est interprété comme une notion d’économie dans l’utilisation des ressources. Ainsi, un Lambda élevé (L &gt; 1) indiquerait un style <em>évitant</em>, c’est-à-dire d’une tendance à économiser et à éviter la complexité. En formulant majoritairement voire excessivement des réponses strictement formelles (par exemple : <em>« C’est un papillon car ça en a la forme »</em>), le sujet se montre plus prudent ou conservateur dans l’effort et le traitement de l’information.
+En effet, les réponses purement formelles sont probablement les plus simples à fournir pour un sujet. Comme susmentionnés, un excès de réponses formelles peut être interprété comme une attitude défensive <span class="citation" data-cites="exner2003a">(<a href="#ref-exner2003a" role="doc-biblioref">Exner, 2003a</a>)</span>. En effet, donner une réponse que l’on perçoit uniquement par la caractéristique formelle d’une localisation ou de la planche relève d’un engagement qualifié d’économique <span class="citation" data-cites="exner2003a">(<a href="#ref-exner2003a" role="doc-biblioref">Exner, 2003a</a>)</span>, à l’inverse de réponses plus complexes (Blends, mouvements, etc.).
+Finalement, le Lambda, indice clé et conditionnant la suite des interprétations, est associé négativement au niveau d’éducation ou au Quotiennt Intellectuel (WAIS) et, finalement, aux compétences jugées nécessaires pour suivre une thérapie psychodynamique <span class="citation" data-cites="mihura2013validity">(<a href="#ref-mihura2013validity" role="doc-biblioref">Mihura et al., 2013</a>)</span>. Ainsi, un Lambda élevé témoignerait, de manière générale, de difficultés d’investissement, de participation, d’investissement et ou de compétences nécessaires pour participer pleinement au test.</p>
+<h3 id="experience-actual-ea">Experience Actual (EA)</h3>
+<p>Experience Actual (EA) est décrite par <span class="citation" data-cites="exner2003a">Exner (<a href="#ref-exner2003a" role="doc-biblioref">2003a</a>)</span> comme la variable centrale du cluster des capacités de contrôle et de tolérance au stress. Celle-ci reflète les ressources disponibles du sujet. Lorsque le EA est supérieur à la moyenne (et si la valeur est valide), il reflète une abondance de ressources disponibles, ce qui ne signifie toutefois pas que ces ressources sont bien utilisées et donc que la personne est, de facto, adaptée. Il représente donc un indice grossier des ressources disponibles. Les adultes avec un EA très bas sont plus vulnérables de manière chronique à la désorganisation face au stress inhérents à la vie dans une société complexe <span class="citation" data-cites="exner2003a">(<a href="#ref-exner2003a" role="doc-biblioref">Exner, 2003a</a>)</span>. Ils fonctionnent mieux dans des environnements bien structurés et raisonnablement dépourvus d’ambiguïté. Comme susmentionné, notons que le EA peut être trompeur si le Lambda (L) est élevé.
+Enfin, la variable EA est significativement associée aux indices de ressources émotionnelles et cognitives et, inversement associé aux troubles de déficit de l’attention avec ou sans hyperactivité ou aux traumas crâniens <span class="citation" data-cites="mihura2013validity">(<a href="#ref-mihura2013validity" role="doc-biblioref">Mihura et al., 2013</a>)</span>. Selon cette même méta-analyse, le support de cette variable est jugé excellent (<em>r</em> ⩾ .33).</p>
+<h3 id="réponses-texture-t">Réponses Texture (T)</h3>
+<p>Concernant les réponses Textures, celles-ci sont cotées lorsque le sujet perçoit une impression tactile (douceur, rugosité, fourrure, etc.) dans la planche, ce qui apparaît le plus généralement à la planche VI. Il est ordinairement attendu que le sujet en produise une par protocole. Dans le S.I, l’absence de celle-ci, la présence d’une seule ou son abondance (T &gt; 1) s’interprètent alors de différentes manières. Selon le S.I, la présence d’une réponse Texture témoigne d’un individu exprimant et reconnaissant adéquatement ses besoins de proximités avec autrui ainsi qu’une ouverture à établir des relations proches. L’absence de réponse T est interprétée comme un trait de prudence dans l’établissement des relations de proximité interpersonnelles, notamment dans les échanges tactiles <span class="citation" data-cites="exner2003a">(<a href="#ref-exner2003a" role="doc-biblioref">Exner, 2003a</a>)</span>. Exner nuance néanmoins cette interprétation pour les protocoles présentant un lambda supérieur à la moyenne et dont le nombre total de réponses ne dépasse pas vingt.
+Enfin, les réponses Textures sont positivement associée à un type de personnalité histrionique mais également aux types d’attachement sécure <span class="citation" data-cites="mihura2013validity">(<a href="#ref-mihura2013validity" role="doc-biblioref">Mihura et al., 2013</a>)</span>. Elles sont négativement associées à la psychopathie, aux types d’attachements évitants et à l’isolement d’un patient dans sa chambre. Cette cotation Texture bénéficie d’un bon support au niveau de la validité (<em>r</em> = .24).</p>
+<p>En 2009, une étude a été réalisée par <span class="citation" data-cites="franks2009mangled">Franks et al. (<a href="#ref-franks2009mangled" role="doc-biblioref">2009</a>)</span> sur 45 homme incarcérés dont le score étaient de 30 ou plus sur l’échelle de psychopathie (PCL-R) de <span class="citation" data-cites="hare1991hare">Hare (<a href="#ref-hare1991hare" role="doc-biblioref">1991</a>)</span>. De celle-ci, il ressort que le groupe ressemblait globalement à celui normatif des adultes ayant un haut Lambda (L). Néanmoins, entre-autres, ces détenus tendent à moins produire de texture (T) et à présenter un faible score pour les ressources (EA). Enfin, des indices tels qu’un haut Lambda (L) associé avec un profil ambiéquale et un faible EA seraient possiblement indicateur d’une éventuelle alexithymie <span class="citation" data-cites="acklin1987depression">(<a href="#ref-acklin1987depression" role="doc-biblioref">Acklin &amp; Bernat, 1987</a>)</span>.</p>
+<h2 id="les-normes">Les normes</h2>
+<p>Etudier et créer des normes est un élément important dans la critique des sciences de l’évaluation psychologique <span class="citation" data-cites="meyer2007toward">(<a href="#ref-meyer2007toward" role="doc-biblioref">Meyer et al., 2007</a>)</span>. En effet, en créant des normes (et si celles-ci suivent une distribution normale), chaque indice / score peut ainsi être comparé avec un groupe de référence. L’éloignement ou la proximité avec la norme sera généralement une information pertinente pour interpréter la saillance d’un trait ou d’une variable, pour permettre d’étudier la proximité d’un sujet par rapport à autrui.
+Notons cependant que de nombreuses variables du Système-Intégré ne présentent pas de distribution normale <span class="citation" data-cites="fontan2014approche">(<a href="#ref-fontan2014approche" role="doc-biblioref">Fontan, 2014</a>)</span>, ce qui implique alors une prudence dans l’interprétation des résultats. Dans son manuel de cotation comprenant les tables normatives révisées, <span class="citation" data-cites="exner2003b">Exner (<a href="#ref-exner2003b" role="doc-biblioref">2003b</a>)</span> soulignait déjà que certaines valeurs se distribuaient selon une courbe en « J ». Ainsi, ces variables ne se distribuant pas normalement, elles ne pouvaient pas être utilisées en vue de situer un sujet par rapport à la norme. De même, il était décrit également qu’une variable peut contribuer à l’analyse seulement si celle-ci se montre déviante et, à l’inverse, parfois cette variable apportera une information important quelle qu’en soit la valeur <span class="citation" data-cites="exner2003a">(<a href="#ref-exner2003a" role="doc-biblioref">Exner, 2003a</a>)</span>.
+Ayant créé des normes selon diverses conditions (consultants ou non, troubles psychiatriques ou non, etc.), Exner avait originellement déjà envisagé un groupe différent pour les protocoles selon le type de résonance intime (extratensif-introversif-évitant-ambiéquale), signe que ces caractéristiques sont bien représentatives d’un rapport particulier au test.
+Les normes internationales les plus récentes concernant le S.I ont été publiées en 2007 <span class="citation" data-cites="meyer2007toward">(<a href="#ref-meyer2007toward" role="doc-biblioref">Meyer et al., 2007</a>)</span>. Celles-ci ont été réalisées à la suite d’un cumul de 21 échantillons dans 17 pays différents, pour un total de 4704 protocoles. En plus d’être plus contemporains, ce travail profite aussi d’un échantillon nettement plus conséquent que celui proposé par Exner lors de la dernière version du S.I en 2003. Ces normes étaient critiquées (Shaffers et al., 1999 cités <span class="citation" data-cites="meyer2007toward">Meyer et al. (<a href="#ref-meyer2007toward" role="doc-biblioref">2007</a>)</span> notamment car les participants étaient testés par des étudiants et non des examinateurs expérimentés. Ainsi, cette composante tendrait à créer des protocoles plus petits (R ↓) et plus simplistes (L ↑).
+Ainsi, grâce aux normes de références, le clinicien peut plus aisément situer le sujet par rapport aux autres adultes. Cette méthode permet également d’envisager une vision dimensionnelle des scores, selon un continuum où le sujet s’écarte plus ou moins de la norme. En effet, à l’heure actuelle, le S.I s’interprète principalement sur base d’une approche catégorielle, à savoir avec un système cut-off pour lequel une interprétation sera présentera ou non pour le sujet si un tel score est atteint – pour peu que la distribution soit gaussienne. Ainsi, l’approche catégorielle permet une interprétation plus fine des résultats.
+Lors de la réalisation des normes internationales, les auteurs mettent en exergue qu’à travers le pays, la langue ou le contexte culturel du sujet, les protocoles d’adultes révèlent un degré raisonnable de similitude. Ainsi, dans le contexte d’une passation en S.I, ceux-ci tendent à percevoir et décrire les taches d’encre de manière relativement similaire malgré les différences susmentionnées. En 2015, plusieurs auteurs <span class="citation" data-cites="meyer2015association">(<a href="#ref-meyer2015association" role="doc-biblioref">Meyer et al., 2015</a>)</span> se sont intéressés aux éventuelles manifestations du genre, de l’origine ethnique et de l’âge dans les résultats au test de Rorschach en S.I. Chez les adultes, aucune association fiable n’a pu être retrouvée pour ces trois variables. Néanmoins, le nombre d’années d’études est positivement associé aux variables de la complexité, de la synthèse cognitive et des ressources d’adaptations (EA).
+Enfin, il a également été mis en avant que, à l’instar des tests cognitifs (WAIS-IV) et à la différence de certains inventaires de personnalité (NEO PI), on ne retrouve aucun effet du genre sur les résultats <span class="citation" data-cites="meyer2015association">(<a href="#ref-meyer2015association" role="doc-biblioref">Meyer et al., 2015</a>)</span>. Les adultes hommes et femmes ne produisent donc pas des protocoles significativement différents.</p>
+<h2 id="linfluence-du-contexte-dexpertise">L’influence du contexte d’expertise</h2>
+<p>Selon <span class="citation" data-cites="exner1978rorschach">Exner et al. (<a href="#ref-exner1978rorschach" role="doc-biblioref">1978</a>)</span>, la plupart des sujets ont en réalité bien plus de réponses en tête qu’ils n’en fournissent, in fine, verbalement. Lorsqu’il était alors demandé au sujet de fournir le plus de réponses possibles en un temps limité, l’observation était faite qu’il était en réalité assez facile pour les sujets d’en produire en quantité et ce malgré le temps restreint. De même, en comparaison avec une passation auprès d’un thérapeute inconnu, les sujets ayant réalisé le test avec leur propre thérapeute tendaient à produire un protocole plus long, plus de réponses comprenant un mouvement, des caractéristiques chromatiques, des blends et enfin, des réponses à localisation W et Dd <span class="citation" data-cites="exner1978rorschach">(<a href="#ref-exner1978rorschach" role="doc-biblioref">Exner et al., 1978</a>)</span>.
+Dans un contexte d’expertise judiciaire, la question d’une éventuelle censure est également présente étant donné que le testing contribuera à la rédaction d’un avis pris en compte pour de futures décisions. Contrairement à ce qui pourrait être supposé, dans un contexte où l’on doit se montrer peu dangereux, autant les délinquants violents que les participants non délinquants tendent à supprimer les contenus agressifs <span class="citation" data-cites="benjestorf2013suppression">(<a href="#ref-benjestorf2013suppression" role="doc-biblioref">Benjestorf et al., 2013</a>)</span>. Les contenus agressifs sont alors réduits de moitié lorsqu’ils sont réalisés dans un contexte où le sujet doit se montrer moins dangereux et ce peu importe si la personne est délinquante. Ainsi, le contexte d’expertise semble inévitablement entraîner des conséquences sur les réponses produites.
+Néanmoins, ces auteurs mettent également en avant que, peu importe la condition de passation, les protocoles de délinquants violents sont généralement d’une plus faible complexité et comprennent plus de réponses formelles, ce qui pourrait faire suite à un traitement cognitif simpliste, un manque de motivation ou des mauvaises adaptations à des choix de réponses limités selon Viglione, 1999, cité dans <span class="citation" data-cites="benjestorf2013suppression">Benjestorf et al. (<a href="#ref-benjestorf2013suppression" role="doc-biblioref">2013</a>)</span>.</p>
+<h1 id="méthode">Méthode</h1>
+<p>L’échantillon est constitué de 48 détenu·e·s belges francophones, tous étant incarcérés lors de la passation. Les protocoles sont réalisés dans le cadre d’une évaluation psychologique qui, in fine, participe à l’élaboration d’un avis structuré destiné aux instances décisionnelles. A certains égards et surtout si un lien de confiance n’est pas établi, le contexte peut se révéler anxiogène pour le sujet, tant il a conscience que la passation du test aura un effet sur l’évaluation. Notons qu’en vue de réaliser l’analyse de personnalité, le sujet se verra généralement proposé une batterie de tests (WAIS-IV, NEOPI-3, Rorschach, TAT, etc.) dont il peut refuser la passation.
+Ainsi, des 48 détenu·e·s, nous retrouvons 43 hommes (≈ 90%) et 5 femmes (≈ 10%). L’âge moyen est de 36.4 ans (ET = 11,74, min = 18, max = 69).
+Les protocoles sont cotés selon le Système-Intégré et sont ensuite encodés via CHESSS <span class="citation" data-cites="fontan2014approche">(<a href="#ref-fontan2014approche" role="doc-biblioref">Fontan, 2014</a>)</span>.
+Enfin, à l’aide d’un test t, les résultats de notre échantillon « carcéral » sont comparés aux normes internationales <span class="citation" data-cites="meyer2007toward">(<a href="#ref-meyer2007toward" role="doc-biblioref">Meyer et al., 2007</a>)</span> les plus récentes. Comme susmentionné, notons cependant que de nombreuses variables du Système-Intégré ne présentent pas de distribution normale <span class="citation" data-cites="fontan2014approche">(<a href="#ref-fontan2014approche" role="doc-biblioref">Fontan, 2014</a>)</span>, ce qui implique alors une prudence dans l’interprétation des résultats.</p>
+<h1 id="résultats">Résultats</h1>
+<p>Le tableau <a href="#tab:statdescstyles">1</a> présente les statistiques descriptives des variables retenues :</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<caption>
+<span id="tab:statdescstyles">Table 1: </span>Statistiques descriptives des variables relatives aux styles du test de Rorschach pour 48 détenus belges francophones
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:right;">
+Moyenne
+</th>
+<th style="text-align:right;">
+ET
+</th>
+<th style="text-align:right;">
+Min
+</th>
+<th style="text-align:right;">
+Max
+</th>
+<th style="text-align:right;">
+Skewness
+</th>
+<th style="text-align:right;">
+Kurtosis
+</th>
+<th style="text-align:right;">
+Norme
+</th>
+<th style="text-align:left;">
+p
+</th>
+<th style="text-align:left;">
+d
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+R
+</td>
+<td style="text-align:right;">
+17.75
+</td>
+<td style="text-align:right;">
+6.11
+</td>
+<td style="text-align:right;">
+10.00
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+1.09
+</td>
+<td style="text-align:right;">
+3.77
+</td>
+<td style="text-align:right;">
+22.31
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+<td style="text-align:left;">
+-0.75
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+L
+</td>
+<td style="text-align:right;">
+2.04
+</td>
+<td style="text-align:right;">
+3.57
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+3.63
+</td>
+<td style="text-align:right;">
+15.70
+</td>
+<td style="text-align:right;">
+0.86
+</td>
+<td style="text-align:left;">
+.026
+</td>
+<td style="text-align:left;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:right;">
+2.21
+</td>
+<td style="text-align:right;">
+2.03
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+1.08
+</td>
+<td style="text-align:right;">
+3.95
+</td>
+<td style="text-align:right;">
+3.73
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+<td style="text-align:left;">
+-0.75
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WSumC
+</td>
+<td style="text-align:right;">
+1.93
+</td>
+<td style="text-align:right;">
+1.78
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0.86
+</td>
+<td style="text-align:right;">
+2.79
+</td>
+<td style="text-align:right;">
+3.11
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+<td style="text-align:left;">
+-0.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EA
+</td>
+<td style="text-align:right;">
+4.14
+</td>
+<td style="text-align:right;">
+2.55
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+<td style="text-align:right;">
+2.02
+</td>
+<td style="text-align:right;">
+6.84
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+<td style="text-align:left;">
+-1.06
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+T
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+4.07
+</td>
+<td style="text-align:right;">
+19.47
+</td>
+<td style="text-align:right;">
+0.65
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+<td style="text-align:left;">
+-0.92
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="nombre-total-de-réponses-r-1">Nombre total de réponses (R)</h2>
+<p>La figure <a href="#fig:histor">1</a> représente la fréquence du nombre de réponses.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:histor"></span>
+<img src="rorschachprison_files/figure-html5/histor-1.png" alt="Nombre de réponses" width="624" />
+<p class="caption">
+Figure 1: Nombre de réponses
+</p>
+</div>
+</div>
+<h2 id="lambda-l-1">Lambda (L)</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:histol"></span>
+<img src="rorschachprison_files/figure-html5/histol-1.png" alt="Lambda" width="624" />
+<p class="caption">
+Figure 2: Lambda
+</p>
+</div>
+</div>
+<h2 id="experience-actual-ea-1">Experience Actual (EA)</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:histoea"></span>
+<img src="rorschachprison_files/figure-html5/histoea-1.png" alt="Experiental Actual" width="624" />
+<p class="caption">
+Figure 3: Experiental Actual
+</p>
+</div>
+</div>
+<h2 id="réponses-texture-t-1">Réponses Texture (T)</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:histot"></span>
+<img src="rorschachprison_files/figure-html5/histot-1.png" alt="Textures" width="624" />
+<p class="caption">
+Figure 4: Textures
+</p>
+</div>
+</div>
+<h1 id="discussions">Discussions</h1>
+<p>Pour le nombre de réponses (R), l’échantillon de détenu·e·s se montre significativement (<em>p</em> &lt; .001) plus faible (<em>m</em> = 17,75, ET= 6,11) que les normes internationales (m = 22,31). Ce nombre plus faible dans l’échantillon carcéral pourrait témoigner d’une plus grande difficulté à envisager les problèmes et situations selon diverses idées <span class="citation" data-cites="mihura2013validity">(<a href="#ref-mihura2013validity" role="doc-biblioref">Mihura et al., 2013</a>)</span>. Nous pourrions également supposer qu’une faible motivation pourrait également exercer une influence sur le nombre de réponses produites. Face au contexte d’expertise et à une tâche relativement originale dont l’intérêt n’est pas toujours expliqué, le sujet pourrait alors se montrer moins motivé lors de la passation.</p>
+<p>Le Lambda (L) est quant à lui plus élevé (<em>m</em> = 2,04, ET = 3,57, <em>p</em> &lt;.026) dans notre échantillon carcéral que dans les normes internationales (<em>m</em> = 0,86). Comme nous l’avons précédemment décrit, le Lambda est interprété comme une notion d’économie dans l’utilisation des ressources. Dès lors, un Lambda élevé (L &gt; 1) indiquerait un style évitant, c’est-à-dire d’une tendance à économiser et à éviter la complexité. En outre, les réponses purement formelles sont probablement les plus simples à fournir pour un sujet. L’interprétation conférée de réponses simplistes voire défensives se révèlent d’autant plus forte que le sujet en fournit un nombre jugé excessif <span class="citation" data-cites="exner2003a">(<a href="#ref-exner2003a" role="doc-biblioref">Exner, 2003a</a>)</span>.<br />
+Ainsi, en formulant majoritairement voire excessivement des réponses strictement formelles (par exemple <em>« C’est un papillon car ça en a la forme »</em>), les détenu·e·s se montrent plus prudents ou conservateurs dans l’effort et le traitement de l’information. Ces résultats étaient relativement attendus sachant que les protocoles de délinquants violents (ce qui n’est pas le cas de tous nos sujets) comprennent généralement plus de réponses formelles, tel que déjà constaté par Viglione, 1999, cité dans <span class="citation" data-cites="benjestorf2013suppression">Benjestorf et al. (<a href="#ref-benjestorf2013suppression" role="doc-biblioref">2013</a>)</span>. Un manque de motivation et un traitement cognitif simpliste peuvent expliquer cette nette tendance à produire des réponses jugées « simples ». Néanmoins, notons qu’un traitement cognitif simpliste n’implique pas forcément des difficultés cognitives.</p>
+<p>Concernant les ressources disponibles (EA), notre échantillon se retrouve à nouveau significativement inférieur (<em>m</em> = 4,14, ET = 2,55, <em>p</em> &lt;.001) aux normes internationales (<em>m</em> = 6.84). Ces résultats, similaires à ceux produits par un échantillon de détenus « psychopathes » <span class="citation" data-cites="franks2009mangled">(<a href="#ref-franks2009mangled" role="doc-biblioref">Franks et al., 2009</a>)</span>, suggèrent donc que les détenu·e·s seraient plus vulnérables à la désorganisation face au stress inhérent à la vie dans une société <span class="citation" data-cites="exner2003a">(<a href="#ref-exner2003a" role="doc-biblioref">Exner, 2003a</a>)</span>. Cet indice est également positivement associé aux ressources cognitives. Il est également corrélé avec le nombre d’années d’études qui, généralement, est moins important auprès de la population carcérale. Généralement, cet indice est lié aux autres variables de la complexité (Blends, Score Z, etc.). Ainsi, nous pourrions supposer que les sujets incarcérés seraient, du moins lors de la période de la passation, plus enclins à présenter des fragilités chroniques face au stress. Cette vulnérabilité pourrait faire suite à des ressources cognitives momentanément indisponibles ou alors, pour d’autres, à une limitation de ces ressources.</p>
+<p>Finalement, les réponses textures (T ↓) se montrent également moins fréquentes dans les protocoles de détenu·e·s (<em>m</em> = 0,15, ET = 0,55, <em>p</em> &lt;.001) que dans les normes de référence (<em>m</em> = 0,65).
+Cette rareté de réponses Texture dans notre échantillon illustre une tendance à la prudence dans l’établissement des relations de proximités interpersonnelles, notamment dans les échanges tactiles. L’absence de réponse texture est également associée à un profil psychopathique, à un type d’attachement évitant et à une forme d’isolement [@<span class="citation" data-cites="mihura2013validity">(<a href="#ref-mihura2013validity" role="doc-biblioref">Mihura et al., 2013</a>)</span>. Comme susmentionné, les réponses textures sont négativement associées aux attachements évitants ainsi qu’à l’isolement des patients (hospitalier) dans leur chambre. Ces résultats sont également à mettre en lien avec le dispositif carcéral, lieu de privation de liberté, de distanciation avec les proches et dispositif dans lequel une certaine méfiance est de mise dans l’établissement des liens de confiance entre codétenus.
+Enfin, il a été suggéré par <span class="citation" data-cites="acklin1987depression">Acklin &amp; Bernat (<a href="#ref-acklin1987depression" role="doc-biblioref">1987</a>)</span> cités dans <span class="citation" data-cites="franks2009mangled">Franks et al. (<a href="#ref-franks2009mangled" role="doc-biblioref">2009</a>)</span> que l’alexithymie pouvait se manifester au test de Rorschach par un R bas, peu de mouvements humains, peu de blends, un haut taux de Lambda (L) et de faibles ressources (EA ↓). L’alexithymie avait une prévalence de 42,86% chez des détenus français condamnés à des peines de prison prolongées <span class="citation" data-cites="maisondieu2008alexithymie">(<a href="#ref-maisondieu2008alexithymie" role="doc-biblioref">Maisondieu et al., 2008</a>)</span>. Les variables plausiblement liées à l’alexithymie et la prévalence de celle-ci au sein des prisons suggèrent également qu’elle pourrait être un des multiples facteurs explicatifs de nos résultats.
+Ainsi, nos protocoles sont marqués par un faible nombre de réponses (R ↓) et un Lambda haut (L↑) qui, lorsqu’ils sont trop saillants (R &lt; 14), sont des signes d’un protocole théoriquement invalide. Toutefois, si ceux-ci ne sont pas entièrement expliqués par le contexte d’expertise intra carcérale, nous pourrions également émettre l’hypothèse que ces indices seraient, en réalité, des marqueurs des caractéristiques propres de la population carcérale. Conjointement, l’indice des ressources (EA) pourrait être étudié comme marqueur d’une éventuelle pensée opératoire.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>En conclusion, cette étude exploratoire vise à observer les éventuelles différences entre un échantillon de personnes incarcérées et les normes internationales. De ces premiers résultats et en comparaison avec les normes internationales, nous observons que notre échantillon carcéral présente un nombre de réponses inférieur (R ↓), un Lambda plus élevé (L &gt; 1), des ressources inférieures (EA ↓) et, finalement, un nombre de textures plus faible (T ↓).
+Notons qu’il serait périlleux de tirer de certaines conclusions sur nos résultats sans envisager la possibilité qu’ils soient la conséquence du contexte de passation, à savoir le contexte d’expertise dans un dispositif carcéral.
+De manière générale, les résultats tendent à suggérer que les protocoles de détenu·e·s, sont plus courts (R ↓ ) que ceux de la population générale, signe d’une difficulté à envisager différentes idées ou solutions à un problème. Ce même résultat peut aussi faire suite au contexte d’expertise et à la faible motivation du sujet à participer à la tâche.
+Concernant le Lambda (L &gt; 1) plus élevé, il peut s’expliquer par une tendance à éviter la complexité et / ou à fournir moins d’effort dans la résolution de la tâche. Ce comportement d’allure parfois défensive, peut également faire suite à une plus faible motivation et à un traitement cognitif plus simpliste.
+L’échantillon carcéral démontre également de plus faibles ressources disponibles (EA ↓) plus faible auprès des sujets incarcérés, signe que ceux-ci seraient plus vulnérables de manière chronique à la désorganisation face au stress lié à la vie quotidienne en société.
+Concernant la rareté de réponses textures (T ↓), celle-ci peut refléter une prudence dans l’établissement des relations de proximités interpersonnelles. Ce faible score témoigne éventuellement d’une forme d’isolement qui peut être mise en lien avec le dispositif carcéral et sa privation de liberté inhérente.
+Conjointement, l’hypothèse de l’alexithymie ou d’une pensée opératoire reste un domaine à explorer. En effet, par le passé, il a été suggéré qu’un profil ambiéquale associé avec un haut Lambda (L &gt; 1) et de faibles ressources (EA ↓) pourraient être des indices d’alexithymie <span class="citation" data-cites="acklin1987depression">(<a href="#ref-acklin1987depression" role="doc-biblioref">Acklin &amp; Bernat, 1987</a>)</span>.
+Enfin, nous émettons l’hypothèse que certaines caractéristiques classiquement considérées comme signe d’un protocole invalide (R &lt; 14 et L ↑) pourraient, en réalité, refléter des marqueurs propres à la population carcérale et à la personnalité antisociale.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-acklin1987depression" class="csl-entry" role="listitem">
+Acklin, M. W., &amp; Bernat, E. (1987). Depression, alexithymia, and pain prone disorder: A rorschach study. <em>Journal of Personality Assessment</em>, <em>51</em>(3), 462–479. <a href="https://doi.org/10.1207/s15327752jpa5103_13">https://doi.org/10.1207/s15327752jpa5103_13</a>
+</div>
+<div id="ref-benjestorf2013suppression" class="csl-entry" role="listitem">
+Benjestorf, S. T. V., Viglione, D. J., Lamb, J. D., &amp; Giromini, L. (2013). Suppression of aggressive rorschach responses among violent offenders and nonoffenders. <em>Journal of Interpersonal Violence</em>, <em>28</em>(15). <a href="https://doi.org/10.1177/0886260513488688">https://doi.org/10.1177/0886260513488688</a>
+</div>
+<div id="ref-exner2003a" class="csl-entry" role="listitem">
+Exner, J. E. (2003a). <em>Manuel d’interprétation du rorschach en système intégré</em> (A. Andronikof, Ed.). Editions Frison-Roche.
+</div>
+<div id="ref-exner2003b" class="csl-entry" role="listitem">
+Exner, J. E. (2003b). <em>Manuel de cotation du rorschach pour le système intégré</em> (A. Andronikof, Ed.; 6th ed.). Editions Marco Pietteur.
+</div>
+<div id="ref-exner1978rorschach" class="csl-entry" role="listitem">
+Exner, J. E., Armbruster, G., &amp; Mittman, B. (1978). The rorschach response process. <em>Journal of Personality Assessment</em>, <em>42</em>(1), 27–38. <a href="https://doi.org/10.1207/s15327752jpa4201_4">https://doi.org/10.1207/s15327752jpa4201_4</a>
+</div>
+<div id="ref-fontan2014approche" class="csl-entry" role="listitem">
+Fontan, P. (2014). <em>Approche psychométrique du test de rorschach</em> [PhD thesis].
+</div>
+<div id="ref-franks2009mangled" class="csl-entry" role="listitem">
+Franks, K. W., Sreenivasan, S., Spray, B. J., &amp; Kirkish, P. (2009). The mangled butterfly: Rorschach results from 45 violent psychopaths. <em>Behavioral Sciences and the Law</em>, <em>27</em>(4). <a href="https://doi.org/10.1002/bsl.866">https://doi.org/10.1002/bsl.866</a>
+</div>
+<div id="ref-hare1991hare" class="csl-entry" role="listitem">
+Hare, R. D. (1991). <em>The hare psychopathy checklist-revised: manual</em>. Multi-Health Systems, Incorporated.
+</div>
+<div id="ref-maisondieu2008alexithymie" class="csl-entry" role="listitem">
+Maisondieu, J., Tarrieu, C., Razafimamonjy, J., &amp; Arnault, M. (2008). Alexithymie, dépression et incarcération prolongée. <em>Annales Medico-Psychologiques</em>, <em>166</em>(8), 664–668. <a href="https://doi.org/10.1016/j.amp.2008.07.006">https://doi.org/10.1016/j.amp.2008.07.006</a>
+</div>
+<div id="ref-meyer2007toward" class="csl-entry" role="listitem">
+Meyer, G. J., Erdberg, P., &amp; Shaffer, T. W. (2007). Toward international normative reference data for the comprehensive system. <em>Journal of Personality Assessment</em>, <em>89</em>(SUPPL. 1). <a href="https://doi.org/10.1080/00223890701629342">https://doi.org/10.1080/00223890701629342</a>
+</div>
+<div id="ref-meyer2015association" class="csl-entry" role="listitem">
+Meyer, G. J., Giromini, L., Viglione, D. J., Reese, J. B., &amp; Mihura, J. L. (2015). The association of gender, ethnicity, age, and education with rorschach scores. <em>Assessment</em>, <em>22</em>(1), 46–64. <a href="https://doi.org/10.1177/1073191114544358">https://doi.org/10.1177/1073191114544358</a>
+</div>
+<div id="ref-mihura2013validity" class="csl-entry" role="listitem">
+Mihura, J. L., Meyer, G. J., Dumitrascu, N., &amp; Bombel, G. (2013). The validity of individual rorschach variables: Systematic reviews and meta-analyses of the comprehensive system. <em>Psychological Bulletin</em>, <em>139</em>(3), 548–605. <a href="https://doi.org/10.1037/a0029406">https://doi.org/10.1037/a0029406</a>
+</div>
+</div>
+<!--radix_placeholder_article_footer-->
+<div class="article-footer">
+  <p class="social_footer">
+    <span class="disqus-comments">
+      <i class="fas fa-comments"></i>
+      &nbsp;
+      <span class="disqus-comment-count" data-disqus-identifier="posts/2023-12-12-rorschachprison/">Comment on this article</span>
+    </span>
+    <span class="article-sharing">
+      Share: &nbsp;
+      <a href="https://twitter.com/share?text=Comparaison%20de%20variables%20du%20test%20de%20Rorschach%20de%20d%C3%A9tenus%20belges%20francophones%20avec%20les%20normes%20internationales%20en%20Syst%C3%A8me%20Int%C3%A9gr%C3%A9&amp;url=https%3A%2F%2Fbenjaminthiry.netlify.app%2Fposts%2F2023-12-12-rorschachprison%2F" aria-label="share on twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fbenjaminthiry.netlify.app%2Fposts%2F2023-12-12-rorschachprison%2F&amp;title=Comparaison%20de%20variables%20du%20test%20de%20Rorschach%20de%20d%C3%A9tenus%20belges%20francophones%20avec%20les%20normes%20internationales%20en%20Syst%C3%A8me%20Int%C3%A9gr%C3%A9" aria-label="share on linkedin">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fbenjaminthiry.netlify.app%2Fposts%2F2023-12-12-rorschachprison%2F" aria-label="share on facebook">
+        <i class="fab fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="https://pinterest.com/pin/create/link/?url=https%3A%2F%2Fbenjaminthiry.netlify.app%2Fposts%2F2023-12-12-rorschachprison%2F&amp;description=Comparaison%20de%20variables%20du%20test%20de%20Rorschach%20de%20d%C3%A9tenus%20belges%20francophones%20avec%20les%20normes%20internationales%20en%20Syst%C3%A8me%20Int%C3%A9gr%C3%A9" aria-label="share on pinterest">
+        <i class="fab fa-pinterest" aria-hidden="true"></i>
+      </a>
+    </span>
+  </p>
+  <script id="dsq-count-scr" src="https://psychologie-et-delinquance.disqus.com/count.js" async></script>
+  <div id="disqus_thread" class="hidden"></div>
+  <script type="text/javascript" cookie-consent="functionality">
+var disqus_config = function () {
+  this.page.url = 'https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/';
+  this.page.identifier = 'posts/2023-12-12-rorschachprison/';
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://psychologie-et-delinquance.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+</div>
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+  <h3 id="references">References</h3>
+  <div id="references-listing"></div>
+  <h3 id="updates-and-corrections">Corrections</h3>
+  <p>If you see mistakes or want to suggest changes, please <a href="https://github.com/ouriagan/blog/issues/new">create an issue</a> on the source repository.</p>
+  <h3 id="reuse">Reuse</h3>
+  <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source code is available at <a href="https://github.com/ouriagan/blog">https://github.com/ouriagan/blog</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+  <h3 id="citation">Citation</h3>
+  <p>For attribution, please cite this work as</p>
+  <pre class="citation-appendix short">Florin &amp; Thiry (2023, Dec. 23). Psychologie et délinquance: Comparaison de variables du test de Rorschach de détenus belges francophones avec les normes internationales en Système Intégré. Retrieved from https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/</pre>
+  <p>BibTeX citation</p>
+  <pre class="citation-appendix long">@misc{florin2023comparaison,
+  author = {Florin, Paul and Thiry, Benjamin},
+  title = {Psychologie et délinquance: Comparaison de variables du test de Rorschach de détenus belges francophones avec les normes internationales en Système Intégré},
+  url = {https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/},
+  year = {2023}
+}</pre>
+</div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

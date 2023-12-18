@@ -7,7 +7,17 @@
     <description>Ce blog consacré au lien entre la psychologie et la délinquance. Il est tenu par Benjamin Thiry
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 23 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Comparaison de variables du test de Rorschach de détenus belges francophones avec les normes internationales en Système Intégré</title>
+      <dc:creator>Paul Florin</dc:creator>
+      <dc:creator>Benjamin Thiry</dc:creator>
+      <link>https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison</link>
+      <description>Le test de Rorschach est un test de personnalité projectif parfois utilisé pour évaluer le fonctionnement psychologique de personnes ayant commis des infractions pénales. Nous avons récolté 48 protocoles de Rorschach de détenus belges francophones admissibles à une libération conditionnelle. Les protocoles ont été cotés selon le Système Intégré. Nous nous sommes intéressés à quatre variables : R, L, EA et T. Nos résultats indiquent un nombre de réponses inférieur (R bas), un Lambda plus élevé (L &gt; 1), des ressources inférieures (EA bas) et un nombre de réponses textures plus faible (T bas) par rapport aux normes internationales.</description>
+      <guid>https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison</guid>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://benjaminthiry.netlify.app/posts/2023-12-12-rorschachprison/rorschachpersons.png" medium="image" type="image/png" width="1024" height="1024"/>
+    </item>
     <item>
       <title>Perception de la gravité d'infractions et propositions de peines par un échantillon francophone en regard de la proposition de réforme du Code pénal belge</title>
       <dc:creator>Benjamin Thiry</dc:creator>
