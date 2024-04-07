@@ -144,9 +144,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta name="citation_reference" content="citation_title=A test of the International Personality Item Pool representation of the Revised NEO Personality Inventory and development of a 120-item IPIP-based measure of the five-factor model.;citation_volume=26;citation_doi=10.1037/pas0000004;citation_issn=1939-134X, 1040-3590;citation_author=Jessica L. Maples;citation_author=Li Guan;citation_author=Nathan T. Carter;citation_author=Joshua D. Miller"/>
   <meta name="citation_reference" content="citation_title=Slovene Translation of the IPIP NEO PI Facets;citation_author=J Musek"/>
   <meta name="citation_reference" content="citation_title=Vers une méthodologie de validation trans-culturelle de questionnaires psychologiques: Implications pour la recherche en langue française.;citation_volume=30;citation_doi=10.1037/h0079856;citation_issn=1878-7304, 0708-5591;citation_author=Robert J. Vallerand"/>
-  <meta name="citation_reference" content="citation_title=Français international, français québécois ou jouai : Quelle langue parlent donc les Québécois ?;citation_author=Claude Verreault"/>
+  <meta name="citation_reference" content="citation_title=Français international, français québécois ou jouai : quelle langue parlent donc les Québécois ?;citation_author=Claude Verreault"/>
   <meta name="citation_reference" content="citation_title=Manuel de l’inventaire NEO PI-R.;citation_publisher=ECPA;citation_author=Paul T. Costa;citation_author=Robert R. McCrae;citation_author=Jean-Pierre Rolland"/>
-  <meta name="citation_reference" content="citation_title=Structural validity and reliability of the urdu translated version of IPIP-NEO-300 web-based inventory;citation_author=Minhaaj Rehman;citation_author=Maximillian Muellenbach;citation_author=John A Johnson"/>
+  <meta name="citation_reference" content="citation_title=Structural Validity and Reliability of The Urdu Translated Version of IPIP-NEO-300 Web-Based Inventory;citation_author=Minhaaj Rehman;citation_author=Maximillian Muellenbach;citation_author=John A Johnson"/>
   <meta name="citation_reference" content="citation_title=A broad-bandwidth, public domain, personality inventory measuring the lower-level facets of several five-factor models;citation_volume=7;citation_author=Lewis R. Goldberg"/>
   <meta name="citation_reference" content="citation_title=Microsoft Excel;citation_publisher=Microsoft corporation;citation_author= Microsoft"/>
   <meta name="citation_reference" content="citation_title=Libéral;citation_author=P. Robert"/>
@@ -159,7 +159,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["accord.xlsx","ipineo_labels.xlsx","ipipneo.bib","ipipneo_300fr.xlsx","ipipneo300.png","ipipneo300fr_files/anchor-4.2.2/anchor.min.js","ipipneo300fr_files/bowser-1.9.3/bowser.min.js","ipipneo300fr_files/distill-2.2.21/template.v2.js","ipipneo300fr_files/header-attrs-2.20/header-attrs.js","ipipneo300fr_files/jquery-3.6.0/jquery-3.6.0.js","ipipneo300fr_files/jquery-3.6.0/jquery-3.6.0.min.js","ipipneo300fr_files/jquery-3.6.0/jquery-3.6.0.min.map","ipipneo300fr_files/kePrint-0.0.1/kePrint.js","ipipneo300fr_files/lightable-0.0.1/lightable.css","ipipneo300fr_files/popper-2.6.0/popper.min.js","ipipneo300fr_files/tippy-6.2.7/tippy-bundle.umd.min.js","ipipneo300fr_files/tippy-6.2.7/tippy-light-border.css","ipipneo300fr_files/tippy-6.2.7/tippy.css","ipipneo300fr_files/tippy-6.2.7/tippy.umd.min.js","ipipneo300fr_files/webcomponents-2.0.0/webcomponents.js","traductions.xlsx","workhard.xlsx"]}
+  {"type":"character","attributes":{},"value":["accord.xlsx","ipineo_labels.xlsx","ipipneo_300fr.xlsx","ipipneo.bib","ipipneo300.png","ipipneo300fr_files/anchor-4.2.2/anchor.min.js","ipipneo300fr_files/bowser-1.9.3/bowser.min.js","ipipneo300fr_files/distill-2.2.21/template.v2.js","ipipneo300fr_files/header-attrs-2.20/header-attrs.js","ipipneo300fr_files/jquery-3.6.0/jquery-3.6.0.js","ipipneo300fr_files/jquery-3.6.0/jquery-3.6.0.min.js","ipipneo300fr_files/jquery-3.6.0/jquery-3.6.0.min.map","ipipneo300fr_files/kePrint-0.0.1/kePrint.js","ipipneo300fr_files/lightable-0.0.1/lightable.css","ipipneo300fr_files/popper-2.6.0/popper.min.js","ipipneo300fr_files/tippy-6.2.7/tippy-bundle.umd.min.js","ipipneo300fr_files/tippy-6.2.7/tippy-light-border.css","ipipneo300fr_files/tippy-6.2.7/tippy.css","ipipneo300fr_files/tippy-6.2.7/tippy.umd.min.js","ipipneo300fr_files/webcomponents-2.0.0/webcomponents.js","traductions.xlsx","workhard.xlsx"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -271,9 +271,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     display: none !important;
   }
 
+  hr.section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0px;
+  }
+
+
+  d-byline {
+    border-top: none;
+  }
+
   d-article {
     padding-top: 2.5rem;
     padding-bottom: 30px;
+    border-top: none;
   }
 
   d-appendix {
@@ -368,6 +380,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article div.sourceCode pre {
     padding-left: 18px;
     font-size: 14px;
+  }
+
+  /* tweak for Pandoc numbered line within distill */
+  d-article pre.numberSource code > span {
+      left: -2em;
   }
 
   d-article pre {
@@ -1129,6 +1146,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // create d-title
     $('.d-title').changeElementType('d-title');
 
+    // separator
+    var separator = '<hr class="section-separator" style="clear: both"/>';
+    // prepend separator above appendix
+    $('.d-byline').before(separator);
+    $('.d-article').before(separator);
+
     // create d-byline
     var byline = $('<d-byline></d-byline>');
     $('.d-byline').replaceWith(byline);
@@ -1206,8 +1229,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     $('.distill-force-highlighting-css').parent().remove();
 
     // remove empty line numbers inserted by pandoc when using a
-    // custom syntax highlighting theme
-    $('code.sourceCode a:empty').remove();
+    // custom syntax highlighting theme, except when numbering line
+    // in code chunk
+    $('pre:not(.numberLines) code.sourceCode a:empty').remove();
 
     // load distill framework
     load_distill_framework();
@@ -1233,12 +1257,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       // add orcid ids
       $('.authors-affiliations').find('.author').each(function(i, el) {
         var orcid_id = front_matter.authors[i].orcidID;
+        var author_name = front_matter.authors[i].author
         if (orcid_id) {
           var a = $('<a></a>');
           a.attr('href', 'https://orcid.org/' + orcid_id);
           var img = $('<img></img>');
           img.addClass('orcid-id');
-          img.attr('alt', 'ORCID ID');
+          img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
           img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
           a.append(img);
           $(this).append(a);
@@ -1516,9 +1541,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="ipipneo300fr_files/header-attrs-2.20/header-attrs.js"></script>
+  <script src="ipipneo300fr_files/header-attrs-2.25/header-attrs.js"></script>
   <script src="ipipneo300fr_files/kePrint-0.0.1/kePrint.js"></script>
   <link href="ipipneo300fr_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+  <link href="ipipneo300fr_files/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+  <script src="ipipneo300fr_files/bsTable-3.3.7/bootstrapTable.js"></script>
   <script src="ipipneo300fr_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="ipipneo300fr_files/popper-2.6.0/popper.min.js"></script>
   <link href="ipipneo300fr_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1550,6 +1577,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-title">
 <h1>IPIP NEO 300, adapation française européenne</h1>
+
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 <p><p>L’International Personality Item Pool (IPIP) propose un questionnaire de personnalité basé sur le modèle en cinq facteurs appelé IPIP NEO 300. La version originale a été créée en langue anglaise et il existe une traduction en français canadien. Notre étude propose une adaptation en français européen pour ce questionnaire. Parmi les 300 items, 26 items ont été considérés comme potentiellement problématiques et ont été soumis à des étudiants de langue maternelle française en dernière année de master en traduction (N = 20). Nous avons retenu les traductions les plus majoritaires afin de proposer une version française adaptée à la population francophone européenne.</p></p>
@@ -4266,7 +4294,7 @@ Je suis exigeant avec moi-même et les autres
 171
 </td>
 <td style="text-align:left;">
-Je suis exigeant avec moi-même et les autres.
+Je fais rarement des excès.
 </td>
 </tr>
 <tr>
@@ -4274,7 +4302,7 @@ Je suis exigeant avec moi-même et les autres.
 172
 </td>
 <td style="text-align:left;">
-Je fais rarement des excès.
+J’agis de façon téméraire.
 </td>
 </tr>
 <tr>
@@ -4282,7 +4310,7 @@ Je fais rarement des excès.
 173
 </td>
 <td style="text-align:left;">
-J’agis de façon téméraire.
+Je ne suis pas intéressé par les idées abstraites.
 </td>
 </tr>
 <tr>
@@ -4290,7 +4318,7 @@ J’agis de façon téméraire.
 174
 </td>
 <td style="text-align:left;">
-Je ne suis pas intéressé par les idées abstraites.
+J’ai une haute estime de moi-même
 </td>
 </tr>
 <tr>
@@ -5305,59 +5333,59 @@ Je fais souvent des plans de dernière minute.
 </table>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-costa_jr_manuel_1998" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-costa_jr_manuel_1998" class="csl-entry" role="listitem">
 Costa, Paul T., Robert R. McCrae, et Jean-Pierre Rolland. 1998. <em>Manuel de l’inventaire <span>NEO</span> <span>PI</span>-<span>R</span>.</em> Paris: ECPA.
 </div>
-<div id="ref-goldberg_broad-bandwidth_1999" class="csl-entry" role="doc-biblioentry">
+<div id="ref-goldberg_broad-bandwidth_1999" class="csl-entry" role="listitem">
 Goldberg, Lewis R. 1999. <span>« A broad-bandwidth, public domain, personality inventory measuring the lower-level facets of several five-factor models »</span>. <em>Personality Psychology in Europe</em> 7: 7‑28. <a href="http://admin.umt.edu.pk/Media/Site/STD/FileManager/OsamaArticle/26august2015/A%20broad-bandwidth%20inventory.pdf">http://admin.umt.edu.pk/Media/Site/STD/FileManager/OsamaArticle/26august2015/A%20broad-bandwidth%20inventory.pdf</a>.
 </div>
-<div id="ref-goldberg_international_2006" class="csl-entry" role="doc-biblioentry">
+<div id="ref-goldberg_international_2006" class="csl-entry" role="listitem">
 Goldberg, Lewis R., John A. Johnson, Herbert W. Eber, Robert Hogan, Michael C. Ashton, C. Robert Cloninger, et Harrison G. Gough. 2006. <span>« The international personality item pool and the future of public-domain personality measures »</span>. <em>Journal of Research in Personality</em> 40 (1): 84‑96. <a href="https://doi.org/10.1016/j.jrp.2005.08.007">https://doi.org/10.1016/j.jrp.2005.08.007</a>.
 </div>
-<div id="ref-gravel_french_nodate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gravel_french_nodate" class="csl-entry" role="listitem">
 Gravel, M. s. d. <span>« French (<span>Canadian</span>) <span>Translation</span> of the <span>IPIP</span> <span>Version</span> of the <span>NEO</span> <span>PI</span>-<span>R</span> »</span>. Consulté le 7 février 2023. <a href="https://ipip.ori.org/FrenchCanadian300-Item-IPIP-NEO.htm">https://ipip.ori.org/FrenchCanadian300-Item-IPIP-NEO.htm</a>.
 </div>
-<div id="ref-hagger-johnson_conscientiousness_2007" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hagger-johnson_conscientiousness_2007" class="csl-entry" role="listitem">
 Hagger-Johnson, Gareth E., et Martha C. Whiteman. 2007. <span>« Conscientiousness facets and health behaviors: <span>A</span> latent variable modeling approach »</span>. <em>Personality and Individual Differences</em> 43 (5): 1235‑45. <a href="https://doi.org/10.1016/j.paid.2007.03.014">https://doi.org/10.1016/j.paid.2007.03.014</a>.
 </div>
-<div id="ref-kajonius_assessing_2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kajonius_assessing_2019" class="csl-entry" role="listitem">
 Kajonius, Petri J., et John A. Johnson. 2019. <span>« Assessing the <span>Structure</span> of the <span>Five</span> <span>Factor</span> <span>Model</span> of <span>Personality</span> (<span>IPIP</span>-<span>NEO</span>-120) in the <span>Public</span> <span>Domain</span> »</span>. <em>Europe’s Journal of Psychology</em> 15 (2): 260‑75. <a href="https://doi.org/10.5964/ejop.v15i2.1671">https://doi.org/10.5964/ejop.v15i2.1671</a>.
 </div>
-<div id="ref-karlin_300_nodate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-karlin_300_nodate" class="csl-entry" role="listitem">
 Karlin, Omar. s. d. <span>« 300 <span>IPIP</span> items in the scales measuring constructs similar to those in the <span>NEO</span>-<span>PI</span>-<span>R</span>. »</span> Consulté le 7 février 2023. <a href="https://ipip.ori.org/JapaneseIPIP-NEOFacets.htm">https://ipip.ori.org/JapaneseIPIP-NEOFacets.htm</a>.
 </div>
-<div id="ref-lewis_relationship_2010" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lewis_relationship_2010" class="csl-entry" role="listitem">
 Lewis, Alison R., Richard E. Zinbarg, Susan Mineka, Michelle G. Craske, Alyssa Epstein, et James W. Griffith. 2010. <span>« The relationship between anxiety sensitivity and latent symptoms of emotional problems: <span>A</span> structural equation modeling approach »</span>. <em>Behaviour Research and Therapy</em> 48 (8): 761‑69. <a href="https://doi.org/10.1016/j.brat.2010.05.001">https://doi.org/10.1016/j.brat.2010.05.001</a>.
 </div>
-<div id="ref-lim_assessing_2006" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lim_assessing_2006" class="csl-entry" role="listitem">
 Lim, Beng-Chong, et Robert E. Ployhart. 2006. <span>« Assessing the <span>Convergent</span> and <span>Discriminant</span> <span>Validity</span> of <span>Goldberg</span>’s <span>International</span> <span>Personality</span> <span>Item</span> <span>Pool</span>: <span>A</span> <span>Multitrait</span>-<span>Multimethod</span> <span>Examination</span> »</span>. <em>Organizational Research Methods</em> 9 (1): 29‑54. <a href="https://doi.org/10.1177/1094428105283193">https://doi.org/10.1177/1094428105283193</a>.
 </div>
-<div id="ref-longley_taxometric_2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-longley_taxometric_2017" class="csl-entry" role="listitem">
 Longley, Susan L., Steven A. Miller, Joshua Broman-Fulks, John E. Calamari, Jill M. Holm-Denoma, et Katherine Meyers. 2017. <span>« Taxometric analyses of higher-order personality domains »</span>. <em>Personality and Individual Differences</em> 108 (avril): 207‑19. <a href="https://doi.org/10.1016/j.paid.2016.12.018">https://doi.org/10.1016/j.paid.2016.12.018</a>.
 </div>
-<div id="ref-maples_test_2014" class="csl-entry" role="doc-biblioentry">
+<div id="ref-maples_test_2014" class="csl-entry" role="listitem">
 Maples, Jessica L., Li Guan, Nathan T. Carter, et Joshua D. Miller. 2014. <span>« A test of the <span>International</span> <span>Personality</span> <span>Item</span> <span>Pool</span> representation of the <span>Revised</span> <span>NEO</span> <span>Personality</span> <span>Inventory</span> and development of a 120-item <span>IPIP</span>-based measure of the five-factor model. »</span> <em>Psychological Assessment</em> 26 (4): 1070‑84. <a href="https://doi.org/10.1037/pas0000004">https://doi.org/10.1037/pas0000004</a>.
 </div>
-<div id="ref-microsoft_corporation_microsoft_2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-microsoft_corporation_microsoft_2018" class="csl-entry" role="listitem">
 Microsoft. 2018. <span>« Microsoft <span>Excel</span> »</span>. Microsoft corporation. <a href="https://office.microsoft.com/excel">https://office.microsoft.com/excel</a>.
 </div>
-<div id="ref-musek_j_slovene_nodate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-musek_j_slovene_nodate" class="csl-entry" role="listitem">
 Musek, J. s. d. <span>« Slovene <span>Translation</span> of the <span>IPIP</span> <span>NEO</span> <span>PI</span> <span>Facets</span> »</span>. Consulté le 7 février 2023. <a href="https://ipip.ori.org/SloveneIPIP-NEOFacets.htm">https://ipip.ori.org/SloveneIPIP-NEOFacets.htm</a>.
 </div>
-<div id="ref-rehman2020structural" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rehman2020structural" class="csl-entry" role="listitem">
 Rehman, Minhaaj, Maximillian Muellenbach, et John A Johnson. 2020. <span>« Structural Validity and Reliability of The Urdu Translated Version of IPIP-NEO-300 Web-Based Inventory »</span>. <em>Available at SSRN 3637681</em>. <a href="https://www.academia.edu/download/63770760/Structural_Validity_of_Urdu_IPIP-NEO-30020200628-73673-52nm9i.pdf">https://www.academia.edu/download/63770760/Structural_Validity_of_Urdu_IPIP-NEO-30020200628-73673-52nm9i.pdf</a>.
 </div>
-<div id="ref-robert_p_liberal_nodate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-robert_p_liberal_nodate" class="csl-entry" role="listitem">
 Robert, P. s. d. <span>« Libéral »</span>. <em>Le Robert</em>. Consulté le 27 avril 2021. <a href="https://dictionnaire.lerobert.com/">https://dictionnaire.lerobert.com/</a>.
 </div>
-<div id="ref-siddiqui_personality_2011" class="csl-entry" role="doc-biblioentry">
+<div id="ref-siddiqui_personality_2011" class="csl-entry" role="listitem">
 Siddiqui, Kamran. 2011. <span>« Personality <span>Influences</span> on <span>Mobile</span> <span>Phone</span> <span>Usage</span> »</span>. <em>Interdisciplinary Journal of Contempory Research in Business</em> 3 (3): 554‑65. <a href="https://www.researchgate.net/publication/256494774_Personality_Influences_on_Mobile_Phone_Usage">https://www.researchgate.net/publication/256494774_Personality_Influences_on_Mobile_Phone_Usage</a>.
 </div>
-<div id="ref-vallerand_vers_1989" class="csl-entry" role="doc-biblioentry">
+<div id="ref-vallerand_vers_1989" class="csl-entry" role="listitem">
 Vallerand, Robert J. 1989. <span>« Vers une méthodologie de validation trans-culturelle de questionnaires psychologiques: <span>Implications</span> pour la recherche en langue française. »</span> <em>Canadian Psychology / Psychologie canadienne</em> 30 (4): 662‑80. <a href="https://doi.org/10.1037/h0079856">https://doi.org/10.1037/h0079856</a>.
 </div>
-<div id="ref-verreault_francais_nodate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-verreault_francais_nodate" class="csl-entry" role="listitem">
 Verreault, Claude. s. d. <span>« Français international, français québécois ou jouai : quelle langue parlent donc les <span>Québécois</span> ? »</span>
 </div>
 </div>
