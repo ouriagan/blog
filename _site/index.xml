@@ -7,7 +7,16 @@
     <description>Ce blog consacré au lien entre la psychologie et la délinquance. Il est tenu par Benjamin Thiry
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 23 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 May 2024 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>La bande à Corneille, place des adolescents de quartiers populaires bruxellois en 1973</title>
+      <dc:creator>Benjamin Thiry</dc:creator>
+      <link>https://benjaminthiry.netlify.app/posts/2024-05-04-bandeacorneille</link>
+      <description>Un reportage issu des archives de la télévision belge de 1973 permet d’illustrer l'intérêt des adolescents à se rassembler entre pairs, à se sentir valorisés dans leur groupe d’appartenance et à envisager être en conflit avec les autres groupes de la société. Ces derniers font l'expérience de l’irritation mais aussi d'une tolérance bienveillante susceptible de permettre aux adolescents de poursuivre leur processus de construction identitaire.</description>
+      <guid>https://benjaminthiry.netlify.app/posts/2024-05-04-bandeacorneille</guid>
+      <pubDate>Sat, 04 May 2024 00:00:00 +0000</pubDate>
+      <media:content url="https://benjaminthiry.netlify.app/posts/2024-05-04-bandeacorneille/bandeacorneille.png" medium="image" type="image/png" width="1806" height="1309"/>
+    </item>
     <item>
       <title>Perception de la gravité d'infractions et propositions de peines par un échantillon francophone en regard de la proposition de réforme du Code pénal belge</title>
       <dc:creator>Benjamin Thiry</dc:creator>
@@ -62,7 +71,7 @@
       <link>https://benjaminthiry.netlify.app/posts/2023-02-12-ipipneo300fr</link>
       <description>L'International Personality Item Pool (IPIP) propose un questionnaire de personnalité basé sur le modèle en cinq facteurs appelé IPIP NEO 300. La version originale a été créée en langue anglaise et il existe une traduction en français canadien. Notre étude propose une adaptation en français européen pour ce questionnaire. Parmi les 300 items, 26 items ont été considérés comme potentiellement problématiques et ont été soumis à des étudiants de langue maternelle française en dernière année de master en traduction (N = 20). Nous avons retenu les traductions les plus majoritaires afin de proposer une version française adaptée à la population francophone européenne.</description>
       <guid>https://benjaminthiry.netlify.app/posts/2023-02-12-ipipneo300fr</guid>
-      <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 12 Feb 2023 00:00:00 +0000</pubDate>
       <media:content url="https://benjaminthiry.netlify.app/posts/2023-02-12-ipipneo300fr/ipipneo300.png" medium="image" type="image/png" width="750" height="385"/>
     </item>
     <item>

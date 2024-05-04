@@ -6,14 +6,14 @@
       "description": "Quelques informations à mon propos",
       "author": [],
       "contents": "\n\n\nNé en 1975 à Bruxelles, je réside en Belgique.\nPsychologue de formation, je m’intéresse à la personnalité sous plusieurs facettes. J’aime m’intéresser à l’histoire de ma discipline et en dégager les héritages idéologiques.\n\n\n\n",
-      "last_modified": "2024-01-27T11:13:19+01:00"
+      "last_modified": "2024-05-04T16:12:02+02:00"
     },
     {
       "path": "index.html",
       "title": "Psychologie et délinquance",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2024-01-27T11:13:19+01:00"
+      "last_modified": "2024-05-04T16:12:03+02:00"
     }
   ],
   "collections": ["posts/posts.json"]
