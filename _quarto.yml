@@ -1,0 +1,32 @@
+project:
+  type: website
+execute:
+  freeze: auto
+website:
+  title: "Psychologie et délinquance"
+  site-url: https://benjaminthiry.netlify.app/
+  description: "Blog consacré à la psychologie de la délinquance"
+  navbar:
+    search: true
+    logo: "benjaminthiry.png"
+    right:
+      - about.qmd
+      - icon: mastodon
+        href: https://tchafia.be/@ouriagan
+      - icon: github
+        href: https://github.com/ouriagan/blog
+      - icon: rss
+        href: index.xml
+toc: true
+format:
+  html:
+    csl: apa.csl  # Définit le style des références en APA
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    toc-location: left
+editor: visual
+lang: fr

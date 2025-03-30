@@ -1,0 +1,35 @@
+---
+title: "Questionnaire de réponse émotionnelle du thérapeute (TRQ version française)"
+description: "Le Questionnaire de réponse émotionnelle du thérapeute est la traduction française du Response Questionnaire proposé par Betan, Heim, Zittel, Conklin, & Westen (2005). Il se compose de 79 items qui évaluent les ressentis, les pensées et les comportements du clinicien. Les cinq auteurs (cliniciens francophones) ont traduit chaque item de l’anglais au français de manière indépendante. Le premier auteur a comparé les cinq traductions. Les traductions unanimes ont été d’emblée acceptées. Les autres traductions ont fait l’objet de discussions menant à un consensus majoritaire pour chaque item."
+author:
+  - name: Louis De Page
+    orcid_id: 0000-0003-4056-7258
+  - name: Benjamin Thiry
+    url: https://benjaminthiry.netlify.app/
+    orcid_id: 0000-0001-5864-8369
+  - name: Marie Boulanger
+  - name: Bénédicte de Villers
+  - name: Xavier Saloppé
+    orcid_id: 0000-0003-0021-145X
+date: "2022-12-27"
+categories: [psychologie, analyses statistiques]
+bibliography: ../../blog.bib
+citation: true
+lang: fr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(readxl)
+library(kableExtra)
+trq_fr <- read_excel("/home/ouriagan/OneDrive/TRQ/trq_fr.xlsx")
+```
+
+Les phrases ci-dessous reflètent différentes manières dont un clinicien peut se sentir ou réagir face à ses patients. Pourriez-vous décrire à quel point ces phrases s’appliquent à votre travail avec ce patient, 1 étant « pas du tout», 3 étant « modérément », et 5 étant « tout à fait ». Nous sommes conscients qu’il est difficile généraliser à travers un traitement de plusieurs semaines ou mois, mais tentez de décrire la manière dont vous vous êtes senti(e) tout au long du traitement. Ne vous inquiétez pas si vos réponses peuvent paraître contradictoires, un clinicien peut souvent avoir plusieurs réactions différentes au sujet du même patient.
+
+```{r, trqfr}
+#| label: tbl-trqfr
+#| tbl-cap: "TRQ version française"
+
+kable(trq_fr)
+```

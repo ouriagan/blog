@@ -1,0 +1,389 @@
+---
+title: "Être psychologue en prison : liens entre vécus institutionnels et personnalité"
+description: "Les psychologues qui travaillent en prison tentent d’exercer des actions bienveillantes dans un milieu historiquement punitif suscitant des représentations négatives. Cette étude vise à évaluer le rapport que ces psychologues entretiennent avec l’institution carcérale et le lien entre leur personnalité et ce vécu institutionnel. Cinquante-cinq psychologues issus du milieu pénitentiaire en France ont répondu à un questionnaire diffusé sur internet. Les résultats indiquent que les psychologues carcéraux présentent des traits de personnalité moins agréables (d = -.62) et plus consciencieux (d = 1.13) que l’échantillon normatif du BFI-10-fr. Ils évoquent deux rapports à la prison : un positif respectueux de leur déontologie et un autre négatif influencé par les contraintes carcérales. L’extraversion des psychologues est positivement corrélée (r = .36) avec le vécu institutionnel positif alors que le névrosisme est positivement corrélé (r = .36) avec le vécu institutionnel négatif. Il semble donc exister des caractéristiques psychologiques qui facilitent le travail en prison."
+author:
+  - name: Benjamin Thiry
+    orcid_id: 0000-0001-5864-8369
+    website: https://benjaminthiry.netlify.app/
+  - name: Valentine Waymel
+  - name: Emilie Telle
+date: "2023-02-08"
+categories: [analyses statistiques, prison, psychologie]
+bibliography: psychoprison.bib
+citation: true
+lang: fr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(GPArotation)
+library(psych)
+library(tidyverse)
+library(Hmisc)
+# library(car) #regressions
+library(gt)
+library(corrplot)
+library(dplyr)
+library(papaja)
+library(kableExtra)
+library(psych)
+psyprison <- read_delim("/home/ouriagan/OneDrive/Mémoire Waymel Valentine/psyprison.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+attach(psyprison)
+
+#N
+ntotal <- length(sexepsy)
+
+#age
+meanage <- round(mean(agepsy, na.rm = TRUE), digit = 2)
+sdage <- round(sd(agepsy, na.rm = TRUE), digit = 2)
+minage <- round(min(agepsy, na.rm = TRUE), digit = 2)
+maxage <- round(max(agepsy, na.rm = TRUE), digit = 2)
+
+# Expérience
+meanexpe <- round(mean(experience, na.rm = TRUE), digit = 2)
+sdexpe <- round(sd(experience, na.rm = TRUE), digit = 2)
+minexpe <- round(min(experience, na.rm = TRUE), digit = 2)
+maxexpe <- round(max(experience, na.rm = TRUE), digit = 2)
+
+#sexe
+nofmen <-length(which(sexepsy == "H")) 
+nofmenpercentage <- round(100*(length(which(sexepsy == "H"))/length(sexepsy)), digit = 0)
+
+nofwomen <- length(which(sexepsy == "F")) 
+nofwomenpercentage <- round(100*(length(which(sexepsy == "F"))/length(sexepsy)), digit = 0)
+
+#Scoring the BFI‐10 scales
+E <- ((6-bfiitem1)+bfiitem6)/2
+A <- (bfiitem2+(6-bfiitem7))/2
+C <- ((6-bfiitem3)+bfiitem8)/2
+N <- ((6-bfiitem4)+bfiitem9)/2
+O <- ((6-bfiitem5)+bfiitem10)/2
+perso.df <- data.frame(N,E,O,A,C)
+# t tests N
+ttestN <- t.test(N,mu=3)
+ttestNpvalue <- round(ttestN$p.value,  digit = 3) 
+ttestNparameter <- round(ttestN$parameter,  digit = 3)  
+ttestNstatistic <- round(ttestN$statis,  digit = 3) 
+deltaN <- (mean(N)-3)/0.6    
+# t tests E
+ttestE <- t.test(E,mu=3.2)
+ttestEpvalue <- round(ttestE$p.value,  digit = 3) 
+ttestEparameter <- round(ttestE$parameter,  digit = 3)  
+ttestEstatistic <- round(ttestE$statis,  digit = 3) 
+deltaE <- (mean(E)-3.2)/0.8
+# t test O
+ttestO <- t.test(O,mu=3.5)
+ttestOpvalue <- round(ttestO$p.value,  digit = 3) 
+ttestOparameter <- round(ttestO$parameter,  digit = 3)  
+ttestOstatistic <- round(ttestO$statis,  digit = 3) 
+deltaO <- (mean(O)-3.5)/0.6
+# t test A
+ttestA <- t.test(A,mu=3.9)
+ttestApvalue <- round(ttestA$p.value,  digit = 3) 
+ttestAparameter <- round(ttestA$parameter,  digit = 3)  
+ttestAstatistic <- round(ttestA$statis,  digit = 3) 
+deltaA <- (mean(A)-3.9)/0.6
+# t test C
+ttestC <- t.test(C,mu=3.4)
+ttestCpvalue <- round(ttestC$p.value,  digit = 3) 
+ttestCparameter <- round(ttestC$parameter,  digit = 3)  
+ttestCstatistic <- round(ttestC$statis,  digit = 3) 
+deltaC <- (mean(C)-3.4)/0.7
+
+# Tableau 1
+table1variables <- c("N - Névrosisme","E - Extraversion","O - Ouverture","A - Agréabilité","C - Conscience")
+table1mean <- c(mean(N), mean(E), mean(O), mean(A), mean(C))
+table1sd <- c(sd(N), sd(E), sd(O), sd(A), sd(C))
+table1norme <- c(3,3.2,3.5,3.9,3.4)
+table1ttest <- c(ttestNstatistic,ttestEstatistic,ttestOstatistic,ttestAstatistic,ttestCstatistic)
+table1p <- c(ttestNpvalue,ttestEpvalue,ttestOpvalue,ttestApvalue,ttestCpvalue)
+table1pbis <- printp(table1p)
+table1delta <- c(deltaN, deltaE, deltaO, deltaA, deltaC)
+table1a <- data.frame(Variable = table1variables, Moyenne=table1mean, ET=table1sd, Norme=table1norme, t=table1ttest, p=table1pbis, Delta=table1delta)
+table1 <- printnum(table1a)
+
+#contexte institutionnel
+
+table2variables <- c("insti1_suivis","insti2_deonto","insti3_idprof","insti4_lever","insti5_contraintes", "insti6_difficultes")
+table2questions <- c("Dans ma réalité quotidienne, j’ai le sentiment de proposer des suivis de qualité à mes patients.","Dans mon travail quotidien, je me sens à l’aise avec ma déontologie (par exemple, avec le secret professionnel).","Je me sens bien dans mon identité professionnelle.","Je suis content(e) de me lever pour aller travailler.","En tant que soignant, je ressens des contraintes liées au contexte pénitentiaire dans mes prises en charge (Ex : cadre, confusion justice/soin, …).", "Dans le cadre de mon travail en milieu pénitentiaire, je suis confronté(e) à des situations difficiles occasionnées par l’institution (Ex : disputes avec les surveillants, tentatives de suicide, …).")
+table2mean <- c(mean(insti1_suivis), mean(insti2_deonto), mean(insti3_idprof), mean(insti4_lever), mean(insti5_contraintes), mean(insti6_difficultes))
+table2sd <- c(sd(insti1_suivis), sd(insti2_deonto), sd(insti3_idprof), sd(insti4_lever), sd(insti5_contraintes), sd(insti6_difficultes))
+table2a <- data.frame(Questions = table2questions, Variables = table2variables, Moyenne=table2mean, ET=table2sd)
+table2 <- printnum(table2a)
+
+contexte.df <- data.frame(insti1_suivis, insti2_deonto, insti3_idprof, insti4_lever, insti5_contraintes, insti6_difficultes)
+```
+
+# Introduction
+
+Être psychologue en prison ne va pas de soi. Héritiers d’une tradition philosophique et médicale, les psychologues se conçoivent souvent comme des *pourvoyeurs de soins* à des personnes qui sont en souffrance. A contrario, historiquement, la prison est un lieu de *punition* c’est-à-dire qu’elle exerce une *action négative* sur les personnes condamnées pour avoir enfreint les règles sociales (ex. : sanctions, restriction des libertés, enfermement, surveillance, manque d’intimité, stress, etc.), à des fins de réhabilitation [@wilks1976treatment]. Exercer le métier de psychologue dans une institution punitive n’est dès lors pas simple *a priori*, d’autant plus que le psychologue est souvent confronté à la notion ambivalente d’aide contrainte ou d’injonction aux soins [@goldbeter2011aide]. En effet, même s’il n’y a pas d’obligation stricte aux soins en milieu carcéral, l’accès à des réductions ou des aménagements de peine se trouve fortement encouragé par le cadre légal [@savin2015etre], impliquant donc une demande et une adhésion plutôt stratégique au soin. Tout le travail du psychologue est alors de transformer avec le détenu cette demande d’aide stratégique en une demande d’aide plus authentique. Dans ce cadre, comment les psychologues travaillant en prison perçoivent-ils leurs actions auprès des détenus ? Il existe, à notre connaissance, peu voire pas d’études investiguant les traits de personnalité et le vécu institutionnel des psychologues en prison, la littérature étant majoritairement centrée sur les détenus. Dans ce texte, nous présentons brièvement les différents types de prisons en France. Ensuite, les résultats issus des réponses que nous ont communiquées des psychologues qui y travaillent à des questions relatives à leur *vécu institutionnel* mais aussi à leur *personnalité*. Nous pourrons dès lors nous intéresser à d’éventuels liens entre ces vécus institutionnels et la personnalité.
+
+# Les établissements pénitentiaires en France
+
+Les prisons françaises sont des lieux privatifs de liberté présidés par l’administration pénitentiaire (AP), qui depuis 1911, est elle-même rattachée au ministère de la Justice. Le rôle des établissements pénitentiaires est avant tout d’assurer la sécurité de la société contre les individus présentant un caractère dangereux en participant à l’exécution des décisions et sentences pénales. Elle a également pour but de favoriser leur réinsertion et de prévenir le risque de récidive [@dap2007administration]. En France, il existe différents types d'établissements pénitentiaires, qui sont placés en deux grandes catégories : les *maisons d'arrêt* et les *établissements pour peine* [@justice2017structures]. La @dap2007administration, les décrit comme suit :
+
+-   Les **maisons d'arrêt** reçoivent les prévenus (détenus en attente de jugement), ainsi que les condamnés dont le reliquat de peine n'excède pas deux ans, en théorie.
+
+-   Les établissements pour peine sont divisés en **maisons centrales** qui accueillent les personnes détenues condamnées à une longue peine et/ou présentant des risques de dangerosité plus élevés, ces établissements sont orientés sur la sécurité :
+
+    -   En **centres de détention**, accueillant des personnes détenues condamnées à une peine supérieure à deux ans et qui présentent les meilleures perspectives de réinsertion sociale ;
+    -   En **centres de semi-liberté** reçoivent des personnes condamnées admises au régime du placement extérieur ou de la semi- liberté. Dans ce cas, la personne condamnée détenue peut s'absenter de l'établissement durant la journée pour exercer une activité professionnelle, suivre un enseignement ou une formation, bénéficier d'un traitement médical ou s'investir dans tout autre projet de réinsertion de nature à prévenir les risques de récidive ;
+    -   En **centres pénitentiaires** sont des établissements mixtes, comprennent au moins deux quartiers différents (maison d'arrêt, centre de détention et/ou maison centrale). Certains établissements pénitentiaires peuvent accueillir des femmes, qui sont néanmoins très minoritaires, un quartier leur est alors affecté à l'écart dans les prisons pour hommes. Seules deux prisons en France leur sont spécifiquement réservées [@oip2021femmes].
+    -   Pour terminer, il existe également les **établissements pénitentiaires pour mineurs** (EPM) qui accueillent de jeunes détenus, âgés de treize à 18 ans. Tout en intégrant les exigences de sécurité carcérale, ils placent l'éducation au cœur de la prise en charge de ces mineurs [@justice2017structures; @tournier2010etat].
+
+En France, il existe actuellement 186 établissements pénitentiaires. Parmi eux, 81 maisons d’arrêt, 98 établissements pour peine regroupant 6 maisons centrales, 25 centres de détention, 9 centres de semi-liberté et 58 centres pénitentiaires. Finalement, nous comptons 6 établissements pénitentiaires pour mineurs et un établissement public de santé national (EPSNF), situé en Île-de-France, à Fresnes [@justice2021structures]. Ce dernier assure la prise en charge somatique des personnes placées sous-main de justice (PPsMJ) [@chodorge1993sante].
+
+# Méthode
+
+## Participants
+
+Les participants sont des *psychologues* exerçant leur profession au sein d’*établissements pénitentiaires* en France. L'échantillon est constitué de `r ntotal` psychologues dont `r nofmen` (`r nofmenpercentage` %) sont des hommes et `r nofwomen` (`r nofwomenpercentage` %) sont des femmes. La moyenne d'âge est de `r meanage` ans (ET = `r sdage`, Min = `r minage`, Max = `r maxage`). Ils ont, en moyenne, `r meanexpe` années d’expérience en milieu carcéral (ET = `r sdexpe`, Min = `r minexpe`, Max = `r maxexpe`).
+
+## Procédure
+
+Les données collectées et utilisées pour la réalisation de cette étude ont été obtenues via la diffusion d’un questionnaire en ligne via la plateforme Lime Survey. Cette enquête en ligne avait pour objectif d’investiguer des variables plus larges que celles exploitées dans la présente rédaction (données socio-démographiques, traits de personnalité, vécu institutionnel, le contre-transfert et la pathologie mental des détenus). Au préalable, les différents instruments utilisés ont tous été encodés sur la plateforme sécurisée Lime Survey nous ayant permis de créer un unique questionnaire et nous permettant sa diffusion. Nous avons donc procédé à la diffusion en ligne sur différents réseaux sociaux (LinkedIn et divers groupes de psychologues sur Facebook). Cela nous a également permis de diffuser cette recherche au sein des syndicats des psychologues français et de l’élargir à toute la France. De plus, par le « bouche à oreille », le questionnaire a été transféré à plusieurs personnes par mail. En parallèle de la diffusion sur les réseaux, nous avions de multiples contacts et connaissances de psychologues à qui nous avons envoyé le questionnaire par mail, en précisant le contenu de notre étude ainsi que son objectif. Pour ce faire, nous avons créé un texte expliquant l’intérêt de la recherche ainsi que la population ciblée. Le lien du questionnaire était inclus afin qu’ils puissent cliquer dessus pour être directement redirigés vers le Lime Survey La page d’accueil du questionnaire informait les potentiels participants quant à l’objectif de la recherche, la confidentialité des données (anonymat), la structure du questionnaire ainsi que sa durée de passation estimée (entre 30 et 40 minutes). En décidant de poursuivre le questionnaire, les participants marquaient leur consentement volontaire à la recherche en conformité avec les principes éthiques de la Déclaration d’Helsinki et du Règlement Général sur la Protection des Données (RGPD). Nous avons également indiqué que les personnes intéressées par l’étude pouvaient nous contacter directement par mail ou en message privé (sur Facebook et LinkedIn) pour recevoir un compte rendu des principaux résultats de cette étude. Nous avons clôturé notre questionnaire après deux mois de mise en ligne et plusieurs rediffusions. Toutes les deux semaines environs, nous repartagions notre étude afin de la réactualiser dans les fils d’actualité et groupes de psychologues.
+
+Les participants étaient invités à remplir deux questionnaires : le *Big Five Inventory - version courte (BFI-10)* et un questionnaire de *rapport avec l'institution carcérale*.
+
+## BFI-10 version française
+
+Le BFI-10-fr [@courtois2020validation] est une version courte du BFI-fr [@plaisant2010validation]. La version française a été traduite et validée sur base de la version originale [@john1991big]. Le questionnaire mesure cinq dimensions de personnalité : O (Ouverture, Originalité, Ouverture d'esprit), C (Conscience, Contrôle, Contrainte), E (Extraversion, Énergie, Enthousiasme), A (Agréabilité, Altruisme, Affection) et N (Émotions Négatives, Névrosisme, Nervosité). Le BFI-10 comporte dix items, côtés sur une échelle de Likert en cinq points, allant de *Désapprouve fortement* (1) à *Approuve fortement* (5). Certains des items sont inversés (items 1, 2, 4, 8 et 10). Lors de la cotation il convient de les inverser de telle sorte que 1 = 5, 2 = 4, 3 = 3, 4 = 2 et 5 = 1. Les notes respectives aux cinq dimensions sont additionnées dans le but d'obtenir un score total à chacune d'entre elles. Plus le score est élevé à chaque dimension, plus la personne évaluée présente des traits de personnalité relatifs à celle-ci. Selon plusieurs auteurs [@balgiu2018psychometric; @courtois2020validation; @rammstedt2013short; @rammstedt2007measuring], le BFI-10-fr a démontré une fiabilité et une validité satisfaisante.
+
+Le questionnaire se présente ainsi :
+
+Je me vois comme quelqu'un qui...
+
+1.  Est réservé
+2.  Fait généralement confiance aux autres
+3.  Travaille consciencieusement
+4.  Est « relaxe », détendu, gère bien les stress
+5.  A une grande imagination
+6.  Est sociable, extraverti
+7.  A tendance à critiquer les autres
+8.  A tendance à être paresseux
+9.  Est facilement anxieux
+10. Est peu intéressé par tout ce qui est artistique
+
+## Rapport à l'institution carcérale
+
+Nous avons élaboré un questionnaire composé de six items côtés sur une échelle de Likert en quatre points allant de 1 « pas du tout d'accord » à 4 « tout à fait d'accord ». Les items investiguent le ressenti général des psychologues concernant les suivis proposés à leurs patients ; par rapport à leur déontologie ; à leur identité professionnelle ; ainsi que par rapport aux contraintes liées au milieu pénitentiaire (cadre, surveillants, disputes, situations difficiles pouvant être rencontrées). Les questions étaient les suivantes :
+
+1.  Dans ma réalité quotidienne, j'ai le sentiment de proposer des suivis de qualité à mes patients.
+2.  Dans mon travail quotidien, je me sens à l'aise avec ma déontologie (par exemple, avec le secret professionnel).
+3.  Je me sens bien dans mon identité professionnelle.
+4.  Je suis content(e) de me lever pour aller travailler.
+5.  En tant que soignant, je ressens des contraintes liées au contexte pénitentiaire dans mes prises en charge (Ex : cadre, confusion justice/soin, ...).
+6.  Dans le cadre de mon travail en milieu pénitentiaire, je suis confronté(e) à des situations difficiles occasionnées par l'institution (Ex : disputes avec les surveillants, tentatives de suicide, ...).
+
+## Analyses de données
+
+Après avoir réalisé plusieurs analyses descriptives afin de décrire le profil socio-démographique des participants (âge, genre, nombre d’années d’expérience), des analyses similaires ont été effectuées sur les scores au BFI-10-fr et au questionnaire sur le vécu institutionnel. A l’aide de tests *t* à échantillon unique, les scores au BFI-10-fr ont été comparés aux normes de l’étude de validation de l’instrument [@plaisant2010validation]. Une analyse factorielle exploratoire a été effectuée suite aux analyses descriptives sur les scores au questionnaire sur le rapport à l’institution carcérale, en raison de l’émergence d’une hypothèse d’un double vécu : *positif* marqué par une satisfaction professionnelle par rapport à l’identité professionnelle, la réalisation des suivis et les aspects déontologiques, et *négatif* marqué par les contraintes et difficultés inhérentes au cadre institutionnel. Enfin, des analyses corrélationnelles, à l’aide du Rho de Spearman (en raison du petit échantillon et de distributions des variables ne répondant pas à l'hypothèse de normalité), ont été faites entre les scores au BFI-10-fr et les items du questionnaire sur le rapport à l’institution carcérale pour investiguer le lien potentiel entretenu entre la personnalité et le vécu institutionnel dans un tel cadre.
+
+# Résultats et discussion
+
+Le @tbl-table1 montre les statistiques descriptives des cinq variables du BFI-10 pour les psychologues et les compare avec les normes proposées par @plaisant2010validation.
+
+```{r table1, echo=FALSE}
+#| label: tbl-table1
+#| tbl-cap: "Statistiques descriptives des 5 variables du BFI-10 pour 55 psychologues carcéraux français"
+
+kbl(table1)
+```
+
+L'échantillon présente pour l’ensemble des dimensions de personnalité des scores supérieurs à la moyenne théorique (2.50) où la conscienciosité est la plus élevée et le névrosisme le plus faible. De plus, notons que selon ces résultats, les psychologues carcéraux français seraient moins agréables et plus consciencieux que l’échantillon normatif. Ce score élevé en conscience est intéressant car semble confirmer que les personnes qui évoluent en prison sont plus contrôlés que les autres, tant les détenus [@eriksson2017personality; @shimotsukasa2019big; @thiry2012assessment] que le personnel de surveillance [@eriksson2017personality]. Selon ces derniers auteurs :
+
+> L'environnement carcéral est très strict tant en termes de régulation que de normes et d'espace personnel limité. Un tel environnement incite les détenus à acquérir de l'ordre pour éviter tant des punitions formelles que les actes négatifs des codétenus \[p. 243, traduction personnelle\]
+
+L’hypothèse explicative potentielle est que tant les détenus que les professionnels qui travaillent régulièrement en prison s’adaptent aux règles qui la régissent de telle sorte qu’ils se montrent plus contrôlés, ordonnés et scrupuleux. Nos résultats invitent à penser que les psychologues s’adaptent également (consciemment ou non) à la rigueur carcérale. De plus, les traits de personnalité indiquant une caractéristique stable au cours du temps, ces résultats pointent également que les psychologues ayant ces traits de personnalité se dirigent potentiellement plus facilement vers ce cadre de travail rigoureux cohérent avec cette structure de personnalité. Qu’en est-il justement de cette rigueur carcérale ?
+
+De manière générale, l’analyse descriptive indique, en rapport avec l’étendue des scores (de 1 à 4) que l’échantillon est relativement d’accord avec l’ensemble des propositions investiguant leur vécu institutionnel avec un degré d’accord le plus élevé concernant les aspects déontologiques et un degré d’accord le plus faible concernant le sentiment de proposer des suivis de qualité (@tbl-table2).
+
+```{r table2, echo=FALSE}
+#| label: tbl-table2
+#| tbl-cap: "Rapport à l'institution carcérale pour 55 psychologues carcéraux français (varie de 1 à 4)"
+
+kbl(table2)
+```
+
+Dans l’ensemble, les psychologues carcéraux ont l’impression d’effectuer un *travail de qualité respectueux de leur cadre déontologique* bien qu’ils puissent reconnaître en même temps que le cadre carcéral induise des *contraintes* et les confrontent à des situations difficiles. Ils semblent défendre l’idée qu’il y a moyen d’évoluer professionnellement dans un cadre de travail difficile tout en préservant une *identité professionnelle positive et constructive*.
+
+Nos données nous permettent-elles de soutenir l'existence de ces deux enjeux professionnels (vécus positifs et contraintes) ? Afin de répondre à cette question, nous procédons à une analyse factorielle des six variables de rapport à l'institution.
+
+```{r facteurs, echo=FALSE}
+insti_desagreable <- (insti5_contraintes+insti6_difficultes)/2
+insti_agreable <- (insti1_suivis+insti2_deonto+insti3_idprof)/3
+contexte2.df <- data.frame(Positif=insti_agreable, Négatif=insti_desagreable)
+
+contextepersocor <- cor(contexte2.df, perso.df, method = "spearman", use = "complete.obs") 
+contextepersocor_round <- round(contextepersocor, 2)
+```
+
+Comme attendu, l'analyse factorielle semble mettre en évidence deux vécus distincts exprimés par les psychologues au regard de nos questions (Tableau 3) :
+
+1.  Un **vécu positif** de proposer des suivis psychologiques de qualité et respectueux du cadre déontologique (variables de 1, 2 et 3) ;
+2.  Un **vécu négatif** (mais probablement réaliste) lié aux contraintes de l'institution carcérale (variables 5 et 6).
+
+```{r fainstit, echo=FALSE, warning=FALSE}
+res <- fa(contexte.df, 2)
+
+fa_table <- function(x, varlabels = NULL, title = "Tableau 3. Résultats de l’analyse factorielle sur les items du questionnaire sur le rapport à l’institution carcérale", diffuse = .10, small = .30, cross = .20, sort = TRUE) {
+  #get sorted loadings
+  require(dplyr)
+  require(purrr)
+  require(tibble)
+  require(gt)
+  if(sort == TRUE) {
+    x <- psych::fa.sort(x)
+  }
+  if(!is.null(varlabels)) {
+    if(length(varlabels) != nrow(x$loadings)) { warning("Number of variable labels and number of variables are unequal. Check your input!",
+                                                        call. = FALSE) }
+    if(sort == TRUE) {
+      varlabels <- varlabels[x$order]
+      }
+  }
+  if(is.null(varlabels)) {varlabels <- rownames(x$loadings)}
+
+  loadings <- data.frame(unclass(x$loadings))
+  
+  #make nice names
+  factornamer <- function(nfactors) {
+    paste0("Facteur_", 1:nfactors)}
+  
+  nfactors <- ncol(loadings)
+  fnames <- factornamer(nfactors)
+  names(loadings) <- fnames
+  
+  # prepare locations
+  factorindex <- apply(loadings, 1, function(x) which.max(abs(x)))
+  
+  # adapted from from sjplot: getremovableitems
+  getRemovableItems <- function(dataframe, fctr.load.tlrn = diffuse) {
+    # clear vector
+    removers <- vector(length = nrow(dataframe))
+    # iterate each row of the data frame. each row represents
+    # one item with its factor loadings
+    for (i in seq_along(removers)) {
+      # get factor loadings for each item
+      rowval <- as.numeric(abs(dataframe[i, ]))
+      # retrieve highest loading
+      maxload <- max(rowval)
+      # retrieve 2. highest loading
+      max2load <- sort(rowval, TRUE)[2]
+      # check difference between both
+      if (abs(maxload - max2load) < fctr.load.tlrn) {
+        # if difference is below the tolerance,
+        # remeber row-ID so we can remove that items
+        # for further PCA with updated data frame
+        removers[i] <- TRUE
+      }
+    }
+    # return a vector with index numbers indicating which items
+    # have unclear loadings
+    return(removers)
+  }
+ if(nfactors > 1) {
+   removable <- getRemovableItems(loadings)
+   cross_loadings <- purrr::map2(fnames, seq_along(fnames), function(f, i) {
+     (abs(loadings[,f] > cross)) & (factorindex != i) 
+   })
+ }
+
+  small_loadings <- purrr::map(fnames, function(f) {
+    abs(loadings[,f]) < small
+  })
+  
+  ind_table <- dplyr::tibble(varlabels, loadings) %>%
+    dplyr::rename(Indicator = varlabels) %>% 
+    dplyr::mutate(Communalité = x$communality, Unicité = x$uniquenesses, Complexité = x$complexity) %>% 
+    dplyr::mutate(across(starts_with("Facteur"), round, 3))  %>%
+    dplyr::mutate(across(c(Communalité, Unicité, Complexité), round, 2))
+                    
+  
+  ind_table <- ind_table %>% gt(rowname_col = "Indicator") %>% tab_header(title = title)
+  # mark small loadiongs
+  for(f in seq_along(fnames)) {
+    ind_table <- ind_table %>%  tab_style(style = cell_text(color = "#D3D3D3", style = "italic"),
+                             locations = cells_body(columns = fnames[f], rows = small_loadings[[f]]))
+  }
+  # mark cross loadings
+  
+  if (nfactors > 1) {
+    for (f in seq_along(fnames)) {
+      ind_table <-
+        ind_table %>%  tab_style(
+          style = cell_text(style = "italic"),
+          locations = cells_body(columns = fnames[f], rows = cross_loadings[[f]])
+        )
+    }
+    # mark non-assignable indicators
+    ind_table <-
+      ind_table %>%  tab_style(style = cell_fill(color = "#D93B3B"),
+                               locations = cells_body(rows = removable))
+  }
+  
+  # adapted from https://www.anthonyschmidt.co/post/2020-09-27-efa-tables-in-r/
+  Vaccounted <- x[["Vaccounted"]]
+  colnames(Vaccounted) <- fnames 
+  if (nfactors > 1) {
+  Phi <- x[["Phi"]]
+  rownames(Phi) <- fnames
+  colnames(Phi) <- fnames
+  f_table <- rbind(Vaccounted, Phi) %>%
+    as.data.frame() %>% 
+    rownames_to_column("Property") %>%
+    mutate(across(where(is.numeric), round, 3)) %>%
+    gt() %>% tab_header(title = "Eigenvalues, Variance Explained, and Factor Correlations for Rotated Factor Solution")
+  }
+  else if(nfactors == 1) {
+    f_table <- rbind(Vaccounted) %>%
+      as.data.frame() %>% 
+      rownames_to_column("Property") %>%
+      mutate(across(where(is.numeric), round, 3)) %>%
+      gt() %>% tab_header(title = "Eigenvalues, Variance Explained, and Factor Correlations for Rotated Factor Solution")
+  }
+
+  return(list("ind_table" = ind_table, "f_table" = f_table))
+  
+}
+tables <- fa_table(res)
+tables$ind_table
+```
+
+Ces deux types de vécus résultent très probablement du paradoxe caractérisant le milieu carcéral : d’une part se vouloir punitif et donc potentiellement violent du moins symboliquement et environnementalement ; d’autre part alimentant l’idée qu’il faut offrir une aide soutenante et donc bienveillante aux détenus. La première mouvance est l'écho d'une vindicte populaire canalisée par le système pénal officiel dont le but avoué est de *corriger* le délinquant. Pour @de2012idees [p. 154], "la foi en la 'corrigibilité' du délinquant doit avoir pour effet de lui rendre sa capacité à réintégrer la société". Or, cette vindicte du pouvoir judiciaire est porteuse d'une *charge sadique* qui vise, consciemment ou non, à faire souffrir toute personne qui aurait porté atteinte au corps social. Cette mouvance sadique est très contagieuse en prison. En effet, elle glisse aisément d'une personne à une autre. Ainsi le système carcéral est-il susceptible de violenter toute personne estimée complice des actes du détenu : sa famille, son avocat ou encore tout intervenant tentant de l'aider. Par exemple, un professionnel trop zélé à porter assistance à un détenu suspecté de terrorisme court le risque de susciter de la méfiance à son égard et de faire dès lors l'objet d'un contrôle accru. C'est sous couvert d'un contrôle à visée sécuritaire que le sadisme carcéral est susceptible de se manifester. Les psychologues carcéraux peuvent ainsi se retrouver objets de ce sadisme déguisé. Les présents résultats tendent à indiquer que les traits de personnalité présentés par les psychologues sont majoritairement positifs et bienveillants nuançant l’effet de cette hypothèse.
+
+De plus, du fait de leur formation, les psychologues sont également sensibilisés à des modèles humanistes de nature bienveillante et à des principes éthiques qui sont partagés par toutes professions d’assistance, qu’elles soient médicales ou sociales. Par conséquent, les psychologues sont censés être vecteurs de ces principes humanistes.
+
+Nos résultats indiquent que les deux enjeux, bien que très différents, coexistent dans la pratique de la plupart des psychologues interrogés. Une question peut se poser ici : certains psychologues sont-ils plus ou moins sensibles à ces deux enjeux ? Leur personnalité a-t-elle un impact sur ceux-ci ? Pour répondre à cette question, nous avons corrélé les deux variables de vécu institutionnel aux cinq variables du modèle de personnalité en cinq facteurs. La @fig-contextepersocor présente les indices de corrélations (Rho de Spearman) pour ces variables.
+
+```{r contextepersocor, echo=FALSE}
+#| label: fig-contextepersocor
+#| fig-cap: "Corrélations entre personnalité et vécu institutionnel"
+
+corrplot(contextepersocor_round, tl.col = "black", tl.srt = 0, method="number")
+```
+
+L’analyse corrélationnelle révèle peu de corrélations significatives, seules deux corrélations d’intensité modérée sont significatives à *p* \< .001 :
+
+-   l'**extraversion** des psychologues va de pair avec la tendance à se sentir **valorisé au travail** ;
+-   le **névrosisme** des psychologue va quant à lui de pair avec la tendance à être plus **sensible aux contraintes** du monde carcéral.
+
+Les autres corrélations, bien qu'intéressantes, impliquant l'ouverture d'esprit et la tendance à la maîtrise ne sont pas suffisamment marquées pour qu'on les retienne d'un point de vue statistique. Le caractère plus ou moins agréable du psychologue est clairement indépendant du vécu professionnel.
+
+Ces résultats sont cohérents car l’extraversion est classiquement reconnue comme liée à des vécus positifs (ex. : être enthousiaste, assertif, sociable) alors que le névrosisme renvoie davantage à des vécus douloureux et négatifs (ex. : colère, anxiété, dépression), le contexte institutionnel favorisant aussi bien le défi que l’adversité professionnelle. Ces résultats nous permettent de soutenir l’hypothèse que la dynamique institutionnelle fait office de *caisse de résonance* des vécus personnels. En effet, un psychologue extraverti aura tendance à se lier plus facilement à ses collègues et à se solidariser avec eux afin de défendre une pratique respectueuse de son groupe professionnel. Il sera alors d’autant plus sécurisé dans ses interventions qui consolideront son identité professionnelle. Les psychologues très anxieux, quant à eux, semblent plus sensibles aux contraintes du système carcéral de sorte que les tensions institutionnelles amplifieront leurs propres tensions personnelles. Ils sont dès lors susceptibles de souffrir davantage des dysfonctionnements carcéraux et d’être confrontés à des ruminations désagréables desquels ils rencontreraient des difficultés à s’extraire. Il est dès lors probable qu’un profil de personnalité N^-^E^+^ constitue un terrain protecteur au travail psychologique en prison. @mccrae2016inventaires [p. 3] qualifient les personnes qui présentent ce style d'*optimistes* et proposent une description de ce style en ces termes :
+
+> Ces personnes sont généralement joyeuses car elles ont tendance à ne pas se laisser troubler par les problèmes et savent la plupart du temps apprécier les plaisirs de la vie. Lorsqu'elles sont frustrées ou déçues, elles peuvent éventuellement céder à la colère ou à la tristesse, des sentiments qu'elles peuvent néanmoins laisser rapidement de côté. Elles préfèrent souvent se concentrer sur l'avenir, qu'elles ont hâte de découvrir. Elles sont généralement capables de savourer l'existence.
+
+Notons que les scores d'extraversion et de névrosisme ne sont pas toujours antinomiques : il y a moyen d'avoir des scores élevés ou bas simultanément à ces deux variables. En effet, l’approche du modèle de personnalité en cinq facteurs renvoie à une conception dimensionnelle et non catégorielle de la personnalité, ce qui induit qu'un individu présente les différentes dimensions avec un certain degré d'intensité
+
+Les résultats de cette étude invitent à penser que certains psychologues éprouvent plus de facilités que d'autres à travailler en milieu carcéral. Ainsi, il semble qu'une *extraversion* et une *stabilité émotionnelle* permettent de favoriser l'*assise professionnelle* (probablement grâce aux relations interpersonnelles, par exemple avec les collègues) et de résister plus facilement aux tensions propres à la prison. Il ne s'agit bien entendu pas d'attendre que les intervenants modifient leur personnalité mais plutôt d'avoir conscience qu'elle est susceptible d'avoir un impact sur le rapport qu'il entretient avec l'institution carcérale. Cette conscience permettrait dès lors d'être travaillée de manière plus explicite avec les autres membres de l'équipe.
+
+# Conclusion
+
+En conclusion, la présente recherche investigue, à l’aide d’une méthode quantitative, le domaine encore trop peu exploré du rapport entre la *personnalité* et le *vécu institutionnel* au sein d’une population dont la réalité professionnelle reste insuffisamment étudiée qu’est le psychologue au sein du milieu carcéral. Les principaux résultats mettent en exergue que les psychologues carcéraux représentent une population professionnelle aux traits de personnalité majoritairement positifs particulièrement marqués par la dimension de la Conscienciosité. Leur vécu professionnel est double et oscille entre une vécu positif marqué par la satisfaction relative à la qualité de leurs suivis, à leur identité professionnelle et aux principes déontologiques de ce cadre et un vécu négatif marqué par les contraintes et difficultés propres au milieu carcéral. La personnalité entretient un lien modéré avec ce vécu, principalement entre l’extraversion et le vécu positif, et entre le névrosisme et le vécu négatif. Bien que cette recherche présente plusieurs limites relatives au caractère restreint de l’échantillonnage, l’utilisation d’une mesure auto-construite du vécu institutionnel ou encore l’absence de variables contrôles telles que la désirabilité sociale, ces résultats ont une implication aussi bien pour le recrutement et la formation des professionnels aux aspects psycho-organisationnels. Ces derniers aspects visent à articuler les outils de prévention de la santé psychologique et l'organisation du travail (style de management, poids de tâches administratives, etc.). Cette étude permet donc d'envisager des recommandations importantes en termes de cible d’attention ou de soutien concernant la santé psychologique et organisationnelle des professionnels du monde carcéral.
+
+```{r echo=FALSE}
+# scatterplot(insti_agreable ~ E, data=psyprison)
+# scatterplot(insti_desagreable ~ N, data=psyprison)
+```

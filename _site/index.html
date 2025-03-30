@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Psychologie et délinquance</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-38d94b3cac77cd3e685c79e69241b0ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-86ef44f33eb6204f81838d6c66abc062.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="alternate" type="application/rss+xml" title="Psychologie et délinquance" href="index.xml" data-external="1"></head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./benjaminthiry.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Psychologie et délinquance</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Qui écrit ce blog ?</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://tchafia.be/@ouriagan"> <i class="bi bi-mastodon" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ouriagan/blog"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="./index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Psychologie et délinquance</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Catégories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Tous <span class="quarto-category-count">(16)</span></div><div class="category" data-category="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM=">analyses statistiques <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Y3JpbWlub2xvZ2ll">criminologie <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZmlsbQ==">film <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aGlzdG9yaXF1ZQ==">historique <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50ZXJuZW1lbnQ=">internement <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJpc29u">prison <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cHN5Y2hvbG9naWU=">psychologie <span class="quarto-category-count">(5)</span></div><div class="category" data-category="JUMzJUE5diVDMyVBOW5lbWVudA==">événement <span class="quarto-category-count">(1)</span></div></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="ZmlsbQ==" data-listing-date-sort="1714773600000" data-listing-file-modified-sort="1742750067228" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="431">
+<div class="thumbnail">
+<p><a href="./posts/2024-05-04-bandeacorneille/index.html" class="no-external"></a></p><a href="./posts/2024-05-04-bandeacorneille/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2024-05-04-bandeacorneille/bandeacorneille.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2024-05-04-bandeacorneille/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-05-04-bandeacorneille/index.html" class="no-external">La bande à Corneille, place des adolescents de quartiers populaires bruxellois en 1973</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-05-04-bandeacorneille/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ZmlsbQ=='); return false;">
+film
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-05-04-bandeacorneille/index.html" class="no-external">Un reportage issu des archives de la télévision belge de 1973 permet d’illustrer l’intérêt des adolescents à se rassembler entre pairs, à se sentir valorisés dans leur groupe d’appartenance et à envisager être en conflit avec les autres groupes de la société. Ces derniers font l’expérience de l’irritation mais aussi d’une tolérance bienveillante susceptible de permettre aux adolescents de poursuivre leur processus de construction identitaire.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-05-04-bandeacorneille/index.html" class="no-external">
+<div class="listing-date">
+4 mai 2024
+</div>
+<div class="listing-author">
+Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Y3JpbWlub2xvZ2llJTJDYW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM=" data-listing-date-sort="1700694000000" data-listing-file-modified-sort="1743259645428" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="35" data-listing-word-count-sort="6802">
+<div class="thumbnail">
+<p><a href="./posts/2023-11-13-graviteinfractions/index.html" class="no-external"></a></p><a href="./posts/2023-11-13-graviteinfractions/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-11-13-graviteinfractions/index_files/figure-html/fig-graviteSE-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-11-13-graviteinfractions/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-11-13-graviteinfractions/index.html" class="no-external">Perception de la gravité d’infractions et propositions de peines par un échantillon francophone en regard de la proposition de réforme du Code pénal belge</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-11-13-graviteinfractions/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Y3JpbWlub2xvZ2ll'); return false;">
+criminologie
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-11-13-graviteinfractions/index.html" class="no-external">Malgré les évolutions sociales et pénologiques, le code pénal belge est resté relativement inchangé depuis 1867. Des parlementaires ont proposé une réforme dans laquelle les peines sont classées sur une échelle à huit niveaux, selon la gravité de l’infraction. Cette recherche vise à percevoir la manière dont 275 individus tout venant classent intuitivement la gravité des infractions et leur attribuent des peines. Les résultats montrent que les participants tendent à classer les faits en trois catégories : atteinte aux biens, atteinte aux personnes et absence d’atteinte aux biens ou aux personnes. Les résultats ne rejoignent pas exactement la typologie de peines proposée par les parlementaires et invitent à penser que l’atteinte aux personnes constitue un pivot symbolique justifiant une peine plus sévère.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-11-13-graviteinfractions/index.html" class="no-external">
+<div class="listing-date">
+23 nov. 2023
+</div>
+<div class="listing-author">
+Benjamin Thiry, Solange Installé
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXMlMkNwc3ljaG9sb2dpZQ==" data-listing-date-sort="1691964000000" data-listing-file-modified-sort="1743342215848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3878">
+<div class="thumbnail">
+<p><a href="./posts/2023-08-14-personnalitealliancetherapeutique/index.html" class="no-external"></a></p><a href="./posts/2023-08-14-personnalitealliancetherapeutique/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-08-14-personnalitealliancetherapeutique/index_files/figure-html/fig-taballiancepsy-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-08-14-personnalitealliancetherapeutique/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-08-14-personnalitealliancetherapeutique/index.html" class="no-external">Comparaison d’un score d’alliance thérapeutique basé sur le modèle de personnalité en cinq facteurs et l’alliance thérapeutique évaluée par des psychologues</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-08-14-personnalitealliancetherapeutique/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cHN5Y2hvbG9naWU='); return false;">
+psychologie
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-08-14-personnalitealliancetherapeutique/index.html" class="no-external">L’alliance thérapeutique peut se définir comme la collaboration mutuelle entre le patient et le professionnel dans le but d’accomplir des objectifs fixés. Elle est considérée comme un facteur commun à toutes les prises en charges thérapeutiques. Une étude précédente proposait d’estimer la qualité de l’alliance thérapeutique sur base des scores d’Ouverture, d’Agréabilité et de Consciene du modèle de personnalité en cinq facteurs. Nous comparons ici le total de ce score avec l’évaluation de l’alliance thérapeutique et d’une indication de psychothérapie pour 88 personnes, principalement incarcérées. Les résultats montrent que le score n’est pas corrélé significativement avec les deux variables cliniques. Par contre, la variable N6 (Vulnérabilité au stress) semble corrélée significativement à la qualité de l’alliance thérapeutique et la variable N3 (Dépression) à l’indication d’une prise en charge psychothérapeutique. Les cliniciens sont susceptibles de construire un idéal intellectuel de l’alliance thérapeutique mais ce sont des variables plus émotionnelles qui semblent liées à sa qualité dans l’exercice clinique.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-08-14-personnalitealliancetherapeutique/index.html" class="no-external">
+<div class="listing-date">
+14 août 2023
+</div>
+<div class="listing-author">
+Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM=" data-listing-date-sort="1682719200000" data-listing-file-modified-sort="1743247649149" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1629">
+<div class="thumbnail">
+<p><a href="./posts/2023-04-29-szondivgpekp/index.html" class="no-external"></a></p><a href="./posts/2023-04-29-szondivgpekp/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-04-29-szondivgpekp/index_files/figure-html/fig-tensionsvgp-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-04-29-szondivgpekp/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-04-29-szondivgpekp/index.html" class="no-external">Comparaison statistique des tensions entre l’avant et l’arrière-plan du test de Szondi</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-04-29-szondivgpekp/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-04-29-szondivgpekp/index.html" class="no-external">Le test de Szondi est un test projectif qui se compose de deux plans : l’avant-plan (VGP) et l’arrière-plan (EKP). Sur un échantillon de 457 détenus, nous étudions les tensions obtenues aux deux plans et les corrélations entre elles. Les choix opérés à l’avant-plan et à l’arrière-plan sont positivement corrélés. Les corrélations les plus élevées concernent les facteurs s et d.&nbsp;Les corrélations les plus faibles concernent les facteur e, k et m.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-04-29-szondivgpekp/index.html" class="no-external">
+<div class="listing-date">
+29 avr. 2023
+</div>
+<div class="listing-author">
+Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM=" data-listing-date-sort="1680904800000" data-listing-file-modified-sort="1743246747044" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="204" data-listing-word-count-sort="40674">
+<div class="thumbnail">
+<p><a href="./posts/2023-04-08-szondicodes/index.html" class="no-external"></a></p><a href="./posts/2023-04-08-szondicodes/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-04-08-szondicodes/index_files/figure-html/onehcodes-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-04-08-szondicodes/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-04-08-szondicodes/index.html" class="no-external">Fréquences des codes pour le test de Szondi sur un échantillon carcéral belge</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-04-08-szondicodes/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-04-08-szondicodes/index.html" class="no-external">Le test de Szondi est un test projectif qui vise à révéler le fonctionnement pulsionnel d’une personne. Nous proposons ici des normes sous forme de fréquences de codes pour chaque facteur à chaque passation du test de Szondi sur un échantillon de 457 détenus belges ainsi que sur l’ensemble des dix passations (N = 4570). Les codes les plus fréquents sont les suivants : h+, s-, e0, hy-, k-, p-, d0, m+. Nous ne proposons aucune interprétation psychologique de ce profil dans l’attente d’études évaluant son éventuelle validité externe.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-04-08-szondicodes/index.html" class="no-external">
+<div class="listing-date">
+8 avr. 2023
+</div>
+<div class="listing-author">
+Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXMlMkNwc3ljaG9sb2dpZQ==" data-listing-date-sort="1677106800000" data-listing-file-modified-sort="1743337792452" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4876">
+<div class="thumbnail">
+<p><a href="./posts/2023-02-26-delinquancefivefactormodel/index.html" class="no-external"></a></p><a href="./posts/2023-02-26-delinquancefivefactormodel/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-02-26-delinquancefivefactormodel/schooldarksky.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-02-26-delinquancefivefactormodel/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-02-26-delinquancefivefactormodel/index.html" class="no-external">Comparaison de variables de délinquance auto-révélée avec des variables de personnalité selon le modèle en cinq facteurs auprès d’adolescents</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-02-26-delinquancefivefactormodel/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cHN5Y2hvbG9naWU='); return false;">
+psychologie
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-02-26-delinquancefivefactormodel/index.html" class="no-external">Notre étude propose d’approfondir le lien entre certains comportements problématiques ou délinquants et la personnalité de leur auteur. 112 adolescents de 15 ou 16 ans ont répondu au NEO PI-R, qui est un questionnaire de personnalité, ainsi qu’à un questionnaire de délinquance auto-révélé. Les comportements problématiques présentent des corrélations significatives avec les variables A, A2, A4, C, C2, C6, antisocialité et psychopathie du NEO PI-R. Les comportements délinquants présentent des corrélations significatives avec les variables E2, A, A2, A3, A4, A5, C, C1, C2, C3, C5, C6, antisocialité et psychopathie du NEO PI-R. Un modèle économique propose de prédire les comportements délinquants à partir de l’équation de régression suivante : E3 – C3 – A2 – E3xA2 (R = .43, p &lt; .001). Ces résultats permettent de soutenir l’idée qu’il existe donc au moins trois sphères psychologiques en lien avec la tendance antisociale (morale, relationnelle et comportementale) et qu’il s’agit d’un concept complexe. Nous discutons ces résultats en regard de certaines théories criminologiques classiques.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-02-26-delinquancefivefactormodel/index.html" class="no-external">
+<div class="listing-date">
+23 févr. 2023
+</div>
+<div class="listing-author">
+Benjamin Thiry, Stéphanie Ponchaux
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXMlMkNwc3ljaG9sb2dpZQ==" data-listing-date-sort="1676156400000" data-listing-file-modified-sort="1743327644239" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2443">
+<div class="thumbnail">
+<p><a href="./posts/2023-02-12-ipipneo300fr/index.html" class="no-external"></a></p><a href="./posts/2023-02-12-ipipneo300fr/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-02-12-ipipneo300fr/ipipneo300.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-02-12-ipipneo300fr/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-02-12-ipipneo300fr/index.html" class="no-external">IPIP NEO 300, adapation française européenne</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-02-12-ipipneo300fr/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cHN5Y2hvbG9naWU='); return false;">
+psychologie
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-02-12-ipipneo300fr/index.html" class="no-external">L’International Personality Item Pool (IPIP) propose un questionnaire de personnalité basé sur le modèle en cinq facteurs appelé IPIP NEO 300. La version originale a été créée en langue anglaise et il existe une traduction en français canadien. Notre étude propose une adaptation en français européen pour ce questionnaire. Parmi les 300 items, 26 items ont été considérés comme potentiellement problématiques et ont été soumis à des étudiants de langue maternelle française en dernière année de master en traduction (N = 20). Nous avons retenu les traductions les plus majoritaires afin de proposer une version française adaptée à la population francophone européenne.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-02-12-ipipneo300fr/index.html" class="no-external">
+<div class="listing-date">
+12 févr. 2023
+</div>
+<div class="listing-author">
+Benjamin Thiry, Maëva Piolti
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXMlMkNwcmlzb24lMkNwc3ljaG9sb2dpZQ==" data-listing-date-sort="1675810800000" data-listing-file-modified-sort="1743326344531" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4979">
+<div class="thumbnail">
+<p><a href="./posts/2023-02-08-psychologuesprison/index.html" class="no-external"></a></p><a href="./posts/2023-02-08-psychologuesprison/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-02-08-psychologuesprison/index_files/figure-html/fig-contextepersocor-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-02-08-psychologuesprison/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-02-08-psychologuesprison/index.html" class="no-external">Être psychologue en prison : liens entre vécus institutionnels et personnalité</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-02-08-psychologuesprison/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cHJpc29u'); return false;">
+prison
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cHN5Y2hvbG9naWU='); return false;">
+psychologie
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-02-08-psychologuesprison/index.html" class="no-external">Les psychologues qui travaillent en prison tentent d’exercer des actions bienveillantes dans un milieu historiquement punitif suscitant des représentations négatives. Cette étude vise à évaluer le rapport que ces psychologues entretiennent avec l’institution carcérale et le lien entre leur personnalité et ce vécu institutionnel. Cinquante-cinq psychologues issus du milieu pénitentiaire en France ont répondu à un questionnaire diffusé sur internet. Les résultats indiquent que les psychologues carcéraux présentent des traits de personnalité moins agréables (d = -.62) et plus consciencieux (d = 1.13) que l’échantillon normatif du BFI-10-fr. Ils évoquent deux rapports à la prison : un positif respectueux de leur déontologie et un autre négatif influencé par les contraintes carcérales. L’extraversion des psychologues est positivement corrélée (r = .36) avec le vécu institutionnel positif alors que le névrosisme est positivement corrélé (r = .36) avec le vécu institutionnel négatif. Il semble donc exister des caractéristiques psychologiques qui facilitent le travail en prison.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-02-08-psychologuesprison/index.html" class="no-external">
+<div class="listing-date">
+8 févr. 2023
+</div>
+<div class="listing-author">
+Benjamin Thiry, Valentine Waymel, Emilie Telle
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="aW50ZXJuZW1lbnQ=" data-listing-date-sort="1674860400000" data-listing-file-modified-sort="1743336615339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="32" data-listing-word-count-sort="6372">
+<div class="thumbnail">
+<p><a href="./posts/2023-01-28-vecuintervenantspsychosociaux/index.html" class="no-external"></a></p><a href="./posts/2023-01-28-vecuintervenantspsychosociaux/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-01-28-vecuintervenantspsychosociaux/internement.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-01-28-vecuintervenantspsychosociaux/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-01-28-vecuintervenantspsychosociaux/index.html" class="no-external">Vécu des intervenants psychosociaux en équipe mobile pour internés en Belgique, approche phénoménologique</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-01-28-vecuintervenantspsychosociaux/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aW50ZXJuZW1lbnQ='); return false;">
+internement
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-01-28-vecuintervenantspsychosociaux/index.html" class="no-external">En Belgique, certains malades mentaux ayant commis un crime ou un délit font l’objet d’une mesure d’internement pénale. Souvent en prison ou en hôpital psychiatrique, ces patients pourraient retrouver une place dans la société civile s’ils bénéficient de soins adaptés. Les équipes mobiles ont été créées pour les aider à trouver ces soins. Notre étude s’intéresse au vécu des intervenants psychosociaux travaillant au sein d’une équipe mobile dédiée au public des internés, au moyen d’une méthode d’analyse phénoménologique et interprétative (IPA) qui vise à mettre en évidence les thématiques émanant du discours des membres de notre échantillon ainsi qu’à mettre en exergue le sens qu’ils attribuent à celles-ci. Cinq thèmes sont apparus : le rapport à l’employeur, l’instumentalisation de la demande, la mission entre soin et judiciaire, le mandat très vaste et le rapport avec le réseau de soins. L’inconfort des professionnels semble nécessiter de repenser le sens qu’ils peuvent donner à leurs actions.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-01-28-vecuintervenantspsychosociaux/index.html" class="no-external">
+<div class="listing-date">
+28 janv. 2023
+</div>
+<div class="listing-author">
+Jérémy Fromont, Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="cHN5Y2hvbG9naWUlMkNhbmFseXNlcyUyMHN0YXRpc3RpcXVlcw==" data-listing-date-sort="1672095600000" data-listing-file-modified-sort="1743328229967" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="119">
+<div class="thumbnail">
+<p><a href="./posts/2022-12-27-therapist-response-questionnaire-version-franaise/index.html" class="no-external"></a></p><a href="./posts/2022-12-27-therapist-response-questionnaire-version-franaise/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2022-12-27-therapist-response-questionnaire-version-franaise/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-12-27-therapist-response-questionnaire-version-franaise/index.html" class="no-external">Questionnaire de réponse émotionnelle du thérapeute (TRQ version française)</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2022-12-27-therapist-response-questionnaire-version-franaise/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('cHN5Y2hvbG9naWU='); return false;">
+psychologie
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2022-12-27-therapist-response-questionnaire-version-franaise/index.html" class="no-external">Le Questionnaire de réponse émotionnelle du thérapeute est la traduction française du Response Questionnaire proposé par Betan, Heim, Zittel, Conklin, &amp; Westen (2005). Il se compose de 79 items qui évaluent les ressentis, les pensées et les comportements du clinicien. Les cinq auteurs (cliniciens francophones) ont traduit chaque item de l’anglais au français de manière indépendante. Le premier auteur a comparé les cinq traductions. Les traductions unanimes ont été d’emblée acceptées. Les autres traductions ont fait l’objet de discussions menant à un consensus majoritaire pour chaque item.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-12-27-therapist-response-questionnaire-version-franaise/index.html" class="no-external">
+<div class="listing-date">
+27 déc. 2022
+</div>
+<div class="listing-author">
+Louis De Page, Benjamin Thiry, Marie Boulanger, Bénédicte de Villers, Xavier Saloppé
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM=" data-listing-date-sort="1663797600000" data-listing-file-modified-sort="1743259624148" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2638">
+<div class="thumbnail">
+<p><a href="./posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index.html" class="no-external"></a></p><a href="./posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index_files/figure-html/fig-alliance1-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index.html" class="no-external">Qualités psychométriques des indices d’alliance thérapeutique du NEO PI</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index.html" class="no-external">A l’occasion d’une étude précédente (Thiry, 2020), nous avons proposé trois indices susceptibles de prévoir une bonne ou une mauvaise alliance thérapeutique sur base des variables du modèle de personnalité en cinq facteurs. Nous proposons ici les caractéristiques psychométriques de ces trois indices pour un échantillon de 720 personnes (tout venant, détenus, adolescents, étudiants et patients). Les trois indices présentent une forte redondance. Nous proposons de ne retenir que celui qui repose sur trois domaines de personnalité (O+A+C). Seuls l’âge et le sexe semblent exercer une influence sur cet indice. Selon nous, cet indice dépasse le cadre thérapeutique car il décrit un rapport au monde extérieur, aux autres et aux actions bien plus global. Nous posons l’hypothèse que ce rapport répond consciemment ou non aux idéaux professionnels des cliniciens.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index.html" class="no-external">
+<div class="listing-date">
+22 sept. 2022
+</div>
+<div class="listing-author">
+Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="JUMzJUE5diVDMyVBOW5lbWVudA==" data-listing-date-sort="1658786400000" data-listing-file-modified-sort="1742653715781" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="952">
+<div class="thumbnail">
+<p><a href="./posts/2022-07-26-dbut-dmeute-la-prison-de-forest/index.html" class="no-external"></a></p><a href="./posts/2022-07-26-dbut-dmeute-la-prison-de-forest/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2022-07-26-dbut-dmeute-la-prison-de-forest/prison_forest.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2022-07-26-dbut-dmeute-la-prison-de-forest/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-07-26-dbut-dmeute-la-prison-de-forest/index.html" class="no-external">Début d’émeute à la prison de Forest</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2022-07-26-dbut-dmeute-la-prison-de-forest/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('JUMzJUE5diVDMyVBOW5lbWVudA=='); return false;">
+événement
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2022-07-26-dbut-dmeute-la-prison-de-forest/index.html" class="no-external">Le 26 juillet 2022, les détenus de la prison de Forest (Bruxelles) se sont barricadés dans l’aile B afin de protester. Quel était l’objet de leur mécontentement ? Comment mieux comprendre la situation ?</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-07-26-dbut-dmeute-la-prison-de-forest/index.html" class="no-external">
+<div class="listing-date">
+26 juil. 2022
+</div>
+<div class="listing-author">
+Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM=" data-listing-date-sort="1604185200000" data-listing-file-modified-sort="1743338387577" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="32" data-listing-word-count-sort="6389">
+<div class="thumbnail">
+<p><a href="./posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model/index.html" class="no-external"></a></p><a href="./posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model/index.html" class="no-external">Assessing the Therapeutic Alliance with the Five-Factor Model and the NEO PI: an Expert-Based Approach</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model/index.html" class="no-external">In psychotherapy, therapeutic alliance is an integrative factor influencing the effectiveness of treatment. This alliance depends on the bond between therapist and patient. Objectives: this study investigates patient’s psychological variables likely to facilitate or hamper a psychotherapeutic process. Methods: we asked 38 clinicians to assess the importance of each variable of the Five-Factor Model supposed to facilitate or hamper therapeutic alliance. Results: results indicate that high Openness, Agreeableness and Conscientiousness are perceived as favourable to therapeutic alliance. Beyond these results, we preferably focus on facets of the NEO PI to assess their relevance for the facilitation or hindrance of therapeutic alliance. According clinicians, four facets are supposed to affect positively therapeutic alliance: A2 (Straightforwardness), O3 (Feelings), C5 (Self-Discipline) and O5 (Ideas). Three facets were supposed to have a negative effect on therapeutic alliance: low scores for A5 (Modesty), A2 (Straightforwardness) and A1 (Trust). Conclusion: on this basis, we propose three experimental scores investigating the proneness to access therapy for the NEO PI. </a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model/index.html" class="no-external">
+<div class="listing-date">
+1 nov. 2020
+</div>
+<div class="listing-author">
+Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-categories="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM=" data-listing-date-sort="1596232800000" data-listing-file-modified-sort="1743338485241" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="47" data-listing-word-count-sort="9203">
+<div class="thumbnail">
+<p><a href="./posts/2023-04-01-szondinorms/index.html" class="no-external"></a></p><a href="./posts/2023-04-01-szondinorms/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2023-04-01-szondinorms/szondischema.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2023-04-01-szondinorms/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-04-01-szondinorms/index.html" class="no-external">Norms for the Szondi Test on a prison sample</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-04-01-szondinorms/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-04-01-szondinorms/index.html" class="no-external">Though the Szondi test has been used by psychologists and psychiatrists for nearly seventy years, it still lacks scientific evidence relating to its reliability and validity. Its professional use is thus questionable. For this study, we collected Szondi test protocols for 433 inmates detained in Belgian prisons. We propose an accurate scoring system coherent with classical approach allowing thorough statistical analysis. We present descriptive statistics for each Szondi variables, study the links between the more important ones and the effect of age, sex and legal status on them. This study opens the gate for validity studies compatible with actual psychometrical methods.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-04-01-szondinorms/index.html" class="no-external">
+<div class="listing-date">
+1 août 2020
+</div>
+<div class="listing-author">
+Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-categories="aGlzdG9yaXF1ZSUyQ3ByaXNvbg==" data-listing-date-sort="1577833200000" data-listing-file-modified-sort="1743346050500" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="57" data-listing-word-count-sort="11397">
+<div class="thumbnail">
+<p><a href="./posts/2020-01-01-historiquesps2020/index.html" class="no-external"></a></p><a href="./posts/2020-01-01-historiquesps2020/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2020-01-01-historiquesps2020/vervaeck.png" alt="Louis Vervaeck"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2020-01-01-historiquesps2020/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-01-01-historiquesps2020/index.html" class="no-external">Évolution de la mission d’évaluation du service psychosocial dans les prisons belges</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2020-01-01-historiquesps2020/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aGlzdG9yaXF1ZQ=='); return false;">
+historique
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cHJpc29u'); return false;">
+prison
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2020-01-01-historiquesps2020/index.html" class="no-external">Né à l’aube du vingtième siècle, le Service d’Anthropologie Pénitentiaire (SAP) des prisons belges se fixait comme mission d’étudier scientifiquement le phénomène de la délinquance. Au fil des décennies et des événements politiques du pays, il modifie ses méthodologies et ses référents théoriques. Renommé service psychosocial (SPS) en 1998 et service expertise psychosociale en 2013, il effectue actuellement l’évaluation psychiatrique, psychologique et sociale continue de tous les détenus admissibles à une libération anticipée. Notre article retrace l’historique de ce service de manière approfondie. Trois pôles le tiraillent de manière récurrente : la science, l’humanisme et les préoccupations sécuritaires. L’approche historique permet de saisir les enjeux méthodologiques, éthiques et politiques de l’expertise psycho-médico-sociale dans le domaine pénal.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-01-01-historiquesps2020/index.html" class="no-external">
+<div class="listing-date">
+1 janv. 2020
+</div>
+<div class="listing-author">
+Christine Dubois, Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-categories="YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM=" data-listing-date-sort="1341093600000" data-listing-file-modified-sort="1743259632928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="54" data-listing-word-count-sort="10631">
+<div class="thumbnail">
+<p><a href="./posts/2021-08-03-personality-inmates/index.html" class="no-external"></a></p><a href="./posts/2021-08-03-personality-inmates/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2021-08-03-personality-inmates/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2021-08-03-personality-inmates/index.html" class="no-external">An Assessment of Personality Disorders with the Five-Factor Model among Belgian Inmates</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2021-08-03-personality-inmates/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzZXMlMjBzdGF0aXN0aXF1ZXM='); return false;">
+analyses statistiques
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2021-08-03-personality-inmates/index.html" class="no-external">Many international studies report a high prevalence of personality disorders among inmates on the basis of (semi) - structured diagnostic interviews. The present study proposes a self-reported evaluation of personality disorders using the NEO PI-R. The sample consists of 297 male and 26 female inmates (N = 323) who were psychologically assessed. The analysis of the five psychological domains shows that the French-speaking Belgian inmates are as stable, as extroverted, more closed, more agreeable and more conscientious than the normative sample. The NEO PI-R facets are also analysed. The mean Cohen’s d (.26) is small. Two personality disorders have medium effect sizes: obsessive compulsive personality disorder (high) and histrionic personality (low). Small effect sizes exist for antisocial personality (low), psychopathy (low), narcissistic personality (low), schizoid personality (high) and borderline personality (low). In our view, the context of the assessment can partially explain these results but not entirely. The results do not confirm previous studies and question the high rates of psychiatric prevalence in prison.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2021-08-03-personality-inmates/index.html" class="no-external">
+<div class="listing-date">
+1 juil. 2012
+</div>
+<div class="listing-author">
+Benjamin Thiry
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+Aucun article correspondant
+</div>
+</div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/benjaminthiry\.netlify\.app\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

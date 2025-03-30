@@ -1,0 +1,4636 @@
+---
+title: "Fréquences des codes pour le test de Szondi sur un échantillon carcéral belge"
+description: "Le test de Szondi est un test projectif qui vise à révéler le fonctionnement pulsionnel d'une personne. Nous proposons ici des normes sous forme de fréquences de codes pour chaque facteur à chaque passation du test de Szondi sur un échantillon de 457 détenus belges ainsi que sur l'ensemble des dix passations (N = 4570). Les codes les plus fréquents sont les suivants : h+, s-, e0, hy-, k-, p-, d0, m+. Nous ne proposons aucune interprétation psychologique de ce profil dans l'attente d'études évaluant son éventuelle validité externe."
+author:
+  - name: Benjamin Thiry
+    orcid_id: 0000-0001-5864-8369
+    website: https://benjaminthiry.netlify.app/
+date: "2023-04-08"
+categories: [analyses statistiques]
+bibliography: szondicodes.bib
+lang: fr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(kableExtra)
+library(ggplot2)
+library(readxl)
+szondisynthese <- read_excel("/home/ouriagan/OneDrive/szondi/szondisynthese.xlsx") 
+attach(szondisynthese)
+#N 
+ntotal <- length(code) 
+#age 
+meanage <- round(mean(age, na.rm = TRUE), digit = 2) 
+sdage <- round(sd(age, na.rm = TRUE), digit = 2) 
+minage <- round(min(age, na.rm = TRUE), digit = 2) 
+maxage <- round(max(age, na.rm = TRUE), digit = 2) 
+
+#sex 
+nofmen <-length(which(sex == -1))  
+nofmenpercentage <- round(100*(length(which(sex == -1))/length(sex)), digit = 0) 
+nofwomen <- length(which(sex == 1))  
+nofwomenpercentage <- round(100*(length(which(sex == 1))/length(sex)), digit = 0) 
+```
+
+# Introduction
+
+Le test de Szondi est un test projectif qui vise à révéler le fonctionnement pulsionnel d'une personne en référence à la *psychologie du choix* de @szondi1967psychologie. Un [article précédent](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/) [@thiry2020norms] visait à proposer des normes pour les principales variables du test de Szondi. A cette occasion, nous avions souhaité rendre compte des phénomènes de tension et de décharge sans nous référer aux codes classiquement utilisés par les utilisateurs du test tels que +, -, 0, ±, etc. En effet, nous estimions que ces codes amenaient à une perte d'information car certains renvoient à plusieurs choix faits par les personnes évaluées. Les [tableaux 4](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/#table:tablevgpdesc), [6](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/#table:tablevectodesc) et [7](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/#table:tabledrivedesc) de notre article proposaient déjà les normes pour tous les facteurs des dix passations du test de Szondi. Ces résultats chiffrés ont toutefois comme désavantage d'être potentiellement déconcertants pour les utilisateurs du test. Par conséquent, nous avons convertis les choix des participants en codes afin d'en calculer les fréquences pour chaque passation du test. Nous nous sommes intéressés aux choix de l'avant-plan (VGP) [^1] afin de ne pas alourdir la présentation des résultats. Une étude similaire peut être envisagée pour l'arrière-plan dans un autre temps. L'étude des liens entre les deux plans nécessiterait une étude distincte. Cet article propose dès lors des nomes sous forme de fréquences de codes.
+
+[^1]: de l'allemand *vordergrundprofil* opposé au profil appelé complémentaire, expérimental ou *experimentelles komplementäres hintergrundprofil* (EKP)
+
+# Méthodologie
+
+La récolte des données est similaire à celle de l'[article précédent](https://benjaminthiry.netlify.app/posts/2023-04-01-szondinorms/) [@thiry2020norms]. Le nombre de participants a augmenté entre-temps.
+
+## Participants
+
+Les participants sont `r ntotal` détenu(e)s belges admissibles à une libération anticipée en cours d'évaluation psychosociale. Le / la psychologue en charge de l'évaluation a administré le test de Szondi à dix reprises. L'échantillon se compose de `r nofmen` (`r nofmenpercentage`%) hommes et de `r nofwomen` (`r nofwomenpercentage`%) femmes. L'âge moyen est égal à `r meanage` (ET = `r sdage`, min = `r minage`, max = `r maxage`) ans.
+
+## Traitement des données
+
+Pour chaque passation du test de Szondi, nous avons retenu le *nombre de photographies* choisies comme *sympathiques* ou *antipathiques* à la première présentation (c'est-à-dire à l'avant-plan, VGP). Il existe six photographies pour chaque facteurs. Un participant pourrait considérer les six photographies comme sympathiques ou sympathiques mais pourrait également en considérer certaines comme sympathiques et d'autres comme antipathiques. Il existe donc plusieurs configurations de choix. Les codes découlent de ces configurations. La grille de cotation est reprise dans le tableau [1](#table:systemecodes){reference-type="ref" reference="table:systemecodes"}.
+
+| Sympathiques | Antipathiques | Code |
+|:------------:|:-------------:|:----:|
+|      0       |       0       |  0   |
+|      0       |       1       |  0   |
+|      1       |       0       |  0   |
+|      1       |       1       |  0   |
+|      2       |       2       |  ±   |
+|      3       |       2       |  ±   |
+|      3       |       2       |  ±   |
+|      2       |       0       |  \+  |
+|      2       |       1       |  \+  |
+|      3       |       0       |  \+  |
+|      3       |       1       |  \+  |
+|      0       |       2       |  \-  |
+|      1       |       2       |  \-  |
+|      0       |       3       |  \-  |
+|      1       |       3       |  \-  |
+|      4       |       0       |  +!  |
+|      4       |       1       |  +!  |
+|      0       |       4       |  -!  |
+|      1       |       4       |  -!  |
+|      5       |       0       | +!!  |
+|      5       |       1       | +!!  |
+|      0       |       5       | -!!  |
+|      1       |       5       | -!!  |
+|      6       |       0       | +!!! |
+|      0       |       6       | -!!! |
+|      3       |       3       |  ±!  |
+|      4       |       2       |  ±!  |
+|      2       |       4       |  ±!  |
+
+: codes szondi en fonction du nombre de photographies considées comme sympathiques ou antipathiques {#tbl-systemecodes}
+
+
+Par exemple, si un participant a choisi 3 photographies h comme sympathiques et 1 photographie h comme antipathique, le code correspondant est **h+**. Si un participant a choisi 2 photographies h comme sympathiques et 4 photographie h comme antipathiques, le code correspondant est **h±!**.
+
+# Résultats
+
+Les graphiques suivants montrent les fréquences (en pourcentages) de chaque code szondi (+, +!, +!!, +!!!, -, -!, -!!, -!!!, 0, ±, ±!) pour chaque facteur (h, s, e, hy, k, p, d, m), pour chaque passation (de 1 à 10). Un onzième tableau propose la somme cumulée des choix aux dix passations (*N* = `r ntotal*10`).
+
+## h
+
+```{r onehcount, include=FALSE}
+codeoneh.df <- data.frame(onehm,onehp)
+codeoneh.df <- codeoneh.df %>% mutate(onehcode = case_when(onehp+onehm <= 1 ~ '0',
+          onehp == 2 & onehm == 2 ~ '±',
+			    onehp == 1 & onehm == 1 ~ '0',
+          onehp == 2 & onehm == 3 ~ '±',
+			    onehp == 3 & onehm == 2 ~ '±',
+			    onehp == 2 & onehm == 0 ~ '+',
+			    onehp == 2 & onehm == 1 ~ '+',
+			    onehp == 3 & onehm == 0 ~ '+',
+			    onehp == 3 & onehm == 1 ~ '+',
+			    onehp == 0 & onehm == 2 ~ '-',
+			    onehp == 1 & onehm == 2 ~ '-',
+			    onehp == 0 & onehm == 3 ~ '-',
+			    onehp == 1 & onehm == 3 ~ '-',
+			    onehp == 4 & onehm == 0 ~ '+!',
+			    onehp == 4 & onehm == 1 ~ '+!',
+			    onehp == 0 & onehm == 4 ~ '-!',
+			    onehp == 1 & onehm == 4 ~ '-!',
+		      onehp == 5 & onehm == 0 ~ '+!!',
+			    onehp == 5 & onehm == 1 ~ '+!!',
+			    onehp == 0 & onehm == 5 ~ '-!!',
+			    onehp == 1 & onehm == 5 ~ '-!!',
+			    onehp == 6 & onehm == 0 ~ '+!!!',
+			    onehp == 6 & onehm == 1 ~ '+!!!',
+			    onehp == 0 & onehm == 6 ~ '-!!!',
+			    onehp == 1 & onehm == 6 ~ '-!!!',
+			    onehp == 3 & onehm == 3 ~ '±!',
+			    onehp == 4 & onehm == 2 ~ '±!',
+			    onehp == 2 & onehm == 4 ~ '±!'
+                            ))
+
+onehcodetable <- table(codeoneh.df$onehcode)
+onehcodeproptable.df <- data.frame(prop.table(onehcodetable))
+lengthoneh <- length(onehm)
+lengthonehn <- paste("N =",lengthoneh)
+onehcodepercent.df <- data.frame (Code  = onehcodeproptable.df$Var1, Fréquence=round(onehcodeproptable.df$Freq, 4)*100)
+```
+
+### h : passation 1
+
+```{r onehcodes, echo=FALSE}
+ggplot(onehcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour oneh") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthonehn)+
+  xlab('Code')
+```
+
+```{r twohcount, include=FALSE}
+codetwoh.df <- data.frame(twohm,twohp)
+codetwoh.df <- codetwoh.df %>% mutate(twohcode = case_when(twohp+twohm <= 1 ~ '0',
+          twohp == 2 & twohm == 2 ~ '±',
+			    twohp == 1 & twohm == 1 ~ '0',
+          twohp == 2 & twohm == 3 ~ '±',
+			    twohp == 3 & twohm == 2 ~ '±',
+			    twohp == 2 & twohm == 0 ~ '+',
+			    twohp == 2 & twohm == 1 ~ '+',
+			    twohp == 3 & twohm == 0 ~ '+',
+			    twohp == 3 & twohm == 1 ~ '+',
+			    twohp == 0 & twohm == 2 ~ '-',
+			    twohp == 1 & twohm == 2 ~ '-',
+			    twohp == 0 & twohm == 3 ~ '-',
+			    twohp == 1 & twohm == 3 ~ '-',
+			    twohp == 4 & twohm == 0 ~ '+!',
+			    twohp == 4 & twohm == 1 ~ '+!',
+			    twohp == 0 & twohm == 4 ~ '-!',
+			    twohp == 1 & twohm == 4 ~ '-!',
+		      twohp == 5 & twohm == 0 ~ '+!!',
+			    twohp == 5 & twohm == 1 ~ '+!!',
+			    twohp == 0 & twohm == 5 ~ '-!!',
+			    twohp == 5 & twohm == 5 ~ '-!!',
+			    twohp == 6 & twohm == 0 ~ '+!!!',
+			    twohp == 6 & twohm == 1 ~ '+!!!',
+			    twohp == 0 & twohm == 6 ~ '-!!!',
+			    twohp == 1 & twohm == 6 ~ '-!!!',
+			    twohp == 3 & twohm == 3 ~ '±!',
+			    twohp == 4 & twohm == 2 ~ '±!',
+			    twohp == 2 & twohm == 4 ~ '±!'
+                            ))
+
+twohcodetable <- table(codetwoh.df$twohcode)
+twohcodeproptable.df <- data.frame(prop.table(twohcodetable))
+lengthtwoh <- length(twohm)
+lengthtwohn <- paste("N =",lengthtwoh)
+twohcodepercent.df <- data.frame (Code  = twohcodeproptable.df$Var1, Fréquence=round(twohcodeproptable.df$Freq, 4)*100)
+```
+
+### h : passation 2
+
+```{r twohcodes, echo=FALSE}
+ggplot(twohcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour twoh") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtwohn)+
+  xlab('Code')
+```
+
+```{r threehcount, include=FALSE}
+codethreeh.df <- data.frame(threehm,threehp)
+codethreeh.df <- codethreeh.df %>% mutate(threehcode = case_when(threehp+threehm <= 1 ~ '0',
+          threehp == 2 & threehm == 2 ~ '±',
+			    threehp == 1 & threehm == 1 ~ '0',
+          threehp == 2 & threehm == 3 ~ '±',
+			    threehp == 3 & threehm == 2 ~ '±',
+			    threehp == 2 & threehm == 0 ~ '+',
+			    threehp == 2 & threehm == 1 ~ '+',
+			    threehp == 3 & threehm == 0 ~ '+',
+			    threehp == 3 & threehm == 1 ~ '+',
+			    threehp == 0 & threehm == 2 ~ '-',
+			    threehp == 1 & threehm == 2 ~ '-',
+			    threehp == 0 & threehm == 3 ~ '-',
+			    threehp == 1 & threehm == 3 ~ '-',
+			    threehp == 4 & threehm == 0 ~ '+!',
+			    threehp == 4 & threehm == 1 ~ '+!',
+			    threehp == 0 & threehm == 4 ~ '-!',
+			    threehp == 1 & threehm == 4 ~ '-!',
+		      threehp == 5 & threehm == 0 ~ '+!!',
+			    threehp == 5 & threehm == 1 ~ '+!!',
+			    threehp == 0 & threehm == 5 ~ '-!!',
+			    threehp == 1 & threehm == 5 ~ '-!!',
+			    threehp == 6 & threehm == 0 ~ '+!!!',
+			    threehp == 6 & threehm == 1 ~ '+!!!',
+			    threehp == 0 & threehm == 6 ~ '-!!!',
+			    threehp == 1 & threehm == 6 ~ '-!!!',
+			    threehp == 3 & threehm == 3 ~ '±!',
+			    threehp == 4 & threehm == 2 ~ '±!',
+			    threehp == 2 & threehm == 4 ~ '±!'
+                            ))
+
+threehcodetable <- table(codethreeh.df$threehcode)
+threehcodeproptable.df <- data.frame(prop.table(threehcodetable))
+lengththreeh <- length(threehm)
+lengththreehn <- paste("N =",lengththreeh)
+threehcodepercent.df <- data.frame (Code  = threehcodeproptable.df$Var1, Fréquence=round(threehcodeproptable.df$Freq, 4)*100)
+```
+
+### h : passation 3
+
+```{r  threehcodes, echo=FALSE}
+ggplot(threehcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour threeh") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengththreehn)+
+  xlab('Code')
+```
+
+```{r fourhcount, include=FALSE}
+codefourh.df <- data.frame(fourhm,fourhp)
+codefourh.df <- codefourh.df %>% mutate(fourhcode = case_when(fourhp+fourhm <= 1 ~ '0',
+          fourhp == 2 & fourhm == 2 ~ '±',
+			    fourhp == 1 & fourhm == 1 ~ '0',
+          fourhp == 2 & fourhm == 3 ~ '±',
+			    fourhp == 3 & fourhm == 2 ~ '±',
+			    fourhp == 2 & fourhm == 0 ~ '+',
+			    fourhp == 2 & fourhm == 1 ~ '+',
+			    fourhp == 3 & fourhm == 0 ~ '+',
+			    fourhp == 3 & fourhm == 1 ~ '+',
+			    fourhp == 0 & fourhm == 2 ~ '-',
+			    fourhp == 1 & fourhm == 2 ~ '-',
+			    fourhp == 0 & fourhm == 3 ~ '-',
+			    fourhp == 1 & fourhm == 3 ~ '-',
+			    fourhp == 4 & fourhm == 0 ~ '+!',
+			    fourhp == 4 & fourhm == 1 ~ '+!',
+			    fourhp == 0 & fourhm == 4 ~ '-!',
+			    fourhp == 1 & fourhm == 4 ~ '-!',
+		      fourhp == 5 & fourhm == 0 ~ '+!!',
+			    fourhp == 5 & fourhm == 1 ~ '+!!',
+			    fourhp == 0 & fourhm == 5 ~ '-!!',
+			    fourhp == 1 & fourhm == 5 ~ '-!!',
+			    fourhp == 6 & fourhm == 0 ~ '+!!!',
+			    fourhp == 6 & fourhm == 1 ~ '+!!!',
+			    fourhp == 0 & fourhm == 6 ~ '-!!!',
+			    fourhp == 1 & fourhm == 6 ~ '-!!!',
+			    fourhp == 3 & fourhm == 3 ~ '±!',
+			    fourhp == 4 & fourhm == 2 ~ '±!',
+			    fourhp == 2 & fourhm == 4 ~ '±!'
+                            ))
+
+fourhcodetable <- table(codefourh.df$fourhcode)
+fourhcodeproptable.df <- data.frame(prop.table(fourhcodetable))
+lengthfourh <- length(fourhm)
+lengthfourhn <- paste("N =",lengthfourh)
+fourhcodepercent.df <- data.frame (Code  = fourhcodeproptable.df$Var1, Fréquence=round(fourhcodeproptable.df$Freq, 4)*100)
+```
+
+### h : passation 4
+
+```{r  fourhcodes, echo=FALSE}
+ggplot(fourhcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fourh") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfourhn)+
+  xlab('Code')
+```
+
+```{r fivehcount, include=FALSE}
+codefiveh.df <- data.frame(fivehm,fivehp)
+codefiveh.df <- codefiveh.df %>% mutate(fivehcode = case_when(fivehp+fivehm <= 1 ~ '0',
+          fivehp == 2 & fivehm == 2 ~ '±',
+			    fivehp == 1 & fivehm == 1 ~ '0',
+          fivehp == 2 & fivehm == 3 ~ '±',
+			    fivehp == 3 & fivehm == 2 ~ '±',
+			    fivehp == 2 & fivehm == 0 ~ '+',
+			    fivehp == 2 & fivehm == 1 ~ '+',
+			    fivehp == 3 & fivehm == 0 ~ '+',
+			    fivehp == 3 & fivehm == 1 ~ '+',
+			    fivehp == 0 & fivehm == 2 ~ '-',
+			    fivehp == 1 & fivehm == 2 ~ '-',
+			    fivehp == 0 & fivehm == 3 ~ '-',
+			    fivehp == 1 & fivehm == 3 ~ '-',
+			    fivehp == 4 & fivehm == 0 ~ '+!',
+			    fivehp == 4 & fivehm == 1 ~ '+!',
+			    fivehp == 0 & fivehm == 4 ~ '-!',
+			    fivehp == 1 & fivehm == 4 ~ '-!',
+		      fivehp == 5 & fivehm == 0 ~ '+!!',
+			    fivehp == 5 & fivehm == 1 ~ '+!!',
+			    fivehp == 0 & fivehm == 5 ~ '-!!',
+			    fivehp == 1 & fivehm == 5 ~ '-!!',
+			    fivehp == 6 & fivehm == 0 ~ '+!!!',
+			    fivehp == 6 & fivehm == 1 ~ '+!!!',
+			    fivehp == 0 & fivehm == 6 ~ '-!!!',
+			    fivehp == 1 & fivehm == 6 ~ '-!!!',
+			    fivehp == 3 & fivehm == 3 ~ '±!',
+			    fivehp == 4 & fivehm == 2 ~ '±!',
+			    fivehp == 2 & fivehm == 4 ~ '±!'
+                            ))
+
+fivehcodetable <- table(codefiveh.df$fivehcode)
+fivehcodeproptable.df <- data.frame(prop.table(fivehcodetable))
+lengthfiveh <- length(fivehm)
+lengthfivehn <- paste("N =",lengthfiveh)
+fivehcodepercent.df <- data.frame (Code  = fivehcodeproptable.df$Var1, Fréquence=round(fivehcodeproptable.df$Freq, 4)*100)
+```
+
+### h : passation 5
+
+```{r  fivehcodes, echo=FALSE}
+ggplot(fivehcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fiveh") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfivehn)+
+  xlab('Code')
+```
+
+```{r sixhcount, include=FALSE}
+codesixh.df <- data.frame(sixhm,sixhp)
+codesixh.df <- codesixh.df %>% mutate(sixhcode = case_when(sixhp+sixhm <= 1 ~ '0',
+          sixhp == 2 & sixhm == 2 ~ '±',
+			    sixhp == 1 & sixhm == 1 ~ '0',
+          sixhp == 2 & sixhm == 3 ~ '±',
+			    sixhp == 3 & sixhm == 2 ~ '±',
+			    sixhp == 2 & sixhm == 0 ~ '+',
+			    sixhp == 2 & sixhm == 1 ~ '+',
+			    sixhp == 3 & sixhm == 0 ~ '+',
+			    sixhp == 3 & sixhm == 1 ~ '+',
+			    sixhp == 0 & sixhm == 2 ~ '-',
+			    sixhp == 1 & sixhm == 2 ~ '-',
+			    sixhp == 0 & sixhm == 3 ~ '-',
+			    sixhp == 1 & sixhm == 3 ~ '-',
+			    sixhp == 4 & sixhm == 0 ~ '+!',
+			    sixhp == 4 & sixhm == 1 ~ '+!',
+			    sixhp == 0 & sixhm == 4 ~ '-!',
+			    sixhp == 1 & sixhm == 4 ~ '-!',
+		      sixhp == 5 & sixhm == 0 ~ '+!!',
+			    sixhp == 5 & sixhm == 1 ~ '+!!',
+			    sixhp == 0 & sixhm == 5 ~ '-!!',
+			    sixhp == 1 & sixhm == 5 ~ '-!!',
+			    sixhp == 6 & sixhm == 0 ~ '+!!!',
+			    sixhp == 6 & sixhm == 1 ~ '+!!!',
+			    sixhp == 0 & sixhm == 6 ~ '-!!!',
+			    sixhp == 1 & sixhm == 6 ~ '-!!!',
+			    sixhp == 3 & sixhm == 3 ~ '±!',
+			    sixhp == 4 & sixhm == 2 ~ '±!',
+			    sixhp == 2 & sixhm == 4 ~ '±!'
+                            ))
+
+sixhcodetable <- table(codesixh.df$sixhcode)
+sixhcodeproptable.df <- data.frame(prop.table(sixhcodetable))
+lengthsixh <- length(sixhm)
+lengthsixhn <- paste("N =",lengthsixh)
+sixhcodepercent.df <- data.frame (Code  = sixhcodeproptable.df$Var1, Fréquence=round(sixhcodeproptable.df$Freq, 4)*100)
+```
+
+### h : passation 6
+
+```{r  sixhcodes, echo=FALSE}
+ggplot(sixhcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sixh") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsixhn)+
+  xlab('Code')
+```
+
+```{r sevenhcount, include=FALSE}
+codesevenh.df <- data.frame(sevenhm,sevenhp)
+codesevenh.df <- codesevenh.df %>% mutate(sevenhcode = case_when(sevenhp+sevenhm <= 1 ~ '0',
+          sevenhp == 2 & sevenhm == 2 ~ '±',
+			    sevenhp == 1 & sevenhm == 1 ~ '0',
+          sevenhp == 2 & sevenhm == 3 ~ '±',
+			    sevenhp == 3 & sevenhm == 2 ~ '±',
+			    sevenhp == 2 & sevenhm == 0 ~ '+',
+			    sevenhp == 2 & sevenhm == 1 ~ '+',
+			    sevenhp == 3 & sevenhm == 0 ~ '+',
+			    sevenhp == 3 & sevenhm == 1 ~ '+',
+			    sevenhp == 0 & sevenhm == 2 ~ '-',
+			    sevenhp == 1 & sevenhm == 2 ~ '-',
+			    sevenhp == 0 & sevenhm == 3 ~ '-',
+			    sevenhp == 1 & sevenhm == 3 ~ '-',
+			    sevenhp == 4 & sevenhm == 0 ~ '+!',
+			    sevenhp == 4 & sevenhm == 1 ~ '+!',
+			    sevenhp == 0 & sevenhm == 4 ~ '-!',
+			    sevenhp == 1 & sevenhm == 4 ~ '-!',
+		      sevenhp == 5 & sevenhm == 0 ~ '+!!',
+			    sevenhp == 5 & sevenhm == 1 ~ '+!!',
+			    sevenhp == 0 & sevenhm == 5 ~ '-!!',
+			    sevenhp == 1 & sevenhm == 5 ~ '-!!',
+			    sevenhp == 6 & sevenhm == 0 ~ '+!!!',
+			    sevenhp == 6 & sevenhm == 1 ~ '+!!!',
+			    sevenhp == 0 & sevenhm == 6 ~ '-!!!',
+			    sevenhp == 1 & sevenhm == 6 ~ '-!!!',
+			    sevenhp == 3 & sevenhm == 3 ~ '±!',
+			    sevenhp == 4 & sevenhm == 2 ~ '±!',
+			    sevenhp == 2 & sevenhm == 4 ~ '±!'
+                            ))
+
+sevenhcodetable <- table(codesevenh.df$sevenhcode)
+sevenhcodeproptable.df <- data.frame(prop.table(sevenhcodetable))
+lengthsevenh <- length(sevenhm)
+lengthsevenhn <- paste("N =",lengthsevenh)
+sevenhcodepercent.df <- data.frame (Code  = sevenhcodeproptable.df$Var1, Fréquence=round(sevenhcodeproptable.df$Freq, 4)*100)
+```
+
+### h : passation 7
+
+```{r  sevenhcodes, echo=FALSE}
+ggplot(sevenhcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sevenh") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsevenhn)+
+  xlab('Code')
+```
+
+```{r eighthcount, include=FALSE}
+codeeighth.df <- data.frame(eighthm,eighthp)
+codeeighth.df <- codeeighth.df %>% mutate(eighthcode = case_when(eighthp+eighthm <= 1 ~ '0',
+          eighthp == 2 & eighthm == 2 ~ '±',
+			    eighthp == 1 & eighthm == 1 ~ '0',
+          eighthp == 2 & eighthm == 3 ~ '±',
+			    eighthp == 3 & eighthm == 2 ~ '±',
+			    eighthp == 2 & eighthm == 0 ~ '+',
+			    eighthp == 2 & eighthm == 1 ~ '+',
+			    eighthp == 3 & eighthm == 0 ~ '+',
+			    eighthp == 3 & eighthm == 1 ~ '+',
+			    eighthp == 0 & eighthm == 2 ~ '-',
+			    eighthp == 1 & eighthm == 2 ~ '-',
+			    eighthp == 0 & eighthm == 3 ~ '-',
+			    eighthp == 1 & eighthm == 3 ~ '-',
+			    eighthp == 4 & eighthm == 0 ~ '+!',
+			    eighthp == 4 & eighthm == 1 ~ '+!',
+			    eighthp == 0 & eighthm == 4 ~ '-!',
+			    eighthp == 1 & eighthm == 4 ~ '-!',
+		      eighthp == 5 & eighthm == 0 ~ '+!!',
+			    eighthp == 5 & eighthm == 1 ~ '+!!',
+			    eighthp == 0 & eighthm == 5 ~ '-!!',
+			    eighthp == 1 & eighthm == 5 ~ '-!!',
+			    eighthp == 6 & eighthm == 0 ~ '+!!!',
+			    eighthp == 6 & eighthm == 1 ~ '+!!!',
+			    eighthp == 0 & eighthm == 6 ~ '-!!!',
+			    eighthp == 1 & eighthm == 6 ~ '-!!!',
+			    eighthp == 3 & eighthm == 3 ~ '±!',
+			    eighthp == 4 & eighthm == 2 ~ '±!',
+			    eighthp == 2 & eighthm == 4 ~ '±!'
+                            ))
+
+eighthcodetable <- table(codeeighth.df$eighthcode)
+eighthcodeproptable.df <- data.frame(prop.table(eighthcodetable))
+lengtheighth <- length(eighthm)
+lengtheighthn <- paste("N =",lengtheighth)
+eighthcodepercent.df <- data.frame (Code  = eighthcodeproptable.df$Var1, Fréquence=round(eighthcodeproptable.df$Freq, 4)*100)
+```
+
+### h : passation 8
+
+```{r  eighthcodes, echo=FALSE}
+ggplot(eighthcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour eighth") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengtheighthn)+
+  xlab('Code')
+```
+
+```{r ninehcount, include=FALSE}
+codenineh.df <- data.frame(ninehm,ninehp)
+codenineh.df <- codenineh.df %>% mutate(ninehcode = case_when(ninehp+ninehm <= 1 ~ '0',
+          ninehp == 2 & ninehm == 2 ~ '±',
+			    ninehp == 1 & ninehm == 1 ~ '0',
+          ninehp == 2 & ninehm == 3 ~ '±',
+			    ninehp == 3 & ninehm == 2 ~ '±',
+			    ninehp == 2 & ninehm == 0 ~ '+',
+			    ninehp == 2 & ninehm == 1 ~ '+',
+			    ninehp == 3 & ninehm == 0 ~ '+',
+			    ninehp == 3 & ninehm == 1 ~ '+',
+			    ninehp == 0 & ninehm == 2 ~ '-',
+			    ninehp == 1 & ninehm == 2 ~ '-',
+			    ninehp == 0 & ninehm == 3 ~ '-',
+			    ninehp == 1 & ninehm == 3 ~ '-',
+			    ninehp == 4 & ninehm == 0 ~ '+!',
+			    ninehp == 4 & ninehm == 1 ~ '+!',
+			    ninehp == 0 & ninehm == 4 ~ '-!',
+			    ninehp == 1 & ninehm == 4 ~ '-!',
+		      ninehp == 5 & ninehm == 0 ~ '+!!',
+			    ninehp == 5 & ninehm == 1 ~ '+!!',
+			    ninehp == 0 & ninehm == 5 ~ '-!!',
+			    ninehp == 1 & ninehm == 5 ~ '-!!',
+			    ninehp == 6 & ninehm == 0 ~ '+!!!',
+			    ninehp == 6 & ninehm == 1 ~ '+!!!',
+			    ninehp == 0 & ninehm == 6 ~ '-!!!',
+			    ninehp == 1 & ninehm == 6 ~ '-!!!',
+			    ninehp == 3 & ninehm == 3 ~ '±!',
+			    ninehp == 4 & ninehm == 2 ~ '±!',
+			    ninehp == 2 & ninehm == 4 ~ '±!'
+                            ))
+
+ninehcodetable <- table(codenineh.df$ninehcode)
+ninehcodeproptable.df <- data.frame(prop.table(ninehcodetable))
+lengthnineh <- length(ninehm)
+lengthninehn <- paste("N =",lengthnineh)
+ninehcodepercent.df <- data.frame (Code  = ninehcodeproptable.df$Var1, Fréquence=round(ninehcodeproptable.df$Freq, 4)*100)
+```
+
+### h : passation 9
+
+```{r  ninehcodes, echo=FALSE}
+ggplot(ninehcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour nineh") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthninehn)+
+  xlab('Code')
+```
+
+```{r tenhcount, include=FALSE}
+codetenh.df <- data.frame(tenhm,tenhp)
+codetenh.df <- codetenh.df %>% mutate(tenhcode = case_when(tenhp+tenhm <= 1 ~ '0',
+          tenhp == 2 & tenhm == 2 ~ '±',
+			    tenhp == 1 & tenhm == 1 ~ '0',
+          tenhp == 2 & tenhm == 3 ~ '±',
+			    tenhp == 3 & tenhm == 2 ~ '±',
+			    tenhp == 2 & tenhm == 0 ~ '+',
+			    tenhp == 2 & tenhm == 1 ~ '+',
+			    tenhp == 3 & tenhm == 0 ~ '+',
+			    tenhp == 3 & tenhm == 1 ~ '+',
+			    tenhp == 0 & tenhm == 2 ~ '-',
+			    tenhp == 1 & tenhm == 2 ~ '-',
+			    tenhp == 0 & tenhm == 3 ~ '-',
+			    tenhp == 1 & tenhm == 3 ~ '-',
+			    tenhp == 4 & tenhm == 0 ~ '+!',
+			    tenhp == 4 & tenhm == 1 ~ '+!',
+			    tenhp == 0 & tenhm == 4 ~ '-!',
+			    tenhp == 1 & tenhm == 4 ~ '-!',
+		      tenhp == 5 & tenhm == 0 ~ '+!!',
+			    tenhp == 5 & tenhm == 1 ~ '+!!',
+			    tenhp == 0 & tenhm == 5 ~ '-!!',
+			    tenhp == 1 & tenhm == 5 ~ '-!!',
+			    tenhp == 6 & tenhm == 0 ~ '+!!!',
+			    tenhp == 6 & tenhm == 1 ~ '+!!!',
+			    tenhp == 0 & tenhm == 6 ~ '-!!!',
+			    tenhp == 1 & tenhm == 6 ~ '-!!!',
+			    tenhp == 3 & tenhm == 3 ~ '±!',
+			    tenhp == 4 & tenhm == 2 ~ '±!',
+			    tenhp == 2 & tenhm == 4 ~ '±!'
+                            ))
+
+tenhcodetable <- table(codetenh.df$tenhcode)
+tenhcodeproptable.df <- data.frame(prop.table(tenhcodetable))
+lengthtenh <- length(tenhm)
+lengthtenhn <- paste("N =",lengthtenh)
+tenhcodepercent.df <- data.frame (Code  = tenhcodeproptable.df$Var1, Fréquence=round(tenhcodeproptable.df$Freq, 4)*100)
+```
+
+### h : passation 10
+
+```{r  tenhcodes, echo=FALSE}
+ggplot(tenhcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour tenh") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtenhn)+
+  xlab('Code')
+```
+
+### h total
+
+```{r}
+codeoneh_names.df <- data.frame(plus=codeoneh.df$onehp, minus=codeoneh.df$onehm, code=codeoneh.df$onehcode)
+codetwoh_names.df <- data.frame(plus=codetwoh.df$twohp, minus=codetwoh.df$twohm, code=codetwoh.df$twohcode)
+codethreeh_names.df <- data.frame(plus=codethreeh.df$threehp, minus=codethreeh.df$threehm, code=codethreeh.df$threehcode)
+codefourh_names.df <- data.frame(plus=codefourh.df$fourhp, minus=codefourh.df$fourhm, code=codefourh.df$fourhcode)
+codefiveh_names.df <- data.frame(plus=codefiveh.df$fivehp, minus=codefiveh.df$fivehm, code=codefiveh.df$fivehcode)
+codesixh_names.df <- data.frame(plus=codesixh.df$sixhp, minus=codesixh.df$sixhm, code=codesixh.df$sixhcode)
+codesevenh_names.df <- data.frame(plus=codesevenh.df$sevenhp, minus=codesevenh.df$sevenhm, code=codesevenh.df$sevenhcode)
+codeeighth_names.df <- data.frame(plus=codeeighth.df$eighthp, minus=codeeighth.df$eighthm, code=codeeighth.df$eighthcode)
+codenineh_names.df <- data.frame(plus=codenineh.df$ninehp, minus=codenineh.df$ninehm, code=codenineh.df$ninehcode)
+codetenh_names.df <- data.frame(plus=codetenh.df$tenhp, minus=codetenh.df$tenhm, code=codetenh.df$tenhcode)
+codehtotal <- rbind(codeoneh_names.df, codetwoh_names.df, codethreeh_names.df, codefourh_names.df, codefiveh_names.df, codesixh_names.df, codesevenh_names.df, codeeighth_names.df, codenineh_names.df, codetenh_names.df)
+
+htotalcodetable <- table(codehtotal$code)
+htotalcodeproptable.df <- data.frame(prop.table(htotalcodetable))
+lengthhtotal <- length(codehtotal$code)
+lengthhtotaln <- paste("N =",lengthhtotal)
+htotalcodepercent.df <- data.frame (Code  = htotalcodeproptable.df$Var1, Fréquence=round(htotalcodeproptable.df$Freq, 4)*100)
+```
+
+```{r hallcodes, echo=FALSE}
+ggplot(htotalcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour h") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=11, y=95, label=lengthhtotaln)+
+  xlab('Code')
+```
+
+## s
+
+```{r onescount, include=FALSE}
+codeones.df <- data.frame(onesm,onesp)
+codeones.df <- codeones.df %>% mutate(onescode = case_when(onesp+onesm <= 1 ~ '0',
+          onesp == 2 & onesm == 2 ~ '±',
+			    onesp == 1 & onesm == 1 ~ '0',
+          onesp == 2 & onesm == 3 ~ '±',
+			    onesp == 3 & onesm == 2 ~ '±',
+			    onesp == 2 & onesm == 0 ~ '+',
+			    onesp == 2 & onesm == 1 ~ '+',
+			    onesp == 3 & onesm == 0 ~ '+',
+			    onesp == 3 & onesm == 1 ~ '+',
+			    onesp == 0 & onesm == 2 ~ '-',
+			    onesp == 1 & onesm == 2 ~ '-',
+			    onesp == 0 & onesm == 3 ~ '-',
+			    onesp == 1 & onesm == 3 ~ '-',
+			    onesp == 4 & onesm == 0 ~ '+!',
+			    onesp == 4 & onesm == 1 ~ '+!',
+			    onesp == 0 & onesm == 4 ~ '-!',
+			    onesp == 1 & onesm == 4 ~ '-!',
+		      onesp == 5 & onesm == 0 ~ '+!!',
+			    onesp == 5 & onesm == 1 ~ '+!!',
+			    onesp == 0 & onesm == 5 ~ '-!!',
+			    onesp == 1 & onesm == 5 ~ '-!!',
+			    onesp == 6 & onesm == 0 ~ '+!!!',
+			    onesp == 6 & onesm == 1 ~ '+!!!',
+			    onesp == 0 & onesm == 6 ~ '-!!!',
+			    onesp == 1 & onesm == 6 ~ '-!!!',
+			    onesp == 3 & onesm == 3 ~ '±!',
+			    onesp == 4 & onesm == 2 ~ '±!',
+			    onesp == 2 & onesm == 4 ~ '±!'
+                            ))
+
+onescodetable <- table(codeones.df$onescode)
+onescodeproptable.df <- data.frame(prop.table(onescodetable))
+lengthones <- length(onesm)
+lengthonesn <- paste("N =",lengthones)
+onescodepercent.df <- data.frame (Code  = onescodeproptable.df$Var1, Fréquence=round(onescodeproptable.df$Freq, 4)*100)
+```
+
+### s : passation 1
+
+```{r  onescodes, echo=FALSE}
+ggplot(onescodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour ones") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthonesn)+
+  xlab('Code')
+```
+
+```{r twoscount, include=FALSE}
+codetwos.df <- data.frame(twosm,twosp)
+codetwos.df <- codetwos.df %>% mutate(twoscode = case_when(twosp+twosm <= 1 ~ '0',
+          twosp == 2 & twosm == 2 ~ '±',
+			    twosp == 1 & twosm == 1 ~ '0',
+          twosp == 2 & twosm == 3 ~ '±',
+			    twosp == 3 & twosm == 2 ~ '±',
+			    twosp == 2 & twosm == 0 ~ '+',
+			    twosp == 2 & twosm == 1 ~ '+',
+			    twosp == 3 & twosm == 0 ~ '+',
+			    twosp == 3 & twosm == 1 ~ '+',
+			    twosp == 0 & twosm == 2 ~ '-',
+			    twosp == 1 & twosm == 2 ~ '-',
+			    twosp == 0 & twosm == 3 ~ '-',
+			    twosp == 1 & twosm == 3 ~ '-',
+			    twosp == 4 & twosm == 0 ~ '+!',
+			    twosp == 4 & twosm == 1 ~ '+!',
+			    twosp == 0 & twosm == 4 ~ '-!',
+			    twosp == 1 & twosm == 4 ~ '-!',
+		      twosp == 5 & twosm == 0 ~ '+!!',
+			    twosp == 5 & twosm == 1 ~ '+!!',
+			    twosp == 0 & twosm == 5 ~ '-!!',
+			    twosp == 1 & twosm == 5 ~ '-!!',
+			    twosp == 6 & twosm == 0 ~ '+!!!',
+			    twosp == 6 & twosm == 1 ~ '+!!!',
+			    twosp == 0 & twosm == 6 ~ '-!!!',
+			    twosp == 1 & twosm == 6 ~ '-!!!',
+			    twosp == 3 & twosm == 3 ~ '±!',
+			    twosp == 4 & twosm == 2 ~ '±!',
+			    twosp == 2 & twosm == 4 ~ '±!'
+                            ))
+
+twoscodetable <- table(codetwos.df$twoscode)
+twoscodeproptable.df <- data.frame(prop.table(twoscodetable))
+lengthtwos <- length(twosm)
+lengthtwosn <- paste("N =",lengthtwos)
+twoscodepercent.df <- data.frame (Code  = twoscodeproptable.df$Var1, Fréquence=round(twoscodeproptable.df$Freq, 4)*100)
+```
+
+### s : passation 2
+
+```{r  twoscodes, echo=FALSE}
+ggplot(twoscodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour twos") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtwosn)+
+  xlab('Code')
+```
+
+```{r threescount, include=FALSE}
+codethrees.df <- data.frame(threesm,threesp)
+codethrees.df <- codethrees.df %>% mutate(threescode = case_when(threesp+threesm <= 1 ~ '0',
+          threesp == 2 & threesm == 2 ~ '±',
+			    threesp == 1 & threesm == 1 ~ '0',
+          threesp == 2 & threesm == 3 ~ '±',
+			    threesp == 3 & threesm == 2 ~ '±',
+			    threesp == 2 & threesm == 0 ~ '+',
+			    threesp == 2 & threesm == 1 ~ '+',
+			    threesp == 3 & threesm == 0 ~ '+',
+			    threesp == 3 & threesm == 1 ~ '+',
+			    threesp == 0 & threesm == 2 ~ '-',
+			    threesp == 1 & threesm == 2 ~ '-',
+			    threesp == 0 & threesm == 3 ~ '-',
+			    threesp == 1 & threesm == 3 ~ '-',
+			    threesp == 4 & threesm == 0 ~ '+!',
+			    threesp == 4 & threesm == 1 ~ '+!',
+			    threesp == 0 & threesm == 4 ~ '-!',
+			    threesp == 1 & threesm == 4 ~ '-!',
+		      threesp == 5 & threesm == 0 ~ '+!!',
+			    threesp == 5 & threesm == 1 ~ '+!!',
+			    threesp == 0 & threesm == 5 ~ '-!!',
+			    threesp == 1 & threesm == 5 ~ '-!!',
+			    threesp == 6 & threesm == 0 ~ '+!!!',
+			    threesp == 6 & threesm == 1 ~ '+!!!',
+			    threesp == 0 & threesm == 6 ~ '-!!!',
+			    threesp == 1 & threesm == 6 ~ '-!!!',
+			    threesp == 3 & threesm == 3 ~ '±!',
+			    threesp == 4 & threesm == 2 ~ '±!',
+			    threesp == 2 & threesm == 4 ~ '±!'
+                            ))
+
+threescodetable <- table(codethrees.df$threescode)
+threescodeproptable.df <- data.frame(prop.table(threescodetable))
+lengththrees <- length(threesm)
+lengththreesn <- paste("N =",lengththrees)
+threescodepercent.df <- data.frame (Code  = threescodeproptable.df$Var1, Fréquence=round(threescodeproptable.df$Freq, 4)*100)
+```
+
+### s : passation 3
+
+```{r  threescodes, echo=FALSE}
+ggplot(threescodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour threes") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengththreesn)+
+  xlab('Code')
+```
+
+```{r fourscount, include=FALSE}
+codefours.df <- data.frame(foursm,foursp)
+codefours.df <- codefours.df %>% mutate(fourscode = case_when(foursp+foursm <= 1 ~ '0',
+          foursp == 2 & foursm == 2 ~ '±',
+			    foursp == 1 & foursm == 1 ~ '0',
+          foursp == 2 & foursm == 3 ~ '±',
+			    foursp == 3 & foursm == 2 ~ '±',
+			    foursp == 2 & foursm == 0 ~ '+',
+			    foursp == 2 & foursm == 1 ~ '+',
+			    foursp == 3 & foursm == 0 ~ '+',
+			    foursp == 3 & foursm == 1 ~ '+',
+			    foursp == 0 & foursm == 2 ~ '-',
+			    foursp == 1 & foursm == 2 ~ '-',
+			    foursp == 0 & foursm == 3 ~ '-',
+			    foursp == 1 & foursm == 3 ~ '-',
+			    foursp == 4 & foursm == 0 ~ '+!',
+			    foursp == 4 & foursm == 1 ~ '+!',
+			    foursp == 0 & foursm == 4 ~ '-!',
+			    foursp == 1 & foursm == 4 ~ '-!',
+		      foursp == 5 & foursm == 0 ~ '+!!',
+			    foursp == 5 & foursm == 1 ~ '+!!',
+			    foursp == 0 & foursm == 5 ~ '-!!',
+			    foursp == 1 & foursm == 5 ~ '-!!',
+			    foursp == 6 & foursm == 0 ~ '+!!!',
+			    foursp == 6 & foursm == 1 ~ '+!!!',
+			    foursp == 0 & foursm == 6 ~ '-!!!',
+			    foursp == 1 & foursm == 6 ~ '-!!!',
+			    foursp == 3 & foursm == 3 ~ '±!',
+			    foursp == 4 & foursm == 2 ~ '±!',
+			    foursp == 2 & foursm == 4 ~ '±!'
+                            ))
+
+fourscodetable <- table(codefours.df$fourscode)
+fourscodeproptable.df <- data.frame(prop.table(fourscodetable))
+lengthfours <- length(foursm)
+lengthfoursn <- paste("N =",lengthfours)
+fourscodepercent.df <- data.frame (Code  = fourscodeproptable.df$Var1, Fréquence=round(fourscodeproptable.df$Freq, 4)*100)
+```
+
+### s : passation 4
+
+```{r  fourscodes, echo=FALSE}
+ggplot(fourscodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fours") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfoursn)+
+  xlab('Code')
+```
+
+```{r fivescount, include=FALSE}
+codefives.df <- data.frame(fivesm,fivesp)
+codefives.df <- codefives.df %>% mutate(fivescode = case_when(fivesp+fivesm <= 1 ~ '0',
+          fivesp == 2 & fivesm == 2 ~ '±',
+			    fivesp == 1 & fivesm == 1 ~ '0',
+          fivesp == 2 & fivesm == 3 ~ '±',
+			    fivesp == 3 & fivesm == 2 ~ '±',
+			    fivesp == 2 & fivesm == 0 ~ '+',
+			    fivesp == 2 & fivesm == 1 ~ '+',
+			    fivesp == 3 & fivesm == 0 ~ '+',
+			    fivesp == 3 & fivesm == 1 ~ '+',
+			    fivesp == 0 & fivesm == 2 ~ '-',
+			    fivesp == 1 & fivesm == 2 ~ '-',
+			    fivesp == 0 & fivesm == 3 ~ '-',
+			    fivesp == 1 & fivesm == 3 ~ '-',
+			    fivesp == 4 & fivesm == 0 ~ '+!',
+			    fivesp == 4 & fivesm == 1 ~ '+!',
+			    fivesp == 0 & fivesm == 4 ~ '-!',
+			    fivesp == 1 & fivesm == 4 ~ '-!',
+		      fivesp == 5 & fivesm == 0 ~ '+!!',
+			    fivesp == 5 & fivesm == 1 ~ '+!!',
+			    fivesp == 0 & fivesm == 5 ~ '-!!',
+			    fivesp == 1 & fivesm == 5 ~ '-!!',
+			    fivesp == 6 & fivesm == 0 ~ '+!!!',
+			    fivesp == 6 & fivesm == 1 ~ '+!!!',
+			    fivesp == 0 & fivesm == 6 ~ '-!!!',
+			    fivesp == 1 & fivesm == 6 ~ '-!!!',
+			    fivesp == 3 & fivesm == 3 ~ '±!',
+			    fivesp == 4 & fivesm == 2 ~ '±!',
+			    fivesp == 2 & fivesm == 4 ~ '±!'
+                            ))
+
+fivescodetable <- table(codefives.df$fivescode)
+fivescodeproptable.df <- data.frame(prop.table(fivescodetable))
+lengthfives <- length(fivesm)
+lengthfivesn <- paste("N =",lengthfives)
+fivescodepercent.df <- data.frame (Code  = fivescodeproptable.df$Var1, Fréquence=round(fivescodeproptable.df$Freq, 4)*100)
+```
+
+### s : passation 5
+
+```{r  fivescodes, echo=FALSE}
+ggplot(fivescodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fives") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfivesn)+
+  xlab('Code')
+```
+
+```{r sixscount, include=FALSE}
+codesixs.df <- data.frame(sixsm,sixsp)
+codesixs.df <- codesixs.df %>% mutate(sixscode = case_when(sixsp+sixsm <= 1 ~ '0',
+          sixsp == 2 & sixsm == 2 ~ '±',
+			    sixsp == 1 & sixsm == 1 ~ '0',
+          sixsp == 2 & sixsm == 3 ~ '±',
+			    sixsp == 3 & sixsm == 2 ~ '±',
+			    sixsp == 2 & sixsm == 0 ~ '+',
+			    sixsp == 2 & sixsm == 1 ~ '+',
+			    sixsp == 3 & sixsm == 0 ~ '+',
+			    sixsp == 3 & sixsm == 1 ~ '+',
+			    sixsp == 0 & sixsm == 2 ~ '-',
+			    sixsp == 1 & sixsm == 2 ~ '-',
+			    sixsp == 0 & sixsm == 3 ~ '-',
+			    sixsp == 1 & sixsm == 3 ~ '-',
+			    sixsp == 4 & sixsm == 0 ~ '+!',
+			    sixsp == 4 & sixsm == 1 ~ '+!',
+			    sixsp == 0 & sixsm == 4 ~ '-!',
+			    sixsp == 1 & sixsm == 4 ~ '-!',
+		      sixsp == 5 & sixsm == 0 ~ '+!!',
+			    sixsp == 5 & sixsm == 1 ~ '+!!',
+			    sixsp == 0 & sixsm == 5 ~ '-!!',
+			    sixsp == 1 & sixsm == 5 ~ '-!!',
+			    sixsp == 6 & sixsm == 0 ~ '+!!!',
+			    sixsp == 6 & sixsm == 1 ~ '+!!!',
+			    sixsp == 0 & sixsm == 6 ~ '-!!!',
+			    sixsp == 1 & sixsm == 6 ~ '-!!!',
+			    sixsp == 3 & sixsm == 3 ~ '±!',
+			    sixsp == 4 & sixsm == 2 ~ '±!',
+			    sixsp == 2 & sixsm == 4 ~ '±!'
+                            ))
+
+sixscodetable <- table(codesixs.df$sixscode)
+sixscodeproptable.df <- data.frame(prop.table(sixscodetable))
+lengthsixs <- length(sixsm)
+lengthsixsn <- paste("N =",lengthsixs)
+sixscodepercent.df <- data.frame (Code  = sixscodeproptable.df$Var1, Fréquence=round(sixscodeproptable.df$Freq, 4)*100)
+```
+
+### s : passation 6
+
+```{r  sixscodes, echo=FALSE}
+ggplot(sixscodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sixs") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsixsn)+
+  xlab('Code')
+```
+
+```{r sevenscount, include=FALSE}
+codesevens.df <- data.frame(sevensm,sevensp)
+codesevens.df <- codesevens.df %>% mutate(sevenscode = case_when(sevensp+sevensm <= 1 ~ '0',
+          sevensp == 2 & sevensm == 2 ~ '±',
+			    sevensp == 1 & sevensm == 1 ~ '0',
+          sevensp == 2 & sevensm == 3 ~ '±',
+			    sevensp == 3 & sevensm == 2 ~ '±',
+			    sevensp == 2 & sevensm == 0 ~ '+',
+			    sevensp == 2 & sevensm == 1 ~ '+',
+			    sevensp == 3 & sevensm == 0 ~ '+',
+			    sevensp == 3 & sevensm == 1 ~ '+',
+			    sevensp == 0 & sevensm == 2 ~ '-',
+			    sevensp == 1 & sevensm == 2 ~ '-',
+			    sevensp == 0 & sevensm == 3 ~ '-',
+			    sevensp == 1 & sevensm == 3 ~ '-',
+			    sevensp == 4 & sevensm == 0 ~ '+!',
+			    sevensp == 4 & sevensm == 1 ~ '+!',
+			    sevensp == 0 & sevensm == 4 ~ '-!',
+			    sevensp == 1 & sevensm == 4 ~ '-!',
+		      sevensp == 5 & sevensm == 0 ~ '+!!',
+			    sevensp == 5 & sevensm == 1 ~ '+!!',
+			    sevensp == 0 & sevensm == 5 ~ '-!!',
+			    sevensp == 1 & sevensm == 5 ~ '-!!',
+			    sevensp == 6 & sevensm == 0 ~ '+!!!',
+			    sevensp == 6 & sevensm == 1 ~ '+!!!',
+			    sevensp == 0 & sevensm == 6 ~ '-!!!',
+			    sevensp == 1 & sevensm == 6 ~ '-!!!',
+			    sevensp == 3 & sevensm == 3 ~ '±!',
+			    sevensp == 4 & sevensm == 2 ~ '±!',
+			    sevensp == 2 & sevensm == 4 ~ '±!'
+                            ))
+
+sevenscodetable <- table(codesevens.df$sevenscode)
+sevenscodeproptable.df <- data.frame(prop.table(sevenscodetable))
+lengthsevens <- length(sevensm)
+lengthsevensn <- paste("N =",lengthsevens)
+sevenscodepercent.df <- data.frame (Code  = sevenscodeproptable.df$Var1, Fréquence=round(sevenscodeproptable.df$Freq, 4)*100)
+```
+
+### s : passation 7
+
+```{r  sevenscodes, echo=FALSE}
+ggplot(sevenscodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sevens") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsevensn)+
+  xlab('Code')
+```
+
+```{r eightscount, include=FALSE}
+codeeights.df <- data.frame(eightsm,eightsp)
+codeeights.df <- codeeights.df %>% mutate(eightscode = case_when(eightsp+eightsm <= 1 ~ '0',
+          eightsp == 2 & eightsm == 2 ~ '±',
+			    eightsp == 1 & eightsm == 1 ~ '0',
+          eightsp == 2 & eightsm == 3 ~ '±',
+			    eightsp == 3 & eightsm == 2 ~ '±',
+			    eightsp == 2 & eightsm == 0 ~ '+',
+			    eightsp == 2 & eightsm == 1 ~ '+',
+			    eightsp == 3 & eightsm == 0 ~ '+',
+			    eightsp == 3 & eightsm == 1 ~ '+',
+			    eightsp == 0 & eightsm == 2 ~ '-',
+			    eightsp == 1 & eightsm == 2 ~ '-',
+			    eightsp == 0 & eightsm == 3 ~ '-',
+			    eightsp == 1 & eightsm == 3 ~ '-',
+			    eightsp == 4 & eightsm == 0 ~ '+!',
+			    eightsp == 4 & eightsm == 1 ~ '+!',
+			    eightsp == 0 & eightsm == 4 ~ '-!',
+			    eightsp == 1 & eightsm == 4 ~ '-!',
+		      eightsp == 5 & eightsm == 0 ~ '+!!',
+			    eightsp == 5 & eightsm == 1 ~ '+!!',
+			    eightsp == 0 & eightsm == 5 ~ '-!!',
+			    eightsp == 1 & eightsm == 5 ~ '-!!',
+			    eightsp == 6 & eightsm == 0 ~ '+!!!',
+			    eightsp == 6 & eightsm == 1 ~ '+!!!',
+			    eightsp == 0 & eightsm == 6 ~ '-!!!',
+			    eightsp == 1 & eightsm == 6 ~ '-!!!',
+			    eightsp == 3 & eightsm == 3 ~ '±!',
+			    eightsp == 4 & eightsm == 2 ~ '±!',
+			    eightsp == 2 & eightsm == 4 ~ '±!'
+                            ))
+
+eightscodetable <- table(codeeights.df$eightscode)
+eightscodeproptable.df <- data.frame(prop.table(eightscodetable))
+lengtheights <- length(eightsm)
+lengtheightsn <- paste("N =",lengtheights)
+eightscodepercent.df <- data.frame (Code  = eightscodeproptable.df$Var1, Fréquence=round(eightscodeproptable.df$Freq, 4)*100)
+```
+
+### s : passation 8
+
+```{r  eightscodes, echo=FALSE}
+ggplot(eightscodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour eights") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengtheightsn)+
+  xlab('Code')
+```
+
+```{r ninescount, include=FALSE}
+codenines.df <- data.frame(ninesm,ninesp)
+codenines.df <- codenines.df %>% mutate(ninescode = case_when(ninesp+ninesm <= 1 ~ '0',
+          ninesp == 2 & ninesm == 2 ~ '±',
+			    ninesp == 1 & ninesm == 1 ~ '0',
+          ninesp == 2 & ninesm == 3 ~ '±',
+			    ninesp == 3 & ninesm == 2 ~ '±',
+			    ninesp == 2 & ninesm == 0 ~ '+',
+			    ninesp == 2 & ninesm == 1 ~ '+',
+			    ninesp == 3 & ninesm == 0 ~ '+',
+			    ninesp == 3 & ninesm == 1 ~ '+',
+			    ninesp == 0 & ninesm == 2 ~ '-',
+			    ninesp == 1 & ninesm == 2 ~ '-',
+			    ninesp == 0 & ninesm == 3 ~ '-',
+			    ninesp == 1 & ninesm == 3 ~ '-',
+			    ninesp == 4 & ninesm == 0 ~ '+!',
+			    ninesp == 4 & ninesm == 1 ~ '+!',
+			    ninesp == 0 & ninesm == 4 ~ '-!',
+			    ninesp == 1 & ninesm == 4 ~ '-!',
+		      ninesp == 5 & ninesm == 0 ~ '+!!',
+			    ninesp == 5 & ninesm == 1 ~ '+!!',
+			    ninesp == 0 & ninesm == 5 ~ '-!!',
+			    ninesp == 1 & ninesm == 5 ~ '-!!',
+			    ninesp == 6 & ninesm == 0 ~ '+!!!',
+			    ninesp == 6 & ninesm == 1 ~ '+!!!',
+			    ninesp == 0 & ninesm == 6 ~ '-!!!',
+			    ninesp == 1 & ninesm == 6 ~ '-!!!',
+			    ninesp == 3 & ninesm == 3 ~ '±!',
+			    ninesp == 4 & ninesm == 2 ~ '±!',
+			    ninesp == 2 & ninesm == 4 ~ '±!'
+                            ))
+
+ninescodetable <- table(codenines.df$ninescode)
+ninescodeproptable.df <- data.frame(prop.table(ninescodetable))
+lengthnines <- length(ninesm)
+lengthninesn <- paste("N =",lengthnines)
+ninescodepercent.df <- data.frame (Code  = ninescodeproptable.df$Var1, Fréquence=round(ninescodeproptable.df$Freq, 4)*100)
+```
+
+### s : passation 9
+
+```{r  ninescodes, echo=FALSE}
+ggplot(ninescodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour nines") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthninesn)+
+  xlab('Code')
+```
+
+```{r tenscount, include=FALSE}
+codetens.df <- data.frame(tensm,tensp)
+codetens.df <- codetens.df %>% mutate(tenscode = case_when(tensp+tensm <= 1 ~ '0',
+          tensp == 2 & tensm == 2 ~ '±',
+			    tensp == 1 & tensm == 1 ~ '0',
+          tensp == 2 & tensm == 3 ~ '±',
+			    tensp == 3 & tensm == 2 ~ '±',
+			    tensp == 2 & tensm == 0 ~ '+',
+			    tensp == 2 & tensm == 1 ~ '+',
+			    tensp == 3 & tensm == 0 ~ '+',
+			    tensp == 3 & tensm == 1 ~ '+',
+			    tensp == 0 & tensm == 2 ~ '-',
+			    tensp == 1 & tensm == 2 ~ '-',
+			    tensp == 0 & tensm == 3 ~ '-',
+			    tensp == 1 & tensm == 3 ~ '-',
+			    tensp == 4 & tensm == 0 ~ '+!',
+			    tensp == 4 & tensm == 1 ~ '+!',
+			    tensp == 0 & tensm == 4 ~ '-!',
+			    tensp == 1 & tensm == 4 ~ '-!',
+		      tensp == 5 & tensm == 0 ~ '+!!',
+			    tensp == 5 & tensm == 1 ~ '+!!',
+			    tensp == 0 & tensm == 5 ~ '-!!',
+			    tensp == 1 & tensm == 5 ~ '-!!',
+			    tensp == 6 & tensm == 0 ~ '+!!!',
+			    tensp == 6 & tensm == 1 ~ '+!!!',
+			    tensp == 0 & tensm == 6 ~ '-!!!',
+			    tensp == 1 & tensm == 6 ~ '-!!!',
+			    tensp == 3 & tensm == 3 ~ '±!',
+			    tensp == 4 & tensm == 2 ~ '±!',
+			    tensp == 2 & tensm == 4 ~ '±!'
+                            ))
+
+tenscodetable <- table(codetens.df$tenscode)
+tenscodeproptable.df <- data.frame(prop.table(tenscodetable))
+lengthtens <- length(tensm)
+lengthtensn <- paste("N =",lengthtens)
+tenscodepercent.df <- data.frame (Code  = tenscodeproptable.df$Var1, Fréquence=round(tenscodeproptable.df$Freq, 4)*100)
+```
+
+### s : passation 10
+
+```{r  tenscodes, echo=FALSE}
+ggplot(tenscodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour tens") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtensn)+
+  xlab('Code')
+```
+
+### s total
+
+```{r}
+codeones_names.df <- data.frame(plus=codeones.df$onesp, minus=codeones.df$onesm, code=codeones.df$onescode)
+codetwos_names.df <- data.frame(plus=codetwos.df$twosp, minus=codetwos.df$twosm, code=codetwos.df$twoscode)
+codethrees_names.df <- data.frame(plus=codethrees.df$threesp, minus=codethrees.df$threesm, code=codethrees.df$threescode)
+codefours_names.df <- data.frame(plus=codefours.df$foursp, minus=codefours.df$foursm, code=codefours.df$fourscode)
+codefives_names.df <- data.frame(plus=codefives.df$fivesp, minus=codefives.df$fivesm, code=codefives.df$fivescode)
+codesixs_names.df <- data.frame(plus=codesixs.df$sixsp, minus=codesixs.df$sixsm, code=codesixs.df$sixscode)
+codesevens_names.df <- data.frame(plus=codesevens.df$sevensp, minus=codesevens.df$sevensm, code=codesevens.df$sevenscode)
+codeeights_names.df <- data.frame(plus=codeeights.df$eightsp, minus=codeeights.df$eightsm, code=codeeights.df$eightscode)
+codenines_names.df <- data.frame(plus=codenines.df$ninesp, minus=codenines.df$ninesm, code=codenines.df$ninescode)
+codetens_names.df <- data.frame(plus=codetens.df$tensp, minus=codetens.df$tensm, code=codetens.df$tenscode)
+codestotal <- rbind(codeones_names.df, codetwos_names.df, codethrees_names.df, codefours_names.df, codefives_names.df, codesixs_names.df, codesevens_names.df, codeeights_names.df, codenines_names.df, codetens_names.df)
+
+stotalcodetable <- table(codestotal$code)
+stotalcodeproptable.df <- data.frame(prop.table(stotalcodetable))
+lengthstotal <- length(codestotal$code)
+lengthstotaln <- paste("N =",lengthstotal)
+stotalcodepercent.df <- data.frame (Code  = stotalcodeproptable.df$Var1, Fréquence=round(stotalcodeproptable.df$Freq, 4)*100)
+```
+
+```{r sallcodes, echo=FALSE}
+ggplot(stotalcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour s") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=11, y=95, label=lengthstotaln)+
+  xlab('Code')
+```
+
+## e
+
+```{r oneecount, include=FALSE}
+codeonee.df <- data.frame(oneem,oneep)
+codeonee.df <- codeonee.df %>% mutate(oneecode = case_when(oneep+oneem <= 1 ~ '0',
+          oneep == 2 & oneem == 2 ~ '±',
+			    oneep == 1 & oneem == 1 ~ '0',
+          oneep == 2 & oneem == 3 ~ '±',
+			    oneep == 3 & oneem == 2 ~ '±',
+			    oneep == 2 & oneem == 0 ~ '+',
+			    oneep == 2 & oneem == 1 ~ '+',
+			    oneep == 3 & oneem == 0 ~ '+',
+			    oneep == 3 & oneem == 1 ~ '+',
+			    oneep == 0 & oneem == 2 ~ '-',
+			    oneep == 1 & oneem == 2 ~ '-',
+			    oneep == 0 & oneem == 3 ~ '-',
+			    oneep == 1 & oneem == 3 ~ '-',
+			    oneep == 4 & oneem == 0 ~ '+!',
+			    oneep == 4 & oneem == 1 ~ '+!',
+			    oneep == 0 & oneem == 4 ~ '-!',
+			    oneep == 1 & oneem == 4 ~ '-!',
+		      oneep == 5 & oneem == 0 ~ '+!!',
+			    oneep == 5 & oneem == 1 ~ '+!!',
+			    oneep == 0 & oneem == 5 ~ '-!!',
+			    oneep == 1 & oneem == 5 ~ '-!!',
+			    oneep == 6 & oneem == 0 ~ '+!!!',
+			    oneep == 6 & oneem == 1 ~ '+!!!',
+			    oneep == 0 & oneem == 6 ~ '-!!!',
+			    oneep == 1 & oneem == 6 ~ '-!!!',
+			    oneep == 3 & oneem == 3 ~ '±!',
+			    oneep == 4 & oneem == 2 ~ '±!',
+			    oneep == 2 & oneem == 4 ~ '±!'
+                            ))
+
+oneecodetable <- table(codeonee.df$oneecode)
+oneecodeproptable.df <- data.frame(prop.table(oneecodetable))
+lengthonee <- length(oneem)
+lengthoneen <- paste("N =",lengthonee)
+oneecodepercent.df <- data.frame (Code  = oneecodeproptable.df$Var1, Fréquence=round(oneecodeproptable.df$Freq, 4)*100)
+```
+
+### e : passation 1
+
+```{r  oneecodes, echo=FALSE}
+ggplot(oneecodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour onee") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthoneen)+
+  xlab('Code')
+```
+
+```{r twoecount, include=FALSE}
+codetwoe.df <- data.frame(twoem,twoep)
+codetwoe.df <- codetwoe.df %>% mutate(twoecode = case_when(twoep+twoem <= 1 ~ '0',
+          twoep == 2 & twoem == 2 ~ '±',
+			    twoep == 1 & twoem == 1 ~ '0',
+          twoep == 2 & twoem == 3 ~ '±',
+			    twoep == 3 & twoem == 2 ~ '±',
+			    twoep == 2 & twoem == 0 ~ '+',
+			    twoep == 2 & twoem == 1 ~ '+',
+			    twoep == 3 & twoem == 0 ~ '+',
+			    twoep == 3 & twoem == 1 ~ '+',
+			    twoep == 0 & twoem == 2 ~ '-',
+			    twoep == 1 & twoem == 2 ~ '-',
+			    twoep == 0 & twoem == 3 ~ '-',
+			    twoep == 1 & twoem == 3 ~ '-',
+			    twoep == 4 & twoem == 0 ~ '+!',
+			    twoep == 4 & twoem == 1 ~ '+!',
+			    twoep == 0 & twoem == 4 ~ '-!',
+			    twoep == 1 & twoem == 4 ~ '-!',
+		      twoep == 5 & twoem == 0 ~ '+!!',
+			    twoep == 5 & twoem == 1 ~ '+!!',
+			    twoep == 0 & twoem == 5 ~ '-!!',
+			    twoep == 1 & twoem == 5 ~ '-!!',
+			    twoep == 6 & twoem == 0 ~ '+!!!',
+			    twoep == 6 & twoem == 1 ~ '+!!!',
+			    twoep == 0 & twoem == 6 ~ '-!!!',
+			    twoep == 1 & twoem == 6 ~ '-!!!',
+			    twoep == 3 & twoem == 3 ~ '±!',
+			    twoep == 4 & twoem == 2 ~ '±!',
+			    twoep == 2 & twoem == 4 ~ '±!'
+                            ))
+
+twoecodetable <- table(codetwoe.df$twoecode)
+twoecodeproptable.df <- data.frame(prop.table(twoecodetable))
+lengthtwoe <- length(twoem)
+lengthtwoen <- paste("N =",lengthtwoe)
+twoecodepercent.df <- data.frame (Code  = twoecodeproptable.df$Var1, Fréquence=round(twoecodeproptable.df$Freq, 4)*100)
+```
+
+### e : passation 2
+
+```{r  twoecodes, echo=FALSE}
+ggplot(twoecodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour twoe") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtwoen)+
+  xlab('Code')
+```
+
+```{r threeecount, include=FALSE}
+codethreee.df <- data.frame(threeem,threeep)
+codethreee.df <- codethreee.df %>% mutate(threeecode = case_when(threeep+threeem <= 1 ~ '0',
+          threeep == 2 & threeem == 2 ~ '±',
+			    threeep == 1 & threeem == 1 ~ '0',
+          threeep == 2 & threeem == 3 ~ '±',
+			    threeep == 3 & threeem == 2 ~ '±',
+			    threeep == 2 & threeem == 0 ~ '+',
+			    threeep == 2 & threeem == 1 ~ '+',
+			    threeep == 3 & threeem == 0 ~ '+',
+			    threeep == 3 & threeem == 1 ~ '+',
+			    threeep == 0 & threeem == 2 ~ '-',
+			    threeep == 1 & threeem == 2 ~ '-',
+			    threeep == 0 & threeem == 3 ~ '-',
+			    threeep == 1 & threeem == 3 ~ '-',
+			    threeep == 4 & threeem == 0 ~ '+!',
+			    threeep == 4 & threeem == 1 ~ '+!',
+			    threeep == 0 & threeem == 4 ~ '-!',
+			    threeep == 1 & threeem == 4 ~ '-!',
+		      threeep == 5 & threeem == 0 ~ '+!!',
+			    threeep == 5 & threeem == 1 ~ '+!!',
+			    threeep == 0 & threeem == 5 ~ '-!!',
+			    threeep == 1 & threeem == 5 ~ '-!!',
+			    threeep == 6 & threeem == 0 ~ '+!!!',
+			    threeep == 6 & threeem == 1 ~ '+!!!',
+			    threeep == 0 & threeem == 6 ~ '-!!!',
+			    threeep == 1 & threeem == 6 ~ '-!!!',
+			    threeep == 3 & threeem == 3 ~ '±!',
+			    threeep == 4 & threeem == 2 ~ '±!',
+			    threeep == 2 & threeem == 4 ~ '±!'
+                            ))
+
+threeecodetable <- table(codethreee.df$threeecode)
+threeecodeproptable.df <- data.frame(prop.table(threeecodetable))
+lengththreee <- length(threeem)
+lengththreeen <- paste("N =",lengththreee)
+threeecodepercent.df <- data.frame (Code  = threeecodeproptable.df$Var1, Fréquence=round(threeecodeproptable.df$Freq, 4)*100)
+```
+
+### e : passation 3
+
+```{r  threeecodes, echo=FALSE}
+ggplot(threeecodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour threee") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengththreeen)+
+  xlab('Code')
+```
+
+```{r fourecount, include=FALSE}
+codefoure.df <- data.frame(fourem,fourep)
+codefoure.df <- codefoure.df %>% mutate(fourecode = case_when(fourep+fourem <= 1 ~ '0',
+          fourep == 2 & fourem == 2 ~ '±',
+			    fourep == 1 & fourem == 1 ~ '0',
+          fourep == 2 & fourem == 3 ~ '±',
+			    fourep == 3 & fourem == 2 ~ '±',
+			    fourep == 2 & fourem == 0 ~ '+',
+			    fourep == 2 & fourem == 1 ~ '+',
+			    fourep == 3 & fourem == 0 ~ '+',
+			    fourep == 3 & fourem == 1 ~ '+',
+			    fourep == 0 & fourem == 2 ~ '-',
+			    fourep == 1 & fourem == 2 ~ '-',
+			    fourep == 0 & fourem == 3 ~ '-',
+			    fourep == 1 & fourem == 3 ~ '-',
+			    fourep == 4 & fourem == 0 ~ '+!',
+			    fourep == 4 & fourem == 1 ~ '+!',
+			    fourep == 0 & fourem == 4 ~ '-!',
+			    fourep == 1 & fourem == 4 ~ '-!',
+		      fourep == 5 & fourem == 0 ~ '+!!',
+			    fourep == 5 & fourem == 1 ~ '+!!',
+			    fourep == 0 & fourem == 5 ~ '-!!',
+			    fourep == 1 & fourem == 5 ~ '-!!',
+			    fourep == 6 & fourem == 0 ~ '+!!!',
+			    fourep == 6 & fourem == 1 ~ '+!!!',
+			    fourep == 0 & fourem == 6 ~ '-!!!',
+			    fourep == 1 & fourem == 6 ~ '-!!!',
+			    fourep == 3 & fourem == 3 ~ '±!',
+			    fourep == 4 & fourem == 2 ~ '±!',
+			    fourep == 2 & fourem == 4 ~ '±!'
+                            ))
+
+fourecodetable <- table(codefoure.df$fourecode)
+fourecodeproptable.df <- data.frame(prop.table(fourecodetable))
+lengthfoure <- length(fourem)
+lengthfouren <- paste("N =",lengthfoure)
+fourecodepercent.df <- data.frame (Code  = fourecodeproptable.df$Var1, Fréquence=round(fourecodeproptable.df$Freq, 4)*100)
+```
+
+### e : passation 4
+
+```{r  fourecodes, echo=FALSE}
+ggplot(fourecodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour foure") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfouren)+
+  xlab('Code')
+```
+
+```{r fiveecount, include=FALSE}
+codefivee.df <- data.frame(fiveem,fiveep)
+codefivee.df <- codefivee.df %>% mutate(fiveecode = case_when(fiveep+fiveem <= 1 ~ '0',
+          fiveep == 2 & fiveem == 2 ~ '±',
+			    fiveep == 1 & fiveem == 1 ~ '0',
+          fiveep == 2 & fiveem == 3 ~ '±',
+			    fiveep == 3 & fiveem == 2 ~ '±',
+			    fiveep == 2 & fiveem == 0 ~ '+',
+			    fiveep == 2 & fiveem == 1 ~ '+',
+			    fiveep == 3 & fiveem == 0 ~ '+',
+			    fiveep == 3 & fiveem == 1 ~ '+',
+			    fiveep == 0 & fiveem == 2 ~ '-',
+			    fiveep == 1 & fiveem == 2 ~ '-',
+			    fiveep == 0 & fiveem == 3 ~ '-',
+			    fiveep == 1 & fiveem == 3 ~ '-',
+			    fiveep == 4 & fiveem == 0 ~ '+!',
+			    fiveep == 4 & fiveem == 1 ~ '+!',
+			    fiveep == 0 & fiveem == 4 ~ '-!',
+			    fiveep == 1 & fiveem == 4 ~ '-!',
+		      fiveep == 5 & fiveem == 0 ~ '+!!',
+			    fiveep == 5 & fiveem == 1 ~ '+!!',
+			    fiveep == 0 & fiveem == 5 ~ '-!!',
+			    fiveep == 1 & fiveem == 5 ~ '-!!',
+			    fiveep == 6 & fiveem == 0 ~ '+!!!',
+			    fiveep == 6 & fiveem == 1 ~ '+!!!',
+			    fiveep == 0 & fiveem == 6 ~ '-!!!',
+			    fiveep == 1 & fiveem == 6 ~ '-!!!',
+			    fiveep == 3 & fiveem == 3 ~ '±!',
+			    fiveep == 4 & fiveem == 2 ~ '±!',
+			    fiveep == 2 & fiveem == 4 ~ '±!'
+                            ))
+
+fiveecodetable <- table(codefivee.df$fiveecode)
+fiveecodeproptable.df <- data.frame(prop.table(fiveecodetable))
+lengthfivee <- length(fiveem)
+lengthfiveen <- paste("N =",lengthfivee)
+fiveecodepercent.df <- data.frame (Code  = fiveecodeproptable.df$Var1, Fréquence=round(fiveecodeproptable.df$Freq, 4)*100)
+```
+
+### e : passation 5
+
+```{r  fiveecodes, echo=FALSE}
+ggplot(fiveecodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fivee") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfiveen)+
+  xlab('Code')
+```
+
+```{r sixecount, include=FALSE}
+codesixe.df <- data.frame(sixem,sixep)
+codesixe.df <- codesixe.df %>% mutate(sixecode = case_when(sixep+sixem <= 1 ~ '0',
+          sixep == 2 & sixem == 2 ~ '±',
+			    sixep == 1 & sixem == 1 ~ '0',
+          sixep == 2 & sixem == 3 ~ '±',
+			    sixep == 3 & sixem == 2 ~ '±',
+			    sixep == 2 & sixem == 0 ~ '+',
+			    sixep == 2 & sixem == 1 ~ '+',
+			    sixep == 3 & sixem == 0 ~ '+',
+			    sixep == 3 & sixem == 1 ~ '+',
+			    sixep == 0 & sixem == 2 ~ '-',
+			    sixep == 1 & sixem == 2 ~ '-',
+			    sixep == 0 & sixem == 3 ~ '-',
+			    sixep == 1 & sixem == 3 ~ '-',
+			    sixep == 4 & sixem == 0 ~ '+!',
+			    sixep == 4 & sixem == 1 ~ '+!',
+			    sixep == 0 & sixem == 4 ~ '-!',
+			    sixep == 1 & sixem == 4 ~ '-!',
+		      sixep == 5 & sixem == 0 ~ '+!!',
+			    sixep == 5 & sixem == 1 ~ '+!!',
+			    sixep == 0 & sixem == 5 ~ '-!!',
+			    sixep == 1 & sixem == 5 ~ '-!!',
+			    sixep == 6 & sixem == 0 ~ '+!!!',
+			    sixep == 6 & sixem == 1 ~ '+!!!',
+			    sixep == 0 & sixem == 6 ~ '-!!!',
+			    sixep == 1 & sixem == 6 ~ '-!!!',
+			    sixep == 3 & sixem == 3 ~ '±!',
+			    sixep == 4 & sixem == 2 ~ '±!',
+			    sixep == 2 & sixem == 4 ~ '±!'
+                            ))
+
+sixecodetable <- table(codesixe.df$sixecode)
+sixecodeproptable.df <- data.frame(prop.table(sixecodetable))
+lengthsixe <- length(sixem)
+lengthsixen <- paste("N =",lengthsixe)
+sixecodepercent.df <- data.frame (Code  = sixecodeproptable.df$Var1, Fréquence=round(sixecodeproptable.df$Freq, 4)*100)
+```
+
+### e : passation 6
+
+```{r  sixecodes, echo=FALSE}
+ggplot(sixecodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sixe") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsixen)+
+  xlab('Code')
+```
+
+```{r sevenecount, include=FALSE}
+codesevene.df <- data.frame(sevenem,sevenep)
+codesevene.df <- codesevene.df %>% mutate(sevenecode = case_when(sevenep+sevenem <= 1 ~ '0',
+          sevenep == 2 & sevenem == 2 ~ '±',
+			    sevenep == 1 & sevenem == 1 ~ '0',
+          sevenep == 2 & sevenem == 3 ~ '±',
+			    sevenep == 3 & sevenem == 2 ~ '±',
+			    sevenep == 2 & sevenem == 0 ~ '+',
+			    sevenep == 2 & sevenem == 1 ~ '+',
+			    sevenep == 3 & sevenem == 0 ~ '+',
+			    sevenep == 3 & sevenem == 1 ~ '+',
+			    sevenep == 0 & sevenem == 2 ~ '-',
+			    sevenep == 1 & sevenem == 2 ~ '-',
+			    sevenep == 0 & sevenem == 3 ~ '-',
+			    sevenep == 1 & sevenem == 3 ~ '-',
+			    sevenep == 4 & sevenem == 0 ~ '+!',
+			    sevenep == 4 & sevenem == 1 ~ '+!',
+			    sevenep == 0 & sevenem == 4 ~ '-!',
+			    sevenep == 1 & sevenem == 4 ~ '-!',
+		      sevenep == 5 & sevenem == 0 ~ '+!!',
+			    sevenep == 5 & sevenem == 1 ~ '+!!',
+			    sevenep == 0 & sevenem == 5 ~ '-!!',
+			    sevenep == 1 & sevenem == 5 ~ '-!!',
+			    sevenep == 6 & sevenem == 0 ~ '+!!!',
+			    sevenep == 6 & sevenem == 1 ~ '+!!!',
+			    sevenep == 0 & sevenem == 6 ~ '-!!!',
+			    sevenep == 1 & sevenem == 6 ~ '-!!!',
+			    sevenep == 3 & sevenem == 3 ~ '±!',
+			    sevenep == 4 & sevenem == 2 ~ '±!',
+			    sevenep == 2 & sevenem == 4 ~ '±!'
+                            ))
+
+sevenecodetable <- table(codesevene.df$sevenecode)
+sevenecodeproptable.df <- data.frame(prop.table(sevenecodetable))
+lengthsevene <- length(sevenem)
+lengthsevenen <- paste("N =",lengthsevene)
+sevenecodepercent.df <- data.frame (Code  = sevenecodeproptable.df$Var1, Fréquence=round(sevenecodeproptable.df$Freq, 4)*100)
+```
+
+### e : passation 7
+
+```{r  sevenecodes, echo=FALSE}
+ggplot(sevenecodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sevene") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsevenen)+
+  xlab('Code')
+```
+
+```{r eightecount, include=FALSE}
+codeeighte.df <- data.frame(eightem,eightep)
+codeeighte.df <- codeeighte.df %>% mutate(eightecode = case_when(eightep+eightem <= 1 ~ '0',
+          eightep == 2 & eightem == 2 ~ '±',
+			    eightep == 1 & eightem == 1 ~ '0',
+          eightep == 2 & eightem == 3 ~ '±',
+			    eightep == 3 & eightem == 2 ~ '±',
+			    eightep == 2 & eightem == 0 ~ '+',
+			    eightep == 2 & eightem == 1 ~ '+',
+			    eightep == 3 & eightem == 0 ~ '+',
+			    eightep == 3 & eightem == 1 ~ '+',
+			    eightep == 0 & eightem == 2 ~ '-',
+			    eightep == 1 & eightem == 2 ~ '-',
+			    eightep == 0 & eightem == 3 ~ '-',
+			    eightep == 1 & eightem == 3 ~ '-',
+			    eightep == 4 & eightem == 0 ~ '+!',
+			    eightep == 4 & eightem == 1 ~ '+!',
+			    eightep == 0 & eightem == 4 ~ '-!',
+			    eightep == 1 & eightem == 4 ~ '-!',
+		      eightep == 5 & eightem == 0 ~ '+!!',
+			    eightep == 5 & eightem == 1 ~ '+!!',
+			    eightep == 0 & eightem == 5 ~ '-!!',
+			    eightep == 1 & eightem == 5 ~ '-!!',
+			    eightep == 6 & eightem == 0 ~ '+!!!',
+			    eightep == 6 & eightem == 1 ~ '+!!!',
+			    eightep == 0 & eightem == 6 ~ '-!!!',
+			    eightep == 1 & eightem == 6 ~ '-!!!',
+			    eightep == 3 & eightem == 3 ~ '±!',
+			    eightep == 4 & eightem == 2 ~ '±!',
+			    eightep == 2 & eightem == 4 ~ '±!'
+                            ))
+
+eightecodetable <- table(codeeighte.df$eightecode)
+eightecodeproptable.df <- data.frame(prop.table(eightecodetable))
+lengtheighte <- length(eightem)
+lengtheighten <- paste("N =",lengtheighte)
+eightecodepercent.df <- data.frame (Code  = eightecodeproptable.df$Var1, Fréquence=round(eightecodeproptable.df$Freq, 4)*100)
+```
+
+### e : passation 8
+
+```{r  eightecodes, echo=FALSE}
+ggplot(eightecodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour eighte") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengtheighten)+
+  xlab('Code')
+```
+
+```{r nineecount, include=FALSE}
+codeninee.df <- data.frame(nineem,nineep)
+codeninee.df <- codeninee.df %>% mutate(nineecode = case_when(nineep+nineem <= 1 ~ '0',
+          nineep == 2 & nineem == 2 ~ '±',
+			    nineep == 1 & nineem == 1 ~ '0',
+          nineep == 2 & nineem == 3 ~ '±',
+			    nineep == 3 & nineem == 2 ~ '±',
+			    nineep == 2 & nineem == 0 ~ '+',
+			    nineep == 2 & nineem == 1 ~ '+',
+			    nineep == 3 & nineem == 0 ~ '+',
+			    nineep == 3 & nineem == 1 ~ '+',
+			    nineep == 0 & nineem == 2 ~ '-',
+			    nineep == 1 & nineem == 2 ~ '-',
+			    nineep == 0 & nineem == 3 ~ '-',
+			    nineep == 1 & nineem == 3 ~ '-',
+			    nineep == 4 & nineem == 0 ~ '+!',
+			    nineep == 4 & nineem == 1 ~ '+!',
+			    nineep == 0 & nineem == 4 ~ '-!',
+			    nineep == 1 & nineem == 4 ~ '-!',
+		      nineep == 5 & nineem == 0 ~ '+!!',
+			    nineep == 5 & nineem == 1 ~ '+!!',
+			    nineep == 0 & nineem == 5 ~ '-!!',
+			    nineep == 1 & nineem == 5 ~ '-!!',
+			    nineep == 6 & nineem == 0 ~ '+!!!',
+			    nineep == 6 & nineem == 1 ~ '+!!!',
+			    nineep == 0 & nineem == 6 ~ '-!!!',
+			    nineep == 1 & nineem == 6 ~ '-!!!',
+			    nineep == 3 & nineem == 3 ~ '±!',
+			    nineep == 4 & nineem == 2 ~ '±!',
+			    nineep == 2 & nineem == 4 ~ '±!'
+                            ))
+
+nineecodetable <- table(codeninee.df$nineecode)
+nineecodeproptable.df <- data.frame(prop.table(nineecodetable))
+lengthninee <- length(nineem)
+lengthnineen <- paste("N =",lengthninee)
+nineecodepercent.df <- data.frame (Code  = nineecodeproptable.df$Var1, Fréquence=round(nineecodeproptable.df$Freq, 4)*100)
+```
+
+### e : passation 9
+
+```{r  nineecodes, echo=FALSE}
+ggplot(nineecodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour ninee") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthnineen)+
+  xlab('Code')
+```
+
+```{r tenecount, include=FALSE}
+codetene.df <- data.frame(tenem,tenep)
+codetene.df <- codetene.df %>% mutate(tenecode = case_when(tenep+tenem <= 1 ~ '0',
+          tenep == 2 & tenem == 2 ~ '±',
+			    tenep == 1 & tenem == 1 ~ '0',
+          tenep == 2 & tenem == 3 ~ '±',
+			    tenep == 3 & tenem == 2 ~ '±',
+			    tenep == 2 & tenem == 0 ~ '+',
+			    tenep == 2 & tenem == 1 ~ '+',
+			    tenep == 3 & tenem == 0 ~ '+',
+			    tenep == 3 & tenem == 1 ~ '+',
+			    tenep == 0 & tenem == 2 ~ '-',
+			    tenep == 1 & tenem == 2 ~ '-',
+			    tenep == 0 & tenem == 3 ~ '-',
+			    tenep == 1 & tenem == 3 ~ '-',
+			    tenep == 4 & tenem == 0 ~ '+!',
+			    tenep == 4 & tenem == 1 ~ '+!',
+			    tenep == 0 & tenem == 4 ~ '-!',
+			    tenep == 1 & tenem == 4 ~ '-!',
+		      tenep == 5 & tenem == 0 ~ '+!!',
+			    tenep == 5 & tenem == 1 ~ '+!!',
+			    tenep == 0 & tenem == 5 ~ '-!!',
+			    tenep == 1 & tenem == 5 ~ '-!!',
+			    tenep == 6 & tenem == 0 ~ '+!!!',
+			    tenep == 6 & tenem == 1 ~ '+!!!',
+			    tenep == 0 & tenem == 6 ~ '-!!!',
+			    tenep == 1 & tenem == 6 ~ '-!!!',
+			    tenep == 3 & tenem == 3 ~ '±!',
+			    tenep == 4 & tenem == 2 ~ '±!',
+			    tenep == 2 & tenem == 4 ~ '±!'
+                            ))
+
+tenecodetable <- table(codetene.df$tenecode)
+tenecodeproptable.df <- data.frame(prop.table(tenecodetable))
+lengthtene <- length(tenem)
+lengthtenen <- paste("N =",lengthtene)
+tenecodepercent.df <- data.frame (Code  = tenecodeproptable.df$Var1, Fréquence=round(tenecodeproptable.df$Freq, 4)*100)
+```
+
+### e : passation 10
+
+```{r  tenecodes, echo=FALSE}
+ggplot(tenecodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour tene") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtenen)+
+  xlab('Code')
+```
+
+### e total
+
+```{r}
+codeonee_namee.df <- data.frame(plus=codeonee.df$oneep, minus=codeonee.df$oneem, code=codeonee.df$oneecode)
+codetwoe_namee.df <- data.frame(plus=codetwoe.df$twoep, minus=codetwoe.df$twoem, code=codetwoe.df$twoecode)
+codethreee_namee.df <- data.frame(plus=codethreee.df$threeep, minus=codethreee.df$threeem, code=codethreee.df$threeecode)
+codefoure_namee.df <- data.frame(plus=codefoure.df$fourep, minus=codefoure.df$fourem, code=codefoure.df$fourecode)
+codefivee_namee.df <- data.frame(plus=codefivee.df$fiveep, minus=codefivee.df$fiveem, code=codefivee.df$fiveecode)
+codesixe_namee.df <- data.frame(plus=codesixe.df$sixep, minus=codesixe.df$sixem, code=codesixe.df$sixecode)
+codesevene_namee.df <- data.frame(plus=codesevene.df$sevenep, minus=codesevene.df$sevenem, code=codesevene.df$sevenecode)
+codeeighte_namee.df <- data.frame(plus=codeeighte.df$eightep, minus=codeeighte.df$eightem, code=codeeighte.df$eightecode)
+codeninee_namee.df <- data.frame(plus=codeninee.df$nineep, minus=codeninee.df$nineem, code=codeninee.df$nineecode)
+codetene_namee.df <- data.frame(plus=codetene.df$tenep, minus=codetene.df$tenem, code=codetene.df$tenecode)
+codeetotal <- rbind(codeonee_namee.df, codetwoe_namee.df, codethreee_namee.df, codefoure_namee.df, codefivee_namee.df, codesixe_namee.df, codesevene_namee.df, codeeighte_namee.df, codeninee_namee.df, codetene_namee.df)
+
+etotalcodetable <- table(codeetotal$code)
+etotalcodeproptable.df <- data.frame(prop.table(etotalcodetable))
+lengthetotal <- length(codeetotal$code)
+lengthetotaln <- paste("N =",lengthetotal)
+etotalcodepercent.df <- data.frame (Code  = etotalcodeproptable.df$Var1, Fréquence=round(etotalcodeproptable.df$Freq, 4)*100)
+```
+
+```{r eallcodes, echo=FALSE}
+ggplot(etotalcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour e") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthstotaln)+
+  xlab('Code')
+```
+
+## hy
+
+```{r onehycount, include=FALSE}
+codeonehy.df <- data.frame(onehym,onehyp)
+codeonehy.df <- codeonehy.df %>% mutate(onehycode = case_when(onehyp+onehym <= 1 ~ '0',
+          onehyp == 2 & onehym == 2 ~ '±',
+			    onehyp == 1 & onehym == 1 ~ '0',
+          onehyp == 2 & onehym == 3 ~ '±',
+			    onehyp == 3 & onehym == 2 ~ '±',
+			    onehyp == 2 & onehym == 0 ~ '+',
+			    onehyp == 2 & onehym == 1 ~ '+',
+			    onehyp == 3 & onehym == 0 ~ '+',
+			    onehyp == 3 & onehym == 1 ~ '+',
+			    onehyp == 0 & onehym == 2 ~ '-',
+			    onehyp == 1 & onehym == 2 ~ '-',
+			    onehyp == 0 & onehym == 3 ~ '-',
+			    onehyp == 1 & onehym == 3 ~ '-',
+			    onehyp == 4 & onehym == 0 ~ '+!',
+			    onehyp == 4 & onehym == 1 ~ '+!',
+			    onehyp == 0 & onehym == 4 ~ '-!',
+			    onehyp == 1 & onehym == 4 ~ '-!',
+		      onehyp == 5 & onehym == 0 ~ '+!!',
+			    onehyp == 5 & onehym == 1 ~ '+!!',
+			    onehyp == 0 & onehym == 5 ~ '-!!',
+			    onehyp == 1 & onehym == 5 ~ '-!!',
+			    onehyp == 6 & onehym == 0 ~ '+!!!',
+			    onehyp == 6 & onehym == 1 ~ '+!!!',
+			    onehyp == 0 & onehym == 6 ~ '-!!!',
+			    onehyp == 1 & onehym == 6 ~ '-!!!',
+			    onehyp == 3 & onehym == 3 ~ '±!',
+			    onehyp == 4 & onehym == 2 ~ '±!',
+			    onehyp == 2 & onehym == 4 ~ '±!'
+                            ))
+
+onehycodetable <- table(codeonehy.df$onehycode)
+onehycodeproptable.df <- data.frame(prop.table(onehycodetable))
+lengthonehy <- length(onehym)
+lengthonehyn <- paste("N =",lengthonehy)
+onehycodepercent.df <- data.frame (Code  = onehycodeproptable.df$Var1, Fréquence=round(onehycodeproptable.df$Freq, 4)*100)
+```
+
+### hy : passation 1
+
+```{r  onehycodes, echo=FALSE}
+ggplot(onehycodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour onehy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthonehyn)+
+  xlab('Code')
+```
+
+```{r twohycount, include=FALSE}
+codetwohy.df <- data.frame(twohym,twohyp)
+codetwohy.df <- codetwohy.df %>% mutate(twohycode = case_when(twohyp+twohym <= 1 ~ '0',
+          twohyp == 2 & twohym == 2 ~ '±',
+			    twohyp == 1 & twohym == 1 ~ '0',
+          twohyp == 2 & twohym == 3 ~ '±',
+			    twohyp == 3 & twohym == 2 ~ '±',
+			    twohyp == 2 & twohym == 0 ~ '+',
+			    twohyp == 2 & twohym == 1 ~ '+',
+			    twohyp == 3 & twohym == 0 ~ '+',
+			    twohyp == 3 & twohym == 1 ~ '+',
+			    twohyp == 0 & twohym == 2 ~ '-',
+			    twohyp == 1 & twohym == 2 ~ '-',
+			    twohyp == 0 & twohym == 3 ~ '-',
+			    twohyp == 1 & twohym == 3 ~ '-',
+			    twohyp == 4 & twohym == 0 ~ '+!',
+			    twohyp == 4 & twohym == 1 ~ '+!',
+			    twohyp == 0 & twohym == 4 ~ '-!',
+			    twohyp == 1 & twohym == 4 ~ '-!',
+		      twohyp == 5 & twohym == 0 ~ '+!!',
+			    twohyp == 5 & twohym == 1 ~ '+!!',
+			    twohyp == 0 & twohym == 5 ~ '-!!',
+			    twohyp == 1 & twohym == 5 ~ '-!!',
+			    twohyp == 6 & twohym == 0 ~ '+!!!',
+			    twohyp == 6 & twohym == 1 ~ '+!!!',
+			    twohyp == 0 & twohym == 6 ~ '-!!!',
+			    twohyp == 1 & twohym == 6 ~ '-!!!',
+			    twohyp == 3 & twohym == 3 ~ '±!',
+			    twohyp == 4 & twohym == 2 ~ '±!',
+			    twohyp == 2 & twohym == 4 ~ '±!'
+                            ))
+
+twohycodetable <- table(codetwohy.df$twohycode)
+twohycodeproptable.df <- data.frame(prop.table(twohycodetable))
+lengthtwohy <- length(twohym)
+lengthtwohyn <- paste("N =",lengthtwohy)
+twohycodepercent.df <- data.frame (Code  = twohycodeproptable.df$Var1, Fréquence=round(twohycodeproptable.df$Freq, 4)*100)
+```
+
+### hy : passation 2
+
+```{r  twohycodes, echo=FALSE}
+ggplot(twohycodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour twohy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtwohyn)+
+  xlab('Code')
+```
+
+```{r threehycount, include=FALSE}
+codethreehy.df <- data.frame(threehym,threehyp)
+codethreehy.df <- codethreehy.df %>% mutate(threehycode = case_when(threehyp+threehym <= 1 ~ '0',
+          threehyp == 2 & threehym == 2 ~ '±',
+			    threehyp == 1 & threehym == 1 ~ '0',
+          threehyp == 2 & threehym == 3 ~ '±',
+			    threehyp == 3 & threehym == 2 ~ '±',
+			    threehyp == 2 & threehym == 0 ~ '+',
+			    threehyp == 2 & threehym == 1 ~ '+',
+			    threehyp == 3 & threehym == 0 ~ '+',
+			    threehyp == 3 & threehym == 1 ~ '+',
+			    threehyp == 0 & threehym == 2 ~ '-',
+			    threehyp == 1 & threehym == 2 ~ '-',
+			    threehyp == 0 & threehym == 3 ~ '-',
+			    threehyp == 1 & threehym == 3 ~ '-',
+			    threehyp == 4 & threehym == 0 ~ '+!',
+			    threehyp == 4 & threehym == 1 ~ '+!',
+			    threehyp == 0 & threehym == 4 ~ '-!',
+			    threehyp == 1 & threehym == 4 ~ '-!',
+		      threehyp == 5 & threehym == 0 ~ '+!!',
+			    threehyp == 5 & threehym == 1 ~ '+!!',
+			    threehyp == 0 & threehym == 5 ~ '-!!',
+			    threehyp == 1 & threehym == 5 ~ '-!!',
+			    threehyp == 6 & threehym == 0 ~ '+!!!',
+			    threehyp == 6 & threehym == 1 ~ '+!!!',
+			    threehyp == 0 & threehym == 6 ~ '-!!!',
+			    threehyp == 1 & threehym == 6 ~ '-!!!',
+			    threehyp == 3 & threehym == 3 ~ '±!',
+			    threehyp == 4 & threehym == 2 ~ '±!',
+			    threehyp == 2 & threehym == 4 ~ '±!'
+                            ))
+
+threehycodetable <- table(codethreehy.df$threehycode)
+threehycodeproptable.df <- data.frame(prop.table(threehycodetable))
+lengththreehy <- length(threehym)
+lengththreehyn <- paste("N =",lengththreehy)
+threehycodepercent.df <- data.frame (Code  = threehycodeproptable.df$Var1, Fréquence=round(threehycodeproptable.df$Freq, 4)*100)
+```
+
+### hy : passation 3
+
+```{r  threehycodes, echo=FALSE}
+ggplot(threehycodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour threehy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengththreehyn)+
+  xlab('Code')
+```
+
+```{r fourhycount, include=FALSE}
+codefourhy.df <- data.frame(fourhym,fourhyp)
+codefourhy.df <- codefourhy.df %>% mutate(fourhycode = case_when(fourhyp+fourhym <= 1 ~ '0',
+          fourhyp == 2 & fourhym == 2 ~ '±',
+			    fourhyp == 1 & fourhym == 1 ~ '0',
+          fourhyp == 2 & fourhym == 3 ~ '±',
+			    fourhyp == 3 & fourhym == 2 ~ '±',
+			    fourhyp == 2 & fourhym == 0 ~ '+',
+			    fourhyp == 2 & fourhym == 1 ~ '+',
+			    fourhyp == 3 & fourhym == 0 ~ '+',
+			    fourhyp == 3 & fourhym == 1 ~ '+',
+			    fourhyp == 0 & fourhym == 2 ~ '-',
+			    fourhyp == 1 & fourhym == 2 ~ '-',
+			    fourhyp == 0 & fourhym == 3 ~ '-',
+			    fourhyp == 1 & fourhym == 3 ~ '-',
+			    fourhyp == 4 & fourhym == 0 ~ '+!',
+			    fourhyp == 4 & fourhym == 1 ~ '+!',
+			    fourhyp == 0 & fourhym == 4 ~ '-!',
+			    fourhyp == 1 & fourhym == 4 ~ '-!',
+		      fourhyp == 5 & fourhym == 0 ~ '+!!',
+			    fourhyp == 5 & fourhym == 1 ~ '+!!',
+			    fourhyp == 0 & fourhym == 5 ~ '-!!',
+			    fourhyp == 1 & fourhym == 5 ~ '-!!',
+			    fourhyp == 6 & fourhym == 0 ~ '+!!!',
+			    fourhyp == 6 & fourhym == 1 ~ '+!!!',
+			    fourhyp == 0 & fourhym == 6 ~ '-!!!',
+			    fourhyp == 1 & fourhym == 6 ~ '-!!!',
+			    fourhyp == 3 & fourhym == 3 ~ '±!',
+			    fourhyp == 4 & fourhym == 2 ~ '±!',
+			    fourhyp == 2 & fourhym == 4 ~ '±!'
+                            ))
+
+fourhycodetable <- table(codefourhy.df$fourhycode)
+fourhycodeproptable.df <- data.frame(prop.table(fourhycodetable))
+lengthfourhy <- length(fourhym)
+lengthfourhyn <- paste("N =",lengthfourhy)
+fourhycodepercent.df <- data.frame (Code  = fourhycodeproptable.df$Var1, Fréquence=round(fourhycodeproptable.df$Freq, 4)*100)
+```
+
+### hy : passation 4
+
+```{r  fourhycodes, echo=FALSE}
+ggplot(fourhycodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fourhy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfourhyn)+
+  xlab('Code')
+```
+
+```{r fivehycount, include=FALSE}
+codefivehy.df <- data.frame(fivehym,fivehyp)
+codefivehy.df <- codefivehy.df %>% mutate(fivehycode = case_when(fivehyp+fivehym <= 1 ~ '0',
+          fivehyp == 2 & fivehym == 2 ~ '±',
+			    fivehyp == 1 & fivehym == 1 ~ '0',
+          fivehyp == 2 & fivehym == 3 ~ '±',
+			    fivehyp == 3 & fivehym == 2 ~ '±',
+			    fivehyp == 2 & fivehym == 0 ~ '+',
+			    fivehyp == 2 & fivehym == 1 ~ '+',
+			    fivehyp == 3 & fivehym == 0 ~ '+',
+			    fivehyp == 3 & fivehym == 1 ~ '+',
+			    fivehyp == 0 & fivehym == 2 ~ '-',
+			    fivehyp == 1 & fivehym == 2 ~ '-',
+			    fivehyp == 0 & fivehym == 3 ~ '-',
+			    fivehyp == 1 & fivehym == 3 ~ '-',
+			    fivehyp == 4 & fivehym == 0 ~ '+!',
+			    fivehyp == 4 & fivehym == 1 ~ '+!',
+			    fivehyp == 0 & fivehym == 4 ~ '-!',
+			    fivehyp == 1 & fivehym == 4 ~ '-!',
+		      fivehyp == 5 & fivehym == 0 ~ '+!!',
+			    fivehyp == 5 & fivehym == 1 ~ '+!!',
+			    fivehyp == 0 & fivehym == 5 ~ '-!!',
+			    fivehyp == 1 & fivehym == 5 ~ '-!!',
+			    fivehyp == 6 & fivehym == 0 ~ '+!!!',
+			    fivehyp == 6 & fivehym == 1 ~ '+!!!',
+			    fivehyp == 0 & fivehym == 6 ~ '-!!!',
+			    fivehyp == 1 & fivehym == 6 ~ '-!!!',
+			    fivehyp == 3 & fivehym == 3 ~ '±!',
+			    fivehyp == 4 & fivehym == 2 ~ '±!',
+			    fivehyp == 2 & fivehym == 4 ~ '±!'
+                            ))
+
+fivehycodetable <- table(codefivehy.df$fivehycode)
+fivehycodeproptable.df <- data.frame(prop.table(fivehycodetable))
+lengthfivehy <- length(fivehym)
+lengthfivehyn <- paste("N =",lengthfivehy)
+fivehycodepercent.df <- data.frame (Code  = fivehycodeproptable.df$Var1, Fréquence=round(fivehycodeproptable.df$Freq, 4)*100)
+```
+
+### hy : passation 5
+
+```{r  fivehycodes, echo=FALSE}
+ggplot(fivehycodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fivehy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfivehyn)+
+  xlab('Code')
+```
+
+```{r sixhycount, include=FALSE}
+codesixhy.df <- data.frame(sixhym,sixhyp)
+codesixhy.df <- codesixhy.df %>% mutate(sixhycode = case_when(sixhyp+sixhym <= 1 ~ '0',
+          sixhyp == 2 & sixhym == 2 ~ '±',
+			    sixhyp == 1 & sixhym == 1 ~ '0',
+          sixhyp == 2 & sixhym == 3 ~ '±',
+			    sixhyp == 3 & sixhym == 2 ~ '±',
+			    sixhyp == 2 & sixhym == 0 ~ '+',
+			    sixhyp == 2 & sixhym == 1 ~ '+',
+			    sixhyp == 3 & sixhym == 0 ~ '+',
+			    sixhyp == 3 & sixhym == 1 ~ '+',
+			    sixhyp == 0 & sixhym == 2 ~ '-',
+			    sixhyp == 1 & sixhym == 2 ~ '-',
+			    sixhyp == 0 & sixhym == 3 ~ '-',
+			    sixhyp == 1 & sixhym == 3 ~ '-',
+			    sixhyp == 4 & sixhym == 0 ~ '+!',
+			    sixhyp == 4 & sixhym == 1 ~ '+!',
+			    sixhyp == 0 & sixhym == 4 ~ '-!',
+			    sixhyp == 1 & sixhym == 4 ~ '-!',
+		      sixhyp == 5 & sixhym == 0 ~ '+!!',
+			    sixhyp == 5 & sixhym == 1 ~ '+!!',
+			    sixhyp == 0 & sixhym == 5 ~ '-!!',
+			    sixhyp == 1 & sixhym == 5 ~ '-!!',
+			    sixhyp == 6 & sixhym == 0 ~ '+!!!',
+			    sixhyp == 6 & sixhym == 1 ~ '+!!!',
+			    sixhyp == 0 & sixhym == 6 ~ '-!!!',
+			    sixhyp == 1 & sixhym == 6 ~ '-!!!',
+			    sixhyp == 3 & sixhym == 3 ~ '±!',
+			    sixhyp == 4 & sixhym == 2 ~ '±!',
+			    sixhyp == 2 & sixhym == 4 ~ '±!'
+                            ))
+
+sixhycodetable <- table(codesixhy.df$sixhycode)
+sixhycodeproptable.df <- data.frame(prop.table(sixhycodetable))
+lengthsixhy <- length(sixhym)
+lengthsixhyn <- paste("N =",lengthsixhy)
+sixhycodepercent.df <- data.frame (Code  = sixhycodeproptable.df$Var1, Fréquence=round(sixhycodeproptable.df$Freq, 4)*100)
+```
+
+### hy : passation 6
+
+```{r  sixhycodes, echo=FALSE}
+ggplot(sixhycodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sixhy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsixhyn)+
+  xlab('Code')
+```
+
+```{r sevenhycount, include=FALSE}
+codesevenhy.df <- data.frame(sevenhym,sevenhyp)
+codesevenhy.df <- codesevenhy.df %>% mutate(sevenhycode = case_when(sevenhyp+sevenhym <= 1 ~ '0',
+          sevenhyp == 2 & sevenhym == 2 ~ '±',
+			    sevenhyp == 1 & sevenhym == 1 ~ '0',
+          sevenhyp == 2 & sevenhym == 3 ~ '±',
+			    sevenhyp == 3 & sevenhym == 2 ~ '±',
+			    sevenhyp == 2 & sevenhym == 0 ~ '+',
+			    sevenhyp == 2 & sevenhym == 1 ~ '+',
+			    sevenhyp == 3 & sevenhym == 0 ~ '+',
+			    sevenhyp == 3 & sevenhym == 1 ~ '+',
+			    sevenhyp == 0 & sevenhym == 2 ~ '-',
+			    sevenhyp == 1 & sevenhym == 2 ~ '-',
+			    sevenhyp == 0 & sevenhym == 3 ~ '-',
+			    sevenhyp == 1 & sevenhym == 3 ~ '-',
+			    sevenhyp == 4 & sevenhym == 0 ~ '+!',
+			    sevenhyp == 4 & sevenhym == 1 ~ '+!',
+			    sevenhyp == 0 & sevenhym == 4 ~ '-!',
+			    sevenhyp == 1 & sevenhym == 4 ~ '-!',
+		      sevenhyp == 5 & sevenhym == 0 ~ '+!!',
+			    sevenhyp == 5 & sevenhym == 1 ~ '+!!',
+			    sevenhyp == 0 & sevenhym == 5 ~ '-!!',
+			    sevenhyp == 1 & sevenhym == 5 ~ '-!!',
+			    sevenhyp == 6 & sevenhym == 0 ~ '+!!!',
+			    sevenhyp == 6 & sevenhym == 1 ~ '+!!!',
+			    sevenhyp == 0 & sevenhym == 6 ~ '-!!!',
+			    sevenhyp == 1 & sevenhym == 6 ~ '-!!!',
+			    sevenhyp == 3 & sevenhym == 3 ~ '±!',
+			    sevenhyp == 4 & sevenhym == 2 ~ '±!',
+			    sevenhyp == 2 & sevenhym == 4 ~ '±!'
+                            ))
+
+sevenhycodetable <- table(codesevenhy.df$sevenhycode)
+sevenhycodeproptable.df <- data.frame(prop.table(sevenhycodetable))
+lengthsevenhy <- length(sevenhym)
+lengthsevenhyn <- paste("N =",lengthsevenhy)
+sevenhycodepercent.df <- data.frame (Code  = sevenhycodeproptable.df$Var1, Fréquence=round(sevenhycodeproptable.df$Freq, 4)*100)
+```
+
+### hy : passation 7
+
+```{r  sevenhycodes, echo=FALSE}
+ggplot(sevenhycodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sevenhy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsevenhyn)+
+  xlab('Code')
+```
+
+```{r eighthycount, include=FALSE}
+codeeighthy.df <- data.frame(eighthym,eighthyp)
+codeeighthy.df <- codeeighthy.df %>% mutate(eighthycode = case_when(eighthyp+eighthym <= 1 ~ '0',
+          eighthyp == 2 & eighthym == 2 ~ '±',
+			    eighthyp == 1 & eighthym == 1 ~ '0',
+          eighthyp == 2 & eighthym == 3 ~ '±',
+			    eighthyp == 3 & eighthym == 2 ~ '±',
+			    eighthyp == 2 & eighthym == 0 ~ '+',
+			    eighthyp == 2 & eighthym == 1 ~ '+',
+			    eighthyp == 3 & eighthym == 0 ~ '+',
+			    eighthyp == 3 & eighthym == 1 ~ '+',
+			    eighthyp == 0 & eighthym == 2 ~ '-',
+			    eighthyp == 1 & eighthym == 2 ~ '-',
+			    eighthyp == 0 & eighthym == 3 ~ '-',
+			    eighthyp == 1 & eighthym == 3 ~ '-',
+			    eighthyp == 4 & eighthym == 0 ~ '+!',
+			    eighthyp == 4 & eighthym == 1 ~ '+!',
+			    eighthyp == 0 & eighthym == 4 ~ '-!',
+			    eighthyp == 1 & eighthym == 4 ~ '-!',
+		      eighthyp == 5 & eighthym == 0 ~ '+!!',
+			    eighthyp == 5 & eighthym == 1 ~ '+!!',
+			    eighthyp == 0 & eighthym == 5 ~ '-!!',
+			    eighthyp == 1 & eighthym == 5 ~ '-!!',
+			    eighthyp == 6 & eighthym == 0 ~ '+!!!',
+			    eighthyp == 6 & eighthym == 1 ~ '+!!!',
+			    eighthyp == 0 & eighthym == 6 ~ '-!!!',
+			    eighthyp == 1 & eighthym == 6 ~ '-!!!',
+			    eighthyp == 3 & eighthym == 3 ~ '±!',
+			    eighthyp == 4 & eighthym == 2 ~ '±!',
+			    eighthyp == 2 & eighthym == 4 ~ '±!'
+                            ))
+
+eighthycodetable <- table(codeeighthy.df$eighthycode)
+eighthycodeproptable.df <- data.frame(prop.table(eighthycodetable))
+lengtheighthy <- length(eighthym)
+lengtheighthyn <- paste("N =",lengtheighthy)
+eighthycodepercent.df <- data.frame (Code  = eighthycodeproptable.df$Var1, Fréquence=round(eighthycodeproptable.df$Freq, 4)*100)
+```
+
+### hy : passation 8
+
+```{r  eighthycodes, echo=FALSE}
+ggplot(eighthycodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour eighthy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengtheighthyn)+
+  xlab('Code')
+```
+
+```{r ninehycount, include=FALSE}
+codeninehy.df <- data.frame(ninehym,ninehyp)
+codeninehy.df <- codeninehy.df %>% mutate(ninehycode = case_when(ninehyp+ninehym <= 1 ~ '0',
+          ninehyp == 2 & ninehym == 2 ~ '±',
+			    ninehyp == 1 & ninehym == 1 ~ '0',
+          ninehyp == 2 & ninehym == 3 ~ '±',
+			    ninehyp == 3 & ninehym == 2 ~ '±',
+			    ninehyp == 2 & ninehym == 0 ~ '+',
+			    ninehyp == 2 & ninehym == 1 ~ '+',
+			    ninehyp == 3 & ninehym == 0 ~ '+',
+			    ninehyp == 3 & ninehym == 1 ~ '+',
+			    ninehyp == 0 & ninehym == 2 ~ '-',
+			    ninehyp == 1 & ninehym == 2 ~ '-',
+			    ninehyp == 0 & ninehym == 3 ~ '-',
+			    ninehyp == 1 & ninehym == 3 ~ '-',
+			    ninehyp == 4 & ninehym == 0 ~ '+!',
+			    ninehyp == 4 & ninehym == 1 ~ '+!',
+			    ninehyp == 0 & ninehym == 4 ~ '-!',
+			    ninehyp == 1 & ninehym == 4 ~ '-!',
+		      ninehyp == 5 & ninehym == 0 ~ '+!!',
+			    ninehyp == 5 & ninehym == 1 ~ '+!!',
+			    ninehyp == 0 & ninehym == 5 ~ '-!!',
+			    ninehyp == 1 & ninehym == 5 ~ '-!!',
+			    ninehyp == 6 & ninehym == 0 ~ '+!!!',
+			    ninehyp == 6 & ninehym == 1 ~ '+!!!',
+			    ninehyp == 0 & ninehym == 6 ~ '-!!!',
+			    ninehyp == 1 & ninehym == 6 ~ '-!!!',
+			    ninehyp == 3 & ninehym == 3 ~ '±!',
+			    ninehyp == 4 & ninehym == 2 ~ '±!',
+			    ninehyp == 2 & ninehym == 4 ~ '±!'
+                            ))
+
+ninehycodetable <- table(codeninehy.df$ninehycode)
+ninehycodeproptable.df <- data.frame(prop.table(ninehycodetable))
+lengthninehy <- length(ninehym)
+lengthninehyn <- paste("N =",lengthninehy)
+ninehycodepercent.df <- data.frame (Code  = ninehycodeproptable.df$Var1, Fréquence=round(ninehycodeproptable.df$Freq, 4)*100)
+```
+
+### hy : passation 9
+
+```{r  ninehycodes, echo=FALSE}
+ggplot(ninehycodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour ninehy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthninehyn)+
+  xlab('Code')
+```
+
+```{r tenhycount, include=FALSE}
+codetenhy.df <- data.frame(tenhym,tenhyp)
+codetenhy.df <- codetenhy.df %>% mutate(tenhycode = case_when(tenhyp+tenhym <= 1 ~ '0',
+          tenhyp == 2 & tenhym == 2 ~ '±',
+			    tenhyp == 1 & tenhym == 1 ~ '0',
+          tenhyp == 2 & tenhym == 3 ~ '±',
+			    tenhyp == 3 & tenhym == 2 ~ '±',
+			    tenhyp == 2 & tenhym == 0 ~ '+',
+			    tenhyp == 2 & tenhym == 1 ~ '+',
+			    tenhyp == 3 & tenhym == 0 ~ '+',
+			    tenhyp == 3 & tenhym == 1 ~ '+',
+			    tenhyp == 0 & tenhym == 2 ~ '-',
+			    tenhyp == 1 & tenhym == 2 ~ '-',
+			    tenhyp == 0 & tenhym == 3 ~ '-',
+			    tenhyp == 1 & tenhym == 3 ~ '-',
+			    tenhyp == 4 & tenhym == 0 ~ '+!',
+			    tenhyp == 4 & tenhym == 1 ~ '+!',
+			    tenhyp == 0 & tenhym == 4 ~ '-!',
+			    tenhyp == 1 & tenhym == 4 ~ '-!',
+		      tenhyp == 5 & tenhym == 0 ~ '+!!',
+			    tenhyp == 5 & tenhym == 1 ~ '+!!',
+			    tenhyp == 0 & tenhym == 5 ~ '-!!',
+			    tenhyp == 1 & tenhym == 5 ~ '-!!',
+			    tenhyp == 6 & tenhym == 0 ~ '+!!!',
+			    tenhyp == 6 & tenhym == 1 ~ '+!!!',
+			    tenhyp == 0 & tenhym == 6 ~ '-!!!',
+			    tenhyp == 1 & tenhym == 6 ~ '-!!!',
+			    tenhyp == 3 & tenhym == 3 ~ '±!',
+			    tenhyp == 4 & tenhym == 2 ~ '±!',
+			    tenhyp == 2 & tenhym == 4 ~ '±!'
+                            ))
+
+tenhycodetable <- table(codetenhy.df$tenhycode)
+tenhycodeproptable.df <- data.frame(prop.table(tenhycodetable))
+lengthtenhy <- length(tenhym)
+lengthtenhyn <- paste("N =",lengthtenhy)
+tenhycodepercent.df <- data.frame (Code  = tenhycodeproptable.df$Var1, Fréquence=round(tenhycodeproptable.df$Freq, 4)*100)
+```
+
+### hy : passation 10
+
+```{r  tenhycodes, echo=FALSE}
+ggplot(tenhycodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour tenhy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtenhyn)+
+  xlab('Code')
+```
+
+### hy total
+
+```{r}
+codeonehy_namehy.df <- data.frame(plus=codeonehy.df$onehyp, minus=codeonehy.df$onehym, code=codeonehy.df$onehycode)
+codetwohy_namehy.df <- data.frame(plus=codetwohy.df$twohyp, minus=codetwohy.df$twohym, code=codetwohy.df$twohycode)
+codethreehy_namehy.df <- data.frame(plus=codethreehy.df$threehyp, minus=codethreehy.df$threehym, code=codethreehy.df$threehycode)
+codefourhy_namehy.df <- data.frame(plus=codefourhy.df$fourhyp, minus=codefourhy.df$fourhym, code=codefourhy.df$fourhycode)
+codefivehy_namehy.df <- data.frame(plus=codefivehy.df$fivehyp, minus=codefivehy.df$fivehym, code=codefivehy.df$fivehycode)
+codesixhy_namehy.df <- data.frame(plus=codesixhy.df$sixhyp, minus=codesixhy.df$sixhym, code=codesixhy.df$sixhycode)
+codesevenhy_namehy.df <- data.frame(plus=codesevenhy.df$sevenhyp, minus=codesevenhy.df$sevenhym, code=codesevenhy.df$sevenhycode)
+codeeighthy_namehy.df <- data.frame(plus=codeeighthy.df$eighthyp, minus=codeeighthy.df$eighthym, code=codeeighthy.df$eighthycode)
+codeninehy_namehy.df <- data.frame(plus=codeninehy.df$ninehyp, minus=codeninehy.df$ninehym, code=codeninehy.df$ninehycode)
+codetenhy_namehy.df <- data.frame(plus=codetenhy.df$tenhyp, minus=codetenhy.df$tenhym, code=codetenhy.df$tenhycode)
+codehytotal <- rbind(codeonehy_namehy.df, codetwohy_namehy.df, codethreehy_namehy.df, codefourhy_namehy.df, codefivehy_namehy.df, codesixhy_namehy.df, codesevenhy_namehy.df, codeeighthy_namehy.df, codeninehy_namehy.df, codetenhy_namehy.df)
+
+hytotalcodetable <- table(codehytotal$code)
+hytotalcodeproptable.df <- data.frame(prop.table(hytotalcodetable))
+lengthhytotal <- length(codehytotal$code)
+lengthhytotaln <- paste("N =",lengthhytotal)
+hytotalcodepercent.df <- data.frame (Code  = hytotalcodeproptable.df$Var1, Fréquence=round(hytotalcodeproptable.df$Freq, 4)*100)
+```
+
+```{r hyallcodes, echo=FALSE}
+ggplot(hytotalcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour hy") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthstotaln)+
+  xlab('Code')
+```
+
+## k
+
+```{r onekcount, include=FALSE}
+codeonek.df <- data.frame(onekm,onekp)
+codeonek.df <- codeonek.df %>% mutate(onekcode = case_when(onekp+onekm <= 1 ~ '0',
+          onekp == 2 & onekm == 2 ~ '±',
+			    onekp == 1 & onekm == 1 ~ '0',
+          onekp == 2 & onekm == 3 ~ '±',
+			    onekp == 3 & onekm == 2 ~ '±',
+			    onekp == 2 & onekm == 0 ~ '+',
+			    onekp == 2 & onekm == 1 ~ '+',
+			    onekp == 3 & onekm == 0 ~ '+',
+			    onekp == 3 & onekm == 1 ~ '+',
+			    onekp == 0 & onekm == 2 ~ '-',
+			    onekp == 1 & onekm == 2 ~ '-',
+			    onekp == 0 & onekm == 3 ~ '-',
+			    onekp == 1 & onekm == 3 ~ '-',
+			    onekp == 4 & onekm == 0 ~ '+!',
+			    onekp == 4 & onekm == 1 ~ '+!',
+			    onekp == 0 & onekm == 4 ~ '-!',
+			    onekp == 1 & onekm == 4 ~ '-!',
+		      onekp == 5 & onekm == 0 ~ '+!!',
+			    onekp == 5 & onekm == 1 ~ '+!!',
+			    onekp == 0 & onekm == 5 ~ '-!!',
+			    onekp == 1 & onekm == 5 ~ '-!!',
+			    onekp == 6 & onekm == 0 ~ '+!!!',
+			    onekp == 6 & onekm == 1 ~ '+!!!',
+			    onekp == 0 & onekm == 6 ~ '-!!!',
+			    onekp == 1 & onekm == 6 ~ '-!!!',
+			    onekp == 3 & onekm == 3 ~ '±!',
+			    onekp == 4 & onekm == 2 ~ '±!',
+			    onekp == 2 & onekm == 4 ~ '±!'
+                            ))
+
+onekcodetable <- table(codeonek.df$onekcode)
+onekcodeproptable.df <- data.frame(prop.table(onekcodetable))
+lengthonek <- length(onekm)
+lengthonekn <- paste("N =",lengthonek)
+onekcodepercent.df <- data.frame (Code  = onekcodeproptable.df$Var1, Fréquence=round(onekcodeproptable.df$Freq, 4)*100)
+```
+
+### k : passation 1
+
+```{r  onekcodes, echo=FALSE}
+ggplot(onekcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour onek") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthonekn)+
+  xlab('Code')
+```
+
+```{r twokcount, include=FALSE}
+codetwok.df <- data.frame(twokm,twokp)
+codetwok.df <- codetwok.df %>% mutate(twokcode = case_when(twokp+twokm <= 1 ~ '0',
+          twokp == 2 & twokm == 2 ~ '±',
+			    twokp == 1 & twokm == 1 ~ '0',
+          twokp == 2 & twokm == 3 ~ '±',
+			    twokp == 3 & twokm == 2 ~ '±',
+			    twokp == 2 & twokm == 0 ~ '+',
+			    twokp == 2 & twokm == 1 ~ '+',
+			    twokp == 3 & twokm == 0 ~ '+',
+			    twokp == 3 & twokm == 1 ~ '+',
+			    twokp == 0 & twokm == 2 ~ '-',
+			    twokp == 1 & twokm == 2 ~ '-',
+			    twokp == 0 & twokm == 3 ~ '-',
+			    twokp == 1 & twokm == 3 ~ '-',
+			    twokp == 4 & twokm == 0 ~ '+!',
+			    twokp == 4 & twokm == 1 ~ '+!',
+			    twokp == 0 & twokm == 4 ~ '-!',
+			    twokp == 1 & twokm == 4 ~ '-!',
+		      twokp == 5 & twokm == 0 ~ '+!!',
+			    twokp == 5 & twokm == 1 ~ '+!!',
+			    twokp == 0 & twokm == 5 ~ '-!!',
+			    twokp == 1 & twokm == 5 ~ '-!!',
+			    twokp == 6 & twokm == 0 ~ '+!!!',
+			    twokp == 6 & twokm == 1 ~ '+!!!',
+			    twokp == 0 & twokm == 6 ~ '-!!!',
+			    twokp == 1 & twokm == 6 ~ '-!!!',
+			    twokp == 3 & twokm == 3 ~ '±!',
+			    twokp == 4 & twokm == 2 ~ '±!',
+			    twokp == 2 & twokm == 4 ~ '±!'
+                            ))
+
+twokcodetable <- table(codetwok.df$twokcode)
+twokcodeproptable.df <- data.frame(prop.table(twokcodetable))
+lengthtwok <- length(twokm)
+lengthtwokn <- paste("N =",lengthtwok)
+twokcodepercent.df <- data.frame (Code  = twokcodeproptable.df$Var1, Fréquence=round(twokcodeproptable.df$Freq, 4)*100)
+```
+
+### k : passation 2
+
+```{r  twokcodes, echo=FALSE}
+ggplot(twokcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour twok") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtwokn)+
+  xlab('Code')
+```
+
+```{r threekcount, include=FALSE}
+codethreek.df <- data.frame(threekm,threekp)
+codethreek.df <- codethreek.df %>% mutate(threekcode = case_when(threekp+threekm <= 1 ~ '0',
+          threekp == 2 & threekm == 2 ~ '±',
+			    threekp == 1 & threekm == 1 ~ '0',
+          threekp == 2 & threekm == 3 ~ '±',
+			    threekp == 3 & threekm == 2 ~ '±',
+			    threekp == 2 & threekm == 0 ~ '+',
+			    threekp == 2 & threekm == 1 ~ '+',
+			    threekp == 3 & threekm == 0 ~ '+',
+			    threekp == 3 & threekm == 1 ~ '+',
+			    threekp == 0 & threekm == 2 ~ '-',
+			    threekp == 1 & threekm == 2 ~ '-',
+			    threekp == 0 & threekm == 3 ~ '-',
+			    threekp == 1 & threekm == 3 ~ '-',
+			    threekp == 4 & threekm == 0 ~ '+!',
+			    threekp == 4 & threekm == 1 ~ '+!',
+			    threekp == 0 & threekm == 4 ~ '-!',
+			    threekp == 1 & threekm == 4 ~ '-!',
+		      threekp == 5 & threekm == 0 ~ '+!!',
+			    threekp == 5 & threekm == 1 ~ '+!!',
+			    threekp == 0 & threekm == 5 ~ '-!!',
+			    threekp == 1 & threekm == 5 ~ '-!!',
+			    threekp == 6 & threekm == 0 ~ '+!!!',
+			    threekp == 6 & threekm == 1 ~ '+!!!',
+			    threekp == 0 & threekm == 6 ~ '-!!!',
+			    threekp == 1 & threekm == 6 ~ '-!!!',
+			    threekp == 3 & threekm == 3 ~ '±!',
+			    threekp == 4 & threekm == 2 ~ '±!',
+			    threekp == 2 & threekm == 4 ~ '±!'
+                            ))
+
+threekcodetable <- table(codethreek.df$threekcode)
+threekcodeproptable.df <- data.frame(prop.table(threekcodetable))
+lengththreek <- length(threekm)
+lengththreekn <- paste("N =",lengththreek)
+threekcodepercent.df <- data.frame (Code  = threekcodeproptable.df$Var1, Fréquence=round(threekcodeproptable.df$Freq, 4)*100)
+```
+
+### k : passation 3
+
+```{r  threekcodes, echo=FALSE}
+ggplot(threekcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour threek") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengththreekn)+
+  xlab('Code')
+```
+
+```{r fourkcount, include=FALSE}
+codefourk.df <- data.frame(fourkm,fourkp)
+codefourk.df <- codefourk.df %>% mutate(fourkcode = case_when(fourkp+fourkm <= 1 ~ '0',
+          fourkp == 2 & fourkm == 2 ~ '±',
+			    fourkp == 1 & fourkm == 1 ~ '0',
+          fourkp == 2 & fourkm == 3 ~ '±',
+			    fourkp == 3 & fourkm == 2 ~ '±',
+			    fourkp == 2 & fourkm == 0 ~ '+',
+			    fourkp == 2 & fourkm == 1 ~ '+',
+			    fourkp == 3 & fourkm == 0 ~ '+',
+			    fourkp == 3 & fourkm == 1 ~ '+',
+			    fourkp == 0 & fourkm == 2 ~ '-',
+			    fourkp == 1 & fourkm == 2 ~ '-',
+			    fourkp == 0 & fourkm == 3 ~ '-',
+			    fourkp == 1 & fourkm == 3 ~ '-',
+			    fourkp == 4 & fourkm == 0 ~ '+!',
+			    fourkp == 4 & fourkm == 1 ~ '+!',
+			    fourkp == 0 & fourkm == 4 ~ '-!',
+			    fourkp == 1 & fourkm == 4 ~ '-!',
+		      fourkp == 5 & fourkm == 0 ~ '+!!',
+			    fourkp == 5 & fourkm == 1 ~ '+!!',
+			    fourkp == 0 & fourkm == 5 ~ '-!!',
+			    fourkp == 1 & fourkm == 5 ~ '-!!',
+			    fourkp == 6 & fourkm == 0 ~ '+!!!',
+			    fourkp == 6 & fourkm == 1 ~ '+!!!',
+			    fourkp == 0 & fourkm == 6 ~ '-!!!',
+			    fourkp == 1 & fourkm == 6 ~ '-!!!',
+			    fourkp == 3 & fourkm == 3 ~ '±!',
+			    fourkp == 4 & fourkm == 2 ~ '±!',
+			    fourkp == 2 & fourkm == 4 ~ '±!'
+                            ))
+
+fourkcodetable <- table(codefourk.df$fourkcode)
+fourkcodeproptable.df <- data.frame(prop.table(fourkcodetable))
+lengthfourk <- length(fourkm)
+lengthfourkn <- paste("N =",lengthfourk)
+fourkcodepercent.df <- data.frame (Code  = fourkcodeproptable.df$Var1, Fréquence=round(fourkcodeproptable.df$Freq, 4)*100)
+```
+
+### k : passation 4
+
+```{r  fourkcodes, echo=FALSE}
+ggplot(fourkcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fourk") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfourkn)+
+  xlab('Code')
+```
+
+```{r fivekcount, include=FALSE}
+codefivek.df <- data.frame(fivekm,fivekp)
+codefivek.df <- codefivek.df %>% mutate(fivekcode = case_when(fivekp+fivekm <= 1 ~ '0',
+          fivekp == 2 & fivekm == 2 ~ '±',
+			    fivekp == 1 & fivekm == 1 ~ '0',
+          fivekp == 2 & fivekm == 3 ~ '±',
+			    fivekp == 3 & fivekm == 2 ~ '±',
+			    fivekp == 2 & fivekm == 0 ~ '+',
+			    fivekp == 2 & fivekm == 1 ~ '+',
+			    fivekp == 3 & fivekm == 0 ~ '+',
+			    fivekp == 3 & fivekm == 1 ~ '+',
+			    fivekp == 0 & fivekm == 2 ~ '-',
+			    fivekp == 1 & fivekm == 2 ~ '-',
+			    fivekp == 0 & fivekm == 3 ~ '-',
+			    fivekp == 1 & fivekm == 3 ~ '-',
+			    fivekp == 4 & fivekm == 0 ~ '+!',
+			    fivekp == 4 & fivekm == 1 ~ '+!',
+			    fivekp == 0 & fivekm == 4 ~ '-!',
+			    fivekp == 1 & fivekm == 4 ~ '-!',
+		      fivekp == 5 & fivekm == 0 ~ '+!!',
+			    fivekp == 5 & fivekm == 1 ~ '+!!',
+			    fivekp == 0 & fivekm == 5 ~ '-!!',
+			    fivekp == 1 & fivekm == 5 ~ '-!!',
+			    fivekp == 6 & fivekm == 0 ~ '+!!!',
+			    fivekp == 6 & fivekm == 1 ~ '+!!!',
+			    fivekp == 0 & fivekm == 6 ~ '-!!!',
+			    fivekp == 1 & fivekm == 6 ~ '-!!!',
+			    fivekp == 3 & fivekm == 3 ~ '±!',
+			    fivekp == 4 & fivekm == 2 ~ '±!',
+			    fivekp == 2 & fivekm == 4 ~ '±!'
+                            ))
+
+fivekcodetable <- table(codefivek.df$fivekcode)
+fivekcodeproptable.df <- data.frame(prop.table(fivekcodetable))
+lengthfivek <- length(fivekm)
+lengthfivekn <- paste("N =",lengthfivek)
+fivekcodepercent.df <- data.frame (Code  = fivekcodeproptable.df$Var1, Fréquence=round(fivekcodeproptable.df$Freq, 4)*100)
+```
+
+### k : passation 5
+
+```{r  fivekcodes, echo=FALSE}
+ggplot(fivekcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fivek") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfivekn)+
+  xlab('Code')
+```
+
+```{r sixkcount, include=FALSE}
+codesixk.df <- data.frame(sixkm,sixkp)
+codesixk.df <- codesixk.df %>% mutate(sixkcode = case_when(sixkp+sixkm <= 1 ~ '0',
+          sixkp == 2 & sixkm == 2 ~ '±',
+			    sixkp == 1 & sixkm == 1 ~ '0',
+          sixkp == 2 & sixkm == 3 ~ '±',
+			    sixkp == 3 & sixkm == 2 ~ '±',
+			    sixkp == 2 & sixkm == 0 ~ '+',
+			    sixkp == 2 & sixkm == 1 ~ '+',
+			    sixkp == 3 & sixkm == 0 ~ '+',
+			    sixkp == 3 & sixkm == 1 ~ '+',
+			    sixkp == 0 & sixkm == 2 ~ '-',
+			    sixkp == 1 & sixkm == 2 ~ '-',
+			    sixkp == 0 & sixkm == 3 ~ '-',
+			    sixkp == 1 & sixkm == 3 ~ '-',
+			    sixkp == 4 & sixkm == 0 ~ '+!',
+			    sixkp == 4 & sixkm == 1 ~ '+!',
+			    sixkp == 0 & sixkm == 4 ~ '-!',
+			    sixkp == 1 & sixkm == 4 ~ '-!',
+		      sixkp == 5 & sixkm == 0 ~ '+!!',
+			    sixkp == 5 & sixkm == 1 ~ '+!!',
+			    sixkp == 0 & sixkm == 5 ~ '-!!',
+			    sixkp == 1 & sixkm == 5 ~ '-!!',
+			    sixkp == 6 & sixkm == 0 ~ '+!!!',
+			    sixkp == 6 & sixkm == 1 ~ '+!!!',
+			    sixkp == 0 & sixkm == 6 ~ '-!!!',
+			    sixkp == 1 & sixkm == 6 ~ '-!!!',
+			    sixkp == 3 & sixkm == 3 ~ '±!',
+			    sixkp == 4 & sixkm == 2 ~ '±!',
+			    sixkp == 2 & sixkm == 4 ~ '±!'
+                            ))
+
+sixkcodetable <- table(codesixk.df$sixkcode)
+sixkcodeproptable.df <- data.frame(prop.table(sixkcodetable))
+lengthsixk <- length(sixkm)
+lengthsixkn <- paste("N =",lengthsixk)
+sixkcodepercent.df <- data.frame (Code  = sixkcodeproptable.df$Var1, Fréquence=round(sixkcodeproptable.df$Freq, 4)*100)
+```
+
+### k : passation 6
+
+```{r  sixkcodes, echo=FALSE}
+ggplot(sixkcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sixk") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsixkn)+
+  xlab('Code')
+```
+
+```{r sevenkcount, include=FALSE}
+codesevenk.df <- data.frame(sevenkm,sevenkp)
+codesevenk.df <- codesevenk.df %>% mutate(sevenkcode = case_when(sevenkp+sevenkm <= 1 ~ '0',
+          sevenkp == 2 & sevenkm == 2 ~ '±',
+			    sevenkp == 1 & sevenkm == 1 ~ '0',
+          sevenkp == 2 & sevenkm == 3 ~ '±',
+			    sevenkp == 3 & sevenkm == 2 ~ '±',
+			    sevenkp == 2 & sevenkm == 0 ~ '+',
+			    sevenkp == 2 & sevenkm == 1 ~ '+',
+			    sevenkp == 3 & sevenkm == 0 ~ '+',
+			    sevenkp == 3 & sevenkm == 1 ~ '+',
+			    sevenkp == 0 & sevenkm == 2 ~ '-',
+			    sevenkp == 1 & sevenkm == 2 ~ '-',
+			    sevenkp == 0 & sevenkm == 3 ~ '-',
+			    sevenkp == 1 & sevenkm == 3 ~ '-',
+			    sevenkp == 4 & sevenkm == 0 ~ '+!',
+			    sevenkp == 4 & sevenkm == 1 ~ '+!',
+			    sevenkp == 0 & sevenkm == 4 ~ '-!',
+			    sevenkp == 1 & sevenkm == 4 ~ '-!',
+		      sevenkp == 5 & sevenkm == 0 ~ '+!!',
+			    sevenkp == 5 & sevenkm == 1 ~ '+!!',
+			    sevenkp == 0 & sevenkm == 5 ~ '-!!',
+			    sevenkp == 1 & sevenkm == 5 ~ '-!!',
+			    sevenkp == 6 & sevenkm == 0 ~ '+!!!',
+			    sevenkp == 6 & sevenkm == 1 ~ '+!!!',
+			    sevenkp == 0 & sevenkm == 6 ~ '-!!!',
+			    sevenkp == 1 & sevenkm == 6 ~ '-!!!',
+			    sevenkp == 3 & sevenkm == 3 ~ '±!',
+			    sevenkp == 4 & sevenkm == 2 ~ '±!',
+			    sevenkp == 2 & sevenkm == 4 ~ '±!'
+                            ))
+
+sevenkcodetable <- table(codesevenk.df$sevenkcode)
+sevenkcodeproptable.df <- data.frame(prop.table(sevenkcodetable))
+lengthsevenk <- length(sevenkm)
+lengthsevenkn <- paste("N =",lengthsevenk)
+sevenkcodepercent.df <- data.frame (Code  = sevenkcodeproptable.df$Var1, Fréquence=round(sevenkcodeproptable.df$Freq, 4)*100)
+```
+
+### k : passation 7
+
+```{r  sevenkcodes, echo=FALSE}
+ggplot(sevenkcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sevenk") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsevenkn)+
+  xlab('Code')
+```
+
+```{r eightkcount, include=FALSE}
+codeeightk.df <- data.frame(eightkm,eightkp)
+codeeightk.df <- codeeightk.df %>% mutate(eightkcode = case_when(eightkp+eightkm <= 1 ~ '0',
+          eightkp == 2 & eightkm == 2 ~ '±',
+			    eightkp == 1 & eightkm == 1 ~ '0',
+          eightkp == 2 & eightkm == 3 ~ '±',
+			    eightkp == 3 & eightkm == 2 ~ '±',
+			    eightkp == 2 & eightkm == 0 ~ '+',
+			    eightkp == 2 & eightkm == 1 ~ '+',
+			    eightkp == 3 & eightkm == 0 ~ '+',
+			    eightkp == 3 & eightkm == 1 ~ '+',
+			    eightkp == 0 & eightkm == 2 ~ '-',
+			    eightkp == 1 & eightkm == 2 ~ '-',
+			    eightkp == 0 & eightkm == 3 ~ '-',
+			    eightkp == 1 & eightkm == 3 ~ '-',
+			    eightkp == 4 & eightkm == 0 ~ '+!',
+			    eightkp == 4 & eightkm == 1 ~ '+!',
+			    eightkp == 0 & eightkm == 4 ~ '-!',
+			    eightkp == 1 & eightkm == 4 ~ '-!',
+		      eightkp == 5 & eightkm == 0 ~ '+!!',
+			    eightkp == 5 & eightkm == 1 ~ '+!!',
+			    eightkp == 0 & eightkm == 5 ~ '-!!',
+			    eightkp == 1 & eightkm == 5 ~ '-!!',
+			    eightkp == 6 & eightkm == 0 ~ '+!!!',
+			    eightkp == 6 & eightkm == 1 ~ '+!!!',
+			    eightkp == 0 & eightkm == 6 ~ '-!!!',
+			    eightkp == 1 & eightkm == 6 ~ '-!!!',
+			    eightkp == 3 & eightkm == 3 ~ '±!',
+			    eightkp == 4 & eightkm == 2 ~ '±!',
+			    eightkp == 2 & eightkm == 4 ~ '±!'
+                            ))
+
+eightkcodetable <- table(codeeightk.df$eightkcode)
+eightkcodeproptable.df <- data.frame(prop.table(eightkcodetable))
+lengtheightk <- length(eightkm)
+lengtheightkn <- paste("N =",lengtheightk)
+eightkcodepercent.df <- data.frame (Code  = eightkcodeproptable.df$Var1, Fréquence=round(eightkcodeproptable.df$Freq, 4)*100)
+```
+
+### k : passation 8
+
+```{r  eightkcodes, echo=FALSE}
+ggplot(eightkcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour eightk") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengtheightkn)+
+  xlab('Code')
+```
+
+```{r ninekcount, include=FALSE}
+codeninek.df <- data.frame(ninekm,ninekp)
+codeninek.df <- codeninek.df %>% mutate(ninekcode = case_when(ninekp+ninekm <= 1 ~ '0',
+          ninekp == 2 & ninekm == 2 ~ '±',
+			    ninekp == 1 & ninekm == 1 ~ '0',
+          ninekp == 2 & ninekm == 3 ~ '±',
+			    ninekp == 3 & ninekm == 2 ~ '±',
+			    ninekp == 2 & ninekm == 0 ~ '+',
+			    ninekp == 2 & ninekm == 1 ~ '+',
+			    ninekp == 3 & ninekm == 0 ~ '+',
+			    ninekp == 3 & ninekm == 1 ~ '+',
+			    ninekp == 0 & ninekm == 2 ~ '-',
+			    ninekp == 1 & ninekm == 2 ~ '-',
+			    ninekp == 0 & ninekm == 3 ~ '-',
+			    ninekp == 1 & ninekm == 3 ~ '-',
+			    ninekp == 4 & ninekm == 0 ~ '+!',
+			    ninekp == 4 & ninekm == 1 ~ '+!',
+			    ninekp == 0 & ninekm == 4 ~ '-!',
+			    ninekp == 1 & ninekm == 4 ~ '-!',
+		      ninekp == 5 & ninekm == 0 ~ '+!!',
+			    ninekp == 5 & ninekm == 1 ~ '+!!',
+			    ninekp == 0 & ninekm == 5 ~ '-!!',
+			    ninekp == 1 & ninekm == 5 ~ '-!!',
+			    ninekp == 6 & ninekm == 0 ~ '+!!!',
+			    ninekp == 6 & ninekm == 1 ~ '+!!!',
+			    ninekp == 0 & ninekm == 6 ~ '-!!!',
+			    ninekp == 1 & ninekm == 6 ~ '-!!!',
+			    ninekp == 3 & ninekm == 3 ~ '±!',
+			    ninekp == 4 & ninekm == 2 ~ '±!',
+			    ninekp == 2 & ninekm == 4 ~ '±!'
+                            ))
+
+ninekcodetable <- table(codeninek.df$ninekcode)
+ninekcodeproptable.df <- data.frame(prop.table(ninekcodetable))
+lengthninek <- length(ninekm)
+lengthninekn <- paste("N =",lengthninek)
+ninekcodepercent.df <- data.frame (Code  = ninekcodeproptable.df$Var1, Fréquence=round(ninekcodeproptable.df$Freq, 4)*100)
+```
+
+### k : passation 9
+
+```{r  ninekcodes, echo=FALSE}
+ggplot(ninekcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour ninek") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthninekn)+
+  xlab('Code')
+```
+
+```{r tenkcount, include=FALSE}
+codetenk.df <- data.frame(tenkm,tenkp)
+codetenk.df <- codetenk.df %>% mutate(tenkcode = case_when(tenkp+tenkm <= 1 ~ '0',
+          tenkp == 2 & tenkm == 2 ~ '±',
+			    tenkp == 1 & tenkm == 1 ~ '0',
+          tenkp == 2 & tenkm == 3 ~ '±',
+			    tenkp == 3 & tenkm == 2 ~ '±',
+			    tenkp == 2 & tenkm == 0 ~ '+',
+			    tenkp == 2 & tenkm == 1 ~ '+',
+			    tenkp == 3 & tenkm == 0 ~ '+',
+			    tenkp == 3 & tenkm == 1 ~ '+',
+			    tenkp == 0 & tenkm == 2 ~ '-',
+			    tenkp == 1 & tenkm == 2 ~ '-',
+			    tenkp == 0 & tenkm == 3 ~ '-',
+			    tenkp == 1 & tenkm == 3 ~ '-',
+			    tenkp == 4 & tenkm == 0 ~ '+!',
+			    tenkp == 4 & tenkm == 1 ~ '+!',
+			    tenkp == 0 & tenkm == 4 ~ '-!',
+			    tenkp == 1 & tenkm == 4 ~ '-!',
+		      tenkp == 5 & tenkm == 0 ~ '+!!',
+			    tenkp == 5 & tenkm == 1 ~ '+!!',
+			    tenkp == 0 & tenkm == 5 ~ '-!!',
+			    tenkp == 1 & tenkm == 5 ~ '-!!',
+			    tenkp == 6 & tenkm == 0 ~ '+!!!',
+			    tenkp == 6 & tenkm == 1 ~ '+!!!',
+			    tenkp == 0 & tenkm == 6 ~ '-!!!',
+			    tenkp == 1 & tenkm == 6 ~ '-!!!',
+			    tenkp == 3 & tenkm == 3 ~ '±!',
+			    tenkp == 4 & tenkm == 2 ~ '±!',
+			    tenkp == 2 & tenkm == 4 ~ '±!'
+                            ))
+
+tenkcodetable <- table(codetenk.df$tenkcode)
+tenkcodeproptable.df <- data.frame(prop.table(tenkcodetable))
+lengthtenk <- length(tenkm)
+lengthtenkn <- paste("N =",lengthtenk)
+tenkcodepercent.df <- data.frame (Code  = tenkcodeproptable.df$Var1, Fréquence=round(tenkcodeproptable.df$Freq, 4)*100)
+```
+
+### k : passation 10
+
+```{r  tenkcodes, echo=FALSE}
+ggplot(tenkcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour tenk") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtenkn)+
+  xlab('Code')
+```
+
+### k total
+
+```{r}
+codeonek_namek.df <- data.frame(plus=codeonek.df$onekp, minus=codeonek.df$onekm, code=codeonek.df$onekcode)
+codetwok_namek.df <- data.frame(plus=codetwok.df$twokp, minus=codetwok.df$twokm, code=codetwok.df$twokcode)
+codethreek_namek.df <- data.frame(plus=codethreek.df$threekp, minus=codethreek.df$threekm, code=codethreek.df$threekcode)
+codefourk_namek.df <- data.frame(plus=codefourk.df$fourkp, minus=codefourk.df$fourkm, code=codefourk.df$fourkcode)
+codefivek_namek.df <- data.frame(plus=codefivek.df$fivekp, minus=codefivek.df$fivekm, code=codefivek.df$fivekcode)
+codesixk_namek.df <- data.frame(plus=codesixk.df$sixkp, minus=codesixk.df$sixkm, code=codesixk.df$sixkcode)
+codesevenk_namek.df <- data.frame(plus=codesevenk.df$sevenkp, minus=codesevenk.df$sevenkm, code=codesevenk.df$sevenkcode)
+codeeightk_namek.df <- data.frame(plus=codeeightk.df$eightkp, minus=codeeightk.df$eightkm, code=codeeightk.df$eightkcode)
+codeninek_namek.df <- data.frame(plus=codeninek.df$ninekp, minus=codeninek.df$ninekm, code=codeninek.df$ninekcode)
+codetenk_namek.df <- data.frame(plus=codetenk.df$tenkp, minus=codetenk.df$tenkm, code=codetenk.df$tenkcode)
+codektotal <- rbind(codeonek_namek.df, codetwok_namek.df, codethreek_namek.df, codefourk_namek.df, codefivek_namek.df, codesixk_namek.df, codesevenk_namek.df, codeeightk_namek.df, codeninek_namek.df, codetenk_namek.df)
+
+ktotalcodetable <- table(codektotal$code)
+ktotalcodeproptable.df <- data.frame(prop.table(ktotalcodetable))
+lengthktotal <- length(codektotal$code)
+lengthktotaln <- paste("N =",lengthktotal)
+ktotalcodepercent.df <- data.frame (Code  = ktotalcodeproptable.df$Var1, Fréquence=round(ktotalcodeproptable.df$Freq, 4)*100)
+```
+
+```{r kallcodes, echo=FALSE}
+ggplot(ktotalcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour k") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=11, y=95, label=lengthstotal)+
+  xlab('Code')
+```
+
+## p
+
+```{r onepcount, include=FALSE}
+codeonep.df <- data.frame(onepm,onepp)
+codeonep.df <- codeonep.df %>% mutate(onepcode = case_when(onepp+onepm <= 1 ~ '0',
+          onepp == 2 & onepm == 2 ~ '±',
+			    onepp == 1 & onepm == 1 ~ '0',
+          onepp == 2 & onepm == 3 ~ '±',
+			    onepp == 3 & onepm == 2 ~ '±',
+			    onepp == 2 & onepm == 0 ~ '+',
+			    onepp == 2 & onepm == 1 ~ '+',
+			    onepp == 3 & onepm == 0 ~ '+',
+			    onepp == 3 & onepm == 1 ~ '+',
+			    onepp == 0 & onepm == 2 ~ '-',
+			    onepp == 1 & onepm == 2 ~ '-',
+			    onepp == 0 & onepm == 3 ~ '-',
+			    onepp == 1 & onepm == 3 ~ '-',
+			    onepp == 4 & onepm == 0 ~ '+!',
+			    onepp == 4 & onepm == 1 ~ '+!',
+			    onepp == 0 & onepm == 4 ~ '-!',
+			    onepp == 1 & onepm == 4 ~ '-!',
+		      onepp == 5 & onepm == 0 ~ '+!!',
+			    onepp == 5 & onepm == 1 ~ '+!!',
+			    onepp == 0 & onepm == 5 ~ '-!!',
+			    onepp == 1 & onepm == 5 ~ '-!!',
+			    onepp == 6 & onepm == 0 ~ '+!!!',
+			    onepp == 6 & onepm == 1 ~ '+!!!',
+			    onepp == 0 & onepm == 6 ~ '-!!!',
+			    onepp == 1 & onepm == 6 ~ '-!!!',
+			    onepp == 3 & onepm == 3 ~ '±!',
+			    onepp == 4 & onepm == 2 ~ '±!',
+			    onepp == 2 & onepm == 4 ~ '±!'
+                            ))
+
+onepcodetable <- table(codeonep.df$onepcode)
+onepcodeproptable.df <- data.frame(prop.table(onepcodetable))
+lengthonep <- length(onepm)
+lengthonepn <- paste("N =",lengthonep)
+onepcodepercent.df <- data.frame (Code  = onepcodeproptable.df$Var1, Fréquence=round(onepcodeproptable.df$Freq, 4)*100)
+```
+
+### p : passation 1
+
+```{r  onepcodes, echo=FALSE}
+ggplot(onepcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour onep") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthonepn)+
+  xlab('Code')
+```
+
+```{r twopcount, include=FALSE}
+codetwop.df <- data.frame(twopm,twopp)
+codetwop.df <- codetwop.df %>% mutate(twopcode = case_when(twopp+twopm <= 1 ~ '0',
+          twopp == 2 & twopm == 2 ~ '±',
+			    twopp == 1 & twopm == 1 ~ '0',
+          twopp == 2 & twopm == 3 ~ '±',
+			    twopp == 3 & twopm == 2 ~ '±',
+			    twopp == 2 & twopm == 0 ~ '+',
+			    twopp == 2 & twopm == 1 ~ '+',
+			    twopp == 3 & twopm == 0 ~ '+',
+			    twopp == 3 & twopm == 1 ~ '+',
+			    twopp == 0 & twopm == 2 ~ '-',
+			    twopp == 1 & twopm == 2 ~ '-',
+			    twopp == 0 & twopm == 3 ~ '-',
+			    twopp == 1 & twopm == 3 ~ '-',
+			    twopp == 4 & twopm == 0 ~ '+!',
+			    twopp == 4 & twopm == 1 ~ '+!',
+			    twopp == 0 & twopm == 4 ~ '-!',
+			    twopp == 1 & twopm == 4 ~ '-!',
+		      twopp == 5 & twopm == 0 ~ '+!!',
+			    twopp == 5 & twopm == 1 ~ '+!!',
+			    twopp == 0 & twopm == 5 ~ '-!!',
+			    twopp == 1 & twopm == 5 ~ '-!!',
+			    twopp == 6 & twopm == 0 ~ '+!!!',
+			    twopp == 6 & twopm == 1 ~ '+!!!',
+			    twopp == 0 & twopm == 6 ~ '-!!!',
+			    twopp == 1 & twopm == 6 ~ '-!!!',
+			    twopp == 3 & twopm == 3 ~ '±!',
+			    twopp == 4 & twopm == 2 ~ '±!',
+			    twopp == 2 & twopm == 4 ~ '±!'
+                            ))
+
+twopcodetable <- table(codetwop.df$twopcode)
+twopcodeproptable.df <- data.frame(prop.table(twopcodetable))
+lengthtwop <- length(twopm)
+lengthtwopn <- paste("N =",lengthtwop)
+twopcodepercent.df <- data.frame (Code  = twopcodeproptable.df$Var1, Fréquence=round(twopcodeproptable.df$Freq, 4)*100)
+```
+
+### p : passation 2
+
+```{r  twopcodes, echo=FALSE}
+ggplot(twopcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour twop") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtwopn)+
+  xlab('Code')
+```
+
+```{r threepcount, include=FALSE}
+codethreep.df <- data.frame(threepm,threepp)
+codethreep.df <- codethreep.df %>% mutate(threepcode = case_when(threepp+threepm <= 1 ~ '0',
+          threepp == 2 & threepm == 2 ~ '±',
+			    threepp == 1 & threepm == 1 ~ '0',
+          threepp == 2 & threepm == 3 ~ '±',
+			    threepp == 3 & threepm == 2 ~ '±',
+			    threepp == 2 & threepm == 0 ~ '+',
+			    threepp == 2 & threepm == 1 ~ '+',
+			    threepp == 3 & threepm == 0 ~ '+',
+			    threepp == 3 & threepm == 1 ~ '+',
+			    threepp == 0 & threepm == 2 ~ '-',
+			    threepp == 1 & threepm == 2 ~ '-',
+			    threepp == 0 & threepm == 3 ~ '-',
+			    threepp == 1 & threepm == 3 ~ '-',
+			    threepp == 4 & threepm == 0 ~ '+!',
+			    threepp == 4 & threepm == 1 ~ '+!',
+			    threepp == 0 & threepm == 4 ~ '-!',
+			    threepp == 1 & threepm == 4 ~ '-!',
+		      threepp == 5 & threepm == 0 ~ '+!!',
+			    threepp == 5 & threepm == 1 ~ '+!!',
+			    threepp == 0 & threepm == 5 ~ '-!!',
+			    threepp == 1 & threepm == 5 ~ '-!!',
+			    threepp == 6 & threepm == 0 ~ '+!!!',
+			    threepp == 6 & threepm == 1 ~ '+!!!',
+			    threepp == 0 & threepm == 6 ~ '-!!!',
+			    threepp == 1 & threepm == 6 ~ '-!!!',
+			    threepp == 3 & threepm == 3 ~ '±!',
+			    threepp == 4 & threepm == 2 ~ '±!',
+			    threepp == 2 & threepm == 4 ~ '±!'
+                            ))
+
+threepcodetable <- table(codethreep.df$threepcode)
+threepcodeproptable.df <- data.frame(prop.table(threepcodetable))
+lengththreep <- length(threepm)
+lengththreepn <- paste("N =",lengththreep)
+threepcodepercent.df <- data.frame (Code  = threepcodeproptable.df$Var1, Fréquence=round(threepcodeproptable.df$Freq, 4)*100)
+```
+
+### p : passation 3
+
+```{r  threepcodes, echo=FALSE}
+ggplot(threepcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour threep") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengththreepn)+
+  xlab('Code')
+```
+
+```{r fourpcount, include=FALSE}
+codefourp.df <- data.frame(fourpm,fourpp)
+codefourp.df <- codefourp.df %>% mutate(fourpcode = case_when(fourpp+fourpm <= 1 ~ '0',
+          fourpp == 2 & fourpm == 2 ~ '±',
+			    fourpp == 1 & fourpm == 1 ~ '0',
+          fourpp == 2 & fourpm == 3 ~ '±',
+			    fourpp == 3 & fourpm == 2 ~ '±',
+			    fourpp == 2 & fourpm == 0 ~ '+',
+			    fourpp == 2 & fourpm == 1 ~ '+',
+			    fourpp == 3 & fourpm == 0 ~ '+',
+			    fourpp == 3 & fourpm == 1 ~ '+',
+			    fourpp == 0 & fourpm == 2 ~ '-',
+			    fourpp == 1 & fourpm == 2 ~ '-',
+			    fourpp == 0 & fourpm == 3 ~ '-',
+			    fourpp == 1 & fourpm == 3 ~ '-',
+			    fourpp == 4 & fourpm == 0 ~ '+!',
+			    fourpp == 4 & fourpm == 1 ~ '+!',
+			    fourpp == 0 & fourpm == 4 ~ '-!',
+			    fourpp == 1 & fourpm == 4 ~ '-!',
+		      fourpp == 5 & fourpm == 0 ~ '+!!',
+			    fourpp == 5 & fourpm == 1 ~ '+!!',
+			    fourpp == 0 & fourpm == 5 ~ '-!!',
+			    fourpp == 1 & fourpm == 5 ~ '-!!',
+			    fourpp == 6 & fourpm == 0 ~ '+!!!',
+			    fourpp == 6 & fourpm == 1 ~ '+!!!',
+			    fourpp == 0 & fourpm == 6 ~ '-!!!',
+			    fourpp == 1 & fourpm == 6 ~ '-!!!',
+			    fourpp == 3 & fourpm == 3 ~ '±!',
+			    fourpp == 4 & fourpm == 2 ~ '±!',
+			    fourpp == 2 & fourpm == 4 ~ '±!'
+                            ))
+
+fourpcodetable <- table(codefourp.df$fourpcode)
+fourpcodeproptable.df <- data.frame(prop.table(fourpcodetable))
+lengthfourp <- length(fourpm)
+lengthfourpn <- paste("N =",lengthfourp)
+fourpcodepercent.df <- data.frame (Code  = fourpcodeproptable.df$Var1, Fréquence=round(fourpcodeproptable.df$Freq, 4)*100)
+```
+
+### p : passation 4
+
+```{r  fourpcodes, echo=FALSE}
+ggplot(fourpcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fourp") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfourpn)+
+  xlab('Code')
+```
+
+```{r fivepcount, include=FALSE}
+codefivep.df <- data.frame(fivepm,fivepp)
+codefivep.df <- codefivep.df %>% mutate(fivepcode = case_when(fivepp+fivepm <= 1 ~ '0',
+          fivepp == 2 & fivepm == 2 ~ '±',
+			    fivepp == 1 & fivepm == 1 ~ '0',
+          fivepp == 2 & fivepm == 3 ~ '±',
+			    fivepp == 3 & fivepm == 2 ~ '±',
+			    fivepp == 2 & fivepm == 0 ~ '+',
+			    fivepp == 2 & fivepm == 1 ~ '+',
+			    fivepp == 3 & fivepm == 0 ~ '+',
+			    fivepp == 3 & fivepm == 1 ~ '+',
+			    fivepp == 0 & fivepm == 2 ~ '-',
+			    fivepp == 1 & fivepm == 2 ~ '-',
+			    fivepp == 0 & fivepm == 3 ~ '-',
+			    fivepp == 1 & fivepm == 3 ~ '-',
+			    fivepp == 4 & fivepm == 0 ~ '+!',
+			    fivepp == 4 & fivepm == 1 ~ '+!',
+			    fivepp == 0 & fivepm == 4 ~ '-!',
+			    fivepp == 1 & fivepm == 4 ~ '-!',
+		      fivepp == 5 & fivepm == 0 ~ '+!!',
+			    fivepp == 5 & fivepm == 1 ~ '+!!',
+			    fivepp == 0 & fivepm == 5 ~ '-!!',
+			    fivepp == 1 & fivepm == 5 ~ '-!!',
+			    fivepp == 6 & fivepm == 0 ~ '+!!!',
+			    fivepp == 6 & fivepm == 1 ~ '+!!!',
+			    fivepp == 0 & fivepm == 6 ~ '-!!!',
+			    fivepp == 1 & fivepm == 6 ~ '-!!!',
+			    fivepp == 3 & fivepm == 3 ~ '±!',
+			    fivepp == 4 & fivepm == 2 ~ '±!',
+			    fivepp == 2 & fivepm == 4 ~ '±!'
+                            ))
+
+fivepcodetable <- table(codefivep.df$fivepcode)
+fivepcodeproptable.df <- data.frame(prop.table(fivepcodetable))
+lengthfivep <- length(fivepm)
+lengthfivepn <- paste("N =",lengthfivep)
+fivepcodepercent.df <- data.frame (Code  = fivepcodeproptable.df$Var1, Fréquence=round(fivepcodeproptable.df$Freq, 4)*100)
+```
+
+### p : passation 5
+
+```{r  fivepcodes, echo=FALSE}
+ggplot(fivepcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fivep") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfivepn)+
+  xlab('Code')
+```
+
+```{r sixpcount, include=FALSE}
+codesixp.df <- data.frame(sixpm,sixpp)
+codesixp.df <- codesixp.df %>% mutate(sixpcode = case_when(sixpp+sixpm <= 1 ~ '0',
+          sixpp == 2 & sixpm == 2 ~ '±',
+			    sixpp == 1 & sixpm == 1 ~ '0',
+          sixpp == 2 & sixpm == 3 ~ '±',
+			    sixpp == 3 & sixpm == 2 ~ '±',
+			    sixpp == 2 & sixpm == 0 ~ '+',
+			    sixpp == 2 & sixpm == 1 ~ '+',
+			    sixpp == 3 & sixpm == 0 ~ '+',
+			    sixpp == 3 & sixpm == 1 ~ '+',
+			    sixpp == 0 & sixpm == 2 ~ '-',
+			    sixpp == 1 & sixpm == 2 ~ '-',
+			    sixpp == 0 & sixpm == 3 ~ '-',
+			    sixpp == 1 & sixpm == 3 ~ '-',
+			    sixpp == 4 & sixpm == 0 ~ '+!',
+			    sixpp == 4 & sixpm == 1 ~ '+!',
+			    sixpp == 0 & sixpm == 4 ~ '-!',
+			    sixpp == 1 & sixpm == 4 ~ '-!',
+		      sixpp == 5 & sixpm == 0 ~ '+!!',
+			    sixpp == 5 & sixpm == 1 ~ '+!!',
+			    sixpp == 0 & sixpm == 5 ~ '-!!',
+			    sixpp == 1 & sixpm == 5 ~ '-!!',
+			    sixpp == 6 & sixpm == 0 ~ '+!!!',
+			    sixpp == 6 & sixpm == 1 ~ '+!!!',
+			    sixpp == 0 & sixpm == 6 ~ '-!!!',
+			    sixpp == 1 & sixpm == 6 ~ '-!!!',
+			    sixpp == 3 & sixpm == 3 ~ '±!',
+			    sixpp == 4 & sixpm == 2 ~ '±!',
+			    sixpp == 2 & sixpm == 4 ~ '±!'
+                            ))
+
+sixpcodetable <- table(codesixp.df$sixpcode)
+sixpcodeproptable.df <- data.frame(prop.table(sixpcodetable))
+lengthsixp <- length(sixpm)
+lengthsixpn <- paste("N =",lengthsixp)
+sixpcodepercent.df <- data.frame (Code  = sixpcodeproptable.df$Var1, Fréquence=round(sixpcodeproptable.df$Freq, 4)*100)
+```
+
+### p : passation 6
+
+```{r  sixpcodes, echo=FALSE}
+ggplot(sixpcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sixp") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsixpn)+
+  xlab('Code')
+```
+
+```{r sevenpcount, include=FALSE}
+codesevenp.df <- data.frame(sevenpm,sevenpp)
+codesevenp.df <- codesevenp.df %>% mutate(sevenpcode = case_when(sevenpp+sevenpm <= 1 ~ '0',
+          sevenpp == 2 & sevenpm == 2 ~ '±',
+			    sevenpp == 1 & sevenpm == 1 ~ '0',
+          sevenpp == 2 & sevenpm == 3 ~ '±',
+			    sevenpp == 3 & sevenpm == 2 ~ '±',
+			    sevenpp == 2 & sevenpm == 0 ~ '+',
+			    sevenpp == 2 & sevenpm == 1 ~ '+',
+			    sevenpp == 3 & sevenpm == 0 ~ '+',
+			    sevenpp == 3 & sevenpm == 1 ~ '+',
+			    sevenpp == 0 & sevenpm == 2 ~ '-',
+			    sevenpp == 1 & sevenpm == 2 ~ '-',
+			    sevenpp == 0 & sevenpm == 3 ~ '-',
+			    sevenpp == 1 & sevenpm == 3 ~ '-',
+			    sevenpp == 4 & sevenpm == 0 ~ '+!',
+			    sevenpp == 4 & sevenpm == 1 ~ '+!',
+			    sevenpp == 0 & sevenpm == 4 ~ '-!',
+			    sevenpp == 1 & sevenpm == 4 ~ '-!',
+		      sevenpp == 5 & sevenpm == 0 ~ '+!!',
+			    sevenpp == 5 & sevenpm == 1 ~ '+!!',
+			    sevenpp == 0 & sevenpm == 5 ~ '-!!',
+			    sevenpp == 1 & sevenpm == 5 ~ '-!!',
+			    sevenpp == 6 & sevenpm == 0 ~ '+!!!',
+			    sevenpp == 6 & sevenpm == 1 ~ '+!!!',
+			    sevenpp == 0 & sevenpm == 6 ~ '-!!!',
+			    sevenpp == 1 & sevenpm == 6 ~ '-!!!',
+			    sevenpp == 3 & sevenpm == 3 ~ '±!',
+			    sevenpp == 4 & sevenpm == 2 ~ '±!',
+			    sevenpp == 2 & sevenpm == 4 ~ '±!'
+                            ))
+
+sevenpcodetable <- table(codesevenp.df$sevenpcode)
+sevenpcodeproptable.df <- data.frame(prop.table(sevenpcodetable))
+lengthsevenp <- length(sevenpm)
+lengthsevenpn <- paste("N =",lengthsevenp)
+sevenpcodepercent.df <- data.frame (Code  = sevenpcodeproptable.df$Var1, Fréquence=round(sevenpcodeproptable.df$Freq, 4)*100)
+```
+
+### p : passation 7
+
+```{r  sevenpcodes, echo=FALSE}
+ggplot(sevenpcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sevenp") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsevenpn)+
+  xlab('Code')
+```
+
+```{r eightpcount, include=FALSE}
+codeeightp.df <- data.frame(eightpm,eightpp)
+codeeightp.df <- codeeightp.df %>% mutate(eightpcode = case_when(eightpp+eightpm <= 1 ~ '0',
+          eightpp == 2 & eightpm == 2 ~ '±',
+			    eightpp == 1 & eightpm == 1 ~ '0',
+          eightpp == 2 & eightpm == 3 ~ '±',
+			    eightpp == 3 & eightpm == 2 ~ '±',
+			    eightpp == 2 & eightpm == 0 ~ '+',
+			    eightpp == 2 & eightpm == 1 ~ '+',
+			    eightpp == 3 & eightpm == 0 ~ '+',
+			    eightpp == 3 & eightpm == 1 ~ '+',
+			    eightpp == 0 & eightpm == 2 ~ '-',
+			    eightpp == 1 & eightpm == 2 ~ '-',
+			    eightpp == 0 & eightpm == 3 ~ '-',
+			    eightpp == 1 & eightpm == 3 ~ '-',
+			    eightpp == 4 & eightpm == 0 ~ '+!',
+			    eightpp == 4 & eightpm == 1 ~ '+!',
+			    eightpp == 0 & eightpm == 4 ~ '-!',
+			    eightpp == 1 & eightpm == 4 ~ '-!',
+		      eightpp == 5 & eightpm == 0 ~ '+!!',
+			    eightpp == 5 & eightpm == 1 ~ '+!!',
+			    eightpp == 0 & eightpm == 5 ~ '-!!',
+			    eightpp == 1 & eightpm == 5 ~ '-!!',
+			    eightpp == 6 & eightpm == 0 ~ '+!!!',
+			    eightpp == 6 & eightpm == 1 ~ '+!!!',
+			    eightpp == 0 & eightpm == 6 ~ '-!!!',
+			    eightpp == 1 & eightpm == 6 ~ '-!!!',
+			    eightpp == 3 & eightpm == 3 ~ '±!',
+			    eightpp == 4 & eightpm == 2 ~ '±!',
+			    eightpp == 2 & eightpm == 4 ~ '±!'
+                            ))
+
+eightpcodetable <- table(codeeightp.df$eightpcode)
+eightpcodeproptable.df <- data.frame(prop.table(eightpcodetable))
+lengtheightp <- length(eightpm)
+lengtheightpn <- paste("N =",lengtheightp)
+eightpcodepercent.df <- data.frame (Code  = eightpcodeproptable.df$Var1, Fréquence=round(eightpcodeproptable.df$Freq, 4)*100)
+```
+
+### p : passation 8
+
+```{r  eightpcodes, echo=FALSE}
+ggplot(eightpcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour eightp") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengtheightpn)+
+  xlab('Code')
+```
+
+```{r ninepcount, include=FALSE}
+codeninep.df <- data.frame(ninepm,ninepp)
+codeninep.df <- codeninep.df %>% mutate(ninepcode = case_when(ninepp+ninepm <= 1 ~ '0',
+          ninepp == 2 & ninepm == 2 ~ '±',
+			    ninepp == 1 & ninepm == 1 ~ '0',
+          ninepp == 2 & ninepm == 3 ~ '±',
+			    ninepp == 3 & ninepm == 2 ~ '±',
+			    ninepp == 2 & ninepm == 0 ~ '+',
+			    ninepp == 2 & ninepm == 1 ~ '+',
+			    ninepp == 3 & ninepm == 0 ~ '+',
+			    ninepp == 3 & ninepm == 1 ~ '+',
+			    ninepp == 0 & ninepm == 2 ~ '-',
+			    ninepp == 1 & ninepm == 2 ~ '-',
+			    ninepp == 0 & ninepm == 3 ~ '-',
+			    ninepp == 1 & ninepm == 3 ~ '-',
+			    ninepp == 4 & ninepm == 0 ~ '+!',
+			    ninepp == 4 & ninepm == 1 ~ '+!',
+			    ninepp == 0 & ninepm == 4 ~ '-!',
+			    ninepp == 1 & ninepm == 4 ~ '-!',
+		      ninepp == 5 & ninepm == 0 ~ '+!!',
+			    ninepp == 5 & ninepm == 1 ~ '+!!',
+			    ninepp == 0 & ninepm == 5 ~ '-!!',
+			    ninepp == 1 & ninepm == 5 ~ '-!!',
+			    ninepp == 6 & ninepm == 0 ~ '+!!!',
+			    ninepp == 6 & ninepm == 1 ~ '+!!!',
+			    ninepp == 0 & ninepm == 6 ~ '-!!!',
+			    ninepp == 1 & ninepm == 6 ~ '-!!!',
+			    ninepp == 3 & ninepm == 3 ~ '±!',
+			    ninepp == 4 & ninepm == 2 ~ '±!',
+			    ninepp == 2 & ninepm == 4 ~ '±!'
+                            ))
+
+ninepcodetable <- table(codeninep.df$ninepcode)
+ninepcodeproptable.df <- data.frame(prop.table(ninepcodetable))
+lengthninep <- length(ninepm)
+lengthninepn <- paste("N =",lengthninep)
+ninepcodepercent.df <- data.frame (Code  = ninepcodeproptable.df$Var1, Fréquence=round(ninepcodeproptable.df$Freq, 4)*100)
+```
+
+### p : passation 9
+
+```{r  ninepcodes, echo=FALSE}
+ggplot(ninepcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour ninep") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthninepn)+
+  xlab('Code')
+```
+
+```{r tenpcount, include=FALSE}
+codetenp.df <- data.frame(tenpm,tenpp)
+codetenp.df <- codetenp.df %>% mutate(tenpcode = case_when(tenpp+tenpm <= 1 ~ '0',
+          tenpp == 2 & tenpm == 2 ~ '±',
+			    tenpp == 1 & tenpm == 1 ~ '0',
+          tenpp == 2 & tenpm == 3 ~ '±',
+			    tenpp == 3 & tenpm == 2 ~ '±',
+			    tenpp == 2 & tenpm == 0 ~ '+',
+			    tenpp == 2 & tenpm == 1 ~ '+',
+			    tenpp == 3 & tenpm == 0 ~ '+',
+			    tenpp == 3 & tenpm == 1 ~ '+',
+			    tenpp == 0 & tenpm == 2 ~ '-',
+			    tenpp == 1 & tenpm == 2 ~ '-',
+			    tenpp == 0 & tenpm == 3 ~ '-',
+			    tenpp == 1 & tenpm == 3 ~ '-',
+			    tenpp == 4 & tenpm == 0 ~ '+!',
+			    tenpp == 4 & tenpm == 1 ~ '+!',
+			    tenpp == 0 & tenpm == 4 ~ '-!',
+			    tenpp == 1 & tenpm == 4 ~ '-!',
+		      tenpp == 5 & tenpm == 0 ~ '+!!',
+			    tenpp == 5 & tenpm == 1 ~ '+!!',
+			    tenpp == 0 & tenpm == 5 ~ '-!!',
+			    tenpp == 1 & tenpm == 5 ~ '-!!',
+			    tenpp == 6 & tenpm == 0 ~ '+!!!',
+			    tenpp == 6 & tenpm == 1 ~ '+!!!',
+			    tenpp == 0 & tenpm == 6 ~ '-!!!',
+			    tenpp == 1 & tenpm == 6 ~ '-!!!',
+			    tenpp == 3 & tenpm == 3 ~ '±!',
+			    tenpp == 4 & tenpm == 2 ~ '±!',
+			    tenpp == 2 & tenpm == 4 ~ '±!'
+                            ))
+
+tenpcodetable <- table(codetenp.df$tenpcode)
+tenpcodeproptable.df <- data.frame(prop.table(tenpcodetable))
+lengthtenp <- length(tenpm)
+lengthtenpn <- paste("N =",lengthtenp)
+tenpcodepercent.df <- data.frame (Code  = tenpcodeproptable.df$Var1, Fréquence=round(tenpcodeproptable.df$Freq, 4)*100)
+```
+
+### p : passation 10
+
+```{r  tenpcodes, echo=FALSE}
+ggplot(tenpcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour tenp") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtenpn)+
+  xlab('Code')
+```
+
+### p total
+
+```{r}
+codeonep_namep.df <- data.frame(plus=codeonep.df$onepp, minus=codeonep.df$onepm, code=codeonep.df$onepcode)
+codetwop_namep.df <- data.frame(plus=codetwop.df$twopp, minus=codetwop.df$twopm, code=codetwop.df$twopcode)
+codethreep_namep.df <- data.frame(plus=codethreep.df$threepp, minus=codethreep.df$threepm, code=codethreep.df$threepcode)
+codefourp_namep.df <- data.frame(plus=codefourp.df$fourpp, minus=codefourp.df$fourpm, code=codefourp.df$fourpcode)
+codefivep_namep.df <- data.frame(plus=codefivep.df$fivepp, minus=codefivep.df$fivepm, code=codefivep.df$fivepcode)
+codesixp_namep.df <- data.frame(plus=codesixp.df$sixpp, minus=codesixp.df$sixpm, code=codesixp.df$sixpcode)
+codesevenp_namep.df <- data.frame(plus=codesevenp.df$sevenpp, minus=codesevenp.df$sevenpm, code=codesevenp.df$sevenpcode)
+codeeightp_namep.df <- data.frame(plus=codeeightp.df$eightpp, minus=codeeightp.df$eightpm, code=codeeightp.df$eightpcode)
+codeninep_namep.df <- data.frame(plus=codeninep.df$ninepp, minus=codeninep.df$ninepm, code=codeninep.df$ninepcode)
+codetenp_namep.df <- data.frame(plus=codetenp.df$tenpp, minus=codetenp.df$tenpm, code=codetenp.df$tenpcode)
+codeptotal <- rbind(codeonep_namep.df, codetwop_namep.df, codethreep_namep.df, codefourp_namep.df, codefivep_namep.df, codesixp_namep.df, codesevenp_namep.df, codeeightp_namep.df, codeninep_namep.df, codetenp_namep.df)
+
+ptotalcodetable <- table(codeptotal$code)
+ptotalcodeproptable.df <- data.frame(prop.table(ptotalcodetable))
+lengthptotal <- length(codeptotal$code)
+lengthptotaln <- paste("N =",lengthptotal)
+ptotalcodepercent.df <- data.frame (Code  = ptotalcodeproptable.df$Var1, Fréquence=round(ptotalcodeproptable.df$Freq, 4)*100)
+```
+
+```{r pallcodes, echo=FALSE}
+ggplot(ptotalcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour p") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=10, y=95, label=lengthstotaln)+
+  xlab('Code')
+```
+
+## d
+
+```{r onedcount, include=FALSE}
+codeoned.df <- data.frame(onedm,onedp)
+codeoned.df <- codeoned.df %>% mutate(onedcode = case_when(onedp+onedm <= 1 ~ '0',
+          onedp == 2 & onedm == 2 ~ '±',
+			    onedp == 1 & onedm == 1 ~ '0',
+          onedp == 2 & onedm == 3 ~ '±',
+			    onedp == 3 & onedm == 2 ~ '±',
+			    onedp == 2 & onedm == 0 ~ '+',
+			    onedp == 2 & onedm == 1 ~ '+',
+			    onedp == 3 & onedm == 0 ~ '+',
+			    onedp == 3 & onedm == 1 ~ '+',
+			    onedp == 0 & onedm == 2 ~ '-',
+			    onedp == 1 & onedm == 2 ~ '-',
+			    onedp == 0 & onedm == 3 ~ '-',
+			    onedp == 1 & onedm == 3 ~ '-',
+			    onedp == 4 & onedm == 0 ~ '+!',
+			    onedp == 4 & onedm == 1 ~ '+!',
+			    onedp == 0 & onedm == 4 ~ '-!',
+			    onedp == 1 & onedm == 4 ~ '-!',
+		      onedp == 5 & onedm == 0 ~ '+!!',
+			    onedp == 5 & onedm == 1 ~ '+!!',
+			    onedp == 0 & onedm == 5 ~ '-!!',
+			    onedp == 1 & onedm == 5 ~ '-!!',
+			    onedp == 6 & onedm == 0 ~ '+!!!',
+			    onedp == 6 & onedm == 1 ~ '+!!!',
+			    onedp == 0 & onedm == 6 ~ '-!!!',
+			    onedp == 1 & onedm == 6 ~ '-!!!',
+			    onedp == 3 & onedm == 3 ~ '±!',
+			    onedp == 4 & onedm == 2 ~ '±!',
+			    onedp == 2 & onedm == 4 ~ '±!'
+                            ))
+
+onedcodetable <- table(codeoned.df$onedcode)
+onedcodeproptable.df <- data.frame(prop.table(onedcodetable))
+lengthoned <- length(onedm)
+lengthonedn <- paste("N =",lengthoned)
+onedcodepercent.df <- data.frame (Code  = onedcodeproptable.df$Var1, Fréquence=round(onedcodeproptable.df$Freq, 4)*100)
+```
+
+### d : passation 1
+
+```{r  onedcodes, echo=FALSE}
+ggplot(onedcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour oned") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthonedn)+
+  xlab('Code')
+```
+
+```{r twodcount, include=FALSE}
+codetwod.df <- data.frame(twodm,twodp)
+codetwod.df <- codetwod.df %>% mutate(twodcode = case_when(twodp+twodm <= 1 ~ '0',
+          twodp == 2 & twodm == 2 ~ '±',
+			    twodp == 1 & twodm == 1 ~ '0',
+          twodp == 2 & twodm == 3 ~ '±',
+			    twodp == 3 & twodm == 2 ~ '±',
+			    twodp == 2 & twodm == 0 ~ '+',
+			    twodp == 2 & twodm == 1 ~ '+',
+			    twodp == 3 & twodm == 0 ~ '+',
+			    twodp == 3 & twodm == 1 ~ '+',
+			    twodp == 0 & twodm == 2 ~ '-',
+			    twodp == 1 & twodm == 2 ~ '-',
+			    twodp == 0 & twodm == 3 ~ '-',
+			    twodp == 1 & twodm == 3 ~ '-',
+			    twodp == 4 & twodm == 0 ~ '+!',
+			    twodp == 4 & twodm == 1 ~ '+!',
+			    twodp == 0 & twodm == 4 ~ '-!',
+			    twodp == 1 & twodm == 4 ~ '-!',
+		      twodp == 5 & twodm == 0 ~ '+!!',
+			    twodp == 5 & twodm == 1 ~ '+!!',
+			    twodp == 0 & twodm == 5 ~ '-!!',
+			    twodp == 1 & twodm == 5 ~ '-!!',
+			    twodp == 6 & twodm == 0 ~ '+!!!',
+			    twodp == 6 & twodm == 1 ~ '+!!!',
+			    twodp == 0 & twodm == 6 ~ '-!!!',
+			    twodp == 1 & twodm == 6 ~ '-!!!',
+			    twodp == 3 & twodm == 3 ~ '±!',
+			    twodp == 4 & twodm == 2 ~ '±!',
+			    twodp == 2 & twodm == 4 ~ '±!'
+                            ))
+
+twodcodetable <- table(codetwod.df$twodcode)
+twodcodeproptable.df <- data.frame(prop.table(twodcodetable))
+lengthtwod <- length(twodm)
+lengthtwodn <- paste("N =",lengthtwod)
+twodcodepercent.df <- data.frame (Code  = twodcodeproptable.df$Var1, Fréquence=round(twodcodeproptable.df$Freq, 4)*100)
+```
+
+### d : passation 2
+
+```{r  twodcodes, echo=FALSE}
+ggplot(twodcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour twod") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtwodn)+
+  xlab('Code')
+```
+
+```{r threedcount, include=FALSE}
+codethreed.df <- data.frame(threedm,threedp)
+codethreed.df <- codethreed.df %>% mutate(threedcode = case_when(threedp+threedm <= 1 ~ '0',
+          threedp == 2 & threedm == 2 ~ '±',
+			    threedp == 1 & threedm == 1 ~ '0',
+          threedp == 2 & threedm == 3 ~ '±',
+			    threedp == 3 & threedm == 2 ~ '±',
+			    threedp == 2 & threedm == 0 ~ '+',
+			    threedp == 2 & threedm == 1 ~ '+',
+			    threedp == 3 & threedm == 0 ~ '+',
+			    threedp == 3 & threedm == 1 ~ '+',
+			    threedp == 0 & threedm == 2 ~ '-',
+			    threedp == 1 & threedm == 2 ~ '-',
+			    threedp == 0 & threedm == 3 ~ '-',
+			    threedp == 1 & threedm == 3 ~ '-',
+			    threedp == 4 & threedm == 0 ~ '+!',
+			    threedp == 4 & threedm == 1 ~ '+!',
+			    threedp == 0 & threedm == 4 ~ '-!',
+			    threedp == 1 & threedm == 4 ~ '-!',
+		      threedp == 5 & threedm == 0 ~ '+!!',
+			    threedp == 5 & threedm == 1 ~ '+!!',
+			    threedp == 0 & threedm == 5 ~ '-!!',
+			    threedp == 1 & threedm == 5 ~ '-!!',
+			    threedp == 6 & threedm == 0 ~ '+!!!',
+			    threedp == 6 & threedm == 1 ~ '+!!!',
+			    threedp == 0 & threedm == 6 ~ '-!!!',
+			    threedp == 1 & threedm == 6 ~ '-!!!',
+			    threedp == 3 & threedm == 3 ~ '±!',
+			    threedp == 4 & threedm == 2 ~ '±!',
+			    threedp == 2 & threedm == 4 ~ '±!'
+                            ))
+
+threedcodetable <- table(codethreed.df$threedcode)
+threedcodeproptable.df <- data.frame(prop.table(threedcodetable))
+lengththreed <- length(threedm)
+lengththreedn <- paste("N =",lengththreed)
+threedcodepercent.df <- data.frame (Code  = threedcodeproptable.df$Var1, Fréquence=round(threedcodeproptable.df$Freq, 4)*100)
+```
+
+### d : passation 3
+
+```{r  threedcodes, echo=FALSE}
+ggplot(threedcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour threed") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengththreedn)+
+  xlab('Code')
+```
+
+```{r fourdcount, include=FALSE}
+codefourd.df <- data.frame(fourdm,fourdp)
+codefourd.df <- codefourd.df %>% mutate(fourdcode = case_when(fourdp+fourdm <= 1 ~ '0',
+          fourdp == 2 & fourdm == 2 ~ '±',
+			    fourdp == 1 & fourdm == 1 ~ '0',
+          fourdp == 2 & fourdm == 3 ~ '±',
+			    fourdp == 3 & fourdm == 2 ~ '±',
+			    fourdp == 2 & fourdm == 0 ~ '+',
+			    fourdp == 2 & fourdm == 1 ~ '+',
+			    fourdp == 3 & fourdm == 0 ~ '+',
+			    fourdp == 3 & fourdm == 1 ~ '+',
+			    fourdp == 0 & fourdm == 2 ~ '-',
+			    fourdp == 1 & fourdm == 2 ~ '-',
+			    fourdp == 0 & fourdm == 3 ~ '-',
+			    fourdp == 1 & fourdm == 3 ~ '-',
+			    fourdp == 4 & fourdm == 0 ~ '+!',
+			    fourdp == 4 & fourdm == 1 ~ '+!',
+			    fourdp == 0 & fourdm == 4 ~ '-!',
+			    fourdp == 1 & fourdm == 4 ~ '-!',
+		      fourdp == 5 & fourdm == 0 ~ '+!!',
+			    fourdp == 5 & fourdm == 1 ~ '+!!',
+			    fourdp == 0 & fourdm == 5 ~ '-!!',
+			    fourdp == 1 & fourdm == 5 ~ '-!!',
+			    fourdp == 6 & fourdm == 0 ~ '+!!!',
+			    fourdp == 6 & fourdm == 1 ~ '+!!!',
+			    fourdp == 0 & fourdm == 6 ~ '-!!!',
+			    fourdp == 1 & fourdm == 6 ~ '-!!!',
+			    fourdp == 3 & fourdm == 3 ~ '±!',
+			    fourdp == 4 & fourdm == 2 ~ '±!',
+			    fourdp == 2 & fourdm == 4 ~ '±!'
+                            ))
+
+fourdcodetable <- table(codefourd.df$fourdcode)
+fourdcodeproptable.df <- data.frame(prop.table(fourdcodetable))
+lengthfourd <- length(fourdm)
+lengthfourdn <- paste("N =",lengthfourd)
+fourdcodepercent.df <- data.frame (Code  = fourdcodeproptable.df$Var1, Fréquence=round(fourdcodeproptable.df$Freq, 4)*100)
+```
+
+### d : passation 4
+
+```{r  fourdcodes, echo=FALSE}
+ggplot(fourdcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fourd") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfourdn)+
+  xlab('Code')
+```
+
+```{r fivedcount, include=FALSE}
+codefived.df <- data.frame(fivedm,fivedp)
+codefived.df <- codefived.df %>% mutate(fivedcode = case_when(fivedp+fivedm <= 1 ~ '0',
+          fivedp == 2 & fivedm == 2 ~ '±',
+			    fivedp == 1 & fivedm == 1 ~ '0',
+          fivedp == 2 & fivedm == 3 ~ '±',
+			    fivedp == 3 & fivedm == 2 ~ '±',
+			    fivedp == 2 & fivedm == 0 ~ '+',
+			    fivedp == 2 & fivedm == 1 ~ '+',
+			    fivedp == 3 & fivedm == 0 ~ '+',
+			    fivedp == 3 & fivedm == 1 ~ '+',
+			    fivedp == 0 & fivedm == 2 ~ '-',
+			    fivedp == 1 & fivedm == 2 ~ '-',
+			    fivedp == 0 & fivedm == 3 ~ '-',
+			    fivedp == 1 & fivedm == 3 ~ '-',
+			    fivedp == 4 & fivedm == 0 ~ '+!',
+			    fivedp == 4 & fivedm == 1 ~ '+!',
+			    fivedp == 0 & fivedm == 4 ~ '-!',
+			    fivedp == 1 & fivedm == 4 ~ '-!',
+		      fivedp == 5 & fivedm == 0 ~ '+!!',
+			    fivedp == 5 & fivedm == 1 ~ '+!!',
+			    fivedp == 0 & fivedm == 5 ~ '-!!',
+			    fivedp == 1 & fivedm == 5 ~ '-!!',
+			    fivedp == 6 & fivedm == 0 ~ '+!!!',
+			    fivedp == 6 & fivedm == 1 ~ '+!!!',
+			    fivedp == 0 & fivedm == 6 ~ '-!!!',
+			    fivedp == 1 & fivedm == 6 ~ '-!!!',
+			    fivedp == 3 & fivedm == 3 ~ '±!',
+			    fivedp == 4 & fivedm == 2 ~ '±!',
+			    fivedp == 2 & fivedm == 4 ~ '±!'
+                            ))
+
+fivedcodetable <- table(codefived.df$fivedcode)
+fivedcodeproptable.df <- data.frame(prop.table(fivedcodetable))
+lengthfived <- length(fivedm)
+lengthfivedn <- paste("N =",lengthfived)
+fivedcodepercent.df <- data.frame (Code  = fivedcodeproptable.df$Var1, Fréquence=round(fivedcodeproptable.df$Freq, 4)*100)
+```
+
+### d : passation 5
+
+```{r  fivedcodes, echo=FALSE}
+ggplot(fivedcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fived") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfivedn)+
+  xlab('Code')
+```
+
+```{r sixdcount, include=FALSE}
+codesixd.df <- data.frame(sixdm,sixdp)
+codesixd.df <- codesixd.df %>% mutate(sixdcode = case_when(sixdp+sixdm <= 1 ~ '0',
+          sixdp == 2 & sixdm == 2 ~ '±',
+			    sixdp == 1 & sixdm == 1 ~ '0',
+          sixdp == 2 & sixdm == 3 ~ '±',
+			    sixdp == 3 & sixdm == 2 ~ '±',
+			    sixdp == 2 & sixdm == 0 ~ '+',
+			    sixdp == 2 & sixdm == 1 ~ '+',
+			    sixdp == 3 & sixdm == 0 ~ '+',
+			    sixdp == 3 & sixdm == 1 ~ '+',
+			    sixdp == 0 & sixdm == 2 ~ '-',
+			    sixdp == 1 & sixdm == 2 ~ '-',
+			    sixdp == 0 & sixdm == 3 ~ '-',
+			    sixdp == 1 & sixdm == 3 ~ '-',
+			    sixdp == 4 & sixdm == 0 ~ '+!',
+			    sixdp == 4 & sixdm == 1 ~ '+!',
+			    sixdp == 0 & sixdm == 4 ~ '-!',
+			    sixdp == 1 & sixdm == 4 ~ '-!',
+		      sixdp == 5 & sixdm == 0 ~ '+!!',
+			    sixdp == 5 & sixdm == 1 ~ '+!!',
+			    sixdp == 0 & sixdm == 5 ~ '-!!',
+			    sixdp == 1 & sixdm == 5 ~ '-!!',
+			    sixdp == 6 & sixdm == 0 ~ '+!!!',
+			    sixdp == 6 & sixdm == 1 ~ '+!!!',
+			    sixdp == 0 & sixdm == 6 ~ '-!!!',
+			    sixdp == 1 & sixdm == 6 ~ '-!!!',
+			    sixdp == 3 & sixdm == 3 ~ '±!',
+			    sixdp == 4 & sixdm == 2 ~ '±!',
+			    sixdp == 2 & sixdm == 4 ~ '±!'
+                            ))
+
+sixdcodetable <- table(codesixd.df$sixdcode)
+sixdcodeproptable.df <- data.frame(prop.table(sixdcodetable))
+lengthsixd <- length(sixdm)
+lengthsixdn <- paste("N =",lengthsixd)
+sixdcodepercent.df <- data.frame (Code  = sixdcodeproptable.df$Var1, Fréquence=round(sixdcodeproptable.df$Freq, 4)*100)
+```
+
+### d : passation 6
+
+```{r  sixdcodes, echo=FALSE}
+ggplot(sixdcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sixd") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsixdn)+
+  xlab('Code')
+```
+
+```{r sevendcount, include=FALSE}
+codesevend.df <- data.frame(sevendm,sevendp)
+codesevend.df <- codesevend.df %>% mutate(sevendcode = case_when(sevendp+sevendm <= 1 ~ '0',
+          sevendp == 2 & sevendm == 2 ~ '±',
+			    sevendp == 1 & sevendm == 1 ~ '0',
+          sevendp == 2 & sevendm == 3 ~ '±',
+			    sevendp == 3 & sevendm == 2 ~ '±',
+			    sevendp == 2 & sevendm == 0 ~ '+',
+			    sevendp == 2 & sevendm == 1 ~ '+',
+			    sevendp == 3 & sevendm == 0 ~ '+',
+			    sevendp == 3 & sevendm == 1 ~ '+',
+			    sevendp == 0 & sevendm == 2 ~ '-',
+			    sevendp == 1 & sevendm == 2 ~ '-',
+			    sevendp == 0 & sevendm == 3 ~ '-',
+			    sevendp == 1 & sevendm == 3 ~ '-',
+			    sevendp == 4 & sevendm == 0 ~ '+!',
+			    sevendp == 4 & sevendm == 1 ~ '+!',
+			    sevendp == 0 & sevendm == 4 ~ '-!',
+			    sevendp == 1 & sevendm == 4 ~ '-!',
+		      sevendp == 5 & sevendm == 0 ~ '+!!',
+			    sevendp == 5 & sevendm == 1 ~ '+!!',
+			    sevendp == 0 & sevendm == 5 ~ '-!!',
+			    sevendp == 1 & sevendm == 5 ~ '-!!',
+			    sevendp == 6 & sevendm == 0 ~ '+!!!',
+			    sevendp == 6 & sevendm == 1 ~ '+!!!',
+			    sevendp == 0 & sevendm == 6 ~ '-!!!',
+			    sevendp == 1 & sevendm == 6 ~ '-!!!',
+			    sevendp == 3 & sevendm == 3 ~ '±!',
+			    sevendp == 4 & sevendm == 2 ~ '±!',
+			    sevendp == 2 & sevendm == 4 ~ '±!'
+                            ))
+
+sevendcodetable <- table(codesevend.df$sevendcode)
+sevendcodeproptable.df <- data.frame(prop.table(sevendcodetable))
+lengthsevend <- length(sevendm)
+lengthsevendn <- paste("N =",lengthsevend)
+sevendcodepercent.df <- data.frame (Code  = sevendcodeproptable.df$Var1, Fréquence=round(sevendcodeproptable.df$Freq, 4)*100)
+```
+
+### d : passation 7
+
+```{r  sevendcodes, echo=FALSE}
+ggplot(sevendcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sevend") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsevendn)+
+  xlab('Code')
+```
+
+```{r eightdcount, include=FALSE}
+codeeightd.df <- data.frame(eightdm,eightdp)
+codeeightd.df <- codeeightd.df %>% mutate(eightdcode = case_when(eightdp+eightdm <= 1 ~ '0',
+          eightdp == 2 & eightdm == 2 ~ '±',
+			    eightdp == 1 & eightdm == 1 ~ '0',
+          eightdp == 2 & eightdm == 3 ~ '±',
+			    eightdp == 3 & eightdm == 2 ~ '±',
+			    eightdp == 2 & eightdm == 0 ~ '+',
+			    eightdp == 2 & eightdm == 1 ~ '+',
+			    eightdp == 3 & eightdm == 0 ~ '+',
+			    eightdp == 3 & eightdm == 1 ~ '+',
+			    eightdp == 0 & eightdm == 2 ~ '-',
+			    eightdp == 1 & eightdm == 2 ~ '-',
+			    eightdp == 0 & eightdm == 3 ~ '-',
+			    eightdp == 1 & eightdm == 3 ~ '-',
+			    eightdp == 4 & eightdm == 0 ~ '+!',
+			    eightdp == 4 & eightdm == 1 ~ '+!',
+			    eightdp == 0 & eightdm == 4 ~ '-!',
+			    eightdp == 1 & eightdm == 4 ~ '-!',
+		      eightdp == 5 & eightdm == 0 ~ '+!!',
+			    eightdp == 5 & eightdm == 1 ~ '+!!',
+			    eightdp == 0 & eightdm == 5 ~ '-!!',
+			    eightdp == 1 & eightdm == 5 ~ '-!!',
+			    eightdp == 6 & eightdm == 0 ~ '+!!!',
+			    eightdp == 6 & eightdm == 1 ~ '+!!!',
+			    eightdp == 0 & eightdm == 6 ~ '-!!!',
+			    eightdp == 1 & eightdm == 6 ~ '-!!!',
+			    eightdp == 3 & eightdm == 3 ~ '±!',
+			    eightdp == 4 & eightdm == 2 ~ '±!',
+			    eightdp == 2 & eightdm == 4 ~ '±!'
+                            ))
+
+eightdcodetable <- table(codeeightd.df$eightdcode)
+eightdcodeproptable.df <- data.frame(prop.table(eightdcodetable))
+lengtheightd <- length(eightdm)
+lengtheightdn <- paste("N =",lengtheightd)
+eightdcodepercent.df <- data.frame (Code  = eightdcodeproptable.df$Var1, Fréquence=round(eightdcodeproptable.df$Freq, 4)*100)
+```
+
+### d : passation 8
+
+```{r  eightdcodes, echo=FALSE}
+ggplot(eightdcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour eightd") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengtheightdn)+
+  xlab('Code')
+```
+
+```{r ninedcount, include=FALSE}
+codenined.df <- data.frame(ninedm,ninedp)
+codenined.df <- codenined.df %>% mutate(ninedcode = case_when(ninedp+ninedm <= 1 ~ '0',
+          ninedp == 2 & ninedm == 2 ~ '±',
+			    ninedp == 1 & ninedm == 1 ~ '0',
+          ninedp == 2 & ninedm == 3 ~ '±',
+			    ninedp == 3 & ninedm == 2 ~ '±',
+			    ninedp == 2 & ninedm == 0 ~ '+',
+			    ninedp == 2 & ninedm == 1 ~ '+',
+			    ninedp == 3 & ninedm == 0 ~ '+',
+			    ninedp == 3 & ninedm == 1 ~ '+',
+			    ninedp == 0 & ninedm == 2 ~ '-',
+			    ninedp == 1 & ninedm == 2 ~ '-',
+			    ninedp == 0 & ninedm == 3 ~ '-',
+			    ninedp == 1 & ninedm == 3 ~ '-',
+			    ninedp == 4 & ninedm == 0 ~ '+!',
+			    ninedp == 4 & ninedm == 1 ~ '+!',
+			    ninedp == 0 & ninedm == 4 ~ '-!',
+			    ninedp == 1 & ninedm == 4 ~ '-!',
+		      ninedp == 5 & ninedm == 0 ~ '+!!',
+			    ninedp == 5 & ninedm == 1 ~ '+!!',
+			    ninedp == 0 & ninedm == 5 ~ '-!!',
+			    ninedp == 1 & ninedm == 5 ~ '-!!',
+			    ninedp == 6 & ninedm == 0 ~ '+!!!',
+			    ninedp == 6 & ninedm == 1 ~ '+!!!',
+			    ninedp == 0 & ninedm == 6 ~ '-!!!',
+			    ninedp == 1 & ninedm == 6 ~ '-!!!',
+			    ninedp == 3 & ninedm == 3 ~ '±!',
+			    ninedp == 4 & ninedm == 2 ~ '±!',
+			    ninedp == 2 & ninedm == 4 ~ '±!'
+                            ))
+
+ninedcodetable <- table(codenined.df$ninedcode)
+ninedcodeproptable.df <- data.frame(prop.table(ninedcodetable))
+lengthnined <- length(ninedm)
+lengthninedn <- paste("N =",lengthnined)
+ninedcodepercent.df <- data.frame (Code  = ninedcodeproptable.df$Var1, Fréquence=round(ninedcodeproptable.df$Freq, 4)*100)
+```
+
+### d : passation 9
+
+```{r  ninedcodes, echo=FALSE}
+ggplot(ninedcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour nined") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthninedn)+
+  xlab('Code')
+```
+
+```{r tendcount, include=FALSE}
+codetend.df <- data.frame(tendm,tendp)
+codetend.df <- codetend.df %>% mutate(tendcode = case_when(tendp+tendm <= 1 ~ '0',
+          tendp == 2 & tendm == 2 ~ '±',
+			    tendp == 1 & tendm == 1 ~ '0',
+          tendp == 2 & tendm == 3 ~ '±',
+			    tendp == 3 & tendm == 2 ~ '±',
+			    tendp == 2 & tendm == 0 ~ '+',
+			    tendp == 2 & tendm == 1 ~ '+',
+			    tendp == 3 & tendm == 0 ~ '+',
+			    tendp == 3 & tendm == 1 ~ '+',
+			    tendp == 0 & tendm == 2 ~ '-',
+			    tendp == 1 & tendm == 2 ~ '-',
+			    tendp == 0 & tendm == 3 ~ '-',
+			    tendp == 1 & tendm == 3 ~ '-',
+			    tendp == 4 & tendm == 0 ~ '+!',
+			    tendp == 4 & tendm == 1 ~ '+!',
+			    tendp == 0 & tendm == 4 ~ '-!',
+			    tendp == 1 & tendm == 4 ~ '-!',
+		      tendp == 5 & tendm == 0 ~ '+!!',
+			    tendp == 5 & tendm == 1 ~ '+!!',
+			    tendp == 0 & tendm == 5 ~ '-!!',
+			    tendp == 1 & tendm == 5 ~ '-!!',
+			    tendp == 6 & tendm == 0 ~ '+!!!',
+			    tendp == 6 & tendm == 1 ~ '+!!!',
+			    tendp == 0 & tendm == 6 ~ '-!!!',
+			    tendp == 1 & tendm == 6 ~ '-!!!',
+			    tendp == 3 & tendm == 3 ~ '±!',
+			    tendp == 4 & tendm == 2 ~ '±!',
+			    tendp == 2 & tendm == 4 ~ '±!'
+                            ))
+
+tendcodetable <- table(codetend.df$tendcode)
+tendcodeproptable.df <- data.frame(prop.table(tendcodetable))
+lengthtend <- length(tendm)
+lengthtendn <- paste("N =",lengthtend)
+tendcodepercent.df <- data.frame (Code  = tendcodeproptable.df$Var1, Fréquence=round(tendcodeproptable.df$Freq, 4)*100)
+```
+
+### d : passation 10
+
+```{r  tendcodes, echo=FALSE}
+ggplot(tendcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour tend") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtendn)+
+  xlab('Code')
+```
+
+### d total
+
+```{r}
+codeoned_named.df <- data.frame(plus=codeoned.df$onedp, minus=codeoned.df$onedm, code=codeoned.df$onedcode)
+codetwod_named.df <- data.frame(plus=codetwod.df$twodp, minus=codetwod.df$twodm, code=codetwod.df$twodcode)
+codethreed_named.df <- data.frame(plus=codethreed.df$threedp, minus=codethreed.df$threedm, code=codethreed.df$threedcode)
+codefourd_named.df <- data.frame(plus=codefourd.df$fourdp, minus=codefourd.df$fourdm, code=codefourd.df$fourdcode)
+codefived_named.df <- data.frame(plus=codefived.df$fivedp, minus=codefived.df$fivedm, code=codefived.df$fivedcode)
+codesixd_named.df <- data.frame(plus=codesixd.df$sixdp, minus=codesixd.df$sixdm, code=codesixd.df$sixdcode)
+codesevend_named.df <- data.frame(plus=codesevend.df$sevendp, minus=codesevend.df$sevendm, code=codesevend.df$sevendcode)
+codeeightd_named.df <- data.frame(plus=codeeightd.df$eightdp, minus=codeeightd.df$eightdm, code=codeeightd.df$eightdcode)
+codenined_named.df <- data.frame(plus=codenined.df$ninedp, minus=codenined.df$ninedm, code=codenined.df$ninedcode)
+codetend_named.df <- data.frame(plus=codetend.df$tendp, minus=codetend.df$tendm, code=codetend.df$tendcode)
+codedtotal <- rbind(codeoned_named.df, codetwod_named.df, codethreed_named.df, codefourd_named.df, codefived_named.df, codesixd_named.df, codesevend_named.df, codeeightd_named.df, codenined_named.df, codetend_named.df)
+
+dtotalcodetable <- table(codedtotal$code)
+dtotalcodeproptable.df <- data.frame(prop.table(dtotalcodetable))
+lengthdtotal <- length(codedtotal$code)
+lengthdtotaln <- paste("N =",lengthdtotal)
+dtotalcodepercent.df <- data.frame (Code  = dtotalcodeproptable.df$Var1, Fréquence=round(dtotalcodeproptable.df$Freq, 4)*100)
+```
+
+```{r dallcodes, echo=FALSE}
+ggplot(dtotalcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour d") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=10, y=95, label=lengthstotaln)+
+  xlab('Code')
+```
+
+## m
+
+```{r onemcount, include=FALSE}
+codeonem.df <- data.frame(onemm,onemp)
+codeonem.df <- codeonem.df %>% mutate(onemcode = case_when(onemp+onemm <= 1 ~ '0',
+          onemp == 2 & onemm == 2 ~ '±',
+			    onemp == 1 & onemm == 1 ~ '0',
+          onemp == 2 & onemm == 3 ~ '±',
+			    onemp == 3 & onemm == 2 ~ '±',
+			    onemp == 2 & onemm == 0 ~ '+',
+			    onemp == 2 & onemm == 1 ~ '+',
+			    onemp == 3 & onemm == 0 ~ '+',
+			    onemp == 3 & onemm == 1 ~ '+',
+			    onemp == 0 & onemm == 2 ~ '-',
+			    onemp == 1 & onemm == 2 ~ '-',
+			    onemp == 0 & onemm == 3 ~ '-',
+			    onemp == 1 & onemm == 3 ~ '-',
+			    onemp == 4 & onemm == 0 ~ '+!',
+			    onemp == 4 & onemm == 1 ~ '+!',
+			    onemp == 0 & onemm == 4 ~ '-!',
+			    onemp == 1 & onemm == 4 ~ '-!',
+		      onemp == 5 & onemm == 0 ~ '+!!',
+			    onemp == 5 & onemm == 1 ~ '+!!',
+			    onemp == 0 & onemm == 5 ~ '-!!',
+			    onemp == 1 & onemm == 5 ~ '-!!',
+			    onemp == 6 & onemm == 0 ~ '+!!!',
+			    onemp == 6 & onemm == 1 ~ '+!!!',
+			    onemp == 0 & onemm == 6 ~ '-!!!',
+			    onemp == 1 & onemm == 6 ~ '-!!!',
+			    onemp == 3 & onemm == 3 ~ '±!',
+			    onemp == 4 & onemm == 2 ~ '±!',
+			    onemp == 2 & onemm == 4 ~ '±!'
+                            ))
+
+onemcodetable <- table(codeonem.df$onemcode)
+onemcodeproptable.df <- data.frame(prop.table(onemcodetable))
+lengthonem <- length(onemm)
+lengthonemn <- paste("N =",lengthonem)
+onemcodepercent.df <- data.frame (Code  = onemcodeproptable.df$Var1, Fréquence=round(onemcodeproptable.df$Freq, 4)*100)
+```
+
+### m : passation 1
+
+```{r  onemcodes, echo=FALSE}
+ggplot(onemcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour onem") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthonemn)+
+  xlab('Code')
+```
+
+```{r twomcount, include=FALSE}
+codetwom.df <- data.frame(twomm,twomp)
+codetwom.df <- codetwom.df %>% mutate(twomcode = case_when(twomp+twomm <= 1 ~ '0',
+          twomp == 2 & twomm == 2 ~ '±',
+			    twomp == 1 & twomm == 1 ~ '0',
+          twomp == 2 & twomm == 3 ~ '±',
+			    twomp == 3 & twomm == 2 ~ '±',
+			    twomp == 2 & twomm == 0 ~ '+',
+			    twomp == 2 & twomm == 1 ~ '+',
+			    twomp == 3 & twomm == 0 ~ '+',
+			    twomp == 3 & twomm == 1 ~ '+',
+			    twomp == 0 & twomm == 2 ~ '-',
+			    twomp == 1 & twomm == 2 ~ '-',
+			    twomp == 0 & twomm == 3 ~ '-',
+			    twomp == 1 & twomm == 3 ~ '-',
+			    twomp == 4 & twomm == 0 ~ '+!',
+			    twomp == 4 & twomm == 1 ~ '+!',
+			    twomp == 0 & twomm == 4 ~ '-!',
+			    twomp == 1 & twomm == 4 ~ '-!',
+		      twomp == 5 & twomm == 0 ~ '+!!',
+			    twomp == 5 & twomm == 1 ~ '+!!',
+			    twomp == 0 & twomm == 5 ~ '-!!',
+			    twomp == 1 & twomm == 5 ~ '-!!',
+			    twomp == 6 & twomm == 0 ~ '+!!!',
+			    twomp == 6 & twomm == 1 ~ '+!!!',
+			    twomp == 0 & twomm == 6 ~ '-!!!',
+			    twomp == 1 & twomm == 6 ~ '-!!!',
+			    twomp == 3 & twomm == 3 ~ '±!',
+			    twomp == 4 & twomm == 2 ~ '±!',
+			    twomp == 2 & twomm == 4 ~ '±!'
+                            ))
+
+twomcodetable <- table(codetwom.df$twomcode)
+twomcodeproptable.df <- data.frame(prop.table(twomcodetable))
+lengthtwom <- length(twomm)
+lengthtwomn <- paste("N =",lengthtwom)
+twomcodepercent.df <- data.frame (Code  = twomcodeproptable.df$Var1, Fréquence=round(twomcodeproptable.df$Freq, 4)*100)
+```
+
+### m : passation 2
+
+```{r  twomcodes, echo=FALSE}
+ggplot(twomcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour twom") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtwomn)+
+  xlab('Code')
+```
+
+```{r threemcount, include=FALSE}
+codethreem.df <- data.frame(threemm,threemp)
+codethreem.df <- codethreem.df %>% mutate(threemcode = case_when(threemp+threemm <= 1 ~ '0',
+          threemp == 2 & threemm == 2 ~ '±',
+			    threemp == 1 & threemm == 1 ~ '0',
+          threemp == 2 & threemm == 3 ~ '±',
+			    threemp == 3 & threemm == 2 ~ '±',
+			    threemp == 2 & threemm == 0 ~ '+',
+			    threemp == 2 & threemm == 1 ~ '+',
+			    threemp == 3 & threemm == 0 ~ '+',
+			    threemp == 3 & threemm == 1 ~ '+',
+			    threemp == 0 & threemm == 2 ~ '-',
+			    threemp == 1 & threemm == 2 ~ '-',
+			    threemp == 0 & threemm == 3 ~ '-',
+			    threemp == 1 & threemm == 3 ~ '-',
+			    threemp == 4 & threemm == 0 ~ '+!',
+			    threemp == 4 & threemm == 1 ~ '+!',
+			    threemp == 0 & threemm == 4 ~ '-!',
+			    threemp == 1 & threemm == 4 ~ '-!',
+		      threemp == 5 & threemm == 0 ~ '+!!',
+			    threemp == 5 & threemm == 1 ~ '+!!',
+			    threemp == 0 & threemm == 5 ~ '-!!',
+			    threemp == 1 & threemm == 5 ~ '-!!',
+			    threemp == 6 & threemm == 0 ~ '+!!!',
+			    threemp == 6 & threemm == 1 ~ '+!!!',
+			    threemp == 0 & threemm == 6 ~ '-!!!',
+			    threemp == 1 & threemm == 6 ~ '-!!!',
+			    threemp == 3 & threemm == 3 ~ '±!',
+			    threemp == 4 & threemm == 2 ~ '±!',
+			    threemp == 2 & threemm == 4 ~ '±!'
+                            ))
+
+threemcodetable <- table(codethreem.df$threemcode)
+threemcodeproptable.df <- data.frame(prop.table(threemcodetable))
+lengththreem <- length(threemm)
+lengththreemn <- paste("N =",lengththreem)
+threemcodepercent.df <- data.frame (Code  = threemcodeproptable.df$Var1, Fréquence=round(threemcodeproptable.df$Freq, 4)*100)
+```
+
+### m : passation 3
+
+```{r  threemcodes, echo=FALSE}
+ggplot(threemcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour threem") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengththreemn)+
+  xlab('Code')
+```
+
+```{r fourmcount, include=FALSE}
+codefourm.df <- data.frame(fourmm,fourmp)
+codefourm.df <- codefourm.df %>% mutate(fourmcode = case_when(fourmp+fourmm <= 1 ~ '0',
+          fourmp == 2 & fourmm == 2 ~ '±',
+			    fourmp == 1 & fourmm == 1 ~ '0',
+          fourmp == 2 & fourmm == 3 ~ '±',
+			    fourmp == 3 & fourmm == 2 ~ '±',
+			    fourmp == 2 & fourmm == 0 ~ '+',
+			    fourmp == 2 & fourmm == 1 ~ '+',
+			    fourmp == 3 & fourmm == 0 ~ '+',
+			    fourmp == 3 & fourmm == 1 ~ '+',
+			    fourmp == 0 & fourmm == 2 ~ '-',
+			    fourmp == 1 & fourmm == 2 ~ '-',
+			    fourmp == 0 & fourmm == 3 ~ '-',
+			    fourmp == 1 & fourmm == 3 ~ '-',
+			    fourmp == 4 & fourmm == 0 ~ '+!',
+			    fourmp == 4 & fourmm == 1 ~ '+!',
+			    fourmp == 0 & fourmm == 4 ~ '-!',
+			    fourmp == 1 & fourmm == 4 ~ '-!',
+		      fourmp == 5 & fourmm == 0 ~ '+!!',
+			    fourmp == 5 & fourmm == 1 ~ '+!!',
+			    fourmp == 0 & fourmm == 5 ~ '-!!',
+			    fourmp == 1 & fourmm == 5 ~ '-!!',
+			    fourmp == 6 & fourmm == 0 ~ '+!!!',
+			    fourmp == 6 & fourmm == 1 ~ '+!!!',
+			    fourmp == 0 & fourmm == 6 ~ '-!!!',
+			    fourmp == 1 & fourmm == 6 ~ '-!!!',
+			    fourmp == 3 & fourmm == 3 ~ '±!',
+			    fourmp == 4 & fourmm == 2 ~ '±!',
+			    fourmp == 2 & fourmm == 4 ~ '±!'
+                            ))
+
+fourmcodetable <- table(codefourm.df$fourmcode)
+fourmcodeproptable.df <- data.frame(prop.table(fourmcodetable))
+lengthfourm <- length(fourmm)
+lengthfourmn <- paste("N =",lengthfourm)
+fourmcodepercent.df <- data.frame (Code  = fourmcodeproptable.df$Var1, Fréquence=round(fourmcodeproptable.df$Freq, 4)*100)
+```
+
+### m : passation 4
+
+```{r  fourmcodes, echo=FALSE}
+ggplot(fourmcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fourm") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfourmn)+
+  xlab('Code')
+```
+
+```{r fivemcount, include=FALSE}
+codefivem.df <- data.frame(fivemm,fivemp)
+codefivem.df <- codefivem.df %>% mutate(fivemcode = case_when(fivemp+fivemm <= 1 ~ '0',
+          fivemp == 2 & fivemm == 2 ~ '±',
+			    fivemp == 1 & fivemm == 1 ~ '0',
+          fivemp == 2 & fivemm == 3 ~ '±',
+			    fivemp == 3 & fivemm == 2 ~ '±',
+			    fivemp == 2 & fivemm == 0 ~ '+',
+			    fivemp == 2 & fivemm == 1 ~ '+',
+			    fivemp == 3 & fivemm == 0 ~ '+',
+			    fivemp == 3 & fivemm == 1 ~ '+',
+			    fivemp == 0 & fivemm == 2 ~ '-',
+			    fivemp == 1 & fivemm == 2 ~ '-',
+			    fivemp == 0 & fivemm == 3 ~ '-',
+			    fivemp == 1 & fivemm == 3 ~ '-',
+			    fivemp == 4 & fivemm == 0 ~ '+!',
+			    fivemp == 4 & fivemm == 1 ~ '+!',
+			    fivemp == 0 & fivemm == 4 ~ '-!',
+			    fivemp == 1 & fivemm == 4 ~ '-!',
+		      fivemp == 5 & fivemm == 0 ~ '+!!',
+			    fivemp == 5 & fivemm == 1 ~ '+!!',
+			    fivemp == 0 & fivemm == 5 ~ '-!!',
+			    fivemp == 1 & fivemm == 5 ~ '-!!',
+			    fivemp == 6 & fivemm == 0 ~ '+!!!',
+			    fivemp == 6 & fivemm == 1 ~ '+!!!',
+			    fivemp == 0 & fivemm == 6 ~ '-!!!',
+			    fivemp == 1 & fivemm == 6 ~ '-!!!',
+			    fivemp == 3 & fivemm == 3 ~ '±!',
+			    fivemp == 4 & fivemm == 2 ~ '±!',
+			    fivemp == 2 & fivemm == 4 ~ '±!'
+                            ))
+
+fivemcodetable <- table(codefivem.df$fivemcode)
+fivemcodeproptable.df <- data.frame(prop.table(fivemcodetable))
+lengthfivem <- length(fivemm)
+lengthfivemn <- paste("N =",lengthfivem)
+fivemcodepercent.df <- data.frame (Code  = fivemcodeproptable.df$Var1, Fréquence=round(fivemcodeproptable.df$Freq, 4)*100)
+```
+
+### m : passation 5
+
+```{r  fivemcodes, echo=FALSE}
+ggplot(fivemcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour fivem") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthfivemn)+
+  xlab('Code')
+```
+
+```{r sixmcount, include=FALSE}
+codesixm.df <- data.frame(sixmm,sixmp)
+codesixm.df <- codesixm.df %>% mutate(sixmcode = case_when(sixmp+sixmm <= 1 ~ '0',
+          sixmp == 2 & sixmm == 2 ~ '±',
+			    sixmp == 1 & sixmm == 1 ~ '0',
+          sixmp == 2 & sixmm == 3 ~ '±',
+			    sixmp == 3 & sixmm == 2 ~ '±',
+			    sixmp == 2 & sixmm == 0 ~ '+',
+			    sixmp == 2 & sixmm == 1 ~ '+',
+			    sixmp == 3 & sixmm == 0 ~ '+',
+			    sixmp == 3 & sixmm == 1 ~ '+',
+			    sixmp == 0 & sixmm == 2 ~ '-',
+			    sixmp == 1 & sixmm == 2 ~ '-',
+			    sixmp == 0 & sixmm == 3 ~ '-',
+			    sixmp == 1 & sixmm == 3 ~ '-',
+			    sixmp == 4 & sixmm == 0 ~ '+!',
+			    sixmp == 4 & sixmm == 1 ~ '+!',
+			    sixmp == 0 & sixmm == 4 ~ '-!',
+			    sixmp == 1 & sixmm == 4 ~ '-!',
+		      sixmp == 5 & sixmm == 0 ~ '+!!',
+			    sixmp == 5 & sixmm == 1 ~ '+!!',
+			    sixmp == 0 & sixmm == 5 ~ '-!!',
+			    sixmp == 1 & sixmm == 5 ~ '-!!',
+			    sixmp == 6 & sixmm == 0 ~ '+!!!',
+			    sixmp == 6 & sixmm == 1 ~ '+!!!',
+			    sixmp == 0 & sixmm == 6 ~ '-!!!',
+			    sixmp == 1 & sixmm == 6 ~ '-!!!',
+			    sixmp == 3 & sixmm == 3 ~ '±!',
+			    sixmp == 4 & sixmm == 2 ~ '±!',
+			    sixmp == 2 & sixmm == 4 ~ '±!'
+                            ))
+
+sixmcodetable <- table(codesixm.df$sixmcode)
+sixmcodeproptable.df <- data.frame(prop.table(sixmcodetable))
+lengthsixm <- length(sixmm)
+lengthsixmn <- paste("N =",lengthsixm)
+sixmcodepercent.df <- data.frame (Code  = sixmcodeproptable.df$Var1, Fréquence=round(sixmcodeproptable.df$Freq, 4)*100)
+```
+
+### m : passation 6
+
+```{r  sixmcodes, echo=FALSE}
+ggplot(sixmcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sixm") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsixmn)+
+  xlab('Code')
+```
+
+```{r sevenmcount, include=FALSE}
+codesevenm.df <- data.frame(sevenmm,sevenmp)
+codesevenm.df <- codesevenm.df %>% mutate(sevenmcode = case_when(sevenmp+sevenmm <= 1 ~ '0',
+          sevenmp == 2 & sevenmm == 2 ~ '±',
+			    sevenmp == 1 & sevenmm == 1 ~ '0',
+          sevenmp == 2 & sevenmm == 3 ~ '±',
+			    sevenmp == 3 & sevenmm == 2 ~ '±',
+			    sevenmp == 2 & sevenmm == 0 ~ '+',
+			    sevenmp == 2 & sevenmm == 1 ~ '+',
+			    sevenmp == 3 & sevenmm == 0 ~ '+',
+			    sevenmp == 3 & sevenmm == 1 ~ '+',
+			    sevenmp == 0 & sevenmm == 2 ~ '-',
+			    sevenmp == 1 & sevenmm == 2 ~ '-',
+			    sevenmp == 0 & sevenmm == 3 ~ '-',
+			    sevenmp == 1 & sevenmm == 3 ~ '-',
+			    sevenmp == 4 & sevenmm == 0 ~ '+!',
+			    sevenmp == 4 & sevenmm == 1 ~ '+!',
+			    sevenmp == 0 & sevenmm == 4 ~ '-!',
+			    sevenmp == 1 & sevenmm == 4 ~ '-!',
+		      sevenmp == 5 & sevenmm == 0 ~ '+!!',
+			    sevenmp == 5 & sevenmm == 1 ~ '+!!',
+			    sevenmp == 0 & sevenmm == 5 ~ '-!!',
+			    sevenmp == 1 & sevenmm == 5 ~ '-!!',
+			    sevenmp == 6 & sevenmm == 0 ~ '+!!!',
+			    sevenmp == 6 & sevenmm == 1 ~ '+!!!',
+			    sevenmp == 0 & sevenmm == 6 ~ '-!!!',
+			    sevenmp == 1 & sevenmm == 6 ~ '-!!!',
+			    sevenmp == 3 & sevenmm == 3 ~ '±!',
+			    sevenmp == 4 & sevenmm == 2 ~ '±!',
+			    sevenmp == 2 & sevenmm == 4 ~ '±!'
+                            ))
+
+sevenmcodetable <- table(codesevenm.df$sevenmcode)
+sevenmcodeproptable.df <- data.frame(prop.table(sevenmcodetable))
+lengthsevenm <- length(sevenmm)
+lengthsevenmn <- paste("N =",lengthsevenm)
+sevenmcodepercent.df <- data.frame (Code  = sevenmcodeproptable.df$Var1, Fréquence=round(sevenmcodeproptable.df$Freq, 4)*100)
+```
+
+### m : passation 7
+
+```{r  sevenmcodes, echo=FALSE}
+ggplot(sevenmcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour sevenm") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthsevenmn)+
+  xlab('Code')
+```
+
+```{r eightmcount, include=FALSE}
+codeeightm.df <- data.frame(eightmm,eightmp)
+codeeightm.df <- codeeightm.df %>% mutate(eightmcode = case_when(eightmp+eightmm <= 1 ~ '0',
+          eightmp == 2 & eightmm == 2 ~ '±',
+			    eightmp == 1 & eightmm == 1 ~ '0',
+          eightmp == 2 & eightmm == 3 ~ '±',
+			    eightmp == 3 & eightmm == 2 ~ '±',
+			    eightmp == 2 & eightmm == 0 ~ '+',
+			    eightmp == 2 & eightmm == 1 ~ '+',
+			    eightmp == 3 & eightmm == 0 ~ '+',
+			    eightmp == 3 & eightmm == 1 ~ '+',
+			    eightmp == 0 & eightmm == 2 ~ '-',
+			    eightmp == 1 & eightmm == 2 ~ '-',
+			    eightmp == 0 & eightmm == 3 ~ '-',
+			    eightmp == 1 & eightmm == 3 ~ '-',
+			    eightmp == 4 & eightmm == 0 ~ '+!',
+			    eightmp == 4 & eightmm == 1 ~ '+!',
+			    eightmp == 0 & eightmm == 4 ~ '-!',
+			    eightmp == 1 & eightmm == 4 ~ '-!',
+		      eightmp == 5 & eightmm == 0 ~ '+!!',
+			    eightmp == 5 & eightmm == 1 ~ '+!!',
+			    eightmp == 0 & eightmm == 5 ~ '-!!',
+			    eightmp == 1 & eightmm == 5 ~ '-!!',
+			    eightmp == 6 & eightmm == 0 ~ '+!!!',
+			    eightmp == 6 & eightmm == 1 ~ '+!!!',
+			    eightmp == 0 & eightmm == 6 ~ '-!!!',
+			    eightmp == 1 & eightmm == 6 ~ '-!!!',
+			    eightmp == 3 & eightmm == 3 ~ '±!',
+			    eightmp == 4 & eightmm == 2 ~ '±!',
+			    eightmp == 2 & eightmm == 4 ~ '±!'
+                            ))
+
+eightmcodetable <- table(codeeightm.df$eightmcode)
+eightmcodeproptable.df <- data.frame(prop.table(eightmcodetable))
+lengtheightm <- length(eightmm)
+lengtheightmn <- paste("N =",lengtheightm)
+eightmcodepercent.df <- data.frame (Code  = eightmcodeproptable.df$Var1, Fréquence=round(eightmcodeproptable.df$Freq, 4)*100)
+```
+
+### m : passation 8
+
+```{r  eightmcodes, echo=FALSE}
+ggplot(eightmcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour eightm") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengtheightmn)+
+  xlab('Code')
+```
+
+```{r ninemcount, include=FALSE}
+codeninem.df <- data.frame(ninemm,ninemp)
+codeninem.df <- codeninem.df %>% mutate(ninemcode = case_when(ninemp+ninemm <= 1 ~ '0',
+          ninemp == 2 & ninemm == 2 ~ '±',
+			    ninemp == 1 & ninemm == 1 ~ '0',
+          ninemp == 2 & ninemm == 3 ~ '±',
+			    ninemp == 3 & ninemm == 2 ~ '±',
+			    ninemp == 2 & ninemm == 0 ~ '+',
+			    ninemp == 2 & ninemm == 1 ~ '+',
+			    ninemp == 3 & ninemm == 0 ~ '+',
+			    ninemp == 3 & ninemm == 1 ~ '+',
+			    ninemp == 0 & ninemm == 2 ~ '-',
+			    ninemp == 1 & ninemm == 2 ~ '-',
+			    ninemp == 0 & ninemm == 3 ~ '-',
+			    ninemp == 1 & ninemm == 3 ~ '-',
+			    ninemp == 4 & ninemm == 0 ~ '+!',
+			    ninemp == 4 & ninemm == 1 ~ '+!',
+			    ninemp == 0 & ninemm == 4 ~ '-!',
+			    ninemp == 1 & ninemm == 4 ~ '-!',
+		      ninemp == 5 & ninemm == 0 ~ '+!!',
+			    ninemp == 5 & ninemm == 1 ~ '+!!',
+			    ninemp == 0 & ninemm == 5 ~ '-!!',
+			    ninemp == 1 & ninemm == 5 ~ '-!!',
+			    ninemp == 6 & ninemm == 0 ~ '+!!!',
+			    ninemp == 6 & ninemm == 1 ~ '+!!!',
+			    ninemp == 0 & ninemm == 6 ~ '-!!!',
+			    ninemp == 1 & ninemm == 6 ~ '-!!!',
+			    ninemp == 3 & ninemm == 3 ~ '±!',
+			    ninemp == 4 & ninemm == 2 ~ '±!',
+			    ninemp == 2 & ninemm == 4 ~ '±!'
+                            ))
+
+ninemcodetable <- table(codeninem.df$ninemcode)
+ninemcodeproptable.df <- data.frame(prop.table(ninemcodetable))
+lengthninem <- length(ninemm)
+lengthninemn <- paste("N =",lengthninem)
+ninemcodepercent.df <- data.frame (Code  = ninemcodeproptable.df$Var1, Fréquence=round(ninemcodeproptable.df$Freq, 4)*100)
+```
+
+### m : passation 9
+
+```{r  ninemcodes, echo=FALSE}
+ggplot(ninemcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour ninem") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthninemn)+
+  xlab('Code')
+```
+
+```{r tenmcount, include=FALSE}
+codetenm.df <- data.frame(tenmm,tenmp)
+codetenm.df <- codetenm.df %>% mutate(tenmcode = case_when(tenmp+tenmm <= 1 ~ '0',
+          tenmp == 2 & tenmm == 2 ~ '±',
+			    tenmp == 1 & tenmm == 1 ~ '0',
+          tenmp == 2 & tenmm == 3 ~ '±',
+			    tenmp == 3 & tenmm == 2 ~ '±',
+			    tenmp == 2 & tenmm == 0 ~ '+',
+			    tenmp == 2 & tenmm == 1 ~ '+',
+			    tenmp == 3 & tenmm == 0 ~ '+',
+			    tenmp == 3 & tenmm == 1 ~ '+',
+			    tenmp == 0 & tenmm == 2 ~ '-',
+			    tenmp == 1 & tenmm == 2 ~ '-',
+			    tenmp == 0 & tenmm == 3 ~ '-',
+			    tenmp == 1 & tenmm == 3 ~ '-',
+			    tenmp == 4 & tenmm == 0 ~ '+!',
+			    tenmp == 4 & tenmm == 1 ~ '+!',
+			    tenmp == 0 & tenmm == 4 ~ '-!',
+			    tenmp == 1 & tenmm == 4 ~ '-!',
+		      tenmp == 5 & tenmm == 0 ~ '+!!',
+			    tenmp == 5 & tenmm == 1 ~ '+!!',
+			    tenmp == 0 & tenmm == 5 ~ '-!!',
+			    tenmp == 1 & tenmm == 5 ~ '-!!',
+			    tenmp == 6 & tenmm == 0 ~ '+!!!',
+			    tenmp == 6 & tenmm == 1 ~ '+!!!',
+			    tenmp == 0 & tenmm == 6 ~ '-!!!',
+			    tenmp == 1 & tenmm == 6 ~ '-!!!',
+			    tenmp == 3 & tenmm == 3 ~ '±!',
+			    tenmp == 4 & tenmm == 2 ~ '±!',
+			    tenmp == 2 & tenmm == 4 ~ '±!'
+                            ))
+
+tenmcodetable <- table(codetenm.df$tenmcode)
+tenmcodeproptable.df <- data.frame(prop.table(tenmcodetable))
+lengthtenm <- length(tenmm)
+lengthtenmn <- paste("N =",lengthtenm)
+tenmcodepercent.df <- data.frame (Code  = tenmcodeproptable.df$Var1, Fréquence=round(tenmcodeproptable.df$Freq, 4)*100)
+```
+
+### m : passation 10
+
+```{r  tenmcodes, echo=FALSE}
+ggplot(tenmcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour tenm") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=8, y=95, label=lengthtenmn)+
+  xlab('Code')
+```
+
+### m total
+
+```{r}
+codeonem_namem.df <- data.frame(plus=codeonem.df$onemp, minus=codeonem.df$onemm, code=codeonem.df$onemcode)
+codetwom_namem.df <- data.frame(plus=codetwom.df$twomp, minus=codetwom.df$twomm, code=codetwom.df$twomcode)
+codethreem_namem.df <- data.frame(plus=codethreem.df$threemp, minus=codethreem.df$threemm, code=codethreem.df$threemcode)
+codefourm_namem.df <- data.frame(plus=codefourm.df$fourmp, minus=codefourm.df$fourmm, code=codefourm.df$fourmcode)
+codefivem_namem.df <- data.frame(plus=codefivem.df$fivemp, minus=codefivem.df$fivemm, code=codefivem.df$fivemcode)
+codesixm_namem.df <- data.frame(plus=codesixm.df$sixmp, minus=codesixm.df$sixmm, code=codesixm.df$sixmcode)
+codesevenm_namem.df <- data.frame(plus=codesevenm.df$sevenmp, minus=codesevenm.df$sevenmm, code=codesevenm.df$sevenmcode)
+codeeightm_namem.df <- data.frame(plus=codeeightm.df$eightmp, minus=codeeightm.df$eightmm, code=codeeightm.df$eightmcode)
+codeninem_namem.df <- data.frame(plus=codeninem.df$ninemp, minus=codeninem.df$ninemm, code=codeninem.df$ninemcode)
+codetenm_namem.df <- data.frame(plus=codetenm.df$tenmp, minus=codetenm.df$tenmm, code=codetenm.df$tenmcode)
+codemtotal <- rbind(codeonem_namem.df, codetwom_namem.df, codethreem_namem.df, codefourm_namem.df, codefivem_namem.df, codesixm_namem.df, codesevenm_namem.df, codeeightm_namem.df, codeninem_namem.df, codetenm_namem.df)
+
+mtotalcodetable <- table(codemtotal$code)
+mtotalcodeproptable.df <- data.frame(prop.table(mtotalcodetable))
+lengthmtotal <- length(codemtotal$code)
+lengthmtotaln <- paste("N =",lengthmtotal)
+mtotalcodepercent.df <- data.frame (Code  = mtotalcodeproptable.df$Var1, Fréquence=round(mtotalcodeproptable.df$Freq, 4)*100)
+```
+
+```{r mallcodes, echo=FALSE}
+ggplot(mtotalcodepercent.df) +
+  aes(x = factor(Code, level=c('+', '+!', '+!!', '+!!!', '-', '-!', '-!!', '-!!!', '0', '±', '±!')), y = Fréquence) +
+  geom_col(fill = "#BFBFBF") +
+  labs(y = "%", title = "Fréquence des codes Szondi pour m") +
+  theme_minimal() +
+  ylim(0, 100) + 
+  geom_text(aes(label = Fréquence), size = 3, hjust = 0.5, vjust = -1, position = "stack") +
+  geom_text(x=10, y=95, label=lengthstotaln)+
+  xlab('Code')
+```
+
+# Discussion
+
+Les résultats se veulent principalement descriptifs. Les codes les plus fréquents sont les suivants : h+, s-, e0, hy-, k-, p-, d0, m+. Notons que ce profil basé sur les codes les plus fréquents est quelque peu différent de celui dégagé dans l'étude précédente [@thiry2020norms][^2]. A titre d'autres comparaisons, @goncalves2010 ont administré le test de Szondi à 126 Hongrois et à 176 Portugais et ont montré que les positions pulsionnelles les plus fréquentes étaient celles-ci :
+
+[^2]: dont le profil standard était celui-ci : h+ s± e0 hy- k- p± d0 m+
+
+| Nationalité | h | s | e | hy | k | p | d | m |
+|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+| Hongrois (*N* = 126) | **+** (38.5 %) | **-** (38.1 %) | **0** (31.7 %) | **-** (69.7 %) | **-** (51%) | **+** (61.3 %) | **0** (41.1 %) | **+** (66.4 %) |
+| Portugais (*N* = 176) | **+** (44.1 %) | **+** (47.7 %) | **0** (.4.1 %) | **-** (70.7 %) | **-** (53.4 %) | **-** (31.9 %) | **-** (42.2 %) | **+** (77.5 %) |
+
+Ces deux profils et celui que nous avons obtenu sont globalement similaires malgré quelques différences (par exemple en s et en p).
+
+Nous ne formulons ici aucunes interprétations psychologiques. D'autres études sont nécessaires afin d'évaluer la validité externe de ces codes. Dans l'attente de telles études, toute interprétation psychologique à partir du test de Szondi s'avère hasardeuse.

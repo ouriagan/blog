@@ -1,0 +1,350 @@
+---
+title: "Qualités psychométriques des indices d'alliance thérapeutique du NEO PI"
+description: "A l’occasion d’une étude précédente (Thiry, 2020), nous avons proposé trois indices susceptibles de prévoir une bonne ou une mauvaise alliance thérapeutique sur base des variables du modèle de personnalité en cinq facteurs. Nous proposons ici les caractéristiques psychométriques de ces trois indices pour un échantillon de 720 personnes (tout venant, détenus, adolescents, étudiants et patients). Les trois indices présentent une forte redondance. Nous proposons de ne retenir que celui qui repose sur trois domaines de personnalité (O+A+C). Seuls l’âge et le sexe semblent exercer une influence sur cet indice. Selon nous, cet indice dépasse le cadre thérapeutique car il décrit un rapport au monde extérieur, aux autres et aux actions bien plus global. Nous posons l’hypothèse que ce rapport répond consciemment ou non aux idéaux professionnels des cliniciens."
+author:
+  - name: Benjamin Thiry
+    orcid_id: 0000-0001-5864-8369
+    website: https://benjaminthiry.netlify.app/
+date: "2022-09-22"
+categories: [analyses statistiques]
+bibliography: ../../blog.bib
+citation: true
+lang: fr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE)
+library(psych)
+library(sem)
+library(papaja)
+library(readxl)
+library(dplyr)
+library(kableExtra)
+library(Hmisc)
+library(FactoMineR)
+library(factoextra)
+library(ggplot2)
+library(car)
+library(gplots)
+
+
+# neototal <- read_excel("/home/ouriagan/OneDrive/alliancetherapeutique/neototal_2_2_2020.xlsx")
+neototal <- read_excel("/home/ouriagan/OneDrive/NEOPIR/neototal.xlsx")
+attach(neototal)
+
+ntotal <- length(N)
+#age
+meanage <- round(mean(age, na.rm = TRUE), digit = 2)
+sdage <- round(sd(age, na.rm = TRUE), digit = 2)
+minage <- round(min(age, na.rm = TRUE), digit = 2)
+maxage <- round(max(age, na.rm = TRUE), digit = 2)
+
+#sexe
+nofmen <-length(which(sexe == "M")) 
+nofwomen <- length(which(sexe == "F")) 
+sumsexe <- nofmen+nofwomen
+
+nofmenpercentage <- round(100*(length(which(sexe == "M"))/sumsexe), digit = 2)
+
+nofwomen <- length(which(sexe == "F")) 
+nofwomenpercentage <- round(100*(length(which(sexe == "F"))/sumsexe), digit = 2)
+
+#group
+nofC <-length(which(groupe == "C")) 
+nofCpercentage <- round(100*(length(which(groupe == "C"))/length(N)), digit = 2)
+
+nofado <-length(which(groupe == "ado")) 
+nofadopercentage <- round(100*(length(which(groupe == "ado"))/length(N)), digit = 2)
+
+nofcondamnes <-length(which(groupe == "condamné")) 
+nofcondamnespercentage <- round(100*(length(which(groupe == "condamné"))/length(N)), digit = 2)
+nofinternes <-length(which(groupe == "interné")) 
+nofinternespercentage <- round(100*(length(which(groupe == "interné"))/length(N)), digit = 2)
+
+nofetudiant <-length(which(groupe == "etudiant")) 
+nofetudiantpercentage <- round(100*(length(which(groupe == "etudiant"))/length(N)), digit = 2)
+nofpatient <-length(which(groupe == "patient")) 
+nofpatientpercentage <- round(100*(length(which(groupe == "patient"))/length(N)), digit = 2)
+
+
+alliance1 = O+A+C
+alliance2 = A2+O3+C5+O5
+alliance3 = (32-A5)+(32-A2)+(32-A1)
+
+alliance.df = data.frame(alliance1, alliance2, alliance3)
+
+#Table 1
+table1variables <- c("Alliance 1","Alliance 2","Alliance 3")
+table1mean <- c(mean(alliance1), mean(alliance2), mean(alliance3))
+table1sd <- c(sd(alliance1), sd(alliance2), sd(alliance3))
+table1min <- c(min(alliance1), min(alliance2), min(alliance3))
+table1max <- c(max(alliance1), max(alliance2), max(alliance3))
+table1a <- data.frame(Variables = table1variables, Moyenne=table1mean, ET=table1sd, Min=table1min, Max=table1max)
+table1 <- printnum(table1a)
+
+
+# alliance2 = A2+O3+C5+O5+O6+O2+O1+C1+E2+E1+A6+(32-N5)+A3+C4+(32-E4)+(32-N1)+C6
+# alliance3 = (32-A5)+(32-A2)+(32-A1)+(32-C3)+E3+(32-E1)+(32-A4)+(32-O3)+(32-C4)+(32-N3)+(32-A6)+(32-O5)+(32-A3)+E5+N5+(32-O2)+(32-E2)+(32-O1)
+
+```
+
+# Introduction
+
+A l'occasion d'une étude précédente [@thiry2020assessing] ([disponible ici](../../posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model/)), nous avons demandé à 38 cliniciens du domaine de la santé mentale d'identifier les **traits de personnalité** de leurs patients susceptibles de **faciliter** ou de **freiner** l'**alliance thérapeutique**. Sur base de leurs réponses, nous avons identifié trois indices qui se basent sur les variables du modèle de personnalité en cinq facteurs tels que le NEO PI [@mccrae2016inventaires] ou l'IPIP NEO [@goldberg2006international] :
+
+1.  alliance1 (facilite) = O + A + C
+2.  alliance2 (facilite) = A2 + O3 + C5 + O5
+3.  alliance3 (freine) = (32-A5) + (32-A2) + (32-A1)
+
+Nous n'avions toutefois fourni aucune donnée psychométrique relative à ces trois indices expérimentaux. Dans cet article, nous proposons des normes permettant de situer un protocole donné de NEO PI R (ou 3) par rapport à un échantillon normatif. En outre, nous souhaitons nous intéresser aux effets éventuels de l'*âge* et du *sexe* des patients sur ces indices. Nous nous interrogerons également sur la pertinence de ces trois indices : faut-il les garder tous les trois afin d'évaluer la qualité de l'alliance thérapeutique ? Le but est de mieux opérationnaliser ces indices afin de préparer toutes études sur leur validité externe.
+
+# Méthode
+
+## Participants
+
+Nous disposons d'un échantillon vaste mais hétéroclite. Il se compose de `r ntotal` personnes dont `r nofmen` (`r nofmenpercentage`%) hommes et `r nofwomen` (`r nofwomenpercentage`%) femmes qui ont répondu à la version française du NEO PI R ou 3. L'âge moyen est égal à `r meanage` ans avec un écart-type égal à `r sdage`. L'âge varie de `r minage` à `r maxage` ans.
+
+L'échantillon global se compose de six sous-échantillons :
+
+1.  Des personnes **tout-venant** qui avaient répondu à une annonce dans le cadre d'une recherche précédente [@thiry2009ecriture] : *n* = `r nofC` (`r printnum(nofCpercentage)`%) ;
+2.  Des personnes **condamnées** et emprisonnées : *n* = `r nofcondamnes` (`r printnum(nofcondamnespercentage)`%) ;
+3.  Des personnées emprisonnées mais reconnues **irresponsables pour cause de trouble mental** : *n* = `r nofinternes` (`r printnum(nofinternespercentage)`%) ;
+4.  Des **adolescents** qui ont passé le NEO PI-R en milieu scolaire : *n* = `r nofado` (`r printnum(nofadopercentage)`%) ;
+5.  Des **étudiants** en Master de psychologie légale à l'Université de Mons : *n* = `r nofetudiant` (`r printnum(nofetudiantpercentage)`%) ;
+6.  Des **patients** en thérapie : *n* = `r nofpatient` (`r printnum(nofpatientpercentage)`%).
+
+# Résultats
+
+La @fig-alliance1 représente la distribution de l'indice que nous avons appelé *alliance1* (domaines qui facilitent l'alliance thérapeutique).
+
+```{r alliance1, fig.cap="Distribution d'alliance1", echo = FALSE}
+#| label: fig-alliance1
+#| fig-cap: "Distribution d'alliance1"
+#| 
+
+hist(alliance1, nclass=15, col="cornflowerblue", border="white", xlim=c(230,480), main="", xlab="Alliance 1", ylab="Fréquence")
+text(450, 100, paste("N =", sum(complete.cases(alliance1))), cex=1.2)
+```
+
+La @fig-alliance2 représente la distribution de l'indice que nous avons appelé *alliance2* (facettes qui facilitent l'alliance thérapeutique).
+
+```{r alliance2, echo = FALSE}
+#| label: fig-alliance2
+#| fig-cap: "Distribution d'alliance2"
+#| 
+
+hist(alliance2, nclass=15, col="cornflowerblue", border="white", xlim=c(35,130), main="", xlab="Alliance 2", ylab="Fréquence")
+text(450, 100, paste("N =", sum(complete.cases(alliance2))), cex=1.2)
+```
+
+La @fig-alliance3 représente la distribution de l'indice que nous avons appelé *alliance3* (facettes qui feinent l'alliance thérapeutique).
+
+```{r alliance3, fig.cap="Distribution d'alliance3", echo = FALSE}
+#| label: fig-alliance3
+#| fig-cap: "Distribution d'alliance3"
+#| 
+
+hist(alliance3, nclass=15, col="cornflowerblue", border="white", xlim=c(0,80), main="", xlab="Alliance 3", ylab="Fréquence")
+text(450, 100, paste("N =", sum(complete.cases(alliance3))), cex=1.2)
+```
+
+Les trois distributions sont d'allure normale et semblent permettre de discriminer les participants les uns des autres.
+
+```{r table1, echo = FALSE}
+#| label: tbl-table1
+#| tbl-cap: "Statistiques descriptives des trois variables d'alliance thérapeutique"
+
+kbl(table1)
+```
+
+Le @tbl-table1 présente les statistiques descriptives des trois variables d'alliance thérapeutique. Elles permettent notamment de calculer des scores *t* à l'instar des autres variables du NEO PI. Une question se pose : nos différents groupes présentent-ils des scores différents pour chacune de nos variables ?
+
+## Moyennes d'alliance 1 par groupe
+
+La @fig-alliance1groupe présente les moyennes et les intervalles de confiance pour chaque groupe pour la variable *alliance1*.
+
+```{r alliance1groupe, echo = FALSE}
+#| label: fig-alliance1groupe
+#| fig-cap: "Moyennes pour Alliance1 par groupe"
+#|
+
+plotmeans(alliance1 ~ groupe)
+```
+
+Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons une régression linéaire avec notre groupe *contrôle* comme modalité de référence.
+
+```{r, echo = FALSE}
+f.groupe <- factor(groupe)
+neototal <- cbind(neototal,f.groupe)
+neototal$f.groupe <- relevel(neototal$f.groupe,ref="C")
+lm1_out <- lm(formula = alliance1 ~ f.groupe, data = neototal)
+apa_lm1 <- apa_print(lm1_out)
+```
+
+Les résultats indiquent qu'au moins une moyenne serait différente de celle du groupe contrôle : `r apa_lm1$full_result$modelfit$r2`. Lesquelles ?
+
+```{r, echo = FALSE}
+#| label: tbl-tablelm1
+#| tbl-cap: "Table de régression pour alliance 1 par groupes"
+
+apa_table(
+  apa_lm1$table)
+```
+
+
+Nous constatons dans le @tbl-tablelm1 que les moyennes pour les groupes *adolescent* et *interné* sont significativement plus basses que les autres. Par contre toutes les autres moyennes sont estimées identiques à celle du groupe *contrôle*.
+
+## Moyennes d'alliance 2 par groupe
+
+La @fig-alliance2groupe présente les moyennes et les intervalles de confiance pour chaque groupe pour la variable *alliance2*.
+
+```{r alliance2groupe, echo = FALSE}
+#| label: fig-alliance2groupe
+#| fig-cap: "Moyennes pour Alliance2 par groupe"
+#|
+
+plotmeans(alliance2 ~ groupe)
+```
+
+Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons à nouveau une régression linéaire avec notre groupe *contrôle* comme modalité de référence.
+
+```{r, echo = FALSE}
+lm2_out <- lm(formula = alliance2 ~ f.groupe, data = neototal)
+apa_lm2 <- apa_print(lm2_out)
+
+```
+
+Les résultats indiquent que certaines moyennes sont différentes de celle du groupe contrôle : `r apa_lm2$full_result$modelfit$r2`. Lesquelles ?
+
+```{r lm2, echo = FALSE}
+#| label: tbl-lm2
+#| tbl-cap: "Table de régression pour alliance 2 par groupes"
+
+apa_table(apa_lm2$table)
+```
+
+Nous constatons dans le @tbl-lm2 que la moyenne pour le groupe *adolescent* est significativement plus basse que les autres. Par contre toutes les autres moyennes sont estimées identiques à celle du groupe *contrôle* au seuil *p* \<.001.
+
+## Moyennes d'alliance 3 par groupe
+
+La @fig-alliance3groupe présente les moyennes et les intervalles de confiance pour chaque groupe pour la variable *alliance3*.
+
+```{r alliance3groupe, echo = FALSE}
+#| label: fig-alliance3groupe
+#| fig-cap: "Moyennes pour Alliance3 par groupe"
+#|
+
+plotmeans(alliance3 ~ groupe)
+```
+
+Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons une régression linéaire avec notre groupe *contrôle* comme modalité de référence.
+
+```{r, echo = FALSE}
+lm3_out <- lm(formula = alliance3 ~ f.groupe, data = neototal)
+apa_lm3 <- apa_print(lm3_out)
+```
+
+Les résultats indiquent que certaines moyennes sont différentes de celle du groupe contrôle : `r apa_lm3$full_result$modelfit$r2`. Lesquelles ?
+
+```{r lm3, echo = FALSE}
+#| label: tbl-lm3
+#| tbl-cap: "Table de régression pour alliance 3 par groupes"
+
+apa_table(apa_lm3$table)
+```
+
+Nous constatons dans le @tbl-lm3 que la moyenne pour le groupe *adolescent* est significativement plus élevée que les autres. Par contre toutes les autres moyennes sont estimées identiques à celle du groupe *contrôle*.
+
+## Les variables d'alliance thérapeutique diffèrent-elles d'un groupe à l'autre
+
+D'une manière générale, nous **ne** pouvons **pas** affirmer que nos groupes ont un effet sur les scores aux trois indices d'alliance thérapeutique, à part le groupe *adolescent*. Par conséquent, les normes proposées au Tableau \@ref(tab:table1) peuvent dès lors s'appliquer à tous les participants. Notons toutefois que l'**âge** des participants est susceptible d'être lié à ces scores. Nous devrons dès lors nous intéresser à cette variable afin d'en apprendre davantage.
+
+## Liens entre les trois indices
+
+A priori, les deux premiers indices évaluent une même tendance avec des variables différentes (**domaines** versus **facettes** du modèle de personnalité en cinq facteurs). Le troisième indice est censé évaluer une tendance inverse. Qu'en est-il des corrélations entre ces trois indices ? La @fig-correlations représente les corrélations entre les trois indices.
+
+```{r correlations, echo = FALSE}
+#| label: fig-correlations
+#| fig-cap: "Corrélations entre les trois indices"
+#|
+
+panel.cor_simple <- function(x, y, digits=2, prefix="", cex.cor) 
+    {
+        usr <- par("usr"); on.exit(par(usr)) 
+        par(usr = c(0, 1, 0, 1)) 
+        r <- cor(x, y) 
+        txt <- format(c(r, 0.123456789), digits=digits)[1] 
+        txt <- paste(prefix, txt, sep="") 
+        if(missing(cex.cor)) cex <- 0.8/strwidth(txt) 
+     
+        test <- cor.test(x,y) 
+        # borrowed from printCoefmat
+        Signif <- symnum(test$p.value, corr = FALSE, na = FALSE, 
+                      cutpoints = c(0, 0.001, 0.01, 0.05, 0.1, 1),
+                      symbols = c("***", "**", "*", ".", " ")) 
+     
+        text(0.5, 0.5, txt, cex = cex * abs(r)) 
+        text(.8, .8, Signif, cex=cex, col=2) 
+}
+
+pairs(alliance.df, lower.panel=panel.smooth, upper.panel=panel.cor_simple)
+
+```
+
+Nous constatons effectivement que les indices *alliance1* et *alliance2* sont fortement corrélés positivement, et négativement avec *alliance3*. Ces résultats nous invitent à remettre en question la pertinence d'utiliser trois indices pour évaluer une même tendance. Il semble que l'indice *alliance1* apporte une information substantielle pour l'évaluer. Notons qu'elle repose sur les scores de trois domaines (A, O et C) et non sur des facettes sous-jacentes (ce qui est un résultat non attendu a priori). Dans un souci d'économie, il est dès lors envisageable d'utiliser **un seul indice** : *alliance1* (A+O+C).
+
+## Effet de l'âge et du sexe sur la variable d'alliance thérapeutique
+
+L'âge et le sexe des patients ont-ils une influence sur la variable *alliance1* ?
+
+```{r alliage, echo = FALSE}
+#| label: fig-alliage
+#| fig-cap: "Effet de l'âge et du sexe sur alliance1"
+#|
+
+scatterplot(alliance1~age, data=neototal)
+```
+
+La @fig-alliage semble indiquer une tendance des deux variables à augmenter l'une avec l'autre. Notons l'infléchissement de la courbe loess pour les **âges inférieurs à vingt ans** (ce qui correspond à notre groupe d'adolescents). Il semble que les scores d'*alliance1* soient particulièrement bas avant cet âge.
+
+Qu'en est-il pour le sexe ?
+
+```{r alliance1sexe, fig.cap="Moyennes pour Alliance1 par sexe", echo = FALSE}
+#| label: fig-alliance1sexe
+#| fig-cap: "Moyennes pour Alliance1 par sexe"
+#|
+
+plotmeans(alliance1 ~ sexe)
+```
+
+La @fig-alliance1sexe semble indiquer que les femmes obtiennent des scores supérieurs que les hommes à la variable *alliance1*.
+
+Afin de tester ces observations, nous effectuons une régression linéaire en incluant les variables *age* et *sexe* comme variables prédictrices.
+
+```{r, echo = FALSE}
+lm4_out <- lm(alliance1~age+sexe, data = neototal)
+apa_lm4 <- apa_print(lm4_out)
+```
+
+```{r lm4, echo = FALSE}
+#| label: tbl-lm4
+#| tbl-cap: "Table de régression pour alliance 1 par age et sexe"
+#| 
+apa_table(apa_lm4$table)
+```
+
+Les deux variables semblent avoir un effet significatif sur la variable *alliance1* : `r apa_lm4$full_result$modelfit$r2`
+
+# Discussion
+
+Que nous apprennent ces résultats ? D'abord que les trois variables permettent de discriminer les sujets de manière assez large et précise. Ensuite que les personnes incarcérées, les patients et les étudiants obtiennent des scores globalement identiques pour les trois indices. Les personnes dont l'âge est inférieur à vingt ans présentent quant à elles des scores à alliance1 significativement inférieurs aux autres. Les hommes présentent également des scores à alliance1 significativement plus bas que les femmes. L'usage des trois indices est susceptible d'approcher le phénomène d'alliance thérapeutique de manière nuancée en termes dynamiques : ce qui *facilite* versus ce qui *freine* l'alliance thérapeutique. Toutefois, les trois indices partagent des liens étroits les uns avec les autres. Ils semblent dès lors apporter une informations fortement redondante (et donc inutile). Dans un souci de simplicité et d'économie, il semble que la variable alliance1 (O+A+C) puisse suffir pour évaluer le phénomène qui nous intéresse. Contrairement à nos attentes initiales, les variables estimées pertinentes pour prédire une bonne alliance thérapeutiques par les cliniciens ne reposent pas sur des facettes précises de la personnalité mais plutôt sur des configurations plus globales. Ce profil O^+^ A^+^ C^+^ appelle dès lors à commentaires. D'abord, il ne s'avère pas uniquement pertinent en regard d'une prise en charge psychothérapeutique. Il renvoie à un rapport particulier que les individus entretiennent avec le monde extérieur, les autres personnes et les stratégies d'actions. Les *styles graph* du manuel du NEO PI 3 [@mccrae2016inventaires] permettent de dégager trois styles relatifs à cette configuration :
+
+| O^+^ A^+^ : progressistes | O^+^ C^+^ : bons élèves | A^+^ C^+^ : altruistes efficaces |
+|-----------------------|-------------------------|------------------------|
+| Ces personnes ont fréquemment une approche réfléchie des problèmes sociaux, pour lesquels elles souhaitent généralement trouver des solutions nouvelles. Elles ont tendance à avoir foi dans la nature humaine et à être persuadées que la société peut être améliorée par l'éducation, l'innovation et la coopération. | Ces personnes possèdent généralement une soif d'apprendre mêlée à une application et une organisation qui peuvent les pousser vers l'excellence. Elles nourissent assez fréquemment des ambitions élevées et se montrent souvent créatives dans leur approche de résolution des problèmes. Elles vont généralement aussi loin dans leurs études que leur talent le leur permet. | En général, ces personnes travaillent avec application pour le bien commun. Leur tendance à l'autodiscipline et à la persévérance leur permet le plus souvent de canaliser leurs efforts et les mettre au service d'autrui. En tant que bénévoles, elles peuvent se charger de tâches difficiles ou ingrates, et s'y atteler jusqu'à les terminer. |
+
+Selon les cliniciens, la combinaison de ces trois styles de personnalité chez le patient serait indicatrice d'une bonne alliance thérapeutique. Notons que ce profil global semble reposer sur des bases ambitieuses et rigoureuses : curiosité intellectuelle, inventivité, persévérance, altruisme, philanthropie, rigueur scolaire et professionnelle ou encore engagement social. A y réfléchir, ce profil de *patient idéal* peut étonner. D'autant plus que la notion de souffrance (ou névrosisme) y est tout à fait absente. Ce profil ressemble par contre beaucoup au prototype social du psychothérapeute, engagé dans l'aide à l'autre avec rigueur, détermination, ouvert à la réflexion et aux échanges intellectuels. La conception du patient idéal des cliniciens serait-elle une projection (inconsciente) de leurs propres idéaux professionnels ? Ces idéaux sont bien sûr importants car ils fondent la pratique des thérapeutes et balisent leur travail quotidien. Ils ont toutefois un corollaire potentiel : proposer un idéal sous-jacent au patient qui ne s'y retrouve pas nécessairement. Bien entendu, la plupart des cliniciens sont ouverts et tolérants, ce qui leur permet d'être sensibles aux idéaux de leurs patients. Nos résultats nous amènent toutefois à penser qu'il existe chez eux une préconception des idéaux thérapeutiques. Cela ne constitue pas un problème en soi car les prises en charge thérapeutique reposent souvent (toujours ?) sur des bases philosophiques sous-jacentes. Selon nous, il s'agit toutefois de les connaître et d'être au clair avec elles. Parmi ces bases philosophiques, il en est une qui porte plusieurs noms mais qui repose sur l'idée que le processus thérapeutique vise à augmenter l'autonomie et le sentiment de prendre des décisions en accord avec ses propres valeurs. Ainsi est-il question de *subjectivation* :
+
+> La subjectivation nous apparaît dès lors comme ce processus, en partie inconscient, par lequel un individu se reconnaît dans sa manière de donner sens au réel, au moyen d’une activité de symbolisation. [@wainrib2006psychanalyse]
+
+Il s'agit d'une position philosophique ambitieuse qui nécessite du temps et un exercice mental qui est censé s'acquérir lors des séances cliniques. Son objectif premier n'est pas la diminution de la souffrance du patient mais plutôt à augmenter le pouvoir de décision du patient. Celui-ci est dès lors susceptible de modifier son rapport au monde ou à ladite souffrance. Il semble que la configuration O^+^ A^+^ C^+^ fasse implicitement référence à ce processus philosophique qui peut prendre cours lors des entretiens cliniques.
