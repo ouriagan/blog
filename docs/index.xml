@@ -10,7 +10,48 @@
 <atom:link href="https://benjaminthiry.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
 <description>Blog consacré à la psychologie de la délinquance</description>
 <generator>quarto-1.6.42</generator>
-<lastBuildDate>Fri, 03 May 2024 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 07 Apr 2025 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Quitter les GAFAM pour rejoindre le Fediverse : petit guide personnel</title>
+  <dc:creator>Benjamin Thiry</dc:creator>
+  <link>https://benjaminthiry.netlify.app/posts/2025-04-08-fediverse/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://benjaminthiry.netlify.app/posts/2025-04-08-fediverse/fediverse.png" class="img-fluid"></p>
+<p>S’extraire des rets des GAFAM n’est guère aisé après plusieurs années d’utilisation. Le contexte géopolitique actuel invite toutefois à réfléchir sérieusement au lien que nous entretenons avec ces réseaux. En tant que citoyen mais également en tant que chercheur.</p>
+<p>Depuis quelques années, je m’intéresse au <a href="https://www.r-project.org/">R project</a> qui vise à proposer des solutions d’analyses statistiques de données indépendamment des logiciels commerciaux tels que <a href="https://www.ibm.com/products/spss-statistics">SPSS</a> qui sont notamment enseignés dans les universités. Le logiciel R est gratuit et ouvert, c’est-à-dire qu’il propose de nombreux <em>packages</em>, créés par d’autres utilisateurs, afin d’effectuer telle ou telle analyse statistique. J’ai vécu mon introduction à R comme une aventure, faite d’essais, d’erreurs et de bonne surprises. Recourir à du code plutôt qu’à une interface graphique paraît plus austère mais ouvre d’autres possibilités et offre davantage de contrôle sur le traitement des données.</p>
+<p>Afin de diminuer l’austérité de l’interface de programmation, j’ai téléchargé Rstudio qui s’appelle dorénavant <a href="https://posit.co/">Posit</a>. Cette interface est gratuite, opensource et en constante évolution ces dernières années. Elle permet d’effectuer mes traitements statistiques et de les inclure dans des rapports. Ainsi est-il pratique de garder une trace continuelle de son code ainsi que des résultats. Ces rapports reposent sur un langage d’écriture de textes écrits qui s’appelle R Markdown.</p>
+<p>Je m’étais initié précédemment à <a href="https://www.latex-project.org/get/">Latex</a>. Séduit par le projet, je l’ai trouvé complexe et plutôt rébarbatif. Je me suis dès lors tourné vers <a href="https://www.markdownguide.org/">Markdown</a> qui permet de formater un texte écrit en dehors de logiciels tels que Word de Microsoft Office, qui est lourd, payant et fermé. Les fichiers Markdown sont en réalité de simples fichiers textes aisément lisibles et modifiables.</p>
+<p>Mes rapports d’analyses statistiques sont dès lors écrits en <a href="https://rmarkdown.rstudio.com/index.html">R Markdown</a> qui exploite la syntaxe de Markdown tout en permettant d’y inclure des syntaxes R. Ces rapports peuvent être exportés en divers formats : HTML (pour créer des sites web), pdf et .doc (pour les nostalgiques de Word).</p>
+<p>Depuis peu, la communauté autour de Posit a développé un projet de plateforme de programmation et d’édition de textes intitulé <a href="https://quarto.org/">Quatro</a>. Quatro permet notamment de programmer avec les langages R ou Python afin de traiter des données et de les mettre en page, sous forme de sites web, de manuscrits scientifiques ou encore de livres.</p>
+<p>Pour ma part, j’ai utilisé Quatro pour mettre à jour le blog que j’avais créé avec <a href="https://pkgs.rstudio.com/distill/">Distill</a>. Il s’agissait d’un exercice pour moi. Je suis très satisfait du rendu du blog, du moins pour l’instant. La création d’un blog avec Posit et Quatro permet de le sauvegarder sur <a href="https://github.com/">GitHub</a> après création d’un compte personnel sur ce site. J’ai ensuite connecté mon compte GitHub à <a href="https://www.netlify.com/">Netlify</a> qui héberge des pages web. Mon blog est alors aussitôt disponible sur internet et mis à jour à chaque modification de mon blog.</p>
+<p>Plus récemment encore, je me suis rendu compte qu’un blog pouvait faire partie intégrante du <a href="https://jointhefediverse.net/?lang=fr">fediverse</a>, c’est-à-dire un réseau de serveurs (appelés <em>instances</em>) en franche rivalité avec les services centralisés tels que Facebook, X ou Instagram mus par d’importants enjeux financiers. <a href="https://joinmastodon.org/">Mastodon</a> est un exemple de porte d’entrée au fediverse. J’ai au d’ailleurs créé un <a href="https://tchafia.be/@ouriagan">compte</a> (@ouriagan@tchafia.be) qui fait office d’identité sur le fediverse. L’histoire nous dira s’il me permettra de claquer définitivement la porte à Facebook, à ses intrusions continuelles et à ses publicités. Depuis lors, j’ai l’impression d’être comme un enfant qui découvre un monde parallèle nouveau et intriguant. Il m’a amené - et m’amène encore aujourd’hui - à ma demander en quoi je pouvais y contribuer d’une manière ou d’une autre. La philosophie du réseau est d’y poster du contenu de manière libre sans l’effet dopamine des likes des réseaux commerciaux. Les messages (appelés pouets) s’y fraient un chemin de manière plus discrète et sereine, loin des remous haineux qui caractérisent ces réseaux.</p>
+<p>Mon blog sur le fediverse ? Un rêve pour moi : disposer d’un espace personnel pour réfléchir et écrire puis le rendre disponible sur le fediverse. <a href="https://fed.brid.gy/">Bridgy Fed</a> propose ce pont entre mon blog et le Fediverse. Il s’agit d’une étape toute fraîche que je dois encore découvrir davantage. Il m’offre une nouvelle identité sur le fediverse à laquelle les autres membres du réseaux peuvent s’abonner : @benjaminthiry.netlify.app@web.brid.gy</p>
+<p>Je me rends compte, en écrivant ces lignes, du chemin que j’ai parcouru ces derniers mois - voire années - pour découvrir de nouveau horizons numériques en dehors des sentiers déjà trop battus et qui mènent, comme on le voit maintenant, à le résurgence de colères et de rancœurs qui s’étaient endormies ces dernières décennies. Je ne souhaite plus être complice de ces réseaux qui se nourrissent de cette haine qui sommeille en chacun de nous, toujours quelque part. Je souhaite emprunter d’autres chemins qui permettent de créer, plutôt que de détruire. Des chemins qui invitent à penser et à se connecter à d’autres personnes enthousiastes. Des chemins qui font progresser la science pour le bien-être commun.</p>
+<p>Je compte dès lors continuer mon exploration des ces nouveaux territoires en défendant la liberté de penser et de parole, tant pour moi que pour les autres.</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{thiry2025,
+  author = {Thiry, Benjamin},
+  title = {Quitter les GAFAM pour rejoindre le Fediverse : petit guide
+    personnel},
+  date = {2025-04-08},
+  url = {https://benjaminthiry.netlify.app/posts/2025-04-08-fediverse/},
+  langid = {fr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Veuillez citer ce travail comme suit&nbsp;:</div><div id="ref-thiry2025" class="csl-entry quarto-appendix-citeas">
+Thiry, B. (2025, April 8). Quitter les GAFAM pour rejoindre le Fediverse
+: petit guide personnel. Retrieved from <a href="https://benjaminthiry.netlify.app/posts/2025-04-08-fediverse/">https://benjaminthiry.netlify.app/posts/2025-04-08-fediverse/</a>
+</div></div></section></div> ]]></description>
+  <category>réflexion personnelles</category>
+  <guid>https://benjaminthiry.netlify.app/posts/2025-04-08-fediverse/</guid>
+  <pubDate>Mon, 07 Apr 2025 22:00:00 GMT</pubDate>
+</item>
 <item>
   <title>La bande à Corneille, place des adolescents de quartiers populaires bruxellois en 1973</title>
   <dc:creator>Benjamin Thiry</dc:creator>

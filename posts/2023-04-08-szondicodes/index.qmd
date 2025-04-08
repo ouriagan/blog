@@ -85,7 +85,6 @@ Pour chaque passation du test de Szondi, nous avons retenu le *nombre de photogr
 
 : codes szondi en fonction du nombre de photographies considées comme sympathiques ou antipathiques {#tbl-systemecodes}
 
-
 Par exemple, si un participant a choisi 3 photographies h comme sympathiques et 1 photographie h comme antipathique, le code correspondant est **h+**. Si un participant a choisi 2 photographies h comme sympathiques et 4 photographie h comme antipathiques, le code correspondant est **h±!**.
 
 # Résultats
@@ -4627,7 +4626,7 @@ Les résultats se veulent principalement descriptifs. Les codes les plus fréque
 [^2]: dont le profil standard était celui-ci : h+ s± e0 hy- k- p± d0 m+
 
 | Nationalité | h | s | e | hy | k | p | d | m |
-|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Hongrois (*N* = 126) | **+** (38.5 %) | **-** (38.1 %) | **0** (31.7 %) | **-** (69.7 %) | **-** (51%) | **+** (61.3 %) | **0** (41.1 %) | **+** (66.4 %) |
 | Portugais (*N* = 176) | **+** (44.1 %) | **+** (47.7 %) | **0** (.4.1 %) | **-** (70.7 %) | **-** (53.4 %) | **-** (31.9 %) | **-** (42.2 %) | **+** (77.5 %) |
 

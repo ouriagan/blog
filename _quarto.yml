@@ -21,6 +21,7 @@ website:
 toc: true
 format:
   html:
+    include-in-header: _includes/custom.html
     csl: apa.csl  # Définit le style des références en APA
     theme:
       light: flatly
