@@ -5,7 +5,7 @@ execute:
   freeze: auto
 website:
   title: "Psychologie et délinquance"
-  site-url: https://benjaminthiry.netlify.app/
+  site-url: "https://benjaminthiry.netlify.app"
   description: "Blog consacré à la psychologie de la délinquance"
   navbar:
     search: true
