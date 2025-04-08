@@ -94,6 +94,22 @@ div.csl-indent {
 }</script>
 <link rel="me" href="https://tchafia.be/@ouriagan">
 <meta name="fediverse:creator" content="@ouriagan@tchafia.be">
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const listing = document.querySelector(".quarto-listing-container");
+    if (listing) {
+      listing.classList.add("h-feed");
+      const links = listing.querySelectorAll("a");
+      links.forEach(link => {
+        const article = document.createElement("article");
+        article.classList.add("h-entry");
+        link.classList.add("u-url");
+        article.appendChild(link.cloneNode(true));
+        link.replaceWith(article);
+      });
+    }
+  });
+</script>
 <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 

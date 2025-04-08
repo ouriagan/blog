@@ -72,6 +72,22 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <link rel="me" href="https://tchafia.be/@ouriagan">
 <meta name="fediverse:creator" content="@ouriagan@tchafia.be">
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const listing = document.querySelector(".quarto-listing-container");
+    if (listing) {
+      listing.classList.add("h-feed");
+      const links = listing.querySelectorAll("a");
+      links.forEach(link => {
+        const article = document.createElement("article");
+        article.classList.add("h-entry");
+        link.classList.add("u-url");
+        article.appendChild(link.cloneNode(true));
+        link.replaceWith(article);
+      });
+    }
+  });
+</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
