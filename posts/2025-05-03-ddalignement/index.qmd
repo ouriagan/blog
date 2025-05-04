@@ -6,6 +6,7 @@ author:
     orcid_id: 0000-0001-5864-8369
     website: https://benjaminthiry.netlify.app/
 date: "2025-05-04"
+image: "ddlogo.png"
 categories: [criminologie]
 bibliography: alignement.bib
 citation: true
@@ -13,6 +14,8 @@ lang: fr
 format:
   html:
     mermaid: {}
+social:
+  image: "ddlogo.png"
 ---
 
 ![](ddlogo.png)

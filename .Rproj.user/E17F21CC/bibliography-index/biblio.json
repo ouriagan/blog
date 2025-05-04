@@ -1,43 +1,4 @@
 {
-    "sources": [
-        {
-            "URL": "https://www.sonuma.be/archive/la-bande-a-corneille",
-            "id": "loverius-1973",
-            "issued": {
-                "date-parts": [
-                    [
-                        1973,
-                        9
-                    ]
-                ]
-            },
-            "publisher": "La Sonuma",
-            "title": "La bande à Corneille",
-            "type": ""
-        },
-        {
-            "author": [
-                {
-                    "family": "Tajfel",
-                    "given": "Henri"
-                }
-            ],
-            "container-title": "Scientific american",
-            "id": "tajfel1970experiments",
-            "issue": "5",
-            "issued": {
-                "date-parts": [
-                    [
-                        1970
-                    ]
-                ]
-            },
-            "page": "96-103",
-            "publisher": "JSTOR",
-            "title": "Experiments in intergroup discrimination",
-            "type": "article-journal",
-            "volume": "223"
-        }
-    ],
+    "sources": [],
     "project_biblios": []
 }
