@@ -11,3 +11,6 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
+
+<a rel="me" href="https://tchafia.be/@ouriagan"></a>
+<meta name="fediverse:creator" content="@ouriagan@tchafia.be">

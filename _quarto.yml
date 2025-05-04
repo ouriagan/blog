@@ -30,5 +30,6 @@ format:
     toc: true
     toc-depth: 3
     toc-location: left
+    mermaid: {}
 editor: visual
 lang: fr

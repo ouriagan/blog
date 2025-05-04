@@ -10,7 +10,219 @@
 <atom:link href="https://benjaminthiry.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
 <description>Blog consacré à la psychologie de la délinquance</description>
 <generator>quarto-1.6.42</generator>
-<lastBuildDate>Mon, 07 Apr 2025 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 03 May 2025 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Notion d’alignement dans Donjons et Dragons repères moraux et éthiques</title>
+  <dc:creator>Benjamin Thiry</dc:creator>
+  <link>https://benjaminthiry.netlify.app/posts/2025-05-03-ddalignement/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://benjaminthiry.netlify.app/posts/2025-05-03-ddalignement/ddlogo.png" class="img-fluid"></p>
+<p>Avant d’être psychologue, j’étais un enfant et un adolescent intéressé par les jeux de rôles d’heroic-fantasy tels que Donjons &amp; Dragons (D&amp;D). Je lisais et relisais les livres des règles qui servent de bases aux parties. Ironiquement, j’ai passé bien plus de temps à lire les règles qu’à participer à des parties (il faut en avoir l’occasion et la possibilité). Je me suis rendu compte - plus tard - que ces règles constituaient des conceptualisations des comportements humains et des rapports entre les individus et le monde extérieur. Chaque joueur incarne son personnage et le maître du jeu incarne l’environnement et tous les personnages non-joueurs. Une fiche reprend traditionnellement les caractéristiques. La Figure&nbsp;1 est un exemple de feuille de personnage pour la 5ème édition de <a href="https://www.aidedd.org/adj/telechargement/">Donjons &amp; Dragons</a>.</p>
+<div id="fig-ddperso" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ddperso-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://benjaminthiry.netlify.app/posts/2025-05-03-ddalignement/ddfeuilleperso.png" id="fig-ddperso" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-ddperso-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+<section id="notion-dalignement" class="level1">
+<h1>Notion d’alignement</h1>
+<p>Depuis 1978, l’auteur des premières règles de Donjons &amp; Dragon, <span class="citation" data-cites="gygax1978adnd">Gygax (1978)</span>, propose un système d’alignements, même s’il n’en donnait pas de définition précise:</p>
+<blockquote class="blockquote">
+<p>Après avoir tiré les caractéristiques de votre personnage, choisi sa race et sa classe, il vous faut maintenant choisir son alignement. <span class="citation" data-cites="gygax1986phbfr">(Gygax, 1986, p 33)</span></p>
+</blockquote>
+<p>La 2ème édition de AD&amp;D propose quant à elle une définition explicite :</p>
+<blockquote class="blockquote">
+<p>L’alignement d’un personnage détermine ses attitudes morales et éthiques de base envers les autres, la société, le bien, le mal et les forces de l’univers en général. […] L’alignement est divisé en deux séries d’attitudes : l’ordre et le chaos, le bien et le mal. En combinant les variations de ces deux séries, il est possible de créer neufs alignements distincts. <span class="citation" data-cites="cook1989phbfr">(Cook, 1989, p 47)</span></p>
+</blockquote>
+<p>Ces neufs alignements peuvent être représentés ainsi :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Bon</th>
+<th>Neutre</th>
+<th>Mauvais</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Loyal</td>
+<td>Loyal Bon</td>
+<td>Loyal Neutre</td>
+<td>Loyal Mauvais</td>
+</tr>
+<tr class="even">
+<td>Neutre</td>
+<td>Neutre Bon</td>
+<td>Neutre Neutre</td>
+<td>Neutre Mauvais</td>
+</tr>
+<tr class="odd">
+<td>Chaotique</td>
+<td>Chaotique Bon</td>
+<td>Chaotique Neutre</td>
+<td>Chaotique Mauvais</td>
+</tr>
+</tbody>
+</table>
+<p>Voici des exemples d’attitudes pour chaque type d’alignement :</p>
+<ul>
+<li>Loyal Bon : Le paladin type. Suit les lois et aide les autres ;</li>
+<li>Chaotique Bon : Rebelle au grand cœur. Aide, mais à sa manière ;</li>
+<li>Neutre Bon : Fait le bien sans préférence pour l’ordre ou le chaos ;</li>
+<li>Loyal Neutre : Suit la loi, peu importe les conséquences morales ;</li>
+<li>Neutre Neutre (aussi appelé “Vrai Neutre”) : Cherche l’équilibre ou agit selon ce qui lui semble approprié ;</li>
+<li>Chaotique Neutre : Fait ce qu’il veut, quand il veut, sans être bon ou mauvais ;</li>
+<li>Loyal Mauvais : Tyran qui utilise la loi pour dominer les autres ;</li>
+<li>Neutre Mauvais : Égocentrique, ne suit que son intérêt ;</li>
+<li>Chaotique Mauvais : Destructeur, sadique, imprévisible.</li>
+</ul>
+<p>Je me souviens avoir été intrigué par cette typologie : je la trouvais originale et intéressante sans savoir ce qu’il fallait vraiment en penser. J’ai remarqué que les joueurs à qui j’en parlais avaient la même impression que moi. Cette typologie moralo-éthique a traversé les années et existe encore dans la cinquième version du jeu <span class="citation" data-cites="wizards2017phbfr">(Wizards of the Coast, 2017)</span>.</p>
+</section>
+<section id="méthode-dévaluation-de-lalignement" class="level1">
+<h1>Méthode d’évaluation de l’alignement</h1>
+<p>Le <a href="https://www.aidedd.org/adj/test-alignement/">site officiel de D&amp;D</a> propose d’ailleurs un questionnaire qui comporte 36 questions permettant d’estimer l’alignement du joueur qui y répond.</p>
+<p>Voici les résultats que j’ai personnellement obtenus aujourd’hui (Figure&nbsp;2) :</p>
+<div id="fig-alignementddbt" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-alignementddbt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://benjaminthiry.netlify.app/posts/2025-05-03-ddalignement/alignementddbt.png" id="fig-alignementddbt" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-alignementddbt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+<p>Le triangle de gauche représente mon positionnement <em>éthique</em> : c’est l’alignement <em>neutre</em> qui est prévalent même si j’ai parfois répondu de manière loyale et chaotique. Ce résultat semble me correspondre car je me reconnais un tendance à respecter les règles extérieures mais également à m’opposer à celles que je n’estime pas utiles ou pertinentes. Je considère les règles comme des moyens et non comme des buts en soi.</p>
+<p>Le triangle de droite représente mon positionnement <em>moral</em> : c’est l’alignement <em>bon</em> qui est clairement prévalent même si je peux parfois me montrer neutre. Je note l’absence d’aspects mauvais. Ce résultat semble également me correspondre et - par association - me fait penser à la neutralité bienveillante prônée par la psychanalyse <span class="citation" data-cites="laplanche1971vocabulaire">(Laplanche &amp; Pontalis, 1971)</span>. En l’occurrence, il s’agit d’accepter les êtres humains tels qu’ils existent dans une attitude compréhensive, afin de permettre une écoute thérapeutique.</p>
+<p>Mon alignement proposé est dès lors <em>neutre bon</em>.</p>
+<p>Il s’agit notamment de l’alignement supposé du personnage de Gandalf décrit par <span class="citation" data-cites="tolkien1954lotr">Tolkien (1954)</span> car il aide les peuples libres, indépendamment de leur organisation politique. Cette assimilation à Gandalf me comble d’ailleurs de joie.</p>
+<p>Si vous passez le <a href="https://www.aidedd.org/adj/test-alignement/">test</a>, vous obtiendrez probablement d’autres résultats que les miens.</p>
+</section>
+<section id="bases-philosophiques-de-la-notion-dalignement" class="level1">
+<h1>Bases philosophiques de la notion d’alignement</h1>
+<p>Les manuels de Donjons &amp; Dragons ne font pas de références théoriques explicites à des courants philosophiques précis lorsqu’ils évoquent les alignements. Ceux-ci sont toutefois héritiers de la philosophie morale qui est une branche de la philosophie qui est l’étude systématique des principes, des valeurs et des normes qui guident nos actions, nos décisions et nos jugements moraux <span class="citation" data-cites="ricard2022ethique">(Vanin &amp; Gagné, 2022)</span>. Il s’agit d’une philosophe qui dispose de plusieurs branches et propose de déterminer en quoi tel ou tel comportement est souhaitable ou on dans une collectivité. Quelles cadres théoriques seraient-ils liés à la notion d’alignement ?</p>
+<section id="axe-éthique" class="level2">
+<h2 class="anchored" data-anchor-id="axe-éthique">Axe éthique</h2>
+<p>L’axe éthique de D&amp;D propose une polarité entre le <em>respect des règles collectives</em> et la <em>primauté de la liberté individuelle</em>, que nous pourrions représente ainsi :</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+  A[Respect des règles] &lt;--&gt; B[Liberté individuelle]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Celles-ci sont mises en opposition. Cela signifie que lorsque les individus vivent en groupe, leur liberté individuelle constitue une menace à la stabilité du groupe. Assurer cette stabilité nécessiterait dès lors la diminution (voire la suppression) des libertés de chacun. Ce thème est précisément central dans la théorie du contrat social qui émergea comme philosophie politique au seizième siècle. Le <em>contractualisme</em> est un courant de philosophie politique qui conçoit l’origine de la société et de l’État comme un contrat originaire entre les hommes par lequel ceux-ci acceptent une limitation de leur liberté en échange de lois garantissant la perpétuation du corps social. L’anglais Thomas Hobbes fut le fer de lance de cette doctrine en proposant d’abandonner la liberté individuelle au bénéfice d’un ordre supérieur :</p>
+<blockquote class="blockquote">
+<p>C’est comme si chacun devait dire à chacun : J’autorise cet homme, ou cette assemblée d’hommes, j’abandonne mon droit de me gouverner à cet homme, ou à cette assemblée, à cette condition que tu lui abandonnes ton droit, et autorise toutes ses actions de la même manière. Cela fait, la multitude ainsi unie en une seule personne est appelée une RÉPUBLIQUE, en latin CIVITAS. <span class="citation" data-cites="hobbes1651leviathan">(Hobbes, 1651)</span></p>
+</blockquote>
+<p>Autre autres contractualistes anglais, John Locke se démarqua toutefois en imposant au pouvoir mis en place par la collectivité de défendre des droits inaliénable, dont ceux de la liberté individuelle et de la propriété :</p>
+<blockquote class="blockquote">
+<p>Tout cela montre évidemment que bien que la nature ait donné toutes choses en commun, l’homme néanmoins, étant le maître et le propriétaire de sa propre personne, de toutes ses actions, de tout son travail, a toujours en soi le grand fondement de la propriété; et que tout ce en quoi il emploie ses soins et son industrie pour le soutien de son être et pour son plaisir, surtout depuis que tant de belles découvertes ont été faites, et que tant d’arts ont été mis en usage et perfectionnés pour la commodité de la vie, lui appartient entièrement en propre, et n’appartient point aux autres en commun. <span class="citation" data-cites="locke1660two">(Locke, 1660)</span></p>
+</blockquote>
+<p>Locke attribue à l’État un rôle majeur : celui de garantir les droits naturels des êtres humains. S’il n’y parvient pas, il perd toute légitimité officielle et doit être destitué. Tel est le cas lorsqu’un monarque devient un tyran :</p>
+<blockquote class="blockquote">
+<p>Quiconque, revêtu d’autorité, excède le pouvoir qui lui a été donné par les lois, et emploie la force qui est en sa disposition à faire, à l’égard de ses sujets, des choses que les lois ne permettent point, est, sans doute, un véritable tyran ; et comme il agit alors sans autorité, on peut s’opposer à lui tout de même qu’à tout autre qui envahirait de force le droit d’autrui. <span class="citation" data-cites="locke1660two">(Locke, 1660)</span></p>
+</blockquote>
+<p>Nous voyons ici poindre une opposition majeure dans la conception du contrat social entre les deux philosophes même si John Locke ne prône pas l’anarchie. Le mouvement anarchique, ou anarchisme, est une doctrine politique et sociale qui vise à abolir toute forme d’autorité contraignante, en particulier l’État, les hiérarchies imposées, et les rapports de domination économique ou sociale.</p>
+<p>L’élément important ici est le degré de confiance que l’individu accorde à ses dirigeants et aux règles qu’ils produisent. Les accepte-t-il ? S’y oppose-t-il ? Tente-t-il de s’en extraire ?</p>
+<p>De manière schématique, dans les sociétés démocratiques occidentales actuelles, il existe une polarisation récurrente entre les politiques dites :</p>
+<ul>
+<li><em>libérales</em> : qui défendent principalement les libertés individuelles avec plus ou moins de ferveur ;</li>
+<li><em>socialistes</em> : qui défendent principalement la notion de groupe social, tentant de stabiliser sa légitimité comme principe supérieur aux intérêts individuels.</li>
+</ul>
+<p>L’axe éthique de D&amp;D convoque dès lors cette polarité de type politique.</p>
+</section>
+<section id="axe-moral" class="level2">
+<h2 class="anchored" data-anchor-id="axe-moral">Axe moral</h2>
+<p>L’axe moral semble quant à lui propose une autre polarité :</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+
+  Egoïsme &lt;--&gt; Altruisme
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Faut-il d’abord penser à soi-même ou au bien-être des autres ? D&amp;D étant un jeu d’influence médiévale, il peut paraître pertinent de se replacer à cette période de l’histoire de l’Europe. Le moyen-âge est caractérisée par de nombreux conflits violents. L’église catholique constitua un contre-pied important aux choix politiques des seigneurs au nom d’un discours qui encourage l’amour de son prochain, la tolérance, le pardon, l’humilité, la défense et la protection des plus faibles, l’aide aux plus démunis. Les préceptes chrétiens tournent autour du martyr de Jésus de Nazareth qui aurait accepté de souffrir et de mourir pour racheter les péchés des êtres humains. Cette conception pacifiste et bienveillante contrasta avec le climat guerrier et violent des sociétés antiques et médiévales. Vint également s’y adjoindre une valorisation de la vie après la mort : peu importe les souffrances et les malheurs dans la vie quotidienne puisqu’un bonheur parfait attend le chrétien décédé. Cette croyance permit ainsi de supporter de nombreux désagréments matériels avec stoïcisme, patience et détermination.</p>
+<p>La pensée d’influence chrétienne (notons que le coran cite tant le personnage de Jésus que de Marie et présente dès lors certains héritages chrétiens) reste particulièrement vive dans le monde actuel et prône le dépassement des intérêts individuels au profit des autres. L’altruisme est dès lors vivement encouragé dans les préceptes religieux contemporains.</p>
+<p>Il est dès lors probable que l’axe moral de D&amp;D repose principalement sur cette assise philosophique qui traverse les religions.</p>
+<p>Précisons qu’il ne faut pas être croyant pour être altruiste. En effet, la notion de civilisation se nourrit de démarches altruistes dans un contexte de coopération entre les individus d’une même collectivité.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>La notion d’alignement dans D&amp;D nous permet de réfléchir à la relation qu’un individu (ou un personnage créé) entretient avec un modèle de société donné. Les valeurs de l’un peut être en congruence avec celles de l’autre. Cette congruence fonde la loyauté. Dans le cas contraire, le chaos est la démarche de rébellion et de subversion qui vise à modifier l’ordre établi. Cette quête peut être sous-tendue par des intérêts égoïstes ou altruistes. Il s’agit évidemment de considérations qui simplifient la complexité des comportements humains. L’alignement offre un cadre général tout en laissant une place aux surprises et aux innovations.</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Les références</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2">
+<div id="ref-cook1989phbfr" class="csl-entry">
+Cook, D. (1989). <em>Advanced Dungeons &amp; Dragons : Manuel Complet du Joueur</em> (M. Pagel, Trad.). Paris, France: Hexagonal / TSR.
+</div>
+<div id="ref-gygax1978adnd" class="csl-entry">
+Gygax, G. (1978). <em>Advanced Dungeons &amp; Dragons: Player’s Handbook</em>. Lake Geneva, Wisconsin: TSR, Inc.
+</div>
+<div id="ref-gygax1986phbfr" class="csl-entry">
+Gygax, G. (1986). <em>Manuel des Joueurs</em> (R. Guesler, P. Régis, &amp; A. Stubbe, Trad.). Paris, France: Descartes Éditeur.
+</div>
+<div id="ref-hobbes1651leviathan" class="csl-entry">
+Hobbes, T. (1651). <em>L<span>é</span>viathan. Trait<span>é</span> de la mati<span>è</span>re, de la forme et du pouvoir d’une r<span>é</span>publique eccl<span>é</span>siastique et civile</em>. Consulté à l'adresse <a href="http://classiques.uqac.ca/classiques/hobbes_thomas/leviathan/leviathan.html">http://classiques.uqac.ca/classiques/hobbes_thomas/leviathan/leviathan.html</a>
+</div>
+<div id="ref-laplanche1971vocabulaire" class="csl-entry">
+Laplanche, J., &amp; Pontalis, J.-B. (1971). <em>Vocabulaire de la psychanalyse</em>. Paris, France: PUF.
+</div>
+<div id="ref-locke1660two" class="csl-entry">
+Locke, J. (1660). <em>Two Treatises of Government</em>.
+</div>
+<div id="ref-tolkien1954lotr" class="csl-entry">
+Tolkien, J. R. R. (1954). <em>Le Seigneur des Anneaux</em>. Londres, Royaume-Uni: Allen &amp; Unwin.
+</div>
+<div id="ref-ricard2022ethique" class="csl-entry">
+Vanin, L., &amp; Gagné, J.-B. (2022). <em>Introduction à l’éthique : fondements et grands courants</em>. Paris, France: Ellipses.
+</div>
+<div id="ref-wizards2017phbfr" class="csl-entry">
+Wizards of the Coast. (2017). <em>Manuel des Joueurs</em> (A. Nikolavitch, F. Weil, &amp; F. Marcela-Froideval, Trad.). Lyon, France: Black Book Éditions.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{thiry2025,
+  author = {Thiry, Benjamin},
+  title = {Notion d’alignement dans Donjons et Dragons repères moraux et
+    éthiques},
+  date = {2025-05-04},
+  url = {https://benjaminthiry.netlify.app/posts/2025-05-03-ddalignement/},
+  langid = {fr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Veuillez citer ce travail comme suit&nbsp;:</div><div id="ref-thiry2025" class="csl-entry quarto-appendix-citeas">
+Thiry, B. (2025, May 4). Notion d’alignement dans Donjons et Dragons
+repères moraux et éthiques. Retrieved from <a href="https://benjaminthiry.netlify.app/posts/2025-05-03-ddalignement/">https://benjaminthiry.netlify.app/posts/2025-05-03-ddalignement/</a>
+</div></div></section></div> ]]></description>
+  <category>criminologie</category>
+  <guid>https://benjaminthiry.netlify.app/posts/2025-05-03-ddalignement/</guid>
+  <pubDate>Sat, 03 May 2025 22:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Quitter les GAFAM pour rejoindre le Fediverse : petit guide personnel</title>
   <dc:creator>Benjamin Thiry</dc:creator>
