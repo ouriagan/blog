@@ -7,7 +7,7 @@ author:
     website: https://benjaminthiry.netlify.app/
 date: "2025-04-08"
 categories: [réflexion personnelle]
-image: "ddlogo.png"
+image: "fediverse.png"
 citation: true
 lang: fr
 ---
