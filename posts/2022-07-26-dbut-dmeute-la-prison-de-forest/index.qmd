@@ -5,9 +5,12 @@ author: "Benjamin Thiry"
 date: "2022-07-26"
 categories: [événement]
 lang: fr
+image: "prisonforest.png"
+social:
+  image: "prisonforest.png"
 ---
 
-![Prison de Forest](prison_forest.png)
+![Prison de Forest](prisonforest.png)
 
 *Prison de Forest, matin du 26 juillet 2022.*
 
