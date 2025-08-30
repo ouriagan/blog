@@ -1,0 +1,74 @@
+---
+title: "L’expérience de Stanford : violence et prison "
+description: "L’expérience de Stanford, conduite en 1971 par Philip Zimbardo, avait pour objectif d’étudier l’influence des rôles sociaux et du contexte institutionnel sur le comportement humain. Vingt-quatre étudiants masculins, recrutés pour leur stabilité psychologique, furent répartis aléatoirement en gardiens ou prisonniers dans une prison simulée au département de psychologie de l’Université de Stanford. Bien que prévue pour deux semaines, l’étude fut interrompue après seulement six jours en raison de l’escalade des comportements abusifs chez les gardiens et de la détresse psychologique marquée des prisonniers. Les résultats ont mis en évidence des processus de désindividuation, de conformisme et d’appropriation rapide des rôles, illustrant comment des individus ordinaires peuvent adopter des conduites autoritaires et coercitives dans un cadre institutionnel. Toutefois, les faiblesses méthodologiques et éthiques, notamment l’implication directe de Zimbardo comme directeur de la prison, ont suscité de vives critiques. Malgré ces limites, l’expérience demeure une référence incontournable en psychologie sociale, nourrissant les débats sur l’éthique de la recherche, l’autorité et les dynamiques de pouvoir."
+author:
+  - name: Shaneze Daoui
+    email: shaneze.daoui@ulb.be
+  - name: Benjamin Thiry
+date: "2025-08-30"
+image: "stanford.jpg"
+categories: [prison]
+citation: true
+lang: fr
+bibliography: stanford.bib
+social:
+  image: "stanford.jpg"
+---
+
+![](stanford.jpg)
+
+L'expérience de Stanford, réalisée en août 1971 sous la supervision du psychologue Philip Zimbardo à l'Université de Stanford, reste l'une des recherches les plus célèbres et débattues dans le domaine de la psychologie. Bien qu'elle ait été planifiée pour durer deux semaines, elle a été stoppée après seulement six jours. Cette expérience visait à explorer comment les rôles sociaux et les pressions environnantes peuvent influencer le comportement des individus (Pass, 2024).
+
+# Contexte et origine
+
+L'expérience s'est déroulée dans un contexte marqué par l'après-guerre du Vietnam et par des mouvements de contestation aux États-Unis, où l'autorité, la police et le système pénitentiaire faisaient l'objet d'une remise en question intense (Değirmencioğlu, 2024, p.p. 52-64). À la fin des années 1960 et au début des années 1970, les psychologues sociaux étaient particulièrement intéressés par la manière dont les circonstances pouvaient inciter des gens ordinaires à adopter des comportements abusifs ou immoraux. Philip Zimbardo, un professeur de l’Université de Stanford, souhaitait explorer à quelle vitesse des individus typiques pouvaient s'adapter aux rôles de "gardien" et de "prisonnier" dans un environnement pénitentiaire fictif [@pass2024criticism] .
+
+# Méthodologie
+
+## Échantillonnage
+
+L’étude a sélectionné 24 hommes jeunes et mentalement sains parmi 75 candidats qui avaient répondu à une annonce de recrutement dans un quotidien local. Ces individus étaient des étudiants universitaires, jugés comme psychologiquement équilibrés et sans antécédents judiciaires [@zimbardo2007lucifer]. Ils ont reçu une rémunération de 15 dollars par jour, une somme qui, à l’époque, était considérée comme attractive pour de jeunes étudiants. Cette motivation financière a probablement influencé leur volonté de participer à l’expérience [@zimbardo2007lucifer]. Les participants ont été assignés aléatoirement à deux groupes : soit comme gardiens, soit comme prisonniers. Cette répartition a été déterminée par un tirage au sort, assurant en théorie une distribution équitable des rôles [@pass2024criticism].
+
+## Mise en place de l'expérience
+
+L'expérience a été mise en place dans le sous-sol du département de psychologie de Stanford, transformé en une prison fictive. Des bureaux ont été convertis en cellules, le couloir a servi de cour de prison, et un placard a été utilisé comme cellule d’isolement [@pass2024criticism]. Des cellules ont été installées, et des règles sévères ont été imposées aux détenus [@zimbardo2007lucifer]. Les gardiens ont reçu des uniformes, des lunettes de soleil réfléchissantes, des sifflets et des bâtons. Quant aux détenus, ils ont été habillés de tuniques, identifiés par un numéro et soumis à des limitations de leurs privilèges [@pass2024criticism].
+
+De véritables policiers de Palo Alto ont participé à l'arrestation des détenus à domicile afin d'ajouter du réalisme à l'expérience [@pass2024criticism]. Le réalisme de l'environnement, associé à de vraies arrestations par la police, a favorisé l'immersion des participants, les poussant à se fondre rapidement dans leur rôle tout en perdant leurs repères personnels [@haney1973study].
+
+Les détenus ont été isolés du monde extérieur, y compris de leurs proches, ce qui a pu renforcer leur sentiment de vulnérabilité. Le seul contact autorisé était avec le personnel pénitentiaire [@pass2024criticism].
+
+## Déroulement de l'expérience
+
+### Premier jour : Arrestation et intégration
+
+Les participants désignés comme prisonniers ont été arrêtés chez eux par la police locale [@pass2024criticism], menottés et amenés à la "prison". Cette mise en scène réaliste visait à intensifier leur immersion dans leur rôle. Arrivés en "prison", ils ont été soumis à des procédures de déshumanisation, notamment des fouilles corporelles et la suppression de leur identité personnelle [@zimbardo2007lucifer]. Pour renforcer le réalisme de l'expérience, les gardiens ont été formés à adopter un comportement autoritaire, mais aucun d’eux n’a été informé de la nature exacte des tâches qu’ils devaient accomplir [@zimbardo2007lucifer]. De plus, les tensions ont augmenté entre les groupes, avec les gardiens de plus en plus enclins à exercer des formes de pouvoir abusif. Les prisonniers, quant à eux, ont réagi en organisant des stratégies de résistance collective.
+
+### Deuxième jour : Rébellion des prisonniers
+
+Les prisonniers ont commencé à résister à l'autorité des gardiens en bloquant les portes de leurs cellules et en refusant d'obéir aux ordres. En réaction, les gardiens ont instauré des mesures plus coercitives, telles que la privation de nourriture, des exercices physiques forcés et des punitions humiliantes [@zimbardo2007lucifer].
+
+### Plusieurs jours après : escalade de la brutalité
+
+Au fil des jours, les gardiens sont devenus de plus en plus agressifs et sadiques. Certains ont infligé des punitions psychologiques, comme l'isolement prolongé et l'humiliation publique des prisonniers. Les prisonniers, quant à eux, ont commencé à montrer des signes de stress émotionnel aigu, notamment de la dépression, des crises de panique et des tentatives de mutinerie [@zimbardo2007lucifer]. Le comportement des gardiens a été renforcé par le rôle que Zimbardo a joué en tant que directeur de l'expérience, ce qui a indirectement permis une escalade des abus, sans intervention significative pour stopper la violence [@zimbardo2007lucifer].
+
+### Détérioration rapide des conditions
+
+En l’espace de quelques jours, les gardes ont commencé à exercer une pression psychologique sur les prisonniers. Les rapports et les images de l'expérience ont montré que les gardiens ont introduit des tâches humiliantes et dégradantes, utilisé l’isolement cellulaire comme punition et imposé un régime strict de commandements et de sanctions. Certains prisonniers ont vécu des crises émotionnelles, et quelques-uns ont dû être libérés prématurément (Pass, 2024). Ce déclin rapide des conditions de vie a soulevé des questions sur l’éthique de l’expérience et a conduit à son arrêt prématuré après seulement six jours, bien que le projet ait été conçu pour durer deux semaines [@zimbardo2007lucifer].
+
+# Résultats
+
+## Effets psychologiques sur les participants
+
+L’étude a révélé le phénomène de désindividuation, où les participants ont peu à peu abandonné leur identité personnelle au bénéfice du rôle qui leur avait été attribué. Les gardiens ont présenté des attitudes de plus en plus conformes à leur rôle dominant, même sans consignes précises, ce qui indique une véritable appropriation du rôle plutôt qu’un simple acte de comédie [@haney1973interpersonal]. L'expérience a révélé que des personnes normales peuvent adopter des comportements radicaux lorsqu'elles sont influencées par un rôle institutionnel. Les gardiens, qui n'avaient aucune inclination préexistante à la violence, ont rapidement adopté des attitudes autoritaires et agressives. Parallèlement, les prisonniers ont vite montré des signes de soumission, acceptant les mauvais traitements et perdant toute volonté de résister [@zimbardo2007lucifer].
+
+## Arrêt anticipé de l’expérience
+
+Comme mentionné précédemment, bien que prévue pour durer deux semaines, l'expérience a dû être arrêtée après seulement six jours en raison des sérieux problèmes psychologiques rencontrés par les prisonniers. Christina Maslach, une psychologue extérieure (qui deviendra plus tard l'épouse de M. Zimbardo), a joué un rôle crucial dans la décision de mettre fin à l'expérience, car elle a vivement critiqué l'ampleur de la souffrance infligée aux participants [@zimbardo2007lucifer]. D'autres chercheurs invités à observer l'expérience avaient déjà exprimé leur préoccupation avant Mme Maslach, mais Zimbardo n'y avait guère prêté attention [@zimbardo2007lucifer]. Les gardiens sont devenus de plus en plus tyranniques et dégradants envers les prisonniers, qui, de leur côté, manifestaient des signes de stress et d'anxiété très marqués. Cinq détenus ont dû être libérés plus tôt que prévu en raison de troubles émotionnels importants. Même les chercheurs, y compris Philip Zimbardo, qui assumait le rôle de directeur de la prison, ont perdu leur impartialité face à la situation [@reicher2008criticism].
+
+# Conclusion
+
+L'expérience de Stanford reste une référence majeure dans les livres de psychologie, même si elle est fréquemment critiquée aujourd'hui pour ses importantes faiblesses méthodologiques et éthiques. Zimbardo avait pour but de montrer l'impact des rôles sociaux, mais ses efforts ont été éclipsés par des accusations de manipulation et les pratiques troublantes employées. Néanmoins, son importance historique est indéniable. Elle a été un déclencheur de débats sur les normes éthiques en recherche, soulignant le fragile équilibre entre la quête scientifique et le respect des participants [@pass2024criticism].
+
+Prenant comme exemple la conception imparfaite de l’expérience de Stanford, cet événement rappelle aux chercheurs actuels que l’excitation excessive autour d’une théorie peut amener à privilégier des résultats saisissants plutôt que la rigueur scientifique et les principes éthiques. Il souligne les risques de conflits d’intérêts quand les chercheurs sont directement impliqués dans leurs propres études. Les scientifiques contemporains ont tiré des leçons de cet exemple pour raffiner les méthodes utilisées et mettre en avant l’importance d’une supervision attentive, notamment dans les recherches qui provoquent du stress ou modifient les dynamiques de pouvoir social [@pass2024criticism].
+
+L'une des raisons pour lesquelles l'expérience de Stanford continue de fasciner tant le grand public que le monde académique réside dans sa démonstration frappante de la rapidité avec laquelle le pouvoir peut corrompre et mener à la déshumanisation. Toutefois, les discussions sur la crédibilité de l'étude et l'impact des consignes données relativisent l'idée que les êtres humains ont une propension innée et immédiate à adopter des comportements cruels. Cela met en avant la complexité des interactions entre les éléments contextuels, les schémas d'autorité et le libre arbitre [@pass2024criticism].

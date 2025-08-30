@@ -1,74 +1,129 @@
 {
     "sources": [
         {
-            "ISBN": "978-2-7384-4345-8",
             "author": [
                 {
-                    "family": "Chauvenet",
-                    "given": "Antoinette"
-                },
-                {
-                    "family": "Despret",
-                    "given": "Vinciane"
-                },
-                {
-                    "family": "Lemaire",
-                    "given": "Jean-Marie"
+                    "family": "Değirmencioğlu",
+                    "given": "Serdar M."
                 }
             ],
-            "collection-title": "Santé, sociétés et cultures",
-            "id": "chauvenet1996clinique",
+            "container-title": "Annual Review of Critical Psychology",
+            "id": "degirmencioglu2024stanford",
             "issued": {
                 "date-parts": [
                     [
-                        1996
+                        2024
                     ]
                 ]
             },
-            "publisher": "L’Harmattan",
-            "publisher-place": "Paris",
-            "title": "Clinique de la reconstruction : une expérience avec des réfugiés en ex-Yougoslavie",
-            "title-short": "Clinique de la reconstruction ",
-            "type": "book"
+            "page": "52-64",
+            "title": "The Stanford Prison Experiment: Still failing the political test",
+            "title-short": "The Stanford Prison Experiment",
+            "type": "article-journal",
+            "volume": "18"
         },
         {
-            "ISBN": "978-2-220-03445-4",
+            "DOI": "10.1037/h0034516",
             "author": [
                 {
-                    "family": "Legrand",
-                    "given": "Michel"
+                    "family": "Haney",
+                    "given": "Craig"
+                },
+                {
+                    "family": "Banks",
+                    "given": "Curtis W."
+                },
+                {
+                    "family": "Zimbardo",
+                    "given": "Philip G."
                 }
             ],
-            "collection-title": "Interfaces",
-            "id": "legrand1993approche",
+            "container-title": "American Psychologist",
+            "id": "haney1973study",
+            "issue": "7",
             "issued": {
                 "date-parts": [
                     [
-                        1993
+                        1973
                     ]
                 ]
             },
-            "publisher": "Desclée de Brouwer",
-            "publisher-place": "Paris",
-            "title": "L’approche biographique : théorie, clinique",
-            "title-short": "L’approche biographique ",
-            "type": "book"
+            "page": "213-223",
+            "title": "A study of prisoners and guards in a simulated prison",
+            "type": "article-journal",
+            "volume": "28"
         },
         {
-            "ISBN": "978-2-7492-0864-0",
+            "DOI": "10.1080/03057257308451628",
             "author": [
                 {
-                    "dropping-particle": "de",
-                    "family": "Gaulejac",
-                    "given": "Vincent"
+                    "family": "Haney",
+                    "given": "Craig"
                 },
                 {
-                    "family": "Legrand",
-                    "given": "Michel"
+                    "family": "Banks",
+                    "given": "Curtis W."
+                },
+                {
+                    "family": "Zimbardo",
+                    "given": "Philip G."
                 }
             ],
-            "collection-title": "Sociologie clinique",
-            "id": "degaulejac2008intervenir",
+            "container-title": "International Journal of Criminology and Penology",
+            "id": "haney1973interpersonal",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1973
+                    ]
+                ]
+            },
+            "page": "69-97",
+            "title": "Interpersonal dynamics in a simulated prison",
+            "type": "article-journal",
+            "volume": "1"
+        },
+        {
+            "DOI": "10.1177/0146167206298570",
+            "author": [
+                {
+                    "family": "Haslam",
+                    "given": "Stephen A."
+                },
+                {
+                    "family": "Reicher",
+                    "given": "Stephen D."
+                }
+            ],
+            "container-title": "Personality and Social Psychology Bulletin",
+            "id": "haslam2007beyond",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "page": "615-622",
+            "title": "Beyond the banality of evil: Three dynamics of an interactionist social psychology of tyranny",
+            "title-short": "Beyond the banality of evil",
+            "type": "article-journal",
+            "volume": "33"
+        },
+        {
+            "author": [
+                {
+                    "family": "Haslam",
+                    "given": "Stephen A."
+                },
+                {
+                    "family": "Reicher",
+                    "given": "Stephen D."
+                }
+            ],
+            "id": "haslam2008bbc",
             "issued": {
                 "date-parts": [
                     [
@@ -76,81 +131,158 @@
                     ]
                 ]
             },
-            "publisher": "Érès",
-            "publisher-place": "Toulouse",
-            "title": "Intervenir par le récit de vie : entre histoire collective et histoire individuelle",
-            "title-short": "Intervenir par le récit de vie ",
-            "type": "book"
+            "note": "Consulté le 18 mars 2025",
+            "publisher": "http://www.bbcprisonstudy.org",
+            "title": "The BBC Prison Study",
+            "type": ""
         },
         {
-            "DOI": "10.3917/ctf.044.0137",
+            "DOI": "10.1371/journal.pbio.1001426",
             "author": [
                 {
-                    "family": "Lemaire",
-                    "given": "Jean-Marie"
+                    "family": "Haslam",
+                    "given": "Stephen A."
                 },
                 {
-                    "family": "Halleux",
-                    "given": "Laurent"
+                    "family": "Reicher",
+                    "given": "Stephen D."
                 }
             ],
-            "container-title": "Cahiers critiques de thérapie familiale et de pratiques de réseaux",
-            "id": "lemaire2010confiances",
+            "container-title": "PLOS Biology",
+            "id": "haslam2012contesting",
+            "issue": "11",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "e1001426",
+            "title": "Contesting the \"Nature\" Of Conformity: What Milgram and Zimbardo’s Studies Really Show",
+            "title-short": "Contesting the \"Nature\" Of Conformity",
+            "type": "article-journal",
+            "volume": "10"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pass",
+                    "given": "Jennifer C."
+                }
+            ],
+            "id": "pass2024criticism",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024,
+                        1,
+                        13
+                    ]
+                ]
+            },
+            "note": "Simply Put Psych. Consulté le 18 mars 2025",
+            "publisher": "https://simplyputpsych.co.uk/psych-101-1/criticism-of-the-stanford-prison-experiment",
+            "title": "Criticism of the Stanford Prison Experiment",
+            "type": ""
+        },
+        {
+            "DOI": "10.1348/014466605X48998",
+            "author": [
+                {
+                    "family": "Reicher",
+                    "given": "Stephen"
+                },
+                {
+                    "family": "Haslam",
+                    "given": "Stephen A."
+                }
+            ],
+            "container-title": "British Journal of Social Psychology",
+            "id": "reicher2006rethinking",
             "issue": "1",
             "issued": {
                 "date-parts": [
                     [
-                        2010
+                        2006
                     ]
                 ]
             },
-            "page": "137-152",
-            "publisher": "De Boeck Supérieur",
-            "title": "Confiances, Loyautés et « Cliniques de Concertation » au service du Travail Thérapeutique de Réseau",
+            "page": "1-40",
+            "title": "Rethinking the psychology of tyranny: The BBC prison study",
+            "title-short": "Rethinking the psychology of tyranny",
             "type": "article-journal",
-            "volume": "44"
+            "volume": "45"
         },
         {
-            "ISBN": "9782234055307",
             "author": [
                 {
-                    "family": "Orsenna",
-                    "given": "Erik"
+                    "family": "Reicher",
+                    "given": "Stephen"
+                },
+                {
+                    "family": "Haslam",
+                    "given": "Stephen A."
                 }
             ],
-            "id": "orsenna2003madame",
+            "id": "reicher2008criticism",
             "issued": {
                 "date-parts": [
                     [
-                        2003
+                        2008
                     ]
                 ]
             },
-            "publisher": "Stock",
-            "publisher-place": "Paris",
-            "title": "Madame Bâ",
-            "type": "book"
+            "note": "BBC Prison Study. Consulté le 18 mars 2025",
+            "publisher": "http://www.bbcprisonstudy.org/faq.php?p=122",
+            "title": "Criticism of the BBC Prison Study",
+            "type": ""
         },
         {
-            "ISBN": "9782020069793",
             "author": [
                 {
-                    "family": "Ricœur",
-                    "given": "Paul"
+                    "family": "Zimbardo",
+                    "given": "Philip G."
                 }
             ],
-            "id": "ricoeur1983temps",
+            "container-title": "The social animal",
+            "editor": [
+                {
+                    "family": "Aronson",
+                    "given": "Elliot"
+                }
+            ],
+            "id": "zimbardo1971stanford",
             "issued": {
                 "date-parts": [
                     [
-                        1983
+                        1971
                     ]
                 ]
             },
-            "publisher": "Éditions du Seuil",
-            "publisher-place": "Paris",
-            "title": "Temps et récit. Tome I : L’intrigue et le récit historique",
-            "title-short": "Temps et récit. Tome I ",
+            "page": "45-69",
+            "publisher": "W. H. Freeman",
+            "title": "The Stanford prison experiment",
+            "type": "chapter"
+        },
+        {
+            "author": [
+                {
+                    "family": "Zimbardo",
+                    "given": "Philip G."
+                }
+            ],
+            "id": "zimbardo2007lucifer",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "publisher": "Random House",
+            "title": "The Lucifer Effect: Understanding How Good People Turn Evil",
+            "title-short": "The Lucifer Effect",
             "type": "book"
         }
     ],
