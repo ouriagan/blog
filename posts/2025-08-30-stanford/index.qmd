@@ -3,7 +3,7 @@ title: "L’expérience de Stanford : violence et prison "
 description: "L’expérience de Stanford, conduite en 1971 par Philip Zimbardo, avait pour objectif d’étudier l’influence des rôles sociaux et du contexte institutionnel sur le comportement humain. Vingt-quatre étudiants masculins, recrutés pour leur stabilité psychologique, furent répartis aléatoirement en gardiens ou prisonniers dans une prison simulée au département de psychologie de l’Université de Stanford. Bien que prévue pour deux semaines, l’étude fut interrompue après seulement six jours en raison de l’escalade des comportements abusifs chez les gardiens et de la détresse psychologique marquée des prisonniers. Les résultats ont mis en évidence des processus de désindividuation, de conformisme et d’appropriation rapide des rôles, illustrant comment des individus ordinaires peuvent adopter des conduites autoritaires et coercitives dans un cadre institutionnel. Toutefois, les faiblesses méthodologiques et éthiques, notamment l’implication directe de Zimbardo comme directeur de la prison, ont suscité de vives critiques. Malgré ces limites, l’expérience demeure une référence incontournable en psychologie sociale, nourrissant les débats sur l’éthique de la recherche, l’autorité et les dynamiques de pouvoir."
 author:
   - name: Shaneze Daoui
-    email: shaneze.daoui@ulb.be
+    email: shaneze.daoui@icloud.com 
   - name: Benjamin Thiry
 date: "2025-08-30"
 image: "stanford.jpg"
