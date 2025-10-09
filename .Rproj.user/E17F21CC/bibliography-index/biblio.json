@@ -3,286 +3,60 @@
         {
             "author": [
                 {
-                    "family": "Değirmencioğlu",
-                    "given": "Serdar M."
+                    "family": "Balier",
+                    "given": "Claude"
                 }
             ],
-            "container-title": "Annual Review of Critical Psychology",
-            "id": "degirmencioglu2024stanford",
+            "collection-title": "Le fil rouge",
+            "id": "balier1996psychanalyse",
             "issued": {
                 "date-parts": [
                     [
-                        2024
+                        1996
                     ]
                 ]
             },
-            "page": "52-64",
-            "title": "The Stanford Prison Experiment: Still failing the political test",
-            "title-short": "The Stanford Prison Experiment",
-            "type": "article-journal",
-            "volume": "18"
-        },
-        {
-            "DOI": "10.1037/h0034516",
-            "author": [
-                {
-                    "family": "Haney",
-                    "given": "Craig"
-                },
-                {
-                    "family": "Banks",
-                    "given": "Curtis W."
-                },
-                {
-                    "family": "Zimbardo",
-                    "given": "Philip G."
-                }
-            ],
-            "container-title": "American Psychologist",
-            "id": "haney1973study",
-            "issue": "7",
-            "issued": {
-                "date-parts": [
-                    [
-                        1973
-                    ]
-                ]
-            },
-            "page": "213-223",
-            "title": "A study of prisoners and guards in a simulated prison",
-            "type": "article-journal",
-            "volume": "28"
-        },
-        {
-            "DOI": "10.1080/03057257308451628",
-            "author": [
-                {
-                    "family": "Haney",
-                    "given": "Craig"
-                },
-                {
-                    "family": "Banks",
-                    "given": "Curtis W."
-                },
-                {
-                    "family": "Zimbardo",
-                    "given": "Philip G."
-                }
-            ],
-            "container-title": "International Journal of Criminology and Penology",
-            "id": "haney1973interpersonal",
-            "issue": "1",
-            "issued": {
-                "date-parts": [
-                    [
-                        1973
-                    ]
-                ]
-            },
-            "page": "69-97",
-            "title": "Interpersonal dynamics in a simulated prison",
-            "type": "article-journal",
-            "volume": "1"
-        },
-        {
-            "DOI": "10.1177/0146167206298570",
-            "author": [
-                {
-                    "family": "Haslam",
-                    "given": "Stephen A."
-                },
-                {
-                    "family": "Reicher",
-                    "given": "Stephen D."
-                }
-            ],
-            "container-title": "Personality and Social Psychology Bulletin",
-            "id": "haslam2007beyond",
-            "issue": "5",
-            "issued": {
-                "date-parts": [
-                    [
-                        2007
-                    ]
-                ]
-            },
-            "page": "615-622",
-            "title": "Beyond the banality of evil: Three dynamics of an interactionist social psychology of tyranny",
-            "title-short": "Beyond the banality of evil",
-            "type": "article-journal",
-            "volume": "33"
+            "publisher": "Presses Universitaires de France",
+            "publisher-place": "Paris",
+            "title": "Psychanalyse des comportements violents",
+            "type": "book"
         },
         {
             "author": [
                 {
-                    "family": "Haslam",
-                    "given": "Stephen A."
-                },
-                {
-                    "family": "Reicher",
-                    "given": "Stephen D."
+                    "literal": "American Psychiatric Association"
                 }
             ],
-            "id": "haslam2008bbc",
+            "id": "apa1952dsm1",
             "issued": {
                 "date-parts": [
                     [
-                        2008
+                        1952
                     ]
                 ]
             },
-            "note": "Consulté le 18 mars 2025",
-            "publisher": "http://www.bbcprisonstudy.org",
-            "title": "The BBC Prison Study",
-            "type": ""
-        },
-        {
-            "DOI": "10.1371/journal.pbio.1001426",
-            "author": [
-                {
-                    "family": "Haslam",
-                    "given": "Stephen A."
-                },
-                {
-                    "family": "Reicher",
-                    "given": "Stephen D."
-                }
-            ],
-            "container-title": "PLOS Biology",
-            "id": "haslam2012contesting",
-            "issue": "11",
-            "issued": {
-                "date-parts": [
-                    [
-                        2012
-                    ]
-                ]
-            },
-            "page": "e1001426",
-            "title": "Contesting the \"Nature\" Of Conformity: What Milgram and Zimbardo’s Studies Really Show",
-            "title-short": "Contesting the \"Nature\" Of Conformity",
-            "type": "article-journal",
-            "volume": "10"
+            "publisher": "American Psychiatric Association",
+            "publisher-place": "Washington, D.C.",
+            "title": "Diagnostic and Statistical Manual of Mental Disorders",
+            "type": "book"
         },
         {
             "author": [
                 {
-                    "family": "Pass",
-                    "given": "Jennifer C."
+                    "family": "Ogien",
+                    "given": "Albert"
                 }
             ],
-            "id": "pass2024criticism",
+            "id": "ogien1995sociologie",
             "issued": {
                 "date-parts": [
                     [
-                        2024,
-                        1,
-                        13
+                        1995
                     ]
                 ]
             },
-            "note": "Simply Put Psych. Consulté le 18 mars 2025",
-            "publisher": "https://simplyputpsych.co.uk/psych-101-1/criticism-of-the-stanford-prison-experiment",
-            "title": "Criticism of the Stanford Prison Experiment",
-            "type": ""
-        },
-        {
-            "DOI": "10.1348/014466605X48998",
-            "author": [
-                {
-                    "family": "Reicher",
-                    "given": "Stephen"
-                },
-                {
-                    "family": "Haslam",
-                    "given": "Stephen A."
-                }
-            ],
-            "container-title": "British Journal of Social Psychology",
-            "id": "reicher2006rethinking",
-            "issue": "1",
-            "issued": {
-                "date-parts": [
-                    [
-                        2006
-                    ]
-                ]
-            },
-            "page": "1-40",
-            "title": "Rethinking the psychology of tyranny: The BBC prison study",
-            "title-short": "Rethinking the psychology of tyranny",
-            "type": "article-journal",
-            "volume": "45"
-        },
-        {
-            "author": [
-                {
-                    "family": "Reicher",
-                    "given": "Stephen"
-                },
-                {
-                    "family": "Haslam",
-                    "given": "Stephen A."
-                }
-            ],
-            "id": "reicher2008criticism",
-            "issued": {
-                "date-parts": [
-                    [
-                        2008
-                    ]
-                ]
-            },
-            "note": "BBC Prison Study. Consulté le 18 mars 2025",
-            "publisher": "http://www.bbcprisonstudy.org/faq.php?p=122",
-            "title": "Criticism of the BBC Prison Study",
-            "type": ""
-        },
-        {
-            "author": [
-                {
-                    "family": "Zimbardo",
-                    "given": "Philip G."
-                }
-            ],
-            "container-title": "The social animal",
-            "editor": [
-                {
-                    "family": "Aronson",
-                    "given": "Elliot"
-                }
-            ],
-            "id": "zimbardo1971stanford",
-            "issued": {
-                "date-parts": [
-                    [
-                        1971
-                    ]
-                ]
-            },
-            "page": "45-69",
-            "publisher": "W. H. Freeman",
-            "title": "The Stanford prison experiment",
-            "type": "chapter"
-        },
-        {
-            "author": [
-                {
-                    "family": "Zimbardo",
-                    "given": "Philip G."
-                }
-            ],
-            "id": "zimbardo2007lucifer",
-            "issued": {
-                "date-parts": [
-                    [
-                        2007
-                    ]
-                ]
-            },
-            "publisher": "Random House",
-            "title": "The Lucifer Effect: Understanding How Good People Turn Evil",
-            "title-short": "The Lucifer Effect",
+            "publisher": "Presses universitaires de France",
+            "title": "Sociologie de la déviance",
             "type": "book"
         }
     ],
