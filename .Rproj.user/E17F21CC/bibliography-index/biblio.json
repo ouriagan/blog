@@ -1,4 +1,64 @@
 {
-    "sources": [],
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "Balier",
+                    "given": "Claude"
+                }
+            ],
+            "collection-title": "Le fil rouge",
+            "id": "balier1996psychanalyse",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996
+                    ]
+                ]
+            },
+            "publisher": "Presses Universitaires de France",
+            "publisher-place": "Paris",
+            "title": "Psychanalyse des comportements violents",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "literal": "American Psychiatric Association"
+                }
+            ],
+            "id": "apa1952dsm1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1952
+                    ]
+                ]
+            },
+            "publisher": "American Psychiatric Association",
+            "publisher-place": "Washington, D.C.",
+            "title": "Diagnostic and Statistical Manual of Mental Disorders",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ogien",
+                    "given": "Albert"
+                }
+            ],
+            "id": "ogien1995sociologie",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Presses universitaires de France",
+            "title": "Sociologie de la déviance",
+            "type": "book"
+        }
+    ],
     "project_biblios": []
 }
