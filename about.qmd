@@ -12,5 +12,5 @@ about:
       href: https://github.com/ouriagan/blog
 ---
 
-Né en 1975 à Bruxelles, je réside en Belgique.
-Psychologue de formation, je m’intéresse à la personnalité sous plusieurs facettes. J’aime m’intéresser à l’histoire de ma discipline et en dégager les héritages idéologiques. 
+Né en 1975 à Bruxelles, je réside en Belgique. Psychologue de formation, je m’intéresse à la personnalité sous plusieurs facettes. J’aime m’intéresser à l’histoire de ma discipline et en dégager les héritages idéologiques.\
+Sur le Fediverse, vous pouvez vous abonner à ce blog en suivant \@benjaminthiry.netlify.app\@web.brid.gy
