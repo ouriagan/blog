@@ -1,4 +1,48 @@
 {
-    "sources": [],
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "Bettelheim",
+                    "given": "Bruno"
+                }
+            ],
+            "id": "Bettelheim1976",
+            "issued": {
+                "date-parts": [
+                    [
+                        1976
+                    ]
+                ]
+            },
+            "note": "Titre original : <i>The Uses of Enchantment: The Meaning and Importance of Fairy Tales</i> (1976), traduit de l’anglais par Théo Carlier",
+            "publisher": "Robert Laffont",
+            "publisher-place": "Paris",
+            "title": "Psychanalyse des contes de fées",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-0-86547-951-7",
+            "author": [
+                {
+                    "family": "Truby",
+                    "given": "John"
+                }
+            ],
+            "id": "Truby2007",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "publisher": "Faber; Faber",
+            "publisher-place": "New York",
+            "title": "The Anatomy of Story: 22 Steps to Becoming a Master Storyteller",
+            "title-short": "The Anatomy of Story",
+            "type": "book"
+        }
+    ],
     "project_biblios": []
 }

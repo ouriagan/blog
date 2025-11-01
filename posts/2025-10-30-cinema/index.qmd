@@ -9,7 +9,8 @@ author:
   - name: Lina Louis
 date: "2025-10-30"
 image: "2025-10-28_psychiatrie-legale.jpg"
-categories: [séminaire]
+categories: [séminaire, film]
+bibliography: cinema.bib
 citation: true
 lang: fr
 social:
@@ -37,11 +38,13 @@ Pour tenter de répondre à ces questions, nous accueillerons plusieurs invités
 
 La question se pose de savoir comment construire des histoires qui ont du sens. Lorsqu’on parvient à nommer le problème, on détient déjà une part de la solution.
 
-Depuis toujours, l’être humain a eu besoin d’histoires. Dans la Grèce antique, il cherchait à comprendre l’origine du monde : pour cela, il inventait des mythes, des fables et des contes. Ces récits étaient d’abord transmis oralement avant d’être mis par écrit. Peu à peu, ils ont suscité l’intérêt des enfants, inspirant plus tard les histoires populaires de Disney.
+Depuis toujours, l’être humain a eu besoin d’histoires. Dans la Grèce antique, il cherchait à comprendre l’origine du monde : pour cela, il inventait des mythes, des récits ou des fables. Ces récits étaient d’abord transmis oralement avant d’être ultérieurement mis par écrit. Au XVIIème siècle, les contes furent écrits pour plaire aux enfants, inspirant plus tard les histoires populaires de Disney.
 
-Bruno Bettelheim, dans *La psychanalyse des contes de fées*, souligne que chaque enfant a un conte préféré qu’il veut revoir sans cesse. Ce conte aborde souvent une peur ou un conflit intérieur, et le fait de le revivre l’aide à apprivoiser ses angoisses. Le dénouement heureux du récit procure alors un sentiment de sécurité.
+Dans son livre initulé *La psychanalyse des contes de fées*, @Bettelheim1976 souligne que chaque enfant a un conte préféré qu’il veut revoir sans cesse. Ce conte aborde souvent une peur ou un conflit intérieur, et le fait de le revivre l’aide à apprivoiser ses angoisses. Le dénouement heureux du récit procure alors un sentiment de sécurité.
 
-Les Grecs ont ensuite distingué le simple divertissement — qui permet d’oublier ses soucis — de la catharsis, qui consiste au contraire à se confronter à la violence du monde pour s’en purifier. Ce concept fait encore débat : se confronter à la violence permet-il de la diminuer ou, au contraire, de l’attiser ? La question reste vive, notamment à propos des jeux vidéo. Aujourd’hui encore, de nombreux films ont pour but de dénoncer les dysfonctionnements de la société ; c’est particulièrement visible dans le cinéma belge, avec les frères Dardenne par exemple.
+Les Grecs ont ensuite distingué le simple *divertissement* — qui permet d’oublier ses soucis — de la *catharsis*, qui consiste au contraire à se confronter à la violence du monde pour s’en purifier. Les comédies servaient de divertissement et les tragédies de catharsis.
+
+Ce concept fait encore débat : se confronter à la violence permet-il de la diminuer ou, au contraire, de l’attiser ? La question reste vive, notamment à propos des jeux vidéo. Aujourd’hui encore, de nombreux films ont pour but de dénoncer les dysfonctionnements de la société ; c’est particulièrement visible dans le cinéma belge, avec les frères Dardenne par exemple.
 
 # Le lien de causalité
 
@@ -67,13 +70,13 @@ Une histoire doit avancer. Sans évolution, le spectateur s’ennuie. Le récit 
 
 # Le conflit
 
-Le conflit est le moteur du récit. « Les gens heureux n’ont pas d’histoire ». Ce qui captive, c’est la lutte, les obstacles, les tensions. Le conflit ne se réduit pas à une dispute : il naît d’un enjeu, d’un risque de perte. Les producteurs demandent souvent d’“augmenter les curseurs” : rendre la situation plus tendue, le danger plus grand, comme dans *Squid Game*. Le conflit peut être réel ou seulement latent ; la menace suffit à créer l’intérêt dramatique.
+Le conflit est le moteur du récit. « Les gens heureux n’ont pas d’histoire ». Ce qui captive, c’est la lutte, les obstacles, les tensions. Le conflit ne se réduit pas à une dispute : il naît d’un enjeu, d’un risque de perte. Les producteurs demandent souvent de “monter les curseurs” : rendre la situation plus tendue, le danger plus grand, comme dans *Squid Game*. Le conflit peut être réel ou seulement latent ; la menace suffit à créer l’intérêt dramatique.
 
 # Le protagoniste
 
 L’histoire s’articule en général autour d’un seul protagoniste, parfois d’un groupe, porteur d’un objectif principal et de sous-objectifs. Aristote parlait des trois unités : temps, lieu et action. L’unité d’action impose une intrigue centrale, éventuellement accompagnée d’une intrigue secondaire — une romance dans un thriller, par exemple —, sans que celle-ci ne domine la première.
 
-Les conflits naissent de l’écart entre objectif et obstacles. Ceux-ci peuvent être internes (peurs, faiblesses, doutes) ou externes (antagoniste, société, nature). Les obstacles s’intensifient jusqu’au *climax*, point culminant du récit. Les théoriciens américains distinguent le *want* (désir conscient) du *need* (besoin inconscient).
+Les conflits naissent de l’écart entre objectif et obstacles. Ceux-ci peuvent être internes (peurs, faiblesses, doutes) ou externes (antagoniste, société, nature). Les obstacles s’intensifient jusqu’au *climax*, point culminant du récit. @Truby2007 distingue ainsi le *want* (désir conscient) du *need* (besoin inconscient).
 
 Chaque personnage secondaire doit avoir une fonction claire et refléter une facette de la thématique centrale, tout en restant authentique. Beaucoup incarnent des archétypes : mère, héros, enfant, mentor, etc.
 
@@ -99,4 +102,4 @@ Le *set-up* consiste à introduire un élément apparemment anodin qui prendra s
 
 # La construction
 
-Écrire une histoire, c’est assembler un puzzle. Le point de départ peut être un fait réel, un lieu, une idée ou une émotion. Le travail consiste surtout à agencer les éléments pour produire un ensemble cohérent. Il faut accepter qu’on ne plaira pas à tout le monde et qu’il est impossible de répondre à toutes les critiques. L’intention de l’histoire, souvent, ne se révèle qu’en cours d’écriture.
+Écrire une histoire, c’est assembler un puzzle. Le point de départ peut être un fait réel, un lieu, une idée ou une émotion. Le travail consiste surtout à agencer les éléments pour produire un ensemble cohérent. Il faut accepter qu’on ne plaira pas à tout le monde et qu’il est impossible de répondre à toutes les critiques. Il arrive parfois qu’un auteur ne découvre sa vraie intention que pendant le processus d’écriture.
