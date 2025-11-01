@@ -76,7 +76,7 @@ Le conflit est le moteur du récit. « Les gens heureux n’ont pas d’histoire
 
 L’histoire s’articule en général autour d’un seul protagoniste, parfois d’un groupe, porteur d’un objectif principal et de sous-objectifs. Aristote parlait des trois unités : temps, lieu et action. L’unité d’action impose une intrigue centrale, éventuellement accompagnée d’une intrigue secondaire — une romance dans un thriller, par exemple —, sans que celle-ci ne domine la première.
 
-Les conflits naissent de l’écart entre objectif et obstacles. Ceux-ci peuvent être internes (peurs, faiblesses, doutes) ou externes (antagoniste, société, nature). Les obstacles s’intensifient jusqu’au *climax*, point culminant du récit. @Truby2007 distingue ainsi le *want* (désir conscient) du *need* (besoin inconscient).
+Les conflits naissent de l’écart entre objectif et obstacles. Ceux-ci peuvent être internes (peurs, faiblesses, doutes) ou externes (antagoniste, société, nature). Les obstacles s’intensifient jusqu’au *climax*, point culminant du récit. @Truby2018 distingue ainsi le *want* (désir conscient) du *need* (besoin inconscient).
 
 Chaque personnage secondaire doit avoir une fonction claire et refléter une facette de la thématique centrale, tout en restant authentique. Beaucoup incarnent des archétypes : mère, héros, enfant, mentor, etc.
 

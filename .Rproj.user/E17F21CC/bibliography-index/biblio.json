@@ -42,6 +42,34 @@
             "title": "The Anatomy of Story: 22 Steps to Becoming a Master Storyteller",
             "title-short": "The Anatomy of Story",
             "type": "book"
+        },
+        {
+            "ISBN": "978-2-9156-0647-2",
+            "author": [
+                {
+                    "family": "Truby",
+                    "given": "John"
+                }
+            ],
+            "id": "Truby2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "Traduction française de <i>The Anatomy of Story: 22 Steps to Becoming a Master Storyteller</i>, Faber and Faber, New York, 2007. Présente notamment la distinction entre le <i>want</i> (désir conscient) et le <i>need</i> (besoin inconscient) du protagoniste.",
+            "publisher": "Éditions Dixit",
+            "publisher-place": "Paris",
+            "title": "L’anatomie du scénario",
+            "translator": [
+                {
+                    "family": "Oullion",
+                    "given": "Jean-Michel"
+                }
+            ],
+            "type": "book"
         }
     ],
     "project_biblios": []
