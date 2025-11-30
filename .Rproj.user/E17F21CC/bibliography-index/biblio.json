@@ -1,74 +1,156 @@
 {
     "sources": [
         {
+            "ISBN": "978-2-7384-4345-8",
             "author": [
                 {
-                    "family": "Bettelheim",
-                    "given": "Bruno"
+                    "family": "Chauvenet",
+                    "given": "Antoinette"
+                },
+                {
+                    "family": "Despret",
+                    "given": "Vinciane"
+                },
+                {
+                    "family": "Lemaire",
+                    "given": "Jean-Marie"
                 }
             ],
-            "id": "Bettelheim1976",
+            "collection-title": "Santé, sociétés et cultures",
+            "id": "chauvenet1996clinique",
             "issued": {
                 "date-parts": [
                     [
-                        1976
+                        1996
                     ]
                 ]
             },
-            "note": "Titre original : <i>The Uses of Enchantment: The Meaning and Importance of Fairy Tales</i> (1976), traduit de l’anglais par Théo Carlier",
-            "publisher": "Robert Laffont",
+            "publisher": "L’Harmattan",
             "publisher-place": "Paris",
-            "title": "Psychanalyse des contes de fées",
+            "title": "Clinique de la reconstruction : une expérience avec des réfugiés en ex-Yougoslavie",
+            "title-short": "Clinique de la reconstruction ",
             "type": "book"
         },
         {
-            "ISBN": "978-0-86547-951-7",
+            "ISBN": "978-2-220-03445-4",
             "author": [
                 {
-                    "family": "Truby",
-                    "given": "John"
+                    "family": "Legrand",
+                    "given": "Michel"
                 }
             ],
-            "id": "Truby2007",
+            "collection-title": "Interfaces",
+            "id": "legrand1993approche",
             "issued": {
                 "date-parts": [
                     [
-                        2007
+                        1993
                     ]
                 ]
             },
-            "publisher": "Faber; Faber",
-            "publisher-place": "New York",
-            "title": "The Anatomy of Story: 22 Steps to Becoming a Master Storyteller",
-            "title-short": "The Anatomy of Story",
+            "publisher": "Desclée de Brouwer",
+            "publisher-place": "Paris",
+            "title": "L’approche biographique : théorie, clinique",
+            "title-short": "L’approche biographique ",
             "type": "book"
         },
         {
-            "ISBN": "978-2-9156-0647-2",
+            "ISBN": "978-2-7492-0864-0",
             "author": [
                 {
-                    "family": "Truby",
-                    "given": "John"
+                    "dropping-particle": "de",
+                    "family": "Gaulejac",
+                    "given": "Vincent"
+                },
+                {
+                    "family": "Legrand",
+                    "given": "Michel"
                 }
             ],
-            "id": "Truby2018",
+            "collection-title": "Sociologie clinique",
+            "id": "degaulejac2008intervenir",
             "issued": {
                 "date-parts": [
                     [
-                        2018
+                        2008
                     ]
                 ]
             },
-            "note": "Traduction française de <i>The Anatomy of Story: 22 Steps to Becoming a Master Storyteller</i>, Faber and Faber, New York, 2007. Présente notamment la distinction entre le <i>want</i> (désir conscient) et le <i>need</i> (besoin inconscient) du protagoniste.",
-            "publisher": "Éditions Dixit",
-            "publisher-place": "Paris",
-            "title": "L’anatomie du scénario",
-            "translator": [
+            "publisher": "Érès",
+            "publisher-place": "Toulouse",
+            "title": "Intervenir par le récit de vie : entre histoire collective et histoire individuelle",
+            "title-short": "Intervenir par le récit de vie ",
+            "type": "book"
+        },
+        {
+            "DOI": "10.3917/ctf.044.0137",
+            "author": [
                 {
-                    "family": "Oullion",
-                    "given": "Jean-Michel"
+                    "family": "Lemaire",
+                    "given": "Jean-Marie"
+                },
+                {
+                    "family": "Halleux",
+                    "given": "Laurent"
                 }
             ],
+            "container-title": "Cahiers critiques de thérapie familiale et de pratiques de réseaux",
+            "id": "lemaire2010confiances",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "137-152",
+            "publisher": "De Boeck Supérieur",
+            "title": "Confiances, Loyautés et « Cliniques de Concertation » au service du Travail Thérapeutique de Réseau",
+            "type": "article-journal",
+            "volume": "44"
+        },
+        {
+            "ISBN": "9782234055307",
+            "author": [
+                {
+                    "family": "Orsenna",
+                    "given": "Erik"
+                }
+            ],
+            "id": "orsenna2003madame",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "publisher": "Stock",
+            "publisher-place": "Paris",
+            "title": "Madame Bâ",
+            "type": "book"
+        },
+        {
+            "ISBN": "9782020069793",
+            "author": [
+                {
+                    "family": "Ricœur",
+                    "given": "Paul"
+                }
+            ],
+            "id": "ricoeur1983temps",
+            "issued": {
+                "date-parts": [
+                    [
+                        1983
+                    ]
+                ]
+            },
+            "publisher": "Éditions du Seuil",
+            "publisher-place": "Paris",
+            "title": "Temps et récit. Tome I : L’intrigue et le récit historique",
+            "title-short": "Temps et récit. Tome I ",
             "type": "book"
         }
     ],

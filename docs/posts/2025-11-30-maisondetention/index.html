@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Aurégane Brabant">
+<meta name="author" content="Benjamin Thiry">
+<meta name="description" content="La surpopulation carcérale et les conditions de détention en Belgique et en France sont régulièrement dénoncées. Dès 2022, l’administration pénitentiaire belge a créé des Maisons de Détention dont le but est de favoriser la réinsertion des détenus dans un cadre plus souple que les prisons traditionnelles. Réalisée en 2025, notre étude vise à évaluer la qualité des relations sociales et le vécu des résidents d’une Maison de Détention par rapport à la prison traditionnelle grâce à une observation participante et à l’analyse qualitative du discours des résidents. Nous constatons une nette amélioration des relations entres les résidents, des relations avec le personnel de surveillance et du sentiment de responsabilité individuelle. Cette amélioration peut parfois aller de pair avec un choc de confort induisant une anxiété à l’idée de retourner dans la société extérieure.">
+
+<title>La maison de détention de Forest : analyse des relations sociales et du vécu des résidents – Psychologie et délinquance</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-38d94b3cac77cd3e685c79e69241b0ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-86ef44f33eb6204f81838d6c66abc062.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+<link rel="me" href="https://tchafia.be/@ouriagan">
+<meta name="fediverse:creator" content="@ouriagan@tchafia.be">
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const listing = document.querySelector(".quarto-listing-container");
+    if (listing) {
+      listing.classList.add("h-feed");
+      const links = listing.querySelectorAll("a");
+      links.forEach(link => {
+        const article = document.createElement("article");
+        article.classList.add("h-entry");
+        link.classList.add("u-url");
+        article.appendChild(link.cloneNode(true));
+        link.replaceWith(article);
+      });
+    }
+  });
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="La maison de détention de Forest : analyse des relations sociales et du vécu des résidents – Psychologie et délinquance">
+<meta property="og:description" content="La surpopulation carcérale et les conditions de détention en Belgique et en France sont régulièrement dénoncées. Dès 2022, l’administration pénitentiaire belge a créé des Maisons de Détention dont le but est de favoriser la réinsertion des détenus dans un cadre plus souple que les prisons traditionnelles. Réalisée en 2025, notre étude vise à évaluer la qualité des relations sociales et le vécu des résidents d’une Maison de Détention par rapport à la prison traditionnelle grâce à une observation participante et à l’analyse qualitative du discours des résidents. Nous constatons une nette amélioration des relations entres les résidents, des relations avec le personnel de surveillance et du sentiment de responsabilité individuelle. Cette amélioration peut parfois aller de pair avec un choc de confort induisant une anxiété à l’idée de retourner dans la société extérieure.">
+<meta property="og:image" content="https://benjaminthiry.netlify.app/posts/2025-11-30-maisondetention/maisondetention.png">
+<meta property="og:site_name" content="Psychologie et délinquance">
+<meta property="og:image:height" content="342">
+<meta property="og:image:width" content="455">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../benjaminthiry.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Psychologie et délinquance</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Qui écrit ce blog ?</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://tchafia.be/@ouriagan"> <i class="bi bi-mastodon" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ouriagan/blog"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">La maison de détention de Forest : analyse des relations sociales et du vécu des résidents</h1>
+                  <div>
+        <div class="description">
+          La surpopulation carcérale et les conditions de détention en Belgique et en France sont régulièrement dénoncées. Dès 2022, l’administration pénitentiaire belge a créé des Maisons de Détention dont le but est de favoriser la réinsertion des détenus dans un cadre plus souple que les prisons traditionnelles. Réalisée en 2025, notre étude vise à évaluer la qualité des relations sociales et le vécu des résidents d’une Maison de Détention par rapport à la prison traditionnelle grâce à une observation participante et à l’analyse qualitative du discours des résidents. Nous constatons une nette amélioration des relations entres les résidents, des relations avec le personnel de surveillance et du sentiment de responsabilité individuelle. Cette amélioration peut parfois aller de pair avec un choc de confort induisant une anxiété à l’idée de retourner dans la société extérieure.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">délinquance</div>
+                <div class="quarto-category">criminologie</div>
+                <div class="quarto-category">prison</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Auteur·rice·s</div>
+      <div class="quarto-title-meta-contents">
+               <p>Aurégane Brabant <a href="mailto:auregane.brabant1180@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+               <p>Benjamin Thiry </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Date de publication</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">30 novembre 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#méthode" id="toc-méthode" class="nav-link" data-scroll-target="#méthode">Méthode</a></li>
+  <li><a href="#résultats" id="toc-résultats" class="nav-link" data-scroll-target="#résultats">Résultats</a>
+  <ul class="collapse">
+  <li><a href="#de-la-prison-à-la-maison-de-détention-un-choc-de-confort" id="toc-de-la-prison-à-la-maison-de-détention-un-choc-de-confort" class="nav-link" data-scroll-target="#de-la-prison-à-la-maison-de-détention-un-choc-de-confort">De la prison à la maison de détention : un choc de confort</a></li>
+  <li><a href="#la-vie-collective-entre-communauté-et-individualité" id="toc-la-vie-collective-entre-communauté-et-individualité" class="nav-link" data-scroll-target="#la-vie-collective-entre-communauté-et-individualité">La vie collective : entre communauté et individualité</a></li>
+  <li><a href="#règles-normes-et-micro-société" id="toc-règles-normes-et-micro-société" class="nav-link" data-scroll-target="#règles-normes-et-micro-société">Règles, normes et micro-société</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#limites-de-létude" id="toc-limites-de-létude" class="nav-link" data-scroll-target="#limites-de-létude">Limites de l’étude</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><img src="maisondetention.png" class="img-fluid"></p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>En France et en Belgique, les conditions matérielles, physiques et psychologiques dans lesquelles les personnes ayant fait l’objet de peines d’emprisonnement effectuent leurs peines ont été maintes fois dénoncées.</p>
+<p>En Belgique, le gouvernement exprime depuis plusieurs années son intention de répondre aux problématiques carcérales belges telles que la surpopulation carcérale, l’état dégradé des prisons et le manque de cellules. Ces trois problématiques s’emboîtent les unes dans les autres <span class="citation" data-cites="regiedesbatiments2025">(<a href="#ref-regiedesbatiments2025" role="doc-biblioref">Régie des Bâtiments, 2025</a>)</span>. En octobre 2021, le Conseil des Ministres prévoyait d’implémenter des maisons de détention dans l’ensemble du pays, d’une capacité totale de 720 places. Le 21 janvier 2022, soit trois mois après cette décision, le Conseil des ministres a octroyé un budget de 18 millions d’euros au Ministère de la Justice pour mettre en place ces établissements de taille réduite, en vue de financer les investissements, le fonctionnement et le personnel <span class="citation" data-cites="stradalex2022">(<a href="#ref-stradalex2022" role="doc-biblioref">Stradalex, 2022</a>)</span>. Ce projet devait arriver à ses fins sous trois ans avec objectif principal d’établir au moins une maison de détention par province <span class="citation" data-cites="regiedesbatiments2025">(<a href="#ref-regiedesbatiments2025" role="doc-biblioref">Régie des Bâtiments, 2025</a>)</span>. En 2025, soit quatre ans après cette décision, celles-ci ne sont que peu présentes sur l’ensemble du territoire. A l’heure actuelle, on en compte au nombre de deux, celle de Courtrai ouverte en 2022 et celle de Forest ouverte en 2023. Ces maisons de détention sont-elles vraiment différentes des prisons existantes ? Les conditions de détention influencent-elles les relations entre les personnes qui y séjournent ?</p>
+<p>Notre étude vise à évaluer la qualité des interactions entre les résidents d’une maison de détention en contraste avec celles de détenus en prisons fermées traditionnelles. Ce texte est la synthèse du <a href="memoirebrabant_2025.pdf">mémoire</a> de <span class="citation" data-cites="brabant2025">Brabant (<a href="#ref-brabant2025" role="doc-biblioref">2025</a>)</span>. Il s’agit de la première étude sur ce thème compte tenu de la création récente des maisons de détention.</p>
+</section>
+<section id="méthode" class="level1">
+<h1>Méthode</h1>
+<p>La démarche qualitative adoptée repose sur l’observation quotidienne des interactions sociales au sein de la <a href="https://justice.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/maisons_de_d%C3%A9tention/adres_maison_de_d%C3%A9tention_forest">maison de détention de Forest</a> (à Bruxelles) ainsi que sur l’analyse approfondie des discours de huit résidents de sexe masculin, âgés entre 20 et 74 ans (entretiens semi-directifs) de la maison de détention de Forest en 2025. L’objectif visait à évaluer les vécus, les interactions, les règles implicites, les ajustements quotidiens, les dynamiques relationnelles qui émergent dans ce cadre spécifique <span class="citation" data-cites="vancampenhoudt2011">(<a href="#ref-vancampenhoudt2011" role="doc-biblioref">Van Campenhoudt, Quivy, &amp; Marquet, 2011</a>)</span>. L’analyse thématique a permis de structurer les données autour de trois grands axes : le <em>choc culturel lié au passage de la prison fermée à la maison de détention</em>, la <em>vie collective et ses tensions</em> et, enfin, les <em>règles et normes qui structurent la micro-société interne</em>.</p>
+</section>
+<section id="résultats" class="level1">
+<h1>Résultats</h1>
+<section id="de-la-prison-à-la-maison-de-détention-un-choc-de-confort" class="level2">
+<h2 class="anchored" data-anchor-id="de-la-prison-à-la-maison-de-détention-un-choc-de-confort">De la prison à la maison de détention : un choc de confort</h2>
+<p>La majorité des résidents interrogés ont auparavant été incarcérés dans des prisons classiques, et ce passé constitue pour eux un repère central qui structure fortement leur perception de la maison de détention. Ils décrivent les établissements fermés comme des lieux marqués par la <em>surpopulation</em>, l’<em>insalubrité</em> et l’<em>absence totale d’intimité</em> : des cellules de neuf à douze mètres carrés partagées à deux ou trois, des toilettes sans séparation, la présence de rats, des températures extrêmes et des odeurs persistantes dues au manque d’hygiène. À cela s’ajoute un <em>isolement relationnel</em> important : les visites sont difficiles, les contacts avec l’extérieur limités, et les activités de réinsertion rarement accessibles. Le quotidien apparaît comme <em>monotone</em>, <em>répétitif</em> et profondément <em>infantilisant</em>, rythmé par des ordres mécaniques qui ne laissent aucune place à l’initiative. Ce mode de vie impose une routine vide de sens, provoquant une <em>fatigue psychologique</em> intense, marquée par la <em>perte d’autonomie, d’identité et de perspectives</em>.</p>
+<p>L’arrivée dans la maison de détention représente dès lors une rupture brutale. Les résidents découvrent un cadre lumineux, propre, calme, où les portes restent ouvertes en journée et où ils peuvent circuler librement, cuisiner, participer à des activités ou interagir avec le personnel. Ce contraste produit un véritable <em>choc de confort</em> : un mélange de soulagement, d’incrédulité et parfois de déstabilisation. Certains décrivent l’endroit comme un “semi-paradis”, un lieu “cinq étoiles”, tandis que d’autres avouent avoir dû réapprendre des gestes simples, comme organiser leur temps ou parler sans méfiance. Ce passage d’un univers fermé et contrôlant à un espace ouvert et responsabilisant constitue un choc culturel qui marque les premières semaines de détention. Cette transformation peut même susciter une forme d’ambivalence. Pour certains, le confort et la stabilité offerts par la maison de détention deviennent rassurants au point que la perspective de la liberté apparaît anxiogène. La précarité, l’incertitude ou la solitude de l’extérieur semblent plus menaçantes que la vie encadrée à l’intérieur. L’institution totale décrite par <span class="citation" data-cites="goffman1968asiles">Goffman (<a href="#ref-goffman1968asiles" role="doc-biblioref">1968</a>)</span> semble ici s’inverser : au lieu de détruire l’individu, la structure lui redonne parfois des repères, jusqu’à rendre l’accès à la liberté plus difficile.</p>
+<p>Une autre rupture majeure réside dans la relation avec les accompagnateurs. Alors que le lien avec les surveillants en prison est souvent marqué par la <em>distance</em>, la <em>méfiance</em> ou la <em>contrainte</em>, la maison de détention instaure une <em>relation chaleureuse et égalitaire</em>. Dès l’arrivée, les résidents sont accueillis par une poignée de main, une présentation personnelle et une visite des lieux. Les accompagnateurs partagent les repas, les activités et le quotidien, et se positionnent comme des soutiens plutôt que comme des gardiens. Cette posture favorise immédiatement la <em>confiance</em>, l’<em>engagement</em> et le <em>respect mutuel</em>. Les résidents disent s’être sentis considérés comme des personnes avant d’être des détenus :</p>
+<blockquote class="blockquote">
+<p>Je me suis senti humain, je me suis dit : je suis quelqu’un.</p>
+</blockquote>
+</section>
+<section id="la-vie-collective-entre-communauté-et-individualité" class="level2">
+<h2 class="anchored" data-anchor-id="la-vie-collective-entre-communauté-et-individualité">La vie collective : entre communauté et individualité</h2>
+<p>La maison de détention fonctionne sur un modèle communautaire où la vie collective joue un rôle central. À leur arrivée, les résidents passent quinze jours dans un étage d’observation, ce qui leur permet d’intégrer progressivement les règles, les habitudes et les codes informels du groupe. Cette période facilite une entrée en douceur dans un environnement qui s’apparente, selon plusieurs résidents, à une “grande colocation” où chacun doit apprendre à trouver sa place. Les repas partagés, les activités sportives et culturelles, ainsi que la gestion collective des espaces et des tâches domestiques favorisent l’émergence d’affinités, de solidarités et d’une véritable sociabilité horizontale. Les observations montrent en effet une <em>entraide spontanée</em> : échanges de services, de nourriture ou d’objets, conseils pratiques, soutien moral, mais aussi <em>médiation entre pairs</em>. Ces gestes peuvent être compris à travers la <em>théorie du don</em> <span class="citation" data-cites="mauss1925don">(<a href="#ref-mauss1925don" role="doc-biblioref">Mauss, 1925</a>)</span>, où donner, recevoir et rendre structurent les relations sociales. Dans un contexte de privation de liberté, ces dynamiques prennent une importance particulière : elles renforcent la <em>cohésion</em>, favorisent la <em>reconnaissance mutuelle</em> et contribuent à l’<em>intégration de chacun dans le groupe</em>. Les liens se forment d’abord autour des affinités personnelles et des intérêts communs, plutôt qu’en fonction de l’âge, de l’origine ou du type d’infraction, ce qui contraste avec les logiques hiérarchiques et segmentées des prisons classiques.</p>
+<p>Toutefois, cette vie collective n’est pas dénuée d’ambivalences. Certains résidents s’investissent activement dans la communauté, tandis que d’autres restent à distance, par méfiance ou par besoin de préserver leur intimité. Des figures particulières, comme les délégués, occupent une place centrale dans cette organisation : sans détenir de pouvoir formel, ils accueillent les nouveaux arrivants, expliquent les règles, facilitent la communication et jouent un rôle de médiateurs. Ils incarnent à la fois une <em>autorité informelle</em> et une forme de <em>pair-aidance</em> <span class="citation" data-cites="mead2001peer">(<a href="#ref-mead2001peer" role="doc-biblioref">Mead, Hilton, &amp; Curtis, 2001</a>)</span>, contribuant à la cohésion et à la régulation interne du groupe. Leur rôle illustre la manière dont les résidents deviennent acteurs de leur propre socialisation et de l’organisation quotidienne de la maison.</p>
+<p>Les tensions existent, comme dans toute communauté. Elles concernent souvent l’hygiène, le bruit, la participation aux tâches ou des malentendus du quotidien. Cependant, contrairement à la prison fermée où les conflits peuvent être violents ou s’inscrire dans des rapports de domination, la violence physique demeure ici exceptionnelle. Les différends sont majoritairement gérés par le dialogue et la médiation interne. La petite taille de l’établissement rend impossible l’évitement complet des tensions, mais encourage leur résolution, renforçant ainsi la responsabilisation et l’authenticité des interactions.</p>
+<p>Dans l’ensemble, la maison de détention transforme profondément l’expérience de l’enfermement. L’intégration, la solidarité et la participation active des résidents structurent la vie collective. Elles redéfinissent les rapports sociaux, offrent un cadre plus humain et permettent à chacun de s’approprier son quotidien au sein d’un environnement moins contraignant que celui des prisons traditionnelles.</p>
+</section>
+<section id="règles-normes-et-micro-société" class="level2">
+<h2 class="anchored" data-anchor-id="règles-normes-et-micro-société">Règles, normes et micro-société</h2>
+<p>Le fonctionnement de la maison de détention repose sur un double système normatif qui façonne le vivre-ensemble : d’un côté, des <em>règles officielles</em> imposées par l’institution ; de l’autre, des <em>règles informelles</em> élaborées par les résidents eux-mêmes. Bien que le cadre offre plus de liberté que les établissements pénitentiaires classiques, il demeure un lieu de contraintes structuré par des horaires, des restrictions de déplacement, des obligations liées aux activités et des limites liées aux espaces. Ces règles rappellent en permanence que l’établissement reste une structure pénitentiaire, soumise à un cadre légal strict.</p>
+<p>Cependant, le règlement officiel est souvent perçu comme flou, adaptable et appliqué de manière variable. Les résidents décrivent un écart constant entre le “règlement sur papier” et la réalité vécue. Certaines interdictions — comme les visites dans les chambres — sont tolérées selon la confiance accordée à chacun ou selon la dynamique du groupe. Cette souplesse peut être comprise comme une forme d’autonomie, mais elle génère également de l’incertitude et parfois un sentiment d’arbitraire. Les résidents rapportent que les accompagnateurs ajustent fréquemment les règles en fonction des situations, exerçant un pouvoir implicite qui influence la vie quotidienne.</p>
+<p>À côté de ce cadre officiel opèrent des règles informelles, implicites mais essentielles. Elles concernent la politesse, la gestion des espaces communs, le respect des temps de repos, le partage des ressources ou la protection de l’intimité d’autrui. Ces normes non écrites, fondées sur le respect, la réciprocité et la confiance, constituent la véritable colonne vertébrale sociale de la maison. Elles sont négociées dans l’interaction quotidienne et servent de régulation continue pour éviter les tensions. Ce système social évoque souvent les codes familiaux : nettoyer après soi, ne pas toucher aux affaires des autres, “se comporter comme à la maison”. Il assure à la fois la cohésion et la stabilité du groupe.</p>
+<p>Derrière la liberté apparente se joue cependant une dynamique plus subtile. La participation aux activités n’est pas officiellement obligatoire, mais elle est maintenue par une pression implicite : chacun sait que le moindre incident, un conflit ou même un manquement récurrent peut entraîner un <em>retour en prison fermée</em>. Cette menace agit comme un puissant levier disciplinaire. Les résidents surveillent alors leurs propres comportements — et parfois ceux des autres — dans une logique d’<em>auto-régulation collective</em>. La participation devient stratégique, perçue comme un moyen de montrer son évolution ou d’améliorer son dossier. Cette intériorisation des attentes institutionnelles se manifeste aussi dans le langage : on parle de <em>résidents</em> plutôt que de détenus, d’<em>accompagnateurs</em> plutôt que d’agents, de <em>chambres</em> plutôt que de cellules, adoptant ainsi les catégories de l’institution. L’ensemble de ces interactions dessine une micro-société complexe, où se mêlent autonomie et contrôle institutionnel, solidarité et instabilité, discipline intériorisée et négociation permanente du vivre-ensemble. Les règles formelles et informelles s’articulent pour structurer la vie quotidienne, révélant un espace social où chacun doit composer avec la liberté relative, la contrainte, la responsabilité collective et les logiques relationnelles propres au groupe.</p>
+</section>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>Les résultats de cette recherche montrent que la maison de détention de Forest constitue un environnement carcéral singulier, situé à mi-chemin entre l’univers fermé de la prison traditionnelle et un cadre communautaire fondé sur la responsabilisation. Le passage de l’un à l’autre provoque un bouleversement profond pour les résidents, qui doivent réapprendre des habitudes quotidiennes, reconstruire des liens sociaux et s’adapter à une forme de liberté partielle.</p>
+<p>La vie collective apparaît comme l’un des éléments les plus déterminants dans leur expérience. Elle contribue à atténuer les effets négatifs de l’incarcération, favorise l’autonomie et soutient la réinsertion. Toutefois, elle implique également des exigences de cohabitation, de respect et de régulation qui peuvent constituer des défis importants pour certains résidents.</p>
+<p>Enfin, la coexistence de règles officielles et de normes informelles montre que la maison de détention fonctionne comme une micro-société structurée, où les interactions quotidiennes jouent un rôle central dans le maintien de l’équilibre collectif.</p>
+<p>En somme, la maison de détention apparaît comme un dispositif pénitentiaire hybride, qui combine liberté relative et contraintes implicites, solidarité et responsabilité individuelle. Ces résultats soulignent l’importance de la taille réduite et de la qualité des relations dans l’expérience carcérale, tout en ouvrant des pistes pour des recherches futures sur la réinsertion et les dynamiques sociales post-détention. Ce mode d’enfermement, plus humain et plus ouvert, offre des perspectives intéressantes en matière de réinsertion, mais il demeure un environnement carcéral où la privation de liberté, bien que transformée, reste une réalité.</p>
+</section>
+<section id="limites-de-létude" class="level1">
+<h1>Limites de l’étude</h1>
+<p>Notre étude ne concerne qu’une seule maison de détention en Belgique et un nombre limité de personnes qui y résidaient. Notons qu’il existe une <em>procédure de sélection</em> qui permet à l’administration pénitentiaire de déterminer quelle personne condamnée peut intégrer la maison de détention à partir d’une prison traditionnelle. Le bon comportement est un des critères. Par conséquent, les résidents de la maison de détention ne sont probablement pas représentatifs de la population carcérale belge. Nos observations sont postérieures à ce choix. Il apparaît dès lors que la maison de détention pourrait ne pas être adaptée pour tous les détenus. Notre étude semble toutefois démontrer que si la sélection initiale est efficace, le projet apporte une amélioration claire de la qualité de la prise en charge des condamnés concernés.</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Les références</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-brabant2025" class="csl-entry" role="listitem">
+Brabant, A. (2025). <em>Les relations sociales à la maison de détention de Forest : analyse du vécu des résidents</em> (Mémoire de Master en criminologie, Université libre de Bruxelles). Consulté à l'adresse <a href="https://memoirebrabant_2025.pdf">memoirebrabant_2025.pdf</a>
+</div>
+<div id="ref-goffman1968asiles" class="csl-entry" role="listitem">
+Goffman, E. (1968). <em>Asiles: <span>É</span>tudes sur la condition sociale des malades mentaux et autres reclus</em>. Paris: Les <span>É</span>ditions de Minuit.
+</div>
+<div id="ref-mauss1925don" class="csl-entry" role="listitem">
+Mauss, M. (1925). <em>Essai sur le don : Forme et raison de l”echange dans les soci’et’es archa"iques</em>. Paris: Presses Universitaires de France.
+</div>
+<div id="ref-mead2001peer" class="csl-entry" role="listitem">
+Mead, S., Hilton, D., &amp; Curtis, L. (2001). Peer Support: A Theoretical Perspective. <em>Psychiatric Rehabilitation Journal</em>, <em>25</em>(2), 134‑141.
+</div>
+<div id="ref-regiedesbatiments2025" class="csl-entry" role="listitem">
+Régie des Bâtiments. (2025). <em>Détention et internement dans des conditions humaines</em>. <a href="https://www.regiedesbatiments.be/fr/projects/detention-et-internement-dans-des-conditions-humaines" class="uri">https://www.regiedesbatiments.be/fr/projects/detention-et-internement-dans-des-conditions-humaines</a>.
+</div>
+<div id="ref-stradalex2022" class="csl-entry" role="listitem">
+Stradalex. (2022). <em>SL News – brève 04 février 2022</em>. <a href="https://www.stradalex.com/fr/sl_news/document/sl_news_breve20220204-1-fr" class="uri">https://www.stradalex.com/fr/sl_news/document/sl_news_breve20220204-1-fr</a>.
+</div>
+<div id="ref-vancampenhoudt2011" class="csl-entry" role="listitem">
+Van Campenhoudt, L., Quivy, R., &amp; Marquet, J. (2011). <em>Manuel de recherche en sciences sociales</em> (4ᵉ éd.). Paris: Dunod.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brabant2025,
+  author = {Brabant, Aurégane and Thiry, Benjamin},
+  title = {La maison de détention de Forest : analyse des relations
+    sociales et du vécu des résidents},
+  date = {2025-11-30},
+  url = {https://benjaminthiry.netlify.app/posts/2025-11-30-maisondetention/},
+  langid = {fr}
+}
+</code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Veuillez citer ce travail comme suit&nbsp;:</div><div id="ref-brabant2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Brabant, A., &amp; Thiry, B. (2025, November 30). La maison de détention
+de Forest : analyse des relations sociales et du vécu des résidents.
+Retrieved from <a href="https://benjaminthiry.netlify.app/posts/2025-11-30-maisondetention/">https://benjaminthiry.netlify.app/posts/2025-11-30-maisondetention/</a>
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/benjaminthiry\.netlify\.app");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="ouriagan/blogcomments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
