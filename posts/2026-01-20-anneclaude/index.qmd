@@ -1,0 +1,109 @@
+---
+title: "Quand curiosité et créativité s'allient pour être les moteurs d'une quête toujours à l'œuvre"
+description: "Compte-rendu de l'exposé d'Anne Claude lors du séminaire de psychiatrie légale de la prison de Haren du 20 janvier 2026. A la veille de sa pension, elle y évoque son parcours professionelle en tant que psychologue en prison."
+author:
+  - name: Anne Claude
+    email: claude.anne@hotmail.com
+  - name: Benjamin Thiry
+date: "2026-01-20"
+image: "anneclaude.png"
+categories: [séminaire, prison]
+citation: true
+lang: fr
+social:
+  image: "anneclaude.png"
+---
+
+![](anneclaude.png)
+
+# Préambule à l'exposé (Benjamin Thiry)
+
+Cher(e)s collègues.
+
+Bienvenue à cette séance spéciale du séminaire de psychiatrie légale de la prison de Haren qui prend place dans une période à nouveau troublée par l’augmentation continuelle de nouveaux détenus qui induisent des sentiments de dépassement et d’impuissance qui ont pu être exprimés ouvertement il y a deux semaines avec la direction. Les différents services médicaux et psychosociaux ont pu parler d’une même voix pour tenter d’identifier les causes de certaines souffrances professionnelles.
+
+Bien entendu, ces souffrances et ces problèmes ne sont pas apparus de manière inédite ou subite. Elles hantent constamment la pratique clinique carcérale, la rendant parois impossible durant certaines périodes. Il s’agit d’y être sensible sans succomber à la tentation de la complainte anesthésiante mais bien de les resituer dans un contexte social donné mais également historique.
+
+En parlant d’histoire, il y a des personnes qui marquent le service dont elles font partie. Nous avons le plaisir aujourd’hui de passer un moment avec Anne Claude qui fait partie de ces personnes. Elle était au SPS avant même qu’il ne s’appelle ainsi. A l’époque, les effectifs psychosociaux étaient plus réduits qu’aujourd’hui et les professionnels étaient les pionniers d’une aventure audacieuse qui les forçait à dégager des repères conceptuels nouveaux permettant de penser le carcéral en tant qu’*expérience humaine* et de penser la *rencontre clinique*. Ces professionnels ont dû faire leur place, s'immiscer dans un univers qui leur était globalement hostile et sourd à leurs réflexions. Peut-être qu’elle nous en parlera mais Anne évoque volontiers une réunion avec le directeur principal de la prison de Forest au cours de laquelle il s’exclama haut et fort qu’il n’y aurait jamais de psychologues dans sa prison !
+
+Anne disposait déjà d’une expérience de vie avant d’intégrer le service, notamment dans l’enseignement. Ses qualités pédagogiques l’ont constamment accompagnée par la suite et encore jusqu’à aujourd’hui.
+
+Anne est donc entrée sur une scène complexe, munie de sa détermination, de son sens de l’adaptation mais surtout d’une boussole éthique qui lui a permis de garder le cap malgré les tempêtes carcérales. J’ai toujours vu Anne comme une psychologue qui peut prendre le temps pour entendre ce que les autres n’entendent pas mais également comme une Marianne qui monte sur les barricades lorsqu’il s’agit de défendre les valeurs humaines qui fondent notre profession. Au fil des années, Anne a mené de nombreux combats. Sa présence nous a constamment inspirés pour résister aux diverses menacent qui se présentent à nous. Si la peur est parfois contagieuse, le courage peut également l’être. Anne, ton courage a nourri plusieurs générations de psychologues qui sont passés dans le service et les graines que tu as semées ont bel et bien germé.
+
+Tu as accueilli de nombreux stagiaires et tu as participé activement à la formation des nouveaux collègues, de manière exigeante, comme pour nous rappeler que nos professions vont immanquablement de pair avec une grande responsabilité. Être clinicien en prison, entendre l’inaudible, nous place dans une position exceptionnelle qui appelle un sens aigu de cette responsabilité que tu sembles avoir tant défendue.
+
+Le service ne sera plus tout à fait le même après ton départ Anne. Mais tu n’es pas encore partie et nous avons encore envie de profiter un peu de ton expérience. Nous te remercions d’avoir accepté de partager certaines réflexions à l’occasion de cette rencontre. Je te laisse sans tarder la parole.
+
+# Quand curiosité et créativité s’allient pour être les moteurs d’une quête toujours à l’œuvre
+
+## Le début de l'histoire
+
+J’ai découvert les prisons de l’intérieur en septembre 1993 comme stagiaire en criminologie.
+
+J’étais déjà psychologue depuis plusieurs années et j’avais une expérience de travail en psychiatrie, dans l’enseignement de la psychologie, et dans le travail d’expertise présententielle avec deux ou trois psychiatres qui faisaient très régulièrement appel à moi.
+
+Pourquoi ? A cause du test de Rorschach qui m’avait fortement interpellée pendant mes études de psychologie : dans le cadre du cours que j’avais suivi, les étudiants étaient invités à aller le passer eux-mêmes pour vivre ce test comme sujet. Ce que le psychologue m’a renvoyé de moi-même après cette passation a été un choc pour moi (et l’est toujours !) qui m’a fait prendre conscience des conflits intérieurs, des peurs et de la colère qui m’animaient. Cela a conforté ma résolution de poursuivre la psychanalyse déjà entamée et qui se poursuivra pendant douze ans. Cela a été un moment important parce que cela a changé ma vie et ma façon de voir la vie : la colère s’est transformée en une sorte d’émerveillement et de respect pour les stratégies de survie, de vie et m’a aidée à prendre conscience de qui je voulais être, comme personne, comme femme, comme professionnelle.
+
+Le test de Rorschach, que j’ai beaucoup travaillé, m’a donc amenée à participer à des expertises et mes premiers contacts professionnels avec le monde de la transgression se sont passés dans les parloirs avocats des prisons.
+
+Pour faire les choses bien, il m’a paru urgent de me former sur la transgression, les normes, la délinquance, le choix de la délinquance, et le délinquant, de fonder intellectuellement ces notions et je me suis inscrite en master en criminologie à l’Université Catholique de Louvain.
+
+Dans le cadre du stage de criminologie (600 heures) que je devais prester, suite à des contacts informels entre l’école de criminologie et le Dr Max Vandenbroucke, on m’a proposé de rejoindre la prison de Forest avec le projet d’envisager et de tenter de mettre en place un travail clinique avec les détenus (prévenus, condamnés et internés) sous la houlette du psychiatre du service d’anthropologie pénitentiaire, le Dr Ghislain Ledure. C’était une expérience passionnante et effrayante (j'étais la seule psychologue avec 650 détenus) : il fallait imaginer un fonctionnement, l’essayer, l’adapter.
+
+Le cadre plus général était le suivant : le Centre d’Orientation Pénitentiaire (COP) dirigé par le Dr Jean-Pierre Dewaele à la prison de Saint-Gilles avait fermé ses portes et le psychologue néerlandophone chargé de la documentation scientifique de ce service avait été réaffecté à la prison de Forest, quelques assistantes sociales y œuvraient de leur mieux et constituaient un service à part, le directeur principal de Forest étaient fermement opposé à ce que des psychologues viennent travailler dans sa prison, le nombre de dossiers hallucinant, les agents pénitentiaires découvraient le travail psy avec toutes sortes de réactions souvent défensives mais aussi parfois positives. Répondre à leurs demandes était intéressant.
+
+J’ai été engagée le lendemain de la fin de mon stage le 1^er^ mai 1994.
+
+## Création de l’Unité d'Orientation et de Traitement (UOT)
+
+Assez rapidement, une Unité d’Observation et de Traitement a été mise en place : une équipe pluridisciplinaire restreinte (une psychiatre, une assistante sociale et moi-même comme psychologue) était chargée du suivi de personnes impliquées dans les dossiers « difficiles ». Le travail était passionnant : questionnement clinique, recherche de pistes inédites pour créer du lien et un travail de regard sur soi-même pour les personnes que nous rencontrions dans un contexte pas fait pour ça.
+
+Il s’agissait de survivre et de promotionner le vivant alors qu’on était clairement vus comme des parasites du système, des empêcheurs de continuer à fonctionner dans l’arbitraire.
+
+Il y avait des logiques différentes, inconciliables qui fonctionnaient en parallèle et mettaient les détenus que nous voyions régulièrement dans des positions clivantes très difficiles voire préjudiciables… des logiques qui essayaient de se croiser le moins possible
+
+Cette recherche de solutions inédites était en phase avec ma façon de fonctionner : une vision personnalisée, individualisée de la relation à l’autre, à soi-même, et au travail. Un lien original et précieux avec l’autre, toujours à reconstruire, toujours en train de s’éprouver et qui ne se projette pas, qui reste unique. C’est-à-dire le contraire d’une vision managériale, le contraire de l’uniformisation. Pourquoi ? Parce qu’il s’agissait d’une question de *survie* et d’*éthique*.
+
+Cette vision éthique a été une *boussole* tout au long de ma carrière, de ma vie, dans une recherche du *juste*, du *sens* de mon positionnement, du sens que cela peut avoir pour l’autre. Jusqu’à reprendre la présidence du Comité d’Éthique et de Déontologie des Etablissements Pénitentiaires belges (EPICED) il y a trois ans et œuvrer pour que cet organe de réflexion éthique accepté par le Service Public Fédéral (SPF) Justice depuis 2014, puisse trouver une reconnaissance et une vraie place.
+
+En construisant des liens petit à petit avec les agents, la place pour ce type de travail clinique s’est faite, alimentée par un questionnement chez eux qu’ils ont osé exprimer jusqu’à une véritable émulation (formation en psychopathologie à la demande des agents de l’annexe psychiatrique) ; le tout dans un contexte de travail qui restait très violent physiquement et psychiquement.
+
+Le cadre de la mission psychosociale en prison a commencé à s’élaborer à partir de cette clinique. La mission c’est une arme à double tranchant ; ça dépend de ce qu’on en fait. On peut se réfugier derrière pour qu’elle nous protège de dimensions qui nous impressionnent et s’y cantonner. On peut aussi y voir un lieu et un espace de déploiement d’autre chose, l’ouverture de pistes, de choix possibles aidant à une définition de soi et de son *être-au-monde*, son identité professionnelle.
+
+Ce fonctionnement, je l’ai maintenu dans les prisons de Forest, de Berkendael puis de Haren (où c’est nettement plus difficile) et puis après !
+
+## Quand curiosité et créativité s’allient pour être les moteurs d’une quête toujours à l’œuvre…
+
+En bref, la *curiosité* renvoie au *domaine intellectuel* ; la *créativité* est un *ancrage* car il s’agit de créer du concret, d’essayer des choses, de s’adapter ; ces deux dimensions se soutiennent l’une l’autre ; la *quête* est la *recherche de sens* ; l’*œuvre* renvoie à un *questionnement sur la qualité et la recherche d’un chef d’œuvre éphémère*.
+
+J’ai toujours essayé de promouvoir une vision positive de l’autre, de ses potentialités, de son envie de vivre. Ce positionnement personnel est une façon de faire du positif avec les traumas d’une enfance vécue dans la violence, avec l’incompréhension face aux non-dits et aux comportements brutaux dont j’étais l’objet, de transformer la survie en vie positive à part entière.
+
+### La curiosité
+
+Le domaine intellectuel, le fait d’*apprendre*, d’aller à la découverte du sens a toujours été mon refuge. Qu’est-ce que d’autres ont dit des questions qui m’animent ? Pourquoi les personnes fonctionnent-elles comme elles le font et dans quelle mesure ces décisions s’imposent-elles à eux ? En quoi est-ce nécessaire pour elles ? Pourquoi empruntent-elles ces chemins tortueux, bizarres, parfois inadéquats mais aussi parfois tellement justes quand on examine le contexte, ce qu’elles protègent et leur raisonnement.
+
+La curiosité amène une dynamique de *formation spontanée*. Être dynamique dans sa recherche d’information, être libre de poser un regard critique implique de s’y engager personnellement (sur son temps libre, financièrement, etc.) sans attendre.
+
+### La créativité
+
+C’est pour moi mettre les mains dans le cambouis, être dans le réel, dans le concret, faire des choses, agir, oser essayer et se planter et l’admettre honnêtement. C’est construire, ouvrir un espace pour du neuf, inventer des solutions, les essayer, les aménager. Faire les choses soi-même, garder un esprit critique sur la pertinence de ce qui est en place.
+
+C’est aussi aller au bout des choses… et leur donner leur autonomie, que d’autres puissent s’en saisir et les utiliser pour leur propre cheminement.
+
+Cela m’a donné l’occasion de participation à des projets d’autres personnes, de faire des propositions de projets, de construire des formations pour aider mes collègues à aborder ce travail clinique…
+
+J’ai un problème avec les procédures qui sont exactement le contraire de ce que je viens de vous décrire et qui, toujours chez moi, aiguisent le regard critique. Il est strictement impossible qu’une procédure soit toujours adéquate ; cela pose la question de quel l’espace de liberté peut être trouvé pour procéder aux aménagements souhaitables dans la situation particulière qui m’occupe. Cela se fonde sur une attitude de centration extrême sur le travail individualisé. L’*autre* est toujours au centre de mon attention et je m’efforce de lui donner une place promotionnante. J’essaie d’être une facilitatrice dans une démarche de recherche de sens. On est clairement dans un fonctionnement centré sur le *lien professionnel* mais aussi profond, intense parce que je m’y engage professionnellement et personnellement.
+
+Je suis bien consciente que dans notre monde devenu si codifié, ce fonctionnement est perçu comme hautement problématique, critiquable et critiqué. Je m’y suis toujours accrochée car c’est aussi cela qui ouvre les choses, qui permet un ailleurs.
+
+D’un point de vue plus personnel, cela résonne positivement avec mon *identité professionnelle* de psychologue : le cadre carcéral, les procédures, les mandats ne sont dès lors que des *contextes* dans lequel je suis à l'œuvre professionnellement. Cette identité professionnelle est fondée sur ce lien respectueux à l’*autre*, respectueux de sa *différence* et de son *originalité* et sur une *implication personnelle* maximale.
+
+## La prison de Haren
+
+Haren est une prison qui dès le départ a rendu très difficile le maintien de cette recherche d’individualisation et de lien de qualité ; cette prison, structurellement et paradoxalement (une place de village est un lieu de rencontres !), n’est pas prévue pour ça.
+
+Ce qui est chouette c’est que le système, l’organisation dans lequel nous fonctionnons a permis ce fonctionnement, l’a, au minimum, toléré, parfois encouragé, et surtout l’a utilisé car cela produisait des avancées. Je pense notamment au processus de formation auquel j’ai eu le plaisir de collaborer (ce qui ne dispense pas, au contraire, de la formation spontanée !).
+
+Actuellement je constate une *inflation des procédures*, des *contrôles*, des *injonctions*. Je suis contente de partir car cet espace de liberté et de pensée se réduit drastiquement même si des initiatives, comme ce séminaire, montrent que les forces vives de la curiosité et du regard critique sont toujours à l’œuvre et s’autorisent à exister. Paradoxalement, le dysfonctionnement de Haren, ses défauts de conception seront peut-être la faille qui permettra à des pratiques innovantes de voir le jour pour peu que l’attitude éthique (difficile) reste la priorité des professionnels que nous sommes.
+
+Place maintenant aux projets pour le futur et à d’autres terrains d’expression et de découverte !
