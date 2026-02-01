@@ -1,6 +1,6 @@
 ---
 title: "Quand curiosité et créativité s'allient pour être les moteurs d'une quête toujours à l'œuvre"
-description: "Compte-rendu de l'exposé d'Anne Claude lors du séminaire de psychiatrie légale de la prison de Haren du 20 janvier 2026. A la veille de sa pension, elle y évoque son parcours professionelle en tant que psychologue en prison."
+description: "Compte-rendu de l'exposé d'Anne Claude lors du séminaire de psychiatrie légale de la prison de Haren du 20 janvier 2026. A la veille de sa pension, elle y évoque son parcours professionel en tant que psychologue en prison."
 author:
   - name: Anne Claude
     email: claude.anne@hotmail.com
