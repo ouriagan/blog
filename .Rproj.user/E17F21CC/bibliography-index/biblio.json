@@ -1,4 +1,107 @@
 {
-    "sources": [],
+    "sources": [
+        {
+            "DOI": "10.1007/s11211-010-0117-1",
+            "author": [
+                {
+                    "family": "McCulloch",
+                    "given": "Jude"
+                },
+                {
+                    "family": "Wilson",
+                    "given": "David"
+                }
+            ],
+            "container-title": "Social Justice Research",
+            "id": "mcculloch2009victimsrights",
+            "issue": "2–3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "99-120",
+            "title": "An Overview of the Victims’ Rights Movement: Historical Dimensions and Contemporary Developments",
+            "title-short": "An Overview of the Victims’ Rights Movement",
+            "type": "article-journal",
+            "volume": "23"
+        },
+        {
+            "URL": "https://eur-lex.europa.eu/eli/dir/2012/29/oj/eng#",
+            "author": [
+                {
+                    "literal": "European Parliament and Council of the European Union"
+                }
+            ],
+            "id": "eu2012victimsdirective",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "note": "EUR-Lex",
+            "publisher": "Official Journal of the European Union, L 315, 57–73",
+            "title": "Directive 2012/29/EU of the European Parliament and of the Council of 25 October 2012 Establishing Minimum Standards on the Rights, Support and Protection of Victims of Crime",
+            "type": ""
+        },
+        {
+            "DOI": "10.1111/j.1751-9020.2009.00267.x",
+            "URL": "http://dx.doi.org/10.1111/j.1751-9020.2009.00267.x",
+            "author": [
+                {
+                    "family": "Mastrocinque",
+                    "given": "Jeanna M."
+                }
+            ],
+            "container-title": "Sociology Compass",
+            "id": "mastrocinque2010",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010,
+                        2
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "95-110",
+            "title": "An Overview of the Victims Rights Movement: Historical, Legislative, and Research Developments",
+            "title-short": "An Overview of the Victims Rights Movement",
+            "type": "article-journal",
+            "volume": "4"
+        },
+        {
+            "DOI": "10.7202/004720ar",
+            "URL": "http://dx.doi.org/10.7202/004720ar",
+            "author": [
+                {
+                    "family": "Fattah",
+                    "given": "Ezzat A."
+                }
+            ],
+            "container-title": "Criminologie",
+            "id": "fattah2002",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002,
+                        10,
+                        2
+                    ]
+                ]
+            },
+            "page": "17-46",
+            "title": "Victimology: Past, Present and Future",
+            "title-short": "Victimology",
+            "type": "article-journal",
+            "volume": "33"
+        }
+    ],
     "project_biblios": []
 }
