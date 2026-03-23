@@ -32,5 +32,5 @@ format:
     toc-depth: 3
     toc-location: left
     mermaid: {}
-editor: visual
+csl: apa.csl
 lang: fr

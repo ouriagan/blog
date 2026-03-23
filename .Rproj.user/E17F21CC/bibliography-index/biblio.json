@@ -1,20 +1,102 @@
 {
     "sources": [
         {
-            "DOI": "10.1007/s11211-010-0117-1",
+            "ISBN": "978-2-7384-4345-8",
             "author": [
                 {
-                    "family": "McCulloch",
-                    "given": "Jude"
+                    "family": "Chauvenet",
+                    "given": "Antoinette"
                 },
                 {
-                    "family": "Wilson",
-                    "given": "David"
+                    "family": "Despret",
+                    "given": "Vinciane"
+                },
+                {
+                    "family": "Lemaire",
+                    "given": "Jean-Marie"
                 }
             ],
-            "container-title": "Social Justice Research",
-            "id": "mcculloch2009victimsrights",
-            "issue": "2–3",
+            "collection-title": "Santé, sociétés et cultures",
+            "id": "chauvenet1996clinique",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996
+                    ]
+                ]
+            },
+            "publisher": "L’Harmattan",
+            "publisher-place": "Paris",
+            "title": "Clinique de la reconstruction : une expérience avec des réfugiés en ex-Yougoslavie",
+            "title-short": "Clinique de la reconstruction ",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-2-220-03445-4",
+            "author": [
+                {
+                    "family": "Legrand",
+                    "given": "Michel"
+                }
+            ],
+            "collection-title": "Interfaces",
+            "id": "legrand1993approche",
+            "issued": {
+                "date-parts": [
+                    [
+                        1993
+                    ]
+                ]
+            },
+            "publisher": "Desclée de Brouwer",
+            "publisher-place": "Paris",
+            "title": "L’approche biographique : théorie, clinique",
+            "title-short": "L’approche biographique ",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-2-7492-0864-0",
+            "author": [
+                {
+                    "dropping-particle": "de",
+                    "family": "Gaulejac",
+                    "given": "Vincent"
+                },
+                {
+                    "family": "Legrand",
+                    "given": "Michel"
+                }
+            ],
+            "collection-title": "Sociologie clinique",
+            "id": "degaulejac2008intervenir",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "publisher": "Érès",
+            "publisher-place": "Toulouse",
+            "title": "Intervenir par le récit de vie : entre histoire collective et histoire individuelle",
+            "title-short": "Intervenir par le récit de vie ",
+            "type": "book"
+        },
+        {
+            "DOI": "10.3917/ctf.044.0137",
+            "author": [
+                {
+                    "family": "Lemaire",
+                    "given": "Jean-Marie"
+                },
+                {
+                    "family": "Halleux",
+                    "given": "Laurent"
+                }
+            ],
+            "container-title": "Cahiers critiques de thérapie familiale et de pratiques de réseaux",
+            "id": "lemaire2010confiances",
+            "issue": "1",
             "issued": {
                 "date-parts": [
                     [
@@ -22,85 +104,54 @@
                     ]
                 ]
             },
-            "page": "99-120",
-            "title": "An Overview of the Victims’ Rights Movement: Historical Dimensions and Contemporary Developments",
-            "title-short": "An Overview of the Victims’ Rights Movement",
+            "page": "137-152",
+            "publisher": "De Boeck Supérieur",
+            "title": "Confiances, Loyautés et « Cliniques de Concertation » au service du Travail Thérapeutique de Réseau",
             "type": "article-journal",
-            "volume": "23"
+            "volume": "44"
         },
         {
-            "URL": "https://eur-lex.europa.eu/eli/dir/2012/29/oj/eng#",
+            "ISBN": "9782234055307",
             "author": [
                 {
-                    "literal": "European Parliament and Council of the European Union"
+                    "family": "Orsenna",
+                    "given": "Erik"
                 }
             ],
-            "id": "eu2012victimsdirective",
+            "id": "orsenna2003madame",
             "issued": {
                 "date-parts": [
                     [
-                        2012
+                        2003
                     ]
                 ]
             },
-            "note": "EUR-Lex",
-            "publisher": "Official Journal of the European Union, L 315, 57–73",
-            "title": "Directive 2012/29/EU of the European Parliament and of the Council of 25 October 2012 Establishing Minimum Standards on the Rights, Support and Protection of Victims of Crime",
-            "type": ""
+            "publisher": "Stock",
+            "publisher-place": "Paris",
+            "title": "Madame Bâ",
+            "type": "book"
         },
         {
-            "DOI": "10.1111/j.1751-9020.2009.00267.x",
-            "URL": "http://dx.doi.org/10.1111/j.1751-9020.2009.00267.x",
+            "ISBN": "9782020069793",
             "author": [
                 {
-                    "family": "Mastrocinque",
-                    "given": "Jeanna M."
+                    "family": "Ricœur",
+                    "given": "Paul"
                 }
             ],
-            "container-title": "Sociology Compass",
-            "id": "mastrocinque2010",
-            "issue": "2",
+            "id": "ricoeur1983temps",
             "issued": {
                 "date-parts": [
                     [
-                        2010,
-                        2
+                        1983
                     ]
                 ]
             },
-            "language": "en",
-            "page": "95-110",
-            "title": "An Overview of the Victims Rights Movement: Historical, Legislative, and Research Developments",
-            "title-short": "An Overview of the Victims Rights Movement",
-            "type": "article-journal",
-            "volume": "4"
-        },
-        {
-            "DOI": "10.7202/004720ar",
-            "URL": "http://dx.doi.org/10.7202/004720ar",
-            "author": [
-                {
-                    "family": "Fattah",
-                    "given": "Ezzat A."
-                }
-            ],
-            "container-title": "Criminologie",
-            "id": "fattah2002",
-            "issue": "1",
-            "issued": {
-                "date-parts": [
-                    [
-                        2002,
-                        10,
-                        2
-                    ]
-                ]
-            },
-            "page": "17-46",
-            "title": "Victimology: Past, Present and Future",
-            "title-short": "Victimology",
-            "type": "article-journal",
-            "volume": "33"
+            "publisher": "Éditions du Seuil",
+            "publisher-place": "Paris",
+            "title": "Temps et récit. Tome I : L’intrigue et le récit historique",
+            "title-short": "Temps et récit. Tome I ",
+            "type": "book"
         }
     ],
     "project_biblios": []

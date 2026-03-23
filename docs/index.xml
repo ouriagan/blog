@@ -10,7 +10,113 @@
 <atom:link href="https://benjaminthiry.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
 <description>Blog consacré à la psychologie de la délinquance</description>
 <generator>quarto-1.6.42</generator>
-<lastBuildDate>Mon, 09 Feb 2026 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 22 Mar 2026 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Le recours aux IA génératives dans la rédaction d’articles de blog : entre enthousiasme et angoisse d’aliénation psychique</title>
+  <dc:creator>Benjamin Thiry</dc:creator>
+  <link>https://benjaminthiry.netlify.app/posts/2026-03-23-iaalienation/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="lintelligence-artificielle-et-la-rédaction-darticles-de-blog" class="level1">
+<h1>L’intelligence artificielle et la rédaction d’articles de blog</h1>
+<p>A l’ère des intelligences artificielles (IA) génératives qui conquièrent la plupart (voire tous) les champs de la création, nous oscillons bien souvent entre enthousiasme et angoisse. Cette angoisse est celle d’être privé de cette part de nous-même que d’aucuns présentent comme le socle de notre humanité et de notre subjectivité. Que nous resterait-il si ce socle venait à disparaître ? J’ai récemment apprécié la lecture du texte de <span class="citation" data-cites="leclaire2024wordpressIA">Leclaire (2026)</span> qui rapporte une innovation majeure proposée par la plateforme de blogging <a href="https://wordpress.com/fr/">Wordpress</a> : l’utilisation de l’IA afin de générer un article à partir d’une simple idée de départ, le reste étant pris en charge par l’algorithme. Il pointe là une étape décisive en rupture avec l’idéal initial du blogging (exprimer une opinion personnelle sans qu’elle ne soit nécessairement parfaitement présentée) au profit d’une efficacité et d’un rendement accrus. Selon <span class="citation" data-cites="leclaire2024wordpressIA">Leclaire (2026)</span>, cette étape mène à une situation absurde :</p>
+<blockquote class="blockquote">
+<p>Pensons-y une seconde. Vous utilisez une IA pour écrire votre contenu. Vos lecteurs utilisent une IA pour résumer ce contenu. Les moteurs de recherche utilisent une IA pour l’indexer. Les publicités sont ciblées par une IA. […]</p>
+<p>Des robots qui écrivent pour des robots qui lisent pour des robots qui agrègent.</p>
+</blockquote>
+<p>Pour ma part, j’ai récemment connecté le logiciel avec lequel j’écris (<a href="https://posit.co/">RStudio</a>) à <a href="https://github.com/features/copilot">Github Copilot</a>. Cette IA spécifique aux utilisateurs de Github consulte en temps réel le texte ou le code que j’écris afin de proposer de les compléter. A l’heure où j’écris ces lignes, Github Copilot me propose de temps à autre de terminer ma phrase ou une phrase suivante qui pourrait convenir. Il me suffit alors d’appuyer sur la touche TAB de mon clavier pour qu’elle s’écrive alors automatiquement. Dans la plupart des cas, j’estime les propositions inadéquates voire tout à fait fausses. Mais il m’arrive de valider certaines propositions qui me paraissent pertinentes. Cet accompagnement de mon écriture m’a évoqué un souvenir d’enfance.</p>
+</section>
+<section id="un-souvenir-denfance" class="level1">
+<h1>Un souvenir d’enfance</h1>
+<p>J’ai grandi dans un village au sud de Bruxelles, fréquenté une école primaire à taille humaine, entouré par une famille aimante et bienveillante. Ma famille était très investie dans mon éducation et veillait à ce que je ne manque de rien. Durant mon enfance, elle me conduisait constamment en voiture et il m’arrivait de me rendre au magasin avec elle afin d’y faire des courses. Au détour des allées des magasins, il pouvait arriver que nous croisions des personnes que nous connaissions. C’était en fait assez fréquent. La conversation s’engageait alors immanquable, conversation au cours de laquelle les adultes prenaient des nouvelles les uns des autres. Quelques minutes plus tard, les regards se tournaient alors souvent vers moi, comme pour s’enquérir de mes nouvelles. Il pouvait m’arriver d’oser dire que j’allais bien. Mais très rapidement, ma famille renchérissait afin de développer mes récentes activités, mésaventures ou hauts-faits scolaires. La conversation pouvait durer plusieurs minutes sans que je n’ouvre à nouveau le bouche jusqu’au moment de dire au revoir.</p>
+<p>Ces épisodes étaient fréquents et me semblaient bienveillants, valorisants et somme toute banals. L’enfant que j’étais à l’époque ne pouvait toutefois que trouver étrange qu’une conversation dont il était l’objet ne nécessitât qu’il ouvrît la bouche.</p>
+</section>
+<section id="retour-au-schéma-l-de-jacques-lacan" class="level1">
+<h1>Retour au schéma L de Jacques Lacan</h1>
+<p>Lorsque j’avais vingt ans, je fréquentais un séminaire d’introduction aux concepts fondamentaux de la psychanalyse à l’Association Freudienne de Belgique. Ses membres y étaient étonnement plus lacaniens que freudiens mais cela me permit de découvrir les théorisations de Jacques Lacan. Vers 22 ans, j’entamai un travail psychothérapeutique d’influence analytique. Mon chemin professionnel m’éloigna toutefois progressivement des concepts lacaniens alors que les facultés de psychologie des universités belges invitèrent ceux qui les portaient à prendre leur retraite. Aujourd’hui, la psychanalyse occupe une place plus marginal de le champs des praticiens de la santé mentale belge qu’il y a trente ans.</p>
+<p>La lecture du texte de <span class="citation" data-cites="leclaire2024wordpressIA">Leclaire (2026)</span> semble toutefois avoir provoqué un <em>retour du refoulé</em> chez moi : un concept lacanien s’imposa à moi sans que je n’en comprenne d’emblée le sens. C’est le <em>schéma L</em> (parfois appelé Z) tel que <span class="citation" data-cites="lacan1966schemaL">Lacan (1966)</span> le présente dans ses Ecrits et puis dans un séminaire ultérieur <span class="citation" data-cites="lacan1978seminaire2">(Lacan, 1978)</span>. La Figure&nbsp;1 représente ce schéma L.</p>
+<div id="fig-schemalacan" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-schemalacan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://benjaminthiry.netlify.app/posts/2026-03-23-iaalienation/schema_lacan.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-schemalacan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Schéma L (Lacan, 1966)
+</figcaption>
+</figure>
+</div>
+<p>Il me serait trop ambitieux de le décrire avec l’exhaustivité des érudits lacaniens. Je me contenterai dès lors de dire ce que j’en avais retenu, au risque d’imprécisions et d’approximations<sup>1</sup>.</p>
+<ul>
+<li><p>La lettre <strong>S</strong> représente le Sujet, c’est-à-dire cette part de nous-même qui est <em>inconsciente</em> mais qui nous fonde en tant que <em>personne unique</em> ;</p></li>
+<li><p><strong>a’</strong> est la réponse des autres personnes qui nous entourent et qui nous renvoient une image de nous-mêmes (par exemple, une mère qui dit à sa fille : <em>“tu es laide”</em> ou <em>“tu es la plus belle”</em>) ;</p></li>
+<li><p><strong>a</strong> est l’introjection de ces images qui mène à la création du <em>moi</em>, c’est-à-dire une <em>construction mentale à laquelle nous adhérons</em> et nous permet de répondre à la question <em>“qui suis-je ?”</em> lorsque des autres nous la posent ;</p></li>
+<li><p>La lettre <strong>A</strong> représente le <em>grand Autre</em>, c’est-à-dire un lieu qui contient les signifiants culturels dans lequel nous évoluons.</p></li>
+</ul>
+<section id="laxe-imaginaire" class="level2">
+<h2 class="anchored" data-anchor-id="laxe-imaginaire">L’axe imaginaire</h2>
+<p>Selon Lacan, la dynamique principalement à l’œuvre dans la <em>conscience</em> des individus est celle qui se situe sur l’<em>axe imaginaire</em> : nous interagissons presque constamment avec des autres qui nous renvoient une image plus ou moins déformée de ce qu’ils pensent percevoir de nous. Simultanément nous interprétons plus ou moins bien ces images, dont nous nous nourrissons pour espérer répondre à la question de notre <em>identité</em>. Mais il s’agit de l’axe des faux-semblants car il repose constamment sur des appréciations erronées, tant de la part de nous-mêmes que des autres. Il existe à ce titre une <em>aliénation</em> : nous sommes constamment contaminés par les images que les autres nous renvoient car elles nourrissent notre identité. Le <em>paradoxe</em> est majeur : nous sommes attentifs aux autres pour espérer savoir qui nous sommes mais, par là-même, nous nous construisons un moi qui s’éloigne de notre subjectivité.</p>
+<p>Lorsque vous pensez aimer une personne, vous êtes sur l’axe imaginaire. Lorsque vous pensez détester une personne, vous êtes sur l’axe imaginaire. Lorsque ma famille parle de moi à ses connaissances, nous sommes sur l’axe imaginaire. Lorsque vous postez une image sur les réseaux sociaux et que des personnes like votre photo, vous êtes sur l’axe imaginaire. Lorsque vous consultez un coach qui vous aide à être davantage efficace au travail, vous êtes sur l’axe imaginaire. Etc.</p>
+<p>Cet axe se rapproche des systèmes <em>Conscient</em> (Cs) et <em>Préconscient</em> (Pcs) définis par <span class="citation" data-cites="freud1900interpretation">Freud (1900)</span>. Ils rassemblent ce que nous pensons savoir de nous-mêmes, avec plus ou moins de conviction.</p>
+</section>
+<section id="laxe-symbolique" class="level2">
+<h2 class="anchored" data-anchor-id="laxe-symbolique">L’axe symbolique</h2>
+<p>L’axe symbolique est celui qui relie le Sujet au grand Autre, c’est-à-dire à la culture (au sens large) dans laquelle nous évoluons. C’est l’axe de la loi, de la morale, de la religion, de la politique, etc. C’est aussi l’axe du <em>langage</em> : les mots que nous utilisons pour nous exprimer sont des signifiants qui font partie du grand Autre. Lorsque nous parlons, nous sommes sur l’axe symbolique. Mais la portée profonde des mots et des signifiants nous échappent car ils nous pré-existent et nous survivront. L’accès du Sujet au grand Autre est <em>entravé par l’axe imaginaire</em> car les croyances conscientes font obstacle à la recherche des causes plus anciennes et profondes. Par exemple, nous pouvons croire que telle personne gâche notre vie, ce qui est susceptible de provoquer de la haine à son égard. Or, cette croyance et cette colère font obstacle aux causes originelles (par exemple, un parent qui aurait interdit à son enfant de réaliser une chose importante à ses yeux). La thérapie analytique vise à faire émerger ces causes profondes en contournant les croyances conscientes et les émotions qui y sont associées. Elle vise à <em>intensifier le recours à l’axe symbolique</em> et à déconstruire les certitudes apparentes de l’axe imaginaire.</p>
+</section>
+<section id="le-travail-de-subjectivation" class="level2">
+<h2 class="anchored" data-anchor-id="le-travail-de-subjectivation">Le travail de subjectivation</h2>
+<p>Notez que pour <span class="citation" data-cites="lacan1966schemaL">Lacan (1966)</span>, il n’existe pas de connexion directe entre le Sujet (S) et son moi (a). L’accès au sujet n’est possible que par le grand Autre, c’est-à-dire à travers une personne qui est susceptible d’en être le garant. Pour Lacan, il s’agit du personnage du <em>psychanalyste</em> qui pose le postulat de départ qu’<em>il existe un Inconscient</em> (Ics). Lorsqu’un patient en analyse affirme <em>“Je déteste mon patron !”</em>, le psychanalyste pose l’hypothèse que le patient déteste inconsciemment une autre personne (par exemple son père qui lui aurait causé du tort). L’objet de la thérapie n’est donc pas le patron mais bien un autre personnage, en l’occurrence le père, qui est maintenu dans une zone oubliée de la mémoire du patient. Le travail analytique nécessite dès lors de dépasser les apparences trompeuses.</p>
+</section>
+</section>
+<section id="le-risque-de-notre-aliénation-aux-ia-génératives" class="level1">
+<h1>Le risque de notre aliénation aux IA génératives</h1>
+<p>Mais quel est donc le rapport entre les blogs, l’IA, ma famille et le schéma L ?</p>
+<p>Dans son texte, <span class="citation" data-cites="leclaire2024wordpressIA">Leclaire (2026)</span> utilise le terme de <em>cauchemar</em> car les IA qui interagissent mutuellement construisent un sens factice qui s’impose à nous. Lorsque Github Copilot me propose des phrases que je n’ai pas écrites, je revoie l’enfant qui écoutait les adultes parler de lui sans qu’il ne doive ouvrir la bouche. Les textes générés par l’IA s’imposent à nous et nous aliènent dans un système clos duquel notre subjectivité est évincée. Nous sommes <em>subjectivement exclus</em> de notre propre texte. Cela ravive le vécu qui accompagne les nombreuses situations - que chacun de nous a probalement connues - au cours desquelles nous sommes physiquement présents mais symboliquement invisibles. Pensez à des réunions ou des fêtes de famille auxquelles vous avez participé sans que personne ne s’intéresse jamais à vous. La <em>dissolution du sujet</em> n’est pas rare dans les situations sociales. Elle s’accompagne toutefois souvent de sentiments diffus de non-existence inconfortables et parfois insupportables. Le risque de l’utilisation banalisée des IA génératives est de <em>surinvestir l’axe imaginaire</em> <em>au détriment de l’axe symbolique</em>. Or, il s’agit de l’axe de l’<em>aliénation</em>, c’est-à-dire de l’axe qui <em>survalorise une construction trompeuse de nous-même</em> au détriment de notre histoire personnelle et subjective. Le risque est de nous retrouver prisonniers de cet axe imaginaire sans y trouver la moindre porte de sortie.</p>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Les références</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2">
+<div id="ref-freud1900interpretation" class="csl-entry">
+Freud, S. (1900). <em>Die Traumdeutung</em>. Leipzig &amp; Vienna: Franz Deuticke.
+</div>
+<div id="ref-lacan1966schemaL" class="csl-entry">
+Lacan, J. (1966). Le séminaire sur "La lettre volée". In <em>Écrits</em> (p. 11‑61). Seuil.
+</div>
+<div id="ref-lacan1978seminaire2" class="csl-entry">
+Lacan, J. (1978). <em>Le Séminaire, Livre II : Le moi dans la théorie de Freud et dans la technique de la psychanalyse (1954-1955)</em>. Seuil.
+</div>
+<div id="ref-leclaire2024wordpressIA" class="csl-entry">
+Leclaire, R. (2026). WordPress + IA : enfin l’internet dont personne ne voulait. Consulté à l'adresse <a href="https://medium.com/@romain-leclaire/wordpress-ia-enfin-linternet-dont-personne-ne-voulait-8c13c6501afe">https://medium.com/@romain-leclaire/wordpress-ia-enfin-linternet-dont-personne-ne-voulait-8c13c6501afe</a>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Notes de bas de page</h2>
+
+<ol>
+<li id="fn1"><p>Les lacaniens ont parfois tendance à reprocher à tout commentateur des textes de Lacan de les avoir mécompris.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{thiry2026,
+  author = {Thiry, Benjamin},
+  title = {Le recours aux IA génératives dans la rédaction d’articles de
+    blog : entre enthousiasme et angoisse d’aliénation psychique},
+  date = {2026-03-23},
+  url = {https://benjaminthiry.netlify.app/posts/2026-03-23-iaalienation/},
+  langid = {fr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Veuillez citer ce travail comme suit&nbsp;:</div><div id="ref-thiry2026" class="csl-entry quarto-appendix-citeas">
+Thiry, B. (2026, March 23). Le recours aux IA génératives dans la
+rédaction d’articles de blog : entre enthousiasme et angoisse
+d’aliénation psychique. Retrieved from <a href="https://benjaminthiry.netlify.app/posts/2026-03-23-iaalienation/">https://benjaminthiry.netlify.app/posts/2026-03-23-iaalienation/</a>
+</div></div></section></div> ]]></description>
+  <category>réflexion personnelle</category>
+  <guid>https://benjaminthiry.netlify.app/posts/2026-03-23-iaalienation/</guid>
+  <pubDate>Sun, 22 Mar 2026 23:00:00 GMT</pubDate>
+  <media:content url="https://benjaminthiry.netlify.app/posts/2026-03-23-iaalienation/schema_lacan.svg" medium="image" type="image/svg+xml"/>
+</item>
 <item>
   <title>Pratiques cliniques avec les victimes</title>
   <dc:creator>Anne-Françoise Dahin</dc:creator>
@@ -8553,610 +8659,6 @@ De Page, L., Thiry, B., Boulanger, M., de Villers, B., &amp; Saloppé, X.
   <category>analyses statistiques</category>
   <guid>https://benjaminthiry.netlify.app/posts/2022-12-27-therapist-response-questionnaire-version-franaise/</guid>
   <pubDate>Mon, 26 Dec 2022 23:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Qualités psychométriques des indices d’alliance thérapeutique du NEO PI</title>
-  <dc:creator>Benjamin Thiry</dc:creator>
-  <link>https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>A l’occasion d’une étude précédente <span class="citation" data-cites="thiry2020assessing">(Thiry, 2020)</span> (<a href="../../posts/2022-07-31-assessing-the-therapeutic-alliance-with-the-five-factor-model/">disponible ici</a>), nous avons demandé à 38 cliniciens du domaine de la santé mentale d’identifier les <strong>traits de personnalité</strong> de leurs patients susceptibles de <strong>faciliter</strong> ou de <strong>freiner</strong> l’<strong>alliance thérapeutique</strong>. Sur base de leurs réponses, nous avons identifié trois indices qui se basent sur les variables du modèle de personnalité en cinq facteurs tels que le NEO PI <span class="citation" data-cites="mccrae2016inventaires">(McCrae &amp; Costa, 2016)</span> ou l’IPIP NEO <span class="citation" data-cites="goldberg2006international">(Goldberg et al., 2006)</span> :</p>
-<ol type="1">
-<li>alliance1 (facilite) = O + A + C</li>
-<li>alliance2 (facilite) = A2 + O3 + C5 + O5</li>
-<li>alliance3 (freine) = (32-A5) + (32-A2) + (32-A1)</li>
-</ol>
-<p>Nous n’avions toutefois fourni aucune donnée psychométrique relative à ces trois indices expérimentaux. Dans cet article, nous proposons des normes permettant de situer un protocole donné de NEO PI R (ou 3) par rapport à un échantillon normatif. En outre, nous souhaitons nous intéresser aux effets éventuels de l’<em>âge</em> et du <em>sexe</em> des patients sur ces indices. Nous nous interrogerons également sur la pertinence de ces trois indices : faut-il les garder tous les trois afin d’évaluer la qualité de l’alliance thérapeutique ? Le but est de mieux opérationnaliser ces indices afin de préparer toutes études sur leur validité externe.</p>
-</section>
-<section id="méthode" class="level1">
-<h1>Méthode</h1>
-<section id="participants" class="level2">
-<h2 class="anchored" data-anchor-id="participants">Participants</h2>
-<p>Nous disposons d’un échantillon vaste mais hétéroclite. Il se compose de 738 personnes dont 450 (62.07%) hommes et 275 (37.93%) femmes qui ont répondu à la version française du NEO PI R ou 3. L’âge moyen est égal à 29.57 ans avec un écart-type égal à 12.08. L’âge varie de 14 à 76 ans.</p>
-<p>L’échantillon global se compose de six sous-échantillons :</p>
-<ol type="1">
-<li>Des personnes <strong>tout-venant</strong> qui avaient répondu à une annonce dans le cadre d’une recherche précédente <span class="citation" data-cites="thiry2009ecriture">(Thiry, 2009)</span> : <em>n</em> = 119 (16.12%) ;</li>
-<li>Des personnes <strong>condamnées</strong> et emprisonnées : <em>n</em> = 319 (43.22%) ;</li>
-<li>Des personnées emprisonnées mais reconnues <strong>irresponsables pour cause de trouble mental</strong> : <em>n</em> = 25 (3.39%) ;</li>
-<li>Des <strong>adolescents</strong> qui ont passé le NEO PI-R en milieu scolaire : <em>n</em> = 112 (15.18%) ;</li>
-<li>Des <strong>étudiants</strong> en Master de psychologie légale à l’Université de Mons : <em>n</em> = 156 (21.14%) ;</li>
-<li>Des <strong>patients</strong> en thérapie : <em>n</em> = 7 (0.95%).</li>
-</ol>
-</section>
-</section>
-<section id="résultats" class="level1">
-<h1>Résultats</h1>
-<p>La Figure&nbsp;1 représente la distribution de l’indice que nous avons appelé <em>alliance1</em> (domaines qui facilitent l’alliance thérapeutique).</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-alliance1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-alliance1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index_files/figure-html/fig-alliance1-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alliance1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Distribution d’alliance1
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>La Figure&nbsp;2 représente la distribution de l’indice que nous avons appelé <em>alliance2</em> (facettes qui facilitent l’alliance thérapeutique).</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-alliance2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-alliance2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index_files/figure-html/fig-alliance2-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alliance2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Distribution d’alliance2
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>La Figure&nbsp;3 représente la distribution de l’indice que nous avons appelé <em>alliance3</em> (facettes qui feinent l’alliance thérapeutique).</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-alliance3" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-alliance3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index_files/figure-html/fig-alliance3-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alliance3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Distribution d’alliance3
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Les trois distributions sont d’allure normale et semblent permettre de discriminer les participants les uns des autres.</p>
-<div class="cell">
-<div id="tbl-table1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-table1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Statistiques descriptives des trois variables d’alliance thérapeutique
-</figcaption>
-<div aria-describedby="tbl-table1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Variables</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Moyenne</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">ET</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Min</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Max</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Alliance 1</td>
-<td style="text-align: left;">350.97</td>
-<td style="text-align: left;">36.86</td>
-<td style="text-align: left;">151.00</td>
-<td style="text-align: left;">473.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Alliance 2</td>
-<td style="text-align: left;">80.91</td>
-<td style="text-align: left;">11.44</td>
-<td style="text-align: left;">41.00</td>
-<td style="text-align: left;">118.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Alliance 3</td>
-<td style="text-align: left;">37.92</td>
-<td style="text-align: left;">10.68</td>
-<td style="text-align: left;">6.00</td>
-<td style="text-align: left;">79.00</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>Le Table&nbsp;1 présente les statistiques descriptives des trois variables d’alliance thérapeutique. Elles permettent notamment de calculer des scores <em>t</em> à l’instar des autres variables du NEO PI. Une question se pose : nos différents groupes présentent-ils des scores différents pour chacune de nos variables ?</p>
-<section id="moyennes-dalliance-1-par-groupe" class="level2">
-<h2 class="anchored" data-anchor-id="moyennes-dalliance-1-par-groupe">Moyennes d’alliance 1 par groupe</h2>
-<p>La Figure&nbsp;4 présente les moyennes et les intervalles de confiance pour chaque groupe pour la variable <em>alliance1</em>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-alliance1groupe" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-alliance1groupe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index_files/figure-html/fig-alliance1groupe-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alliance1groupe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Moyennes pour Alliance1 par groupe
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons une régression linéaire avec notre groupe <em>contrôle</em> comme modalité de référence.</p>
-<p>Les résultats indiquent qu’au moins une moyenne serait différente de celle du groupe contrôle : <img src="https://latex.codecogs.com/png.latex?R%5E2%20=%20.11">, <img src="https://latex.codecogs.com/png.latex?F(5,%20732)%20=%2018.15">, <img src="https://latex.codecogs.com/png.latex?p%20%3C%20.001">. Lesquelles ?</p>
-<div class="cell">
-<div id="tbl-tablelm1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tablelm1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Table de régression pour alliance 1 par groupes
-</figcaption>
-<div aria-describedby="tbl-tablelm1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
-<caption>(#tab:tbl-tablelm1)</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Predictor</th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?b"></th>
-<th style="text-align: left;">95% CI</th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?t"></th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?%5Cmathit%7Bdf%7D"></th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?p"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Intercept</td>
-<td style="text-align: left;">358.46</td>
-<td style="text-align: left;">[352.18, 364.74]</td>
-<td style="text-align: left;">112.09</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">&lt; .001</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F groupeado</td>
-<td style="text-align: left;">-34.30</td>
-<td style="text-align: left;">[-43.32, -25.28]</td>
-<td style="text-align: left;">-7.47</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">&lt; .001</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">F groupecondamné</td>
-<td style="text-align: left;">-1.28</td>
-<td style="text-align: left;">[-8.63, 6.08]</td>
-<td style="text-align: left;">-0.34</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.733</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F groupeetudiant</td>
-<td style="text-align: left;">-3.52</td>
-<td style="text-align: left;">[-11.86, 4.82]</td>
-<td style="text-align: left;">-0.83</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.407</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">F groupeinterné</td>
-<td style="text-align: left;">-25.66</td>
-<td style="text-align: left;">[-40.73, -10.59]</td>
-<td style="text-align: left;">-3.34</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">&lt; .001</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F groupepatient</td>
-<td style="text-align: left;">-12.89</td>
-<td style="text-align: left;">[-39.53, 13.75]</td>
-<td style="text-align: left;">-0.95</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.342</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>Nous constatons dans le Table&nbsp;2 que les moyennes pour les groupes <em>adolescent</em> et <em>interné</em> sont significativement plus basses que les autres. Par contre toutes les autres moyennes sont estimées identiques à celle du groupe <em>contrôle</em>.</p>
-</section>
-<section id="moyennes-dalliance-2-par-groupe" class="level2">
-<h2 class="anchored" data-anchor-id="moyennes-dalliance-2-par-groupe">Moyennes d’alliance 2 par groupe</h2>
-<p>La Figure&nbsp;5 présente les moyennes et les intervalles de confiance pour chaque groupe pour la variable <em>alliance2</em>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-alliance2groupe" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-alliance2groupe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index_files/figure-html/fig-alliance2groupe-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alliance2groupe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Moyennes pour Alliance2 par groupe
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons à nouveau une régression linéaire avec notre groupe <em>contrôle</em> comme modalité de référence.</p>
-<p>Les résultats indiquent que certaines moyennes sont différentes de celle du groupe contrôle : <img src="https://latex.codecogs.com/png.latex?R%5E2%20=%20.10">, <img src="https://latex.codecogs.com/png.latex?F(5,%20732)%20=%2016.10">, <img src="https://latex.codecogs.com/png.latex?p%20%3C%20.001">. Lesquelles ?</p>
-<div class="cell">
-<div id="tbl-lm2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lm2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: Table de régression pour alliance 2 par groupes
-</figcaption>
-<div aria-describedby="tbl-lm2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
-<caption>(#tab:tbl-lm2)</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Predictor</th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?b"></th>
-<th style="text-align: left;">95% CI</th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?t"></th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?%5Cmathit%7Bdf%7D"></th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?p"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Intercept</td>
-<td style="text-align: left;">82.02</td>
-<td style="text-align: left;">[80.06, 83.98]</td>
-<td style="text-align: left;">82.15</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">&lt; .001</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F groupeado</td>
-<td style="text-align: left;">-9.36</td>
-<td style="text-align: left;">[-12.17, -6.54]</td>
-<td style="text-align: left;">-6.53</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">&lt; .001</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">F groupecondamné</td>
-<td style="text-align: left;">0.79</td>
-<td style="text-align: left;">[-1.51, 3.09]</td>
-<td style="text-align: left;">0.67</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.500</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F groupeetudiant</td>
-<td style="text-align: left;">0.55</td>
-<td style="text-align: left;">[-2.05, 3.16]</td>
-<td style="text-align: left;">0.42</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.676</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">F groupeinterné</td>
-<td style="text-align: left;">-3.98</td>
-<td style="text-align: left;">[-8.68, 0.73]</td>
-<td style="text-align: left;">-1.66</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.097</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F groupepatient</td>
-<td style="text-align: left;">-0.59</td>
-<td style="text-align: left;">[-8.90, 7.73]</td>
-<td style="text-align: left;">-0.14</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.890</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>Nous constatons dans le Table&nbsp;3 que la moyenne pour le groupe <em>adolescent</em> est significativement plus basse que les autres. Par contre toutes les autres moyennes sont estimées identiques à celle du groupe <em>contrôle</em> au seuil <em>p</em> &lt;.001.</p>
-</section>
-<section id="moyennes-dalliance-3-par-groupe" class="level2">
-<h2 class="anchored" data-anchor-id="moyennes-dalliance-3-par-groupe">Moyennes d’alliance 3 par groupe</h2>
-<p>La Figure&nbsp;6 présente les moyennes et les intervalles de confiance pour chaque groupe pour la variable <em>alliance3</em>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-alliance3groupe" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-alliance3groupe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index_files/figure-html/fig-alliance3groupe-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alliance3groupe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Moyennes pour Alliance3 par groupe
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Ces moyennes sont-elles significativement différentes ? Pour répondre à cette question, nous effectuons une régression linéaire avec notre groupe <em>contrôle</em> comme modalité de référence.</p>
-<p>Les résultats indiquent que certaines moyennes sont différentes de celle du groupe contrôle : <img src="https://latex.codecogs.com/png.latex?R%5E2%20=%20.04">, <img src="https://latex.codecogs.com/png.latex?F(5,%20732)%20=%206.05">, <img src="https://latex.codecogs.com/png.latex?p%20%3C%20.001">. Lesquelles ?</p>
-<div class="cell">
-<div id="tbl-lm3" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lm3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4: Table de régression pour alliance 3 par groupes
-</figcaption>
-<div aria-describedby="tbl-lm3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
-<caption>(#tab:tbl-lm3)</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Predictor</th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?b"></th>
-<th style="text-align: left;">95% CI</th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?t"></th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?%5Cmathit%7Bdf%7D"></th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?p"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Intercept</td>
-<td style="text-align: left;">37.03</td>
-<td style="text-align: left;">[35.14, 38.92]</td>
-<td style="text-align: left;">38.48</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">&lt; .001</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F groupeado</td>
-<td style="text-align: left;">4.61</td>
-<td style="text-align: left;">[1.90, 7.32]</td>
-<td style="text-align: left;">3.34</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">&lt; .001</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">F groupecondamné</td>
-<td style="text-align: left;">-0.84</td>
-<td style="text-align: left;">[-3.06, 1.37]</td>
-<td style="text-align: left;">-0.75</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.455</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F groupeetudiant</td>
-<td style="text-align: left;">2.08</td>
-<td style="text-align: left;">[-0.43, 4.59]</td>
-<td style="text-align: left;">1.63</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.104</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">F groupeinterné</td>
-<td style="text-align: left;">0.53</td>
-<td style="text-align: left;">[-4.01, 5.06]</td>
-<td style="text-align: left;">0.23</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.820</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F groupepatient</td>
-<td style="text-align: left;">9.39</td>
-<td style="text-align: left;">[1.38, 17.41]</td>
-<td style="text-align: left;">2.30</td>
-<td style="text-align: left;">732</td>
-<td style="text-align: left;">.022</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>Nous constatons dans le Table&nbsp;4 que la moyenne pour le groupe <em>adolescent</em> est significativement plus élevée que les autres. Par contre toutes les autres moyennes sont estimées identiques à celle du groupe <em>contrôle</em>.</p>
-</section>
-<section id="les-variables-dalliance-thérapeutique-diffèrent-elles-dun-groupe-à-lautre" class="level2">
-<h2 class="anchored" data-anchor-id="les-variables-dalliance-thérapeutique-diffèrent-elles-dun-groupe-à-lautre">Les variables d’alliance thérapeutique diffèrent-elles d’un groupe à l’autre</h2>
-<p>D’une manière générale, nous <strong>ne</strong> pouvons <strong>pas</strong> affirmer que nos groupes ont un effet sur les scores aux trois indices d’alliance thérapeutique, à part le groupe <em>adolescent</em>. Par conséquent, les normes proposées au Tableau @ref(tab:table1) peuvent dès lors s’appliquer à tous les participants. Notons toutefois que l’<strong>âge</strong> des participants est susceptible d’être lié à ces scores. Nous devrons dès lors nous intéresser à cette variable afin d’en apprendre davantage.</p>
-</section>
-<section id="liens-entre-les-trois-indices" class="level2">
-<h2 class="anchored" data-anchor-id="liens-entre-les-trois-indices">Liens entre les trois indices</h2>
-<p>A priori, les deux premiers indices évaluent une même tendance avec des variables différentes (<strong>domaines</strong> versus <strong>facettes</strong> du modèle de personnalité en cinq facteurs). Le troisième indice est censé évaluer une tendance inverse. Qu’en est-il des corrélations entre ces trois indices ? La Figure&nbsp;7 représente les corrélations entre les trois indices.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-correlations" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index_files/figure-html/fig-correlations-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Corrélations entre les trois indices
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Nous constatons effectivement que les indices <em>alliance1</em> et <em>alliance2</em> sont fortement corrélés positivement, et négativement avec <em>alliance3</em>. Ces résultats nous invitent à remettre en question la pertinence d’utiliser trois indices pour évaluer une même tendance. Il semble que l’indice <em>alliance1</em> apporte une information substantielle pour l’évaluer. Notons qu’elle repose sur les scores de trois domaines (A, O et C) et non sur des facettes sous-jacentes (ce qui est un résultat non attendu a priori). Dans un souci d’économie, il est dès lors envisageable d’utiliser <strong>un seul indice</strong> : <em>alliance1</em> (A+O+C).</p>
-</section>
-<section id="effet-de-lâge-et-du-sexe-sur-la-variable-dalliance-thérapeutique" class="level2">
-<h2 class="anchored" data-anchor-id="effet-de-lâge-et-du-sexe-sur-la-variable-dalliance-thérapeutique">Effet de l’âge et du sexe sur la variable d’alliance thérapeutique</h2>
-<p>L’âge et le sexe des patients ont-ils une influence sur la variable <em>alliance1</em> ?</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-alliage" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-alliage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index_files/figure-html/fig-alliage-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alliage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Effet de l’âge et du sexe sur alliance1
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>La Figure&nbsp;8 semble indiquer une tendance des deux variables à augmenter l’une avec l’autre. Notons l’infléchissement de la courbe loess pour les <strong>âges inférieurs à vingt ans</strong> (ce qui correspond à notre groupe d’adolescents). Il semble que les scores d’<em>alliance1</em> soient particulièrement bas avant cet âge.</p>
-<p>Qu’en est-il pour le sexe ?</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-alliance1sexe" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-alliance1sexe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/index_files/figure-html/fig-alliance1sexe-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alliance1sexe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Moyennes pour Alliance1 par sexe
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>La Figure&nbsp;9 semble indiquer que les femmes obtiennent des scores supérieurs que les hommes à la variable <em>alliance1</em>.</p>
-<p>Afin de tester ces observations, nous effectuons une régression linéaire en incluant les variables <em>age</em> et <em>sexe</em> comme variables prédictrices.</p>
-<div class="cell">
-<div id="tbl-lm4" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lm4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5: Table de régression pour alliance 1 par age et sexe
-</figcaption>
-<div aria-describedby="tbl-lm4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
-<caption>(#tab:tbl-lm4)</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Predictor</th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?b"></th>
-<th style="text-align: left;">95% CI</th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?t"></th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?%5Cmathit%7Bdf%7D"></th>
-<th style="text-align: left;"><img src="https://latex.codecogs.com/png.latex?p"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Intercept</td>
-<td style="text-align: left;">333.33</td>
-<td style="text-align: left;">[326.16, 340.49]</td>
-<td style="text-align: left;">91.30</td>
-<td style="text-align: left;">704</td>
-<td style="text-align: left;">&lt; .001</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Age</td>
-<td style="text-align: left;">0.91</td>
-<td style="text-align: left;">[0.70, 1.13]</td>
-<td style="text-align: left;">8.34</td>
-<td style="text-align: left;">704</td>
-<td style="text-align: left;">&lt; .001</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">SexeM</td>
-<td style="text-align: left;">-14.75</td>
-<td style="text-align: left;">[-20.08, -9.42]</td>
-<td style="text-align: left;">-5.43</td>
-<td style="text-align: left;">704</td>
-<td style="text-align: left;">&lt; .001</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>Les deux variables semblent avoir un effet significatif sur la variable <em>alliance1</em> : <img src="https://latex.codecogs.com/png.latex?R%5E2%20=%20.11">, <img src="https://latex.codecogs.com/png.latex?F(2,%20704)%20=%2043.69">, <img src="https://latex.codecogs.com/png.latex?p%20%3C%20.001"></p>
-</section>
-</section>
-<section id="discussion" class="level1">
-<h1>Discussion</h1>
-<p>Que nous apprennent ces résultats ? D’abord que les trois variables permettent de discriminer les sujets de manière assez large et précise. Ensuite que les personnes incarcérées, les patients et les étudiants obtiennent des scores globalement identiques pour les trois indices. Les personnes dont l’âge est inférieur à vingt ans présentent quant à elles des scores à alliance1 significativement inférieurs aux autres. Les hommes présentent également des scores à alliance1 significativement plus bas que les femmes. L’usage des trois indices est susceptible d’approcher le phénomène d’alliance thérapeutique de manière nuancée en termes dynamiques : ce qui <em>facilite</em> versus ce qui <em>freine</em> l’alliance thérapeutique. Toutefois, les trois indices partagent des liens étroits les uns avec les autres. Ils semblent dès lors apporter une informations fortement redondante (et donc inutile). Dans un souci de simplicité et d’économie, il semble que la variable alliance1 (O+A+C) puisse suffir pour évaluer le phénomène qui nous intéresse. Contrairement à nos attentes initiales, les variables estimées pertinentes pour prédire une bonne alliance thérapeutiques par les cliniciens ne reposent pas sur des facettes précises de la personnalité mais plutôt sur des configurations plus globales. Ce profil O<sup>+</sup> A<sup>+</sup> C<sup>+</sup> appelle dès lors à commentaires. D’abord, il ne s’avère pas uniquement pertinent en regard d’une prise en charge psychothérapeutique. Il renvoie à un rapport particulier que les individus entretiennent avec le monde extérieur, les autres personnes et les stratégies d’actions. Les <em>styles graph</em> du manuel du NEO PI 3 <span class="citation" data-cites="mccrae2016inventaires">(McCrae &amp; Costa, 2016)</span> permettent de dégager trois styles relatifs à cette configuration :</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 34%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>O<sup>+</sup> A<sup>+</sup> : progressistes</th>
-<th>O<sup>+</sup> C<sup>+</sup> : bons élèves</th>
-<th>A<sup>+</sup> C<sup>+</sup> : altruistes efficaces</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ces personnes ont fréquemment une approche réfléchie des problèmes sociaux, pour lesquels elles souhaitent généralement trouver des solutions nouvelles. Elles ont tendance à avoir foi dans la nature humaine et à être persuadées que la société peut être améliorée par l’éducation, l’innovation et la coopération.</td>
-<td>Ces personnes possèdent généralement une soif d’apprendre mêlée à une application et une organisation qui peuvent les pousser vers l’excellence. Elles nourissent assez fréquemment des ambitions élevées et se montrent souvent créatives dans leur approche de résolution des problèmes. Elles vont généralement aussi loin dans leurs études que leur talent le leur permet.</td>
-<td>En général, ces personnes travaillent avec application pour le bien commun. Leur tendance à l’autodiscipline et à la persévérance leur permet le plus souvent de canaliser leurs efforts et les mettre au service d’autrui. En tant que bénévoles, elles peuvent se charger de tâches difficiles ou ingrates, et s’y atteler jusqu’à les terminer.</td>
-</tr>
-</tbody>
-</table>
-<p>Selon les cliniciens, la combinaison de ces trois styles de personnalité chez le patient serait indicatrice d’une bonne alliance thérapeutique. Notons que ce profil global semble reposer sur des bases ambitieuses et rigoureuses : curiosité intellectuelle, inventivité, persévérance, altruisme, philanthropie, rigueur scolaire et professionnelle ou encore engagement social. A y réfléchir, ce profil de <em>patient idéal</em> peut étonner. D’autant plus que la notion de souffrance (ou névrosisme) y est tout à fait absente. Ce profil ressemble par contre beaucoup au prototype social du psychothérapeute, engagé dans l’aide à l’autre avec rigueur, détermination, ouvert à la réflexion et aux échanges intellectuels. La conception du patient idéal des cliniciens serait-elle une projection (inconsciente) de leurs propres idéaux professionnels ? Ces idéaux sont bien sûr importants car ils fondent la pratique des thérapeutes et balisent leur travail quotidien. Ils ont toutefois un corollaire potentiel : proposer un idéal sous-jacent au patient qui ne s’y retrouve pas nécessairement. Bien entendu, la plupart des cliniciens sont ouverts et tolérants, ce qui leur permet d’être sensibles aux idéaux de leurs patients. Nos résultats nous amènent toutefois à penser qu’il existe chez eux une préconception des idéaux thérapeutiques. Cela ne constitue pas un problème en soi car les prises en charge thérapeutique reposent souvent (toujours ?) sur des bases philosophiques sous-jacentes. Selon nous, il s’agit toutefois de les connaître et d’être au clair avec elles. Parmi ces bases philosophiques, il en est une qui porte plusieurs noms mais qui repose sur l’idée que le processus thérapeutique vise à augmenter l’autonomie et le sentiment de prendre des décisions en accord avec ses propres valeurs. Ainsi est-il question de <em>subjectivation</em> :</p>
-<blockquote class="blockquote">
-<p>La subjectivation nous apparaît dès lors comme ce processus, en partie inconscient, par lequel un individu se reconnaît dans sa manière de donner sens au réel, au moyen d’une activité de symbolisation. <span class="citation" data-cites="wainrib2006psychanalyse">(Wainrib, 2006)</span></p>
-</blockquote>
-<p>Il s’agit d’une position philosophique ambitieuse qui nécessite du temps et un exercice mental qui est censé s’acquérir lors des séances cliniques. Son objectif premier n’est pas la diminution de la souffrance du patient mais plutôt à augmenter le pouvoir de décision du patient. Celui-ci est dès lors susceptible de modifier son rapport au monde ou à ladite souffrance. Il semble que la configuration O<sup>+</sup> A<sup>+</sup> C<sup>+</sup> fasse implicitement référence à ce processus philosophique qui peut prendre cours lors des entretiens cliniques.</p>
-
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Les références</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2">
-<div id="ref-goldberg2006international" class="csl-entry">
-Goldberg, L. R., Johnson, J. A., Eber, H. W., Hogan, R., Ashton, M. C., Cloninger, C. R., &amp; Gough, H. G. (2006). The international personality item pool and the future of public-domain personality measures. <em>Journal of Research in personality</em>, <em>40</em>(1), 84‑96.
-</div>
-<div id="ref-mccrae2016inventaires" class="csl-entry">
-McCrae, R. R., &amp; Costa, P. T. (2016). <em>Inventaires de la personnalit<span>é</span> NEO: l’inventaire de la personnalit<span>é</span> NEO-3 (NEO-PI-3) : manuel technique</em>. Institut de recherches psychologiques.
-</div>
-<div id="ref-thiry2009ecriture" class="csl-entry">
-Thiry, B. (2009). <em>Ecriture manuscrite et personnalit<span>é</span>: <span>é</span>valuation de la fiabilit<span>é</span> et de la validit<span>é</span> de la graphologie</em> (Thèse de doctorat, UCL). Consulté à l'adresse <a href="https://dial.uclouvain.be/pr/boreal/fr/object/boreal%3A21908">https://dial.uclouvain.be/pr/boreal/fr/object/boreal%3A21908</a>
-</div>
-<div id="ref-thiry2020assessing" class="csl-entry">
-Thiry, B. (2020). <em>Assessing the therapeutic alliance with the five-factor model: An expert-based approach</em>. <em>178</em>(9), 913‑919.
-</div>
-<div id="ref-wainrib2006psychanalyse" class="csl-entry">
-Wainrib, S. (2006). La psychanalyse, une question de subjectivation? <em>Le carnet PSY</em>, (5), 23‑25. Consulté à l'adresse <a href="https://www.cairn.info/revue-le-carnet-psy-2006-5-page-23.htm">https://www.cairn.info/revue-le-carnet-psy-2006-5-page-23.htm</a>
-</div>
-</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{thiry2022,
-  author = {Thiry, Benjamin},
-  title = {Qualités psychométriques des indices d’alliance thérapeutique
-    du NEO PI},
-  date = {2022-09-22},
-  url = {https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/},
-  langid = {fr}
-}
-</code></pre><div class="quarto-appendix-secondary-label">Veuillez citer ce travail comme suit&nbsp;:</div><div id="ref-thiry2022" class="csl-entry quarto-appendix-citeas">
-Thiry, B. (2022, September 22). Qualités psychométriques des indices
-d’alliance thérapeutique du NEO PI. Retrieved from <a href="https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/">https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/</a>
-</div></div></section></div> ]]></description>
-  <category>analyses statistiques</category>
-  <guid>https://benjaminthiry.netlify.app/posts/2022-07-31-qualits-psychomtriques-des-indices-dalliance-thrapeutique/</guid>
-  <pubDate>Wed, 21 Sep 2022 22:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
