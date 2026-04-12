@@ -28,7 +28,9 @@ pts <- data.frame(
   id    = c("S", "a'", "a", "A"),
   x     = c(1, 9, 1, 9),
   y     = c(9, 9, 1, 1),
-  label = c("S", "a'", "a", "A")
+  label = c("S", "a'", "a", "A"),
+  fill_col  = c("black", "black", "white", "white"),
+  text_col  = c("white", "white", "black", "black")
 )
 
 # -----------------------------
@@ -38,21 +40,22 @@ p <- ggplot() +
   # Cercles
   geom_point(
     data = pts,
-    aes(x, y),
+    aes(x, y, fill = fill_col),
     shape = 21,
     size = 26,
-    fill = "white",
     colour = "black",
     stroke = 0.6
   ) +
+  scale_fill_identity() +
 
   # Lettres dans les cercles
   geom_text(
     data = pts,
-    aes(x, y, label = label),
+    aes(x, y, label = label, colour = text_col),
     size = 11,
     family = "sans"
   ) +
+  scale_colour_identity() +
 
   # S -----> a'  (ligne horizontale pointillée)
   geom_segment(
@@ -94,15 +97,15 @@ p <- ggplot() +
   # Libellés des axes
   annotate(
     "text",
-    x = 3.6, y = 7.2,
-    label = "Axe symbolique",
+    x = 7, y = 3.7,
+    label = "inconscient",
     angle = -46,
     size = 6
   ) +
   annotate(
     "text",
-    x = 3, y = 3.75,
-    label = "Axe imaginaire",
+    x = 3, y = 3.7,
+    label = "relation imaginaire",
     angle = 46,
     size = 6
   ) +
@@ -156,7 +159,7 @@ Lorsque j'avais vingt ans, je fréquentais un séminaire d'introduction aux conc
 
 La lecture du texte de @leclaire2024wordpressIA semble toutefois avoir provoqué un *retour du refoulé* chez moi : un concept lacanien s'imposa à moi sans que je n'en comprenne d'emblée le sens. C'est le *schéma L* (parfois appelé Z) tel que @lacan1966schemaL le présente dans ses Ecrits et puis dans un séminaire ultérieur [@lacan1978seminaire2]. La @fig-schemalacan représente ce schéma L.
 
-![Schéma L (Lacan, 1966)](schema_lacan.svg){#fig-schemalacan}
+![Schéma L (Lacan, 1978, p. 284)](schema_lacan.svg){#fig-schemalacan}
 
 Il me serait trop ambitieux de le décrire avec l'exhaustivité des érudits lacaniens. Je me contenterai dès lors de dire ce que j'en avais retenu, au risque d'imprécisions et d'approximations[^1].
 
@@ -170,7 +173,7 @@ Il me serait trop ambitieux de le décrire avec l'exhaustivité des érudits lac
 
 -   La lettre **A** représente le *grand Autre*, c'est-à-dire un lieu qui contient les signifiants culturels dans lequel nous évoluons.
 
-## L'axe imaginaire
+## La relation imaginaire
 
 Selon Lacan, la dynamique principalement à l’œuvre dans la *conscience* des individus est celle qui se situe sur l'*axe imaginaire* : nous interagissons presque constamment avec des autres qui nous renvoient une image plus ou moins déformée de ce qu'ils pensent percevoir de nous. Simultanément nous interprétons plus ou moins bien ces images, dont nous nous nourrissons pour espérer répondre à la question de notre *identité*. Mais il s'agit de l'axe des faux-semblants car il repose constamment sur des appréciations erronées, tant de la part de nous-mêmes que des autres. Il existe à ce titre une *aliénation* : nous sommes constamment contaminés par les images que les autres nous renvoient car elles nourrissent notre identité. Le *paradoxe* est majeur : nous sommes attentifs aux autres pour espérer savoir qui nous sommes mais, par là-même, nous nous construisons un moi qui s'éloigne de notre subjectivité.
 
@@ -178,7 +181,7 @@ Lorsque vous pensez aimer une personne, vous êtes sur l'axe imaginaire. Lorsque
 
 Cet axe se rapproche des systèmes *Conscient* (Cs) et *Préconscient* (Pcs) définis par @freud1900interpretation. Ils rassemblent ce que nous pensons savoir de nous-mêmes, avec plus ou moins de conviction.
 
-## L'axe symbolique
+## L'inconscient : axe symbolique
 
 L'axe symbolique est celui qui relie le Sujet au grand Autre, c'est-à-dire à la culture (au sens large) dans laquelle nous évoluons. C'est l'axe de la loi, de la morale, de la religion, de la politique, etc. C'est aussi l'axe du *langage* : les mots que nous utilisons pour nous exprimer sont des signifiants qui font partie du grand Autre. Lorsque nous parlons, nous sommes sur l'axe symbolique. Mais la portée profonde des mots et des signifiants nous échappent car ils nous pré-existent et nous survivront. L'accès du Sujet au grand Autre est *entravé par l'axe imaginaire* car les croyances conscientes font obstacle à la recherche des causes plus anciennes et profondes. Par exemple, nous pouvons croire que telle personne gâche notre vie, ce qui est susceptible de provoquer de la haine à son égard. Or, cette croyance et cette colère font obstacle aux causes originelles (par exemple, un parent qui aurait interdit à son enfant de réaliser une chose importante à ses yeux). La thérapie analytique vise à faire émerger ces causes profondes en contournant les croyances conscientes et les émotions qui y sont associées. Elle vise à *intensifier le recours à l'axe symbolique* et à déconstruire les certitudes apparentes de l'axe imaginaire.
 

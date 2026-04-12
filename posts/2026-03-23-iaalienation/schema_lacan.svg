@@ -39,12 +39,12 @@
 </g>
 <g clip-path='url(#cpODYuMDV8NDg5Ljk1fDAuMDB8NDMyLjAw)'>
 <rect x='86.05' y='0.00' width='403.90' height='432.00' style='stroke-width: 0.00; stroke: none; fill: #FFFFFF;' />
-<circle cx='138.73' cy='66.73' r='28.17' style='stroke-width: 0.85; fill: #FFFFFF;' />
-<circle cx='419.71' cy='66.73' r='28.17' style='stroke-width: 0.85; fill: #FFFFFF;' />
+<circle cx='138.73' cy='66.73' r='28.17' style='stroke-width: 0.85; fill: #000000;' />
+<circle cx='419.71' cy='66.73' r='28.17' style='stroke-width: 0.85; fill: #000000;' />
 <circle cx='138.73' cy='347.71' r='28.17' style='stroke-width: 0.85; fill: #FFFFFF;' />
 <circle cx='419.71' cy='347.71' r='28.17' style='stroke-width: 0.85; fill: #FFFFFF;' />
-<text x='138.73' y='77.93' text-anchor='middle' style='font-size: 31.30px; font-family: "Arial";' textLength='20.88px' lengthAdjust='spacingAndGlyphs'>S</text>
-<text x='419.71' y='77.93' text-anchor='middle' style='font-size: 31.30px; font-family: "Arial";' textLength='23.38px' lengthAdjust='spacingAndGlyphs'>a'</text>
+<text x='138.73' y='77.93' text-anchor='middle' style='font-size: 31.30px;fill: #FFFFFF; font-family: "Arial";' textLength='20.88px' lengthAdjust='spacingAndGlyphs'>S</text>
+<text x='419.71' y='77.93' text-anchor='middle' style='font-size: 31.30px;fill: #FFFFFF; font-family: "Arial";' textLength='23.38px' lengthAdjust='spacingAndGlyphs'>a'</text>
 <text x='138.73' y='358.91' text-anchor='middle' style='font-size: 31.30px; font-family: "Arial";' textLength='17.41px' lengthAdjust='spacingAndGlyphs'>a</text>
 <text x='419.71' y='358.91' text-anchor='middle' style='font-size: 31.30px; font-family: "Arial";' textLength='20.88px' lengthAdjust='spacingAndGlyphs'>A</text>
 <line x1='173.85' y1='66.73' x2='386.34' y2='66.73' style='stroke-width: 1.71; stroke-dasharray: 9.10,9.10; stroke-linecap: butt;' />
@@ -57,8 +57,8 @@
 <polygon points='169.32,89.51 163.32,87.80 164.84,93.85 ' style='stroke-width: 1.71; stroke-dasharray: 9.10,9.10; stroke-linecap: butt; fill: #000000;' />
 <line x1='386.34' y1='347.71' x2='172.10' y2='347.71' style='stroke-width: 1.71; stroke-linecap: butt;' />
 <polygon points='177.50,344.59 172.10,347.71 177.50,350.83 ' style='stroke-width: 1.71; stroke-linecap: butt; fill: #000000;' />
-<text transform='translate(225.65,134.20) rotate(46)' text-anchor='middle' style='font-size: 17.07px; font-family: "Arial";' textLength='120.42px' lengthAdjust='spacingAndGlyphs'>Axe symbolique</text>
-<text transform='translate(213.37,255.37) rotate(-46)' text-anchor='middle' style='font-size: 17.07px; font-family: "Arial";' textLength='112.84px' lengthAdjust='spacingAndGlyphs'>Axe imaginaire</text>
+<text transform='translate(345.07,257.12) rotate(46)' text-anchor='middle' style='font-size: 17.07px; font-family: "Arial";' textLength='85.34px' lengthAdjust='spacingAndGlyphs'>inconscient</text>
+<text transform='translate(213.37,257.12) rotate(-46)' text-anchor='middle' style='font-size: 17.07px; font-family: "Arial";' textLength='139.41px' lengthAdjust='spacingAndGlyphs'>relation imaginaire</text>
 <text x='94.83' y='22.47' style='font-size: 28.45px; font-family: "Arial";' textLength='33.19px' lengthAdjust='spacingAndGlyphs'>Es</text>
 <text x='403.90' y='22.47' style='font-size: 28.45px; font-family: "Arial";' textLength='64.81px' lengthAdjust='spacingAndGlyphs'>autre</text>
 <text x='94.83' y='426.38' style='font-size: 28.45px; font-family: "Arial";' textLength='45.81px' lengthAdjust='spacingAndGlyphs'>moi</text>
