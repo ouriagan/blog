@@ -2,11 +2,8 @@
 title: "Pratiques cliniques avec les victimes"
 description: "Compte-rendu du groupe pratiques cliniques avec les justiciables de la Ligue Bruxelloise pour la Santé mentale du 10 février 2026 concernant la prise en charge des victimes par les services officiels compétents"
 author:
-  - name: Anne-Françoise Dahin
-  - name: Lisiane Pittemans
-  - name: Denis Gosselet
-  - name: Hansel Mayer
   - name: Benjamin Thiry
+  - name: Hansel Mayer
 date: "2026-02-10"
 image: "cadreloi-1.png"
 keywords: [victimologie, justice pénale, peine, victime]
@@ -120,7 +117,7 @@ p <- ggplot() +
             fill = "white", color = "black", linewidth = 0.8) +
 
   # Titre
-  annotate("text", x = 5.4, y = 6.45, label = "Cadre de la loi", size = 30/.pt) +
+  annotate("text", x = 6, y = 6.45, label = "Cadre de la loi", size = 30/.pt) +
 
   # Points
   geom_point(data = inside, aes(x, y), size = 3.5, color = "black") +
@@ -134,22 +131,22 @@ p <- ggplot() +
 
   # Flèche oblique haute
   annotate("segment",
-           x = 3.5, y = 5.15,
-           xend = 2.15, yend = 6.1,
+           x = 5, y = 5,
+           xend = 2, yend = 6.1,
            linewidth = 0.7,
            arrow = arrow(length = unit(0.18, "cm"))) +
 
   # Flèche oblique basse
   annotate("segment",
-           x = 6.2, y = 3.35,
-           xend = 2.15, yend = 2.9,
+           x = 7, y = 3,
+           xend = 2.15, yend = 2.8,
            linewidth = 0.7,
            arrow = arrow(length = unit(0.18, "cm"))) +
 
   # Flèche courbe à droite
   annotate("curve",
-           x = 8.15, y = 6.1,
-           xend = 8.05, yend = 4.9,
+           x = 7.7, y = 6.1,
+           xend = 7.7, yend = 4.9,
            curvature = -0.6,
            linewidth = 1.2,
            arrow = arrow(length = unit(0.22, "cm"))) +
